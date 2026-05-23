@@ -412,34 +412,61 @@ function aggregateWeekly(data){
   return out;
 }
 
+function yasunRawUrl(path){
+  return YASUN_PROXY ? `${YASUN_PROXY}${path}` : `https://yasun.gg${path}`;
+}
+
+async function fetchYasunPrices(){
+  // yasun의 prices 응답에는 전일 대비 change/changePercent가 들어있다.
+  // 경로가 환경에 따라 /api/prices 또는 /prices로 잡힐 수 있어 둘 다 시도한다.
+  const paths = ['/api/prices', '/prices'];
+  for(const path of paths){
+    try{
+      const res = await fetch(yasunRawUrl(path), {cache:'no-store'});
+      if(!res.ok) continue;
+      const raw = await res.json();
+      if(Array.isArray(raw)) return raw;
+      if(Array.isArray(raw?.data)) return raw.data;
+      if(Array.isArray(raw?.prices)) return raw.prices;
+    }catch(e){}
+  }
+  return [];
+}
+
 async function applyNightSettlementHeader(data, priceId, changeId, dateId){
-  // KOSPI200 야간선물은 일봉 API의 마지막 값이 고가처럼 표시되는 경우가 있어
-  // 대표값은 항상 1분봉 마지막 close 기준으로 통일한다.
+  // KOSPI200 야간선물 헤더는 캔들의 직전봉 대비가 아니라
+  // yasun prices의 전일 대비 change/changePercent를 사용한다.
+  // 예: 1,219.00 / -9.15 / -0.75%
   try{
-    const res = await fetch(yasunUrl('^KS200', '1m', 1500), {cache:'no-store'});
-    if(!res.ok) throw new Error('minute HTTP '+res.status);
-    const minute = normalizeYasunCandles(await res.json());
-    if(minute.length >= 2){
-      const last = minute[minute.length - 1];
-      const prev = minute[minute.length - 2];
-      const chg = last.close - prev.close;
-      const chgPct = prev.close ? (chg / prev.close * 100) : 0;
-      const priceEl = document.getElementById(priceId);
-      const changeEl = document.getElementById(changeId);
-      const dateEl = document.getElementById(dateId);
-      const dir = chg > 0 ? '▲' : chg < 0 ? '▼' : '━';
-      if(priceEl){
-        priceEl.textContent = last.close.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
-        priceEl.className = 'night-price ' + (chg>0?'price-up':chg<0?'price-down':'price-flat');
-      }
-      if(changeEl){
-        changeEl.textContent = `${dir} ${chg>=0?'+':''}${chg.toFixed(2)} (${chgPct.toFixed(2)}%)`;
-        changeEl.style.color = chg>0?'var(--up)':chg<0?'var(--down)':'var(--text-dim)';
-      }
-      if(dateEl) dateEl.textContent = formatCandleTime(last.time, '1m') + ' 기준';
+    const minuteRes = await fetch(yasunUrl('^KS200', '1m', 1500), {cache:'no-store'});
+    if(!minuteRes.ok) throw new Error('minute HTTP '+minuteRes.status);
+    const minute = normalizeYasunCandles(await minuteRes.json());
+    if(!minute.length) throw new Error('empty minute');
+
+    const lastMinute = minute[minute.length - 1];
+    const prices = await fetchYasunPrices();
+    const quote = prices.find(x => x.symbol === '^KS200');
+
+    const price = Number.isFinite(Number(quote?.price)) ? Number(quote.price) : lastMinute.close;
+    const chg = Number.isFinite(Number(quote?.change)) ? Number(quote.change) : 0;
+    const chgPct = Number.isFinite(Number(quote?.changePercent)) ? Number(quote.changePercent) : 0;
+
+    const priceEl = document.getElementById(priceId);
+    const changeEl = document.getElementById(changeId);
+    const dateEl = document.getElementById(dateId);
+    const dir = chg > 0 ? '▲' : chg < 0 ? '▼' : '━';
+
+    if(priceEl){
+      priceEl.textContent = price.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+      priceEl.className = 'night-price ' + (chg>0?'price-up':chg<0?'price-down':'price-flat');
     }
+    if(changeEl){
+      changeEl.textContent = `${dir} ${chg>=0?'+':''}${chg.toFixed(2)} (${chgPct.toFixed(2)}%)`;
+      changeEl.style.color = chg>0?'var(--up)':chg<0?'var(--down)':'var(--text-dim)';
+    }
+    if(dateEl) dateEl.textContent = formatCandleTime(lastMinute.time, '1m') + ' 기준';
   }catch(e){
-    console.warn('night minute-close header failed', e);
+    console.warn('night quote header failed', e);
   }
 }
 
