@@ -69,6 +69,10 @@
   .night-info{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;border-bottom:1px solid var(--border);}
   .night-price{font-size:16px;font-weight:700;}
 
+  .tf-row{display:flex;gap:4px;padding:5px 10px;border-bottom:1px solid var(--border);align-items:center;}
+  .tf-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:4px;padding:3px 7px;font-size:10px;font-family:'JetBrains Mono',monospace;cursor:pointer;}
+  .tf-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
+
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
   .adr-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden;}
@@ -129,6 +133,13 @@
             <div><span class="naver-price" id="kospiPrice">--</span><span id="kospiChange" style="margin-left:8px;font-size:11px;"></span></div>
             <span style="color:var(--text-muted);font-size:10px;" id="kospiDate">로딩중...</span>
           </div>
+          <div class="tf-row" data-chart="kospi">
+            <button class="tf-btn" onclick="setYasunInterval('kospi','1m')">1분</button>
+            <button class="tf-btn" onclick="setYasunInterval('kospi','30m')">30분</button>
+            <button class="tf-btn" onclick="setYasunInterval('kospi','1h')">1시간</button>
+            <button class="tf-btn" onclick="setYasunInterval('kospi','1d')">일봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('kospi','1wk')">주봉</button>
+          </div>
           <canvas class="naver-canvas" id="kospiCanvas"></canvas>
         </div>
       </div>
@@ -143,6 +154,13 @@
             <div><span class="naver-price" id="kosdaqPrice">--</span><span id="kosdaqChange" style="margin-left:8px;font-size:11px;"></span></div>
             <span style="color:var(--text-muted);font-size:10px;" id="kosdaqDate">로딩중...</span>
           </div>
+          <div class="tf-row" data-chart="kosdaq">
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1m')">1분</button>
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','30m')">30분</button>
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1h')">1시간</button>
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1d')">일봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1wk')">주봉</button>
+          </div>
           <canvas class="naver-canvas" id="kosdaqCanvas"></canvas>
         </div>
       </div>
@@ -156,6 +174,13 @@
           <div class="night-info">
             <div><span class="night-price" id="nightPrice">--</span><span id="nightChange" style="margin-left:8px;font-size:11px;"></span></div>
             <span style="color:var(--text-muted);font-size:10px;" id="nightTime">로딩중...</span>
+          </div>
+          <div class="tf-row" data-chart="night">
+            <button class="tf-btn" onclick="setYasunInterval('night','1m')">1분</button>
+            <button class="tf-btn" onclick="setYasunInterval('night','30m')">30분</button>
+            <button class="tf-btn" onclick="setYasunInterval('night','1h')">1시간</button>
+            <button class="tf-btn" onclick="setYasunInterval('night','1d')">일봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('night','1wk')">주봉</button>
           </div>
           <canvas id="nightCanvas" style="flex:1;width:100%;display:block;"></canvas>
         </div>
@@ -251,6 +276,13 @@
           <div class="naver-chart-info">
             <div><span class="naver-price" id="us10yPrice">--</span><span id="us10yChange" style="margin-left:8px;font-size:11px;"></span></div>
             <span style="color:var(--text-muted);font-size:10px;" id="us10yDate">로딩중...</span>
+          </div>
+          <div class="tf-row" data-chart="us10y">
+            <button class="tf-btn" onclick="setYasunInterval('us10y','1m')">1분</button>
+            <button class="tf-btn" onclick="setYasunInterval('us10y','30m')">30분</button>
+            <button class="tf-btn" onclick="setYasunInterval('us10y','1h')">1시간</button>
+            <button class="tf-btn" onclick="setYasunInterval('us10y','1d')">일봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('us10y','1wk')">주봉</button>
           </div>
           <canvas class="naver-canvas" id="us10yCanvas"></canvas>
         </div>
@@ -352,7 +384,7 @@ function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
   const wrap = canvas.parentElement;
   const dpr = window.devicePixelRatio || 1;
   const W = Math.max(10, wrap.clientWidth);
-  const H = Math.max(10, wrap.clientHeight - 34);
+  const H = Math.max(10, wrap.clientHeight - 64);
   canvas.width = W * dpr;
   canvas.height = H * dpr;
   canvas.style.width = W + 'px';
@@ -361,7 +393,7 @@ function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
   ctx.clearRect(0,0,W,H);
 
   if(!data || data.length < 2) return;
-  const maxBars = interval === '1m' ? 180 : 90;
+  const maxBars = interval === '1m' ? 180 : (interval.endsWith('m') ? 160 : 110);
   const d = data.slice(-maxBars);
   const last = d[d.length-1], prev = d[d.length-2];
   const chg = last.close - prev.close;
@@ -430,11 +462,42 @@ async function loadYasunChart({symbol, interval, limit, canvasId, priceId, chang
   }
 }
 
+const chartConfigs = {
+  kospi:  {symbol:'^KS11',  interval:'1d', canvasId:'kospiCanvas',  priceId:'kospiPrice',  changeId:'kospiChange',  dateId:'kospiDate'},
+  kosdaq: {symbol:'^KQ11',  interval:'1d', canvasId:'kosdaqCanvas', priceId:'kosdaqPrice', changeId:'kosdaqChange', dateId:'kosdaqDate'},
+  night:  {symbol:'^KS200', interval:'1m', canvasId:'nightCanvas',  priceId:'nightPrice',  changeId:'nightChange',  dateId:'nightTime'},
+  us10y:  {symbol:'^TNX',   interval:'1d', canvasId:'us10yCanvas',  priceId:'us10yPrice',  changeId:'us10yChange',  dateId:'us10yDate'}
+};
+
+function limitForInterval(interval){
+  if(interval === '1m') return 1500;
+  if(interval.endsWith('m') || interval.endsWith('h')) return 800;
+  return 300;
+}
+
+function updateTfButtons(key){
+  document.querySelectorAll(`.tf-row[data-chart="${key}"] .tf-btn`).forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent === labelForInterval(chartConfigs[key].interval));
+  });
+}
+
+function labelForInterval(interval){
+  return {'1m':'1분','30m':'30분','1h':'1시간','1d':'일봉','1wk':'주봉'}[interval] || interval;
+}
+
+function loadOneYasunChart(key){
+  const cfg = chartConfigs[key];
+  updateTfButtons(key);
+  return loadYasunChart({...cfg, limit:limitForInterval(cfg.interval)});
+}
+
+function setYasunInterval(key, interval){
+  chartConfigs[key].interval = interval;
+  loadOneYasunChart(key);
+}
+
 function loadAllYasunCharts(){
-  loadYasunChart({symbol:'^KS11', interval:'1d', limit:300, canvasId:'kospiCanvas', priceId:'kospiPrice', changeId:'kospiChange', dateId:'kospiDate'});
-  loadYasunChart({symbol:'^KQ11', interval:'1d', limit:300, canvasId:'kosdaqCanvas', priceId:'kosdaqPrice', changeId:'kosdaqChange', dateId:'kosdaqDate'});
-  loadYasunChart({symbol:'^KS200', interval:'1m', limit:1500, canvasId:'nightCanvas', priceId:'nightPrice', changeId:'nightChange', dateId:'nightTime'});
-  loadYasunChart({symbol:'^TNX', interval:'1d', limit:300, canvasId:'us10yCanvas', priceId:'us10yPrice', changeId:'us10yChange', dateId:'us10yDate'});
+  Object.keys(chartConfigs).forEach(loadOneYasunChart);
 }
 
 loadAllYasunCharts();
