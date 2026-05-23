@@ -50,9 +50,29 @@
   .tag-coin{background:#2a2a1a;color:#facc15;}
   .tag-global{background:#1a2a3a;color:#38bdf8;}
   .tag-bond{background:#2a1a2a;color:#e879f9;}
+  .tag-night{background:#1a3a3a;color:#34d399;}
   .chart-body{height:300px;}
   .chart-body .tradingview-widget-container{height:100%;}
   .chart-body .tradingview-widget-container__widget{height:100%;}
+
+  /* 야간선물 캔들차트 */
+  .night-chart-wrap{height:300px;position:relative;display:flex;flex-direction:column;}
+  .night-chart-info{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;}
+  .night-price{font-size:18px;font-weight:700;color:var(--text);}
+  .night-change-up{color:var(--up);}
+  .night-change-down{color:var(--down);}
+  #nightCanvas{flex:1;width:100%;display:block;}
+  .night-loading{flex:1;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:12px;font-family:'JetBrains Mono',monospace;}
+
+  /* US10Y 카드 */
+  .bond-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .bond-body{height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px;}
+  .bond-value{font-family:'JetBrains Mono',monospace;font-size:48px;font-weight:700;color:var(--accent);line-height:1;}
+  .bond-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);}
+  .bond-link{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;padding:8px 16px;font-size:12px;text-decoration:none;font-family:'JetBrains Mono',monospace;transition:all .2s;}
+  .bond-link:hover{border-color:var(--accent);color:var(--accent);}
+  .bond-updated{font-size:10px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;}
+
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
   .adr-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden;}
@@ -106,27 +126,44 @@
   <!-- 국내시장 -->
   <div>
     <div class="section-title">국내시장 · KOREA</div>
-    <div class="grid-2">
+    <div class="grid-3">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KOSPI 200</span><span class="card-tag tag-kr">KR · 주간</span></div>
+        <div class="card-header"><span class="card-title">KOSPI</span><span class="card-tag tag-kr">KR · 종합</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"KRX:KOSPI200","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%","hide_top_toolbar":false,"withdateranges":false}
+            {"symbol":"FOREXCOM:KOR100","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KOSPI 200 야간선물</span><span class="card-tag tag-kr">KR · 야간</span></div>
+        <div class="card-header"><span class="card-title">KOSDAQ</span><span class="card-tag tag-kr">KR · 코스닥</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"KRX:K2I1!","interval":"1","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"KRX:KOSDAQ","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
+        </div>
+      </div>
+      <!-- 야간선물: yasun.gg API로 직접 캔들 차트 -->
+      <div class="chart-card">
+        <div class="card-header">
+          <span class="card-title">KOSPI200 야간선물</span>
+          <span class="card-tag tag-night">야선지지 · 실시간</span>
+        </div>
+        <div class="night-chart-wrap">
+          <div class="night-chart-info">
+            <div>
+              <span class="night-price" id="nightPrice">-</span>
+              <span id="nightChange" style="margin-left:8px;font-size:12px;">-</span>
+            </div>
+            <span style="color:var(--text-muted);font-size:10px;" id="nightTime">로딩중...</span>
+          </div>
+          <canvas id="nightCanvas"></canvas>
         </div>
       </div>
     </div>
@@ -137,34 +174,34 @@
     <div class="section-title">미국시장 · US MARKETS</div>
     <div class="grid-3">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">NASDAQ · NDX</span></div>
+        <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">FOREXCOM · NAS100</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"NASDAQ:NDX","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:NAS100","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">DJ · DJI</span></div>
+        <div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">FOREXCOM · US30</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"DJ:DJI","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:US30","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">CBOE · VIX</span></div>
+        <div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">CAPITALCOM · VIX</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"CBOE:VIX","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"CAPITALCOM:VIX","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
@@ -177,23 +214,23 @@
     <div class="section-title">글로벌시장 · GLOBAL</div>
     <div class="grid-2">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">JP · NI225</span></div>
+        <div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">FOREXCOM · JP225</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"TVC:NI225","interval":"D","timezone":"Asia/Tokyo","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:JP225","interval":"D","timezone":"Asia/Tokyo","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">HK · HSI</span></div>
+        <div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">FOREXCOM · HK50</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"TVC:HSI","interval":"D","timezone":"Asia/Hong_Kong","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:HK50","interval":"D","timezone":"Asia/Hong_Kong","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
@@ -217,12 +254,12 @@
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">NYMEX · WTI</span></div>
+        <div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">FOREXCOM · OIL</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"TVC:USOIL","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:OIL","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
@@ -238,15 +275,20 @@
           </div>
         </div>
       </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">TVC · US10Y</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"TVC:US10Y","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
-            </script>
+      <!-- US10Y: API로 현재가 표시 + investing.com 링크 -->
+      <div class="bond-card">
+        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">US · 10YR</span></div>
+        <div class="bond-body">
+          <div style="text-align:center;">
+            <div class="bond-label">현재 수익률</div>
+            <div class="bond-value" id="us10yValue">--</div>
+            <div class="bond-label">%</div>
           </div>
+          <div id="us10yChange" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim);">로딩중...</div>
+          <div class="bond-updated" id="us10yUpdated"></div>
+          <a href="https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield" target="_blank" class="bond-link">
+            📊 Investing.com 차트 보기 →
+          </a>
         </div>
       </div>
     </div>
@@ -286,12 +328,12 @@
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">달러 인덱스 (DXY)</span><span class="card-tag tag-fx">TVC · DXY</span></div>
+        <div class="card-header"><span class="card-title">달러 인덱스 (DXY)</span><span class="card-tag tag-fx">FOREXCOM · DXY</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-            {"symbol":"TVC:DXY","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
+            {"symbol":"FOREXCOM:DXY","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}
             </script>
           </div>
         </div>
@@ -301,9 +343,10 @@
 
 </div>
 
-<footer>J's Trading Dashboard · Powered by TradingView · Data for reference only · Not financial advice</footer>
+<footer>J's Trading Dashboard · Powered by TradingView & yasun.gg · Data for reference only</footer>
 
 <script>
+// ── 시계 ──
 function updateClock(){
   const now=new Date();
   const kr=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);
@@ -314,15 +357,14 @@ function updateClock(){
 setInterval(updateClock,1000);
 updateClock();
 
+// ── 종목 검색 ──
 const symbolMap={
   '삼성전자':'KRX:005930','sk하이닉스':'KRX:000660','카카오':'KRX:035720',
   '네이버':'KRX:035420','현대차':'KRX:005380','기아':'KRX:000270',
   '셀트리온':'KRX:068270','포스코홀딩스':'KRX:005490','lg화학':'KRX:051910',
   '삼성바이오로직스':'KRX:207940','한화오션':'KRX:042660',
   'hd현대중공업':'KRX:329180','삼성중공업':'KRX:010140','lg에너지솔루션':'KRX:373220',
-  '크래프톤':'KRX:259960','두산에너빌리티':'KRX:034020','한국전력':'KRX:015760',
 };
-
 function searchStock(){
   const input=document.getElementById('stockSearch').value.trim();
   if(!input)return;
@@ -334,7 +376,6 @@ function searchStock(){
   else{symbol=input.toUpperCase();}
   openChart(symbol,input);
 }
-
 function openChart(symbol,name){
   document.getElementById('modalTitle').textContent='📈 '+name+'  ·  '+symbol;
   document.getElementById('modalBody').innerHTML=
@@ -345,16 +386,15 @@ function openChart(symbol,name){
     +'<\/script></div>';
   document.getElementById('chartModal').classList.add('active');
 }
-
 function closeModal(){
   document.getElementById('chartModal').classList.remove('active');
   document.getElementById('modalBody').innerHTML='';
 }
-
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 document.getElementById('chartModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.getElementById('stockSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchStock();});
 
+// ── ADR ──
 function calcADR(){
   const up=parseFloat(document.getElementById('adrUpInput').value)||0;
   const dn=parseFloat(document.getElementById('adrDownInput').value)||0;
@@ -373,6 +413,121 @@ function calcADR(){
   else{val.style.color='var(--accent)';bar.style.background='linear-gradient(90deg,var(--up),var(--accent))';status='중립 구간';}
   document.getElementById('adrStatus').textContent=status;
 }
+
+// ── 야간선물 캔들차트 (yasun.gg API) ──
+async function loadNightFutures(){
+  const canvas=document.getElementById('nightCanvas');
+  const ctx=canvas.getContext('2d');
+  try {
+    const res=await fetch('https://yasun.gg/api/candles?symbol=$EKS200&interval=1m&limit=120');
+    const data=await res.json();
+    if(!data||!data.length){throw new Error('no data');}
+
+    // 캔버스 크기 설정
+    const dpr=window.devicePixelRatio||1;
+    const rect=canvas.parentElement.getBoundingClientRect();
+    canvas.width=rect.width*dpr;
+    canvas.height=(rect.height-50)*dpr;
+    canvas.style.width=rect.width+'px';
+    canvas.style.height=(rect.height-50)+'px';
+    ctx.scale(dpr,dpr);
+    const W=rect.width, H=rect.height-50;
+
+    // 최신 가격 표시
+    const last=data[data.length-1];
+    const first=data[0];
+    const chg=last.close-first.open;
+    const chgPct=(chg/first.open*100).toFixed(2);
+    document.getElementById('nightPrice').textContent=last.close.toFixed(2);
+    const chgEl=document.getElementById('nightChange');
+    chgEl.textContent=(chg>=0?'+':'')+chg.toFixed(2)+' ('+chgPct+'%)';
+    chgEl.className='night-change-'+(chg>=0?'up':'down');
+    const d=new Date(last.time);
+    document.getElementById('nightTime').textContent=
+      d.toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit'});
+
+    // 가격 범위
+    const highs=data.map(d=>d.high), lows=data.map(d=>d.low);
+    const maxP=Math.max(...highs), minP=Math.min(...lows);
+    const pad=(maxP-minP)*0.05;
+    const pMin=minP-pad, pMax=maxP+pad;
+    const toY=p=>H-(p-pMin)/(pMax-pMin)*H;
+
+    // 캔들 그리기
+    const n=data.length;
+    const candleW=Math.max(2,Math.floor(W/n*0.7));
+    const gap=W/n;
+    ctx.clearRect(0,0,W,H);
+
+    data.forEach((c,i)=>{
+      const x=i*gap+gap/2;
+      const isUp=c.close>=c.open;
+      const color=isUp?'#2ed573':'#ff4757';
+      // 심지
+      ctx.strokeStyle=color;
+      ctx.lineWidth=1;
+      ctx.beginPath();
+      ctx.moveTo(x,toY(c.high));
+      ctx.lineTo(x,toY(c.low));
+      ctx.stroke();
+      // 몸통
+      ctx.fillStyle=color;
+      const top=toY(Math.max(c.open,c.close));
+      const bot=toY(Math.min(c.open,c.close));
+      const h=Math.max(1,bot-top);
+      ctx.fillRect(x-candleW/2,top,candleW,h);
+    });
+
+    // 현재가 라인
+    ctx.strokeStyle='rgba(0,229,255,0.5)';
+    ctx.setLineDash([4,4]);
+    ctx.lineWidth=1;
+    ctx.beginPath();
+    ctx.moveTo(0,toY(last.close));
+    ctx.lineTo(W,toY(last.close));
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+  } catch(e) {
+    const canvas=document.getElementById('nightCanvas');
+    const ctx=canvas.getContext('2d');
+    canvas.width=300; canvas.height=200;
+    ctx.fillStyle='#64748b';
+    ctx.font='12px JetBrains Mono';
+    ctx.textAlign='center';
+    ctx.fillText('야간장 종료 또는 데이터 없음',150,100);
+    document.getElementById('nightPrice').textContent='-';
+    document.getElementById('nightTime').textContent='장 외 시간';
+  }
+}
+loadNightFutures();
+setInterval(loadNightFutures, 60000); // 1분마다 갱신
+
+// ── US10Y 현재가 (연방준비 FRED API) ──
+async function loadUS10Y(){
+  try {
+    // FRED API - 미국 10년물 공개 데이터
+    const res=await fetch('https://api.stlouisfed.org/fred/series/observations?series_id=DGS10&api_key=demo&sort_order=desc&limit=2&file_type=json');
+    const data=await res.json();
+    if(data.observations&&data.observations.length){
+      const obs=data.observations[0];
+      const val=parseFloat(obs.value);
+      if(!isNaN(val)){
+        document.getElementById('us10yValue').textContent=val.toFixed(2);
+        const prev=parseFloat(data.observations[1]?.value||val);
+        const chg=(val-prev).toFixed(2);
+        const chgEl=document.getElementById('us10yChange');
+        chgEl.textContent=(chg>=0?'▲ +':' ▼ ')+chg+'% (전일 대비)';
+        chgEl.style.color=chg>=0?'var(--down)':'var(--up)';
+        document.getElementById('us10yUpdated').textContent='기준일: '+obs.date+' · FRED(미연준)';
+      }
+    }
+  } catch(e) {
+    document.getElementById('us10yValue').textContent='--';
+    document.getElementById('us10yChange').textContent='데이터 로딩 실패';
+  }
+}
+loadUS10Y();
 </script>
 </body>
 </html>
