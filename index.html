@@ -115,36 +115,42 @@
 
 <div class="main">
 
-  <!-- 국내시장: TradingView 직접 임베드 테스트 -->
+  <!-- 국내시장: yasun.gg API 캔들차트 -->
   <div>
     <div class="section-title">국내시장 · KOREA</div>
     <div class="grid-3">
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSPI</span>
-          <span class="card-tag tag-kr">TVC · KOSPI</span>
+          <span class="card-tag tag-naver">yasun · ^KS11</span>
         </div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"TVC:KOSPI","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="kospiPrice">--</span><span id="kospiChange" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="kospiDate">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="kospiCanvas"></canvas>
         </div>
       </div>
+
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSDAQ</span>
-          <span class="card-tag tag-kr">KRX · KOSDAQ</span>
+          <span class="card-tag tag-naver">yasun · ^KQ11</span>
         </div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:KOSDAQ","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="kosdaqPrice">--</span><span id="kosdaqChange" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="kosdaqDate">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="kosdaqCanvas"></canvas>
         </div>
       </div>
+
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSPI200 야간선물</span>
-          <span class="card-tag tag-night">yasun.gg · 실시간</span>
+          <span class="card-tag tag-night">yasun · ^KS200</span>
         </div>
         <div class="night-wrap">
           <div class="night-info">
@@ -240,11 +246,13 @@
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">TVC · US10Y</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"TVC:US10Y","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">yasun · ^TNX</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="us10yPrice">--</span><span id="us10yChange" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="us10yDate">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="us10yCanvas"></canvas>
         </div>
       </div>
     </div>
@@ -292,7 +300,7 @@
   </div>
 
 </div>
-<footer>J's Trading Dashboard · KR data by Naver Finance · Global data by TradingView · yasun.gg</footer>
+<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · Global data by TradingView</footer>
 
 <script>
 // ── 시계 ──
@@ -303,181 +311,135 @@ function updateClock(){
 }
 setInterval(updateClock,1000); updateClock();
 
-// ── 네이버 캔들차트 공통 함수 ──
-function parseNaverData(text) {
-  // 네이버 응답 파싱: [['날짜','시가',...], ['20250102', 2400, ...], ...]
-  try {
-    const cleaned = text.replace(/'/g, '"');
-    const arr = JSON.parse(cleaned);
-    return arr.slice(1); // 헤더 제거
-  } catch(e) {
-    // 정규식 파싱 fallback
-    const rows = [];
-    const re = /\["(\d{8})",\s*([\d.]+),\s*([\d.]+),\s*([\d.]+),\s*([\d.]+),\s*([\d]+)/g;
-    let m;
-    while((m=re.exec(text))!==null){
-      rows.push([m[1],parseFloat(m[2]),parseFloat(m[3]),parseFloat(m[4]),parseFloat(m[5]),parseInt(m[6])]);
-    }
-    return rows;
-  }
+// ── yasun.gg 캔들차트 ──
+// GitHub에서 직접 호출이 막히면 여기에 Cloudflare Worker 주소를 넣으면 됨.
+// 예: const YASUN_PROXY = "https://your-worker.workers.dev";
+const YASUN_PROXY = "";
+
+function yasunUrl(symbol, interval, limit){
+  const path = `/api/candles?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${limit}`;
+  return YASUN_PROXY ? `${YASUN_PROXY}${path}` : `https://yasun.gg${path}`;
 }
 
-function drawCandleChart(canvasId, data, priceId, changeId, dateId) {
+function normalizeYasunCandles(raw){
+  const rows = Array.isArray(raw) ? raw : (raw?.data || raw?.candles || []);
+  return rows.map(r => {
+    const t = r.time ?? r.timestamp ?? r.t ?? r[0];
+    const open = Number(r.open ?? r.o ?? r[1]);
+    const high = Number(r.high ?? r.h ?? r[2]);
+    const low = Number(r.low ?? r.l ?? r[3]);
+    const close = Number(r.close ?? r.c ?? r[4]);
+    const volume = Number(r.volume ?? r.v ?? r[5] ?? 0);
+    if(!Number.isFinite(open) || !Number.isFinite(high) || !Number.isFinite(low) || !Number.isFinite(close)) return null;
+    return { time:t, open, high, low, close, volume };
+  }).filter(Boolean);
+}
+
+function formatCandleTime(t, interval){
+  if(!t) return '';
+  let d;
+  if(typeof t === 'number') d = new Date(t < 1e12 ? t * 1000 : t);
+  else d = new Date(t);
+  if(isNaN(d.getTime())) return String(t);
+  if(interval.endsWith('m')) return d.toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+  return d.toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
+}
+
+function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
   const canvas = document.getElementById(canvasId);
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   const wrap = canvas.parentElement;
   const dpr = window.devicePixelRatio || 1;
-  const W = wrap.clientWidth;
-  const H = wrap.clientHeight - 34; // 헤더 높이 제외
+  const W = Math.max(10, wrap.clientWidth);
+  const H = Math.max(10, wrap.clientHeight - 34);
   canvas.width = W * dpr;
   canvas.height = H * dpr;
   canvas.style.width = W + 'px';
   canvas.style.height = H + 'px';
-  ctx.scale(dpr, dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,W,H);
 
-  if (!data || data.length === 0) return;
+  if(!data || data.length < 2) return;
+  const maxBars = interval === '1m' ? 180 : 90;
+  const d = data.slice(-maxBars);
+  const last = d[d.length-1], prev = d[d.length-2];
+  const chg = last.close - prev.close;
+  const chgPct = prev.close ? (chg / prev.close * 100) : 0;
 
-  // 최근 60일만
-  const d = data.slice(-60);
-  const last = d[d.length-1];
-  const prev = d[d.length-2];
-
-  // 가격 정보 표시
-  const close = parseFloat(last[4]);
-  const prevClose = prev ? parseFloat(prev[4]) : close;
-  const chg = close - prevClose;
-  const chgPct = (chg/prevClose*100).toFixed(2);
   const priceEl = document.getElementById(priceId);
   const changeEl = document.getElementById(changeId);
   const dateEl = document.getElementById(dateId);
-  if(priceEl) {
-    priceEl.textContent = close.toLocaleString();
-    priceEl.className = 'naver-price ' + (chg>0?'price-up':chg<0?'price-down':'price-flat');
+  if(priceEl){
+    priceEl.textContent = last.close.toLocaleString(undefined,{maximumFractionDigits:3});
+    priceEl.className = (canvasId === 'nightCanvas' ? 'night-price ' : 'naver-price ') + (chg>0?'price-up':chg<0?'price-down':'price-flat');
   }
-  if(changeEl) {
-    changeEl.textContent = (chg>=0?'+':'')+chg.toFixed(2)+' ('+chgPct+'%)';
+  if(changeEl){
+    changeEl.textContent = `${chg>=0?'+':''}${chg.toFixed(3)} (${chgPct.toFixed(2)}%)`;
     changeEl.style.color = chg>0?'var(--up)':chg<0?'var(--down)':'var(--text-dim)';
   }
-  if(dateEl) dateEl.textContent = last[0].replace(/(\d{4})(\d{2})(\d{2})/,'$1.$2.$3');
+  if(dateEl) dateEl.textContent = formatCandleTime(last.time, interval);
 
-  // 가격 범위
-  const highs = d.map(r=>parseFloat(r[2]));
-  const lows = d.map(r=>parseFloat(r[3]));
+  const highs = d.map(x=>x.high), lows = d.map(x=>x.low);
   const maxP = Math.max(...highs), minP = Math.min(...lows);
-  const pad = (maxP-minP)*0.05;
-  const pMax = maxP+pad, pMin = minP-pad;
+  const pad = Math.max((maxP-minP)*0.05, maxP*0.001);
+  const pMax = maxP + pad, pMin = minP - pad;
   const toY = p => H - (p-pMin)/(pMax-pMin)*H;
 
-  ctx.clearRect(0,0,W,H);
-
-  // 그리드 라인
-  ctx.strokeStyle = 'rgba(30,35,48,0.8)';
+  ctx.strokeStyle = 'rgba(30,35,48,0.85)';
   ctx.lineWidth = 1;
   for(let i=1;i<4;i++){
     const y = H/4*i;
     ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
   }
 
-  // 캔들
-  const n = d.length;
-  const gap = W/n;
-  const cw = Math.max(1, gap*0.6);
-  d.forEach((r,i)=>{
-    const x = i*gap+gap/2;
-    const o=parseFloat(r[1]),h=parseFloat(r[2]),l=parseFloat(r[3]),c=parseFloat(r[4]);
-    const isUp = c >= o;
-    const col = isUp ? '#2ed573' : '#ff4757';
-    ctx.strokeStyle = col; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(x,toY(h)); ctx.lineTo(x,toY(l)); ctx.stroke();
+  const gap = W / d.length;
+  const cw = Math.max(1, gap * 0.62);
+  d.forEach((c,i)=>{
+    const x = i*gap + gap/2;
+    const col = c.close >= c.open ? '#2ed573' : '#ff4757';
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x,toY(c.high)); ctx.lineTo(x,toY(c.low)); ctx.stroke();
     ctx.fillStyle = col;
-    const top = toY(Math.max(o,c)), bot = toY(Math.min(o,c));
-    ctx.fillRect(x-cw/2, top, cw, Math.max(1,bot-top));
+    const top = toY(Math.max(c.open,c.close));
+    const bot = toY(Math.min(c.open,c.close));
+    ctx.fillRect(x-cw/2, top, cw, Math.max(1, bot-top));
   });
 
-  // 현재가 라인
-  ctx.strokeStyle='rgba(0,229,255,0.4)'; ctx.setLineDash([3,3]); ctx.lineWidth=1;
-  ctx.beginPath(); ctx.moveTo(0,toY(close)); ctx.lineTo(W,toY(close)); ctx.stroke();
+  ctx.strokeStyle='rgba(0,229,255,0.45)';
+  ctx.setLineDash([3,3]);
+  ctx.beginPath(); ctx.moveTo(0,toY(last.close)); ctx.lineTo(W,toY(last.close)); ctx.stroke();
   ctx.setLineDash([]);
 }
 
-async function loadNaverChart(symbol, canvasId, priceId, changeId, dateId) {
-  try {
-    const today = new Date();
-    const end = today.toISOString().slice(0,10).replace(/-/g,'');
-    const start = new Date(today - 90*24*60*60*1000).toISOString().slice(0,10).replace(/-/g,'');
-    const url = `https://m.stock.naver.com/front-api/external/chart/domestic/info?symbol=${symbol}&requestType=1&startTime=${start}&endTime=${end}&timeframe=day`;
-    const res = await fetch(url);
-    const text = await res.text();
-    const data = parseNaverData(text);
-    if(data && data.length > 0) {
-      drawCandleChart(canvasId, data, priceId, changeId, dateId);
-    }
-  } catch(e) {
-    console.error(symbol, e);
-    const el = document.getElementById(priceId);
-    if(el) el.textContent = '오류';
-  }
-}
-
-// 로드 및 10분마다 갱신
-function loadAllNaverCharts(){
-  loadNaverChart('KOSPI','kospiCanvas','kospiPrice','kospiChange','kospiDate');
-  loadNaverChart('KOSDAQ','kosdaqCanvas','kosdaqPrice','kosdaqChange','kosdaqDate');
-}
-// KOSPI/KOSDAQ은 TradingView 직접 임베드로 테스트하므로 네이버 직접 fetch는 실행하지 않음
-
-// ── 야간선물 (yasun.gg) ──
-async function loadNightFutures(){
-  const canvas=document.getElementById('nightCanvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d');
+async function loadYasunChart({symbol, interval, limit, canvasId, priceId, changeId, dateId}){
   try{
-    const r=await fetch('https://yasun.gg/api/candles?symbol=%24EKS200&interval=1m&limit=150',{mode:'cors'});
-    if(!r.ok)throw new Error('fail');
-    const data=await r.json();
-    if(!data||!data.length)throw new Error('no data');
-    const wrap=canvas.parentElement;
-    const dpr=window.devicePixelRatio||1;
-    const W=wrap.clientWidth,H=wrap.clientHeight-34;
-    canvas.width=W*dpr;canvas.height=H*dpr;
-    canvas.style.width=W+'px';canvas.style.height=H+'px';
-    ctx.scale(dpr,dpr);
-    const last=data[data.length-1],first=data[0];
-    const chg=last.close-first.open,chgPct=(chg/first.open*100).toFixed(2);
-    const np=document.getElementById('nightPrice');
-    const nc=document.getElementById('nightChange');
-    if(np){np.textContent=last.close.toFixed(2);np.style.color=chg>=0?'var(--up)':'var(--down)';}
-    if(nc){nc.textContent=(chg>=0?'+':'')+chg.toFixed(2)+'('+chgPct+'%)';nc.style.color=chg>=0?'var(--up)':'var(--down)';}
-    const t=new Date(last.time);
-    const nt=document.getElementById('nightTime');
-    if(nt)nt.textContent=t.toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit'});
-    const highs=data.map(d=>d.high),lows=data.map(d=>d.low);
-    const mx=Math.max(...highs),mn=Math.min(...lows),pad=(mx-mn)*.05;
-    const pMx=mx+pad,pMn=mn-pad;
-    const toY=p=>H-(p-pMn)/(pMx-pMn)*H;
-    const n=data.length,gap=W/n,cw=Math.max(1,gap*.7);
-    ctx.clearRect(0,0,W,H);
-    data.forEach((c,i)=>{
-      const x=i*gap+gap/2,col=c.close>=c.open?'#2ed573':'#ff4757';
-      ctx.strokeStyle=col;ctx.lineWidth=1;
-      ctx.beginPath();ctx.moveTo(x,toY(c.high));ctx.lineTo(x,toY(c.low));ctx.stroke();
-      ctx.fillStyle=col;
-      const top=toY(Math.max(c.open,c.close)),bot=toY(Math.min(c.open,c.close));
-      ctx.fillRect(x-cw/2,top,cw,Math.max(1,bot-top));
-    });
-    ctx.strokeStyle='rgba(0,229,255,0.4)';ctx.setLineDash([3,3]);ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(0,toY(last.close));ctx.lineTo(W,toY(last.close));ctx.stroke();
-    ctx.setLineDash([]);
+    const res = await fetch(yasunUrl(symbol, interval, limit), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const raw = await res.json();
+    const data = normalizeYasunCandles(raw);
+    if(!data.length) throw new Error('empty data');
+    drawYasunChart(canvasId, data, priceId, changeId, dateId, interval);
   }catch(e){
-    const np=document.getElementById('nightPrice');
-    if(np)np.textContent='장외시간';
-    const nt=document.getElementById('nightTime');
-    if(nt)nt.textContent='18:00~06:00';
+    console.error(symbol, e);
+    const priceEl = document.getElementById(priceId);
+    const dateEl = document.getElementById(dateId);
+    if(priceEl) priceEl.textContent = '오류';
+    if(dateEl) dateEl.textContent = 'CORS/API 확인';
   }
 }
-loadNightFutures();
-setInterval(loadNightFutures,60000);
+
+function loadAllYasunCharts(){
+  loadYasunChart({symbol:'^KS11', interval:'1d', limit:300, canvasId:'kospiCanvas', priceId:'kospiPrice', changeId:'kospiChange', dateId:'kospiDate'});
+  loadYasunChart({symbol:'^KQ11', interval:'1d', limit:300, canvasId:'kosdaqCanvas', priceId:'kosdaqPrice', changeId:'kosdaqChange', dateId:'kosdaqDate'});
+  loadYasunChart({symbol:'^KS200', interval:'1m', limit:1500, canvasId:'nightCanvas', priceId:'nightPrice', changeId:'nightChange', dateId:'nightTime'});
+  loadYasunChart({symbol:'^TNX', interval:'1d', limit:300, canvasId:'us10yCanvas', priceId:'us10yPrice', changeId:'us10yChange', dateId:'us10yDate'});
+}
+
+loadAllYasunCharts();
+setInterval(loadAllYasunCharts, 60000);
+window.addEventListener('resize', loadAllYasunCharts);
 
 // ── 종목 검색 ──
 const symbolMap={'삼성전자':'KRX:005930','sk하이닉스':'KRX:000660','카카오':'KRX:035720','네이버':'KRX:035420','현대차':'KRX:005380','기아':'KRX:000270','셀트리온':'KRX:068270','포스코홀딩스':'KRX:005490','lg화학':'KRX:051910','삼성바이오로직스':'KRX:207940','한화오션':'KRX:042660','hd현대중공업':'KRX:329180','삼성중공업':'KRX:010140','lg에너지솔루션':'KRX:373220'};
