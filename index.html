@@ -115,43 +115,36 @@
 
 <div class="main">
 
-  <!-- 국내시장: 네이버 API 캔들차트 -->
+  <!-- 국내시장: TradingView 직접 임베드 테스트 -->
   <div>
     <div class="section-title">국내시장 · KOREA</div>
     <div class="grid-3">
-      <!-- KOSPI -->
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSPI</span>
-          <span class="card-tag tag-naver">네이버 · 실시간</span>
+          <span class="card-tag tag-kr">TVC · KOSPI</span>
         </div>
-        <div class="naver-chart-wrap">
-          <div class="naver-chart-info">
-            <div><span class="naver-price" id="kospiPrice">--</span><span id="kospiChange" style="margin-left:8px;font-size:11px;">--</span></div>
-            <span style="color:var(--text-muted);font-size:10px;" id="kospiDate">로딩중...</span>
-          </div>
-          <canvas class="naver-canvas" id="kospiCanvas"></canvas>
+        <div class="chart-body">
+          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"TVC:KOSPI","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
         </div>
       </div>
-      <!-- KOSDAQ -->
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSDAQ</span>
-          <span class="card-tag tag-naver">네이버 · 실시간</span>
+          <span class="card-tag tag-kr">KRX · KOSDAQ</span>
         </div>
-        <div class="naver-chart-wrap">
-          <div class="naver-chart-info">
-            <div><span class="naver-price" id="kosdaqPrice">--</span><span id="kosdaqChange" style="margin-left:8px;font-size:11px;">--</span></div>
-            <span style="color:var(--text-muted);font-size:10px;" id="kosdaqDate">로딩중...</span>
-          </div>
-          <canvas class="naver-canvas" id="kosdaqCanvas"></canvas>
+        <div class="chart-body">
+          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"KRX:KOSDAQ","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
         </div>
       </div>
-      <!-- 야간선물 -->
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">KOSPI200 야간선물</span>
-          <span class="card-tag tag-night">야선지지 · 실시간</span>
+          <span class="card-tag tag-night">yasun.gg · 실시간</span>
         </div>
         <div class="night-wrap">
           <div class="night-info">
@@ -247,11 +240,11 @@
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">CAPITALCOM · US10Y</span></div>
+        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">TVC · US10Y</span></div>
         <div class="chart-body">
           <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"CAPITALCOM:US10Y","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
+          {"symbol":"TVC:US10Y","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
         </div>
       </div>
     </div>
@@ -432,11 +425,7 @@ function loadAllNaverCharts(){
   loadNaverChart('KOSPI','kospiCanvas','kospiPrice','kospiChange','kospiDate');
   loadNaverChart('KOSDAQ','kosdaqCanvas','kosdaqPrice','kosdaqChange','kosdaqDate');
 }
-loadAllNaverCharts();
-setInterval(loadAllNaverCharts, 600000);
-
-// 리사이즈 시 재그리기
-window.addEventListener('resize', ()=>{ setTimeout(loadAllNaverCharts,200); });
+// KOSPI/KOSDAQ은 TradingView 직접 임베드로 테스트하므로 네이버 직접 fetch는 실행하지 않음
 
 // ── 야간선물 (yasun.gg) ──
 async function loadNightFutures(){
