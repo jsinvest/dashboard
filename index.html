@@ -9,25 +9,22 @@
   :root{--bg:#0a0c10;--bg2:#111318;--bg3:#181c24;--border:#1e2330;--accent:#00e5ff;--up:#2ed573;--down:#ff4757;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;min-height:100vh;}
-
   header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
   .logo{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:2px;}
   .logo span{color:var(--text-dim);font-weight:400;}
   .time-display{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim);}
   .kr-time{color:var(--accent);font-weight:600;}
-
   .search-section{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
   .search-label{font-size:12px;color:var(--text-dim);white-space:nowrap;font-family:'JetBrains Mono',monospace;}
   .search-wrapper{display:flex;gap:8px;flex:1;max-width:500px;}
   .search-input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 14px;color:var(--text);font-size:14px;outline:none;transition:border-color .2s;}
   .search-input:focus{border-color:var(--accent);}
   .search-input::placeholder{color:var(--text-muted);}
-  .search-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .search-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;}
   .search-btn:hover{opacity:.85;}
   .quick-btns{display:flex;gap:6px;flex-wrap:wrap;}
   .quick-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:4px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:'JetBrains Mono',monospace;transition:all .2s;}
   .quick-btn:hover{border-color:var(--accent);color:var(--accent);}
-
   .chart-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center;}
   .chart-modal.active{display:flex;}
   .chart-modal-inner{background:var(--bg2);border:1px solid var(--border);border-radius:12px;width:90vw;max-width:1100px;height:80vh;display:flex;flex-direction:column;overflow:hidden;}
@@ -36,7 +33,6 @@
   .chart-modal-close{background:none;border:1px solid var(--border);color:var(--text-dim);border-radius:4px;padding:4px 12px;cursor:pointer;font-size:13px;}
   .chart-modal-close:hover{border-color:var(--down);color:var(--down);}
   .chart-modal-body{flex:1;overflow:hidden;}
-
   .main{padding:20px 24px;display:flex;flex-direction:column;gap:20px;}
   .section-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
   .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
@@ -56,7 +52,6 @@
   .tag-bond{background:#2a1a2a;color:#e879f9;}
   .chart-body{height:300px;}
   .chart-body iframe{width:100%;height:100%;border:none;display:block;}
-
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
   .adr-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden;}
@@ -114,15 +109,15 @@
       <div class="chart-card">
         <div class="card-header"><span class="card-title">KOSPI 200</span><span class="card-tag tag-kr">KR · 주간</span></div>
         <div class="chart-body">
-          <!-- KRX:KOSPI200 - TradingView 공식 확인 심볼 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=KRX%3AKOSPI200&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:KOR200 = KOSPI200 CFD, 무료 -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AKOR200&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header"><span class="card-title">KOSPI 200 야간선물</span><span class="card-tag tag-kr">KR · 야간</span></div>
         <div class="chart-body">
-          <!-- CME_MINI:ES1! → KOSPI200 야간은 CME에서 K200 연계 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=KRX%3AK2I1!&interval=1&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:KOR200 1분봉으로 야간 확인 가능 -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AKOR200&interval=1&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -133,23 +128,23 @@
     <div class="section-title">미국시장 · US MARKETS</div>
     <div class="grid-3">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">NASDAQ · NDX</span></div>
+        <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">FOREXCOM · NAS100</span></div>
         <div class="chart-body">
-          <!-- NASDAQ:NDX - 100% 무료 공개 심볼 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NASDAQ%3ANDX&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:NAS100 - 무료 CFD -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3ANAS100&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">DJ · DJI</span></div>
+        <div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">FOREXCOM · US30</span></div>
         <div class="chart-body">
-          <!-- TVC:DJI - TVC 네임스페이스, 무료 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3ADJI&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:US30 - 무료 CFD -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AUS30&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">CBOE · VIX</span></div>
+        <div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">TVC · VIX</span></div>
         <div class="chart-body">
-          <!-- TVC:VIX - 무료 -->
+          <!-- TVC:VIX - 무료 확인 -->
           <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AVIX&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
@@ -161,17 +156,17 @@
     <div class="section-title">글로벌시장 · GLOBAL</div>
     <div class="grid-2">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">JP · NI225</span></div>
+        <div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">FOREXCOM · JP225</span></div>
         <div class="chart-body">
-          <!-- TVC:NI225 - 무료 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3ANI225&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:JP225 - 무료 CFD -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AJP225&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">HK · HSI</span></div>
+        <div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">FOREXCOM · HK50</span></div>
         <div class="chart-body">
-          <!-- TVC:HSI - 무료 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AHSI&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:HK50 - 무료 CFD -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AHK50&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -184,28 +179,28 @@
       <div class="chart-card">
         <div class="card-header"><span class="card-title">원/달러 환율</span><span class="card-tag tag-fx">FX · USDKRW</span></div>
         <div class="chart-body">
-          <!-- FX_IDC:USDKRW - 무료 -->
+          <!-- FX_IDC:USDKRW - 원달러 무료 확인 -->
           <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX_IDC%3AUSDKRW&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">TVC · USOIL</span></div>
+        <div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">FOREXCOM · OIL</span></div>
         <div class="chart-body">
-          <!-- TVC:USOIL - 무료 -->
-          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AUSOIL&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
+          <!-- FOREXCOM:OIL - 무료 CFD -->
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FOREXCOM%3AOIL&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header"><span class="card-title">비트코인</span><span class="card-tag tag-coin">BINANCE · BTC</span></div>
         <div class="chart-body">
-          <!-- BINANCE:BTCUSDT - 무료 -->
+          <!-- BINANCE:BTCUSDT - 무료 확인 -->
           <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE%3ABTCUSDT&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">TVC · US10Y</span></div>
         <div class="chart-body">
-          <!-- TVC:US10Y - 무료, 공식 확인 -->
+          <!-- TVC:US10Y - 무료 확인 -->
           <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AUS10Y&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
@@ -219,7 +214,7 @@
       <div class="adr-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);letter-spacing:1px;margin-bottom:8px;">ADR · 등락비율 계산기</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-bottom:8px;">ADR · 등락비율 계산기</div>
             <div class="adr-value" id="adrValue">-</div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-top:6px;">
               상승 <span id="adrUp" style="color:var(--up)">-</span>종목 &nbsp;/&nbsp; 하락 <span id="adrDown" style="color:var(--down)">-</span>종목
@@ -248,7 +243,7 @@
       <div class="chart-card">
         <div class="card-header"><span class="card-title">달러 인덱스 (DXY)</span><span class="card-tag tag-fx">TVC · DXY</span></div>
         <div class="chart-body">
-          <!-- TVC:DXY - 무료 -->
+          <!-- TVC:DXY - 무료 확인 -->
           <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3ADXY&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
