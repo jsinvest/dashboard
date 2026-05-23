@@ -314,7 +314,7 @@ setInterval(updateClock,1000); updateClock();
 // ── yasun.gg 캔들차트 ──
 // GitHub에서 직접 호출이 막히면 여기에 Cloudflare Worker 주소를 넣으면 됨.
 // 예: const YASUN_PROXY = "https://your-worker.workers.dev";
-const YASUN_PROXY = "";
+const YASUN_PROXY = "https://j-dashboard-proxy.love98321.workers.dev";
 
 function yasunUrl(symbol, interval, limit){
   const path = `/api/candles?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${limit}`;
