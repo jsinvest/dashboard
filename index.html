@@ -20,438 +20,117 @@
     --up: #2ed573;
     --down: #ff4757;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; min-height: 100vh; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Noto Sans KR', sans-serif;
-    min-height: 100vh;
-  }
-
-  /* HEADER */
   header {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 0 24px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    padding: 0 24px; height: 56px; display: flex; align-items: center;
+    justify-content: space-between; position: sticky; top: 0; z-index: 100;
   }
-
-  .logo {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 2px;
-  }
-
+  .logo { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: var(--accent); letter-spacing: 2px; }
   .logo span { color: var(--text-dim); font-weight: 400; }
+  .time-display { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-dim); }
+  .time-display .kr-time { color: var(--accent); font-weight: 600; }
 
-  .time-display {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--text-dim);
-  }
-
-  .time-display .kr-time {
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  /* SEARCH BAR */
   .search-section {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    padding: 12px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   }
-
-  .search-label {
-    font-size: 12px;
-    color: var(--text-dim);
-    white-space: nowrap;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .search-wrapper {
-    display: flex;
-    gap: 8px;
-    flex: 1;
-    max-width: 600px;
-  }
-
+  .search-label { font-size: 12px; color: var(--text-dim); white-space: nowrap; font-family: 'JetBrains Mono', monospace; }
+  .search-wrapper { display: flex; gap: 8px; flex: 1; max-width: 500px; }
   .search-input {
-    flex: 1;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 8px 14px;
-    color: var(--text);
-    font-size: 14px;
-    font-family: 'Noto Sans KR', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
+    flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 14px; color: var(--text); font-size: 14px; font-family: 'Noto Sans KR', sans-serif; outline: none; transition: border-color 0.2s;
   }
-
-  .search-input:focus {
-    border-color: var(--accent);
-  }
-
+  .search-input:focus { border-color: var(--accent); }
   .search-input::placeholder { color: var(--text-muted); }
-
   .search-btn {
-    background: var(--accent);
-    color: #000;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 18px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Noto Sans KR', sans-serif;
-    transition: opacity 0.2s;
-    white-space: nowrap;
+    background: var(--accent); color: #000; border: none; border-radius: 6px;
+    padding: 8px 18px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;
   }
-
   .search-btn:hover { opacity: 0.85; }
-
-  .quick-btns {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
+  .quick-btns { display: flex; gap: 6px; flex-wrap: wrap; }
   .quick-btn {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 11px;
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-    transition: all 0.2s;
+    background: var(--bg3); border: 1px solid var(--border); color: var(--text-dim);
+    border-radius: 4px; padding: 5px 10px; font-size: 11px; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace; transition: all 0.2s;
   }
+  .quick-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-  .quick-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  /* STOCK CHART MODAL */
   .chart-modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85); z-index: 200; align-items: center; justify-content: center;
   }
-
   .chart-modal.active { display: flex; }
-
   .chart-modal-inner {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    width: 90vw;
-    max-width: 1100px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 12px;
+    width: 90vw; max-width: 1100px; height: 80vh; display: flex; flex-direction: column; overflow: hidden;
   }
-
   .chart-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
   }
-
-  .chart-modal-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--accent);
-  }
-
+  .chart-modal-title { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent); }
   .chart-modal-close {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    border-radius: 4px;
-    padding: 4px 12px;
-    cursor: pointer;
-    font-size: 13px;
+    background: none; border: 1px solid var(--border); color: var(--text-dim);
+    border-radius: 4px; padding: 4px 12px; cursor: pointer; font-size: 13px;
   }
-
   .chart-modal-close:hover { border-color: var(--accent2); color: var(--accent2); }
+  .chart-modal-body { flex: 1; overflow: hidden; }
 
-  .chart-modal-body {
-    flex: 1;
-    overflow: hidden;
-  }
-
-  /* MAIN LAYOUT */
-  .main {
-    padding: 20px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* SECTION TITLE */
+  .main { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
   .section-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
   }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 
-  /* GRID LAYOUTS */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-  }
-
-  .grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  /* CHART CARD */
   .chart-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.2s;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; transition: border-color 0.2s;
   }
-
   .chart-card:hover { border-color: #2a3040; }
-
   .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
   }
-
-  .card-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .card-tag {
-    font-size: 10px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
+  .card-title { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text); }
+  .card-tag { font-size: 10px; padding: 2px 7px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; }
   .tag-kr { background: #1a3a5c; color: #60a5fa; }
   .tag-us { background: #1a3a2a; color: #4ade80; }
   .tag-fx { background: #3a2a1a; color: #fb923c; }
   .tag-cm { background: #2a1a3a; color: #c084fc; }
   .tag-coin { background: #2a2a1a; color: #facc15; }
   .tag-global { background: #1a2a3a; color: #38bdf8; }
+  .chart-body { height: 300px; position: relative; }
+  .chart-body iframe { width: 100%; height: 100%; border: none; display: block; }
 
-  .chart-body {
-    height: 280px;
-    position: relative;
-  }
-
-  .chart-body-lg {
-    height: 380px;
-    position: relative;
-  }
-
-  .chart-body iframe,
-  .chart-body-lg iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  /* ADR CARD */
   .adr-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px; display: flex; flex-direction: column; gap: 16px;
   }
+  .adr-title { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; }
+  .adr-value { font-family: 'JetBrains Mono', monospace; font-size: 42px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .adr-bar-wrap { background: var(--bg3); border-radius: 4px; height: 8px; overflow: hidden; }
+  .adr-bar { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent3), var(--accent)); transition: width 0.5s ease; }
+  .adr-labels { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); }
+  .adr-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent3); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  .adr-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--text-dim);
-    letter-spacing: 1px;
-  }
-
-  .adr-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .adr-desc {
-    font-size: 12px;
-    color: var(--text-dim);
-    line-height: 1.6;
-  }
-
-  .adr-bar-wrap {
-    background: var(--bg3);
-    border-radius: 4px;
-    height: 8px;
-    overflow: hidden;
-  }
-
-  .adr-bar {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--accent3), var(--accent));
-    transition: width 0.5s ease;
-  }
-
-  .adr-labels {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--text-muted);
-  }
-
-  .adr-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  .adr-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent3);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* MINI TICKER */
-  .ticker-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .ticker-item {
-    background: var(--bg2);
-    padding: 10px 14px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .ticker-item:hover { background: var(--bg3); }
-
-  .ticker-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-bottom: 4px;
-  }
-
-  .ticker-price {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .ticker-change {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    margin-top: 2px;
-  }
-
-  .up { color: var(--up); }
-  .down { color: var(--down); }
-
-  /* FOOTER */
   footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--text-muted);
-    font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
-    border-top: 1px solid var(--border);
-    margin-top: 20px;
+    text-align: center; padding: 20px; color: var(--text-muted); font-size: 11px;
+    font-family: 'JetBrains Mono', monospace; border-top: 1px solid var(--border); margin-top: 20px;
   }
-
-  /* RESPONSIVE */
-  @media (max-width: 1024px) {
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 640px) {
-    .main { padding: 12px; }
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    .search-section { flex-wrap: wrap; }
-    .quick-btns { display: none; }
-  }
+  @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .main { padding: 12px; } .grid-2, .grid-3 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">J<span>'s</span> DASHBOARD</div>
   <div class="time-display">
@@ -460,11 +139,10 @@
   </div>
 </header>
 
-<!-- SEARCH -->
 <div class="search-section">
   <span class="search-label">종목 검색</span>
   <div class="search-wrapper">
-    <input class="search-input" id="stockSearch" type="text" placeholder="종목명 또는 코드 입력 (예: 삼성전자, 005930, AAPL)" />
+    <input class="search-input" id="stockSearch" type="text" placeholder="종목명 또는 코드 (예: 삼성전자, 005930, AAPL)" />
     <button class="search-btn" onclick="searchStock()">차트 보기</button>
   </div>
   <div class="quick-btns">
@@ -476,7 +154,6 @@
   </div>
 </div>
 
-<!-- STOCK CHART MODAL -->
 <div class="chart-modal" id="chartModal">
   <div class="chart-modal-inner">
     <div class="chart-modal-header">
@@ -487,10 +164,9 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
 
-  <!-- 국내 시장 -->
+  <!-- 국내시장 -->
   <div>
     <div class="section-title">국내시장 · KOREA</div>
     <div class="grid-2">
@@ -500,7 +176,7 @@
           <span class="card-tag tag-kr">KR · 주간</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_k200&symbol=KRX%3AK200&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FSeoul&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=KRX%3AK200&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
@@ -509,82 +185,82 @@
           <span class="card-tag tag-kr">KR · 야간</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_k2i1&symbol=KRX%3AK2I1!&interval=1&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FSeoul&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=KRX%3AK2I1!&interval=1&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 미국 시장 -->
+  <!-- 미국시장 -->
   <div>
     <div class="section-title">미국시장 · US MARKETS</div>
     <div class="grid-3">
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">나스닥 선물</span>
-          <span class="card-tag tag-us">US · CME</span>
+          <span class="card-tag tag-us">US · NQ</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_nq&symbol=CME_MINI%3ANQ1!&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NASDAQ%3ANDX&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header">
-          <span class="card-title">다우존스 선물</span>
-          <span class="card-tag tag-us">US · CME</span>
+          <span class="card-title">다우존스</span>
+          <span class="card-tag tag-us">US · DJI</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_ym&symbol=CME%3AYM1!&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=DJ%3ADJI&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">VIX 공포지수</span>
-          <span class="card-tag tag-us">US · CBOE</span>
+          <span class="card-tag tag-us">CBOE · VIX</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_vix&symbol=CBOE%3AVIX&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AVIX&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 글로벌 시장 -->
+  <!-- 글로벌시장 -->
   <div>
     <div class="section-title">글로벌시장 · GLOBAL</div>
     <div class="grid-2">
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">니케이 225</span>
-          <span class="card-tag tag-global">JP · OSE</span>
+          <span class="card-tag tag-global">JP · NI225</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_nk&symbol=OSE%3ANK1!&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FTokyo&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3ANI225&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">홍콩 항셍</span>
-          <span class="card-tag tag-global">HK · HKEX</span>
+          <span class="card-tag tag-global">HK · HSI</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_hsi&symbol=HKEX%3AHSI&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FHong_Kong&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AHSI&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 환율 / 원자재 / 코인 -->
+  <!-- 환율/원자재/코인 -->
   <div>
     <div class="section-title">환율 · 원자재 · 코인</div>
     <div class="grid-3">
       <div class="chart-card">
         <div class="card-header">
           <span class="card-title">원/달러 환율</span>
-          <span class="card-tag tag-fx">FX · KRW/USD</span>
+          <span class="card-tag tag-fx">FX · USD/KRW</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_krw&symbol=FX_IDC%3AUSDKRW&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FSeoul&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX_IDC%3AUSDKRW&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
@@ -593,7 +269,7 @@
           <span class="card-tag tag-cm">NYMEX · CL</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_wti&symbol=NYMEX%3ACL1!&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC%3AUSOIL&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="chart-card">
@@ -602,7 +278,7 @@
           <span class="card-tag tag-coin">BINANCE · BTC</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_btc&symbol=BINANCE%3ABTCUSDT&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=UTC&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE%3ABTCUSDT&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -615,17 +291,15 @@
       <div class="adr-card">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
-            <div class="adr-title">ADR · 등락비율</div>
+            <div class="adr-title">ADR · 등락비율 계산기</div>
             <div class="adr-value" id="adrValue">-</div>
             <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-dim); margin-top:4px;">
               상승 <span id="adrUp" style="color:var(--up)">-</span>종목 &nbsp;/&nbsp; 하락 <span id="adrDown" style="color:var(--down)">-</span>종목
             </div>
           </div>
-          <div style="text-align:right;">
-            <div class="adr-status">
-              <span class="adr-dot"></span>
-              <span style="font-size:11px; color:var(--text-dim);" id="adrStatus">로딩중...</span>
-            </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="adr-dot"></span>
+            <span style="font-size:11px; color:var(--text-dim);" id="adrStatus">대기중</span>
           </div>
         </div>
         <div>
@@ -638,26 +312,25 @@
             <span>과매수 (150↑)</span>
           </div>
         </div>
-        <div class="adr-desc">
+        <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">
           ADR = (상승종목수 / 하락종목수) × 100<br>
-          75 이하: 과매도 구간 · 150 이상: 과매수 구간<br>
-          <span style="color:var(--text-muted); font-size:11px;">※ 영웅문4 데이터 기준 / 수동 입력</span>
+          75 이하: 과매도 · 150 이상: 과매수<br>
+          <span style="color:var(--text-muted); font-size:11px;">※ 영웅문4 기준 수동 입력</span>
         </div>
-        <div style="display:flex; gap:8px; margin-top:4px;">
+        <div style="display:flex; gap:8px;">
           <input id="adrUpInput" type="number" placeholder="상승종목수" style="flex:1; background:var(--bg3); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:8px 10px; font-size:13px; outline:none;" />
           <input id="adrDownInput" type="number" placeholder="하락종목수" style="flex:1; background:var(--bg3); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:8px 10px; font-size:13px; outline:none;" />
           <button onclick="calcADR()" style="background:var(--accent); color:#000; border:none; border-radius:6px; padding:8px 16px; font-weight:700; cursor:pointer; font-size:13px;">계산</button>
         </div>
       </div>
 
-      <!-- ADR 차트 보조 - 나스닥 ADR 대용 -->
       <div class="chart-card">
         <div class="card-header">
-          <span class="card-title">나스닥 ADR (NYSE A/D Line)</span>
+          <span class="card-title">나스닥 100 (ADR 참고)</span>
           <span class="card-tag tag-us">참고지표</span>
         </div>
         <div class="chart-body">
-          <iframe src="https://www.tradingview.com/widgetembed/?frameElementId=tv_adr&symbol=USI%3AADDN&interval=D&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=0&showpopupbutton=0&studies=[]&locale=kr" allowtransparency="true" allowfullscreen=""></iframe>
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NASDAQ%3ANDX&interval=W&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=1&allow_symbol_change=0&save_image=0&withdateranges=0" allowtransparency="true" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -665,79 +338,44 @@
 
 </div>
 
-<footer>
-  J's Trading Dashboard · Powered by TradingView · Data for reference only · Not financial advice
-</footer>
+<footer>J's Trading Dashboard · Powered by TradingView · Data for reference only · Not financial advice</footer>
 
 <script>
-// ── 시계 ──
 function updateClock() {
   const now = new Date();
-  const kr = new Intl.DateTimeFormat('ko-KR', {
-    timeZone: 'Asia/Seoul',
-    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-  }).format(now);
-  const ny = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/New_York',
-    hour: '2-digit', minute: '2-digit', hour12: false
-  }).format(now);
+  const kr = new Intl.DateTimeFormat('ko-KR', { timeZone:'Asia/Seoul', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false }).format(now);
+  const ny = new Intl.DateTimeFormat('en-US', { timeZone:'America/New_York', hour:'2-digit', minute:'2-digit', hour12:false }).format(now);
   document.getElementById('krTime').textContent = '🇰🇷 KST ' + kr;
   document.getElementById('nyTime').textContent = '🇺🇸 ET ' + ny;
 }
 setInterval(updateClock, 1000);
 updateClock();
 
-// ── 종목 검색 ──
 const symbolMap = {
-  '삼성전자': 'KRX:005930',
-  'sk하이닉스': 'KRX:000660',
-  'sk하이닉스': 'KRX:000660',
-  '카카오': 'KRX:035720',
-  '네이버': 'KRX:035420',
-  'lg에너지솔루션': 'KRX:373220',
-  '현대차': 'KRX:005380',
-  '기아': 'KRX:000270',
-  '셀트리온': 'KRX:068270',
-  '삼성바이오': 'KRX:207940',
-  'posco홀딩스': 'KRX:005490',
+  '삼성전자':'KRX:005930','sk하이닉스':'KRX:000660','카카오':'KRX:035720',
+  '네이버':'KRX:035420','현대차':'KRX:005380','기아':'KRX:000270',
+  '셀트리온':'KRX:068270','포스코':'KRX:005490','lg화학':'KRX:051910',
+  '삼성바이오로직스':'KRX:207940','크래프톤':'KRX:259960','한화오션':'KRX:042660',
+  'hd현대중공업':'KRX:329180','삼성중공업':'KRX:010140',
 };
 
 function searchStock() {
   const input = document.getElementById('stockSearch').value.trim();
   if (!input) return;
-
   let symbol = '';
-  const lower = input.toLowerCase();
-
-  // 한글 종목명 매핑
-  if (symbolMap[lower]) {
-    symbol = symbolMap[lower];
-  }
-  // 숫자 6자리 → KRX 코드
-  else if (/^\d{6}$/.test(input)) {
-    symbol = 'KRX:' + input;
-  }
-  // 영문 → NASDAQ 우선
-  else if (/^[A-Za-z]+$/.test(input)) {
-    symbol = 'NASDAQ:' + input.toUpperCase();
-  }
-  // 그 외 그대로
-  else {
-    symbol = input.toUpperCase();
-  }
-
+  const lower = input.toLowerCase().replace(/\s/g,'');
+  if (symbolMap[lower]) { symbol = symbolMap[lower]; }
+  else if (/^\d{6}$/.test(input)) { symbol = 'KRX:' + input; }
+  else if (/^[A-Za-z]+$/.test(input)) { symbol = 'NASDAQ:' + input.toUpperCase(); }
+  else { symbol = input.toUpperCase(); }
   openChart(symbol, input);
 }
 
 function openChart(symbol, name) {
-  document.getElementById('modalTitle').textContent = '📈 ' + name + ' · ' + symbol;
-  document.getElementById('modalBody').innerHTML = `
-    <iframe
-      src="https://www.tradingview.com/widgetembed/?frameElementId=tv_modal&symbol=${encodeURIComponent(symbol)}&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=111318&theme=dark&style=1&timezone=Asia%2FSeoul&withdateranges=1&showpopupbutton=0&studies=[]&locale=kr"
-      style="width:100%;height:100%;border:none;"
-      allowtransparency="true"
-      allowfullscreen="">
-    </iframe>`;
+  document.getElementById('modalTitle').textContent = '📈 ' + name + '  ·  ' + symbol;
+  document.getElementById('modalBody').innerHTML =
+    '<iframe src="https://www.tradingview.com/widgetembed/?symbol=' + encodeURIComponent(symbol) +
+    '&interval=D&theme=dark&style=1&locale=kr&toolbar_bg=%23111318&hide_side_toolbar=0&allow_symbol_change=1&save_image=0&withdateranges=1" style="width:100%;height:100%;border:none;" allowtransparency="true" allowfullscreen="true"></iframe>';
   document.getElementById('chartModal').classList.add('active');
 }
 
@@ -746,52 +384,29 @@ function closeModal() {
   document.getElementById('modalBody').innerHTML = '';
 }
 
-// ESC 키로 모달 닫기
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('chartModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.getElementById('stockSearch').addEventListener('keydown', e => { if (e.key === 'Enter') searchStock(); });
 
-// 모달 배경 클릭으로 닫기
-document.getElementById('chartModal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-
-// 엔터키 검색
-document.getElementById('stockSearch').addEventListener('keydown', e => {
-  if (e.key === 'Enter') searchStock();
-});
-
-// ── ADR 계산 ──
 function calcADR() {
   const up = parseFloat(document.getElementById('adrUpInput').value) || 0;
-  const down = parseFloat(document.getElementById('adrDownInput').value) || 0;
-  if (up === 0 && down === 0) return;
-
-  const adr = down === 0 ? 999 : Math.round((up / down) * 100);
+  const dn = parseFloat(document.getElementById('adrDownInput').value) || 0;
+  if (up === 0 && dn === 0) return;
+  const adr = dn === 0 ? 999 : Math.round((up / dn) * 100);
   document.getElementById('adrValue').textContent = adr;
   document.getElementById('adrUp').textContent = up.toLocaleString();
-  document.getElementById('adrDown').textContent = down.toLocaleString();
-
-  // 바 계산 (75~150 범위를 0~100%로 매핑)
+  document.getElementById('adrDown').textContent = dn.toLocaleString();
   const pct = Math.min(100, Math.max(0, ((adr - 50) / 150) * 100));
   document.getElementById('adrBar').style.width = pct + '%';
-
-  // 색상 + 상태
   const val = document.getElementById('adrValue');
   const bar = document.getElementById('adrBar');
   let status = '';
   if (adr >= 150) {
-    val.style.color = 'var(--down)';
-    bar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4757)';
-    status = '과매수 ⚠️';
+    val.style.color = 'var(--down)'; bar.style.background = 'linear-gradient(90deg,#ff6b6b,#ff4757)'; status = '과매수 ⚠️';
   } else if (adr <= 75) {
-    val.style.color = 'var(--up)';
-    bar.style.background = 'linear-gradient(90deg, var(--accent3), #00b894)';
-    status = '과매도 🟢';
+    val.style.color = 'var(--up)'; bar.style.background = 'linear-gradient(90deg,var(--accent3),#00b894)'; status = '과매도 🟢';
   } else {
-    val.style.color = 'var(--accent)';
-    bar.style.background = 'linear-gradient(90deg, var(--accent3), var(--accent))';
-    status = '중립 구간';
+    val.style.color = 'var(--accent)'; bar.style.background = 'linear-gradient(90deg,var(--accent3),var(--accent))'; status = '중립 구간';
   }
   document.getElementById('adrStatus').textContent = status;
 }
