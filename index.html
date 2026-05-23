@@ -138,7 +138,7 @@
             <button class="tf-btn" onclick="setYasunInterval('kospi','30m')">30분</button>
             <button class="tf-btn" onclick="setYasunInterval('kospi','1h')">1시간</button>
             <button class="tf-btn" onclick="setYasunInterval('kospi','1d')">일봉</button>
-            <button class="tf-btn" onclick="setYasunInterval('kospi','1wk')">주봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('kospi','1w')">주봉</button>
           </div>
           <canvas class="naver-canvas" id="kospiCanvas"></canvas>
         </div>
@@ -159,7 +159,7 @@
             <button class="tf-btn" onclick="setYasunInterval('kosdaq','30m')">30분</button>
             <button class="tf-btn" onclick="setYasunInterval('kosdaq','1h')">1시간</button>
             <button class="tf-btn" onclick="setYasunInterval('kosdaq','1d')">일봉</button>
-            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1wk')">주봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('kosdaq','1w')">주봉</button>
           </div>
           <canvas class="naver-canvas" id="kosdaqCanvas"></canvas>
         </div>
@@ -180,7 +180,7 @@
             <button class="tf-btn" onclick="setYasunInterval('night','30m')">30분</button>
             <button class="tf-btn" onclick="setYasunInterval('night','1h')">1시간</button>
             <button class="tf-btn" onclick="setYasunInterval('night','1d')">일봉</button>
-            <button class="tf-btn" onclick="setYasunInterval('night','1wk')">주봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('night','1w')">주봉</button>
           </div>
           <canvas id="nightCanvas" style="flex:1;width:100%;display:block;"></canvas>
         </div>
@@ -282,7 +282,7 @@
             <button class="tf-btn" onclick="setYasunInterval('us10y','30m')">30분</button>
             <button class="tf-btn" onclick="setYasunInterval('us10y','1h')">1시간</button>
             <button class="tf-btn" onclick="setYasunInterval('us10y','1d')">일봉</button>
-            <button class="tf-btn" onclick="setYasunInterval('us10y','1wk')">주봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('us10y','1w')">주봉</button>
           </div>
           <canvas class="naver-canvas" id="us10yCanvas"></canvas>
         </div>
@@ -367,6 +367,79 @@ function normalizeYasunCandles(raw){
   }).filter(Boolean);
 }
 
+
+function kstDateParts(t){
+  let d;
+  if(typeof t === 'number') d = new Date(t < 1e12 ? t * 1000 : t);
+  else d = new Date(t);
+  if(isNaN(d.getTime())) return null;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone:'Asia/Seoul', year:'numeric', month:'2-digit', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', hour12:false
+  }).formatToParts(d).reduce((a,p)=>{a[p.type]=p.value; return a;}, {});
+  return {
+    y:Number(parts.year), m:Number(parts.month), d:Number(parts.day),
+    h:Number(parts.hour), min:Number(parts.minute), date:`${parts.year}-${parts.month}-${parts.day}`
+  };
+}
+
+function weekKeyFromDate(dateStr){
+  const d = new Date(dateStr + 'T00:00:00Z');
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+  const week = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return `${d.getUTCFullYear()}-W${String(week).padStart(2,'0')}`;
+}
+
+function aggregateWeekly(data){
+  const out = [];
+  for(const c of data){
+    const p = kstDateParts(c.time);
+    if(!p) continue;
+    const key = weekKeyFromDate(p.date);
+    let w = out[out.length - 1];
+    if(!w || w.key !== key){
+      out.push({key, time:c.time, open:c.open, high:c.high, low:c.low, close:c.close, volume:c.volume || 0});
+    }else{
+      w.high = Math.max(w.high, c.high);
+      w.low = Math.min(w.low, c.low);
+      w.close = c.close;
+      w.volume += c.volume || 0;
+      w.time = c.time;
+    }
+  }
+  return out;
+}
+
+async function applyNightSettlementHeader(data, priceId, changeId, dateId){
+  try{
+    const res = await fetch(yasunUrl('^KS200', '1d', 30), {cache:'no-store'});
+    if(!res.ok) throw new Error('daily HTTP '+res.status);
+    const daily = normalizeYasunCandles(await res.json());
+    if(daily.length >= 2){
+      const last = daily[daily.length - 1];
+      const prev = daily[daily.length - 2];
+      const chg = last.close - prev.close;
+      const chgPct = prev.close ? (chg / prev.close * 100) : 0;
+      const priceEl = document.getElementById(priceId);
+      const changeEl = document.getElementById(changeId);
+      const dateEl = document.getElementById(dateId);
+      if(priceEl){
+        priceEl.textContent = last.close.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+        priceEl.className = 'night-price ' + (chg>0?'price-up':chg<0?'price-down':'price-flat');
+      }
+      if(changeEl){
+        changeEl.textContent = `${chg>=0?'+':''}${chg.toFixed(2)} (${chgPct.toFixed(2)}%)`;
+        changeEl.style.color = chg>0?'var(--up)':chg<0?'var(--down)':'var(--text-dim)';
+      }
+      if(dateEl) dateEl.textContent = formatCandleTime(last.time, '1d') + ' 종가';
+    }
+  }catch(e){
+    console.warn('night settlement header failed', e);
+  }
+}
+
 function formatCandleTime(t, interval){
   if(!t) return '';
   let d;
@@ -393,7 +466,7 @@ function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
   ctx.clearRect(0,0,W,H);
 
   if(!data || data.length < 2) return;
-  const maxBars = interval === '1m' ? 180 : (interval.endsWith('m') ? 160 : 110);
+  const maxBars = interval === '1m' ? 180 : (interval.endsWith('m') ? 160 : (interval === '1w' ? 120 : 110));
   const d = data.slice(-maxBars);
   const last = d[d.length-1], prev = d[d.length-2];
   const chg = last.close - prev.close;
@@ -447,12 +520,16 @@ function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
 
 async function loadYasunChart({symbol, interval, limit, canvasId, priceId, changeId, dateId}){
   try{
-    const res = await fetch(yasunUrl(symbol, interval, limit), {cache:'no-store'});
+    const requestInterval = interval === '1w' ? '1d' : interval;
+    const requestLimit = interval === '1w' ? Math.max(limit, 900) : limit;
+    const res = await fetch(yasunUrl(symbol, requestInterval, requestLimit), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
     const raw = await res.json();
-    const data = normalizeYasunCandles(raw);
+    let data = normalizeYasunCandles(raw);
+    if(interval === '1w') data = aggregateWeekly(data);
     if(!data.length) throw new Error('empty data');
     drawYasunChart(canvasId, data, priceId, changeId, dateId, interval);
+    if(symbol === '^KS200') applyNightSettlementHeader(data, priceId, changeId, dateId);
   }catch(e){
     console.error(symbol, e);
     const priceEl = document.getElementById(priceId);
@@ -472,6 +549,7 @@ const chartConfigs = {
 function limitForInterval(interval){
   if(interval === '1m') return 1500;
   if(interval.endsWith('m') || interval.endsWith('h')) return 800;
+  if(interval === '1w') return 900;
   return 300;
 }
 
@@ -482,7 +560,7 @@ function updateTfButtons(key){
 }
 
 function labelForInterval(interval){
-  return {'1m':'1분','30m':'30분','1h':'1시간','1d':'일봉','1wk':'주봉'}[interval] || interval;
+  return {'1m':'1분','30m':'30분','1h':'1시간','1d':'일봉','1w':'주봉'}[interval] || interval;
 }
 
 function loadOneYasunChart(key){
