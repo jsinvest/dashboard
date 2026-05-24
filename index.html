@@ -84,8 +84,9 @@
   .schedule-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .schedule-input-row{display:flex;gap:8px;margin-bottom:14px;}
   .schedule-input-row input{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
-  .schedule-input-row button,.schedule-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:12px;}
-  .schedule-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);padding:5px 9px;}
+  .schedule-input-row button,.schedule-del-btn,.schedule-edit-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:12px;}
+  .schedule-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);padding:5px 9px;margin-left:6px;}
+  .schedule-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);padding:5px 9px;}
   .schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
   .schedule-table th,.schedule-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .schedule-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
@@ -93,11 +94,12 @@
   .link-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .link-input-row{display:grid;grid-template-columns:220px 1fr 80px;gap:8px;margin-bottom:14px;}
   .link-input-row input{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
-  .link-input-row button,.link-open-btn,.link-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:12px;}
+  .link-input-row button,.link-open-btn,.link-edit-btn,.link-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:12px;}
   .link-table{width:100%;border-collapse:collapse;font-size:13px;}
   .link-table th,.link-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .link-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
   .link-open-btn{background:transparent;color:var(--accent);border:1px solid var(--border);margin-right:6px;}
+  .link-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);margin-right:6px;}
   .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
 
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
@@ -542,7 +544,7 @@ function loadSchedules(){
   body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
   items.forEach((item,index)=>{
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td><td><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>`;
+    tr.innerHTML=`<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td><td><button class="schedule-edit-btn" onclick="editSchedule(${index})">수정</button><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>`;
     body.appendChild(tr);
   });
 }
@@ -553,6 +555,20 @@ function addSchedule(){
   items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   input.value=''; loadSchedules();
+}
+function editSchedule(index){
+  const items=getSortedSchedules();
+  const item=items[index];
+  if(!item) return;
+  const current = `${item.date} ${item.day} ${item.text}`.trim();
+  const next = prompt('수정할 일정을 입력하세요. 예: 5월 24일 일요일 트럼프 연설', current);
+  if(next === null) return;
+  const value = next.trim();
+  if(!value) return;
+  items[index] = parseScheduleText(value);
+  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
+  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  loadSchedules();
 }
 function deleteSchedule(index){
   const items=getSortedSchedules();
@@ -579,7 +595,7 @@ function loadBookmarkLinks(){
   body.innerHTML = items.length ? '' : '<tr><td colspan="3" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>';
   items.forEach((item,index)=>{
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button><button class="link-del-btn" onclick="deleteBookmarkLink(${index})">삭제</button></td>`;
+    tr.innerHTML = `<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button><button class="link-edit-btn" onclick="editBookmarkLink(${index})">수정</button><button class="link-del-btn" onclick="deleteBookmarkLink(${index})">삭제</button></td>`;
     body.appendChild(tr);
   });
 }
@@ -597,6 +613,22 @@ function addBookmarkLink(){
 function openBookmarkLink(index){
   const item = getBookmarkLinks()[index];
   if(item?.url) window.open(item.url, '_blank', 'noopener');
+}
+function editBookmarkLink(index){
+  const items = getBookmarkLinks();
+  const item = items[index];
+  if(!item) return;
+  const name = prompt('사이트 이름을 수정하세요.', item.name || '');
+  if(name === null) return;
+  const cleanName = name.trim();
+  if(!cleanName) return;
+  const url = prompt('주소를 수정하세요.', item.url || '');
+  if(url === null) return;
+  const cleanUrl = normalizeUrl(url);
+  if(!cleanUrl) return;
+  items[index] = {name: cleanName, url: cleanUrl};
+  saveBookmarkLinks(items);
+  loadBookmarkLinks();
 }
 function deleteBookmarkLink(index){
   const items = getBookmarkLinks();
