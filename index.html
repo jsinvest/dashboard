@@ -106,6 +106,26 @@
   .link-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);margin-right:6px;}
   .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
 
+
+  /* 리포트 검색 */
+  .report-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
+  .report-search-row{display:flex;gap:8px;margin-bottom:12px;}
+  .report-search-row input{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
+  .report-search-row button{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:12px;}
+  .report-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.7;}
+  .report-result-box{overflow-x:auto;border:1px solid var(--border);border-radius:8px;}
+  .report-table{width:100%;border-collapse:collapse;font-size:12px;min-width:1100px;}
+  .report-table th,.report-table td{border-bottom:1px solid var(--border);padding:9px 10px;text-align:left;vertical-align:top;}
+  .report-table th{position:sticky;top:0;background:var(--bg3);color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;z-index:1;}
+  .report-table td{line-height:1.55;}
+  .report-table .num{text-align:right;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+  .report-table .code{font-family:'JetBrains Mono',monospace;color:var(--accent);white-space:nowrap;}
+  .report-table .title{font-weight:700;color:var(--text);}
+  .report-empty{color:var(--text-dim);padding:18px;font-size:13px;}
+  .report-tabs{display:flex;gap:6px;margin:10px 0;}
+  .report-mini-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:4px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:'JetBrains Mono',monospace;}
+  .report-mini-btn.active{border-color:var(--accent);color:var(--accent);}
+
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
   .adr-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden;}
@@ -148,6 +168,7 @@
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
   <button class="tab-btn" data-tab="links">링크 모음</button>
+  <button class="tab-btn" data-tab="report">리포트 검색</button>
 </div>
 
 <div class="chart-modal" id="chartModal">
@@ -532,6 +553,26 @@
         <thead><tr><th>사이트</th><th>주소</th><th>관리</th></tr></thead>
         <tbody id="linkBody"></tbody>
       </table>
+    </div>
+  </div>
+
+
+  <!-- 리포트 검색 -->
+  <div class="tab-panel" data-tab-panel="report">
+    <div class="section-title">리포트 검색 · TARGET PRICE REPORT</div>
+    <div class="report-card">
+      <div class="report-search-row">
+        <input id="reportSearchInput" type="text" placeholder="종목명/종목코드/제목/내용/기관 검색 (예: 삼성전자, 005930, 반도체, 신한투자증권)" />
+        <button onclick="searchReports()">검색</button>
+      </div>
+      <div class="report-meta" id="reportMeta">report_data.json 로딩중...</div>
+      <div class="report-tabs">
+        <button class="report-mini-btn active" id="reportSummaryBtn" onclick="setReportMode('summary')">요약</button>
+        <button class="report-mini-btn" id="reportDetailBtn" onclick="setReportMode('detail')">전체 리포트</button>
+      </div>
+      <div class="report-result-box">
+        <div id="reportResults" class="report-empty">검색어를 입력하세요.</div>
+      </div>
     </div>
   </div>
 
@@ -1196,6 +1237,116 @@ function calcADR(){
   else if(adr<=75){v.style.color='var(--up)';b.style.background='linear-gradient(90deg,var(--up),#00b894)';document.getElementById('adrStatus').textContent='과매도 🟢';}
   else{v.style.color='var(--accent)';b.style.background='linear-gradient(90deg,var(--up),var(--accent))';document.getElementById('adrStatus').textContent='중립 구간';}
 }
+
+// ── 리포트 검색: report_data.json ──
+let reportData = { summary: [], details: [], meta: {} };
+let reportMode = 'summary';
+let lastReportQuery = '';
+
+function escapeHtml(value){
+  return String(value ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+function formatReportNumber(value){
+  const n = Number(String(value ?? '').replace(/,/g,''));
+  if(!Number.isFinite(n)) return escapeHtml(value ?? '');
+  return n.toLocaleString();
+}
+function normalizeReportText(value){
+  return String(value ?? '').toLowerCase().replace(/\s+/g,'');
+}
+function reportMatch(row, query){
+  if(!query) return false;
+  const q = normalizeReportText(query);
+  const fields = Object.values(row).map(normalizeReportText).join(' ');
+  return fields.includes(q);
+}
+async function loadReportData(){
+  const metaEl = document.getElementById('reportMeta');
+  try{
+    const res = await fetch('report_data.json?v=1', {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    reportData = {
+      summary: Array.isArray(data.summary) ? data.summary : [],
+      details: Array.isArray(data.details) ? data.details : [],
+      meta: data.meta || {}
+    };
+    if(metaEl){
+      metaEl.textContent = `요약 ${reportData.summary.length.toLocaleString()}건 · 전체 리포트 ${reportData.details.length.toLocaleString()}건 · 마지막 변환 ${reportData.meta.created_at || '-'}`;
+    }
+  }catch(e){
+    console.error('report_data load failed', e);
+    if(metaEl) metaEl.textContent = 'report_data.json 로딩 실패 · GitHub에 report_data.json 업로드 여부 확인';
+  }
+}
+function setReportMode(mode){
+  reportMode = mode;
+  document.getElementById('reportSummaryBtn')?.classList.toggle('active', mode === 'summary');
+  document.getElementById('reportDetailBtn')?.classList.toggle('active', mode === 'detail');
+  if(lastReportQuery) searchReports();
+}
+function searchReports(){
+  const input = document.getElementById('reportSearchInput');
+  const box = document.getElementById('reportResults');
+  if(!input || !box) return;
+  const q = input.value.trim();
+  lastReportQuery = q;
+  if(!q){
+    box.className = 'report-empty';
+    box.textContent = '검색어를 입력하세요.';
+    return;
+  }
+  const source = reportMode === 'detail' ? reportData.details : reportData.summary;
+  const results = source.filter(row => reportMatch(row, q)).slice(0, 200);
+  if(!results.length){
+    box.className = 'report-empty';
+    box.textContent = '검색 결과가 없습니다.';
+    return;
+  }
+  box.className = '';
+  box.innerHTML = reportMode === 'detail' ? renderReportDetail(results) : renderReportSummary(results);
+}
+function renderReportSummary(rows){
+  return `<table class="report-table">
+    <thead><tr>
+      <th>종목명</th><th>코드</th><th>최고가날짜</th><th>최고목표주가</th><th>최근날짜</th><th>최근목표주가</th><th>언급</th><th>제목</th><th>내용</th><th>기관</th>
+    </tr></thead>
+    <tbody>${rows.map(r=>`<tr>
+      <td>${escapeHtml(r['종목명'])}</td>
+      <td class="code">${escapeHtml(r['종목코드'])}</td>
+      <td>${escapeHtml(r['최고가날짜'])}</td>
+      <td class="num">${formatReportNumber(r['최고목표주가'])}</td>
+      <td>${escapeHtml(r['최근날짜'])}</td>
+      <td class="num">${formatReportNumber(r['최근목표주가'])}</td>
+      <td class="num">${formatReportNumber(r['언급횟수'])}</td>
+      <td class="title">${escapeHtml(r['제목(최고가기준)'])}</td>
+      <td>${escapeHtml(r['내용(최고가기준)'])}</td>
+      <td>${escapeHtml(r['기관(최고가기준)'])}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+function renderReportDetail(rows){
+  return `<table class="report-table">
+    <thead><tr>
+      <th>날짜</th><th>종목명</th><th>코드</th><th>목표주가</th><th>상향건수</th><th>전체건수</th><th>제목</th><th>내용</th><th>기관</th>
+    </tr></thead>
+    <tbody>${rows.map(r=>`<tr>
+      <td>${escapeHtml(r['날짜'])}</td>
+      <td>${escapeHtml(r['종목명'])}</td>
+      <td class="code">${escapeHtml(r['종목코드'])}</td>
+      <td class="num">${formatReportNumber(r['목표주가'])}</td>
+      <td class="num">${formatReportNumber(r['상향건수'])}</td>
+      <td class="num">${formatReportNumber(r['전체건수'])}</td>
+      <td class="title">${escapeHtml(r['제목'])}</td>
+      <td>${escapeHtml(r['내용'])}</td>
+      <td>${escapeHtml(r['기관'])}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+document.getElementById('reportSearchInput')?.addEventListener('keydown', e=>{
+  if(e.key === 'Enter') searchReports();
+});
+loadReportData();
+
+
 </script>
 </body>
 </html>
