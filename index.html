@@ -492,7 +492,7 @@ function applyDashboardMode(){
   const scheduleNote = document.getElementById('scheduleModeNote');
   const linkNote = document.getElementById('linkModeNote');
   const msg = IS_EDIT_MODE
-    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능'
+    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능 · 서버 저장'
     : '<span class="readonly">보기 전용 모드</span> · 일정/링크는 열람만 가능';
   if(scheduleNote) scheduleNote.innerHTML = msg;
   if(linkNote) linkNote.innerHTML = msg;
@@ -511,12 +511,54 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>showDashboardTab(btn.dataset.tab));
 });
 
-// ── 일정 저장: 날짜 오름차순 + 요일 자동 계산 ──
+// ── 서버 저장(KV): 일정/링크 공통 데이터 ──
+const DASHBOARD_API = "https://j-dashboard-proxy.love98321.workers.dev/api/dashboard";
+const ADMIN_KEY = new URLSearchParams(window.location.search).get('key') || '';
+let dashboardData = { schedules: [], links: [] };
+
+async function fetchDashboardData(){
+  try{
+    const res = await fetch(DASHBOARD_API, {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    dashboardData = {
+      schedules: Array.isArray(data.schedules) ? data.schedules.map(normalizeScheduleItem) : [],
+      links: Array.isArray(data.links) ? data.links : []
+    };
+    sortSchedules();
+  }catch(e){
+    console.error('dashboard data load failed', e);
+    dashboardData = { schedules: [], links: [] };
+  }
+}
+
+async function saveDashboardData(){
+  if(!IS_EDIT_MODE) return;
+  if(!ADMIN_KEY){
+    alert('관리자 key가 없습니다. 주소를 ?edit=1&key=관리자키 형태로 열어야 저장됩니다.');
+    return;
+  }
+  sortSchedules();
+  const res = await fetch(DASHBOARD_API, {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'X-Admin-Key': ADMIN_KEY
+    },
+    body: JSON.stringify(dashboardData)
+  });
+  if(!res.ok){
+    const msg = await res.text().catch(()=>String(res.status));
+    alert('서버 저장 실패: ' + msg);
+    throw new Error('save failed '+res.status);
+  }
+}
+
+// ── 일정 저장: 서버 저장 + 날짜 오름차순 + 요일 자동 계산 ──
 function getScheduleYear(month, day){
   const now = new Date();
   let year = now.getFullYear();
   const candidate = new Date(year, month - 1, day);
-  // 이미 6개월 이상 지난 날짜를 입력하면 다음 해 일정으로 처리
   if(candidate.getTime() < now.getTime() - 180*24*60*60*1000) year += 1;
   return year;
 }
@@ -551,11 +593,13 @@ function normalizeScheduleItem(item){
   const parsed = parseScheduleText(base);
   return {...parsed, text:item?.text || parsed.text};
 }
+function sortSchedules(){
+  dashboardData.schedules = (dashboardData.schedules || []).map(normalizeScheduleItem);
+  dashboardData.schedules.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
+}
 function getSortedSchedules(){
-  const items = JSON.parse(localStorage.getItem('dashboardSchedules') || '[]').map(normalizeScheduleItem);
-  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
-  localStorage.setItem('dashboardSchedules', JSON.stringify(items));
-  return items;
+  sortSchedules();
+  return dashboardData.schedules;
 }
 function loadSchedules(){
   const body=document.getElementById('scheduleBody'); if(!body) return;
@@ -568,16 +612,15 @@ function loadSchedules(){
     body.appendChild(tr);
   });
 }
-function addSchedule(){
+async function addSchedule(){
   if(!IS_EDIT_MODE) return;
   const input=document.getElementById('scheduleInput'); const value=input.value.trim(); if(!value) return;
-  const items=getSortedSchedules();
-  items.push(parseScheduleText(value));
-  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
-  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
-  input.value=''; loadSchedules();
+  dashboardData.schedules.push(parseScheduleText(value));
+  input.value='';
+  await saveDashboardData();
+  loadSchedules();
 }
-function editSchedule(index){
+async function editSchedule(index){
   if(!IS_EDIT_MODE) return;
   const items=getSortedSchedules();
   const item=items[index];
@@ -588,29 +631,27 @@ function editSchedule(index){
   const value = next.trim();
   if(!value) return;
   items[index] = parseScheduleText(value);
-  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
-  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  dashboardData.schedules = items;
+  await saveDashboardData();
   loadSchedules();
 }
-function deleteSchedule(index){
+async function deleteSchedule(index){
   if(!IS_EDIT_MODE) return;
   const items=getSortedSchedules();
   items.splice(index,1);
-  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  dashboardData.schedules = items;
+  await saveDashboardData();
   loadSchedules();
 }
 
-// ── 링크 모음 ──
+// ── 링크 모음: 서버 저장 ──
 function normalizeUrl(url){
   const v = String(url || '').trim();
   if(!v) return '';
   return /^https?:\/\//i.test(v) ? v : 'https://' + v;
 }
 function getBookmarkLinks(){
-  return JSON.parse(localStorage.getItem('dashboardBookmarkLinks') || '[]');
-}
-function saveBookmarkLinks(items){
-  localStorage.setItem('dashboardBookmarkLinks', JSON.stringify(items));
+  return dashboardData.links || [];
 }
 function loadBookmarkLinks(){
   const body = document.getElementById('linkBody'); if(!body) return;
@@ -625,23 +666,23 @@ function loadBookmarkLinks(){
     body.appendChild(tr);
   });
 }
-function addBookmarkLink(){
+async function addBookmarkLink(){
   if(!IS_EDIT_MODE) return;
   const nameEl = document.getElementById('linkNameInput');
   const urlEl = document.getElementById('linkUrlInput');
   const name = nameEl.value.trim();
   const url = normalizeUrl(urlEl.value);
   if(!name || !url) return;
-  const items = getBookmarkLinks();
-  items.push({name, url});
-  saveBookmarkLinks(items);
-  nameEl.value=''; urlEl.value=''; loadBookmarkLinks();
+  dashboardData.links.push({name, url});
+  nameEl.value=''; urlEl.value='';
+  await saveDashboardData();
+  loadBookmarkLinks();
 }
 function openBookmarkLink(index){
   const item = getBookmarkLinks()[index];
   if(item?.url) window.open(item.url, '_blank', 'noopener');
 }
-function editBookmarkLink(index){
+async function editBookmarkLink(index){
   if(!IS_EDIT_MODE) return;
   const items = getBookmarkLinks();
   const item = items[index];
@@ -655,17 +696,20 @@ function editBookmarkLink(index){
   const cleanUrl = normalizeUrl(url);
   if(!cleanUrl) return;
   items[index] = {name: cleanName, url: cleanUrl};
-  saveBookmarkLinks(items);
+  dashboardData.links = items;
+  await saveDashboardData();
   loadBookmarkLinks();
 }
-function deleteBookmarkLink(index){
+async function deleteBookmarkLink(index){
   if(!IS_EDIT_MODE) return;
   const items = getBookmarkLinks();
   items.splice(index,1);
-  saveBookmarkLinks(items);
+  dashboardData.links = items;
+  await saveDashboardData();
   loadBookmarkLinks();
 }
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded',async ()=>{
+  await fetchDashboardData();
   loadSchedules();
   loadBookmarkLinks();
   const input=document.getElementById('scheduleInput');
