@@ -1026,25 +1026,34 @@ function drawYasunChart(canvasId, data, priceId, changeId, dateId, interval){
   ctx.setLineDash([]);
 }
 
-async function loadYasunChart({symbol, interval, limit, canvasId, priceId, changeId, dateId}){
-  try{
-    const requestInterval = interval === '1w' ? '1d' : interval;
-    const requestLimit = interval === '1w' ? Math.max(limit, 900) : limit;
-    const res = await fetch(yasunUrl(symbol, requestInterval, requestLimit), {cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    const raw = await res.json();
-    let data = normalizeYasunCandles(raw);
-    if(interval === '1w') data = aggregateWeekly(data);
-    if(!data.length) throw new Error('empty data');
-    drawYasunChart(canvasId, data, priceId, changeId, dateId, interval);
-    if(symbol === '^KS200') applyNightSettlementHeader(data, priceId, changeId, dateId);
-  }catch(e){
-    console.error(symbol, e);
-    const priceEl = document.getElementById(priceId);
-    const dateEl = document.getElementById(dateId);
-    if(priceEl) priceEl.textContent = '오류';
-    if(dateEl) dateEl.textContent = 'CORS/API 확인';
+async function loadYasunChart({symbol, fallbackSymbols, interval, limit, canvasId, priceId, changeId, dateId}){
+  const symbolsToTry = [symbol].concat(Array.isArray(fallbackSymbols) ? fallbackSymbols.filter(x => x !== symbol) : []);
+  let lastError = null;
+
+  for(const sym of symbolsToTry){
+    try{
+      const requestInterval = interval === '1w' ? '1d' : interval;
+      const requestLimit = interval === '1w' ? Math.max(limit, 900) : limit;
+      const res = await fetch(yasunUrl(sym, requestInterval, requestLimit), {cache:'no-store'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const raw = await res.json();
+      let data = normalizeYasunCandles(raw);
+      if(interval === '1w') data = aggregateWeekly(data);
+      if(!data.length) throw new Error('empty data');
+      drawYasunChart(canvasId, data, priceId, changeId, dateId, interval);
+      if(symbol === '^KS200' || sym === '^KS200') applyNightSettlementHeader(data, priceId, changeId, dateId);
+      return;
+    }catch(e){
+      lastError = e;
+      console.warn(sym, e);
+    }
   }
+
+  console.error(symbol, lastError);
+  const priceEl = document.getElementById(priceId);
+  const dateEl = document.getElementById(dateId);
+  if(priceEl) priceEl.textContent = '오류';
+  if(dateEl) dateEl.textContent = 'API 확인';
 }
 
 const chartConfigs = {
@@ -1059,7 +1068,7 @@ const chartConfigs = {
   hsi:{symbol:'^HSI', interval:'1d', canvasId:'hsiCanvas', priceId:'hsiPrice', changeId:'hsiChange', dateId:'hsiDate'},
   usdkrw:{symbol:'USDKRW=X', interval:'1d', canvasId:'usdkrwCanvas', priceId:'usdkrwPrice', changeId:'usdkrwChange', dateId:'usdkrwDate'},
   wti:{symbol:'CL=F', interval:'1d', canvasId:'wtiCanvas', priceId:'wtiPrice', changeId:'wtiChange', dateId:'wtiDate'},
-  btc:{symbol:'BTC-USD', interval:'1d', canvasId:'btcCanvas', priceId:'btcPrice', changeId:'btcChange', dateId:'btcDate'},
+  btc:{symbol:'BTCUSDT', fallbackSymbols:['BTC-USD','BTCUSDT'], interval:'1d', canvasId:'btcCanvas', priceId:'btcPrice', changeId:'btcChange', dateId:'btcDate'},
   dxy:{symbol:'DX-Y.NYB', interval:'1d', canvasId:'dxyCanvas', priceId:'dxyPrice', changeId:'dxyChange', dateId:'dxyDate'}
 };
 
