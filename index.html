@@ -79,6 +79,10 @@
   .tab-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;padding:8px 14px;font-size:12px;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .2s;}
   .tab-btn:hover,.tab-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
   .tab-panel.hidden{display:none!important;}
+  body:not(.edit-mode) .edit-only{display:none!important;}
+  .mode-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);margin-bottom:10px;}
+  .mode-note .admin{color:var(--accent);}
+  .mode-note .readonly{color:var(--text-dim);}
 
   /* 일정 */
   .schedule-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
@@ -438,12 +442,13 @@
   <div class="tab-panel" data-tab-panel="schedule">
     <div class="section-title">일정 · SCHEDULE</div>
     <div class="schedule-card">
-      <div class="schedule-input-row">
+      <div class="mode-note" id="scheduleModeNote"></div>
+      <div class="schedule-input-row edit-only">
         <input id="scheduleInput" type="text" placeholder="예: 5월 24일 일요일 트럼프 연설" />
         <button onclick="addSchedule()">등록</button>
       </div>
       <table class="schedule-table">
-        <thead><tr><th>날짜</th><th>요일</th><th>내용</th><th>관리</th></tr></thead>
+        <thead><tr><th>날짜</th><th>요일</th><th>내용</th><th class="edit-only">관리</th></tr></thead>
         <tbody id="scheduleBody"></tbody>
       </table>
     </div>
@@ -454,7 +459,8 @@
   <div class="tab-panel" data-tab-panel="links">
     <div class="section-title">링크 모음 · BOOKMARKS</div>
     <div class="link-card">
-      <div class="link-input-row">
+      <div class="mode-note" id="linkModeNote"></div>
+      <div class="link-input-row edit-only">
         <input id="linkNameInput" type="text" placeholder="사이트 이름 예: 야선지지" />
         <input id="linkUrlInput" type="text" placeholder="주소 예: https://yasun.gg" />
         <button onclick="addBookmarkLink()">등록</button>
@@ -478,6 +484,19 @@ function updateClock(){
 }
 setInterval(updateClock,1000); updateClock();
 
+
+// ── 보기 전용 / 관리자 모드 ──
+const IS_EDIT_MODE = new URLSearchParams(window.location.search).get('edit') === '1';
+function applyDashboardMode(){
+  document.body.classList.toggle('edit-mode', IS_EDIT_MODE);
+  const scheduleNote = document.getElementById('scheduleModeNote');
+  const linkNote = document.getElementById('linkModeNote');
+  const msg = IS_EDIT_MODE
+    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능'
+    : '<span class="readonly">보기 전용 모드</span> · 일정/링크는 열람만 가능';
+  if(scheduleNote) scheduleNote.innerHTML = msg;
+  if(linkNote) linkNote.innerHTML = msg;
+}
 
 // ── 상단 탭 ──
 function showDashboardTab(tab){
@@ -541,14 +560,16 @@ function getSortedSchedules(){
 function loadSchedules(){
   const body=document.getElementById('scheduleBody'); if(!body) return;
   const items=getSortedSchedules();
-  body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
+  body.innerHTML = items.length ? '' : `<tr><td colspan="${IS_EDIT_MODE ? 4 : 3}" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>`;
   items.forEach((item,index)=>{
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td><td><button class="schedule-edit-btn" onclick="editSchedule(${index})">수정</button><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>`;
+    const manage = IS_EDIT_MODE ? `<td><button class="schedule-edit-btn" onclick="editSchedule(${index})">수정</button><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>` : '';
+    tr.innerHTML=`<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td>${manage}`;
     body.appendChild(tr);
   });
 }
 function addSchedule(){
+  if(!IS_EDIT_MODE) return;
   const input=document.getElementById('scheduleInput'); const value=input.value.trim(); if(!value) return;
   const items=getSortedSchedules();
   items.push(parseScheduleText(value));
@@ -557,6 +578,7 @@ function addSchedule(){
   input.value=''; loadSchedules();
 }
 function editSchedule(index){
+  if(!IS_EDIT_MODE) return;
   const items=getSortedSchedules();
   const item=items[index];
   if(!item) return;
@@ -571,6 +593,7 @@ function editSchedule(index){
   loadSchedules();
 }
 function deleteSchedule(index){
+  if(!IS_EDIT_MODE) return;
   const items=getSortedSchedules();
   items.splice(index,1);
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
@@ -592,14 +615,18 @@ function saveBookmarkLinks(items){
 function loadBookmarkLinks(){
   const body = document.getElementById('linkBody'); if(!body) return;
   const items = getBookmarkLinks();
-  body.innerHTML = items.length ? '' : '<tr><td colspan="3" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>';
+  body.innerHTML = items.length ? '' : `<tr><td colspan="${IS_EDIT_MODE ? 3 : 2}" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>`;
   items.forEach((item,index)=>{
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button><button class="link-edit-btn" onclick="editBookmarkLink(${index})">수정</button><button class="link-del-btn" onclick="deleteBookmarkLink(${index})">삭제</button></td>`;
+    const manage = IS_EDIT_MODE
+      ? `<td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button><button class="link-edit-btn" onclick="editBookmarkLink(${index})">수정</button><button class="link-del-btn" onclick="deleteBookmarkLink(${index})">삭제</button></td>`
+      : `<td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button></td>`;
+    tr.innerHTML = `<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td>${manage}`;
     body.appendChild(tr);
   });
 }
 function addBookmarkLink(){
+  if(!IS_EDIT_MODE) return;
   const nameEl = document.getElementById('linkNameInput');
   const urlEl = document.getElementById('linkUrlInput');
   const name = nameEl.value.trim();
@@ -615,6 +642,7 @@ function openBookmarkLink(index){
   if(item?.url) window.open(item.url, '_blank', 'noopener');
 }
 function editBookmarkLink(index){
+  if(!IS_EDIT_MODE) return;
   const items = getBookmarkLinks();
   const item = items[index];
   if(!item) return;
@@ -631,6 +659,7 @@ function editBookmarkLink(index){
   loadBookmarkLinks();
 }
 function deleteBookmarkLink(index){
+  if(!IS_EDIT_MODE) return;
   const items = getBookmarkLinks();
   items.splice(index,1);
   saveBookmarkLinks(items);
