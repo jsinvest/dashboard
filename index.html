@@ -90,6 +90,18 @@
   .schedule-table th,.schedule-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .schedule-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
 
+  /* 링크 모음 */
+  .link-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
+  .link-input-row{display:grid;grid-template-columns:260px 1fr 80px;gap:8px;margin-bottom:14px;}
+  .link-input-row input{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
+  .link-input-row button,.link-open-btn,.link-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:12px;text-decoration:none;display:inline-block;}
+  .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);padding:5px 9px;}
+  .link-open-btn{background:transparent;color:var(--accent);border:1px solid var(--border);padding:5px 9px;}
+  .link-table{width:100%;border-collapse:collapse;font-size:13px;}
+  .link-table th,.link-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
+  .link-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
+  @media(max-width:640px){.link-input-row{grid-template-columns:1fr;}}
+
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
   .adr-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden;}
@@ -131,6 +143,7 @@
   <button class="tab-btn" data-tab="indicator">환율 및 지표</button>
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
+  <button class="tab-btn" data-tab="links">링크 모음</button>
 </div>
 
 <div class="chart-modal" id="chartModal">
@@ -533,8 +546,24 @@
     </div>
   </div>
 
+  <!-- 링크 모음 -->
+  <div class="tab-panel" data-tab-panel="links">
+    <div class="section-title">링크 모음 · LINKS</div>
+    <div class="link-card">
+      <div class="link-input-row">
+        <input id="linkNameInput" type="text" placeholder="사이트 이름 예: 야선지지" />
+        <input id="linkUrlInput" type="text" placeholder="주소 예: https://yasun.gg" />
+        <button onclick="addLinkItem()">등록</button>
+      </div>
+      <table class="link-table">
+        <thead><tr><th>사이트</th><th>주소</th><th>열기</th><th>관리</th></tr></thead>
+        <tbody id="linkBody"></tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
-<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · ETF by Naver via Worker · Global data by TradingView</footer>
+<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · ETF by Naver via Worker · Global data by TradingView · Links/Schedule localStorage</footer>
 
 <script>
 // ── 시계 ──
@@ -560,17 +589,45 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 });
 
 // ── 일정 저장 ──
+function getKstYear(){
+  return Number(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric'}).format(new Date()));
+}
+function dayNameKo(dateObj){
+  return ['일','월','화','수','목','금','토'][dateObj.getDay()];
+}
 function parseScheduleText(text){
-  const dateMatch = text.match(/(\d{1,2})월\s*(\d{1,2})일/);
-  const dayMatch = text.match(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/);
-  const date = dateMatch ? `${dateMatch[1]}월 ${dateMatch[2]}일` : '-';
-  const day = dayMatch ? dayMatch[0] : '-';
-  const content = text.replace(/(\d{1,2})월\s*(\d{1,2})일/,'').replace(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/,'').trim();
-  return {date, day, text: content || text};
+  const m = text.match(/(?:(\d{4})년\s*)?(\d{1,2})월\s*(\d{1,2})일/);
+  const year = m && m[1] ? Number(m[1]) : getKstYear();
+  const month = m ? Number(m[2]) : null;
+  const day = m ? Number(m[3]) : null;
+  let content = text;
+  if(m) content = content.replace(m[0], '');
+  content = content.replace(/^(\s*)(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)(\s*)/, '').trim();
+
+  if(!m || !month || !day){
+    return {date:'-', day:'-', text:text, sortKey:'0000-00-00'};
+  }
+
+  const dateObj = new Date(year, month - 1, day);
+  const mm = String(month).padStart(2,'0');
+  const dd = String(day).padStart(2,'0');
+  return {
+    date:`${month}월 ${day}일`,
+    day:dayNameKo(dateObj),
+    text:content || text,
+    sortKey:`${year}-${mm}-${dd}`
+  };
+}
+function normalizeScheduleItem(item){
+  if(item.sortKey) return item;
+  const parsed = parseScheduleText(`${item.date || ''} ${item.day || ''} ${item.text || ''}`);
+  return {...item, day: parsed.day, sortKey: parsed.sortKey};
 }
 function loadSchedules(){
   const body=document.getElementById('scheduleBody'); if(!body) return;
-  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  let items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
+  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||'')); // 날짜 내림차순
+  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
   items.forEach((item,index)=>{
     const tr=document.createElement('tr');
@@ -580,21 +637,62 @@ function loadSchedules(){
 }
 function addSchedule(){
   const input=document.getElementById('scheduleInput'); const value=input.value.trim(); if(!value) return;
-  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
   items.push(parseScheduleText(value));
+  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||''));
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   input.value=''; loadSchedules();
 }
 function deleteSchedule(index){
-  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
+  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||''));
   items.splice(index,1);
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   loadSchedules();
 }
+
+// ── 링크 모음 저장 ──
+function normalizeUrl(url){
+  const v = String(url || '').trim();
+  if(!v) return '';
+  return /^https?:\/\//i.test(v) ? v : 'https://' + v;
+}
+function loadLinks(){
+  const body=document.getElementById('linkBody'); if(!body) return;
+  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
+  body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>';
+  items.forEach((item,index)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><a class="link-open-btn" href="${item.url}" target="_blank" rel="noopener">열기</a></td><td><button class="link-del-btn" onclick="deleteLinkItem(${index})">삭제</button></td>`;
+    body.appendChild(tr);
+  });
+}
+function addLinkItem(){
+  const nameInput=document.getElementById('linkNameInput');
+  const urlInput=document.getElementById('linkUrlInput');
+  const name=nameInput.value.trim();
+  const url=normalizeUrl(urlInput.value);
+  if(!name || !url) return;
+  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
+  items.push({name,url});
+  localStorage.setItem('dashboardLinks',JSON.stringify(items));
+  nameInput.value=''; urlInput.value=''; loadLinks();
+}
+function deleteLinkItem(index){
+  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
+  items.splice(index,1);
+  localStorage.setItem('dashboardLinks',JSON.stringify(items));
+  loadLinks();
+}
 document.addEventListener('DOMContentLoaded',()=>{
   loadSchedules();
-  const input=document.getElementById('scheduleInput');
-  if(input) input.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
+  loadLinks();
+  const scheduleInput=document.getElementById('scheduleInput');
+  if(scheduleInput) scheduleInput.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
+  ['linkNameInput','linkUrlInput'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')addLinkItem();});
+  });
 });
 
 // ── yasun.gg 캔들차트 ──
