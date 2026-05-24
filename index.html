@@ -90,17 +90,15 @@
   .schedule-table th,.schedule-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .schedule-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
 
-  /* 링크 모음 */
   .link-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
-  .link-input-row{display:grid;grid-template-columns:260px 1fr 80px;gap:8px;margin-bottom:14px;}
+  .link-input-row{display:grid;grid-template-columns:220px 1fr 80px;gap:8px;margin-bottom:14px;}
   .link-input-row input{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
-  .link-input-row button,.link-open-btn,.link-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:12px;text-decoration:none;display:inline-block;}
-  .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);padding:5px 9px;}
-  .link-open-btn{background:transparent;color:var(--accent);border:1px solid var(--border);padding:5px 9px;}
+  .link-input-row button,.link-open-btn,.link-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:12px;}
   .link-table{width:100%;border-collapse:collapse;font-size:13px;}
   .link-table th,.link-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .link-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
-  @media(max-width:640px){.link-input-row{grid-template-columns:1fr;}}
+  .link-open-btn{background:transparent;color:var(--accent);border:1px solid var(--border);margin-right:6px;}
+  .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
 
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
@@ -231,30 +229,9 @@
   <div class="tab-panel" data-tab-panel="global">
     <div class="section-title">미국시장 · US MARKETS</div>
     <div class="grid-3">
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">FOREXCOM · NAS100</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"FOREXCOM:NAS100","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">FOREXCOM · US30</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"FOREXCOM:US30","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">CAPITALCOM · VIX</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"CAPITALCOM:VIX","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">yasun · NQ=F</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="nasdaqPrice">--</span><span id="nasdaqChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="nasdaqDate">로딩중...</span></div><canvas class="naver-canvas" id="nasdaqCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">다우존스</span><span class="card-tag tag-us">yasun · YM=F</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="dowPrice">--</span><span id="dowChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="dowDate">로딩중...</span></div><canvas class="naver-canvas" id="dowCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">VIX 공포지수</span><span class="card-tag tag-us">yasun · ^VIX</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="vixPrice">--</span><span id="vixChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="vixDate">로딩중...</span></div><canvas class="naver-canvas" id="vixCanvas"></canvas></div></div>
     </div>
   </div>
 
@@ -262,22 +239,8 @@
   <div class="tab-panel" data-tab-panel="global">
     <div class="section-title">글로벌시장 · GLOBAL</div>
     <div class="grid-2">
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">FOREXCOM · JP225</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"FOREXCOM:JP225","interval":"D","timezone":"Asia/Tokyo","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">FOREXCOM · HK50</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"FOREXCOM:HK50","interval":"D","timezone":"Asia/Hong_Kong","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">니케이 225</span><span class="card-tag tag-global">yasun · ^N225</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="nikkeiPrice">--</span><span id="nikkeiChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="nikkeiDate">로딩중...</span></div><canvas class="naver-canvas" id="nikkeiCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">홍콩 항셍</span><span class="card-tag tag-global">yasun · ^HSI</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="hsiPrice">--</span><span id="hsiChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="hsiDate">로딩중...</span></div><canvas class="naver-canvas" id="hsiCanvas"></canvas></div></div>
     </div>
   </div>
 
@@ -285,47 +248,10 @@
   <div class="tab-panel" data-tab-panel="indicator">
     <div class="section-title">환율 · 원자재 · 코인 · 채권</div>
     <div class="grid-4">
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">원/달러 환율</span><span class="card-tag tag-fx">FX · USDKRW</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"FX_IDC:USDKRW","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">CAPITALCOM · OIL</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"CAPITALCOM:OIL_CRUDE","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">비트코인</span><span class="card-tag tag-coin">BINANCE · BTC</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"BINANCE:BTCUSDT","interval":"D","timezone":"UTC","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">yasun · ^TNX</span></div>
-        <div class="naver-chart-wrap">
-          <div class="naver-chart-info">
-            <div><span class="naver-price" id="us10yPrice">--</span><span id="us10yChange" style="margin-left:8px;font-size:11px;"></span></div>
-            <span style="color:var(--text-muted);font-size:10px;" id="us10yDate">로딩중...</span>
-          </div>
-          <div class="tf-row" data-chart="us10y">
-            <button class="tf-btn" onclick="setYasunInterval('us10y','1m')">1분</button>
-            <button class="tf-btn" onclick="setYasunInterval('us10y','30m')">30분</button>
-            <button class="tf-btn" onclick="setYasunInterval('us10y','1h')">1시간</button>
-            <button class="tf-btn" onclick="setYasunInterval('us10y','1d')">일봉</button>
-            <button class="tf-btn" onclick="setYasunInterval('us10y','1w')">주봉</button>
-          </div>
-          <canvas class="naver-canvas" id="us10yCanvas"></canvas>
-        </div>
-      </div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">원/달러 환율</span><span class="card-tag tag-fx">yasun · USDKRW=X</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="usdkrwPrice">--</span><span id="usdkrwChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="usdkrwDate">로딩중...</span></div><canvas class="naver-canvas" id="usdkrwCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">yasun · CL=F</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="wtiPrice">--</span><span id="wtiChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="wtiDate">로딩중...</span></div><canvas class="naver-canvas" id="wtiCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">비트코인</span><span class="card-tag tag-coin">yasun · BTCUSDT</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="btcPrice">--</span><span id="btcChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="btcDate">로딩중...</span></div><canvas class="naver-canvas" id="btcCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">yasun · ^TNX</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="us10yPrice">--</span><span id="us10yChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="us10yDate">로딩중...</span></div><div class="tf-row" data-chart="us10y"><button class="tf-btn" onclick="setYasunInterval('us10y','1m')">1분</button><button class="tf-btn" onclick="setYasunInterval('us10y','30m')">30분</button><button class="tf-btn" onclick="setYasunInterval('us10y','1h')">1시간</button><button class="tf-btn" onclick="setYasunInterval('us10y','1d')">일봉</button><button class="tf-btn" onclick="setYasunInterval('us10y','1w')">주봉</button></div><canvas class="naver-canvas" id="us10yCanvas"></canvas></div></div>
     </div>
   </div>
 
@@ -335,41 +261,16 @@
     <div class="grid-2">
       <div class="adr-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-bottom:8px;">ADR · 등락비율 계산기</div>
-            <div class="adr-value" id="adrValue">-</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-top:6px;">
-              상승 <span id="adrUp" style="color:var(--up)">-</span>종목 &nbsp;/&nbsp; 하락 <span id="adrDown" style="color:var(--down)">-</span>종목
-            </div>
-          </div>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-bottom:8px;">ADR · 등락비율 계산기</div><div class="adr-value" id="adrValue">-</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-top:6px;">상승 <span id="adrUp" style="color:var(--up)">-</span>종목 &nbsp;/&nbsp; 하락 <span id="adrDown" style="color:var(--down)">-</span>종목</div></div>
           <div style="display:flex;align-items:center;gap:8px;"><span class="adr-dot"></span><span style="font-size:11px;color:var(--text-dim);" id="adrStatus">대기중</span></div>
         </div>
-        <div>
-          <div class="adr-bar-wrap"><div class="adr-bar" id="adrBar" style="width:50%"></div></div>
-          <div class="adr-labels"><span>과매도 (75↓)</span><span>중립 (100)</span><span>과매수 (150↑)</span></div>
-        </div>
-        <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">
-          ADR = (상승종목수 / 하락종목수) × 100<br>
-          75 이하: 과매도 구간 · 150 이상: 과매수 구간<br>
-          <span style="color:var(--text-muted);font-size:11px;">※ 영웅문4 데이터 기준 수동 입력</span>
-        </div>
-        <div style="display:flex;gap:8px;">
-          <input id="adrUpInput" type="number" placeholder="상승종목수" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px 10px;font-size:13px;outline:none;" />
-          <input id="adrDownInput" type="number" placeholder="하락종목수" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px 10px;font-size:13px;outline:none;" />
-          <button onclick="calcADR()" style="background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:13px;">계산</button>
-        </div>
+        <div><div class="adr-bar-wrap"><div class="adr-bar" id="adrBar" style="width:50%"></div></div><div class="adr-labels"><span>과매도 (75↓)</span><span>중립 (100)</span><span>과매수 (150↑)</span></div></div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:1.7;">ADR = (상승종목수 / 하락종목수) × 100<br>75 이하: 과매도 구간 · 150 이상: 과매수 구간<br><span style="color:var(--text-muted);font-size:11px;">※ 영웅문4 데이터 기준 수동 입력</span></div>
+        <div style="display:flex;gap:8px;"><input id="adrUpInput" type="number" placeholder="상승종목수" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px 10px;font-size:13px;outline:none;" /><input id="adrDownInput" type="number" placeholder="하락종목수" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px 10px;font-size:13px;outline:none;" /><button onclick="calcADR()" style="background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:13px;">계산</button></div>
       </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">달러 인덱스 (DXY)</span><span class="card-tag tag-fx">CAPITALCOM · DXY</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"CAPITALCOM:DXY","interval":"D","timezone":"America/New_York","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":false,"save_image":false,"height":"300","width":"100%"}</script></div>
-        </div>
-      </div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">달러 인덱스 (DXY)</span><span class="card-tag tag-fx">yasun · DX-Y.NYB</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="dxyPrice">--</span><span id="dxyChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="dxyDate">로딩중...</span></div><canvas class="naver-canvas" id="dxyCanvas"></canvas></div></div>
     </div>
   </div>
-
 
   <!-- 대표ETF -->
   <div class="tab-panel" data-tab-panel="etf">
@@ -546,24 +447,25 @@
     </div>
   </div>
 
+
   <!-- 링크 모음 -->
   <div class="tab-panel" data-tab-panel="links">
-    <div class="section-title">링크 모음 · LINKS</div>
+    <div class="section-title">링크 모음 · BOOKMARKS</div>
     <div class="link-card">
       <div class="link-input-row">
         <input id="linkNameInput" type="text" placeholder="사이트 이름 예: 야선지지" />
         <input id="linkUrlInput" type="text" placeholder="주소 예: https://yasun.gg" />
-        <button onclick="addLinkItem()">등록</button>
+        <button onclick="addBookmarkLink()">등록</button>
       </div>
       <table class="link-table">
-        <thead><tr><th>사이트</th><th>주소</th><th>열기</th><th>관리</th></tr></thead>
+        <thead><tr><th>사이트</th><th>주소</th><th>관리</th></tr></thead>
         <tbody id="linkBody"></tbody>
       </table>
     </div>
   </div>
 
 </div>
-<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · ETF by Naver via Worker · Global data by TradingView · Links/Schedule localStorage</footer>
+<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · ETF by Naver via Worker · Global data by yasun.gg</footer>
 
 <script>
 // ── 시계 ──
@@ -588,46 +490,55 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>showDashboardTab(btn.dataset.tab));
 });
 
-// ── 일정 저장 ──
-function getKstYear(){
-  return Number(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric'}).format(new Date()));
+// ── 일정 저장: 날짜 오름차순 + 요일 자동 계산 ──
+function getScheduleYear(month, day){
+  const now = new Date();
+  let year = now.getFullYear();
+  const candidate = new Date(year, month - 1, day);
+  // 이미 6개월 이상 지난 날짜를 입력하면 다음 해 일정으로 처리
+  if(candidate.getTime() < now.getTime() - 180*24*60*60*1000) year += 1;
+  return year;
 }
-function dayNameKo(dateObj){
-  return ['일','월','화','수','목','금','토'][dateObj.getDay()];
+function dayNameKo(date){
+  return ['일','월','화','수','목','금','토'][date.getDay()];
 }
 function parseScheduleText(text){
-  const m = text.match(/(?:(\d{4})년\s*)?(\d{1,2})월\s*(\d{1,2})일/);
-  const year = m && m[1] ? Number(m[1]) : getKstYear();
-  const month = m ? Number(m[2]) : null;
-  const day = m ? Number(m[3]) : null;
-  let content = text;
-  if(m) content = content.replace(m[0], '');
-  content = content.replace(/^(\s*)(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)(\s*)/, '').trim();
-
-  if(!m || !month || !day){
-    return {date:'-', day:'-', text:text, sortKey:'0000-00-00'};
+  const dateMatch = text.match(/(\d{1,2})월\s*(\d{1,2})일/);
+  if(!dateMatch){
+    return {date:'-', day:'-', text:text, sortKey:'9999-99-99'};
   }
-
-  const dateObj = new Date(year, month - 1, day);
+  const month = Number(dateMatch[1]);
+  const day = Number(dateMatch[2]);
+  const year = getScheduleYear(month, day);
+  const d = new Date(year, month - 1, day);
   const mm = String(month).padStart(2,'0');
   const dd = String(day).padStart(2,'0');
+  const content = text
+    .replace(/(\d{1,2})월\s*(\d{1,2})일/,'')
+    .replace(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/,'')
+    .trim();
   return {
     date:`${month}월 ${day}일`,
-    day:dayNameKo(dateObj),
+    day:dayNameKo(d),
     text:content || text,
     sortKey:`${year}-${mm}-${dd}`
   };
 }
 function normalizeScheduleItem(item){
-  if(item.sortKey) return item;
-  const parsed = parseScheduleText(`${item.date || ''} ${item.day || ''} ${item.text || ''}`);
-  return {...item, day: parsed.day, sortKey: parsed.sortKey};
+  if(item && item.sortKey) return item;
+  const base = `${item?.date || ''} ${item?.day || ''} ${item?.text || ''}`.trim();
+  const parsed = parseScheduleText(base);
+  return {...parsed, text:item?.text || parsed.text};
+}
+function getSortedSchedules(){
+  const items = JSON.parse(localStorage.getItem('dashboardSchedules') || '[]').map(normalizeScheduleItem);
+  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
+  localStorage.setItem('dashboardSchedules', JSON.stringify(items));
+  return items;
 }
 function loadSchedules(){
   const body=document.getElementById('scheduleBody'); if(!body) return;
-  let items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
-  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||'')); // 날짜 내림차순
-  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  const items=getSortedSchedules();
   body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
   items.forEach((item,index)=>{
     const tr=document.createElement('tr');
@@ -637,62 +548,70 @@ function loadSchedules(){
 }
 function addSchedule(){
   const input=document.getElementById('scheduleInput'); const value=input.value.trim(); if(!value) return;
-  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
+  const items=getSortedSchedules();
   items.push(parseScheduleText(value));
-  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||''));
+  items.sort((a,b)=>(a.sortKey||'9999-99-99').localeCompare(b.sortKey||'9999-99-99'));
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   input.value=''; loadSchedules();
 }
 function deleteSchedule(index){
-  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]').map(normalizeScheduleItem);
-  items.sort((a,b)=>(b.sortKey||'').localeCompare(a.sortKey||''));
+  const items=getSortedSchedules();
   items.splice(index,1);
   localStorage.setItem('dashboardSchedules',JSON.stringify(items));
   loadSchedules();
 }
 
-// ── 링크 모음 저장 ──
+// ── 링크 모음 ──
 function normalizeUrl(url){
   const v = String(url || '').trim();
   if(!v) return '';
   return /^https?:\/\//i.test(v) ? v : 'https://' + v;
 }
-function loadLinks(){
-  const body=document.getElementById('linkBody'); if(!body) return;
-  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
-  body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>';
+function getBookmarkLinks(){
+  return JSON.parse(localStorage.getItem('dashboardBookmarkLinks') || '[]');
+}
+function saveBookmarkLinks(items){
+  localStorage.setItem('dashboardBookmarkLinks', JSON.stringify(items));
+}
+function loadBookmarkLinks(){
+  const body = document.getElementById('linkBody'); if(!body) return;
+  const items = getBookmarkLinks();
+  body.innerHTML = items.length ? '' : '<tr><td colspan="3" style="color:var(--text-dim);">등록된 링크가 없습니다.</td></tr>';
   items.forEach((item,index)=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><a class="link-open-btn" href="${item.url}" target="_blank" rel="noopener">열기</a></td><td><button class="link-del-btn" onclick="deleteLinkItem(${index})">삭제</button></td>`;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${item.name}</td><td style="color:var(--text-dim);">${item.url}</td><td><button class="link-open-btn" onclick="openBookmarkLink(${index})">열기</button><button class="link-del-btn" onclick="deleteBookmarkLink(${index})">삭제</button></td>`;
     body.appendChild(tr);
   });
 }
-function addLinkItem(){
-  const nameInput=document.getElementById('linkNameInput');
-  const urlInput=document.getElementById('linkUrlInput');
-  const name=nameInput.value.trim();
-  const url=normalizeUrl(urlInput.value);
+function addBookmarkLink(){
+  const nameEl = document.getElementById('linkNameInput');
+  const urlEl = document.getElementById('linkUrlInput');
+  const name = nameEl.value.trim();
+  const url = normalizeUrl(urlEl.value);
   if(!name || !url) return;
-  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
-  items.push({name,url});
-  localStorage.setItem('dashboardLinks',JSON.stringify(items));
-  nameInput.value=''; urlInput.value=''; loadLinks();
+  const items = getBookmarkLinks();
+  items.push({name, url});
+  saveBookmarkLinks(items);
+  nameEl.value=''; urlEl.value=''; loadBookmarkLinks();
 }
-function deleteLinkItem(index){
-  const items=JSON.parse(localStorage.getItem('dashboardLinks')||'[]');
+function openBookmarkLink(index){
+  const item = getBookmarkLinks()[index];
+  if(item?.url) window.open(item.url, '_blank', 'noopener');
+}
+function deleteBookmarkLink(index){
+  const items = getBookmarkLinks();
   items.splice(index,1);
-  localStorage.setItem('dashboardLinks',JSON.stringify(items));
-  loadLinks();
+  saveBookmarkLinks(items);
+  loadBookmarkLinks();
 }
 document.addEventListener('DOMContentLoaded',()=>{
   loadSchedules();
-  loadLinks();
-  const scheduleInput=document.getElementById('scheduleInput');
-  if(scheduleInput) scheduleInput.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
-  ['linkNameInput','linkUrlInput'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')addLinkItem();});
-  });
+  loadBookmarkLinks();
+  const input=document.getElementById('scheduleInput');
+  if(input) input.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
+  const linkName=document.getElementById('linkNameInput');
+  const linkUrl=document.getElementById('linkUrlInput');
+  [linkName, linkUrl].forEach(el=>{ if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')addBookmarkLink();}); });
 });
 
 // ── yasun.gg 캔들차트 ──
@@ -1026,7 +945,16 @@ const chartConfigs = {
   kospi:  {symbol:'^KS11',  interval:'1d', canvasId:'kospiCanvas',  priceId:'kospiPrice',  changeId:'kospiChange',  dateId:'kospiDate'},
   kosdaq: {symbol:'^KQ11',  interval:'1d', canvasId:'kosdaqCanvas', priceId:'kosdaqPrice', changeId:'kosdaqChange', dateId:'kosdaqDate'},
   night:  {symbol:'^KS200', interval:'1m', canvasId:'nightCanvas',  priceId:'nightPrice',  changeId:'nightChange',  dateId:'nightTime'},
-  us10y:  {symbol:'^TNX',   interval:'1d', canvasId:'us10yCanvas',  priceId:'us10yPrice',  changeId:'us10yChange',  dateId:'us10yDate'}
+  us10y:  {symbol:'^TNX',   interval:'1d', canvasId:'us10yCanvas',  priceId:'us10yPrice',  changeId:'us10yChange',  dateId:'us10yDate'},
+  nasdaq:{symbol:'NQ=F', interval:'1d', canvasId:'nasdaqCanvas', priceId:'nasdaqPrice', changeId:'nasdaqChange', dateId:'nasdaqDate'},
+  dow:{symbol:'YM=F', interval:'1d', canvasId:'dowCanvas', priceId:'dowPrice', changeId:'dowChange', dateId:'dowDate'},
+  vix:{symbol:'^VIX', interval:'1d', canvasId:'vixCanvas', priceId:'vixPrice', changeId:'vixChange', dateId:'vixDate'},
+  nikkei:{symbol:'^N225', interval:'1d', canvasId:'nikkeiCanvas', priceId:'nikkeiPrice', changeId:'nikkeiChange', dateId:'nikkeiDate'},
+  hsi:{symbol:'^HSI', interval:'1d', canvasId:'hsiCanvas', priceId:'hsiPrice', changeId:'hsiChange', dateId:'hsiDate'},
+  usdkrw:{symbol:'USDKRW=X', interval:'1d', canvasId:'usdkrwCanvas', priceId:'usdkrwPrice', changeId:'usdkrwChange', dateId:'usdkrwDate'},
+  wti:{symbol:'CL=F', interval:'1d', canvasId:'wtiCanvas', priceId:'wtiPrice', changeId:'wtiChange', dateId:'wtiDate'},
+  btc:{symbol:'BTCUSDT', interval:'1d', canvasId:'btcCanvas', priceId:'btcPrice', changeId:'btcChange', dateId:'btcDate'},
+  dxy:{symbol:'DX-Y.NYB', interval:'1d', canvasId:'dxyCanvas', priceId:'dxyPrice', changeId:'dxyChange', dateId:'dxyDate'}
 };
 
 function limitForInterval(interval){
@@ -1077,7 +1005,7 @@ function searchStock(){
 }
 function openChart(symbol,name){
   document.getElementById('modalTitle').textContent='📈 '+name+'  ·  '+symbol;
-  document.getElementById('modalBody').innerHTML='<div class="tradingview-widget-container" style="height:100%"><div class="tradingview-widget-container__widget" style="height:100%"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>'+JSON.stringify({symbol,interval:"D",timezone:"Asia/Seoul",theme:"dark",style:"1",locale:"kr",toolbar_bg:"#111318",hide_side_toolbar:false,allow_symbol_change:true,save_image:false,height:"100%",width:"100%",withdateranges:true})+'<\/script><\/div>';
+  document.getElementById('modalBody').innerHTML='<div style="padding:24px;color:var(--text-dim);line-height:1.8;">외부 TradingView 위젯을 제거해서 네트워크 허용 팝업이 뜨지 않게 했습니다.<br>국내 종목 상세 차트는 현재 상단 대표ETF/국내 차트 방식처럼 Worker 데이터 연결이 필요합니다.</div>';
   document.getElementById('chartModal').classList.add('active');
 }
 function closeModal(){document.getElementById('chartModal').classList.remove('active');document.getElementById('modalBody').innerHTML='';}
