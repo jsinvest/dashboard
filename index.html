@@ -256,7 +256,7 @@
     <div class="grid-4">
       <div class="chart-card"><div class="card-header"><span class="card-title">원/달러 환율</span><span class="card-tag tag-fx">yasun · USDKRW=X</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="usdkrwPrice">--</span><span id="usdkrwChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="usdkrwDate">로딩중...</span></div><canvas class="naver-canvas" id="usdkrwCanvas"></canvas></div></div>
       <div class="chart-card"><div class="card-header"><span class="card-title">WTI 원유</span><span class="card-tag tag-cm">yasun · CL=F</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="wtiPrice">--</span><span id="wtiChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="wtiDate">로딩중...</span></div><canvas class="naver-canvas" id="wtiCanvas"></canvas></div></div>
-      <div class="chart-card"><div class="card-header"><span class="card-title">비트코인</span><span class="card-tag tag-coin">yasun · BTCUSDT</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="btcPrice">--</span><span id="btcChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="btcDate">로딩중...</span></div><canvas class="naver-canvas" id="btcCanvas"></canvas></div></div>
+      <div class="chart-card"><div class="card-header"><span class="card-title">비트코인</span><span class="card-tag tag-coin">yasun · BTC-USD</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="btcPrice">--</span><span id="btcChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="btcDate">로딩중...</span></div><canvas class="naver-canvas" id="btcCanvas"></canvas></div></div>
       <div class="chart-card"><div class="card-header"><span class="card-title">미국 10년물 국채금리</span><span class="card-tag tag-bond">yasun · ^TNX</span></div><div class="naver-chart-wrap"><div class="naver-chart-info"><div><span class="naver-price" id="us10yPrice">--</span><span id="us10yChange" style="margin-left:8px;font-size:11px;"></span></div><span style="color:var(--text-muted);font-size:10px;" id="us10yDate">로딩중...</span></div><div class="tf-row" data-chart="us10y"><button class="tf-btn" onclick="setYasunInterval('us10y','1m')">1분</button><button class="tf-btn" onclick="setYasunInterval('us10y','30m')">30분</button><button class="tf-btn" onclick="setYasunInterval('us10y','1h')">1시간</button><button class="tf-btn" onclick="setYasunInterval('us10y','1d')">일봉</button><button class="tf-btn" onclick="setYasunInterval('us10y','1w')">주봉</button></div><canvas class="naver-canvas" id="us10yCanvas"></canvas></div></div>
     </div>
   </div>
@@ -709,6 +709,7 @@ async function deleteBookmarkLink(index){
   loadBookmarkLinks();
 }
 document.addEventListener('DOMContentLoaded',async ()=>{
+  applyDashboardMode();
   await fetchDashboardData();
   loadSchedules();
   loadBookmarkLinks();
@@ -1058,7 +1059,7 @@ const chartConfigs = {
   hsi:{symbol:'^HSI', interval:'1d', canvasId:'hsiCanvas', priceId:'hsiPrice', changeId:'hsiChange', dateId:'hsiDate'},
   usdkrw:{symbol:'USDKRW=X', interval:'1d', canvasId:'usdkrwCanvas', priceId:'usdkrwPrice', changeId:'usdkrwChange', dateId:'usdkrwDate'},
   wti:{symbol:'CL=F', interval:'1d', canvasId:'wtiCanvas', priceId:'wtiPrice', changeId:'wtiChange', dateId:'wtiDate'},
-  btc:{symbol:'BTCUSDT', interval:'1d', canvasId:'btcCanvas', priceId:'btcPrice', changeId:'btcChange', dateId:'btcDate'},
+  btc:{symbol:'BTC-USD', interval:'1d', canvasId:'btcCanvas', priceId:'btcPrice', changeId:'btcChange', dateId:'btcDate'},
   dxy:{symbol:'DX-Y.NYB', interval:'1d', canvasId:'dxyCanvas', priceId:'dxyPrice', changeId:'dxyChange', dateId:'dxyDate'}
 };
 
