@@ -550,30 +550,50 @@ function naverEtfUrl(symbol){
 function normalizeNaverCandles(raw){
   let rows = Array.isArray(raw) ? raw : (raw?.data || raw?.result || []);
   if(rows.length && Array.isArray(rows[0]) && String(rows[0][0]).includes('날짜')) rows = rows.slice(1);
+  const toNum = v => Number(String(v ?? '').replace(/,/g,''));
   return rows.map(r=>{
     const time = r.localDate || r.date || r[0];
-    const open = Number(r.openPrice ?? r.open ?? r[1]);
-    const high = Number(r.highPrice ?? r.high ?? r[2]);
-    const low = Number(r.lowPrice ?? r.low ?? r[3]);
-    const close = Number(r.closePrice ?? r.close ?? r[4]);
-    const volume = Number(r.accumulatedTradingVolume ?? r.volume ?? r[5] ?? 0);
+    const open = toNum(r.openPrice ?? r.open ?? r[1]);
+    const high = toNum(r.highPrice ?? r.high ?? r[2]);
+    const low = toNum(r.lowPrice ?? r.low ?? r[3]);
+    const close = toNum(r.closePrice ?? r.close ?? r[4]);
+    const volume = toNum(r.accumulatedTradingVolume ?? r.volume ?? r[5] ?? 0);
     if(!time || !Number.isFinite(open) || !Number.isFinite(high) || !Number.isFinite(low) || !Number.isFinite(close)) return null;
     return {time,open,high,low,close,volume};
   }).filter(Boolean);
 }
+function parseNaverResponseText(text){
+  let cleaned = String(text || '').trim();
+  cleaned = cleaned.replace(/^\uFEFF/, '');
+  // 일부 응답이 JSON 앞에 보안 prefix를 붙이는 경우 제거
+  cleaned = cleaned.replace(/^\)\]\}',?/, '').trim();
+  try {
+    return JSON.parse(cleaned);
+  } catch(e1) {
+    try {
+      return JSON.parse(cleaned.replace(/'/g, '"'));
+    } catch(e2) {
+      throw new Error('parse fail: ' + cleaned.slice(0,80));
+    }
+  }
+}
+
 async function loadNaverEtfChart(symbol, idPrefix){
   try{
-    const res = await fetch(naverEtfUrl(symbol), {cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    const data = normalizeNaverCandles(await res.json());
-    if(!data.length) throw new Error('empty');
+    const url = naverEtfUrl(symbol);
+    const res = await fetch(url, {cache:'no-store'});
+    const text = await res.text();
+    if(!res.ok) throw new Error('HTTP '+res.status+' '+text.slice(0,60));
+    const raw = parseNaverResponseText(text);
+    const data = normalizeNaverCandles(raw);
+    if(!data.length) throw new Error('empty data');
     drawYasunChart(`${idPrefix}Canvas`, data, `${idPrefix}Price`, `${idPrefix}Change`, `${idPrefix}Date`, '1d');
   }catch(e){
     console.error('ETF', symbol, e);
     const p=document.getElementById(`${idPrefix}Price`);
     const d=document.getElementById(`${idPrefix}Date`);
     if(p) p.textContent='오류';
-    if(d) d.textContent='Worker/Naver 확인';
+    if(d) d.textContent=String(e.message || e).slice(0,24);
   }
 }
 function loadAllEtfCharts(){
