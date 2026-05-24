@@ -73,10 +73,14 @@
   .tf-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:4px;padding:3px 7px;font-size:10px;font-family:'JetBrains Mono',monospace;cursor:pointer;}
   .tf-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
 
+
+  /* 상단 탭 */
   .tab-menu{display:flex;gap:8px;flex-wrap:wrap;background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;position:sticky;top:56px;z-index:90;}
   .tab-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;padding:8px 14px;font-size:12px;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .2s;}
   .tab-btn:hover,.tab-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
   .tab-panel.hidden{display:none!important;}
+
+  /* 일정 */
   .schedule-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .schedule-input-row{display:flex;gap:8px;margin-bottom:14px;}
   .schedule-input-row input{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;}
@@ -85,7 +89,6 @@
   .schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
   .schedule-table th,.schedule-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .schedule-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;}
-
 
   .adr-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;}
   .adr-value{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:var(--accent);line-height:1;}
@@ -122,12 +125,12 @@
 </div>
 
 <div class="tab-menu">
-  <button class="tab-btn active" data-tab="all" onclick="showDashboardTab('all')">전체</button>
-  <button class="tab-btn" data-tab="korea" onclick="showDashboardTab('korea')">국내</button>
-  <button class="tab-btn" data-tab="global" onclick="showDashboardTab('global')">해외</button>
-  <button class="tab-btn" data-tab="indicator" onclick="showDashboardTab('indicator')">환율 및 지표</button>
-  <button class="tab-btn" data-tab="etf" onclick="showDashboardTab('etf')">대표ETF</button>
-  <button class="tab-btn" data-tab="schedule" onclick="showDashboardTab('schedule')">일정</button>
+  <button class="tab-btn active" data-tab="all">전체</button>
+  <button class="tab-btn" data-tab="korea">국내</button>
+  <button class="tab-btn" data-tab="global">해외</button>
+  <button class="tab-btn" data-tab="indicator">환율 및 지표</button>
+  <button class="tab-btn" data-tab="etf">대표ETF</button>
+  <button class="tab-btn" data-tab="schedule">일정</button>
 </div>
 
 <div class="chart-modal" id="chartModal">
@@ -143,7 +146,7 @@
 <div class="main">
 
   <!-- 국내시장: yasun.gg API 캔들차트 -->
-  <div data-tab-panel="korea">
+  <div class="tab-panel" data-tab-panel="korea">
     <div class="section-title">국내시장 · KOREA</div>
     <div class="grid-3">
       <div class="chart-card">
@@ -212,7 +215,7 @@
   </div>
 
   <!-- 미국시장 -->
-  <div data-tab-panel="global">
+  <div class="tab-panel" data-tab-panel="global">
     <div class="section-title">미국시장 · US MARKETS</div>
     <div class="grid-3">
       <div class="chart-card">
@@ -243,7 +246,7 @@
   </div>
 
   <!-- 글로벌시장 -->
-  <div data-tab-panel="global">
+  <div class="tab-panel" data-tab-panel="global">
     <div class="section-title">글로벌시장 · GLOBAL</div>
     <div class="grid-2">
       <div class="chart-card">
@@ -266,7 +269,7 @@
   </div>
 
   <!-- 환율/원자재/코인/채권 -->
-  <div data-tab-panel="indicator">
+  <div class="tab-panel" data-tab-panel="indicator">
     <div class="section-title">환율 · 원자재 · 코인 · 채권</div>
     <div class="grid-4">
       <div class="chart-card">
@@ -314,7 +317,7 @@
   </div>
 
   <!-- ADR -->
-  <div data-tab-panel="indicator">
+  <div class="tab-panel" data-tab-panel="indicator">
     <div class="section-title">ADR · 등락비율</div>
     <div class="grid-2">
       <div class="adr-card">
@@ -356,86 +359,104 @@
 
 
   <!-- 대표ETF -->
-  <div data-tab-panel="etf">
-    <div class="section-title">대표ETF · DAILY CHARTS</div>
+  <div class="tab-panel" data-tab-panel="etf">
+    <div class="section-title">대표ETF · DAILY</div>
     <div class="grid-3">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KODEX 반도체</span><span class="card-tag tag-kr">KRX · 091160</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:091160","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">KODEX 반도체</span><span class="card-tag tag-kr">NAVER · 091160</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf091160Price">--</span><span id="etf091160Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf091160Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf091160Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KODEX 2차전지산업</span><span class="card-tag tag-kr">KRX · 305720</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:305720","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">KODEX 2차전지산업</span><span class="card-tag tag-kr">NAVER · 305720</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf305720Price">--</span><span id="etf305720Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf305720Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf305720Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">HANARO 전력설비투자</span><span class="card-tag tag-kr">KRX · 491820</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:491820","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">HANARO 전력설비투자</span><span class="card-tag tag-kr">NAVER · 491820</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf491820Price">--</span><span id="etf491820Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf491820Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf491820Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">TIME Korea플러스배당액티브</span><span class="card-tag tag-kr">KRX · 441800</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:441800","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">TIME Korea플러스배당액티브</span><span class="card-tag tag-kr">NAVER · 441800</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf441800Price">--</span><span id="etf441800Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf441800Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf441800Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KODEX 은행</span><span class="card-tag tag-kr">KRX · 091170</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:091170","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">KODEX 은행</span><span class="card-tag tag-kr">NAVER · 091170</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf091170Price">--</span><span id="etf091170Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf091170Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf091170Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">TIME K바이오액티브</span><span class="card-tag tag-kr">KRX · 463050</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:463050","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">TIME K바이오액티브</span><span class="card-tag tag-kr">NAVER · 463050</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf463050Price">--</span><span id="etf463050Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf463050Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf463050Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">HANARO Fn조선해운</span><span class="card-tag tag-kr">KRX · 441540</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:441540","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">HANARO Fn조선해운</span><span class="card-tag tag-kr">NAVER · 441540</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf441540Price">--</span><span id="etf441540Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf441540Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf441540Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">PLUS K방산</span><span class="card-tag tag-kr">KRX · 449450</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:449450","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">PLUS K방산</span><span class="card-tag tag-kr">NAVER · 449450</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf449450Price">--</span><span id="etf449450Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf449450Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf449450Canvas"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">KODEX 로봇액티브</span><span class="card-tag tag-kr">KRX · 445290</span></div>
-        <div class="chart-body">
-          <div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"KRX:445290","interval":"D","timezone":"Asia/Seoul","theme":"dark","style":"1","locale":"kr","toolbar_bg":"#111318","hide_side_toolbar":true,"allow_symbol_change":true,"save_image":false,"height":"300","width":"100%"}</script></div>
+        <div class="card-header"><span class="card-title">KODEX 로봇액티브</span><span class="card-tag tag-kr">NAVER · 445290</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="etf445290Price">--</span><span id="etf445290Change" style="margin-left:8px;font-size:11px;"></span></div>
+            <span style="color:var(--text-muted);font-size:10px;" id="etf445290Date">로딩중...</span>
+          </div>
+          <canvas class="naver-canvas" id="etf445290Canvas"></canvas>
         </div>
       </div>
     </div>
   </div>
 
   <!-- 일정 -->
-  <div data-tab-panel="schedule">
+  <div class="tab-panel" data-tab-panel="schedule">
     <div class="section-title">일정 · SCHEDULE</div>
     <div class="schedule-card">
       <div class="schedule-input-row">
@@ -443,85 +464,16 @@
         <button onclick="addSchedule()">등록</button>
       </div>
       <table class="schedule-table">
-        <thead>
-          <tr><th>날짜</th><th>요일</th><th>내용</th><th>관리</th></tr>
-        </thead>
+        <thead><tr><th>날짜</th><th>요일</th><th>내용</th><th>관리</th></tr></thead>
         <tbody id="scheduleBody"></tbody>
       </table>
     </div>
   </div>
 
 </div>
-<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · Global data by TradingView</footer>
+<footer>J's Trading Dashboard · KR/US10Y/Night Futures by yasun.gg · ETF by Naver via Worker · Global data by TradingView</footer>
 
 <script>
-
-function showDashboardTab(tab){
-  document.querySelectorAll('[data-tab-panel]').forEach(panel=>{
-    panel.classList.toggle('hidden', tab !== 'all' && panel.dataset.tabPanel !== tab);
-  });
-  document.querySelectorAll('.tab-btn').forEach(btn=>{
-    btn.classList.toggle('active', btn.dataset.tab === tab);
-  });
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function loadSchedules(){
-  const items = JSON.parse(localStorage.getItem('dashboardSchedules') || '[]');
-  const body = document.getElementById('scheduleBody');
-  if(!body) return;
-  body.innerHTML = '';
-  if(!items.length){
-    body.innerHTML = '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
-    return;
-  }
-  items.forEach((item, index)=>{
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td><td><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>`;
-    body.appendChild(tr);
-  });
-}
-
-function parseScheduleText(text){
-  const dateMatch = text.match(/(\d{1,2})월\s*(\d{1,2})일/);
-  const dayMatch = text.match(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/);
-  const date = dateMatch ? `${dateMatch[1]}월 ${dateMatch[2]}일` : '-';
-  const day = dayMatch ? dayMatch[0] : '-';
-  const content = text
-    .replace(/(\d{1,2})월\s*(\d{1,2})일/, '')
-    .replace(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/, '')
-    .trim();
-  return {date, day, text: content || text};
-}
-
-function addSchedule(){
-  const input = document.getElementById('scheduleInput');
-  const value = input.value.trim();
-  if(!value) return;
-  const items = JSON.parse(localStorage.getItem('dashboardSchedules') || '[]');
-  items.push(parseScheduleText(value));
-  localStorage.setItem('dashboardSchedules', JSON.stringify(items));
-  input.value = '';
-  loadSchedules();
-}
-
-function deleteSchedule(index){
-  const items = JSON.parse(localStorage.getItem('dashboardSchedules') || '[]');
-  items.splice(index, 1);
-  localStorage.setItem('dashboardSchedules', JSON.stringify(items));
-  loadSchedules();
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
-  loadSchedules();
-  const input = document.getElementById('scheduleInput');
-  if(input){
-    input.addEventListener('keydown', e=>{
-      if(e.key === 'Enter') addSchedule();
-    });
-  }
-});
-
 // ── 시계 ──
 function updateClock(){
   const now=new Date();
@@ -530,10 +482,108 @@ function updateClock(){
 }
 setInterval(updateClock,1000); updateClock();
 
+
+// ── 상단 탭 ──
+function showDashboardTab(tab){
+  document.querySelectorAll('[data-tab-panel]').forEach(panel=>{
+    panel.classList.toggle('hidden', tab !== 'all' && panel.dataset.tabPanel !== tab);
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.dataset.tab === tab);
+  });
+}
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>showDashboardTab(btn.dataset.tab));
+});
+
+// ── 일정 저장 ──
+function parseScheduleText(text){
+  const dateMatch = text.match(/(\d{1,2})월\s*(\d{1,2})일/);
+  const dayMatch = text.match(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/);
+  const date = dateMatch ? `${dateMatch[1]}월 ${dateMatch[2]}일` : '-';
+  const day = dayMatch ? dayMatch[0] : '-';
+  const content = text.replace(/(\d{1,2})월\s*(\d{1,2})일/,'').replace(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일|월|화|수|목|금|토|일)/,'').trim();
+  return {date, day, text: content || text};
+}
+function loadSchedules(){
+  const body=document.getElementById('scheduleBody'); if(!body) return;
+  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  body.innerHTML = items.length ? '' : '<tr><td colspan="4" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
+  items.forEach((item,index)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${item.date}</td><td>${item.day}</td><td>${item.text}</td><td><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></td>`;
+    body.appendChild(tr);
+  });
+}
+function addSchedule(){
+  const input=document.getElementById('scheduleInput'); const value=input.value.trim(); if(!value) return;
+  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  items.push(parseScheduleText(value));
+  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  input.value=''; loadSchedules();
+}
+function deleteSchedule(index){
+  const items=JSON.parse(localStorage.getItem('dashboardSchedules')||'[]');
+  items.splice(index,1);
+  localStorage.setItem('dashboardSchedules',JSON.stringify(items));
+  loadSchedules();
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadSchedules();
+  const input=document.getElementById('scheduleInput');
+  if(input) input.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
+});
+
 // ── yasun.gg 캔들차트 ──
 // GitHub에서 직접 호출이 막히면 여기에 Cloudflare Worker 주소를 넣으면 됨.
 // 예: const YASUN_PROXY = "https://your-worker.workers.dev";
 const YASUN_PROXY = "https://j-dashboard-proxy.love98321.workers.dev";
+
+
+// ── 대표ETF: 네이버 일봉 캔들 ──
+function naverEtfUrl(symbol){
+  const end = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  const startDate = new Date(Date.now() - 420*24*60*60*1000);
+  const start = startDate.toISOString().slice(0,10).replace(/-/g,'');
+  return `${YASUN_PROXY}/naver/chart?symbol=${encodeURIComponent(symbol)}&start=${start}&end=${end}&timeframe=day`;
+}
+function normalizeNaverCandles(raw){
+  let rows = Array.isArray(raw) ? raw : (raw?.data || raw?.result || []);
+  if(rows.length && Array.isArray(rows[0]) && String(rows[0][0]).includes('날짜')) rows = rows.slice(1);
+  return rows.map(r=>{
+    const time = r.localDate || r.date || r[0];
+    const open = Number(r.openPrice ?? r.open ?? r[1]);
+    const high = Number(r.highPrice ?? r.high ?? r[2]);
+    const low = Number(r.lowPrice ?? r.low ?? r[3]);
+    const close = Number(r.closePrice ?? r.close ?? r[4]);
+    const volume = Number(r.accumulatedTradingVolume ?? r.volume ?? r[5] ?? 0);
+    if(!time || !Number.isFinite(open) || !Number.isFinite(high) || !Number.isFinite(low) || !Number.isFinite(close)) return null;
+    return {time,open,high,low,close,volume};
+  }).filter(Boolean);
+}
+async function loadNaverEtfChart(symbol, idPrefix){
+  try{
+    const res = await fetch(naverEtfUrl(symbol), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = normalizeNaverCandles(await res.json());
+    if(!data.length) throw new Error('empty');
+    drawYasunChart(`${idPrefix}Canvas`, data, `${idPrefix}Price`, `${idPrefix}Change`, `${idPrefix}Date`, '1d');
+  }catch(e){
+    console.error('ETF', symbol, e);
+    const p=document.getElementById(`${idPrefix}Price`);
+    const d=document.getElementById(`${idPrefix}Date`);
+    if(p) p.textContent='오류';
+    if(d) d.textContent='Worker/Naver 확인';
+  }
+}
+function loadAllEtfCharts(){
+  const etfs = [
+    ['091160','etf091160'],['305720','etf305720'],['491820','etf491820'],
+    ['441800','etf441800'],['091170','etf091170'],['463050','etf463050'],
+    ['441540','etf441540'],['449450','etf449450'],['445290','etf445290']
+  ];
+  etfs.forEach(([symbol,id])=>loadNaverEtfChart(symbol,id));
+}
 
 function yasunUrl(symbol, interval, limit){
   const path = `/api/candles?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${limit}`;
@@ -797,8 +847,10 @@ function loadAllYasunCharts(){
 }
 
 loadAllYasunCharts();
+loadAllEtfCharts();
 setInterval(loadAllYasunCharts, 60000);
-window.addEventListener('resize', loadAllYasunCharts);
+setInterval(loadAllEtfCharts, 10*60*1000);
+window.addEventListener('resize', ()=>{loadAllYasunCharts(); loadAllEtfCharts();});
 
 // ── 종목 검색 ──
 const symbolMap={'삼성전자':'KRX:005930','sk하이닉스':'KRX:000660','카카오':'KRX:035720','네이버':'KRX:035420','현대차':'KRX:005380','기아':'KRX:000270','셀트리온':'KRX:068270','포스코홀딩스':'KRX:005490','lg화학':'KRX:051910','삼성바이오로직스':'KRX:207940','한화오션':'KRX:042660','hd현대중공업':'KRX:329180','삼성중공업':'KRX:010140','lg에너지솔루션':'KRX:373220'};
