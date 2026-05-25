@@ -109,7 +109,7 @@
 
 
 
-  /* 메모장 */
+  /* 관심종목 */
   .memo-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .memo-input-row{display:grid;grid-template-columns:220px 1fr 80px;gap:8px;margin-bottom:14px;}
   .memo-input-row input,.memo-input-row textarea{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;font-family:'Noto Sans KR',sans-serif;}
@@ -187,7 +187,7 @@
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
   <button class="tab-btn" data-tab="links">링크 모음</button>
-  <button class="tab-btn" data-tab="memo">메모장</button>
+  <button class="tab-btn" data-tab="memo">관심종목</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
 </div>
 
@@ -577,14 +577,14 @@
   </div>
 
 
-  <!-- 메모장 -->
+  <!-- 관심종목 -->
   <div class="tab-panel" data-tab-panel="memo">
-    <div class="section-title">메모장 · MEMO</div>
+    <div class="section-title">관심종목 · WATCHLIST</div>
     <div class="memo-card">
       <div class="mode-note" id="memoModeNote"></div>
       <div class="memo-input-row edit-only">
-        <input id="memoTitleInput" type="text" placeholder="제목 예: 오늘 시장 메모" />
-        <textarea id="memoContentInput" placeholder="내용 예: 반도체 강함 / 2차전지 약함 / 내일 체크 종목"></textarea>
+        <input id="memoTitleInput" type="text" placeholder="제목 예: 삼성전자 / 반도체 관심종목" />
+        <textarea id="memoContentInput" placeholder="내용 예: 매수가 / 손절가 / 목표가 / 체크 포인트"></textarea>
         <button onclick="addMemo()">등록</button>
       </div>
       <div class="memo-list" id="memoBody"></div>
@@ -632,8 +632,8 @@ function applyDashboardMode(){
   const linkNote = document.getElementById('linkModeNote');
   const memoNote = document.getElementById('memoModeNote');
   const msg = IS_EDIT_MODE
-    ? '<span class="admin">관리자 모드</span> · 일정/링크/메모 등록·수정·삭제 가능 · 서버 저장'
-    : '<span class="readonly">보기 전용 모드</span> · 일정/링크/메모는 열람만 가능';
+    ? '<span class="admin">관리자 모드</span> · 일정/링크/관심종목 등록·수정·삭제 가능 · 서버 저장'
+    : '<span class="readonly">보기 전용 모드</span> · 일정/링크/관심종목은 열람만 가능';
   if(scheduleNote) scheduleNote.innerHTML = msg;
   if(linkNote) linkNote.innerHTML = msg;
   if(memoNote) memoNote.innerHTML = msg;
@@ -851,7 +851,7 @@ async function deleteBookmarkLink(index){
   loadBookmarkLinks();
 }
 
-// ── 메모장: 서버 저장 ──
+// ── 관심종목: 서버 저장 ──
 function escapeMemoText(v){
   return String(v ?? '').replace(/[&<>"']/g, ch => ({
     '&':'&amp;',
@@ -879,7 +879,7 @@ function loadMemos(){
   const body = document.getElementById('memoBody'); if(!body) return;
   const items = getMemos();
   if(!items.length){
-    body.innerHTML = `<div class="memo-item" style="color:var(--text-dim);">등록된 메모가 없습니다.</div>`;
+    body.innerHTML = `<div class="memo-item" style="color:var(--text-dim);">등록된 관심종목이 없습니다.</div>`;
     return;
   }
   body.innerHTML = '';
@@ -926,9 +926,9 @@ async function editMemo(index){
   const items = getMemos();
   const item = items[index];
   if(!item) return;
-  const title = prompt('메모 제목을 수정하세요.', item.title || '');
+  const title = prompt('관심종목 제목을 수정하세요.', item.title || '');
   if(title === null) return;
-  const content = prompt('메모 내용을 수정하세요.', item.content || '');
+  const content = prompt('관심종목 내용을 수정하세요.', item.content || '');
   if(content === null) return;
   const cleanTitle = title.trim() || '무제';
   const cleanContent = content.trim();
