@@ -107,6 +107,25 @@
   .link-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
 
 
+
+
+  /* 메모장 */
+  .memo-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
+  .memo-input-row{display:grid;grid-template-columns:220px 1fr 80px;gap:8px;margin-bottom:14px;}
+  .memo-input-row input,.memo-input-row textarea{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;font-family:'Noto Sans KR',sans-serif;}
+  .memo-input-row textarea{min-height:42px;resize:vertical;}
+  .memo-input-row button,.memo-edit-btn,.memo-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:12px;}
+  .memo-list{display:flex;flex-direction:column;gap:10px;}
+  .memo-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;}
+  .memo-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
+  .memo-title{font-weight:700;color:var(--accent);font-size:14px;}
+  .memo-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);white-space:nowrap;}
+  .memo-content{white-space:pre-wrap;line-height:1.7;font-size:13px;color:var(--text);}
+  .memo-actions{margin-top:10px;display:flex;gap:6px;}
+  .memo-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);}
+  .memo-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
+
+
   /* 리포트 검색 */
   .report-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .report-search-row{display:flex;gap:8px;margin-bottom:12px;}
@@ -168,6 +187,7 @@
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
   <button class="tab-btn" data-tab="links">링크 모음</button>
+  <button class="tab-btn" data-tab="memo">메모장</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
 </div>
 
@@ -557,6 +577,21 @@
   </div>
 
 
+  <!-- 메모장 -->
+  <div class="tab-panel" data-tab-panel="memo">
+    <div class="section-title">메모장 · MEMO</div>
+    <div class="memo-card">
+      <div class="mode-note" id="memoModeNote"></div>
+      <div class="memo-input-row edit-only">
+        <input id="memoTitleInput" type="text" placeholder="제목 예: 오늘 시장 메모" />
+        <textarea id="memoContentInput" placeholder="내용 예: 반도체 강함 / 2차전지 약함 / 내일 체크 종목"></textarea>
+        <button onclick="addMemo()">등록</button>
+      </div>
+      <div class="memo-list" id="memoBody"></div>
+    </div>
+  </div>
+
+
   <!-- 리포트 검색 -->
   <div class="tab-panel" data-tab-panel="report">
     <div class="section-title">리포트 검색 · TARGET PRICE REPORT</div>
@@ -595,11 +630,13 @@ function applyDashboardMode(){
   document.body.classList.toggle('edit-mode', IS_EDIT_MODE);
   const scheduleNote = document.getElementById('scheduleModeNote');
   const linkNote = document.getElementById('linkModeNote');
+  const memoNote = document.getElementById('memoModeNote');
   const msg = IS_EDIT_MODE
-    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능 · 서버 저장'
-    : '<span class="readonly">보기 전용 모드</span> · 일정/링크는 열람만 가능';
+    ? '<span class="admin">관리자 모드</span> · 일정/링크/메모 등록·수정·삭제 가능 · 서버 저장'
+    : '<span class="readonly">보기 전용 모드</span> · 일정/링크/메모는 열람만 가능';
   if(scheduleNote) scheduleNote.innerHTML = msg;
   if(linkNote) linkNote.innerHTML = msg;
+  if(memoNote) memoNote.innerHTML = msg;
 }
 
 // ── 상단 탭 ──
@@ -618,7 +655,7 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 // ── 서버 저장(KV): 일정/링크 공통 데이터 ──
 const DASHBOARD_API = "https://j-dashboard-proxy.love98321.workers.dev/api/dashboard";
 const ADMIN_KEY = new URLSearchParams(window.location.search).get('key') || '';
-let dashboardData = { schedules: [], links: [] };
+let dashboardData = { schedules: [], links: [], memos: [] };
 
 async function fetchDashboardData(){
   try{
@@ -627,12 +664,13 @@ async function fetchDashboardData(){
     const data = await res.json();
     dashboardData = {
       schedules: Array.isArray(data.schedules) ? data.schedules.map(normalizeScheduleItem) : [],
-      links: Array.isArray(data.links) ? data.links : []
+      links: Array.isArray(data.links) ? data.links : [],
+      memos: Array.isArray(data.memos) ? data.memos : []
     };
     sortSchedules();
   }catch(e){
     console.error('dashboard data load failed', e);
-    dashboardData = { schedules: [], links: [] };
+    dashboardData = { schedules: [], links: [], memos: [] };
   }
 }
 
@@ -812,16 +850,122 @@ async function deleteBookmarkLink(index){
   await saveDashboardData();
   loadBookmarkLinks();
 }
+
+// ── 메모장: 서버 저장 ──
+function escapeMemoText(v){
+  return String(v ?? '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[ch]));
+}
+function getMemos(){
+  return dashboardData.memos || [];
+}
+function todayMemoDate(){
+  return new Intl.DateTimeFormat('ko-KR', {
+    timeZone:'Asia/Seoul',
+    year:'numeric',
+    month:'2-digit',
+    day:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit',
+    hour12:false
+  }).format(new Date());
+}
+function loadMemos(){
+  const body = document.getElementById('memoBody'); if(!body) return;
+  const items = getMemos();
+  if(!items.length){
+    body.innerHTML = `<div class="memo-item" style="color:var(--text-dim);">등록된 메모가 없습니다.</div>`;
+    return;
+  }
+  body.innerHTML = '';
+  items.slice().reverse().forEach((item,revIndex)=>{
+    const index = items.length - 1 - revIndex;
+    const div = document.createElement('div');
+    div.className = 'memo-item';
+    const actions = IS_EDIT_MODE
+      ? `<div class="memo-actions"><button class="memo-edit-btn" onclick="editMemo(${index})">수정</button><button class="memo-del-btn" onclick="deleteMemo(${index})">삭제</button></div>`
+      : '';
+    div.innerHTML = `
+      <div class="memo-head">
+        <div class="memo-title">${escapeMemoText(item.title || '무제')}</div>
+        <div class="memo-date">${escapeMemoText(item.updatedAt || item.createdAt || '')}</div>
+      </div>
+      <div class="memo-content">${escapeMemoText(item.content || '')}</div>
+      ${actions}
+    `;
+    body.appendChild(div);
+  });
+}
+async function addMemo(){
+  if(!IS_EDIT_MODE) return;
+  const titleEl = document.getElementById('memoTitleInput');
+  const contentEl = document.getElementById('memoContentInput');
+  const title = titleEl.value.trim();
+  const content = contentEl.value.trim();
+  if(!title && !content) return;
+  const now = todayMemoDate();
+  dashboardData.memos.push({
+    id: 'memo_' + Date.now(),
+    title: title || '무제',
+    content,
+    createdAt: now,
+    updatedAt: now
+  });
+  titleEl.value = '';
+  contentEl.value = '';
+  await saveDashboardData();
+  loadMemos();
+}
+async function editMemo(index){
+  if(!IS_EDIT_MODE) return;
+  const items = getMemos();
+  const item = items[index];
+  if(!item) return;
+  const title = prompt('메모 제목을 수정하세요.', item.title || '');
+  if(title === null) return;
+  const content = prompt('메모 내용을 수정하세요.', item.content || '');
+  if(content === null) return;
+  const cleanTitle = title.trim() || '무제';
+  const cleanContent = content.trim();
+  items[index] = {
+    ...item,
+    title: cleanTitle,
+    content: cleanContent,
+    updatedAt: todayMemoDate()
+  };
+  dashboardData.memos = items;
+  await saveDashboardData();
+  loadMemos();
+}
+async function deleteMemo(index){
+  if(!IS_EDIT_MODE) return;
+  const items = getMemos();
+  items.splice(index,1);
+  dashboardData.memos = items;
+  await saveDashboardData();
+  loadMemos();
+}
+
 document.addEventListener('DOMContentLoaded',async ()=>{
   applyDashboardMode();
   await fetchDashboardData();
   loadSchedules();
   loadBookmarkLinks();
+  loadMemos();
   const input=document.getElementById('scheduleInput');
   if(input) input.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
   const linkName=document.getElementById('linkNameInput');
   const linkUrl=document.getElementById('linkUrlInput');
   [linkName, linkUrl].forEach(el=>{ if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')addBookmarkLink();}); });
+  const memoTitle=document.getElementById('memoTitleInput');
+  const memoContent=document.getElementById('memoContentInput');
+  if(memoTitle) memoTitle.addEventListener('keydown',e=>{if(e.key==='Enter')addMemo();});
+  if(memoContent) memoContent.addEventListener('keydown',e=>{if(e.key==='Enter' && e.ctrlKey)addMemo();});
 });
 
 // ── yasun.gg 캔들차트 ──
