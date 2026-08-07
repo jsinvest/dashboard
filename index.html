@@ -624,6 +624,10 @@
   <!-- run_all 자동 게시: market-analysis/latest.json -->
   <div class="tab-panel" data-tab-panel="market">
     <div class="section-title">시장분석 · ADR · 시장 폭 · 업종 강도</div>
+    <div class="chart-card" id="marketAIAnalysis" style="padding:18px;margin-bottom:16px">
+      <div class="report-meta" id="marketAIMeta">AI 시장분석을 불러오는 중...</div>
+      <div id="marketAIContent"></div>
+    </div>
     <div class="report-meta" id="marketAnalysisMeta">최신 run_all 결과를 불러오는 중...</div>
     <div class="grid-2" id="marketSummaryCards" style="margin-bottom:16px"></div>
     <div class="grid-2" id="marketAnalysisCharts"></div>
@@ -1553,6 +1557,39 @@ loadReportData();
 const MARKET_LOCAL_BASE = 'market-analysis/';
 const MARKET_RAW_BASE = 'https://raw.githubusercontent.com/jsinvest/dashboard/main/market-analysis/';
 let marketAssetBase = MARKET_LOCAL_BASE;
+function analysisList(items){
+  return `<ul style="margin:8px 0 0 18px;line-height:1.75;color:var(--text)">${(items||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
+}
+function renderMarketAI(data){
+  const views = (data.market_views||[]).map(v=>`<div class="chart-card" style="padding:12px 14px">
+    <div style="display:flex;justify-content:space-between;gap:10px"><strong style="color:var(--accent)">${escapeHtml(v.market)}</strong><span style="font-size:11px;color:var(--text-dim)">${escapeHtml(v.view)}</span></div>
+    ${analysisList(v.evidence)}
+    <div style="margin-top:8px;color:var(--up);font-size:12px">대응: ${escapeHtml(v.action)}</div>
+  </div>`).join('');
+  const sectors = (data.strong_sectors||[]).map(s=>`<span class="quick-btn" style="cursor:default">${escapeHtml(s.name)} · ${escapeHtml(s.reason)}</span>`).join('');
+  return `<div style="font-size:20px;font-weight:700;line-height:1.45;margin-bottom:10px">${escapeHtml(data.headline)}</div>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px"><span class="card-tag tag-kr">선호 ${escapeHtml(data.market_preference)}</span><span class="card-tag tag-fx">기조 ${escapeHtml(data.stance)}</span><span class="card-tag tag-global">신뢰도 ${escapeHtml(data.confidence)}</span></div>
+    ${analysisList(data.executive_summary)}
+    <div class="grid-2" style="margin-top:14px">${views}</div>
+    <div style="margin-top:14px"><strong>강한 업종</strong><div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:8px">${sectors}</div></div>
+    <div class="grid-2" style="margin-top:14px"><div><strong style="color:var(--down)">위험 신호</strong>${analysisList(data.risk_flags)}</div><div><strong>다음 장 확인</strong>${analysisList(data.next_session_checks)}</div></div>
+    <div style="margin-top:12px;font-size:10px;color:var(--text-muted)">${escapeHtml(data.source_note)}</div>`;
+}
+async function loadMarketAIAnalysis(){
+  const meta = document.getElementById('marketAIMeta');
+  const content = document.getElementById('marketAIContent');
+  try{
+    let res = await fetch(MARKET_LOCAL_BASE+'analysis_latest.json?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) res = await fetch(MARKET_RAW_BASE+'analysis_latest.json?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(meta) meta.textContent = `AI 분석 · 기준일 ${data.as_of} · 생성 ${data.generated_at}`;
+    if(content) content.innerHTML = renderMarketAI(data);
+  }catch(e){
+    console.error('AI market analysis load failed', e);
+    if(meta) meta.textContent = 'AI 분석은 아직 준비되지 않았습니다. 아래 원본 자료는 정상적으로 볼 수 있습니다.';
+  }
+}
 function marketMetric(value, suffix=''){
   return value === null || value === undefined ? '-' : `${value}${suffix}`;
 }
@@ -1604,6 +1641,7 @@ async function loadMarketAnalysis(){
   }
 }
 loadMarketAnalysis();
+loadMarketAIAnalysis();
 
 // ── 차트 전체화면 ──
 function isFullscreenChart(card){
