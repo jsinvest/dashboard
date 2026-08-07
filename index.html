@@ -1550,6 +1550,9 @@ document.getElementById('reportSearchInput')?.addEventListener('keydown', e=>{
 loadReportData();
 
 // ── run_all 시장분석: market-analysis/latest.json ──
+const MARKET_LOCAL_BASE = 'market-analysis/';
+const MARKET_RAW_BASE = 'https://raw.githubusercontent.com/jsinvest/dashboard/main/market-analysis/';
+let marketAssetBase = MARKET_LOCAL_BASE;
 function marketMetric(value, suffix=''){
   return value === null || value === undefined ? '-' : `${value}${suffix}`;
 }
@@ -1574,13 +1577,18 @@ function marketSummaryCard(row){
 function marketChartCard(chart, stamp){
   return `<div class="chart-card">
     <div class="card-header"><div><span class="card-title">${escapeHtml(chart.title)}</span><div style="font-size:10px;color:var(--text-muted);margin-top:3px">${escapeHtml(chart.description||'')}</div></div><span class="card-tag tag-kr">AUTO</span></div>
-    <figure style="margin:0"><img src="market-analysis/${encodeURIComponent(chart.image)}?v=${encodeURIComponent(stamp)}" alt="${escapeHtml(chart.title)}" loading="lazy" style="width:100%;height:auto;display:block"></figure>
+    <figure style="margin:0"><img src="${marketAssetBase}${encodeURIComponent(chart.image)}?v=${encodeURIComponent(stamp)}" alt="${escapeHtml(chart.title)}" loading="lazy" style="width:100%;height:auto;display:block"></figure>
   </div>`;
 }
 async function loadMarketAnalysis(){
   const meta = document.getElementById('marketAnalysisMeta');
   try{
-    const res = await fetch('market-analysis/latest.json?v='+Date.now(), {cache:'no-store'});
+    let res = await fetch(MARKET_LOCAL_BASE+'latest.json?v='+Date.now(), {cache:'no-store'});
+    marketAssetBase = MARKET_LOCAL_BASE;
+    if(!res.ok){
+      res = await fetch(MARKET_RAW_BASE+'latest.json?v='+Date.now(), {cache:'no-store'});
+      marketAssetBase = MARKET_RAW_BASE;
+    }
     if(!res.ok) throw new Error('HTTP '+res.status);
     const data = await res.json();
     if(meta) meta.textContent = `기준일 ${data.as_of} · 매일 run_all 완료 후 자동 업데이트 · 생성 ${data.generated_at}`;
@@ -1589,7 +1597,7 @@ async function loadMarketAnalysis(){
     const charts = document.getElementById('marketAnalysisCharts');
     if(charts) charts.innerHTML = (data.charts||[]).map(c=>marketChartCard(c, data.generated_at||data.as_of)).join('');
     const downloads = document.getElementById('marketDownloads');
-    if(downloads) downloads.innerHTML = (data.downloads||[]).map(d=>`<a class="quick-btn" href="market-analysis/${encodeURIComponent(d.file)}" download>${escapeHtml(d.title)}</a>`).join('');
+    if(downloads) downloads.innerHTML = (data.downloads||[]).map(d=>`<a class="quick-btn" href="${marketAssetBase}${encodeURIComponent(d.file)}" target="_blank" rel="noopener">${escapeHtml(d.title)}</a>`).join('');
   }catch(e){
     console.error('market analysis load failed', e);
     if(meta) meta.textContent = '시장분석 자료를 불러오지 못했습니다. 오늘 run_all 업로드 상태를 확인해 주세요.';
