@@ -37,10 +37,18 @@
   .section-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
   .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
-  .grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;}
-  .chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid-4{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative;}
   .card-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);}
+  .expand-chart-btn{margin-left:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:5px;padding:5px 8px;font-size:11px;line-height:1;cursor:pointer;white-space:nowrap;}
+  .expand-chart-btn:hover{border-color:var(--accent);color:var(--accent);}
+  body.chart-expanded-open{overflow:hidden;}
+  .chart-card.chart-expanded{position:fixed;inset:0;z-index:1000;width:100vw;height:100vh;border:0;border-radius:0;background:var(--bg);display:flex;flex-direction:column;}
+  .chart-card.chart-expanded .naver-chart-wrap,.chart-card.chart-expanded .tradingview-widget-container{height:auto!important;flex:1;min-height:0;}
+  .chart-card.chart-expanded iframe{height:100%!important;min-height:0;}
+  .chart-card.chart-expanded figure{display:flex;align-items:center;justify-content:center;flex:1;min-height:0;background:var(--bg);}
+  .chart-card.chart-expanded figure img{width:auto!important;max-width:100%;max-height:calc(100vh - 48px);object-fit:contain;}
   .card-title{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--text);}
   .card-tag{font-size:10px;padding:2px 7px;border-radius:3px;font-family:'JetBrains Mono',monospace;}
   .tag-kr{background:#1a3a5c;color:#60a5fa;}
@@ -189,6 +197,8 @@
   <button class="tab-btn" data-tab="links">링크 모음</button>
   <button class="tab-btn" data-tab="memo">관심종목</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
+  <button class="tab-btn" data-tab="market">[시장분석자료]</button>
+  <button class="tab-btn" data-tab="supply">[선물옵션매물대]</button>
 </div>
 
 <div class="chart-modal" id="chartModal">
@@ -609,6 +619,55 @@
         <div id="reportResults" class="report-empty">검색어를 입력하세요.</div>
       </div>
     </div>
+  </div>
+
+  <!-- run_all 자동 게시: market-analysis/latest.json -->
+  <div class="tab-panel" data-tab-panel="market">
+    <div class="section-title">시장분석 · ADR · 시장 폭 · 업종 강도</div>
+    <div class="report-meta" id="marketAnalysisMeta">최신 run_all 결과를 불러오는 중...</div>
+    <div class="grid-2" id="marketSummaryCards" style="margin-bottom:16px"></div>
+    <div class="grid-2" id="marketAnalysisCharts"></div>
+    <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"></div>
+  </div>
+
+  <!-- 추정 매물대: supply-zone/latest.json -->
+  <div class="tab-panel" data-tab-panel="supply">
+    <div class="section-title">선물옵션 매물대 · KOSPI200 선물 외국인·기관 추정 매물대</div>
+    <div class="report-meta" id="supplyMeta">supply-zone/latest.json 로딩중...</div>
+    <div class="grid-2" id="supplySummaryCards" style="margin-bottom:16px"></div>
+    <div class="chart-card" style="margin-bottom:16px">
+      <div class="card-header"><span class="card-title">F202609 일봉 + 가격대별 매물대</span><span class="card-tag tag-kr">KR</span></div>
+      <figure style="margin:0"><img id="supplyCandleImg" src="" alt="F202609 일봉과 가격대별 투자자 매물대" style="width:100%;height:auto;display:block"></figure>
+    </div>
+    <div class="grid-2" style="margin-bottom:16px">
+      <div class="chart-card">
+        <div class="card-header"><span class="card-title">외국인 추정 매물대</span><span class="card-tag tag-kr">KR</span></div>
+        <figure style="margin:0"><img id="supplyForeignImg" src="" alt="외국인 추정 매물대" style="width:100%;height:auto;display:block"></figure>
+      </div>
+      <div class="chart-card">
+        <div class="card-header"><span class="card-title">기관계 추정 매물대</span><span class="card-tag tag-kr">KR</span></div>
+        <figure style="margin:0"><img id="supplyInstitutionImg" src="" alt="기관계 추정 매물대" style="width:100%;height:auto;display:block"></figure>
+      </div>
+    </div>
+    <div class="chart-card" style="margin-bottom:16px">
+      <div class="card-header"><span class="card-title">추정 매물대 종합 요약</span><span class="card-tag tag-kr">KR</span></div>
+      <figure style="margin:0"><img id="supplySummaryImg" src="" alt="추정 매물대 종합 요약" style="width:100%;height:auto;display:block"></figure>
+    </div>
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="card-header"><span class="card-title">상단 저항 구간 (upper_zones)</span></div>
+        <div id="supplyUpperZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
+      </div>
+      <div class="chart-card">
+        <div class="card-header"><span class="card-title">하단 지지 구간 (lower_zones)</span></div>
+        <div id="supplyLowerZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
+      </div>
+    </div>
+    <div class="chart-card" style="margin-top:16px">
+      <div class="card-header"><span class="card-title">외국인·기관 반대매매 충돌구간 (conflict_zones)</span></div>
+      <div id="supplyConflictZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
+    </div>
+    <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:11px"></div>
   </div>
 
 </div>
@@ -1490,6 +1549,154 @@ document.getElementById('reportSearchInput')?.addEventListener('keydown', e=>{
 });
 loadReportData();
 
+// ── run_all 시장분석: market-analysis/latest.json ──
+function marketMetric(value, suffix=''){
+  return value === null || value === undefined ? '-' : `${value}${suffix}`;
+}
+function marketSummaryCard(row){
+  return `<div class="chart-card" style="padding:14px 16px">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px">
+      <strong style="font-family:'JetBrains Mono',monospace;color:var(--accent)">${escapeHtml(row.market)}</strong>
+      <span style="font-size:11px;color:var(--text-dim)">${escapeHtml(row.judgement)}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:12px">
+      <div><span style="color:var(--text-muted)">ADR</span><br><strong>${marketMetric(row.adr,'%')}</strong></div>
+      <div><span style="color:var(--text-muted)">Impulse</span><br><strong>${escapeHtml(row.impulse)}</strong></div>
+      <div><span style="color:var(--text-muted)">공포탐욕</span><br><strong>${marketMetric(row.fear_greed)}</strong></div>
+    </div>
+  </div>`;
+}
+function marketChartCard(chart, stamp){
+  return `<div class="chart-card">
+    <div class="card-header"><div><span class="card-title">${escapeHtml(chart.title)}</span><div style="font-size:10px;color:var(--text-muted);margin-top:3px">${escapeHtml(chart.description||'')}</div></div><span class="card-tag tag-kr">AUTO</span></div>
+    <figure style="margin:0"><img src="market-analysis/${encodeURIComponent(chart.image)}?v=${encodeURIComponent(stamp)}" alt="${escapeHtml(chart.title)}" loading="lazy" style="width:100%;height:auto;display:block"></figure>
+  </div>`;
+}
+async function loadMarketAnalysis(){
+  const meta = document.getElementById('marketAnalysisMeta');
+  try{
+    const res = await fetch('market-analysis/latest.json?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(meta) meta.textContent = `기준일 ${data.as_of} · 매일 run_all 완료 후 자동 업데이트 · 생성 ${data.generated_at}`;
+    const summaries = document.getElementById('marketSummaryCards');
+    if(summaries) summaries.innerHTML = (data.summaries||[]).map(marketSummaryCard).join('');
+    const charts = document.getElementById('marketAnalysisCharts');
+    if(charts) charts.innerHTML = (data.charts||[]).map(c=>marketChartCard(c, data.generated_at||data.as_of)).join('');
+    const downloads = document.getElementById('marketDownloads');
+    if(downloads) downloads.innerHTML = (data.downloads||[]).map(d=>`<a class="quick-btn" href="market-analysis/${encodeURIComponent(d.file)}" download>${escapeHtml(d.title)}</a>`).join('');
+  }catch(e){
+    console.error('market analysis load failed', e);
+    if(meta) meta.textContent = '시장분석 자료를 불러오지 못했습니다. 오늘 run_all 업로드 상태를 확인해 주세요.';
+  }
+}
+loadMarketAnalysis();
+
+// ── 차트 전체화면 ──
+function isFullscreenChart(card){
+  return card.querySelector('canvas, iframe, img, .tradingview-widget-container');
+}
+function toggleChartFullscreen(card){
+  const wasExpanded = card.classList.contains('chart-expanded');
+  document.querySelectorAll('.chart-card.chart-expanded').forEach(openCard=>openCard.classList.remove('chart-expanded'));
+  document.querySelectorAll('.expand-chart-btn').forEach(button=>{
+    button.textContent = '⛶ 확대';
+    button.setAttribute('aria-label', '차트 전체화면으로 확대');
+  });
+  if(!wasExpanded){
+    card.classList.add('chart-expanded');
+    const button = card.querySelector('.expand-chart-btn');
+    if(button){
+      button.textContent = '✕ 닫기';
+      button.setAttribute('aria-label', '전체화면 닫기');
+    }
+  }
+  document.body.classList.toggle('chart-expanded-open', !wasExpanded);
+  requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+}
+function installChartFullscreenButtons(){
+  document.querySelectorAll('.chart-card').forEach(card=>{
+    if(!isFullscreenChart(card) || card.querySelector('.expand-chart-btn')) return;
+    const header = card.querySelector('.card-header');
+    if(!header) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'expand-chart-btn';
+    button.textContent = '⛶ 확대';
+    button.setAttribute('aria-label', '차트 전체화면으로 확대');
+    button.addEventListener('click', event=>{
+      event.stopPropagation();
+      toggleChartFullscreen(card);
+    });
+    header.appendChild(button);
+  });
+}
+document.addEventListener('keydown', event=>{
+  if(event.key !== 'Escape') return;
+  const openCard = document.querySelector('.chart-card.chart-expanded');
+  if(openCard) toggleChartFullscreen(openCard);
+});
+installChartFullscreenButtons();
+new MutationObserver(installChartFullscreenButtons).observe(document.querySelector('.main'), {childList:true, subtree:true});
+
+// ── 추정 매물대: supply-zone/latest.json ──
+function supplyLevelRow(zone){
+  return `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border)">
+    <span>${zone.low.toLocaleString()}–${zone.high.toLocaleString()}</span>
+    <span style="color:${zone.contracts>=0?'var(--up)':'var(--down)'}">${zone.contracts>=0?'+':''}${Number(zone.contracts).toLocaleString()}계약</span>
+  </div>`;
+}
+function supplyConflictRow(zone){
+  return `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border)">
+    <span>${zone.low.toLocaleString()}–${zone.high.toLocaleString()}</span>
+    <span style="color:var(--down)">외국인 ${Number(zone.foreign_contracts).toLocaleString()}</span>
+    <span style="color:var(--up)">기관 ${zone.institution_contracts>=0?'+':''}${Number(zone.institution_contracts).toLocaleString()}</span>
+  </div>`;
+}
+function supplySummaryCard(title, value, color){
+  return `<div class="chart-card" style="padding:12px 14px">
+    <div style="font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace">${title}</div>
+    <div style="font-size:18px;font-weight:700;color:${color||'var(--text)'}">${value}</div>
+  </div>`;
+}
+async function loadSupplyZone(){
+  const metaEl = document.getElementById('supplyMeta');
+  try{
+    const res = await fetch('supply-zone/latest.json?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const d = await res.json();
+    if(metaEl) metaEl.textContent = `기준일 ${d.as_of} · 생성 ${d.generated_at} · 월물 ${d.futures_contract||'-'} · 현재가 ${Number(d.current_price).toLocaleString()} · ${d.bin_size}포인트 구간`;
+
+    if(d.candlestick_image) document.getElementById('supplyCandleImg').src = 'supply-zone/'+d.candlestick_image+'?v='+d.as_of;
+    document.getElementById('supplyForeignImg').src = 'supply-zone/'+d.foreign_image+'?v='+d.as_of;
+    document.getElementById('supplyInstitutionImg').src = 'supply-zone/'+d.institution_image+'?v='+d.as_of;
+    document.getElementById('supplySummaryImg').src = 'supply-zone/'+d.summary_image+'?v='+d.as_of;
+
+    const cards = document.getElementById('supplySummaryCards');
+    if(cards){
+      cards.innerHTML = [
+        supplySummaryCard('외국인 누적 추정계약', (d.foreign_estimated_position>=0?'+':'')+Number(d.foreign_estimated_position).toLocaleString()+'계약', d.foreign_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard('기관계 누적 추정계약', (d.institution_estimated_position>=0?'+':'')+Number(d.institution_estimated_position).toLocaleString()+'계약', d.institution_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard('외국인 추정 평균가', Number(d.foreign_average_price).toLocaleString(), '#f59e0b'),
+        supplySummaryCard('기관 추정 평균가', Number(d.institution_average_price).toLocaleString(), '#f59e0b'),
+      ].join('');
+    }
+
+    const upperEl = document.getElementById('supplyUpperZones');
+    if(upperEl) upperEl.innerHTML = (d.upper_zones||[]).length ? d.upper_zones.map(supplyLevelRow).join('') : '<span style="color:var(--text-dim)">데이터 없음</span>';
+    const lowerEl = document.getElementById('supplyLowerZones');
+    if(lowerEl) lowerEl.innerHTML = (d.lower_zones||[]).length ? d.lower_zones.map(supplyLevelRow).join('') : '<span style="color:var(--text-dim)">데이터 없음</span>';
+    const conflictEl = document.getElementById('supplyConflictZones');
+    if(conflictEl) conflictEl.innerHTML = (d.conflict_zones||[]).length ? d.conflict_zones.map(supplyConflictRow).join('') : '<span style="color:var(--text-dim)">충돌구간 없음</span>';
+
+    const noteEl = document.getElementById('supplySourceNote');
+    if(noteEl) noteEl.textContent = d.source_note || '';
+  }catch(e){
+    console.error('supply-zone load failed', e);
+    if(metaEl) metaEl.textContent = 'supply-zone/latest.json 로딩 실패 · GitHub에 supply-zone/latest.json 업로드 여부 확인';
+  }
+}
+loadSupplyZone();
 
 </script>
 </body>
