@@ -1554,15 +1554,20 @@ function marketMetric(value, suffix=''){
   return value === null || value === undefined ? '-' : `${value}${suffix}`;
 }
 function marketSummaryCard(row){
+  const gate = row.market === 'KOSDAQ'
+    ? `<div style="grid-column:1/-1;margin-top:4px;padding:7px 9px;border-radius:5px;background:${row.kosdaq_entry_allowed?'rgba(46,213,115,.10)':'rgba(255,71,87,.12)'};color:${row.kosdaq_entry_allowed?'var(--up)':'var(--down)'}">KOSDAQ 진입 게이트: ${row.kosdaq_entry_allowed?'허용':'금지'} · 전체종목 ADR 75 기준</div>`
+    : '';
   return `<div class="chart-card" style="padding:14px 16px">
     <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px">
       <strong style="font-family:'JetBrains Mono',monospace;color:var(--accent)">${escapeHtml(row.market)}</strong>
       <span style="font-size:11px;color:var(--text-dim)">${escapeHtml(row.judgement)}</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:12px">
-      <div><span style="color:var(--text-muted)">ADR</span><br><strong>${marketMetric(row.adr,'%')}</strong></div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:12px">
+      <div><span style="color:var(--text-muted)">ETF 20일 ADR</span><br><strong>${marketMetric(row.etf_adr_20d,'%')}</strong></div>
+      <div><span style="color:var(--text-muted)">전체종목 20일 ADR</span><br><strong>${marketMetric(row.stocks_adr_20d,'%')}</strong></div>
       <div><span style="color:var(--text-muted)">Impulse</span><br><strong>${escapeHtml(row.impulse)}</strong></div>
-      <div><span style="color:var(--text-muted)">공포탐욕</span><br><strong>${marketMetric(row.fear_greed)}</strong></div>
+      <div><span style="color:var(--text-muted)">공포탐욕</span><br><strong>${marketMetric(row.fear_greed)} · ${escapeHtml(row.fear_stage)}</strong></div>
+      ${gate}
     </div>
   </div>`;
 }
