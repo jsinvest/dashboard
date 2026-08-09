@@ -639,6 +639,7 @@
     <div class="section-title">선물옵션 매물대 · KOSPI200 선물 외국인·기관 추정 매물대</div>
     <div class="report-meta" id="supplyMeta">supply-zone/latest.json 로딩중...</div>
     <div class="grid-2" id="supplySummaryCards" style="margin-bottom:16px"></div>
+    <div class="chart-card" id="supplyOverallAssessment" style="padding:16px 18px;margin-bottom:16px"></div>
     <div class="chart-card" style="margin-bottom:16px">
       <div class="card-header"><span class="card-title">F202609 일봉 + 누적 매물대 위치</span><span class="card-tag tag-kr">누적/당일</span></div>
       <figure style="margin:0"><img id="supplyCandleImg" src="" alt="F202609 일봉과 가격대별 투자자 매물대" style="width:100%;height:auto;display:block"></figure>
@@ -1700,6 +1701,28 @@ function supplySummaryCard(title, value, color){
     <div style="font-size:18px;font-weight:700;color:${color||'var(--text)'}">${value}</div>
   </div>`;
 }
+function supplyAssessmentLevel(level){
+  return `<div style="padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg3)">
+    <strong style="color:${level.color||'var(--text)'}">${level.label} · ${level.range}</strong>
+    <div style="margin-top:4px;font-size:12px;color:var(--text-dim)">${level.reason}</div>
+  </div>`;
+}
+function renderSupplyAssessment(assessment){
+  if(!assessment) return '<span style="color:var(--text-dim)">종합 평가 없음</span>';
+  const levels = (assessment.levels||[]).map(supplyAssessmentLevel).join('');
+  const scenarios = (assessment.scenarios||[]).map((item,idx)=>`<div style="padding:8px 0;border-bottom:1px solid var(--border)">
+    <strong style="color:${item.tone==='up'?'var(--up)':item.tone==='down'?'var(--down)':'#f59e0b'}">시나리오 ${idx+1}</strong>
+    <span style="margin-left:8px">${item.condition}</span>
+    <span style="color:var(--text-dim)"> → ${item.target}</span>
+  </div>`).join('');
+  return `<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px">
+      <div><div style="font-size:16px;font-weight:800">외국인·기관 포지션 종합 평가</div><div style="margin-top:5px;color:var(--text-dim)">${assessment.headline}</div></div>
+      <span class="card-tag tag-kr">${assessment.stance} · 신뢰도 ${assessment.confidence}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin-bottom:12px">${levels}</div>
+    <div>${scenarios}</div>
+    <div style="margin-top:10px;font-size:11px;color:var(--text-dim)">${assessment.caution}</div>`;
+}
 function supplyCumulativeRow(zone){
   const color = zone.direction.includes('충돌') ? '#f59e0b' : (zone.direction.includes('롱') ? 'var(--up)' : 'var(--down)');
   return `<div style="display:grid;grid-template-columns:70px 110px 1fr 150px;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--border)">
@@ -1732,6 +1755,8 @@ async function loadSupplyZone(){
         supplySummaryCard('기관계 전체 추정 평단', d.institution_average_range||Number(d.institution_average_price).toLocaleString(), '#f59e0b'),
       ].join('');
     }
+    const assessmentEl = document.getElementById('supplyOverallAssessment');
+    if(assessmentEl) assessmentEl.innerHTML = renderSupplyAssessment(d.overall_assessment);
 
     const cumulativeTitle = document.getElementById('supplyCumulativeTitle');
     if(cumulativeTitle) cumulativeTitle.textContent = `누적 핵심 매물대 · ${d.cumulative_from||'-'}~${d.cumulative_to||'-'} (${d.cumulative_trading_days||0}거래일)`;
