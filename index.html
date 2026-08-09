@@ -645,16 +645,16 @@
     </div>
     <div class="grid-2" style="margin-bottom:16px">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">외국인 추정 매물대</span><span class="card-tag tag-kr">KR</span></div>
+        <div class="card-header"><span class="card-title">외국인 전체 포지션 + 최근 가격대 활동</span><span class="card-tag tag-kr">LONG/SHORT</span></div>
         <figure style="margin:0"><img id="supplyForeignImg" src="" alt="외국인 추정 매물대" style="width:100%;height:auto;display:block"></figure>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">기관계 추정 매물대</span><span class="card-tag tag-kr">KR</span></div>
+        <div class="card-header"><span class="card-title">기관계 전체 포지션 + 최근 가격대 활동</span><span class="card-tag tag-kr">LONG/SHORT</span></div>
         <figure style="margin:0"><img id="supplyInstitutionImg" src="" alt="기관계 추정 매물대" style="width:100%;height:auto;display:block"></figure>
       </div>
     </div>
     <div class="chart-card" style="margin-bottom:16px">
-      <div class="card-header"><span class="card-title">추정 매물대 종합 요약</span><span class="card-tag tag-kr">KR</span></div>
+      <div class="card-header"><span class="card-title">외국인·기관 전체 포지션 종합</span><span class="card-tag tag-kr">V2</span></div>
       <figure style="margin:0"><img id="supplySummaryImg" src="" alt="추정 매물대 종합 요약" style="width:100%;height:auto;display:block"></figure>
     </div>
     <div class="chart-card" style="margin-top:16px">
@@ -1726,10 +1726,10 @@ async function loadSupplyZone(){
     const cards = document.getElementById('supplySummaryCards');
     if(cards){
       cards.innerHTML = [
-        supplySummaryCard(`외국인 누적 추정계약 (${d.cumulative_trading_days||'-'}일)`, (d.foreign_estimated_position>=0?'+':'')+Number(d.foreign_estimated_position).toLocaleString()+'계약', d.foreign_estimated_position>=0?'var(--up)':'var(--down)'),
-        supplySummaryCard(`기관계 누적 추정계약 (${d.cumulative_trading_days||'-'}일)`, (d.institution_estimated_position>=0?'+':'')+Number(d.institution_estimated_position).toLocaleString()+'계약', d.institution_estimated_position>=0?'var(--up)':'var(--down)'),
-        supplySummaryCard('외국인 추정 평균가', Number(d.foreign_average_price).toLocaleString(), '#f59e0b'),
-        supplySummaryCard('기관 추정 평균가', Number(d.institution_average_price).toLocaleString(), '#f59e0b'),
+        supplySummaryCard('외국인 전체 추정 순포지션', (d.foreign_estimated_position>=0?'+':'')+Number(d.foreign_estimated_position).toLocaleString()+'계약 '+(d.foreign_position_side||''), d.foreign_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard('기관계 전체 추정 순포지션', (d.institution_estimated_position>=0?'+':'')+Number(d.institution_estimated_position).toLocaleString()+'계약 '+(d.institution_position_side||''), d.institution_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard('외국인 전체 추정 평단', d.foreign_average_range||Number(d.foreign_average_price).toLocaleString(), '#f59e0b'),
+        supplySummaryCard('기관계 전체 추정 평단', d.institution_average_range||Number(d.institution_average_price).toLocaleString(), '#f59e0b'),
       ].join('');
     }
 

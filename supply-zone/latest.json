@@ -1,13 +1,20 @@
 {
   "as_of": "2026-08-07",
-  "generated_at": "2026-08-10 04:15:08+0900",
+  "generated_at": "2026-08-10T06:13:22+09:00",
   "futures_contract": "F202609",
   "current_price": 978.75,
   "bin_size": 5,
-  "foreign_estimated_position": -17516.0,
-  "foreign_average_price": 986.9,
-  "institution_estimated_position": 21533.0,
-  "institution_average_price": 992.83,
+  "foreign_estimated_position": 16500.0,
+  "foreign_position_side": "롱",
+  "foreign_average_price": 1191.5,
+  "foreign_average_range": "1,190~1,193",
+  "foreign_estimated_pnl_million_krw": -877594,
+  "institution_estimated_position": -15500.0,
+  "institution_position_side": "숏",
+  "institution_average_price": 1207.5,
+  "institution_average_range": "1,205~1,210",
+  "institution_estimated_pnl_million_krw": 884469,
+  "whole_position_method": "0790 투자자별 누적 선물 손익선 기울기·0선 교차점과 KOSPI200 선물 승수 25만원을 결합한 추정",
   "active_zone": {
     "low": 980.0,
     "high": 990.0
@@ -35,7 +42,7 @@
       "net_contracts": -261.0,
       "gross_contracts": 29381.0,
       "location": "현재가 상단",
-      "direction": "외국인 숏·기관 롱 충돌",
+      "direction": "외국인 롱 청산·기관 숏커버",
       "rank": 1
     },
     {
@@ -47,7 +54,7 @@
       "net_contracts": 1310.0,
       "gross_contracts": 11998.0,
       "location": "현재가 상단",
-      "direction": "외국인 숏·기관 롱 충돌",
+      "direction": "외국인 롱 청산·기관 숏커버",
       "rank": 2
     },
     {
@@ -59,7 +66,7 @@
       "net_contracts": 798.0,
       "gross_contracts": 7028.0,
       "location": "현재가 구간",
-      "direction": "외국인 롱·기관 숏 충돌",
+      "direction": "외국인 롱 재진입·기관 숏 재진입",
       "rank": 3
     },
     {
@@ -71,7 +78,7 @@
       "net_contracts": 2572.0,
       "gross_contracts": 2572.0,
       "location": "현재가 상단",
-      "direction": "외국인·기관 동반 롱 누적",
+      "direction": "기관 숏커버·과거 매수 흔적",
       "rank": 4
     },
     {
@@ -83,7 +90,7 @@
       "net_contracts": -402.0,
       "gross_contracts": 2494.0,
       "location": "현재가 하단",
-      "direction": "외국인 숏·기관 롱 충돌",
+      "direction": "과거 청산 흔적",
       "rank": 5
     }
   ],
@@ -151,10 +158,10 @@
       "contracts": 2494.0
     }
   ],
-  "foreign_image": "foreign_supply_zone.png",
-  "institution_image": "institution_supply_zone.png",
-  "summary_image": "market_structure_summary.png",
+  "foreign_image": "foreign_position_inference_v2.png",
+  "institution_image": "institution_position_inference_v2.png",
+  "summary_image": "market_structure_summary_v2.png",
   "candlestick_image": "kospi200_futures_daily_supply_zones.png",
   "position_profile_image": "f202609_candlestick_position_profile.png",
-  "source_note": "0787 당일 순매매 누적 기반 추정치이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 KRX 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 당일 흐름과 관측 시작일부터의 누적 가격대는 별도 표시합니다."
+  "source_note": "전체 포지션은 0790 누적 선물 손익선의 기울기와 손익분기점을 이용한 추정입니다. 외국인은 약 +16,500계약 롱·평단 1,190~1,193, 기관 6개 합산은 약 -15,500계약 숏·평단 1,205~1,210으로 판단했습니다. 가격대별 계약은 최근 0787 순매매 변화량이므로 전체 잔존 계약의 정확한 가격대별 배분값과는 구분합니다."
 }
