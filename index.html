@@ -640,7 +640,7 @@
     <div class="report-meta" id="supplyMeta">supply-zone/latest.json 로딩중...</div>
     <div class="grid-2" id="supplySummaryCards" style="margin-bottom:16px"></div>
     <div class="chart-card" style="margin-bottom:16px">
-      <div class="card-header"><span class="card-title">F202609 일봉 + 가격대별 매물대</span><span class="card-tag tag-kr">KR</span></div>
+      <div class="card-header"><span class="card-title">F202609 일봉 + 누적 매물대 위치</span><span class="card-tag tag-kr">누적/당일</span></div>
       <figure style="margin:0"><img id="supplyCandleImg" src="" alt="F202609 일봉과 가격대별 투자자 매물대" style="width:100%;height:auto;display:block"></figure>
     </div>
     <div class="grid-2" style="margin-bottom:16px">
@@ -657,19 +657,9 @@
       <div class="card-header"><span class="card-title">추정 매물대 종합 요약</span><span class="card-tag tag-kr">KR</span></div>
       <figure style="margin:0"><img id="supplySummaryImg" src="" alt="추정 매물대 종합 요약" style="width:100%;height:auto;display:block"></figure>
     </div>
-    <div class="grid-2">
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">상단 저항 구간 (upper_zones)</span></div>
-        <div id="supplyUpperZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
-      </div>
-      <div class="chart-card">
-        <div class="card-header"><span class="card-title">하단 지지 구간 (lower_zones)</span></div>
-        <div id="supplyLowerZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
-      </div>
-    </div>
     <div class="chart-card" style="margin-top:16px">
-      <div class="card-header"><span class="card-title">외국인·기관 반대매매 충돌구간 (conflict_zones)</span></div>
-      <div id="supplyConflictZones" style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px"></div>
+      <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">누적 핵심 매물대</span></div>
+      <div id="supplyCumulativeZones" style="padding:12px 14px"></div>
     </div>
     <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:11px"></div>
   </div>
@@ -1710,6 +1700,15 @@ function supplySummaryCard(title, value, color){
     <div style="font-size:18px;font-weight:700;color:${color||'var(--text)'}">${value}</div>
   </div>`;
 }
+function supplyCumulativeRow(zone){
+  const color = zone.direction.includes('충돌') ? '#f59e0b' : (zone.direction.includes('롱') ? 'var(--up)' : 'var(--down)');
+  return `<div style="display:grid;grid-template-columns:70px 110px 1fr 150px;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--border)">
+    <strong style="color:${color}">#${zone.rank}</strong>
+    <strong>${Number(zone.low).toLocaleString()}–${Number(zone.high).toLocaleString()}</strong>
+    <span><b>${zone.location}</b> · ${zone.direction}<br><small style="color:var(--text-dim)">외국인 ${Number(zone.foreign_contracts).toLocaleString()} / 기관 ${Number(zone.institution_contracts).toLocaleString()}</small></span>
+    <span style="text-align:right;color:${color}">누적강도<br><b>${Number(zone.gross_contracts).toLocaleString()}계약</b></span>
+  </div>`;
+}
 async function loadSupplyZone(){
   const metaEl = document.getElementById('supplyMeta');
   try{
@@ -1726,19 +1725,17 @@ async function loadSupplyZone(){
     const cards = document.getElementById('supplySummaryCards');
     if(cards){
       cards.innerHTML = [
-        supplySummaryCard('외국인 누적 추정계약', (d.foreign_estimated_position>=0?'+':'')+Number(d.foreign_estimated_position).toLocaleString()+'계약', d.foreign_estimated_position>=0?'var(--up)':'var(--down)'),
-        supplySummaryCard('기관계 누적 추정계약', (d.institution_estimated_position>=0?'+':'')+Number(d.institution_estimated_position).toLocaleString()+'계약', d.institution_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard(`외국인 누적 추정계약 (${d.cumulative_trading_days||'-'}일)`, (d.foreign_estimated_position>=0?'+':'')+Number(d.foreign_estimated_position).toLocaleString()+'계약', d.foreign_estimated_position>=0?'var(--up)':'var(--down)'),
+        supplySummaryCard(`기관계 누적 추정계약 (${d.cumulative_trading_days||'-'}일)`, (d.institution_estimated_position>=0?'+':'')+Number(d.institution_estimated_position).toLocaleString()+'계약', d.institution_estimated_position>=0?'var(--up)':'var(--down)'),
         supplySummaryCard('외국인 추정 평균가', Number(d.foreign_average_price).toLocaleString(), '#f59e0b'),
         supplySummaryCard('기관 추정 평균가', Number(d.institution_average_price).toLocaleString(), '#f59e0b'),
       ].join('');
     }
 
-    const upperEl = document.getElementById('supplyUpperZones');
-    if(upperEl) upperEl.innerHTML = (d.upper_zones||[]).length ? d.upper_zones.map(supplyLevelRow).join('') : '<span style="color:var(--text-dim)">데이터 없음</span>';
-    const lowerEl = document.getElementById('supplyLowerZones');
-    if(lowerEl) lowerEl.innerHTML = (d.lower_zones||[]).length ? d.lower_zones.map(supplyLevelRow).join('') : '<span style="color:var(--text-dim)">데이터 없음</span>';
-    const conflictEl = document.getElementById('supplyConflictZones');
-    if(conflictEl) conflictEl.innerHTML = (d.conflict_zones||[]).length ? d.conflict_zones.map(supplyConflictRow).join('') : '<span style="color:var(--text-dim)">충돌구간 없음</span>';
+    const cumulativeTitle = document.getElementById('supplyCumulativeTitle');
+    if(cumulativeTitle) cumulativeTitle.textContent = `누적 핵심 매물대 · ${d.cumulative_from||'-'}~${d.cumulative_to||'-'} (${d.cumulative_trading_days||0}거래일)`;
+    const cumulativeEl = document.getElementById('supplyCumulativeZones');
+    if(cumulativeEl) cumulativeEl.innerHTML = (d.cumulative_zones||[]).length ? d.cumulative_zones.map(supplyCumulativeRow).join('') : '<span style="color:var(--text-dim)">누적 데이터 없음</span>';
 
     const noteEl = document.getElementById('supplySourceNote');
     if(noteEl) noteEl.textContent = d.source_note || '';
