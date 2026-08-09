@@ -1717,10 +1717,11 @@ async function loadSupplyZone(){
     const d = await res.json();
     if(metaEl) metaEl.textContent = `기준일 ${d.as_of} · 생성 ${d.generated_at} · 월물 ${d.futures_contract||'-'} · 현재가 ${Number(d.current_price).toLocaleString()} · ${d.bin_size}포인트 구간`;
 
-    if(d.candlestick_image) document.getElementById('supplyCandleImg').src = 'supply-zone/'+d.candlestick_image+'?v='+d.as_of;
-    document.getElementById('supplyForeignImg').src = 'supply-zone/'+d.foreign_image+'?v='+d.as_of;
-    document.getElementById('supplyInstitutionImg').src = 'supply-zone/'+d.institution_image+'?v='+d.as_of;
-    document.getElementById('supplySummaryImg').src = 'supply-zone/'+d.summary_image+'?v='+d.as_of;
+    const supplyAssetVersion = encodeURIComponent(d.generated_at || d.as_of || Date.now());
+    if(d.candlestick_image) document.getElementById('supplyCandleImg').src = 'supply-zone/'+d.candlestick_image+'?v='+supplyAssetVersion;
+    document.getElementById('supplyForeignImg').src = 'supply-zone/'+d.foreign_image+'?v='+supplyAssetVersion;
+    document.getElementById('supplyInstitutionImg').src = 'supply-zone/'+d.institution_image+'?v='+supplyAssetVersion;
+    document.getElementById('supplySummaryImg').src = 'supply-zone/'+d.summary_image+'?v='+supplyAssetVersion;
 
     const cards = document.getElementById('supplySummaryCards');
     if(cards){
