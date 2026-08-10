@@ -631,7 +631,11 @@
     <div class="report-meta" id="marketAnalysisMeta">최신 run_all 결과를 불러오는 중...</div>
     <div class="grid-2" id="marketSummaryCards" style="margin-bottom:16px"></div>
     <div class="grid-2" id="marketAnalysisCharts"></div>
-    <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"></div>
+    <div class="chart-card" style="padding:14px 16px;margin-top:16px">
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV · MD</span></div>
+      <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">현재 화면의 기준일과 동일한 최신 시장 원본 및 AI 분석 파일입니다.</div>
+    </div>
   </div>
 
   <!-- 추정 매물대: supply-zone/latest.json -->
@@ -661,6 +665,11 @@
     <div class="chart-card" style="margin-top:16px">
       <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">누적 핵심 매물대</span></div>
       <div id="supplyCumulativeZones" style="padding:12px 14px"></div>
+    </div>
+    <div class="chart-card" style="padding:14px 16px;margin-top:16px">
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV</span></div>
+      <div id="supplyDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 분석 JSON과 화면에 표시된 외국인·기관 포지션 및 누적 매물대를 CSV로 내려받습니다.</div>
     </div>
     <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:11px"></div>
   </div>
@@ -1608,6 +1617,10 @@ function marketChartCard(chart, stamp){
     <figure style="margin:0"><img src="${marketAssetBase}${encodeURIComponent(chart.image)}?v=${encodeURIComponent(stamp)}" alt="${escapeHtml(chart.title)}" loading="lazy" style="width:100%;height:auto;display:block"></figure>
   </div>`;
 }
+function downloadLink(base, file, title){
+  const safeFile = encodeURIComponent(file);
+  return `<a class="quick-btn" href="${base}${safeFile}" download="${safeFile}">↓ ${escapeHtml(title)}</a>`;
+}
 async function loadMarketAnalysis(){
   const meta = document.getElementById('marketAnalysisMeta');
   try{
@@ -1625,7 +1638,14 @@ async function loadMarketAnalysis(){
     const charts = document.getElementById('marketAnalysisCharts');
     if(charts) charts.innerHTML = (data.charts||[]).map(c=>marketChartCard(c, data.generated_at||data.as_of)).join('');
     const downloads = document.getElementById('marketDownloads');
-    if(downloads) downloads.innerHTML = (data.downloads||[]).map(d=>`<a class="quick-btn" href="${marketAssetBase}${encodeURIComponent(d.file)}" target="_blank" rel="noopener">${escapeHtml(d.title)}</a>`).join('');
+    if(downloads){
+      const coreFiles = [
+        {title:'시장 원본 JSON', file:'latest.json'},
+        {title:'AI 분석 JSON', file:'analysis_latest.json'},
+        {title:'AI 분석 Markdown', file:'analysis_latest.md'},
+      ];
+      downloads.innerHTML = coreFiles.concat(data.downloads||[]).map(d=>downloadLink(marketAssetBase, d.file, d.title)).join('');
+    }
   }catch(e){
     console.error('market analysis load failed', e);
     if(meta) meta.textContent = '시장분석 자료를 불러오지 못했습니다. 오늘 run_all 업로드 상태를 확인해 주세요.';
@@ -1762,6 +1782,11 @@ async function loadSupplyZone(){
     if(cumulativeTitle) cumulativeTitle.textContent = `누적 핵심 매물대 · ${d.cumulative_from||'-'}~${d.cumulative_to||'-'} (${d.cumulative_trading_days||0}거래일)`;
     const cumulativeEl = document.getElementById('supplyCumulativeZones');
     if(cumulativeEl) cumulativeEl.innerHTML = (d.cumulative_zones||[]).length ? d.cumulative_zones.map(supplyCumulativeRow).join('') : '<span style="color:var(--text-dim)">누적 데이터 없음</span>';
+
+    const downloads = document.getElementById('supplyDownloads');
+    if(downloads) downloads.innerHTML = `<a class="quick-btn" href="supply-zone/latest.json" download="supply-zone-latest.json">↓ 전체 분석 JSON</a>
+      <a class="quick-btn" href="supply-zone/position_summary_latest.csv" download="position_summary_latest.csv">↓ 포지션 요약 CSV</a>
+      <a class="quick-btn" href="supply-zone/cumulative_zones_latest.csv" download="cumulative_zones_latest.csv">↓ 누적 매물대 CSV</a>`;
 
     const noteEl = document.getElementById('supplySourceNote');
     if(noteEl) noteEl.textContent = d.source_note || '';
