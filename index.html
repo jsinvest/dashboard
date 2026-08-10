@@ -624,6 +624,11 @@
   <!-- run_all 자동 게시: market-analysis/latest.json -->
   <div class="tab-panel" data-tab-panel="market">
     <div class="section-title">시장분석 · ADR · 시장 폭 · 업종 강도</div>
+    <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV · MD</span></div>
+      <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">현재 화면의 기준일과 동일한 최신 시장 원본 및 AI 분석 파일입니다.</div>
+    </div>
     <div class="chart-card" id="marketAIAnalysis" style="padding:18px;margin-bottom:16px">
       <div class="report-meta" id="marketAIMeta">AI 시장분석을 불러오는 중...</div>
       <div id="marketAIContent"></div>
@@ -631,16 +636,16 @@
     <div class="report-meta" id="marketAnalysisMeta">최신 run_all 결과를 불러오는 중...</div>
     <div class="grid-2" id="marketSummaryCards" style="margin-bottom:16px"></div>
     <div class="grid-2" id="marketAnalysisCharts"></div>
-    <div class="chart-card" style="padding:14px 16px;margin-top:16px">
-      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV · MD</span></div>
-      <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">현재 화면의 기준일과 동일한 최신 시장 원본 및 AI 분석 파일입니다.</div>
-    </div>
   </div>
 
   <!-- 추정 매물대: supply-zone/latest.json -->
   <div class="tab-panel" data-tab-panel="supply">
     <div class="section-title">선물옵션 매물대 · KOSPI200 선물 외국인·기관 추정 매물대</div>
+    <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV</span></div>
+      <div id="supplyDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 분석 JSON과 화면에 표시된 외국인·기관 포지션 및 누적 매물대를 CSV로 내려받습니다.</div>
+    </div>
     <div class="report-meta" id="supplyMeta">supply-zone/latest.json 로딩중...</div>
     <div class="grid-2" id="supplySummaryCards" style="margin-bottom:16px"></div>
     <div class="chart-card" id="supplyOverallAssessment" style="padding:16px 18px;margin-bottom:16px"></div>
@@ -665,11 +670,6 @@
     <div class="chart-card" style="margin-top:16px">
       <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">누적 핵심 매물대</span></div>
       <div id="supplyCumulativeZones" style="padding:12px 14px"></div>
-    </div>
-    <div class="chart-card" style="padding:14px 16px;margin-top:16px">
-      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV</span></div>
-      <div id="supplyDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 분석 JSON과 화면에 표시된 외국인·기관 포지션 및 누적 매물대를 CSV로 내려받습니다.</div>
     </div>
     <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:11px"></div>
   </div>
