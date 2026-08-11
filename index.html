@@ -750,7 +750,7 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 });
 
 // ── 사용자별 차트 표시/순서 설정 ──
-const LAYOUT_STORE_PREFIX = 'js-dashboard-layout-v1';
+const LAYOUT_STORE_PREFIX = 'js-dashboard-layout-v2';
 let activeLayoutTab = 'all';
 let layoutEditing = false;
 let pointerLayoutCard = null;
@@ -767,7 +767,10 @@ function layoutPanelName(panel){
   return (button?.textContent || key).replace(/[\[\]]/g,'').trim();
 }
 function layoutTopCards(panel){
-  return [...panel.querySelectorAll('.chart-card')].filter(card=>!card.parentElement?.closest('.chart-card'));
+  return [...panel.querySelectorAll('.chart-card')].filter(card=>
+    !card.parentElement?.closest('.chart-card') &&
+    !!card.querySelector('canvas, iframe, img, .tradingview-widget-container')
+  );
 }
 function layoutCardTitle(card){
   return (card.querySelector('.card-title')?.textContent || card.id || card.innerText || '차트')
