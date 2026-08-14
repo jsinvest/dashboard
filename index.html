@@ -1782,16 +1782,22 @@ function analysisList(items){
   return `<ul style="margin:8px 0 0 18px;line-height:1.75;color:var(--text)">${(items||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
 }
 function renderStockCandidates(data){
+  const asOf=String(data.as_of||'');
+  const asOfLabel=/^\d{8}$/.test(asOf)
+    ? `${Number(asOf.slice(4,6))}월 ${Number(asOf.slice(6,8))}일 종가 기준`
+    : '최신 종가 기준';
+  const targetLabel=data.target_session ? ` · 대상 ${escapeHtml(data.target_session)}` : '';
   const finalRows = (data.final_picks||[]).map(x=>`<tr>
     <td>${escapeHtml(x.market)}</td><td>${escapeHtml(x.sector)}</td><td><strong>${escapeHtml(x.name)}</strong><br><span class="code">${escapeHtml(x.code)}</span></td>
     <td>${escapeHtml(x.priority)}</td><td>${escapeHtml(x.reason)}</td><td>${escapeHtml(x.condition)}</td>
   </tr>`).join('');
   const candidateGroups = ['KOSPI','KOSDAQ'].map(m=>{
-    const rows=(data.candidate_stocks||[]).filter(x=>x.market===m).map(x=>`<li><strong>${escapeHtml(x.name)}</strong> <span class="code">${escapeHtml(x.code)}</span> · ${escapeHtml(x.sector)} · ${escapeHtml(x.chart)}</li>`).join('');
-    return `<div class="chart-card" style="padding:12px 14px"><strong style="color:var(--accent)">${m} 1차 후보 10</strong><ul style="margin:8px 0 0 18px;line-height:1.65">${rows}</ul></div>`;
+    const marketRows=(data.candidate_stocks||[]).filter(x=>x.market===m);
+    const rows=marketRows.map(x=>`<li><strong>${escapeHtml(x.name)}</strong> <span class="code">${escapeHtml(x.code)}</span> · ${escapeHtml(x.sector)} · ${escapeHtml(x.chart)}</li>`).join('');
+    return `<div class="chart-card" style="padding:12px 14px"><strong style="color:var(--accent)">${m} 1차 후보 ${marketRows.length}</strong><ul style="margin:8px 0 0 18px;line-height:1.65">${rows}</ul></div>`;
   }).join('');
   if(!finalRows && !candidateGroups)return '';
-  return `<div style="margin-top:18px"><strong>오늘의 종목 후보 · 8월 12일 종가 기준</strong>
+  return `<div style="margin-top:18px"><strong>오늘의 종목 후보 · ${asOfLabel}${targetLabel}</strong>
     <div class="grid-2" style="margin-top:10px">${candidateGroups}</div>
     <div style="overflow-x:auto;margin-top:12px"><table><thead><tr><th>시장</th><th>섹터</th><th>종목</th><th>우선순위</th><th>선정 이유</th><th>진입 확인</th></tr></thead><tbody>${finalRows}</tbody></table></div>
     <div style="margin-top:8px;font-size:11px;color:var(--text-muted)">${escapeHtml(data.trading_rule||'')}</div>
