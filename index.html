@@ -4,11 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J's Trading Dashboard</title>
+<script>document.documentElement.classList.add('dashboard-locked');</script>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#0a0c10;--bg2:#111318;--bg3:#181c24;--border:#1e2330;--accent:#00e5ff;--up:#2ed573;--down:#ff4757;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;min-height:100vh;}
+  html.dashboard-locked body{overflow:hidden;}
+  html.dashboard-locked body>:not(#dashboardLock){visibility:hidden;}
+  #dashboardLock{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,#172334 0,#0a0c10 55%);visibility:visible;}
+  #dashboardLock[hidden]{display:none;}
+  .lock-card{width:min(430px,100%);background:rgba(17,19,24,.96);border:1px solid var(--border);border-radius:14px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.6);text-align:center;}
+  .lock-logo{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:12px;}
+  .lock-title{font-size:22px;font-weight:700;margin-bottom:8px;}
+  .lock-copy{font-size:13px;color:var(--text-dim);line-height:1.65;margin-bottom:22px;}
+  .lock-form{display:flex;gap:8px;}
+  .lock-input{min-width:0;flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:12px 14px;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:15px;outline:none;}
+  .lock-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,229,255,.08);}
+  .lock-submit{border:0;border-radius:7px;padding:0 18px;background:var(--accent);color:#001014;font-weight:800;cursor:pointer;}
+  .lock-submit:disabled{opacity:.55;cursor:wait;}
+  .lock-error{min-height:22px;margin-top:12px;color:var(--down);font-size:12px;}
+  .manual-lock-btn{margin-left:12px;background:transparent;border:1px solid var(--border);border-radius:5px;padding:4px 8px;color:var(--text-dim);font-size:11px;cursor:pointer;}
+  .manual-lock-btn:hover{border-color:var(--accent);color:var(--accent);}
+  @media(max-width:520px){.lock-card{padding:24px 18px}.lock-form{flex-direction:column}.lock-submit{padding:12px}.manual-lock-btn{margin-left:6px}}
   header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
   .logo{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--accent);letter-spacing:2px;}
   .logo span{color:var(--text-dim);font-weight:400;}
@@ -189,9 +207,68 @@
 </style>
 </head>
 <body>
+<div id="dashboardLock" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+  <div class="lock-card">
+    <div class="lock-logo">J'S DASHBOARD</div>
+    <div class="lock-title" id="lockTitle">대시보드 잠금</div>
+    <div class="lock-copy">비밀번호를 입력해야 전체 화면을 사용할 수 있습니다.</div>
+    <form class="lock-form" id="dashboardLockForm">
+      <input class="lock-input" id="dashboardPassword" type="password" autocomplete="current-password" placeholder="비밀번호" aria-label="대시보드 비밀번호" required>
+      <button class="lock-submit" id="dashboardUnlockButton" type="submit">열기</button>
+    </form>
+    <div class="lock-error" id="dashboardLockError" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+<script>
+(() => {
+  const accessKey='js-dashboard-unlocked-v1';
+  const passwordHash='52928ab2e89cff627551222ab0895fe7c0cda77b5489da96b2e709c7c60c76e8';
+  const lock=document.getElementById('dashboardLock');
+  const form=document.getElementById('dashboardLockForm');
+  const input=document.getElementById('dashboardPassword');
+  const button=document.getElementById('dashboardUnlockButton');
+  const error=document.getElementById('dashboardLockError');
+  const unlock=()=>{
+    document.documentElement.classList.remove('dashboard-locked');
+    lock.hidden=true;
+  };
+  const digest=async value=>{
+    const bytes=new TextEncoder().encode(value);
+    const hash=await crypto.subtle.digest('SHA-256',bytes);
+    return Array.from(new Uint8Array(hash),byte=>byte.toString(16).padStart(2,'0')).join('');
+  };
+  try{
+    if(sessionStorage.getItem(accessKey)==='1') unlock();
+  }catch(_){ }
+  if(!lock.hidden) setTimeout(()=>input.focus(),0);
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    error.textContent='';
+    button.disabled=true;
+    try{
+      if(await digest(input.value)===passwordHash){
+        try{sessionStorage.setItem(accessKey,'1');}catch(_){ }
+        input.value='';
+        unlock();
+      }else{
+        error.textContent='비밀번호가 올바르지 않습니다.';
+        input.select();
+      }
+    }catch(_){
+      error.textContent='브라우저 보안 기능을 사용할 수 없습니다.';
+    }finally{
+      button.disabled=false;
+    }
+  });
+  window.lockDashboard=()=>{
+    try{sessionStorage.removeItem(accessKey);}catch(_){ }
+    location.reload();
+  };
+})();
+</script>
 <header>
   <div class="logo">J<span>'s</span> DASHBOARD</div>
-  <div class="time-display"><span class="kr-time" id="krTime"></span><span id="nyTime" style="margin-left:14px;"></span></div>
+  <div class="time-display"><span class="kr-time" id="krTime"></span><span id="nyTime" style="margin-left:14px;"></span><button class="manual-lock-btn" type="button" onclick="lockDashboard()">🔒 잠금</button></div>
 </header>
 
 <div class="search-section">
