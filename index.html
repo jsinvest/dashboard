@@ -735,9 +735,9 @@
   <div class="tab-panel" data-tab-panel="market">
     <div class="section-title">시장분석 · ADR · 시장 폭 · 업종 강도</div>
     <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
-      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV · MD</span></div>
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">ZIP · JSON · CSV · MD · XLSX</span></div>
       <div id="marketDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">현재 화면의 기준일과 동일한 최신 시장 원본 및 AI 분석 파일입니다.</div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 ZIP에는 당일 시장자료와 누적 이력, 55개 섹터·주도주·차트 스캐너 결과가 들어 있습니다. 압축을 풀어 GPT에 전달하면 됩니다.</div>
     </div>
     <div class="chart-card" id="marketAIAnalysis" style="padding:18px;margin-bottom:16px">
       <div class="report-meta" id="marketAIMeta">AI 시장분석을 불러오는 중...</div>
@@ -752,9 +752,9 @@
   <div class="tab-panel" data-tab-panel="supply">
     <div class="section-title">선물옵션 매물대 · KOSPI200 선물 외국인·기관 추정 매물대</div>
     <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
-      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">JSON · CSV</span></div>
+      <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">ZIP · JSON · CSV · PNG</span></div>
       <div id="supplyDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
-      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 분석 JSON과 화면에 표시된 외국인·기관 포지션 및 누적 매물대를 CSV로 내려받습니다.</div>
+      <div style="margin-top:9px;color:var(--text-muted);font-size:10px">전체 ZIP은 HTS 캡처·OCR·검증·현재 만기 누적 원장·KRX 원자료·매물대 산출물을 포함합니다. 분석 내용은 확인 후 별도로 게시됩니다.</div>
     </div>
     <div class="report-meta" id="supplyMeta">supply-zone/latest.json 로딩중...</div>
     <div class="grid-2" id="supplySummaryCards" style="margin-bottom:16px"></div>
@@ -2076,6 +2076,13 @@ function supplyCumulativeRow(zone){
 async function loadSupplyZone(){
   const metaEl = document.getElementById('supplyMeta');
   try{
+    let dataBundle = null;
+    try{
+      const bundleRes = await fetch('supply-zone/data_bundle_latest.json?v='+Date.now(), {cache:'no-store'});
+      if(bundleRes.ok) dataBundle = await bundleRes.json();
+    }catch(bundleError){
+      console.warn('futures data bundle metadata load failed', bundleError);
+    }
     const res = await fetch('supply-zone/latest.json?v='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
     const d = await res.json();
@@ -2106,9 +2113,20 @@ async function loadSupplyZone(){
     if(cumulativeEl) cumulativeEl.innerHTML = (d.cumulative_zones||[]).length ? d.cumulative_zones.map(supplyCumulativeRow).join('') : '<span style="color:var(--text-dim)">누적 데이터 없음</span>';
 
     const downloads = document.getElementById('supplyDownloads');
-    if(downloads) downloads.innerHTML = `<a class="quick-btn" href="supply-zone/latest.json" download="supply-zone-latest.json">↓ 전체 분석 JSON</a>
-      <a class="quick-btn" href="supply-zone/position_summary_latest.csv" download="position_summary_latest.csv">↓ 포지션 요약 CSV</a>
-      <a class="quick-btn" href="supply-zone/cumulative_zones_latest.csv" download="cumulative_zones_latest.csv">↓ 누적 매물대 CSV</a>`;
+    if(downloads){
+      const files = [
+        {title:'전체 분석 JSON', file:'latest.json'},
+        {title:'포지션 요약 CSV', file:'position_summary_latest.csv'},
+        {title:'누적 매물대 CSV', file:'cumulative_zones_latest.csv'},
+      ];
+      if(dataBundle && dataBundle.file){
+        files.unshift({
+          title:`GPT용 전체 선물옵션 데이터 ZIP (${dataBundle.as_of} · ${dataBundle.file_count}개 파일)`,
+          file:dataBundle.file,
+        });
+      }
+      downloads.innerHTML = files.map(item=>downloadLink('supply-zone/', item.file, item.title)).join('');
+    }
 
     const noteEl = document.getElementById('supplySourceNote');
     if(noteEl) noteEl.textContent = d.source_note || '';
