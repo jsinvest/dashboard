@@ -2,14 +2,17 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>J's Trading Dashboard</title>
 <script>document.documentElement.classList.add('dashboard-locked');</script>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#0a0c10;--bg2:#111318;--bg3:#181c24;--border:#1e2330;--accent:#00e5ff;--up:#2ed573;--down:#ff4757;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;min-height:100vh;}
+  html{width:100%;max-width:100%;overflow-x:hidden;}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;min-height:100vh;width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+  button,a,input,textarea,select{touch-action:manipulation;}
+  img,canvas,iframe{max-width:100%;}
   html.dashboard-locked body{overflow:hidden;}
   html.dashboard-locked body>:not(#dashboardLock){visibility:hidden;}
   #dashboardLock{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,#172334 0,#0a0c10 55%);visibility:visible;}
@@ -57,6 +60,7 @@
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .grid-3{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .grid-4{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid-2>*,.grid-3>*,.grid-4>*{min-width:0;}
   .chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative;}
   .card-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);}
   .expand-chart-btn{margin-left:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:5px;padding:5px 8px;font-size:11px;line-height:1;cursor:pointer;white-space:nowrap;}
@@ -200,10 +204,110 @@
   .adr-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--up),var(--accent));transition:width .5s;}
   .adr-labels{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-muted);}
   .adr-dot{width:8px;height:8px;border-radius:50%;background:var(--up);animation:pulse 2s infinite;display:inline-block;}
+  .table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  #marketAIContent,#supplySourceNote{overflow-wrap:anywhere;word-break:keep-all;}
+  #marketAIContent table{width:100%;min-width:720px;border-collapse:collapse;font-size:12px;}
+  #marketAIContent th,#marketAIContent td{padding:8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;}
+  .supply-zone-row{display:grid;grid-template-columns:70px 110px minmax(0,1fr) 150px;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--border);}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   footer{text-align:center;padding:20px;color:var(--text-muted);font-size:11px;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:20px;}
   @media(max-width:1200px){.grid-4{grid-template-columns:repeat(2,1fr);}.grid-3{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:640px){.main{padding:12px;}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+  @media(max-width:900px){
+    .tab-menu{flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:6px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .tab-menu::-webkit-scrollbar{display:none;}
+    .tab-btn{flex:0 0 auto;min-height:42px;white-space:nowrap;}
+  }
+  @media(max-width:640px){
+    header{height:52px;padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:8px;}
+    .logo{font-size:13px;letter-spacing:1px;white-space:nowrap;}
+    .time-display{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0;font-size:10px;white-space:nowrap;}
+    #nyTime{display:none;}
+    .manual-lock-btn{min-height:36px;margin-left:0;padding:5px 8px;font-size:10px;white-space:nowrap;}
+
+    .search-section{display:grid;grid-template-columns:minmax(0,1fr);padding:10px 12px;gap:8px;}
+    .search-label{display:none;}
+    .search-wrapper{width:100%;max-width:none;min-width:0;}
+    .search-input{min-width:0;padding:10px 12px;font-size:16px;}
+    .search-btn{min-height:44px;padding:8px 13px;white-space:nowrap;}
+    .quick-btns{width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .quick-btns::-webkit-scrollbar,.tab-menu::-webkit-scrollbar,.layout-manager::-webkit-scrollbar,.tf-row::-webkit-scrollbar{display:none;}
+    .quick-btns .quick-btn{flex:0 0 auto;min-height:38px;padding:7px 11px;}
+
+    .tab-menu{top:52px;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:8px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .tab-btn{flex:0 0 auto;min-height:42px;padding:9px 12px;font-size:11px;white-space:nowrap;}
+    .layout-manager{flex-wrap:nowrap;overflow-x:auto;padding:7px 12px;gap:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .layout-manager-label,.layout-manager-status{display:none;}
+    .layout-control-btn{flex:0 0 auto;min-height:40px;padding:7px 10px;white-space:nowrap;}
+
+    .main{padding:12px max(10px,env(safe-area-inset-right)) 18px max(10px,env(safe-area-inset-left));gap:15px;}
+    .tab-panel{min-width:0;}
+    .section-title{font-size:10px;letter-spacing:1px;line-height:1.5;margin-bottom:9px;}
+    .grid-2,.grid-3,.grid-4{grid-template-columns:minmax(0,1fr);gap:12px;}
+    .chart-card,.schedule-card,.link-card,.memo-card,.report-card,.adr-card{border-radius:8px;min-width:0;}
+    .card-header{padding:10px 11px;gap:8px;align-items:flex-start;}
+    .card-header>div{min-width:0;}
+    .card-title{font-size:11px;line-height:1.45;overflow-wrap:anywhere;}
+    .card-tag{flex:0 0 auto;max-width:48%;font-size:9px;line-height:1.4;white-space:normal;text-align:right;overflow-wrap:anywhere;}
+    .expand-chart-btn{min-height:34px;padding:6px 8px;font-size:10px;}
+    .naver-chart-wrap,.night-wrap,.chart-body{height:260px;}
+    .naver-chart-info,.night-info{gap:8px;flex-wrap:wrap;padding:7px 10px;}
+    .tf-row{overflow-x:auto;flex-wrap:nowrap;padding:6px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .tf-btn{flex:0 0 auto;min-width:48px;min-height:34px;padding:6px 8px;}
+
+    .chart-modal-inner{width:100vw;max-width:none;height:100vh;height:100dvh;border:0;border-radius:0;}
+    .chart-modal-header{padding:12px;}
+    .chart-card.chart-expanded{height:100vh;height:100dvh;}
+    .chart-card.chart-expanded figure img{max-height:calc(100dvh - 48px);}
+    .lock-card{padding:24px 18px;}
+    .lock-form{flex-direction:column;}
+    .lock-input{font-size:16px;}
+    .lock-submit{min-height:46px;padding:12px;}
+
+    .schedule-card,.link-card,.memo-card,.report-card,.adr-card{padding:13px;}
+    .schedule-input-row,.report-search-row{flex-direction:column;}
+    .schedule-input-row input,.report-search-row input,.link-input-row input,.memo-input-row input,.memo-input-row textarea{font-size:16px;min-width:0;}
+    .schedule-input-row button,.report-search-row button,.link-input-row button,.memo-input-row button{min-height:44px;}
+    .link-input-row,.memo-input-row{grid-template-columns:minmax(0,1fr);}
+
+    .schedule-table,.schedule-table tbody,.link-table,.link-table tbody{display:block;width:100%;}
+    .schedule-table thead,.link-table thead{display:none;}
+    .schedule-table tr{display:grid;grid-template-columns:auto auto;gap:3px 10px;padding:10px 0;border-bottom:1px solid var(--border);}
+    .schedule-table td{display:block;border:0;padding:0;min-width:0;}
+    .schedule-table td:nth-child(3){grid-column:1/-1;line-height:1.55;overflow-wrap:anywhere;}
+    .link-table tr{display:block;padding:11px 0;border-bottom:1px solid var(--border);}
+    .link-table td{display:block;border:0;padding:2px 0;min-width:0;overflow-wrap:anywhere;word-break:break-word;}
+    .link-table td:first-child{font-weight:700;color:var(--text);}
+    .link-open-btn,.link-edit-btn,.link-del-btn{min-height:38px;margin-top:6px;}
+
+    .memo-head{align-items:flex-start;flex-wrap:wrap;}
+    .memo-date{white-space:normal;}
+    .report-result-box{max-width:100%;-webkit-overflow-scrolling:touch;}
+    .report-table{font-size:11px;}
+    .report-tabs{overflow-x:auto;flex-wrap:nowrap;}
+    .report-mini-btn{flex:0 0 auto;min-height:38px;}
+    .adr-value{font-size:34px;}
+    .adr-card>div:last-child{flex-wrap:wrap;}
+    .adr-card>div:last-child input{flex:1 1 calc(50% - 4px)!important;min-width:0;}
+    .adr-card>div:last-child button{width:100%;min-height:42px;}
+
+    #marketAIAnalysis,#supplyOverallAssessment{padding:13px!important;}
+    #marketAIContent>div:first-child{font-size:17px!important;}
+    #marketAIContent ul{margin-left:16px!important;}
+    #marketDownloads,#supplyDownloads{display:grid!important;grid-template-columns:minmax(0,1fr);gap:7px!important;}
+    #marketDownloads .quick-btn,#supplyDownloads .quick-btn{display:flex;align-items:center;width:100%;min-height:44px;padding:9px 11px;white-space:normal;line-height:1.45;text-align:left;overflow-wrap:anywhere;}
+    .supply-zone-row{grid-template-columns:auto minmax(0,1fr);gap:5px 10px;padding:10px 2px;align-items:start;}
+    .supply-zone-row>:nth-child(3){grid-column:1/-1;grid-row:2;line-height:1.5;}
+    .supply-zone-row>:nth-child(4){grid-column:2;grid-row:1;text-align:right!important;}
+    footer{padding:16px 12px calc(16px + env(safe-area-inset-bottom));font-size:9px;line-height:1.6;}
+  }
+  @media(max-width:360px){
+    .logo{font-size:12px;}
+    .kr-time{font-size:9px;}
+    .manual-lock-btn{padding:5px 6px;}
+  }
+  @media(max-height:500px) and (orientation:landscape){
+    .naver-chart-wrap,.night-wrap,.chart-body{height:220px;}
+  }
 </style>
 </head>
 <body>
@@ -2066,7 +2170,7 @@ function renderSupplyAssessment(assessment){
 }
 function supplyCumulativeRow(zone){
   const color = zone.direction.includes('충돌') ? '#f59e0b' : (zone.direction.includes('롱') ? 'var(--up)' : 'var(--down)');
-  return `<div style="display:grid;grid-template-columns:70px 110px 1fr 150px;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--border)">
+  return `<div class="supply-zone-row">
     <strong style="color:${color}">#${zone.rank}</strong>
     <strong>${Number(zone.low).toLocaleString()}–${Number(zone.high).toLocaleString()}</strong>
     <span><b>${zone.location}</b> · ${zone.direction}<br><small style="color:var(--text-dim)">외국인 ${Number(zone.foreign_contracts).toLocaleString()} / 기관 ${Number(zone.institution_contracts).toLocaleString()}</small></span>
