@@ -114,6 +114,7 @@
   .daily-leader-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);border:1px solid rgba(0,229,255,.35);border-radius:6px;padding:6px 9px;background:rgba(0,229,255,.06);}
   .daily-leader-tabs{display:flex;gap:6px;flex-wrap:wrap;}.daily-leader-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;padding:7px 12px;font-size:11px;font-family:'JetBrains Mono',monospace;cursor:pointer;}.daily-leader-tab.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
   .daily-leader-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}.daily-leader-stat{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:13px;min-width:0;}.daily-leader-stat small{display:block;color:var(--text-dim);font-size:10px;margin-bottom:7px;}.daily-leader-stat strong{display:block;font-size:15px;line-height:1.45;margin-bottom:4px;}.daily-leader-stat span{color:var(--text-muted);font-size:10px;line-height:1.5;}
+  .daily-ecosystem{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow:hidden;}.daily-ecosystem-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}.daily-ecosystem-title b{font-size:12px;}.daily-ecosystem-title span{font-size:10px;color:var(--text-dim);}.daily-ecosystem svg{display:block;width:100%;height:auto;min-height:240px;}.daily-ecosystem .eco-chain{stroke:var(--accent);stroke-width:4;stroke-opacity:.7;}.daily-ecosystem .eco-software{stroke:#f59e0b;stroke-width:2.5;stroke-dasharray:7 5;stroke-opacity:.85;}.daily-ecosystem .eco-node circle{fill:var(--bg3);stroke:var(--accent);stroke-width:2.5;}.daily-ecosystem .eco-node.software circle{stroke:#f59e0b;}.daily-ecosystem text{fill:var(--text);font-size:12px;text-anchor:middle;}.daily-ecosystem .eco-name{font-weight:700;}.daily-ecosystem .eco-score,.daily-ecosystem .eco-stocks{fill:var(--text-muted);font-size:10px;}.daily-ecosystem .eco-link-label{fill:var(--text-dim);font-size:10px;}.daily-ecosystem-mobile{display:none;}
   .daily-leader-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;}.daily-market-lane{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0;}.daily-market-lane::before{content:'';position:absolute;left:31px;top:58px;bottom:18px;width:2px;background:linear-gradient(var(--accent),var(--border));opacity:.7;}.daily-market-head{position:relative;z-index:1;display:flex;align-items:center;gap:10px;margin-bottom:16px;}.daily-market-node{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--bg3);border:2px solid var(--accent);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;}.daily-market-head strong{font-size:14px;}.daily-market-head span{display:block;color:var(--text-dim);font-size:10px;margin-top:3px;}
   .daily-sector{position:relative;margin:0 0 14px 46px;padding-left:16px;border-left:2px solid var(--border);}.daily-sector::before{content:'';position:absolute;left:-48px;top:14px;width:46px;height:2px;background:var(--border);}.daily-sector-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;}.daily-sector-title b{font-size:12px;}.daily-sector-title span{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;}
   .daily-stock{display:grid;grid-template-columns:minmax(90px,1fr) auto;gap:3px 10px;padding:8px 9px;margin-bottom:5px;background:var(--bg3);border-left:3px solid var(--border);border-radius:0 6px 6px 0;cursor:pointer;}.daily-stock:hover{background:#1a1e27;}.daily-stock.leader{border-left-color:var(--up);}.daily-stock.emerging{border-left-color:#f59e0b;}.daily-stock b{font-size:12px;}.daily-stock .daily-stock-state{font-size:10px;color:var(--up);text-align:right;}.daily-stock small{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:10px;grid-column:1/-1;}.daily-stock .weak{color:var(--down);}
@@ -229,6 +230,7 @@
   @media(max-width:640px){
     .daily-leader-summary,.daily-leader-map{grid-template-columns:1fr;}
     .daily-leader-toolbar{align-items:flex-start;}.daily-leader-tabs{width:100%;}.daily-leader-tab{flex:1;min-height:40px;}
+    .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;gap:7px;}.daily-ecosystem-mobile span{padding:8px 10px;border-left:3px solid var(--accent);background:var(--bg3);font-size:10px;color:var(--text-muted);}.daily-ecosystem-mobile b{color:var(--text);font-weight:700;}
     header{height:52px;padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:8px;}
     .logo{font-size:13px;letter-spacing:1px;white-space:nowrap;}
     .time-display{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0;font-size:10px;white-space:nowrap;}
@@ -861,12 +863,36 @@
       </div>
       <div class="daily-leader-summary">
         <div class="daily-leader-stat"><small>확정 주도주</small><strong id="dailyLeaderConfirmed">한화생명 · 로보티즈</strong><span id="dailyLeaderConfirmedNote">각 시장에서 섹터·RS·거래대금·지속성 동시 확인</span></div>
-        <div class="daily-leader-stat"><small>급부상 후보</small><strong id="dailyLeaderEmerging">DN오토모티브</strong><span id="dailyLeaderEmergingNote">당일 폭발력 1위, 지속성 추가 확인 필요</span></div>
-        <div class="daily-leader-stat"><small>관찰 후보</small><strong id="dailyLeaderWatch">엔비알모션 · 현대오토에버</strong><span id="dailyLeaderWatchNote">지수 대비 강하지만 수급 확인 필요</span></div>
+        <div class="daily-leader-stat"><small>급부상 후보</small><strong id="dailyLeaderEmerging">DN오토모티브 · 현대차</strong><span id="dailyLeaderEmergingNote">2차전지와 자동차 생태계로 자금 확산</span></div>
+        <div class="daily-leader-stat"><small>관찰 후보</small><strong id="dailyLeaderWatch">엔비알모션 · 현대오토에버 · 한라캐스트</strong><span id="dailyLeaderWatchNote">산업 연결은 강하지만 수급 확인 필요</span></div>
+      </div>
+      <div class="daily-ecosystem">
+        <div class="daily-ecosystem-title"><b>주도 산업 생태계 연결망</b><span>실선: 공급망 연결 · 점선: SW/AI가 각 산업을 연결</span></div>
+        <svg viewBox="0 0 1100 285" role="img" aria-label="자동차, 로봇, 기계 산업장비, 2차전지, 소프트웨어 IT 산업 연결망">
+          <g class="eco-links">
+            <line class="eco-chain" x1="120" y1="205" x2="390" y2="205"/><text class="eco-link-label" x="255" y="192">자율주행 · 전장부품</text>
+            <line class="eco-chain" x1="390" y1="205" x2="680" y2="205"/><text class="eco-link-label" x="535" y="192">로봇 · 자동화 설비</text>
+            <line class="eco-chain" x1="680" y1="205" x2="980" y2="205"/><text class="eco-link-label" x="830" y="192">배터리 생산장비</text>
+            <line class="eco-software" x1="550" y1="56" x2="120" y2="205"/><text class="eco-link-label" x="300" y="108">자율주행 SW</text>
+            <line class="eco-software" x1="550" y1="56" x2="390" y2="205"/><text class="eco-link-label" x="430" y="116">AI · 제어</text>
+            <line class="eco-software" x1="550" y1="56" x2="680" y2="205"/><text class="eco-link-label" x="666" y="116">스마트팩토리</text>
+            <line class="eco-software" x1="550" y1="56" x2="980" y2="205"/><text class="eco-link-label" x="805" y="108">BMS · 공정제어</text>
+          </g>
+          <g class="eco-node software"><circle cx="550" cy="56" r="45"/><text class="eco-name" x="550" y="51">SW·IT</text><text class="eco-score" x="550" y="68">64.5 · 연결 허브</text><text class="eco-stocks" x="550" y="120">현대오토에버 · 아이크래프트</text></g>
+          <g class="eco-node"><circle cx="120" cy="205" r="48"/><text class="eco-name" x="120" y="199">자동차·부품</text><text class="eco-score" x="120" y="216">62.0 · 7위</text><text class="eco-stocks" x="120" y="270">현대차 · 한라캐스트</text></g>
+          <g class="eco-node"><circle cx="390" cy="205" r="48"/><text class="eco-name" x="390" y="199">로봇·자동화</text><text class="eco-score" x="390" y="216">73.9 · 1위</text><text class="eco-stocks" x="390" y="270">로보티즈 · 뉴로메카</text></g>
+          <g class="eco-node"><circle cx="680" cy="205" r="48"/><text class="eco-name" x="680" y="199">기계·산업장비</text><text class="eco-score" x="680" y="216">64.9 · 3위</text><text class="eco-stocks" x="680" y="270">엔비알모션 · 두산에너빌리티</text></g>
+          <g class="eco-node"><circle cx="980" cy="205" r="48"/><text class="eco-name" x="980" y="199">2차전지</text><text class="eco-score" x="980" y="216">64.5 · 4위</text><text class="eco-stocks" x="980" y="270">DN오토모티브 · 삼성SDI</text></g>
+        </svg>
+        <div class="daily-ecosystem-mobile"><span><b>SW·IT</b> → 자동차: 자율주행 SW</span><span><b>SW·IT</b> → 로봇: AI·제어</span><span><b>SW·IT</b> → 기계·산업장비: 스마트팩토리</span><span><b>SW·IT</b> → 2차전지: BMS·공정제어</span><span><b>자동차 ↔ 로봇 ↔ 기계·산업장비 ↔ 2차전지</b> 공급망 연쇄</span></div>
       </div>
       <div class="daily-leader-map">
         <div class="daily-market-lane" data-daily-market="KOSPI">
           <div class="daily-market-head"><span class="daily-market-node">KS</span><div><strong>KOSPI 주도축</strong><span>KOSPI 대비 RS로 판정 · 대형 거래대금 기준</span></div></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>자동차·일반부품</b><span>섹터 7위 · 62.0</span></div>
+            <div class="daily-stock emerging" data-leader-detail="현대차|KOSPI 급부상 후보|전일 주도점수 58.7에서 오늘 82.5로 상승. 거래대금 5,379.1억, KOSPI 대비 RS +5.83%p, 수급점수 +12.0."><b>현대차</b><span class="daily-stock-state">급부상</span><small>+8.24% · 5,379.1억 · RS +5.83%p · 1.80배</small></div>
+            <div class="daily-stock" data-leader-detail="HL만도|자동차 후발 후보|자율주행·로봇 제어 연결 종목. KOSPI 대비 RS +0.47%p, 거래대금 435.9억."><b>HL만도</b><span class="daily-stock-state">후발</span><small>+2.88% · 435.9억 · RS +0.47%p · 1.51배</small></div>
+          </div>
           <div class="daily-sector"><div class="daily-sector-title"><b>보험</b><span>섹터 2위 · 73.5</span></div>
             <div class="daily-stock leader" data-leader-detail="한화생명|KOSPI 확정 주도주|전일 +7.02%, 오늘 +11.93%로 연속 선도. KOSPI 대비 RS +9.51%p, 거래대금 793.8억, 20일 평균 대비 5.53배."><b>한화생명</b><span class="daily-stock-state">확정 주도</span><small>+11.93% · 793.8억 · RS +9.51%p · 5.53배</small></div>
             <div class="daily-stock" data-leader-detail="한화손해보험|보험 동반 확산|상승률 +9.05%, KOSPI 대비 RS +6.63%p. 한화생명과 함께 보험 섹터 확산을 확인."><b>한화손해보험</b><span class="daily-stock-state">동반 확산</span><small>+9.05% · 76.0억 · RS +6.63%p · 2.84배</small></div>
@@ -882,6 +908,10 @@
         </div>
         <div class="daily-market-lane" data-daily-market="KOSDAQ">
           <div class="daily-market-head"><span class="daily-market-node">KQ</span><div><strong>KOSDAQ 주도축</strong><span>KOSDAQ 대비 RS로 판정 · 거래대금 증가 배수 중시</span></div></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>자동차·일반부품</b><span>섹터 7위 · 62.0</span></div>
+            <div class="daily-stock" data-leader-detail="한라캐스트|KOSDAQ 관찰 후보|2일 연속 강한 상승과 거래대금 증가를 보였지만 수급점수 -39.6으로 확정 주도 조건 미달."><b>한라캐스트</b><span class="daily-stock-state">관찰</span><small>+16.25% · 2,358.9억 · RS +15.87%p · 28.88배</small></div>
+            <div class="daily-stock" data-leader-detail="삼기|자동차 동반 후보|KOSDAQ 대비 RS +3.22%p, 거래대금 208.6억. 자동차 부품 확산 여부 확인."><b>삼기</b><span class="daily-stock-state">동반 후보</span><small>+3.60% · 208.6억 · RS +3.22%p · 2.50배</small></div>
+          </div>
           <div class="daily-sector"><div class="daily-sector-title"><b>로봇·자동화</b><span>섹터 1위 · 73.9</span></div>
             <div class="daily-stock leader" data-leader-detail="로보티즈|KOSDAQ 확정 주도주|전일 주도점수 80.3에 이어 오늘 89.1. KOSDAQ 대비 RS +6.90%p, 거래대금 1,087.7억으로 지속성 확인."><b>로보티즈</b><span class="daily-stock-state">확정 주도</span><small>+7.28% · 1,087.7억 · RS +6.90%p · 2.04배</small></div>
             <div class="daily-stock" data-leader-detail="뉴로메카|로봇 급등 후보|KOSDAQ 대비 RS +9.90%p와 거래대금 3.99배는 강하지만 수급점수 -32.8."><b>뉴로메카</b><span class="daily-stock-state">급등 후보</span><small>+10.28% · 275.8억 · RS +9.90%p · 3.99배</small></div>
@@ -895,7 +925,7 @@
           </div>
         </div>
       </div>
-      <div class="daily-relation-strip"><span>산업 연결고리</span><b>로봇 ↔ 기계: 자동화 장비</b><b>로봇 ↔ SW: AI·제어</b><b>기계 ↔ 2차전지: 생산설비</b></div>
+      <div class="daily-relation-strip"><span>핵심 연결</span><b>자동차 ↔ 로봇: 자율주행·전장</b><b>로봇 ↔ 기계: 자동화 장비</b><b>기계 ↔ 2차전지: 생산설비</b><b>SW·IT ↔ 전 섹터: AI·제어·스마트팩토리</b></div>
       <div class="daily-leader-detail" id="dailyLeaderDetail">종목을 누르면 시장 주도주 판정 근거가 표시됩니다.</div>
     </div>
   </div>
@@ -997,9 +1027,9 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 
 // ── 당일 주도주 시장별 판정 ──
 const DAILY_LEADER_SUMMARY = {
-  all: ['한화생명 · 로보티즈','각 시장에서 섹터·RS·거래대금·지속성 동시 확인','DN오토모티브','당일 폭발력 1위, 지속성 추가 확인 필요','엔비알모션 · 현대오토에버','지수 대비 강하지만 수급 확인 필요'],
-  KOSPI: ['한화생명','보험 섹터 동반 확산과 2일 연속 선도','DN오토모티브','KOSPI 대비 RS +16.69%p, 지속성 추가 확인','현대오토에버','거래대금 충분, 수급점수 -14.9 확인 필요'],
-  KOSDAQ: ['로보티즈','로봇 섹터 1위와 2일 연속 종목 강도 확인','없음','당일 급등만으로 확정 주도주로 승격하지 않음','엔비알모션','KOSDAQ 대비 RS +12.06%p, 수급점수 -22.7']
+  all: ['한화생명 · 로보티즈','각 시장에서 섹터·RS·거래대금·지속성 동시 확인','DN오토모티브 · 현대차','2차전지와 자동차 생태계로 자금 확산','엔비알모션 · 현대오토에버 · 한라캐스트','산업 연결은 강하지만 수급 확인 필요'],
+  KOSPI: ['한화생명','보험 섹터 동반 확산과 2일 연속 선도','DN오토모티브 · 현대차','2차전지·자동차 급부상, 지속성 추가 확인','현대오토에버','거래대금 충분, 수급점수 -14.9 확인 필요'],
+  KOSDAQ: ['로보티즈','로봇 섹터 1위와 2일 연속 종목 강도 확인','없음','당일 급등만으로 확정 주도주로 승격하지 않음','엔비알모션 · 한라캐스트','강한 RS와 거래대금 대비 수급점수 음수']
 };
 function setDailyLeaderView(view){
   document.querySelectorAll('.daily-leader-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.leaderView===view));
