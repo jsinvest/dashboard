@@ -114,8 +114,7 @@
   .daily-leader-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);border:1px solid rgba(0,229,255,.35);border-radius:6px;padding:6px 9px;background:rgba(0,229,255,.06);}
   .daily-leader-tabs{display:flex;gap:6px;flex-wrap:wrap;}.daily-leader-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;padding:7px 12px;font-size:11px;font-family:'JetBrains Mono',monospace;cursor:pointer;}.daily-leader-tab.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08);}
   .daily-leader-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}.daily-leader-stat{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:13px;min-width:0;}.daily-leader-stat small{display:block;color:var(--text-dim);font-size:10px;margin-bottom:7px;}.daily-leader-stat strong{display:block;font-size:15px;line-height:1.45;margin-bottom:4px;}.daily-leader-stat span{color:var(--text-muted);font-size:10px;line-height:1.5;}
-  .daily-ecosystem{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow:hidden;}.daily-ecosystem-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}.daily-ecosystem-title b{font-size:12px;}.daily-ecosystem-title span{font-size:10px;color:var(--text-dim);}.daily-ecosystem svg{display:block;width:100%;height:auto;min-height:240px;}.daily-ecosystem .eco-chain{stroke:var(--accent);stroke-width:4;stroke-opacity:.7;}.daily-ecosystem .eco-software{stroke:#f59e0b;stroke-width:2.5;stroke-dasharray:7 5;stroke-opacity:.85;}.daily-ecosystem .eco-node circle{fill:var(--bg3);stroke:var(--accent);stroke-width:2.5;}.daily-ecosystem .eco-node.software circle{stroke:#f59e0b;}.daily-ecosystem text{fill:var(--text);font-size:12px;text-anchor:middle;}.daily-ecosystem .eco-name{font-weight:700;}.daily-ecosystem .eco-score,.daily-ecosystem .eco-stocks{fill:var(--text-muted);font-size:10px;}.daily-ecosystem .eco-link-label{fill:var(--text-dim);font-size:10px;}.daily-ecosystem-mobile{display:none;}
-  .daily-leader-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;}.daily-market-lane{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0;}.daily-market-lane::before{content:'';position:absolute;left:31px;top:58px;bottom:18px;width:2px;background:linear-gradient(var(--accent),var(--border));opacity:.7;}.daily-market-head{position:relative;z-index:1;display:flex;align-items:center;gap:10px;margin-bottom:16px;}.daily-market-node{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--bg3);border:2px solid var(--accent);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;}.daily-market-head strong{font-size:14px;}.daily-market-head span{display:block;color:var(--text-dim);font-size:10px;margin-top:3px;}
+  .daily-ecosystem{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow:hidden;}.daily-ecosystem-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}.daily-ecosystem-title b{font-size:12px;}.daily-ecosystem-title span{font-size:10px;color:var(--text-dim);}.daily-ecosystem svg{display:block;width:100%;height:auto;min-height:220px;}.daily-ecosystem .eco-chain{stroke:var(--accent);stroke-width:4;stroke-opacity:.7;transition:opacity .2s;}.daily-ecosystem .eco-software{stroke:#f59e0b;stroke-width:2.5;stroke-dasharray:7 5;stroke-opacity:.85;transition:opacity .2s;}.daily-ecosystem .eco-node{cursor:pointer;outline:none;}.daily-ecosystem .eco-node circle{fill:var(--bg3);stroke:var(--accent);stroke-width:2.5;transition:all .2s;}.daily-ecosystem .eco-node:hover circle,.daily-ecosystem .eco-node:focus circle,.daily-ecosystem .eco-node.selected circle{fill:rgba(0,229,255,.13);stroke-width:5;}.daily-ecosystem .eco-node.software circle{stroke:#f59e0b;}.daily-ecosystem .eco-node.software:hover circle,.daily-ecosystem .eco-node.software:focus circle,.daily-ecosystem .eco-node.software.selected circle{fill:rgba(245,158,11,.13);}.daily-ecosystem text{fill:var(--text);font-size:12px;text-anchor:middle;pointer-events:none;}.daily-ecosystem .eco-name{font-weight:700;}.daily-ecosystem .eco-score{fill:var(--text-muted);font-size:10px;}.daily-ecosystem .eco-link-label{fill:var(--text-dim);font-size:10px;}.daily-ecosystem .eco-dim{opacity:.14;}.daily-ecosystem-mobile{display:none;}.daily-sector-detail{margin-top:10px;border-top:1px solid var(--border);padding-top:12px;}.daily-sector-detail-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px;}.daily-sector-detail-head b{font-size:13px;}.daily-sector-detail-head span{font-size:10px;color:var(--text-dim);}.daily-sector-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:7px;}.daily-sector-detail-empty{color:var(--text-muted);font-size:11px;padding:10px 0;}.daily-detail-stock{background:var(--bg3);border-left:3px solid var(--border);border-radius:0 6px 6px 0;padding:9px 10px;}.daily-detail-stock.leader{border-left-color:var(--up);}.daily-detail-stock.emerging{border-left-color:#f59e0b;}.daily-detail-stock-head{display:flex;justify-content:space-between;gap:8px;margin-bottom:5px;}.daily-detail-stock-head b{font-size:12px;}.daily-detail-stock-head span{color:var(--up);font-size:10px;}.daily-detail-stock small{display:block;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1.55;}.daily-leader-map{display:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;}.daily-market-lane{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0;}.daily-market-lane::before{content:'';position:absolute;left:31px;top:58px;bottom:18px;width:2px;background:linear-gradient(var(--accent),var(--border));opacity:.7;}.daily-market-head{position:relative;z-index:1;display:flex;align-items:center;gap:10px;margin-bottom:16px;}.daily-market-node{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--bg3);border:2px solid var(--accent);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;}.daily-market-head strong{font-size:14px;}.daily-market-head span{display:block;color:var(--text-dim);font-size:10px;margin-top:3px;}
   .daily-sector{position:relative;margin:0 0 14px 46px;padding-left:16px;border-left:2px solid var(--border);}.daily-sector::before{content:'';position:absolute;left:-48px;top:14px;width:46px;height:2px;background:var(--border);}.daily-sector-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;}.daily-sector-title b{font-size:12px;}.daily-sector-title span{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;}
   .daily-stock{display:grid;grid-template-columns:minmax(90px,1fr) auto;gap:3px 10px;padding:8px 9px;margin-bottom:5px;background:var(--bg3);border-left:3px solid var(--border);border-radius:0 6px 6px 0;cursor:pointer;}.daily-stock:hover{background:#1a1e27;}.daily-stock.leader{border-left-color:var(--up);}.daily-stock.emerging{border-left-color:#f59e0b;}.daily-stock b{font-size:12px;}.daily-stock .daily-stock-state{font-size:10px;color:var(--up);text-align:right;}.daily-stock small{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:10px;grid-column:1/-1;}.daily-stock .weak{color:var(--down);}
   .daily-relation-strip{display:flex;align-items:center;justify-content:center;gap:8px 16px;flex-wrap:wrap;color:var(--text-dim);font-size:10px;}.daily-relation-strip b{color:var(--text);font-weight:400;border-bottom:2px dashed #f59e0b;padding-bottom:3px;}.daily-leader-detail{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--text-muted);font-size:11px;line-height:1.6;min-height:44px;}.daily-leader-hidden{display:none!important;}
@@ -230,7 +229,7 @@
   @media(max-width:640px){
     .daily-leader-summary,.daily-leader-map{grid-template-columns:1fr;}
     .daily-leader-toolbar{align-items:flex-start;}.daily-leader-tabs{width:100%;}.daily-leader-tab{flex:1;min-height:40px;}
-    .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;gap:7px;}.daily-ecosystem-mobile span{padding:8px 10px;border-left:3px solid var(--accent);background:var(--bg3);font-size:10px;color:var(--text-muted);}.daily-ecosystem-mobile b{color:var(--text);font-weight:700;}
+    .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}.daily-ecosystem-mobile button{padding:10px;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:5px;background:var(--bg3);color:var(--text);font-size:11px;text-align:left;cursor:pointer;}.daily-ecosystem-mobile button.active{border-color:var(--accent);background:rgba(0,229,255,.08);}.daily-sector-detail-grid{grid-template-columns:1fr;}
     header{height:52px;padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:8px;}
     .logo{font-size:13px;letter-spacing:1px;white-space:nowrap;}
     .time-display{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0;font-size:10px;white-space:nowrap;}
@@ -867,24 +866,25 @@
         <div class="daily-leader-stat"><small>관찰 후보</small><strong id="dailyLeaderWatch">엔비알모션 · 현대오토에버 · 한라캐스트</strong><span id="dailyLeaderWatchNote">산업 연결은 강하지만 수급 확인 필요</span></div>
       </div>
       <div class="daily-ecosystem">
-        <div class="daily-ecosystem-title"><b>주도 산업 생태계 연결망</b><span>실선: 공급망 연결 · 점선: SW/AI가 각 산업을 연결</span></div>
+        <div class="daily-ecosystem-title"><b>주도 산업 생태계 연결망 · 산업군을 눌러 종목 보기</b><span>실선: 공급망 연결 · 점선: SW/AI가 각 산업을 연결</span></div>
         <svg viewBox="0 0 1100 285" role="img" aria-label="자동차, 로봇, 기계 산업장비, 2차전지, 소프트웨어 IT 산업 연결망">
           <g class="eco-links">
-            <line class="eco-chain" x1="120" y1="205" x2="390" y2="205"/><text class="eco-link-label" x="255" y="192">자율주행 · 전장부품</text>
-            <line class="eco-chain" x1="390" y1="205" x2="680" y2="205"/><text class="eco-link-label" x="535" y="192">로봇 · 자동화 설비</text>
-            <line class="eco-chain" x1="680" y1="205" x2="980" y2="205"/><text class="eco-link-label" x="830" y="192">배터리 생산장비</text>
-            <line class="eco-software" x1="550" y1="56" x2="120" y2="205"/><text class="eco-link-label" x="300" y="108">자율주행 SW</text>
-            <line class="eco-software" x1="550" y1="56" x2="390" y2="205"/><text class="eco-link-label" x="430" y="116">AI · 제어</text>
-            <line class="eco-software" x1="550" y1="56" x2="680" y2="205"/><text class="eco-link-label" x="666" y="116">스마트팩토리</text>
-            <line class="eco-software" x1="550" y1="56" x2="980" y2="205"/><text class="eco-link-label" x="805" y="108">BMS · 공정제어</text>
+            <line class="eco-chain" data-eco-link="auto,robot" x1="120" y1="205" x2="390" y2="205"/><text class="eco-link-label" x="255" y="192">자율주행 · 전장부품</text>
+            <line class="eco-chain" data-eco-link="robot,machine" x1="390" y1="205" x2="680" y2="205"/><text class="eco-link-label" x="535" y="192">로봇 · 자동화 설비</text>
+            <line class="eco-chain" data-eco-link="machine,battery" x1="680" y1="205" x2="980" y2="205"/><text class="eco-link-label" x="830" y="192">배터리 생산장비</text>
+            <line class="eco-software" data-eco-link="software,auto" x1="550" y1="56" x2="120" y2="205"/><text class="eco-link-label" x="300" y="108">자율주행 SW</text>
+            <line class="eco-software" data-eco-link="software,robot" x1="550" y1="56" x2="390" y2="205"/><text class="eco-link-label" x="430" y="116">AI · 제어</text>
+            <line class="eco-software" data-eco-link="software,machine" x1="550" y1="56" x2="680" y2="205"/><text class="eco-link-label" x="666" y="116">스마트팩토리</text>
+            <line class="eco-software" data-eco-link="software,battery" x1="550" y1="56" x2="980" y2="205"/><text class="eco-link-label" x="805" y="108">BMS · 공정제어</text>
           </g>
-          <g class="eco-node software"><circle cx="550" cy="56" r="45"/><text class="eco-name" x="550" y="51">SW·IT</text><text class="eco-score" x="550" y="68">64.5 · 연결 허브</text><text class="eco-stocks" x="550" y="120">현대오토에버 · 아이크래프트</text></g>
-          <g class="eco-node"><circle cx="120" cy="205" r="48"/><text class="eco-name" x="120" y="199">자동차·부품</text><text class="eco-score" x="120" y="216">62.0 · 7위</text><text class="eco-stocks" x="120" y="270">현대차 · 한라캐스트</text></g>
-          <g class="eco-node"><circle cx="390" cy="205" r="48"/><text class="eco-name" x="390" y="199">로봇·자동화</text><text class="eco-score" x="390" y="216">73.9 · 1위</text><text class="eco-stocks" x="390" y="270">로보티즈 · 뉴로메카</text></g>
-          <g class="eco-node"><circle cx="680" cy="205" r="48"/><text class="eco-name" x="680" y="199">기계·산업장비</text><text class="eco-score" x="680" y="216">64.9 · 3위</text><text class="eco-stocks" x="680" y="270">엔비알모션 · 두산에너빌리티</text></g>
-          <g class="eco-node"><circle cx="980" cy="205" r="48"/><text class="eco-name" x="980" y="199">2차전지</text><text class="eco-score" x="980" y="216">64.5 · 4위</text><text class="eco-stocks" x="980" y="270">DN오토모티브 · 삼성SDI</text></g>
+          <g class="eco-node software" data-eco-sector="software" role="button" tabindex="0" aria-label="SW IT 섹터 종목 보기"><circle cx="550" cy="56" r="45"/><text class="eco-name" x="550" y="51">SW·IT</text><text class="eco-score" x="550" y="68">64.5 · 연결 허브</text></g>
+          <g class="eco-node" data-eco-sector="auto" role="button" tabindex="0" aria-label="자동차 부품 섹터 종목 보기"><circle cx="120" cy="205" r="48"/><text class="eco-name" x="120" y="199">자동차·부품</text><text class="eco-score" x="120" y="216">62.0 · 7위</text></g>
+          <g class="eco-node" data-eco-sector="robot" role="button" tabindex="0" aria-label="로봇 자동화 섹터 종목 보기"><circle cx="390" cy="205" r="48"/><text class="eco-name" x="390" y="199">로봇·자동화</text><text class="eco-score" x="390" y="216">73.9 · 1위</text></g>
+          <g class="eco-node" data-eco-sector="machine" role="button" tabindex="0" aria-label="기계 산업장비 섹터 종목 보기"><circle cx="680" cy="205" r="48"/><text class="eco-name" x="680" y="199">기계·산업장비</text><text class="eco-score" x="680" y="216">64.9 · 3위</text></g>
+          <g class="eco-node" data-eco-sector="battery" role="button" tabindex="0" aria-label="2차전지 섹터 종목 보기"><circle cx="980" cy="205" r="48"/><text class="eco-name" x="980" y="199">2차전지</text><text class="eco-score" x="980" y="216">64.5 · 4위</text></g>
         </svg>
-        <div class="daily-ecosystem-mobile"><span><b>SW·IT</b> → 자동차: 자율주행 SW</span><span><b>SW·IT</b> → 로봇: AI·제어</span><span><b>SW·IT</b> → 기계·산업장비: 스마트팩토리</span><span><b>SW·IT</b> → 2차전지: BMS·공정제어</span><span><b>자동차 ↔ 로봇 ↔ 기계·산업장비 ↔ 2차전지</b> 공급망 연쇄</span></div>
+        <div class="daily-ecosystem-mobile"><button type="button" data-eco-sector="auto">자동차·부품</button><button type="button" data-eco-sector="robot">로봇·자동화</button><button type="button" data-eco-sector="machine">기계·산업장비</button><button type="button" data-eco-sector="battery">2차전지</button><button type="button" data-eco-sector="software">SW·IT서비스</button></div>
+        <div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div>
       </div>
       <div class="daily-leader-map">
         <div class="daily-market-lane" data-daily-market="KOSPI">
@@ -1031,15 +1031,60 @@ const DAILY_LEADER_SUMMARY = {
   KOSPI: ['한화생명','보험 섹터 동반 확산과 2일 연속 선도','DN오토모티브 · 현대차','2차전지·자동차 급부상, 지속성 추가 확인','현대오토에버','거래대금 충분, 수급점수 -14.9 확인 필요'],
   KOSDAQ: ['로보티즈','로봇 섹터 1위와 2일 연속 종목 강도 확인','없음','당일 급등만으로 확정 주도주로 승격하지 않음','엔비알모션 · 한라캐스트','강한 RS와 거래대금 대비 수급점수 음수']
 };
+const DAILY_SECTOR_STOCKS = {
+  auto:{name:'자동차·부품',score:'62.0 · 7위',stocks:[
+    {name:'현대차',market:'KOSPI',state:'급부상',kind:'emerging',metric:'+8.24% · 5,379.1억 · RS +5.83%p · 1.80배'},
+    {name:'HL만도',market:'KOSPI',state:'후발',kind:'',metric:'+2.88% · 435.9억 · RS +0.47%p · 1.51배'},
+    {name:'한라캐스트',market:'KOSDAQ',state:'관찰',kind:'',metric:'+16.25% · 2,358.9억 · RS +15.87%p · 28.88배'},
+    {name:'삼기',market:'KOSDAQ',state:'동반 후보',kind:'',metric:'+3.60% · 208.6억 · RS +3.22%p · 2.50배'}]},
+  robot:{name:'로봇·자동화',score:'73.9 · 1위',stocks:[
+    {name:'로보티즈',market:'KOSDAQ',state:'확정 주도',kind:'leader',metric:'+7.28% · 1,087.7억 · RS +6.90%p · 2.04배'},
+    {name:'뉴로메카',market:'KOSDAQ',state:'급등 후보',kind:'',metric:'+10.28% · 275.8억 · RS +9.90%p · 3.99배'},
+    {name:'에스피지',market:'KOSDAQ',state:'후발',kind:'',metric:'+5.70% · 1,625.9억 · RS +5.32%p · 1.82배'}]},
+  machine:{name:'기계·산업장비',score:'64.9 · 3위',stocks:[
+    {name:'엔비알모션',market:'KOSDAQ',state:'관찰',kind:'',metric:'+12.44% · 88.2억 · RS +12.06%p · 7.11배'},
+    {name:'엔젯',market:'KOSDAQ',state:'후보',kind:'',metric:'+10.34% · 14.3억 · RS +9.96%p · 6.22배'},
+    {name:'두산에너빌리티',market:'KOSPI',state:'대표주 약화',kind:'',metric:'+2.10% · 1,746.9억 · RS −0.31%p · 1.05배'}]},
+  battery:{name:'2차전지',score:'64.5 · 4위',stocks:[
+    {name:'DN오토모티브',market:'KOSPI',state:'급부상',kind:'emerging',metric:'+19.11% · 508.1억 · RS +16.69%p · 6.75배'},
+    {name:'삼성SDI',market:'KOSPI',state:'섹터 대표',kind:'',metric:'+5.95% · 2,325.9억 · RS +3.54%p · 1.27배'},
+    {name:'SFA넥셀',market:'KOSDAQ',state:'보조 후보',kind:'',metric:'+2.56% · 47.8억 · RS +2.18%p · 1.19배'}]},
+  software:{name:'SW·IT서비스',score:'64.5 · 연결 허브',stocks:[
+    {name:'현대오토에버',market:'KOSPI',state:'관찰',kind:'',metric:'+9.02% · 1,123.3억 · RS +6.60%p · 3.03배'},
+    {name:'아이크래프트',market:'KOSDAQ',state:'보조 후보',kind:'',metric:'+6.38% · 39.3억 · RS +6.00%p · 0.68배'},
+    {name:'씨이랩',market:'KOSDAQ',state:'후보',kind:'',metric:'+0.91% · 84.3억 · RS +0.53%p · 1.07배'}]}
+};
+const DAILY_SECTOR_LINKS={auto:['robot','software'],robot:['auto','machine','software'],machine:['robot','battery','software'],battery:['machine','software'],software:['auto','robot','machine','battery']};
+let dailyLeaderView='all';
+let dailySelectedSector='';
+function renderDailySectorDetail(){
+  const host=document.getElementById('dailySectorDetail');
+  if(!host)return;
+  if(!dailySelectedSector){host.innerHTML='<div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div>';return;}
+  const sector=DAILY_SECTOR_STOCKS[dailySelectedSector];
+  const stocks=sector.stocks.filter(s=>dailyLeaderView==='all'||s.market===dailyLeaderView);
+  host.innerHTML=`<div class="daily-sector-detail-head"><b>${escapeHtml(sector.name)}</b><span>${escapeHtml(sector.score)} · ${dailyLeaderView==='all'?'통합':dailyLeaderView}</span></div>`+
+    (stocks.length?`<div class="daily-sector-detail-grid">${stocks.map(s=>`<div class="daily-detail-stock ${escapeHtml(s.kind)}"><div class="daily-detail-stock-head"><b>${escapeHtml(s.name)} · ${escapeHtml(s.market==='KOSPI'?'KS':'KQ')}</b><span>${escapeHtml(s.state)}</span></div><small>${escapeHtml(s.metric)}</small></div>`).join('')}</div>`:'<div class="daily-sector-detail-empty">선택한 시장에 해당 종목이 없습니다.</div>');
+}
+function selectDailySector(sectorKey){
+  dailySelectedSector=sectorKey;
+  const related=new Set([sectorKey,...(DAILY_SECTOR_LINKS[sectorKey]||[])]);
+  document.querySelectorAll('[data-eco-sector]').forEach(node=>{node.classList.toggle('selected',node.dataset.ecoSector===sectorKey);node.classList.toggle('eco-dim',!related.has(node.dataset.ecoSector));node.classList.toggle('active',node.dataset.ecoSector===sectorKey);});
+  document.querySelectorAll('[data-eco-link]').forEach(line=>{const on=line.dataset.ecoLink.split(',').includes(sectorKey);line.classList.toggle('eco-dim',!on);line.nextElementSibling?.classList.toggle('eco-dim',!on);});
+  renderDailySectorDetail();
+}
 function setDailyLeaderView(view){
+  dailyLeaderView=view;
   document.querySelectorAll('.daily-leader-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.leaderView===view));
   document.querySelectorAll('[data-daily-market]').forEach(lane=>lane.classList.toggle('daily-leader-hidden',view!=='all'&&lane.dataset.dailyMarket!==view));
   const s=DAILY_LEADER_SUMMARY[view]||DAILY_LEADER_SUMMARY.all;
   ['dailyLeaderConfirmed','dailyLeaderConfirmedNote','dailyLeaderEmerging','dailyLeaderEmergingNote','dailyLeaderWatch','dailyLeaderWatchNote'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=s[i];});
   const detail=document.getElementById('dailyLeaderDetail');
   if(detail) detail.textContent=`${view==='all'?'통합':view} 기준 · 종목을 누르면 시장 주도주 판정 근거가 표시됩니다.`;
+  renderDailySectorDetail();
 }
 document.querySelectorAll('.daily-leader-tab').forEach(btn=>btn.addEventListener('click',()=>setDailyLeaderView(btn.dataset.leaderView)));
+document.querySelectorAll('[data-eco-sector]').forEach(node=>{node.addEventListener('click',()=>selectDailySector(node.dataset.ecoSector));node.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectDailySector(node.dataset.ecoSector);}});});
 document.querySelectorAll('[data-leader-detail]').forEach(stock=>stock.addEventListener('click',()=>{
   const [name,status,reason]=stock.dataset.leaderDetail.split('|');
   const detail=document.getElementById('dailyLeaderDetail');
