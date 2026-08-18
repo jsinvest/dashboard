@@ -854,84 +854,88 @@
     <div class="section-title">당일 주도주 · DAILY MARKET LEADERS</div>
     <div class="daily-leader-shell" data-layout-zone="daily-leaders">
       <div class="daily-leader-toolbar">
-        <span class="daily-leader-date">시장 기준일 2026-08-14 · 수정 v2 교차검증 2026-08-17 23:51 · 누적 2거래일</span>
+        <span class="daily-leader-date">시장 기준일 2026-08-18 · v2 교차검증 2026-08-18 17:04 · 누적 3거래일</span>
         <div class="daily-leader-tabs" aria-label="시장 선택">
           <button type="button" class="daily-leader-tab active" data-leader-view="all">통합</button>
           <button type="button" class="daily-leader-tab" data-leader-view="KOSPI">KOSPI</button>
           <button type="button" class="daily-leader-tab" data-leader-view="KOSDAQ">KOSDAQ</button>
         </div>
       </div>
-      <div class="daily-v2-audit"><b>검증 상태</b> · 섹터 상세 562행(결측·중복 0) · 수정 V2 원신호 102건 → 63종목(시장 결측·종목 중복 0) · 품질필터 통과 14/63 · 섹터 누적은 2거래일뿐이며 V2 실행 종료코드 로그는 없어 완전한 정상 종료 여부는 확인 불가</div>
+      <div class="daily-v2-audit"><b>검증 상태</b> · 섹터 상세 562행(필수값 결측·종목키 중복 0) · V2 원신호 88건 → 54종목(시장 결측·종목 중복 0) · 품질필터 통과 10/54 · 누적 이력 3거래일(8/13·14·18) · 오늘 실행 종료코드 로그는 없어 전체 파이프라인 정상 종료 여부는 확인 불가</div>
       <div class="daily-leader-summary">
-        <div class="daily-leader-stat"><small>당일 주도 1순위</small><strong id="dailyLeaderConfirmed">한화생명 · 로보티즈</strong><span id="dailyLeaderConfirmedNote">누적 2일로 확정 판정 불가 · 수정 v2는 보조 확인</span></div>
-        <div class="daily-leader-stat"><small>v2 교차 후보</small><strong id="dailyLeaderEmerging">DN오토모티브 · 에스피지</strong><span id="dailyLeaderEmergingNote">8/14 S등급 신호 · 품질필터 통과 여부 별도 표시</span></div>
-        <div class="daily-leader-stat"><small>판정 보류</small><strong id="dailyLeaderWatch">증권·은행 · KQ 연관 산업</strong><span id="dailyLeaderWatchNote">섹터 강도 또는 v2 교차근거 부족</span></div>
+        <div class="daily-leader-stat"><small>당일 주도 1순위</small><strong id="dailyLeaderConfirmed">HMM · 한성크린텍</strong><span id="dailyLeaderConfirmedNote">KOSPI 해운 · KOSDAQ 환경축 / 누적은 3거래일</span></div>
+        <div class="daily-leader-stat"><small>v2 교차 후보</small><strong id="dailyLeaderEmerging">DN오토모티브</strong><span id="dailyLeaderEmergingNote">8/18 S등급·품질통과 / 2차전지 섹터 9위로 별도 축</span></div>
+        <div class="daily-leader-stat"><small>판정 보류</small><strong id="dailyLeaderWatch">KOSDAQ v2 교차확인</strong><span id="dailyLeaderWatchNote">오늘 KQ 신호 4종목 모두 품질필터 미통과</span></div>
       </div>
       <div class="daily-ecosystem">
         <div class="daily-ecosystem-title"><b>시장별 당일 주도 1순위 · 산업군을 눌러 수정 v2 교차근거 보기</b><span>실선: 내부 확산 · 점선: 산업 연관/교차확인 부족</span></div>
         <div class="daily-ecosystem-board">
-          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>섹터 기반 한화생명 1순위 · V2 S/MA역배열</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 주도주 한화생명을 중심으로 금융 섹터 확산을 표시한 다이어그램">
+          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>HMM 중심 해운 확산 · 지수 −1.62%</span></div>
+            <svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 주도주 HMM을 중심으로 해운 내부 확산과 관련 섹터를 표시한 다이어그램">
               <defs><marker id="ecoArrowKS" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="insurance,holding" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="150" y="205">금융 연관 · LG V2 B</text><line class="eco-leader-link eco-link-weak" data-eco-link="insurance,securities" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="192" y="76">증권 교차없음</text><line class="eco-leader-link eco-link-weak" data-eco-link="insurance,bank" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="368" y="76">은행 46위</text><line class="eco-leader-link" data-eco-link="insurance,insurance" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="205">보험 내부 확산</text></g>
-              <g class="eco-node leader-center" data-eco-sector="insurance" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="124">KOSPI 당일 주도 1순위</text><text class="eco-leader-name" x="280" y="151">한화생명</text><text class="eco-name" x="280" y="174">보험 73.5점 · 2위</text><text class="eco-score" x="280" y="193">주도 89.7 · V2 S · MA역배열</text></g>
-              <g class="eco-node" data-eco-sector="holding" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">지주·상사</text><text class="eco-score" x="75" y="289">LG · 78.8점</text></g><g class="eco-node" data-eco-sector="securities" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">증권</text><text class="eco-score" x="130" y="58">다올 · 46.6점</text></g><g class="eco-node" data-eco-sector="bank" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">은행·금융</text><text class="eco-score" x="430" y="58">iM금융 · 58.0점</text></g><g class="eco-node" data-eco-sector="insurance" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">보험 확산</text><text class="eco-score" x="485" y="289">한화손보 · 89.0점</text></g>
+              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="shipping,agriculture" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="150" y="205">벌크운송 수요</text><line class="eco-leader-link eco-link-weak" data-eco-link="shipping,insurance" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="192" y="76">시장 동반강세</text><line class="eco-leader-link eco-link-weak" data-eco-link="shipping,oil" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="368" y="76">연료·운임 연결</text><line class="eco-leader-link" data-eco-link="shipping,shipping" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="205">해운 내부 확산</text></g>
+              <g class="eco-node leader-center" data-eco-sector="shipping" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="124">KOSPI 당일 주도 1순위</text><text class="eco-leader-name" x="280" y="151">HMM</text><text class="eco-name" x="280" y="174">해운 92.3점 · 1위</text><text class="eco-score" x="280" y="193">주도 92.9 · RS +7.85%p</text></g>
+              <g class="eco-node" data-eco-sector="agriculture" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">농업·비료</text><text class="eco-score" x="75" y="289">남해화학 · 76.0</text></g><g class="eco-node" data-eco-sector="insurance" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">보험</text><text class="eco-score" x="130" y="58">현대해상 · 90.7</text></g><g class="eco-node" data-eco-sector="oil" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">정유·LPG</text><text class="eco-score" x="430" y="58">S-Oil · 74.7</text></g><g class="eco-node" data-eco-sector="shipping" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">해운 확산</text><text class="eco-score" x="485" y="289">흥아해운 · 89.3</text></g>
             </svg>
-            <div class="eco-cross-note"><b>별도 V2 품질통과 후보</b> · DN오토모티브 S등급(8/14). 보험 생태계와는 별도 축이며 당일 섹터 2차전지 4위.</div>
+            <div class="eco-cross-note"><b>별도 V2 품질통과 후보</b> · DN오토모티브 S등급(8/18). 2차전지 섹터는 9위여서 해운 중심축과 분리.</div>
           </div>
-          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>섹터 기반 로보티즈 1순위 · V2 B/MA역배열</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 주도주 로보티즈를 중심으로 관련 산업 확산을 표시한 다이어그램">
+          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>한성크린텍 중심 환경축 · 지수 −3.46%</span></div>
+            <svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 주도주 한성크린텍을 중심으로 환경 산업 연결을 표시한 다이어그램">
               <defs><marker id="ecoArrowKQ" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="robot,auto" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="150" y="205">산업연관 · V2없음</text><line class="eco-leader-link eco-link-weak" data-eco-link="robot,software" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="192" y="76">산업연관 · V2없음</text><line class="eco-leader-link eco-link-weak" data-eco-link="robot,machine" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="368" y="76">산업연관 · V2없음</text><line class="eco-leader-link eco-link-weak" data-eco-link="robot,battery" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="410" y="205">산업연관 · V2없음</text></g>
-              <g class="eco-node leader-center" data-eco-sector="robot" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="124">KOSDAQ 당일 주도 1순위</text><text class="eco-leader-name" x="280" y="151">로보티즈</text><text class="eco-name" x="280" y="174">로봇 73.9점 · 1위</text><text class="eco-score" x="280" y="193">주도 89.1 · V2 B · MA역배열</text></g>
-              <g class="eco-node" data-eco-sector="auto" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">자동차·부품</text><text class="eco-score" x="75" y="289">한라캐스트 · 83.7</text></g><g class="eco-node software" data-eco-sector="software" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">SW·IT</text><text class="eco-score" x="130" y="58">아이크래프트 · 74.2</text></g><g class="eco-node" data-eco-sector="machine" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">기계·장비</text><text class="eco-score" x="430" y="58">엔비알모션 · 86.1</text></g><g class="eco-node" data-eco-sector="battery" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">2차전지</text><text class="eco-score" x="485" y="289">SFA넥셀 · 69.7</text></g>
+              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="environment,construction" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="150" y="205">환경 인프라</text><line class="eco-leader-link eco-link-weak" data-eco-link="environment,renewable" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="192" y="76">친환경 에너지</text><line class="eco-leader-link eco-link-weak" data-eco-link="environment,materials" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="368" y="76">공정·소재 연결</text><line class="eco-leader-link" data-eco-link="environment,environment" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="410" y="205">환경 내부 확산</text></g>
+              <g class="eco-node leader-center" data-eco-sector="environment" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="124">KOSDAQ 당일 주도 1순위</text><text class="eco-leader-name" x="280" y="151">한성크린텍</text><text class="eco-name" x="280" y="174">환경 76.7점 · 2위</text><text class="eco-score" x="280" y="193">주도 79.2 · RS +12.12%p</text></g>
+              <g class="eco-node" data-eco-sector="construction" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">건설·인프라</text><text class="eco-score" x="75" y="289">누리플랜 · 62.5</text></g><g class="eco-node" data-eco-sector="renewable" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">신재생</text><text class="eco-score" x="130" y="58">씨엔플러스 · 63.1</text></g><g class="eco-node" data-eco-sector="materials" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">정밀소재</text><text class="eco-score" x="430" y="58">아스플로 · 64.8</text></g><g class="eco-node" data-eco-sector="environment" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">환경 확산</text><text class="eco-score" x="485" y="289">엔바이오니아 · 64.8</text></g>
             </svg>
-            <div class="eco-cross-note"><b>로봇 내부 V2 교차</b> · 에스피지 S등급(8/14), 로보티즈 B등급(8/14). 두 종목 모두 MA역배열로 품질필터 미통과.</div>
+            <div class="eco-cross-note"><b>KOSDAQ V2 교차확인 없음</b> · 오늘 KQ 신호 4종목은 모두 MA역배열로 품질필터 미통과.</div>
           </div>
         </div>
-        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 한화생명</b><button type="button" data-eco-sector="insurance" data-node-market="KOSPI">보험 당일 1순위 · V2 S/MA역배열</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 로보티즈</b><button type="button" data-eco-sector="robot" data-node-market="KOSDAQ">로봇 당일 1순위 · V2 B/MA역배열</button></div></div>
+        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · HMM</b><button type="button" data-eco-sector="shipping" data-node-market="KOSPI">해운 1위 · 주도 92.9</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 한성크린텍</b><button type="button" data-eco-sector="environment" data-node-market="KOSDAQ">환경 2위 · 주도 79.2</button></div></div>
         <div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div>
       </div>
       <div class="daily-leader-map">
         <div class="daily-market-lane" data-daily-market="KOSPI">
           <div class="daily-market-head"><span class="daily-market-node">KS</span><div><strong>KOSPI 주도축</strong><span>KOSPI 대비 RS로 판정 · 대형 거래대금 기준</span></div></div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>자동차·일반부품</b><span>섹터 7위 · 62.0</span></div>
-            <div class="daily-stock emerging" data-leader-detail="현대차|KOSPI 급부상 후보|전일 주도점수 58.7에서 오늘 82.5로 상승. 거래대금 5,379.1억, KOSPI 대비 RS +5.83%p, 수급점수 +12.0."><b>현대차</b><span class="daily-stock-state">급부상</span><small>+8.24% · 5,379.1억 · RS +5.83%p · 1.80배</small></div>
-            <div class="daily-stock" data-leader-detail="HL만도|자동차 후발 후보|자율주행·로봇 제어 연결 종목. KOSPI 대비 RS +0.47%p, 거래대금 435.9억."><b>HL만도</b><span class="daily-stock-state">후발</span><small>+2.88% · 435.9억 · RS +0.47%p · 1.51배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>해운</b><span>섹터 1위 · 92.3</span></div>
+            <div class="daily-stock leader" data-leader-detail="HMM|KOSPI 당일 주도 1순위|상승률 +6.24%, KOSPI 대비 RS +7.85%p, 거래대금 1,212.4억·20일 평균 대비 4.43배. V2 S등급 신호가 있으나 MA역배열로 품질필터는 미통과."><b>HMM</b><span class="daily-stock-state">당일 1순위</span><small>+6.24% · 1,212.4억 · RS +7.85%p · 4.43배</small></div>
+            <div class="daily-stock" data-leader-detail="흥아해운|해운 내부 확산|상승률 +12.78%, RS +14.40%p, 거래대금 871.5억·3.83배. V2 Pocket Pivot 신호는 MA역배열로 품질 미통과."><b>흥아해운</b><span class="daily-stock-state">내부 확산</span><small>+12.78% · 871.5억 · RS +14.40%p · 3.83배</small></div>
+            <div class="daily-stock" data-leader-detail="팬오션|해운 내부 확산|상승률 +4.49%, RS +6.11%p, 거래대금 376.8억·2.08배. 오늘 V2 복수 신호가 있으나 MA역배열로 품질 미통과."><b>팬오션</b><span class="daily-stock-state">내부 확산</span><small>+4.49% · 376.8억 · RS +6.11%p · 2.08배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>보험</b><span>섹터 2위 · 73.5</span></div>
-            <div class="daily-stock leader" data-leader-detail="한화생명|KOSPI 당일 주도 1순위|상승률 +11.93%, KOSPI 대비 RS +9.51%p, 거래대금 793.8억. 누적은 2일뿐이며 수정 V2 S등급이나 MA역배열."><b>한화생명</b><span class="daily-stock-state">당일 1순위</span><small>+11.93% · 793.8억 · RS +9.51%p · 5.53배</small></div>
-            <div class="daily-stock" data-leader-detail="한화손해보험|보험 동반 확산|상승률 +9.05%, KOSPI 대비 RS +6.63%p. 한화생명과 함께 보험 섹터 확산을 확인."><b>한화손해보험</b><span class="daily-stock-state">동반 확산</span><small>+9.05% · 76.0억 · RS +6.63%p · 2.84배</small></div>
-            <div class="daily-stock" data-leader-detail="현대해상|보험 후발 후보|거래대금 503.4억, 수급점수 +46.2로 보험 섹터 후발 확산 후보."><b>현대해상</b><span class="daily-stock-state">후발</span><small>+5.59% · 503.4억 · RS +3.17%p · 2.26배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>보험</b><span>섹터 3위 · 72.7</span></div>
+            <div class="daily-stock" data-leader-detail="현대해상|보험축 1순위|상승률 +9.59%, RS +11.21%p, 거래대금 674.0억·2.82배, 수급점수 +57.4. 해운과 함께 오른 별도 동반 강세축."><b>현대해상</b><span class="daily-stock-state">동반 강세축</span><small>+9.59% · 674.0억 · RS +11.21%p · 2.82배</small></div>
+            <div class="daily-stock" data-leader-detail="미래에셋생명|보험 후발 후보|상승률 +4.56%, RS +6.17%p, 거래대금 96.5억·3.26배."><b>미래에셋생명</b><span class="daily-stock-state">후발 후보</span><small>+4.56% · 96.5억 · RS +6.17%p · 3.26배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>2차전지</b><span>섹터 4위 · 64.5</span></div>
-            <div class="daily-stock emerging" data-leader-detail="DN오토모티브|KOSPI V2 교차 후보|당일 상승률과 RS는 강하고 수정 V2 S등급·품질필터 통과. 다만 2차전지 섹터는 당일 4위이며 누적 2일이라 별도 후보로 분리."><b>DN오토모티브</b><span class="daily-stock-state">V2 교차</span><small>+19.11% · 508.1억 · RS +16.69%p · 6.75배</small></div>
-            <div class="daily-stock" data-leader-detail="삼성SDI|2차전지 대표주|거래대금 2,325.9억으로 섹터 내 자금 확산 여부를 확인하는 기준 종목."><b>삼성SDI</b><span class="daily-stock-state">섹터 대표</span><small>+5.95% · 2,325.9억 · RS +3.54%p · 1.27배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>정유·석유제품·LPG</b><span>섹터 6위 · 69.9</span></div>
+            <div class="daily-stock" data-leader-detail="S-Oil|정유축 1순위|상승률 +4.07%, RS +5.68%p, 거래대금 644.8억. 해운과는 선박연료·운임 경로로 연결되지만 인과관계는 데이터로 확정 불가."><b>S-Oil</b><span class="daily-stock-state">연관 축</span><small>+4.07% · 644.8억 · RS +5.68%p · 1.15배</small></div>
+            <div class="daily-stock" data-leader-detail="SK이노베이션|정유 동반 후보|상승률 +2.33%, RS +3.95%p, 거래대금 1,047.9억. V2 신호는 MA역배열로 품질 미통과."><b>SK이노베이션</b><span class="daily-stock-state">동반 후보</span><small>+2.33% · 1,047.9억 · RS +3.95%p · 1.02배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>SW·IT서비스</b><span>섹터 5위 · 64.5</span></div>
-            <div class="daily-stock" data-leader-detail="현대오토에버|KOSPI 관찰 후보|상승률 +9.02%, 거래대금 1,123.3억이나 수급점수 -14.9로 추가 확인 필요."><b>현대오토에버</b><span class="daily-stock-state">관찰</span><small>+9.02% · 1,123.3억 · RS +6.60%p · 3.03배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>2차전지</b><span>섹터 9위 · 45.4</span></div>
+            <div class="daily-stock emerging" data-leader-detail="DN오토모티브|KOSPI V2 교차 후보|상승률 +6.45%, RS +8.07%p, 거래대금 616.0억·6.31배. V2 S등급·품질필터 통과지만 2차전지 섹터는 9위라 주도축과 분리."><b>DN오토모티브</b><span class="daily-stock-state">V2 품질통과</span><small>+6.45% · 616.0억 · RS +8.07%p · 6.31배</small></div>
+            <div class="daily-stock" data-leader-detail="후성|2차전지 개별 강세|상승률 +4.76%, RS +6.38%p, 거래대금 1,879.8억·5.40배. 섹터 중앙 강도는 약해 개별 강세로 구분."><b>후성</b><span class="daily-stock-state">개별 강세</span><small>+4.76% · 1,879.8억 · RS +6.38%p · 5.40배</small></div>
           </div>
         </div>
         <div class="daily-market-lane" data-daily-market="KOSDAQ">
           <div class="daily-market-head"><span class="daily-market-node">KQ</span><div><strong>KOSDAQ 주도축</strong><span>KOSDAQ 대비 RS로 판정 · 거래대금 증가 배수 중시</span></div></div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>자동차·일반부품</b><span>섹터 7위 · 62.0</span></div>
-            <div class="daily-stock" data-leader-detail="한라캐스트|KOSDAQ 관찰 후보|상승률·거래대금은 강하지만 수급점수 -39.6이고 수정 V2 교차신호가 없어 품질 확인이 필요."><b>한라캐스트</b><span class="daily-stock-state">관찰</span><small>+16.25% · 2,358.9억 · RS +15.87%p · 28.88배</small></div>
-            <div class="daily-stock" data-leader-detail="삼기|자동차 동반 후보|KOSDAQ 대비 RS +3.22%p, 거래대금 208.6억. 자동차 부품 확산 여부 확인."><b>삼기</b><span class="daily-stock-state">동반 후보</span><small>+3.60% · 208.6억 · RS +3.22%p · 2.50배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>환경·폐기물</b><span>섹터 2위 · 76.7</span></div>
+            <div class="daily-stock leader" data-leader-detail="한성크린텍|KOSDAQ 당일 주도 1순위|상승률 +8.66%, KOSDAQ 대비 RS +12.12%p, 거래대금 20.1억·1.61배. 섹터 확산은 강하지만 오늘 V2 직접 신호는 없음."><b>한성크린텍</b><span class="daily-stock-state">당일 1순위</span><small>+8.66% · 20.1억 · RS +12.12%p · 1.61배</small></div>
+            <div class="daily-stock" data-leader-detail="엔바이오니아|환경 내부 확산|상승률 +1.60%, RS +5.06%p, 거래대금 1.4억·2.25배. 유동성 규모는 작아 후발 확인 필요."><b>엔바이오니아</b><span class="daily-stock-state">내부 확산</span><small>+1.60% · 1.4억 · RS +5.06%p · 2.25배</small></div>
+            <div class="daily-stock" data-leader-detail="자연과환경|환경 내부 확산|상승률 +0.77%, RS +4.23%p, 거래대금 1.6억·1.54배."><b>자연과환경</b><span class="daily-stock-state">내부 확산</span><small>+0.77% · 1.6억 · RS +4.23%p · 1.54배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>로봇·자동화</b><span>섹터 1위 · 73.9</span></div>
-            <div class="daily-stock leader" data-leader-detail="로보티즈|KOSDAQ 당일 주도 1순위|로봇 섹터 1위·주도점수 89.1. 수정 V2 B등급 PP 신호가 있으나 MA역배열이며 누적은 2일뿐."><b>로보티즈</b><span class="daily-stock-state">당일 1순위</span><small>+7.28% · 1,087.7억 · RS +6.90%p · 2.04배</small></div>
-            <div class="daily-stock" data-leader-detail="뉴로메카|로봇 급등 후보|KOSDAQ 대비 RS +9.90%p와 거래대금 3.99배는 강하지만 수급점수 -32.8."><b>뉴로메카</b><span class="daily-stock-state">급등 후보</span><small>+10.28% · 275.8억 · RS +9.90%p · 3.99배</small></div>
-            <div class="daily-stock" data-leader-detail="에스피지|로봇 후발 후보|거래대금 1,625.9억과 수급점수 +38.2. 로보티즈에서 섹터 내부로 자금이 확산되는지 확인."><b>에스피지</b><span class="daily-stock-state">후발</span><small>+5.70% · 1,625.9억 · RS +5.32%p · 1.82배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>신재생</b><span>섹터 15위 · 50.9</span></div>
+            <div class="daily-stock" data-leader-detail="씨엔플러스|환경 연관 후보|상승률 +9.89%, RS +13.35%p, 거래대금 1.9억·2.50배. 강도는 높지만 거래대금 규모가 작고 섹터는 15위."><b>씨엔플러스</b><span class="daily-stock-state">연관 후보</span><small>+9.89% · 1.9억 · RS +13.35%p · 2.50배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>기계·산업장비</b><span>섹터 3위 · 64.9</span></div>
-            <div class="daily-stock" data-leader-detail="엔비알모션|KOSDAQ 관찰 후보|상승률·RS·거래대금 배수는 강하지만 수급점수 -22.7로 확정 조건 미달."><b>엔비알모션</b><span class="daily-stock-state">관찰</span><small>+12.44% · 88.2억 · RS +12.06%p · 7.11배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>건설·환경인프라</b><span>섹터 17위 · 49.8</span></div>
+            <div class="daily-stock" data-leader-detail="누리플랜|환경 인프라 후보|상승률 +1.61%, RS +5.06%p, 거래대금 2.5억·3.50배. 산업 연관은 있으나 섹터 강도는 17위."><b>누리플랜</b><span class="daily-stock-state">연관 후보</span><small>+1.61% · 2.5억 · RS +5.06%p · 3.50배</small></div>
           </div>
-          <div class="daily-sector"><div class="daily-sector-title"><b>SW·IT서비스</b><span>섹터 5위 · 64.5</span></div>
-            <div class="daily-stock" data-leader-detail="아이크래프트|KOSDAQ 보조 후보|KOSDAQ 대비 RS +6.00%p이나 거래대금 배수 0.68로 확증 부족."><b>아이크래프트</b><span class="daily-stock-state">보조 후보</span><small>+6.38% · 39.3억 · RS +6.00%p · 0.68배</small></div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>정밀·첨단소재</b><span>섹터 10위 · 56.0</span></div>
+            <div class="daily-stock" data-leader-detail="아스플로|공정·소재 연결 후보|상승률 -1.07%지만 KOSDAQ 대비 RS +2.38%p, 거래대금 45.6억·1.21배."><b>아스플로</b><span class="daily-stock-state">연결 후보</span><small>−1.07% · 45.6억 · RS +2.38%p · 1.21배</small></div>
+          </div>
+          <div class="daily-sector"><div class="daily-sector-title"><b>반도체</b><span>섹터 4위 · 59.0</span></div>
+            <div class="daily-stock" data-leader-detail="티에프이|KOSDAQ 동반 강세축|상승률 +3.35%, RS +6.80%p, 거래대금 40.1억·1.67배. 환경 산업과 직접 연결이 아니라 별도 시장 강세축."><b>티에프이</b><span class="daily-stock-state">별도 강세축</span><small>+3.35% · 40.1억 · RS +6.80%p · 1.67배</small></div>
+            <div class="daily-stock" data-leader-detail="제너셈|반도체 개별 급등|상승률 +19.33%, RS +22.79%p, 거래대금 152.8억·34.36배. 급등 추격 위험은 별도 확인 필요."><b>제너셈</b><span class="daily-stock-state">개별 급등</span><small>+19.33% · 152.8억 · RS +22.79%p · 34.36배</small></div>
           </div>
         </div>
       </div>
-      <div class="daily-relation-strip"><span>핵심 연결</span><b>자동차 ↔ 로봇: 자율주행·전장</b><b>로봇 ↔ 기계: 자동화 장비</b><b>기계 ↔ 2차전지: 생산설비</b><b>SW·IT ↔ 전 섹터: AI·제어·스마트팩토리</b></div>
+      <div class="daily-relation-strip"><span>핵심 연결</span><b>해운 ↔ 정유: 선박연료·운임</b><b>해운 ↔ 농업: 벌크화물 수요</b><b>환경 ↔ 신재생: 친환경 투자</b><b>환경 ↔ 건설·소재: 처리시설·공정 인프라</b></div>
       <div class="daily-leader-detail" id="dailyLeaderDetail">종목을 누르면 시장 주도주 판정 근거가 표시됩니다.</div>
     </div>
   </div>
@@ -1032,12 +1036,12 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 });
 
 // ── 당일 주도주 시장별 판정 ──
-const DAILY_LEADER_SUMMARY = {
+const LEGACY_DAILY_LEADER_SUMMARY = {
   all: ['한화생명 · 로보티즈','8/14 섹터 기반 당일 1순위 · 누적 2일이라 확정 불가','DN오토모티브 · 에스피지','수정 V2 S등급 교차후보 · 품질필터는 종목별 확인','증권·은행 · KQ 연관 산업','섹터 강도 또는 수정 V2 교차근거 부족'],
   KOSPI: ['한화생명','보험 2위·주도 89.7 · V2 S이나 MA역배열','DN오토모티브 · 현대해상','DN은 V2 S·품질통과, 현대해상은 8/10 B·품질통과','증권 · 은행·금융지주','31위·46위로 당일 주도 섹터 판정 불가'],
   KOSDAQ: ['로보티즈','로봇 1위·주도 89.1 · V2 B이나 MA역배열','에스피지','V2 S(8/14)이나 MA역배열로 품질필터 미통과','기계·SW·2차전지·자동차','산업 연관과 섹터 상위는 확인, V2 교차신호 없음']
 };
-const DAILY_SECTOR_STOCKS = {
+const LEGACY_DAILY_SECTOR_STOCKS = {
   auto:{name:'자동차·부품',score:'62.0 · 7위',stocks:[
     {priority:1,leaderScore:'83.7',name:'한라캐스트',market:'KOSDAQ',state:'급등·수급 주의',kind:'emerging',metric:'+16.25% · 2,358.9억 · RS +15.87%p · 28.88배 · 수급 −39.6'},
     {priority:2,leaderScore:'78.3',name:'삼기',market:'KOSDAQ',state:'동반 후보',kind:'',metric:'+3.60% · 208.6억 · RS +3.22%p · 2.50배 · 수급 −15.7'},
@@ -1077,7 +1081,49 @@ const DAILY_SECTOR_STOCKS = {
     {priority:1,leaderScore:'46.6',name:'다올투자증권',market:'KOSPI',state:'상대 1순위·유동성 부족',kind:'',metric:'+2.22% · 3.2억 · RS −0.20%p · 1.54배 · 수급 0.0'},
     {priority:2,leaderScore:'45.3',name:'미래에셋증권',market:'KOSPI',state:'지수 대비 약함',kind:'',metric:'−1.05% · 426.2억 · RS −3.47%p · 0.63배 · 수급 0.0'}]}
 };
-const DAILY_SECTOR_LINKS={robot:['auto','software','machine','battery'],auto:['robot'],software:['robot'],machine:['robot'],battery:['robot'],insurance:['holding','bank','securities'],holding:['insurance'],bank:['insurance'],securities:['insurance']};
+const LEGACY_DAILY_SECTOR_LINKS={robot:['auto','software','machine','battery'],auto:['robot'],software:['robot'],machine:['robot'],battery:['robot'],insurance:['holding','bank','securities'],holding:['insurance'],bank:['insurance'],securities:['insurance']};
+const DAILY_LEADER_SUMMARY = {
+  all: ['HMM · 한성크린텍','8/18 KOSPI 해운·KOSDAQ 환경축 당일 1순위 · 누적 3거래일','DN오토모티브','8/18 V2 S등급·품질통과 · 2차전지 섹터 9위로 별도 축','KOSDAQ V2 교차확인','오늘 KQ 신호 4종목 모두 품질필터 미통과'],
+  KOSPI: ['HMM','해운 1위·주도 92.9 · +6.24%·RS +7.85%p·거래대금 1,212.4억','DN오토모티브','V2 S·품질통과지만 2차전지 섹터 9위','해운 V2 품질확정','HMM·흥아해운·팬오션 신호는 MA역배열로 품질 미통과'],
+  KOSDAQ: ['한성크린텍','환경 2위·주도 79.2 · +8.66%·RS +12.12%p·거래대금 20.1억','직접 교차 후보 없음','오늘 KQ V2 품질통과 0종목','신재생·건설·정밀소재','산업 연관은 확인되나 섹터 강도·유동성은 종목별 차이']
+};
+const DAILY_SECTOR_STOCKS = {
+  shipping:{name:'해운',score:'92.3 · 1위',stocks:[
+    {priority:1,leaderScore:'92.9',name:'HMM',market:'KOSPI',state:'당일 1순위',kind:'leader',metric:'+6.24% · 1,212.4억 · RS +7.85%p · 4.43배 · 수급 +24.5',v2:'8/18 · S등급 10/60GC 확정 + B등급 PP · MA역배열로 품질필터 미통과'},
+    {priority:2,leaderScore:'89.3',name:'흥아해운',market:'KOSPI',state:'내부 확산',kind:'leader',metric:'+12.78% · 871.5억 · RS +14.40%p · 3.83배 · 수급 −0.7',v2:'8/18 · B등급 PP · MA역배열로 품질필터 미통과'},
+    {priority:3,leaderScore:'87.9',name:'팬오션',market:'KOSPI',state:'내부 확산',kind:'',metric:'+4.49% · 376.8억 · RS +6.11%p · 2.08배 · 수급 +3.9',v2:'8/18 · S등급 삼각돌파+가격40/120+40/60GC · MA역배열로 품질필터 미통과'},
+    {priority:4,leaderScore:'67.0',name:'팬스타엔터프라이즈',market:'KOSDAQ',state:'KQ 해운 후발·유동성 작음',kind:'',metric:'+1.65% · 8.2억 · RS +5.11%p · 7.20배 · 수급 0.0'}]},
+  insurance:{name:'보험',score:'72.7 · 3위',stocks:[
+    {priority:1,leaderScore:'90.7',name:'현대해상',market:'KOSPI',state:'동반 강세축',kind:'leader',metric:'+9.59% · 674.0억 · RS +11.21%p · 2.82배 · 수급 +57.4'},
+    {priority:2,leaderScore:'87.3',name:'미래에셋생명',market:'KOSPI',state:'후발 후보',kind:'',metric:'+4.56% · 96.5억 · RS +6.17%p · 3.26배 · 수급 +14.2'},
+    {priority:3,leaderScore:'76.8',name:'한화손해보험',market:'KOSPI',state:'수급 후보',kind:'',metric:'−0.14% · 65.2억 · RS +1.48%p · 2.23배 · 수급 +24.4'}]},
+  agriculture:{name:'농업·비료·사료',score:'71.5 · 5위',stocks:[
+    {priority:1,leaderScore:'76.0',name:'남해화학',market:'KOSPI',state:'섹터 대표',kind:'',metric:'+0.85% · 67.6억 · RS +2.47%p · 3.18배 · 수급 −5.5'},
+    {priority:2,leaderScore:'66.0',name:'조비',market:'KOSPI',state:'후발 강세',kind:'emerging',metric:'+5.71% · 47.5억 · RS +7.33%p · 16.20배 · 수급 0.0'},
+    {priority:3,leaderScore:'63.0',name:'효성오앤비',market:'KOSDAQ',state:'KQ 후발 후보',kind:'',metric:'+2.05% · 3.6억 · RS +5.50%p · 2.03배 · 수급 0.0'}]},
+  oil:{name:'정유·석유제품·LPG',score:'69.9 · 6위',stocks:[
+    {priority:1,leaderScore:'74.7',name:'S-Oil',market:'KOSPI',state:'연관 강세축',kind:'',metric:'+4.07% · 644.8억 · RS +5.68%p · 1.15배 · 수급 +19.0'},
+    {priority:2,leaderScore:'71.0',name:'SK이노베이션',market:'KOSPI',state:'V2 품질 주의',kind:'',metric:'+2.33% · 1,047.9억 · RS +3.95%p · 1.02배 · 수급 0.0',v2:'8/18 · S등급 삼각수렴 근접 + C등급 1A · MA역배열로 품질필터 미통과'},
+    {priority:3,leaderScore:'70.1',name:'흥구석유',market:'KOSDAQ',state:'KQ 연관 후보',kind:'',metric:'+6.24% · 279.3억 · RS +9.70%p · 0.74배 · 수급 −7.1'}]},
+  battery:{name:'2차전지',score:'45.4 · 9위',stocks:[
+    {priority:1,leaderScore:'87.4',name:'DN오토모티브',market:'KOSPI',state:'V2 품질통과·별도 축',kind:'emerging',metric:'+6.45% · 616.0억 · RS +8.07%p · 6.31배 · 수급 +33.7',v2:'8/18 · S등급 40/120GC · 품질필터 통과'},
+    {priority:2,leaderScore:'84.8',name:'후성',market:'KOSPI',state:'개별 강세',kind:'',metric:'+4.76% · 1,879.8억 · RS +6.38%p · 5.40배 · 수급 −0.5'},
+    {priority:3,leaderScore:'53.4',name:'SFA넥셀',market:'KOSDAQ',state:'섹터 약세',kind:'',metric:'−5.94% · 43.4억 · RS −2.48%p · 1.05배 · 수급 0.0'}]},
+  environment:{name:'환경·폐기물',score:'76.7 · 2위',stocks:[
+    {priority:1,leaderScore:'79.2',name:'한성크린텍',market:'KOSDAQ',state:'당일 1순위',kind:'leader',metric:'+8.66% · 20.1억 · RS +12.12%p · 1.61배 · 수급 −22.7',v2:'8/18 · 직접 교차신호 없음'},
+    {priority:2,leaderScore:'64.8',name:'엔바이오니아',market:'KOSDAQ',state:'내부 확산·유동성 주의',kind:'',metric:'+1.60% · 1.4억 · RS +5.06%p · 2.25배 · 수급 0.0'},
+    {priority:3,leaderScore:'57.6',name:'자연과환경',market:'KOSDAQ',state:'내부 확산·유동성 주의',kind:'',metric:'+0.77% · 1.6억 · RS +4.23%p · 1.54배 · 수급 0.0'}]},
+  renewable:{name:'신재생',score:'50.9 · 15위',stocks:[
+    {priority:1,leaderScore:'63.1',name:'씨엔플러스',market:'KOSDAQ',state:'강도 우수·유동성 주의',kind:'emerging',metric:'+9.89% · 1.9억 · RS +13.35%p · 2.50배 · 수급 0.0'},
+    {priority:2,leaderScore:'43.2',name:'씨에스베어링',market:'KOSDAQ',state:'후순위',kind:'',metric:'−3.22% · 4.9억 · RS +0.23%p · 1.26배 · 수급 0.0'}]},
+  construction:{name:'건설·환경인프라',score:'49.8 · 17위',stocks:[
+    {priority:1,leaderScore:'62.5',name:'누리플랜',market:'KOSDAQ',state:'연관 후보·유동성 주의',kind:'',metric:'+1.61% · 2.5억 · RS +5.06%p · 3.50배 · 수급 0.0'},
+    {priority:2,leaderScore:'55.1',name:'베노티앤알',market:'KOSDAQ',state:'연관 후보·유동성 주의',kind:'',metric:'+3.25% · 0.6억 · RS +6.71%p · 1.02배 · 수급 0.0'}]},
+  materials:{name:'정밀·첨단소재',score:'56.0 · 10위',stocks:[
+    {priority:1,leaderScore:'64.8',name:'아스플로',market:'KOSDAQ',state:'공정·소재 연결',kind:'',metric:'−1.07% · 45.6억 · RS +2.38%p · 1.21배 · 수급 0.0'},
+    {priority:2,leaderScore:'49.3',name:'라이온켐텍',market:'KOSDAQ',state:'후발·유동성 주의',kind:'',metric:'−0.48% · 1.4억 · RS +2.98%p · 1.39배 · 수급 0.0'}]}
+};
+const DAILY_SECTOR_LINKS={shipping:['agriculture','insurance','oil'],agriculture:['shipping'],insurance:['shipping'],oil:['shipping'],battery:[],environment:['renewable','construction','materials'],renewable:['environment'],construction:['environment'],materials:['environment']};
 let dailyLeaderView='all';
 let dailySelectedSector='';
 let dailySelectedMarket='';
