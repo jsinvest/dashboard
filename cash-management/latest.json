@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-08-18",
-  "trade_date": "20260818",
+  "as_of": "2026-08-19",
+  "trade_date": "20260819",
   "source_generated_at": {
-    "monthly": "2026-08-19T11:11:32+09:00",
-    "staged_weekly": "2026-08-19T11:11:35.168694+09:00"
+    "monthly": "2026-08-20T07:07:09+09:00",
+    "staged_weekly": "2026-08-20T07:07:12.464922+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
     "target_risky_pct": 90.0,
-    "action": "RAISE_CASH",
-    "action_label": "현금 10% 확보",
+    "action": "HOLD",
+    "action_label": "현금 10% 유지",
     "state": "첫 주간 방어 신호 · 다음 주 확인 대기",
-    "reason": "월간 기준은 현금 0% 유지지만, 단계형 주간 기준에서 첫 현금 신호가 확인되어 10%를 우선 확보합니다.",
+    "reason": "월간 기준은 현금 0% 유지지만, 8월 18일부터 적용된 단계형 주간 현금 10%가 유지 중입니다. 8월 19일에는 신규 확대나 재진입 행동이 없습니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -31,7 +31,7 @@
   "staged_weekly": {
     "target_cash_pct": 10.0,
     "target_risky_pct": 90.0,
-    "action": "RAISE_CASH",
+    "action": "HOLD",
     "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION",
     "signal_date": "2026-08-14",
     "effective_date": "2026-08-18",
@@ -102,8 +102,8 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-08-18",
-    "workbook_rows": 2606,
+    "workbook_last_date": "2026-08-19",
+    "workbook_rows": 2607,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
