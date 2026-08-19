@@ -5,8 +5,10 @@
   "current_price": 1016.25,
   "bin_size": 5,
   "foreign_estimated_position": -13362.0,
+  "foreign_position_side": "숏",
   "foreign_average_price": 990.04,
   "institution_estimated_position": 13272.0,
+  "institution_position_side": "롱",
   "institution_average_price": 993.45,
   "active_zone": {
     "low": 995.0,
@@ -15,13 +17,31 @@
   "cumulative_from": "2026-07-30",
   "cumulative_to": "2026-08-19",
   "cumulative_trading_days": 8,
+  "whole_position_method": "F202609로 확인된 거래일의 0787 선물 순매매를 중복·비거래일·UNKNOWN 월물 없이 합산한 추정치",
   "data_quality": {
     "active_contract_only": "F202609",
+    "validation": "EOD 수집 71건·경고 0, 저장 PNG OCR 재검증 종료코드 0",
+    "included_dates": [
+      "20260730",
+      "20260731",
+      "20260803",
+      "20260807",
+      "20260812",
+      "20260813",
+      "20260818",
+      "20260819"
+    ],
     "excluded_dates": {
       "20260801": "비거래일",
       "20260804": "원천 브리지 불일치(date=20260804, contract=UNKNOWN)",
       "20260805": "원천 브리지 불일치(date=20260805, contract=UNKNOWN)"
     },
+    "ocr_notice": "최초 OCR은 기타법인 풋옵션 금액 순매수 판독에서 실패했으나, 원본 화면의 매도 19·매수 10을 확인해 순매수 -9로 재파싱했고 2026-08-20 재검증은 종료코드 0으로 완료",
+    "chart_limits": [
+      "0471 변동성 지표 선택 상태는 자동 확인 불가",
+      "5605 일봉·10분봉 주기와 보조지표 상태는 자동 확인 불가",
+      "5605 야간 화면은 19:14 캡처이며 0441 주간 종가 1016.25와 시간 기준이 달라 종가 수급 계산에 합산하지 않음"
+    ],
     "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외"
   },
   "daily_flow": {
@@ -32,7 +52,59 @@
     "foreign_futures_net": -331.0,
     "foreign_option_delta_net": -1040.0,
     "institution_futures_net": 2175.0,
-    "institution_option_delta_net": 403.5
+    "institution_option_delta_net": 403.5,
+    "interpretation": "외국인은 선물과 옵션 델타가 모두 하방, 기관은 모두 상방으로 서로 반대. 가격 하락과 미결제약정 감소가 함께 나타나 신규 매도 확대보다 기존 롱 청산 가능성도 함께 확인해야 함"
+  },
+  "recent_validated_flow": {
+    "basis": "F202609로 확인된 최근 수집일 기준이며 누락 거래일을 보간하지 않음",
+    "latest_3_observations": {
+      "dates": [
+        "20260813",
+        "20260818",
+        "20260819"
+      ],
+      "foreign_futures_net": -27.0,
+      "foreign_option_delta_net": -5105.0,
+      "institution_futures_net": 182.0,
+      "institution_option_delta_net": -4684.5,
+      "price_change_pct": -5.35,
+      "open_interest_change": -8814,
+      "open_interest_change_pct": -5.6
+    },
+    "latest_5_observations": {
+      "dates": [
+        "20260807",
+        "20260812",
+        "20260813",
+        "20260818",
+        "20260819"
+      ],
+      "foreign_futures_net": 2815.0,
+      "foreign_option_delta_net": -10309.0,
+      "institution_futures_net": -3528.0,
+      "institution_option_delta_net": 3113.5,
+      "price_change_pct": 3.83,
+      "open_interest_note": "8/7 미결제약정 판독값이 없어 5개 관측일 전체 비교는 판단 불가; 확인 가능한 8/12~8/19는 -14,360계약(-8.81%)"
+    }
+  },
+  "daily_option_amount": {
+    "unit": "0787 금액 화면 표시 단위",
+    "foreign_call": 11.0,
+    "foreign_put": 71.0,
+    "institution_call": 3.0,
+    "institution_put": -32.0
+  },
+  "open_interest": {
+    "as_of": "20260819",
+    "contract": "F202609",
+    "close_price": 1016.25,
+    "close_open_interest": 148635,
+    "oi_change_vs_prev": -1576,
+    "oi_change_vs_prev_pct": -1.05,
+    "volume": 137069,
+    "price_change_vs_prev": -62.0,
+    "price_change_vs_prev_pct": -5.75,
+    "interpretation": "가격 하락·미결제약정 감소 조합으로 롱 청산 가능성. 확정 사실이 아니며 외국인·기관 수급과 교차 확인 필요"
   },
   "cumulative_zones": [
     {
@@ -221,5 +293,73 @@
   "summary_image": "market_structure_summary.png",
   "candlestick_image": "kospi200_futures_daily_supply_zones.png",
   "position_profile_image": null,
-  "source_note": "0787 당일 순매매 누적 기반 추정치이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 KRX 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 당일 흐름과 관측 시작일부터의 누적 가격대는 별도 표시합니다."
+  "overall_assessment": {
+    "headline": "결론: 단기 하방 우세(중립-하방) · 현재 1차 지지 1015~1020 · 1015 종가 이탈·회복 실패 시 다음 지지 990~995, 추가 하락 시 975~980 · 주요 저항 1030~1040, 돌파·안착 시 다음 저항 1070~1080",
+    "stance": "단기 하방 우세(중립-하방)",
+    "confidence": "중간(0787·0441·누적 매물대 교차 확인, 5605 설정 상태와 야간 수급은 확인 불가)",
+    "pivot": "1015~1020",
+    "first_resistance": "1030~1040",
+    "breakout_confirmation": "1030~1040 상단 돌파 후 종가 안착과 미결제약정 감소 진정 여부 확인",
+    "second_resistance_target": "1070~1080",
+    "downside_scenario": "1015 종가 하회·회복 실패 시 990~995, 추가 약세 시 975~980 확인",
+    "caution": "실제 잔존 포지션이 아니라 0787 순매매 누적 추정치다. 옵션 델타는 절대 델타 0.5 가정치이며, 5605 야간 화면은 주간 종가 수급과 시간 기준이 달라 결론에 합산하지 않았다.",
+    "levels": [
+      {
+        "label": "현재 1차 지지",
+        "range": "1015~1020",
+        "reason": "8/19 주간 종가 1016.25가 포함되고 외국인 -331·기관 +2,175가 충돌한 당일 구간",
+        "color": "#f59e0b"
+      },
+      {
+        "label": "이탈 후 다음 지지",
+        "range": "990~995",
+        "reason": "외국인 숏 -14,821계약과 기관 롱 +14,560계약이 집중된 최대 누적 충돌대",
+        "color": "#3b82f6"
+      },
+      {
+        "label": "추가 하단 지지",
+        "range": "975~980",
+        "reason": "외국인 롱 +3,913계약과 기관 숏 -3,115계약이 맞물린 두 번째 누적 충돌대",
+        "color": "#2563eb"
+      },
+      {
+        "label": "현재 주요 저항",
+        "range": "1030~1040",
+        "reason": "1030~1035 동반 롱과 1035~1040 동반 숏이 맞물리고 8/19 주간 고가 1037.60이 포함된 구간",
+        "color": "#f97316"
+      },
+      {
+        "label": "돌파 후 다음 저항",
+        "range": "1070~1080",
+        "reason": "8/13·8/18 수급이 누적된 상단 충돌 구간",
+        "color": "#ef4444"
+      }
+    ],
+    "scenarios": [
+      {
+        "tone": "down",
+        "condition": "1015 종가 하회 후 회복 실패",
+        "target": "990~995, 이어 975~980 지지 확인"
+      },
+      {
+        "tone": "up",
+        "condition": "1030~1040 돌파·안착",
+        "target": "1070~1080 저항 확인"
+      },
+      {
+        "tone": "neutral",
+        "condition": "1015~1040 범위 유지 + 미결제약정 감소 지속",
+        "target": "신규 방향 구축보다 기존 포지션 정리 국면"
+      }
+    ],
+    "evidence": [
+      "EOD 수집 71건·경고 0, 저장 PNG OCR 재검증 종료코드 0",
+      "8/19 주간 종가 1016.25·전일 대비 -62.00(-5.75%)",
+      "8/19 미결제약정 148,635계약·전일 대비 -1,576(-1.05%)",
+      "당일 외국인 선물 -331·옵션델타 -1,040, 기관 선물 +2,175·옵션델타 +403.5",
+      "최근 3개 검증일 가격 -5.35%·미결제약정 -5.60%, 외국인 옵션델타 -5,105",
+      "최근 5개 검증일 외국인 선물 +2,815와 옵션델타 -10,309로 방향 불일치"
+    ]
+  },
+  "source_note": "2026-08-19 EOD의 0787·0441과 2026-07-30 이후 F202609로 확인된 8개 거래일만 사용했다. 비거래일과 contract_code UNKNOWN·원천 브리지 불일치 행은 원본을 보존한 채 게시 계산에서 제외했다. 계약수·평단은 실제 잔존 보유량이 아닌 순매매 누적 추정치이며 신규·청산을 완전히 구분할 수 없다."
 }
