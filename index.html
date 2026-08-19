@@ -183,6 +183,11 @@
   .cash-allocation-item span{display:block;color:var(--text-muted);font-size:10px;margin-bottom:5px;}
   .cash-allocation-item strong{font-family:'JetBrains Mono',monospace;font-size:25px;}
   .cash-allocation-item.cash strong{color:#f59e0b;}.cash-allocation-item.risky strong{color:var(--accent);}
+  .cash-date-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
+  .cash-date-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:11px 12px;}
+  .cash-date-item span{display:block;color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+  .cash-date-item strong{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text);}
+  .cash-date-item.primary{border-color:rgba(0,229,255,.45);background:rgba(0,229,255,.05);}.cash-date-item.primary strong{color:var(--accent);font-size:14px;}
   .cash-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
   .cash-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0;}
   .cash-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
@@ -307,7 +312,7 @@
     .link-table td:first-child{font-weight:700;color:var(--text);}
     .link-open-btn,.link-edit-btn,.link-del-btn{min-height:38px;margin-top:6px;}
 
-    .cash-hero{grid-template-columns:1fr;padding:15px;}.cash-headline{font-size:20px;}.cash-grid,.cash-flow{grid-template-columns:1fr;}.cash-step{min-height:0;}
+    .cash-hero{grid-template-columns:1fr;padding:15px;}.cash-headline{font-size:20px;}.cash-date-grid,.cash-grid,.cash-flow{grid-template-columns:1fr;}.cash-step{min-height:0;}
     .report-result-box{max-width:100%;-webkit-overflow-scrolling:touch;}
     .report-table{font-size:11px;}
     .report-tabs{overflow-x:auto;flex-wrap:nowrap;}
@@ -1589,6 +1594,10 @@ function cashNumber(value, digits=1){
 function cashActionClass(action){
   return action === 'RAISE_CASH' ? 'raise' : 'hold';
 }
+function cashTimestamp(value){
+  const text = String(value || '-');
+  return text === '-' ? text : text.replace('T',' ').slice(0,16) + ' KST';
+}
 function renderCashManagement(data){
   const root = document.getElementById('cashManagementContent');
   if(!root) return;
@@ -1598,6 +1607,7 @@ function renderCashManagement(data){
   const next = data.next_check || {};
   const validation = data.validation || {};
   const backtest = data.backtest || {};
+  const generated = data.source_generated_at || {};
   const rows = (backtest.rows || []).map(row=>`<tr>
     <td>${escapeHtml(row.label)}</td>
     <td>${cashNumber(row.total_return_pct,1)}%</td>
@@ -1618,6 +1628,12 @@ function renderCashManagement(data){
         <div class="cash-allocation-item cash"><span>종합 현금비중</span><strong>${cashNumber(combined.target_cash_pct,0)}%</strong></div>
         <div class="cash-allocation-item risky"><span>위험자산 비중</span><strong>${cashNumber(combined.target_risky_pct,0)}%</strong></div>
       </div>
+    </div>
+    <div class="cash-date-grid">
+      <div class="cash-date-item primary"><span>데이터 기준일</span><strong>${escapeHtml(data.as_of)}</strong></div>
+      <div class="cash-date-item"><span>월간 신호일 → 적용일</span><strong>${escapeHtml(monthly.signal_date)} → ${escapeHtml(monthly.effective_date)}</strong></div>
+      <div class="cash-date-item"><span>주간 신호일 → 적용일</span><strong>${escapeHtml(staged.signal_date)} → ${escapeHtml(staged.effective_date)}</strong></div>
+      <div class="cash-date-item"><span>결과 생성일시</span><strong>${escapeHtml(cashTimestamp(generated.staged_weekly || generated.monthly))}</strong></div>
     </div>
     <div class="cash-grid">
       <section class="cash-card">
