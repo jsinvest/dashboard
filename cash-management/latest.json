@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "status": "OK",
+  "as_of": "2026-08-18",
+  "trade_date": "20260818",
+  "source_generated_at": {
+    "monthly": "2026-08-19T11:11:32+09:00",
+    "staged_weekly": "2026-08-19T11:11:35.168694+09:00"
+  },
+  "combined_guidance": {
+    "target_cash_pct": 10.0,
+    "target_risky_pct": 90.0,
+    "action": "RAISE_CASH",
+    "action_label": "현금 10% 확보",
+    "state": "첫 주간 방어 신호 · 다음 주 확인 대기",
+    "reason": "월간 기준은 현금 0% 유지지만, 단계형 주간 기준에서 첫 현금 신호가 확인되어 10%를 우선 확보합니다.",
+    "automatic_order": false,
+    "execution_authority": "ADVISORY_ONLY"
+  },
+  "monthly_primary": {
+    "target_cash_pct": 0.0,
+    "target_risky_pct": 100.0,
+    "action": "HOLD",
+    "signal_date": "2026-07-31",
+    "effective_date": "2026-08-03",
+    "mode": "CONTRARIAN_KOSPI",
+    "breadth_pct": 11.538461538461538,
+    "kospi_drawdown_252_pct": -27.638226791229403,
+    "role": "월간 기본 운용 기준"
+  },
+  "staged_weekly": {
+    "target_cash_pct": 10.0,
+    "target_risky_pct": 90.0,
+    "action": "RAISE_CASH",
+    "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION",
+    "signal_date": "2026-08-14",
+    "effective_date": "2026-08-18",
+    "weekly_model_cash_pct": 50.0,
+    "previous_weekly_model_cash_pct": 0.0,
+    "accepted_rule": "WEEKLY_STARTER_10",
+    "role": "조기 방어용 단계형 보조 기준"
+  },
+  "next_check": {
+    "condition": "다음 확정 주간 신호에서도 모델 목표현금이 50% 이상",
+    "if_confirmed": "해당 주의 모델 목표현금까지 확대",
+    "if_not_confirmed": "현금 10%를 유지하고 월간 재진입 신호를 기다림",
+    "weekly_risk_on_allowed": false,
+    "monthly_reentry_allowed": true,
+    "same_day_priority": "주간 위험축소 우선"
+  },
+  "rule_steps": [
+    {
+      "step": 1,
+      "title": "첫 주간 현금 신호",
+      "description": "확정 주간 모델 목표현금이 50% 이상으로 처음 올라오면 현금 10%를 우선 확보합니다."
+    },
+    {
+      "step": 2,
+      "title": "다음 주 재확인",
+      "description": "바로 다음 확정 주에도 모델 목표현금이 50% 이상이면 그 주의 모델 목표까지 현금을 확대합니다."
+    },
+    {
+      "step": 3,
+      "title": "재진입은 월간",
+      "description": "주간 신호로 위험자산 비중을 다시 늘리지 않고, 월간 재진입 신호가 나올 때만 위험자산에 재진입합니다."
+    }
+  ],
+  "backtest": {
+    "period": "2018-02-01~2026-08-18",
+    "execution_assumption": "신호일 종가 정보만 사용하고 다음 거래일 KODEX 코스피 VWAP으로 체결, 편도비용 0.1%",
+    "rows": [
+      {
+        "policy": "MONTHLY",
+        "label": "월간 기본",
+        "total_return_pct": 717.4067,
+        "mdd_pct": -19.6765,
+        "sharpe": 1.3700,
+        "turnover": 26.5585,
+        "rebalances": 49
+      },
+      {
+        "policy": "STAGED10",
+        "label": "단계형 주간 + 월간 재진입",
+        "total_return_pct": 608.8348,
+        "mdd_pct": -19.6732,
+        "sharpe": 1.2859,
+        "turnover": 30.0395,
+        "rebalances": 78
+      },
+      {
+        "policy": "HYBRID_ALL",
+        "label": "모든 주간 방어 + 월간 재진입",
+        "total_return_pct": 560.3218,
+        "mdd_pct": -19.6732,
+        "sharpe": 1.2952,
+        "turnover": 52.9029,
+        "rebalances": 93
+      }
+    ],
+    "interpretation": "단계형 주간은 첫 경고에 10%만 대응해 모든 주간 신호를 따르는 방식보다 과도한 거래를 줄였지만, 누적수익은 월간 기본보다 낮았습니다. 현재 종합 비중은 자동 주문이 아니라 종목선정과 비중 판단을 위한 참고값입니다."
+  },
+  "validation": {
+    "monthly_status": "OK",
+    "staged_weekly_status": "OK",
+    "workbook_last_date": "2026-08-18",
+    "workbook_rows": 2606,
+    "workbook_columns": 28,
+    "duplicate_date_rows": 0,
+    "missing_numeric_cells": 0,
+    "latest_row_complete": true,
+    "automatic_order_disabled": true
+  },
+  "source_files": [
+    "cash_weight_signal_runner.py",
+    "staged_weekly_cash_runner.py",
+    "cash_weight_signal_latest.json",
+    "staged_weekly_cash_latest.json",
+    "validation_latest.json"
+  ]
+}

@@ -172,21 +172,36 @@
 
 
 
-  /* 관심종목 */
-  .memo-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
-  .memo-input-row{display:grid;grid-template-columns:220px 1fr 80px;gap:8px;margin-bottom:14px;}
-  .memo-input-row input,.memo-input-row textarea{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:13px;outline:none;font-family:'Noto Sans KR',sans-serif;}
-  .memo-input-row textarea{min-height:42px;resize:vertical;}
-  .memo-input-row button,.memo-edit-btn,.memo-del-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:12px;}
-  .memo-list{display:flex;flex-direction:column;gap:10px;}
-  .memo-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;}
-  .memo-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
-  .memo-title{font-weight:700;color:var(--accent);font-size:14px;}
-  .memo-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);white-space:nowrap;}
-  .memo-content{white-space:pre-wrap;line-height:1.7;font-size:13px;color:var(--text);}
-  .memo-actions{margin-top:10px;display:flex;gap:6px;}
-  .memo-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);}
-  .memo-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);}
+  /* 현금비중관리 */
+  .cash-shell{display:flex;flex-direction:column;gap:14px;}
+  .cash-hero{background:linear-gradient(135deg,rgba(0,229,255,.10),rgba(245,158,11,.08));border:1px solid rgba(0,229,255,.35);border-radius:12px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:18px;align-items:center;}
+  .cash-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.08em;margin-bottom:7px;}
+  .cash-headline{font-size:24px;font-weight:800;line-height:1.35;}
+  .cash-reason{margin-top:8px;color:var(--text-dim);font-size:13px;line-height:1.7;}
+  .cash-allocation{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .cash-allocation-item{background:rgba(7,10,16,.65);border:1px solid var(--border);border-radius:9px;padding:13px;text-align:center;}
+  .cash-allocation-item span{display:block;color:var(--text-muted);font-size:10px;margin-bottom:5px;}
+  .cash-allocation-item strong{font-family:'JetBrains Mono',monospace;font-size:25px;}
+  .cash-allocation-item.cash strong{color:#f59e0b;}.cash-allocation-item.risky strong{color:var(--accent);}
+  .cash-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .cash-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;min-width:0;}
+  .cash-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;}
+  .cash-card-title{font-weight:700;color:var(--text);}
+  .cash-badge{border:1px solid var(--border);border-radius:999px;padding:4px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;white-space:nowrap;}
+  .cash-badge.raise{color:#f59e0b;border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08);}.cash-badge.hold{color:var(--text-dim);}
+  .cash-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .cash-metric{background:var(--bg3);border-radius:7px;padding:10px;min-width:0;}
+  .cash-metric span{display:block;color:var(--text-muted);font-size:10px;margin-bottom:4px;}
+  .cash-metric strong{font-family:'JetBrains Mono',monospace;font-size:14px;overflow-wrap:anywhere;}
+  .cash-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;counter-reset:cash-step;}
+  .cash-step{position:relative;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:13px 13px 13px 42px;min-height:92px;}
+  .cash-step::before{counter-increment:cash-step;content:counter(cash-step);position:absolute;left:13px;top:13px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#001015;font:700 11px 'JetBrains Mono',monospace;}
+  .cash-step strong{display:block;font-size:12px;margin-bottom:5px;}.cash-step p{margin:0;color:var(--text-dim);font-size:11px;line-height:1.6;}
+  .cash-table{width:100%;border-collapse:collapse;font-size:12px;min-width:690px;}
+  .cash-table th,.cash-table td{border-bottom:1px solid var(--border);padding:9px 10px;text-align:right;}
+  .cash-table th:first-child,.cash-table td:first-child{text-align:left;}.cash-table th{color:var(--text-muted);font-size:10px;}
+  .cash-note{padding:11px 13px;border-left:3px solid #f59e0b;background:rgba(245,158,11,.06);color:var(--text-dim);font-size:11px;line-height:1.65;}
+  .cash-status{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:10px;line-height:1.6;overflow-wrap:anywhere;}
 
 
   /* 리포트 검색 */
@@ -276,11 +291,11 @@
     .lock-input{font-size:16px;}
     .lock-submit{min-height:46px;padding:12px;}
 
-    .schedule-card,.link-card,.memo-card,.report-card,.adr-card{padding:13px;}
+    .schedule-card,.link-card,.report-card,.adr-card{padding:13px;}
     .schedule-input-row,.report-search-row{flex-direction:column;}
-    .schedule-input-row input,.report-search-row input,.link-input-row input,.memo-input-row input,.memo-input-row textarea{font-size:16px;min-width:0;}
-    .schedule-input-row button,.report-search-row button,.link-input-row button,.memo-input-row button{min-height:44px;}
-    .link-input-row,.memo-input-row{grid-template-columns:minmax(0,1fr);}
+    .schedule-input-row input,.report-search-row input,.link-input-row input{font-size:16px;min-width:0;}
+    .schedule-input-row button,.report-search-row button,.link-input-row button{min-height:44px;}
+    .link-input-row{grid-template-columns:minmax(0,1fr);}
 
     .schedule-table,.schedule-table tbody,.link-table,.link-table tbody{display:block;width:100%;}
     .schedule-table thead,.link-table thead{display:none;}
@@ -292,8 +307,7 @@
     .link-table td:first-child{font-weight:700;color:var(--text);}
     .link-open-btn,.link-edit-btn,.link-del-btn{min-height:38px;margin-top:6px;}
 
-    .memo-head{align-items:flex-start;flex-wrap:wrap;}
-    .memo-date{white-space:normal;}
+    .cash-hero{grid-template-columns:1fr;padding:15px;}.cash-headline{font-size:20px;}.cash-grid,.cash-flow{grid-template-columns:1fr;}.cash-step{min-height:0;}
     .report-result-box{max-width:100%;-webkit-overflow-scrolling:touch;}
     .report-table{font-size:11px;}
     .report-tabs{overflow-x:auto;flex-wrap:nowrap;}
@@ -412,7 +426,7 @@
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
   <button class="tab-btn" data-tab="links">링크 모음</button>
-  <button class="tab-btn" data-tab="memo">관심종목</button>
+  <button class="tab-btn" data-tab="cash">현금비중관리</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
   <button class="tab-btn" data-tab="leaders">[당일 주도주]</button>
   <button class="tab-btn" data-tab="market">[시장분석자료]</button>
@@ -815,17 +829,11 @@
   </div>
 
 
-  <!-- 관심종목 -->
-  <div class="tab-panel" data-tab-panel="memo">
-    <div class="section-title">관심종목 · WATCHLIST</div>
-    <div class="memo-card">
-      <div class="mode-note" id="memoModeNote"></div>
-      <div class="memo-input-row edit-only">
-        <input id="memoTitleInput" type="text" placeholder="제목 예: 삼성전자 / 반도체 관심종목" />
-        <textarea id="memoContentInput" placeholder="내용 예: 매수가 / 손절가 / 목표가 / 체크 포인트"></textarea>
-        <button onclick="addMemo()">등록</button>
-      </div>
-      <div class="memo-list" id="memoBody"></div>
+  <!-- 현금비중관리 -->
+  <div class="tab-panel" data-tab-panel="cash">
+    <div class="section-title">현금비중관리 · CASH ALLOCATION</div>
+    <div class="cash-shell" id="cashManagementContent">
+      <div class="cash-card cash-status" id="cashManagementStatus">최신 현금비중 결과를 불러오는 중입니다.</div>
     </div>
   </div>
 
@@ -1012,13 +1020,11 @@ function applyDashboardMode(){
   document.body.classList.toggle('edit-mode', IS_EDIT_MODE);
   const scheduleNote = document.getElementById('scheduleModeNote');
   const linkNote = document.getElementById('linkModeNote');
-  const memoNote = document.getElementById('memoModeNote');
   const msg = IS_EDIT_MODE
-    ? '<span class="admin">관리자 모드</span> · 일정/링크/관심종목 등록·수정·삭제 가능 · 서버 저장'
-    : '<span class="readonly">보기 전용 모드</span> · 일정/링크/관심종목은 열람만 가능';
+    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능 · 서버 저장'
+    : '<span class="readonly">보기 전용 모드</span> · 일정/링크는 열람만 가능';
   if(scheduleNote) scheduleNote.innerHTML = msg;
   if(linkNote) linkNote.innerHTML = msg;
-  if(memoNote) memoNote.innerHTML = msg;
 }
 
 // ── 상단 탭 ──
@@ -1573,104 +1579,95 @@ async function deleteBookmarkLink(index){
   loadBookmarkLinks();
 }
 
-// ── 관심종목: 서버 저장 ──
-function escapeMemoText(v){
-  return String(v ?? '').replace(/[&<>"']/g, ch => ({
-    '&':'&amp;',
-    '<':'&lt;',
-    '>':'&gt;',
-    '"':'&quot;',
-    "'":'&#39;'
-  }[ch]));
+// ── 현금비중관리: 검증된 월간·단계형 주간 결과 ──
+const CASH_LOCAL_URL = 'cash-management/latest.json';
+const CASH_RAW_URL = 'https://raw.githubusercontent.com/jsinvest/dashboard/main/cash-management/latest.json';
+function cashNumber(value, digits=1){
+  const n = Number(value);
+  return Number.isFinite(n) ? n.toFixed(digits) : '-';
 }
-function getMemos(){
-  return dashboardData.memos || [];
+function cashActionClass(action){
+  return action === 'RAISE_CASH' ? 'raise' : 'hold';
 }
-function todayMemoDate(){
-  return new Intl.DateTimeFormat('ko-KR', {
-    timeZone:'Asia/Seoul',
-    year:'numeric',
-    month:'2-digit',
-    day:'2-digit',
-    hour:'2-digit',
-    minute:'2-digit',
-    hour12:false
-  }).format(new Date());
-}
-function loadMemos(){
-  const body = document.getElementById('memoBody'); if(!body) return;
-  const items = getMemos();
-  if(!items.length){
-    body.innerHTML = `<div class="memo-item" style="color:var(--text-dim);">등록된 관심종목이 없습니다.</div>`;
-    return;
-  }
-  body.innerHTML = '';
-  items.slice().reverse().forEach((item,revIndex)=>{
-    const index = items.length - 1 - revIndex;
-    const div = document.createElement('div');
-    div.className = 'memo-item';
-    const actions = IS_EDIT_MODE
-      ? `<div class="memo-actions"><button class="memo-edit-btn" onclick="editMemo(${index})">수정</button><button class="memo-del-btn" onclick="deleteMemo(${index})">삭제</button></div>`
-      : '';
-    div.innerHTML = `
-      <div class="memo-head">
-        <div class="memo-title">${escapeMemoText(item.title || '무제')}</div>
-        <div class="memo-date">${escapeMemoText(item.updatedAt || item.createdAt || '')}</div>
+function renderCashManagement(data){
+  const root = document.getElementById('cashManagementContent');
+  if(!root) return;
+  const combined = data.combined_guidance || {};
+  const monthly = data.monthly_primary || {};
+  const staged = data.staged_weekly || {};
+  const next = data.next_check || {};
+  const validation = data.validation || {};
+  const backtest = data.backtest || {};
+  const rows = (backtest.rows || []).map(row=>`<tr>
+    <td>${escapeHtml(row.label)}</td>
+    <td>${cashNumber(row.total_return_pct,1)}%</td>
+    <td>${cashNumber(row.mdd_pct,2)}%</td>
+    <td>${cashNumber(row.sharpe,3)}</td>
+    <td>${cashNumber(row.turnover,2)}</td>
+    <td>${escapeHtml(row.rebalances)}</td>
+  </tr>`).join('');
+  const steps = (data.rule_steps || []).map(step=>`<div class="cash-step"><strong>${escapeHtml(step.title)}</strong><p>${escapeHtml(step.description)}</p></div>`).join('');
+  root.innerHTML = `
+    <div class="cash-hero">
+      <div>
+        <div class="cash-kicker">AS OF ${escapeHtml(data.as_of)} · 검증 상태 ${escapeHtml(data.status)}</div>
+        <div class="cash-headline">${escapeHtml(combined.action_label || '현금비중 확인')}</div>
+        <div class="cash-reason">${escapeHtml(combined.reason)}</div>
       </div>
-      <div class="memo-content">${escapeMemoText(item.content || '')}</div>
-      ${actions}
-    `;
-    body.appendChild(div);
-  });
+      <div class="cash-allocation">
+        <div class="cash-allocation-item cash"><span>종합 현금비중</span><strong>${cashNumber(combined.target_cash_pct,0)}%</strong></div>
+        <div class="cash-allocation-item risky"><span>위험자산 비중</span><strong>${cashNumber(combined.target_risky_pct,0)}%</strong></div>
+      </div>
+    </div>
+    <div class="cash-grid">
+      <section class="cash-card">
+        <div class="cash-card-head"><div><div class="cash-card-title">월간 기본 기준</div><div class="cash-status">${escapeHtml(monthly.role)}</div></div><span class="cash-badge ${cashActionClass(monthly.action)}">${escapeHtml(monthly.action)}</span></div>
+        <div class="cash-metrics">
+          <div class="cash-metric"><span>목표 현금</span><strong>${cashNumber(monthly.target_cash_pct,0)}%</strong></div>
+          <div class="cash-metric"><span>목표 위험자산</span><strong>${cashNumber(monthly.target_risky_pct,0)}%</strong></div>
+          <div class="cash-metric"><span>신호 → 적용</span><strong>${escapeHtml(monthly.signal_date)} → ${escapeHtml(monthly.effective_date)}</strong></div>
+          <div class="cash-metric"><span>모드</span><strong>${escapeHtml(monthly.mode)}</strong></div>
+          <div class="cash-metric"><span>시장폭</span><strong>${cashNumber(monthly.breadth_pct,1)}%</strong></div>
+          <div class="cash-metric"><span>252일 고점 대비</span><strong>${cashNumber(monthly.kospi_drawdown_252_pct,1)}%</strong></div>
+        </div>
+      </section>
+      <section class="cash-card">
+        <div class="cash-card-head"><div><div class="cash-card-title">단계형 주간 방어</div><div class="cash-status">${escapeHtml(staged.role)}</div></div><span class="cash-badge ${cashActionClass(staged.action)}">${escapeHtml(staged.action)}</span></div>
+        <div class="cash-metrics">
+          <div class="cash-metric"><span>현재 단계 목표현금</span><strong>${cashNumber(staged.target_cash_pct,0)}%</strong></div>
+          <div class="cash-metric"><span>주간 모델 요구현금</span><strong>${cashNumber(staged.weekly_model_cash_pct,0)}%</strong></div>
+          <div class="cash-metric"><span>신호 → 적용</span><strong>${escapeHtml(staged.signal_date)} → ${escapeHtml(staged.effective_date)}</strong></div>
+          <div class="cash-metric"><span>이전 주 모델현금</span><strong>${cashNumber(staged.previous_weekly_model_cash_pct,0)}%</strong></div>
+          <div class="cash-metric" style="grid-column:1/-1"><span>현재 상태</span><strong>${escapeHtml(combined.state)}</strong></div>
+        </div>
+      </section>
+    </div>
+    <section class="cash-card">
+      <div class="cash-card-head"><div class="cash-card-title">운용 규칙</div><span class="cash-badge hold">주간 방어 · 월간 재진입</span></div>
+      <div class="cash-flow">${steps}</div>
+      <div class="cash-note" style="margin-top:10px"><strong>다음 확인:</strong> ${escapeHtml(next.condition)}<br><strong>확인되면:</strong> ${escapeHtml(next.if_confirmed)}<br><strong>확인되지 않으면:</strong> ${escapeHtml(next.if_not_confirmed)}</div>
+    </section>
+    <section class="cash-card">
+      <div class="cash-card-head"><div><div class="cash-card-title">백테스트 비교</div><div class="cash-status">${escapeHtml(backtest.period)} · ${escapeHtml(backtest.execution_assumption)}</div></div></div>
+      <div class="table-scroll"><table class="cash-table"><thead><tr><th>방법</th><th>누적수익</th><th>MDD</th><th>Sharpe</th><th>회전율</th><th>리밸런싱</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div class="cash-note" style="margin-top:10px">${escapeHtml(backtest.interpretation)}</div>
+    </section>
+    <div class="cash-card cash-status">데이터 ${escapeHtml(data.as_of)} · 월간 검증 ${escapeHtml(validation.monthly_status)} · 단계형 주간 검증 ${escapeHtml(validation.staged_weekly_status)} · ${escapeHtml(validation.workbook_rows)}행 / ${escapeHtml(validation.workbook_columns)}열 · 중복 ${escapeHtml(validation.duplicate_date_rows)} · 결측 ${escapeHtml(validation.missing_numeric_cells)} · 자동주문 비활성</div>
+  `;
 }
-async function addMemo(){
-  if(!IS_EDIT_MODE) return;
-  const titleEl = document.getElementById('memoTitleInput');
-  const contentEl = document.getElementById('memoContentInput');
-  const title = titleEl.value.trim();
-  const content = contentEl.value.trim();
-  if(!title && !content) return;
-  const now = todayMemoDate();
-  dashboardData.memos.push({
-    id: 'memo_' + Date.now(),
-    title: title || '무제',
-    content,
-    createdAt: now,
-    updatedAt: now
-  });
-  titleEl.value = '';
-  contentEl.value = '';
-  await saveDashboardData();
-  loadMemos();
-}
-async function editMemo(index){
-  if(!IS_EDIT_MODE) return;
-  const items = getMemos();
-  const item = items[index];
-  if(!item) return;
-  const title = prompt('관심종목 제목을 수정하세요.', item.title || '');
-  if(title === null) return;
-  const content = prompt('관심종목 내용을 수정하세요.', item.content || '');
-  if(content === null) return;
-  const cleanTitle = title.trim() || '무제';
-  const cleanContent = content.trim();
-  items[index] = {
-    ...item,
-    title: cleanTitle,
-    content: cleanContent,
-    updatedAt: todayMemoDate()
-  };
-  dashboardData.memos = items;
-  await saveDashboardData();
-  loadMemos();
-}
-async function deleteMemo(index){
-  if(!IS_EDIT_MODE) return;
-  const items = getMemos();
-  items.splice(index,1);
-  dashboardData.memos = items;
-  await saveDashboardData();
-  loadMemos();
+async function loadCashManagement(){
+  const root = document.getElementById('cashManagementContent');
+  try{
+    let res = await fetch(CASH_LOCAL_URL+'?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) res = await fetch(CASH_RAW_URL+'?v='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(data.status !== 'OK') throw new Error('validation status '+data.status);
+    renderCashManagement(data);
+  }catch(e){
+    console.error('cash management load failed', e);
+    if(root) root.innerHTML = '<div class="cash-card cash-note">현금비중 자료를 불러오지 못했습니다. 최신 스크립트 결과와 검증 파일을 확인해 주세요.</div>';
+  }
 }
 
 document.addEventListener('DOMContentLoaded',async ()=>{
@@ -1678,16 +1675,12 @@ document.addEventListener('DOMContentLoaded',async ()=>{
   await fetchDashboardData();
   loadSchedules();
   loadBookmarkLinks();
-  loadMemos();
+  loadCashManagement();
   const input=document.getElementById('scheduleInput');
   if(input) input.addEventListener('keydown',e=>{if(e.key==='Enter')addSchedule();});
   const linkName=document.getElementById('linkNameInput');
   const linkUrl=document.getElementById('linkUrlInput');
   [linkName, linkUrl].forEach(el=>{ if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')addBookmarkLink();}); });
-  const memoTitle=document.getElementById('memoTitleInput');
-  const memoContent=document.getElementById('memoContentInput');
-  if(memoTitle) memoTitle.addEventListener('keydown',e=>{if(e.key==='Enter')addMemo();});
-  if(memoContent) memoContent.addEventListener('keydown',e=>{if(e.key==='Enter' && e.ctrlKey)addMemo();});
 });
 
 // ── yasun.gg 캔들차트 ──
