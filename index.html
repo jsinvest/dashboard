@@ -175,7 +175,10 @@
   /* 현금비중관리 */
   .cash-shell{display:flex;flex-direction:column;gap:14px;}
   .cash-hero{background:linear-gradient(135deg,rgba(0,229,255,.10),rgba(245,158,11,.08));border:1px solid rgba(0,229,255,.35);border-radius:12px;padding:20px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:18px;align-items:center;}
-  .cash-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.08em;margin-bottom:7px;}
+  .cash-kicker{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:10px;}
+  .cash-kicker span{font-size:11px;color:var(--text-muted);font-weight:700;}
+  .cash-kicker strong{font-family:'Noto Sans KR',sans-serif;font-size:18px;color:var(--accent);letter-spacing:-.02em;}
+  .cash-kicker em{font-family:'JetBrains Mono',monospace;font-size:9px;font-style:normal;color:var(--up);border:1px solid rgba(46,213,115,.35);background:rgba(46,213,115,.07);border-radius:999px;padding:3px 7px;}
   .cash-headline{font-size:24px;font-weight:800;line-height:1.35;}
   .cash-reason{margin-top:8px;color:var(--text-dim);font-size:13px;line-height:1.7;}
   .cash-allocation{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
@@ -1598,6 +1601,10 @@ function cashTimestamp(value){
   const text = String(value || '-');
   return text === '-' ? text : text.replace('T',' ').slice(0,16) + ' KST';
 }
+function cashKoreanDate(value){
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  return match ? `${match[1]}년 ${Number(match[2])}월 ${Number(match[3])}일` : String(value || '-');
+}
 function renderCashManagement(data){
   const root = document.getElementById('cashManagementContent');
   if(!root) return;
@@ -1620,7 +1627,7 @@ function renderCashManagement(data){
   root.innerHTML = `
     <div class="cash-hero">
       <div>
-        <div class="cash-kicker">AS OF ${escapeHtml(data.as_of)} · 검증 상태 ${escapeHtml(data.status)}</div>
+        <div class="cash-kicker"><span>데이터 기준일</span><strong>${escapeHtml(cashKoreanDate(data.as_of))} 종가 기준</strong><em>검증 ${escapeHtml(data.status)}</em></div>
         <div class="cash-headline">${escapeHtml(combined.action_label || '현금비중 확인')}</div>
         <div class="cash-reason">${escapeHtml(combined.reason)}</div>
       </div>
