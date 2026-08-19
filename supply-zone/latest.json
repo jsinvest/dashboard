@@ -1,83 +1,38 @@
 {
-  "as_of": "2026-08-18",
-  "generated_at": "2026-08-18T18:23:17+09:00",
+  "as_of": "2026-08-19",
+  "generated_at": "2026-08-19 19:39:03+0900",
   "futures_contract": "F202609",
-  "current_price": 1078.25,
+  "current_price": 1016.25,
   "bin_size": 5,
-  "foreign_estimated_position": -13031.0,
-  "foreign_position_side": "숏",
-  "foreign_average_price": 987.1,
-  "foreign_average_range": "985~990",
-  "foreign_estimated_pnl_million_krw": null,
-  "institution_estimated_position": 11097.0,
-  "institution_position_side": "롱",
-  "institution_average_price": 988.62,
-  "institution_average_range": "986~991",
-  "institution_estimated_pnl_million_krw": null,
+  "foreign_estimated_position": -13362.0,
+  "foreign_average_price": 990.04,
+  "institution_estimated_position": 13272.0,
+  "institution_average_price": 993.45,
   "active_zone": {
-    "low": 1070.0,
-    "high": 1080.0
+    "low": 995.0,
+    "high": 1075.0
   },
   "cumulative_from": "2026-07-30",
-  "cumulative_to": "2026-08-18",
-  "cumulative_trading_days": 7,
-  "whole_position_method": "F202609로 확인된 거래일의 0787 선물 순매매를 중복·UNKNOWN·오염 가격 없이 합산하고, 같은 방향 구축일만 가격가중한 추정치",
-  "daily_flow": {
-    "as_of": "2026-08-18",
-    "price": 1078.25,
-    "zone_low": 1075,
-    "zone_high": 1080,
-    "foreign_futures_net": 808.0,
-    "foreign_option_delta_net": 365.5,
-    "institution_futures_net": -2252.0,
-    "institution_option_delta_net": -400.5,
-    "interpretation": "외국인은 당일 선물 순매수, 기관은 순매도. 미결제약정 급감과 함께 나타나 신규 방향 구축보다 외국인 숏커버·기관 롱 축소 성격이 우세"
-  },
-  "recent_validated_flow": {
-    "basis": "F202609로 확인된 최근 수집일 기준이며 누락 거래일을 임의 보간하지 않음",
-    "latest_3_observations": {
-      "dates": [
-        "20260812",
-        "20260813",
-        "20260818"
-      ],
-      "foreign_futures_net": -767.0,
-      "foreign_option_delta_net": -7122.5,
-      "institution_futures_net": -2588.0,
-      "institution_option_delta_net": 1632.0
+  "cumulative_to": "2026-08-19",
+  "cumulative_trading_days": 8,
+  "data_quality": {
+    "active_contract_only": "F202609",
+    "excluded_dates": {
+      "20260801": "비거래일",
+      "20260804": "원천 브리지 불일치(date=20260804, contract=UNKNOWN)",
+      "20260805": "원천 브리지 불일치(date=20260805, contract=UNKNOWN)"
     },
-    "latest_5_observations": {
-      "dates": [
-        "20260803",
-        "20260807",
-        "20260812",
-        "20260813",
-        "20260818"
-      ],
-      "foreign_futures_net": -11675.0,
-      "foreign_option_delta_net": -11821.5,
-      "institution_futures_net": 8857.0,
-      "institution_option_delta_net": 3653.0
-    }
+    "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외"
   },
-  "daily_option_amount": {
-    "unit": "0787 금액 화면 표시 단위",
-    "foreign_call": -12.0,
-    "foreign_put": 38.0,
-    "institution_call": 3.0,
-    "institution_put": -35.0
-  },
-  "open_interest": {
-    "as_of": "20260818",
-    "contract": "F202609",
-    "close_open_interest": 150211,
-    "oi_change_vs_prev": -7238,
-    "volume": 150055,
-    "comparison_from": "20260812",
-    "comparison_open_interest": 162995,
-    "comparison_oi_change": -12784,
-    "comparison_oi_change_pct": -7.84,
-    "comparison_price_change_pct": 4.15
+  "daily_flow": {
+    "as_of": "2026-08-19",
+    "price": 1016.25,
+    "zone_low": 1015,
+    "zone_high": 1020,
+    "foreign_futures_net": -331.0,
+    "foreign_option_delta_net": -1040.0,
+    "institution_futures_net": 2175.0,
+    "institution_option_delta_net": 403.5
   },
   "cumulative_zones": [
     {
@@ -112,9 +67,21 @@
       "institution_contracts": -2252.0,
       "net_contracts": -1444.0,
       "gross_contracts": 3060.0,
-      "location": "현재가 구간",
+      "location": "현재가 상단",
       "direction": "외국인 롱·기관 숏 충돌",
       "rank": 3
+    },
+    {
+      "low": 1015.0,
+      "high": 1020.0,
+      "center": 1017.5,
+      "foreign_contracts": -331.0,
+      "institution_contracts": 2175.0,
+      "net_contracts": 1844.0,
+      "gross_contracts": 2506.0,
+      "location": "현재가 구간",
+      "direction": "외국인 숏·기관 롱 충돌",
+      "rank": 4
     },
     {
       "low": 865.0,
@@ -126,7 +93,7 @@
       "gross_contracts": 2494.0,
       "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 4
+      "rank": 5
     },
     {
       "low": 1035.0,
@@ -136,9 +103,9 @@
       "institution_contracts": -595.0,
       "net_contracts": -1666.0,
       "gross_contracts": 1666.0,
-      "location": "현재가 하단",
+      "location": "현재가 상단",
       "direction": "외국인·기관 동반 숏 누적",
-      "rank": 5
+      "rank": 6
     },
     {
       "low": 1030.0,
@@ -148,9 +115,9 @@
       "institution_contracts": 1194.0,
       "net_contracts": 1286.0,
       "gross_contracts": 1286.0,
-      "location": "현재가 하단",
+      "location": "현재가 상단",
       "direction": "외국인·기관 동반 롱 누적",
-      "rank": 6
+      "rank": 7
     },
     {
       "low": 1070.0,
@@ -160,9 +127,9 @@
       "institution_contracts": 259.0,
       "net_contracts": -245.0,
       "gross_contracts": 763.0,
-      "location": "현재가 하단",
+      "location": "현재가 상단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 7
+      "rank": 8
     }
   ],
   "conflict_zones": [
@@ -181,6 +148,13 @@
       "institution_contracts": -3115.0
     },
     {
+      "low": 865.0,
+      "high": 870.0,
+      "center": 867.5,
+      "foreign_contracts": -1448.0,
+      "institution_contracts": 1046.0
+    },
+    {
       "low": 1075.0,
       "high": 1080.0,
       "center": 1077.5,
@@ -188,11 +162,11 @@
       "institution_contracts": -2252.0
     },
     {
-      "low": 865.0,
-      "high": 870.0,
-      "center": 867.5,
-      "foreign_contracts": -1448.0,
-      "institution_contracts": 1046.0
+      "low": 1015.0,
+      "high": 1020.0,
+      "center": 1017.5,
+      "foreign_contracts": -331.0,
+      "institution_contracts": 2175.0
     },
     {
       "low": 1070.0,
@@ -202,7 +176,26 @@
       "institution_contracts": 259.0
     }
   ],
-  "upper_zones": [],
+  "upper_zones": [
+    {
+      "low": 1075.0,
+      "high": 1080.0,
+      "center": 1077.5,
+      "contracts": 3060.0
+    },
+    {
+      "low": 1015.0,
+      "high": 1020.0,
+      "center": 1017.5,
+      "contracts": 2506.0
+    },
+    {
+      "low": 1035.0,
+      "high": 1040.0,
+      "center": 1037.5,
+      "contracts": 1666.0
+    }
+  ],
   "lower_zones": [
     {
       "low": 990.0,
@@ -228,102 +221,5 @@
   "summary_image": "market_structure_summary.png",
   "candlestick_image": "kospi200_futures_daily_supply_zones.png",
   "position_profile_image": null,
-  "overall_assessment": {
-    "headline": "결론: 단기 하방 우세(중립-하방) · 1070~1080 지지 확인 · 이탈 시 1030~1040 다음 지지 · 추가 하락 시 990~995 확인 · 1132~1145 저항 돌파 확인",
-    "stance": "1070~1080 지지 확인 · 이탈 시 1030~1040, 이어 990~995 확인 · 1132~1145 돌파 확인",
-    "confidence": "중간(누적 포지션·0441 수치·5605 일봉 교차 확인, 장중 순서는 확인 불가)",
-    "pivot": "1070~1080",
-    "first_resistance": "1100 단기 저항, 1132~1145 핵심 저항(5605 표시 기준선 1132.54·당일 고가 1144.90)",
-    "breakout_confirmation": "1145 상단 안착과 미결제약정 감소 진정 또는 증가 동반",
-    "second_resistance_target": "1145 돌파 확인 시 1200~1220(5605 일봉 60일선 부근)",
-    "downside_scenario": "1070 하회 시 1030~1040, 추가 약세 시 990~995 누적 충돌대 확인",
-    "caution": "실제 잔존 포지션이 아니라 순매매 누적 추정치다. 최근 3·5일은 검증 가능한 수집일 기준이며 누락일을 보간하지 않았다. 옵션 델타는 절대 델타 0.5 가정치다.",
-    "levels": [
-      {
-        "label": "당일 전환구간",
-        "range": "1070~1080",
-        "reason": "8/18 저가 1070.25와 종가 1078.25가 포함된 단기 방향 분기 구간",
-        "color": "#f59e0b"
-      },
-      {
-        "label": "핵심 상단 저항",
-        "range": "1132~1145",
-        "reason": "5605 차트 표시 기준선 1132.54와 8/18 당일 고가 1144.90에서 종가 1078.25로 밀린 윗꼬리 구간",
-        "color": "#f97316"
-      },
-      {
-        "label": "상방 확인 후 다음 저항",
-        "range": "1200~1220",
-        "reason": "1145 돌파·안착 시 확인할 5605 일봉 60일선 부근의 차트 저항 후보이며 누적 포지션 매물대 수치는 아님",
-        "color": "#a855f7"
-      },
-      {
-        "label": "1차 하단",
-        "range": "1030~1040",
-        "reason": "1030~1035 동반 롱, 1035~1040 동반 숏이 맞물린 혼합 구간",
-        "color": "#3b82f6"
-      },
-      {
-        "label": "핵심 누적 충돌",
-        "range": "990~995",
-        "reason": "외국인 대규모 숏과 기관 대규모 롱이 집중된 최대 활동대",
-        "color": "#ef4444"
-      }
-    ],
-    "scenarios": [
-      {
-        "tone": "up",
-        "condition": "1070 지지 후 1080 회복",
-        "target": "1100, 이어 1132~1145 저항 확인"
-      },
-      {
-        "tone": "up",
-        "condition": "1145 상단 안착 + OI 감소 진정 또는 증가",
-        "target": "단기 상방 전환 확인 후 1200~1220 저항 확인"
-      },
-      {
-        "tone": "down",
-        "condition": "1070 하회·회복 실패",
-        "target": "1030~1040, 이어 990~995 확인"
-      },
-      {
-        "tone": "neutral",
-        "condition": "1070~1080 횡보 + OI 감소 지속",
-        "target": "신규 방향보다 기존 포지션 정리 국면"
-      }
-    ],
-    "evidence": [
-      "EOD 수집 71건·경고 0",
-      "당일 외국인 선물 +808·기관 -2,252",
-      "최근 검증 3개 수집일 외국인 선물 -767·옵션델타 -7,122.5",
-      "8/12~8/18 가격 +4.15%·미결제약정 -7.84%",
-      "8/18 0441: 고가 1144.90·저가 1070.25·종가 1078.25·미결제약정 전일 대비 -7,238",
-      "5605 일봉: 1132.54 표시 기준선 아래에서 1144.90 고가 형성 후 종가 1078.25로 밀림"
-    ]
-  },
-  "data_quality": {
-    "validation": "EOD 결과 71건, 경고 0",
-    "included_dates": [
-      "20260730",
-      "20260731",
-      "20260803",
-      "20260807",
-      "20260812",
-      "20260813",
-      "20260818"
-    ],
-    "excluded": [
-      "20260801: 토요일이며 20260731과 값이 같은 중복행",
-      "20260804: 실제 OCR bridge가 contract UNKNOWN·가격 판독 불가이므로 과거에 적재된 F202609 가격 1000 행까지 제외",
-      "20260805 F202609 행: 실제 당일 OCR bridge는 contract UNKNOWN이고 8/4 값이 복제된 오래된 행",
-      "20260810·20260811·20260814: contract_code UNKNOWN",
-      "20260814 price 1410.8: UNKNOWN 계약이므로 누적 매물대에서 제외"
-    ],
-    "chart_limits": [
-      "0471 변동성 지표 표시 상태 자동 확인 불가",
-      "5605 일봉·10분봉 주기와 보조지표 표시 상태 자동 확인 불가",
-      "KRX 포지션 프로파일 원자료가 가격 8/5·수급 8/4까지여서 최신 대표 이미지에서 제외"
-    ]
-  },
-  "source_note": "2026-08-18 EOD의 0787·0441·5605와 2026-07-30 이후 자료 중 F202609로 확인된 7개 거래일만 사용했다. 주말 중복, 오래된 복제행, 가격 0 및 contract_code UNKNOWN 행은 원본을 보존한 채 게시 계산에서 제외했다. 계약수·평단은 실제 잔존 보유량이 아닌 순매매 누적 추정치이며 신규·청산을 완전히 구분할 수 없다."
+  "source_note": "0787 당일 순매매 누적 기반 추정치이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 KRX 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 당일 흐름과 관측 시작일부터의 누적 가격대는 별도 표시합니다."
 }
