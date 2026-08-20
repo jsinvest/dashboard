@@ -1,152 +1,133 @@
 {
-  "as_of": "20260819",
-  "target_session": "2026-08-20",
-  "source_generated_at": "2026-08-19T18:34:41+09:00",
-  "generated_at": "2026-08-19T19:04:00+09:00",
-  "headline": "결론: KOSPI 광범위 위험회피 · KOSDAQ 바이오 중심의 좁은 방어 · 다음 거래일은 시장 폭 회복과 섹터 동반강세를 확인한 종목만 관찰",
-  "market_preference": "KOSPI 보험·건설·해운 상대강도 우선 · KOSDAQ 제약·바이오·ESS 선별 및 독립 기술신호 보조",
-  "stance": "전일 급등주 시초 추격 금지 · 첫 30분 상승종목 비율 회복과 같은 섹터 2종목 동반강세 확인",
-  "confidence": "8월 19일 run_all 내부지표·V2·섹터 자료 높음 · 당일 선물옵션 완결자료와 신뢰 가능한 당일 개별 뉴스는 미사용",
+  "as_of": "20260820",
+  "target_session": "2026-08-21",
+  "source_generated_at": "2026-08-20T17:33:34+09:00",
+  "generated_at": "2026-08-20T18:31:35+09:00",
+  "headline": "결론: KOSDAQ 종목 확산 우위 · KOSPI 반도체 지수 주도 · 8월 21일은 시초 추격보다 첫 30분 눌림 지지와 섹터 동반강세 확인",
+  "market_preference": "KOSPI 반도체·제약바이오·AI플랫폼 · KOSDAQ 반도체·의료진단·제약바이오",
+  "stance": "전일 급등주 시초 추격 금지 · VWAP·전일 종가·섹터 동반강세 확인",
+  "confidence": "8월 20일 run_all 내부지표·V2·섹터·148종목 최신 일봉 검증 완료 · 현금비중 미사용",
   "data_validation": {
-    "market_date": "20260819",
-    "scanner_file": "scan_result_20260819_183441.csv",
-    "scanner_union_rows": 54,
-    "scanner_current_date_rows": 22,
-    "scanner_market_rows": {"KOSPI": 16, "KOSDAQ": 6},
-    "raw_signal_rows": 74,
-    "sector_history_dates": ["20260813", "20260814", "20260818", "20260819"],
-    "candidate_pool_rows": 41,
-    "chart_review_rows": 41,
-    "us_sector_file": "us_sector_rs_20260818.xlsx",
-    "us_sector_generated_at": "2026-08-19T06:17:05+09:00",
-    "us_sector_base_date": "20260818",
-    "us_sector_validation": "미국 섹터 자료는 직전 미국장 참고값으로만 사용. 에너지·헬스케어·필수소비·바이오·조선해운 상대강세 확인",
-    "cash_weight_policy": "사용자 지시에 따라 이번 시장분석·종목선정에서 제외",
-    "derivatives_status": "20260819 선물옵션 EOD는 수집 중으로 파싱·검증·누적 결과가 완결되지 않아 사용하지 않음",
-    "run_all_exit_code": "별도 통합 종료코드 로그 확인 불가",
-    "completion_evidence": "시장 폭·ADR·Impulse·공포탐욕·업종쏠림·55개 섹터·V2 스캔 파일이 20260819 기준으로 생성됐고 비어 있지 않음",
-    "duplicates": "V2 전략별 원신호 74건은 보존하고 결과 54종목은 종목 단위로 중복 제거됨",
+    "market_date": "20260820",
+    "scanner_file": "scan_result_20260820_173334.csv",
+    "scanner_union_rows": 58,
+    "raw_signal_rows": 85,
+    "candidate_pool_rows": 148,
+    "candidate_market_rows": {"KOSPI": 81, "KOSDAQ": 67},
+    "chart_review_rows": 148,
+    "chart_latest_date": "20260820",
+    "chart_failures": 0,
+    "sector_file": "sector_rs_20260820.xlsx",
+    "sector_leader_file": "sector_stock_leaders_20260820.xlsx",
+    "us_sector_file": "us_sector_rs_20260819.xlsx",
+    "us_sector_base_date": "20260819",
+    "cash_weight_policy": "사용자 지시에 따라 현금비중은 갱신·업로드하지 않았고 종목 선정에도 사용하지 않음",
+    "cash_weight_validation": "20260820 입력 검증은 DATA_STALE. 원본 데이터.xlsx 최신일이 20260819이므로 이전 현금비중을 재사용하지 않음",
+    "derivatives_status": "이번 추천종목 갱신에서는 선물옵션 자료를 사용하지 않음",
+    "completion_evidence": "시장 폭·ADR·Impulse·공포탐욕·업종쏠림·섹터·V2 파일이 20260820 기준으로 생성됐고 148종목의 최신 일봉을 모두 확인",
+    "duplicates": "V2 원신호 85건은 보존하고 결과 58종목은 종목 단위로 중복 제거. 섹터 후보와 합친 148종목도 코드 기준 중복 제거",
     "conflicts": [
-      "KOSDAQ 대표 ETF는 +0.28%이고 공포탐욕은 GREED지만 상승 396·하락 1275, Impulse BLUE, 방어 국면으로 내부 시장 폭과 충돌",
-      "섹터 ETF 22개 분류의 평균 수익률은 모두 0% 이하인 반면 개별종목 기반 상대강도에서는 보험·해운·건설이 상위. 따라서 절대 주도업종이 아니라 하락장 상대강도로 해석",
-      "일부 삼각수렴 신호는 현재가가 계산 상단선·목표가를 크게 넘어 비정상 값으로 판단하고 최종선정에서 제외"
+      "KOSPI는 상승하락비와 Impulse가 강하지만 상승 업종 유효 개수가 1.73개로 반도체 대형주 쏠림이 큼",
+      "KOSDAQ은 Impulse BLUE지만 상승 업종 유효 개수가 4.04개로 KOSPI보다 종목 확산이 넓음",
+      "양 시장 공포탐욕이 EXTREME_GREED여서 강한 반등을 추세 확정으로 단정하지 않음"
     ]
   },
   "executive_summary": [
-    "KOSPI는 대표 ETF -6.26%, 상승 534·하락 1831, Impulse RED, 공포탐욕 0.0으로 광범위한 위험회피가 확인됐습니다.",
-    "KOSPI 20일 ADR은 119.46으로 아직 100 위지만 8월 18일 136.83에서 급락했고 ADLine20도 407에서 232로 낮아져 중기 반등 흔적과 당일 훼손이 공존합니다.",
-    "KOSDAQ은 대표 ETF +0.28%였지만 상승 396·하락 1275, Impulse BLUE, ADLine30 -104입니다. 상승 ETF 업종은 바이오 8개에 집중돼 지수 상승을 시장 전체 강세로 해석하지 않습니다.",
-    "개별종목 상대강도 상위는 KOSPI 보험·해운·건설, KOSDAQ 제약·바이오와 ESS입니다. 다만 모든 섹터 ETF 평균이 음수여서 절대 주도주가 아니라 방어·상대강도 후보입니다.",
-    "최종 관심목록은 KOSPI 6종목, KOSDAQ 4종목입니다. TP·SL과 현금비중은 선정에 사용하지 않았습니다."
+    "KOSPI는 상승 1,603·하락 749로 상승하락비 2.14, Impulse GREEN이지만 상승 업종 유효 개수는 1.73개로 반도체 대형주 쏠림이 강했습니다.",
+    "KOSDAQ은 상승 1,064·하락 576으로 상승하락비 1.85, Impulse BLUE입니다. 상승 업종 유효 개수는 4.04개로 KOSPI보다 종목 확산이 넓었습니다.",
+    "공포탐욕은 KOSPI 100, KOSDAQ 85.02로 모두 EXTREME_GREED입니다. 전일 급락 뒤 강한 반등이므로 시초 추격보다 첫 30분 지지 확인이 우선입니다.",
+    "섹터 ETF 평가에서 반도체만 A등급을 받았습니다. KOSDAQ은 반도체 소재·부품과 바이오·의료진단으로 순환매가 이어지는지 확인합니다.",
+    "V2 58종목과 섹터 주도주를 합친 148종목의 8월 20일 일봉을 확인해 KOSPI 6종목, KOSDAQ 6종목을 조건부 관심종목으로 선정했습니다. TP·SL과 현금비중은 사용하지 않았습니다."
   ],
   "market_views": [
     {
       "market": "KOSPI",
-      "view": "광범위한 위험회피 속 보험·건설·해운 일부만 상대강도를 보인 시장",
-      "evidence": [
-        "상승 534 / 하락 1831 / 보합 114 · 당일 상승하락비 0.292",
-        "대표 ETF 069500 일간 -6.255% · 공포탐욕 0.0 EXTREME_FEAR",
-        "Impulse RED",
-        "20일 ADR 119.46 · 전일 136.83에서 하락",
-        "ADLine20 232 · 전일 407, ADLine30 133"
-      ],
-      "action": "첫 30분 상승종목 비율 40% 회복 전까지 방어적으로 보고, 보험·건설·해운에서 두 종목 이상 동반강세가 확인될 때만 관심종목을 승격"
+      "view": "반도체가 지수를 끌어올린 강한 반등이지만 업종 쏠림이 큰 시장",
+      "evidence": ["상승 1,603 / 하락 749 / 보합 128 · 상승하락비 2.14", "Impulse GREEN · 20일 ADR 116.98", "공포탐욕 100 EXTREME_GREED", "상승 업종 HHI 0.5792 · 유효업종 1.73개", "반도체가 유일한 A등급 섹터"],
+      "action": "삼성전자·SK하이닉스 동반 지지와 반도체 거래대금 유지 확인. 급등 갭은 추격하지 않고 제약바이오·AI플랫폼의 후속 순환을 함께 관찰"
     },
     {
       "market": "KOSDAQ",
-      "view": "지수는 방어했지만 내부 종목은 약하고 바이오에 집중된 좁은 반등",
-      "evidence": [
-        "상승 396 / 하락 1275 / 보합 151 · 당일 상승하락비 0.311",
-        "대표 ETF 229200 일간 +0.282% · 공포탐욕 63.46 GREED",
-        "Impulse BLUE · 시장판정 방어 국면",
-        "20일 ADR 108.17 · 전일 115.05에서 하락",
-        "상승 ETF 업종 HHI 0.4489·유효업종 2.23, 바이오 8개 집중"
-      ],
-      "action": "바이오·ESS 중 10일선과 20일선 위, 거래대금이 유지되는 종목만 선별하고 반도체·로봇의 단독 반등은 후순위"
+      "view": "KOSPI보다 종목 확산이 넓은 반등이지만 중기 시장 폭은 아직 완전한 회복이 아님",
+      "evidence": ["상승 1,064 / 하락 576 / 보합 182 · 상승하락비 1.85", "Impulse BLUE · 20일 ADR 118.01", "공포탐욕 85.02 EXTREME_GREED", "상승 업종 HHI 0.2476 · 유효업종 4.04개", "ADLine30 -43으로 중기 확산 확인이 더 필요"],
+      "action": "반도체·의료진단·제약바이오에서 같은 섹터 두 종목 이상 동반강세와 첫 30분 VWAP 지지를 확인한 종목만 승격"
     }
   ],
   "derivatives_overlay": {
-    "bias": "판단 보류",
-    "fact": "20260819 EOD 원본 화면 수집은 확인됐지만 파싱·검증·누적 파일이 아직 완결되지 않음",
-    "overnight_input": "이번 분석에서 미사용",
-    "interpretation": "오늘 run_all 정규장 자료만 사용하라는 사용자 지시에 맞춰 선물옵션 방향과 가격대를 종목선정 근거에 넣지 않았습니다.",
-    "supports": [],
-    "resistances": [],
-    "bull_confirmation": "판정 불가",
-    "bear_confirmation": "판정 불가"
+    "bias": "이번 종목 선정에서 미사용",
+    "fact": "사용자가 현금비중을 제외하고 추천종목만 업로드하도록 요청",
+    "overnight_input": "미사용",
+    "interpretation": "8월 20일 run_all 시장·섹터·종목 자료만으로 조건부 관심종목을 선정",
+    "supports": [], "resistances": [], "bull_confirmation": "판정 대상 아님", "bear_confirmation": "판정 대상 아님"
   },
   "strong_sectors": [
-    {"name":"보험 상대강도","reason":"개별종목 섹터 1위·점수 77.2, 10종목 중 20일선 위 80%, 거래대금 확산 60%. 한화손해보험·미래에셋생명·현대해상·DB손해보험이 시장대비 강세"},
-    {"name":"해운 상대강도","reason":"개별종목 섹터 2위·점수 75.5, 8종목 모두 20일선 위, 거래대금 확산 75%. STX그린로지스와 팬오션 우선"},
-    {"name":"건설 상대강도","reason":"개별종목 섹터 3위·평균 +0.48%, 상승비율 54.5%, 20일선 위 90.9%. 현대건설·GS건설은 V2 Pocket Pivot과 교차"},
-    {"name":"KOSDAQ 제약·바이오 선별","reason":"상승 ETF 분포가 바이오에 집중됐고 프로티나·보로노이가 10일선과 20일선 위. 다만 섹터 평균 -2.15%라 전면 강세가 아니라 종목 선별"},
-    {"name":"KOSDAQ ESS 선별","reason":"섹터 평균 +0.68%, 상승비율 42.9%, 거래대금 확산 57.1%. 서진시스템과 코칩이 상대강도 상위"}
+    {"name":"KOSPI 반도체","reason":"유일한 A등급 섹터. 대표 상대강도 +3.08%p, 대표 거래대금이 20일 평균을 상회하고 10·20일선 위"},
+    {"name":"KOSPI 제약·바이오","reason":"삼성바이오로직스는 10·20·60일선 위 정배열, SK바이오사이언스는 거래량이 크게 확대"},
+    {"name":"KOSPI AI·플랫폼","reason":"삼성에스디에스와 NAVER가 V2 S등급 삼각수렴 신호와 10·20·60일선 위 구조를 보유"},
+    {"name":"KOSDAQ 반도체","reason":"두산테스나·티씨케이 등 검사·소재 후보의 상대강도와 거래대금이 양호"},
+    {"name":"KOSDAQ 의료·진단","reason":"파마리서치 V2 1A 공통필터 통과, 지씨지놈 거래량 확대. 지씨지놈은 과열·유동성 주의"},
+    {"name":"KOSDAQ 제약·바이오","reason":"알테오젠의 거래량·가격 강도와 보로노이의 눌림 구조를 조합해 관찰"}
   ],
   "weak_sectors": [
-    {"name":"반도체","reason":"개별종목 섹터 평균 -4.09%, 상승비율 8.3%. 테크윙·ISC·HPSP 신호가 있어도 섹터 확산이 부족"},
-    {"name":"조선·해양","reason":"섹터 평균 -3.06%, 중앙값 -3.50%, 상승비율 8.3%. 개별 삼각수렴 신호만으로 주도업종으로 보지 않음"},
-    {"name":"자동차","reason":"섹터 평균 -2.92%, 상승비율 10%. 일부 종목 거래대금 급증은 확인되지만 확산이 없음"},
-    {"name":"2차전지 전반","reason":"20일선 위 비율은 높지만 평균 -2.29%, 상승비율 8.3%로 가격 확산이 약함"}
+    {"name":"KOSPI 비반도체 중소형","reason":"지수 반등에 비해 상승 업종 유효 개수가 1.73개로 확산이 부족"},
+    {"name":"KOSDAQ 게임·엔터","reason":"종목 집중은 확인되지만 주요 후보의 이동평균선과 거래량 구조가 최종 기준 미달"},
+    {"name":"급등 후 과열 종목","reason":"RSI 80 이상 또는 당일 두 자릿수 급등 종목은 시초 추격 대상에서 제외"}
   ],
   "candidate_stocks": [
-    {"market":"KOSPI","code":"000370","name":"한화손해보험","sector":"보험","stage":"최종","evidence":"섹터 1위·주도점수 87.0·당일 +3.99%·시장대비 RS +9.79%p·거래대금 4.24배·수급점수 38.9","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"당일 상승 후 시초 추격 위험","chase_risk":"중간~높음"},
-    {"market":"KOSPI","code":"085620","name":"미래에셋생명","sector":"보험","stage":"최종","evidence":"주도점수 84.5·당일 +5.73%·시장대비 RS +11.54%p·거래대금 3.12배","script_signal":"가격BB40 상단돌파·BB120 아래 + Pocket Pivot, S등급","chart":"10일선·20일선 위·BB40 상단 22,747원 위","data_limit":"공통필터 MA역배열","chase_risk":"높음"},
-    {"market":"KOSPI","code":"001450","name":"현대해상","sector":"보험","stage":"후보","evidence":"주도점수 84.2·수급점수 44.0·거래대금 504억원·1.89배","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"스크립트 교차 확인 없음","chase_risk":"낮음~중간"},
-    {"market":"KOSPI","code":"000720","name":"현대건설","sector":"건설","stage":"최종","evidence":"건설 3위 대표주·주도점수 81.6·당일 +5.81%·거래대금 973억원·1.75배","script_signal":"Pocket Pivot","chart":"10일선·20일선 위·종가 116,500원","data_limit":"공통필터 MA역배열·당일 급등","chase_risk":"높음"},
-    {"market":"KOSPI","code":"006360","name":"GS건설","sector":"건설","stage":"최종","evidence":"주도점수 74.8·당일 +2.34%·시장대비 RS +8.15%p·거래대금 980억원","script_signal":"Pocket Pivot + 1A","chart":"10일선·20일선 위·종가 34,950원","data_limit":"거래대금 배수 0.89·공통필터 MA역배열","chase_risk":"중간"},
-    {"market":"KOSPI","code":"465770","name":"STX그린로지스","sector":"해운","stage":"최종","evidence":"해운 2위 대표주·주도점수 83.7·당일 +5.18%·거래대금 2.19배","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"수급점수 -10.8·변동성 확대","chase_risk":"높음"},
-    {"market":"KOSPI","code":"028670","name":"팬오션","sector":"해운","stage":"최종","evidence":"주도점수 75.0·시장대비 RS +5.31%p·거래대금 267억원·1.35배·수급점수 9.5","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위·당일 -0.50%","data_limit":"강한 돌파 신호 없음","chase_risk":"낮음"},
-    {"market":"KOSDAQ","code":"310210","name":"보로노이","sector":"제약·바이오","stage":"최종","evidence":"주도점수 59.6·당일 +1.09%·거래대금 142억원, 프로티나보다 추격 부담 낮음","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"거래대금 배수 0.87","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"468530","name":"프로티나","sector":"제약·바이오","stage":"최종","evidence":"섹터 대표주·주도점수 75.8·당일 +6.70%·시장대비 RS +7.87%p·거래대금 1.82배","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"당일 급등·수급점수 -12.7","chase_risk":"높음"},
-    {"market":"KOSDAQ","code":"178320","name":"서진시스템","sector":"ESS·에너지저장","stage":"최종","evidence":"주도점수 69.4·당일 +3.24%·거래대금 481억원·1.39배","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"수급점수 -25.0","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"126730","name":"코칩","sector":"ESS·에너지저장","stage":"후보","evidence":"주도점수 81.5·당일 +8.95%·거래대금 451억원·3.04배","script_signal":"8/19 신규 V2 신호 없음","chart":"10일선·20일선 위","data_limit":"당일 상승폭 과다·수급점수 -27.9","chase_risk":"매우 높음"},
-    {"market":"KOSDAQ","code":"121440","name":"골프존홀딩스","sector":"독립 기술신호","stage":"최종","evidence":"20/120 GC 통계 표본 214건·시장국면 표본 77건, V2 공통필터 통과","script_signal":"20/120GC + Pocket Pivot, S등급","chart":"종가 7,990원·BB20 상단 7,433원·BB120 상단 7,196원","data_limit":"섹터 동반강세·거래대금 배수 정보 없음","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"144960","name":"뉴파워프라즈마","sector":"독립 기술신호","stage":"후보","evidence":"BB240 상단 지지반등·공통필터 통과","script_signal":"1B 지지반등","chart":"종가 10,520원·BB240 상단 10,474원 위","data_limit":"거래대금 배수 0.7","chase_risk":"중간"}
+    {"market":"KOSPI","code":"005930","name":"삼성전자","sector":"반도체","stage":"최종","evidence":"A등급 반도체 대표주·당일 +9.49%·거래량 1.47배","script_signal":"V2 직접 신호 없음","chart":"종가 271,000원·10일선·20일선 위·60일선 아래","data_limit":"당일 급등","chase_risk":"매우 높음"},
+    {"market":"KOSPI","code":"000660","name":"SK하이닉스","sector":"반도체","stage":"최종","evidence":"반도체 거래대금·상대강도 상위·당일 +12.73%","script_signal":"V2 직접 신호 없음","chart":"종가 1,691,000원·10일선·20일선 위·60일선 아래","data_limit":"당일 두 자릿수 급등","chase_risk":"매우 높음"},
+    {"market":"KOSPI","code":"207940","name":"삼성바이오로직스","sector":"제약·바이오","stage":"최종","evidence":"V2 1A 이력·20일 +14.72%·거래량 1.75배","script_signal":"1A C등급·신호일 8월 13일","chart":"종가 1,574,000원·10일선·20일선·60일선 위 정배열","data_limit":"최신 직접 신호는 8월 13일","chase_risk":"낮음~중간"},
+    {"market":"KOSPI","code":"302440","name":"SK바이오사이언스","sector":"제약·바이오","stage":"최종","evidence":"당일 +5.45%·거래량 약 5배·20일 +15.27%","script_signal":"V2 직접 신호 없음","chart":"종가 37,750원·10일선·20일선·60일선 위","data_limit":"거래량 급증 뒤 변동성","chase_risk":"높음"},
+    {"market":"KOSPI","code":"018260","name":"삼성에스디에스","sector":"AI·소프트웨어","stage":"최종","evidence":"V2 S등급 복수전략·20일 +18.88%","script_signal":"삼각수렴 + 1C + 1B·신호일 8월 20일","chart":"종가 233,000원·10일선·20일선·60일선 위 정배열","data_limit":"V2 공통필터 미통과","chase_risk":"중간"},
+    {"market":"KOSPI","code":"035420","name":"NAVER","sector":"인터넷·플랫폼","stage":"최종","evidence":"V2 S등급 삼각수렴·20일 고점까지 약 4.1%","script_signal":"삼각수렴·신호일 8월 20일","chart":"종가 219,500원·10일선·20일선·60일선 위","data_limit":"V2 공통필터 미통과","chase_risk":"중간~높음"},
+    {"market":"KOSDAQ","code":"131970","name":"두산테스나","sector":"반도체","stage":"최종","evidence":"당일 +7.60%·거래량 1.76배·거래대금 273억원","script_signal":"V2 직접 신호 없음","chart":"종가 82,100원·10일선·20일선 위·60일선 아래","data_limit":"RSI 76.4","chase_risk":"높음"},
+    {"market":"KOSDAQ","code":"064760","name":"티씨케이","sector":"반도체","stage":"최종","evidence":"20일 +15.10%·거래대금 165억원·당일 -0.86%","script_signal":"V2 직접 신호 없음","chart":"종가 229,500원·10일선·20일선 위·60일선 아래","data_limit":"RSI 78.6","chase_risk":"중간"},
+    {"market":"KOSDAQ","code":"214450","name":"파마리서치","sector":"의료·재생","stage":"최종","evidence":"V2 1A 공통필터 통과·20일 +28.22%·거래대금 638억원","script_signal":"1A C등급·신호일 8월 20일","chart":"종가 413,500원·10일선·20일선·60일선 위 정배열","data_limit":"당일 +5.75%","chase_risk":"중간~높음"},
+    {"market":"KOSDAQ","code":"340450","name":"지씨지놈","sector":"의료·진단","stage":"조건부","evidence":"거래량 2.42배·20일 +19.02%","script_signal":"V2 직접 신호 없음","chart":"종가 5,820원·10일선·20일선·60일선 위 정배열","data_limit":"RSI 92.2·거래대금 16억원","chase_risk":"매우 높음"},
+    {"market":"KOSDAQ","code":"196170","name":"알테오젠","sector":"제약·바이오","stage":"조건부","evidence":"당일 +11.86%·거래량 4.89배·20일 +26.68%","script_signal":"1A C등급·신호일 8월 13일","chart":"종가 339,500원·10일선·20일선·60일선 위","data_limit":"당일 급등·신호일 8월 13일","chase_risk":"매우 높음"},
+    {"market":"KOSDAQ","code":"310210","name":"보로노이","sector":"제약·바이오","stage":"최종","evidence":"20일 +37.56%·당일 -2.21% 눌림","script_signal":"V2 직접 신호 없음","chart":"종가 172,500원·10일선·20일선 위·60일선 아래","data_limit":"RSI 81.3","chase_risk":"중간~높음"}
   ],
   "final_picks": [
-    {"market":"KOSPI","sector":"보험","code":"000370","name":"한화손해보험","priority":"1","reason":"보험 섹터 1위에서 거래대금·수급·상대강도가 동시에 확인된 최상위 종목","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"시초 갭 추격 없이 보험 2종목 이상 동반강세와 거래대금 유지 확인","risk":"전일 +3.99% 뒤 차익매물"},
-    {"market":"KOSPI","sector":"보험","code":"085620","name":"미래에셋생명","priority":"2","reason":"보험 강세와 V2 가격40/120·Pocket Pivot S등급이 교차","script":"가격40/120 + Pocket Pivot","chart":"종가 23,050원·BB40 상단 22,747원 위","condition":"23,050원 부근 유지 또는 눌림 후 재돌파와 보험 동반강세 확인","risk":"전일 +5.73%·MA역배열"},
-    {"market":"KOSPI","sector":"건설","code":"006360","name":"GS건설","priority":"3","reason":"건설 상대강도와 Pocket Pivot·1A가 교차하고 현대건설보다 당일 상승 부담이 낮음","script":"Pocket Pivot + 1A","chart":"종가 34,950원·10일선·20일선 위","condition":"34,950원 재회복과 현대건설 동반강세 확인","risk":"거래대금 배수 0.89·MA역배열"},
-    {"market":"KOSPI","sector":"해운","code":"028670","name":"팬오션","priority":"4","reason":"해운 2위 섹터에서 10일선·20일선 위를 유지하면서 당일 -0.50%로 추격 부담이 가장 낮음","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"STX그린로지스 또는 HMM과 동반강세, 거래대금 20일 평균 이상 확인","risk":"돌파 신호 부재"},
-    {"market":"KOSPI","sector":"건설","code":"000720","name":"현대건설","priority":"5","reason":"건설 대표주·Pocket Pivot·거래대금 973억원으로 주도성 확인","script":"Pocket Pivot","chart":"종가 116,500원·10일선·20일선 위","condition":"시초 눌림 후 116,500원 재회복과 GS건설 동반강세 확인","risk":"전일 +5.81% 추격 위험"},
-    {"market":"KOSPI","sector":"해운","code":"465770","name":"STX그린로지스","priority":"6","reason":"해운 대표주·주도점수 83.7·거래대금 2.19배","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"전일 고점 추격 없이 눌림 지지와 해운 동반강세 확인","risk":"전일 +5.18%·수급점수 음수·높은 변동성"},
-    {"market":"KOSDAQ","sector":"제약·바이오","code":"310210","name":"보로노이","priority":"7","reason":"바이오 집중 장세에서 10일선·20일선 위, 당일 +1.09%로 추격 부담이 낮음","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"프로티나·펩트론 중 한 종목 이상 동반강세와 거래대금 증가 확인","risk":"거래대금 배수 0.87"},
-    {"market":"KOSDAQ","sector":"ESS·에너지저장","code":"178320","name":"서진시스템","priority":"8","reason":"ESS 섹터의 양수 평균과 거래대금 확산 속 유동성·상대강도가 균형적","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"전일 종가 부근 유지와 ESS 동반강세 확인","risk":"수급점수 -25.0"},
-    {"market":"KOSDAQ","sector":"제약·바이오","code":"468530","name":"프로티나","priority":"9","reason":"바이오 대표주·주도점수 75.8·거래대금 1.82배","script":"8/19 신규 신호 없음","chart":"10일선·20일선 위","condition":"시초 추격 없이 눌림 후 거래대금 유지와 보로노이 동반강세 확인","risk":"전일 +6.70%·수급점수 음수"},
-    {"market":"KOSDAQ","sector":"독립 기술신호","code":"121440","name":"골프존홀딩스","priority":"10","reason":"20/120GC·Pocket Pivot S등급과 공통필터 통과가 겹친 KOSDAQ 기술신호","script":"20/120GC + Pocket Pivot","chart":"종가 7,990원·BB20/BB120 상단 위","condition":"7,990원 부근 유지와 거래대금 증가 확인","risk":"섹터 동반강세 확인 부족"}
+    {"market":"KOSPI","sector":"제약·바이오","code":"207940","name":"삼성바이오로직스","priority":"1","reason":"정배열과 거래량 확대가 확인되고 반도체 급등주보다 추격 부담이 낮음","condition":"첫 30분 1,574,000원과 VWAP 유지, 동종 대형주 동반강세 확인","risk":"V2 최신 신호는 8월 13일"},
+    {"market":"KOSDAQ","sector":"의료·재생","code":"214450","name":"파마리서치","priority":"2","reason":"V2 1A 공통필터 통과와 정배열·거래대금이 함께 확인된 KOSDAQ 최상위 후보","condition":"시초 갭 +3% 미만 또는 눌림 후 413,500원·VWAP 재회복","risk":"전일 +5.75%"},
+    {"market":"KOSPI","sector":"AI·소프트웨어","code":"018260","name":"삼성에스디에스","priority":"3","reason":"8월 20일 V2 S등급 삼각수렴·1C·1B 복수전략과 정배열이 교차","condition":"233,000원과 VWAP 유지, NAVER 또는 IT서비스 동반강세","risk":"V2 공통필터 미통과"},
+    {"market":"KOSPI","sector":"인터넷·플랫폼","code":"035420","name":"NAVER","priority":"4","reason":"8월 20일 V2 S등급 삼각수렴과 10·20·60일선 위 구조","condition":"219,500원 부근 지지와 거래량 유지, 삼성에스디에스 동반강세","risk":"전일 +5.53%·공통필터 미통과"},
+    {"market":"KOSDAQ","sector":"반도체","code":"064760","name":"티씨케이","priority":"5","reason":"반도체 확산 후보 중 당일 -0.86%로 추격 부담이 가장 낮고 20일 추세가 양호","condition":"229,500원·VWAP 재회복, 두산테스나 또는 반도체 장비 동반강세","risk":"RSI 78.6·60일선 아래"},
+    {"market":"KOSPI","sector":"제약·바이오","code":"302440","name":"SK바이오사이언스","priority":"6","reason":"10·20·60일선 위에서 거래량이 약 5배로 확대","condition":"갭 추격 없이 37,750원 부근 눌림 지지와 삼성바이오로직스 동반강세","risk":"전일 +5.45%"},
+    {"market":"KOSPI","sector":"반도체","code":"005930","name":"삼성전자","priority":"7","reason":"유일한 A등급 반도체 대표주이며 거래량과 단기 이동평균 회복","condition":"시초 갭 추격 금지, 첫 30분 271,000원·VWAP 지지와 SK하이닉스 동반강세","risk":"전일 +9.49%·60일선 아래"},
+    {"market":"KOSPI","sector":"반도체","code":"000660","name":"SK하이닉스","priority":"8","reason":"반도체 섹터 최고 거래대금과 상대강도로 지수 주도성 확인","condition":"시초 눌림 뒤 1,691,000원·VWAP 재회복과 삼성전자 동반강세","risk":"전일 +12.73%·60일선 아래"},
+    {"market":"KOSDAQ","sector":"반도체","code":"131970","name":"두산테스나","priority":"9","reason":"거래량 1.76배와 거래대금 273억원으로 반도체 확산 가능성 확인","condition":"82,100원·VWAP 지지, 티씨케이 또는 반도체 장비 동반강세","risk":"전일 +7.60%·RSI 76.4"},
+    {"market":"KOSDAQ","sector":"제약·바이오","code":"310210","name":"보로노이","priority":"10","reason":"20일 강세 추세에서 당일 -2.21%로 급등 추격 부담이 낮은 눌림 후보","condition":"172,500원 재회복과 60일선 접근·돌파, 바이오 동반강세","risk":"RSI 81.3·60일선 아래"},
+    {"market":"KOSDAQ","sector":"제약·바이오","code":"196170","name":"알테오젠","priority":"11 조건부","reason":"거래량 4.89배와 강한 가격 반응으로 바이오 주도성 확인","condition":"시초 급등 추격 금지, 충분한 눌림 뒤 339,500원·VWAP 재회복","risk":"전일 +11.86%·신호일 8월 13일"},
+    {"market":"KOSDAQ","sector":"의료·진단","code":"340450","name":"지씨지놈","priority":"12 조건부","reason":"정배열과 거래량 2.42배가 확인된 의료진단 확산 후보","condition":"갭이 없고 거래대금이 증가하면서 5,820원·VWAP을 지킬 때만 관찰","risk":"RSI 92.2·거래대금 16억원"}
   ],
   "excluded_summary": [
-    "NHN·삼성SDS·OCI홀딩스·한올바이오파마는 현재가 대비 삼각수렴 상단선·목표가 값이 비정상이라 제외",
-    "테크윙·ISC·HPSP는 V2 신호가 있으나 반도체 평균 -4.09%·상승비율 8.3%로 섹터 확산이 부족해 제외",
-    "코칩은 ESS 최상위지만 당일 +8.95%라 시초 추격 위험으로 최종선정에서 제외",
-    "한화에어로스페이스·LIG디펜스앤에어로스페이스는 개별 상대강도는 좋지만 방산 섹터 누적순위 22위라 후순위",
-    "KOSDAQ 세 번째 업종은 수급과 확산을 동시에 충족하지 못해 억지로 채우지 않고 독립 기술신호 한 종목만 보조 선정"
+    "한올바이오파마·KCC·TFE·아이진·리센스메디컬은 급등 또는 RSI 과열로 최종 우선순위를 낮춤",
+    "S-Oil·SK이노베이션은 이동평균 구조는 양호하지만 8월 20일 시장·섹터 상대강도가 최종 6개 섹터보다 낮아 제외",
+    "KOSDAQ 게임·엔터 후보는 종목 집중에 비해 주요 차트가 이동평균선·거래량 기준을 충족하지 못해 제외"
   ],
-  "trading_rule": "TP·SL과 현금비중은 선정 조건으로 사용하지 않는다. 첫 30분 KOSPI·KOSDAQ 상승종목 비율이 40% 이상으로 회복되고 같은 섹터에서 최소 2종목이 동반강세를 보일 때만 관심종목을 승격한다. 전일 +4% 이상 종목은 시초 추격하지 않고 눌림·재돌파를 확인한다.",
+  "trading_rule": "TP·SL과 현금비중은 선정 조건으로 사용하지 않는다. 시초 갭 +3% 이상 종목은 추격하지 않고 첫 30분 VWAP·전일 종가·같은 섹터 두 종목 이상 동반강세를 확인한다. 세 조건 중 하나라도 실패하면 관망한다.",
   "risk_flags": [
-    "KOSPI 대표 ETF -6.26%와 상승하락비 0.292는 단일 종목보다 시장 위험이 우선인 환경입니다.",
-    "KOSDAQ 대표 ETF 상승과 공포탐욕 GREED는 내부 시장 폭·Impulse BLUE와 충돌하므로 지수만 보고 강세로 판단하지 않습니다.",
-    "보험·해운·건설은 절대 상승 업종이 아니라 하락장 상대강도 상위입니다. 섹터 ETF 평균은 모두 음수였습니다.",
-    "55개 섹터 누적은 관측일수 4일뿐이라 중기 지속성으로 단정하지 않습니다.",
-    "V2 통계승률은 과거 패턴 표본이며 다음 거래일 개별 종목의 성공확률이 아닙니다.",
-    "20260819 선물옵션 자료는 완결되지 않아 방향·지지·저항을 이번 분석에 사용하지 않았습니다."
+    "KOSPI 공포탐욕 100, KOSDAQ 85.02로 강한 반등과 동시에 단기 과열 위험이 큽니다.",
+    "KOSPI는 상승 업종 유효 개수가 1.73개라 삼성전자·SK하이닉스 쏠림이 큽니다.",
+    "삼성전자·SK하이닉스·알테오젠은 전일 급등 폭이 커 시초가 추격 후보가 아닙니다.",
+    "지씨지놈은 RSI 92.2와 낮은 거래대금 때문에 조건부 후순위입니다.",
+    "V2 통계승률은 과거 패턴 통계이며 다음 거래일 개별 종목의 성공확률이 아닙니다.",
+    "현금비중 원본 최신일이 8월 19일이므로 이번 업로드에서 비중 수치와 배분 판단을 갱신하지 않았습니다."
   ],
   "next_session_checks": [
-    "첫 30분 KOSPI·KOSDAQ 상승종목 비율 40% 회복 여부",
-    "보험에서 한화손해보험·미래에셋생명·현대해상 중 두 종목 이상 동반강세 여부",
-    "건설에서 GS건설·현대건설, 해운에서 팬오션·STX그린로지스의 동반강세 여부",
-    "KOSDAQ 바이오가 프로티나 단독이 아니라 보로노이·펩트론으로 확산되는지",
-    "서진시스템이 10일선·20일선 위를 유지하면서 ESS 거래대금이 확산되는지",
-    "반도체·로봇이 반등하더라도 상승종목 비율과 섹터 평균이 회복되지 않으면 추격하지 않음"
+    "첫 30분 KOSPI·KOSDAQ 상승/하락 종목 비율이 1.0 이상을 유지하는지 확인",
+    "삼성전자·SK하이닉스가 전일 종가와 VWAP을 함께 지키는지 확인",
+    "삼성바이오로직스·SK바이오사이언스, 파마리서치·알테오젠 등 동종주 동반강세 여부",
+    "삼성에스디에스·NAVER가 전일 종가를 지키고 거래량이 20일 평균 속도를 웃도는지 확인",
+    "티씨케이·두산테스나에서 코스닥 반도체 순환매가 실제로 확산되는지 확인",
+    "시초 갭 +3% 이상 또는 첫 30분 VWAP 이탈 종목은 우선순위와 관계없이 제외"
   ],
   "news_check": {
-    "status": "2026-08-19 장 마감 기준 검색을 수행했으나 최종선정 종목의 당일 재료를 뒷받침할 신뢰 가능한 동일 날짜 기사·공시를 충분히 확인하지 못함",
-    "used_in_selection": false,
-    "sources": [
-      "https://kind.krx.co.kr/external/2026/08/03/000819/20260803001795/68810.htm",
-      "https://kind.krx.co.kr/external/dst/irReference/18928/%EA%B3%B5%EC%A0%95%EA%B3%B5%EC%8B%9C_%ED%94%84%EB%A1%9C%ED%8B%B0%EB%82%98_IR_2607_NDR.pdf"
-    ],
-    "limit": "STX그린로지스 투자경고 해제 공시와 프로티나 기존 IR은 배경 확인용이며 8월 19일 직접 호재로 사용하지 않음"
+    "status": "8월 19일 글로벌 반도체 급락과 8월 20일 국내 반도체 반등의 연결을 확인. 8월 20일 미국 섹터 종가 자료는 아직 없음",
+    "used_in_selection": true,
+    "sources": ["https://ng.investing.com/news/stock-market-news/south-koreas-kospi-briefly-halts-trade-after-5-slide-as-sk-hynix-samsung-tumble-2665806", "https://en.sedaily.com/finance/2026/08/10/kosdaq-rally-rotates-into-chip-materials-biotech-as"],
+    "limit": "뉴스는 반도체 변동성과 코스닥 반도체·바이오 순환의 배경으로만 사용하고 개별 종목 직접 호재로 단정하지 않음"
   },
-  "source_note": "20260819 run_all 산출물의 시장 폭, ADR, Impulse, 공포탐욕, 업종쏠림, 55개 섹터 4개 관측일, V2 원신호 74건·종목 union 54건을 사용했습니다. 미국은 직전장 20260818 섹터 자료만 보조로 사용했습니다. 현금비중·TP·SL·미완결 선물옵션 자료는 선정에 사용하지 않았고 본 목록은 다음 거래일 조건부 관심종목입니다."
+  "source_note": "20260820 run_all 산출물의 시장 폭, ADR, Impulse, 공포탐욕, 업종쏠림, sector_rs, 55개 섹터 주도주와 V2 원신호 85건·종목 58건을 사용했습니다. V2와 섹터 후보를 합친 148종목의 20260820 일봉을 확인했습니다. 미국은 20260819 섹터 자료만 보조로 사용했습니다. 사용자 지시에 따라 현금비중은 갱신·업로드·선정에 사용하지 않았고 본 목록은 2026-08-21 조건부 관심종목입니다."
 }
