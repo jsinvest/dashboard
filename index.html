@@ -1651,6 +1651,19 @@ function renderCashManagement(data){
     <td>${cashNumber(row.turnover,2)}</td>
     <td>${escapeHtml(row.rebalances)}</td>
   </tr>`).join('');
+  const historyRows = (data.history || []).slice().reverse().map(row=>`<tr>
+    <td>${escapeHtml(row.as_of)}</td>
+    <td>${cashNumber(row.daily_model_cash_pct,0)}%</td>
+    <td>${cashNumber(row.monthly_primary_cash_pct,0)}%</td>
+    <td>${cashNumber(row.staged_cash_pct,0)}%</td>
+    <td><strong>${cashNumber(row.applied_cash_pct,0)}%</strong></td>
+    <td>${escapeHtml(row.action_label)}</td>
+  </tr>`).join('');
+  const historySection = historyRows ? `<section class="cash-card">
+    <div class="cash-card-head"><div><div class="cash-card-title">현금비중 누적 이력</div><div class="cash-status">당일 모델 신호와 실제 적용 비중을 구분해 기록합니다.</div></div></div>
+    <div class="table-scroll"><table class="cash-table"><thead><tr><th>기준일</th><th>당일 모델</th><th>월간 기준</th><th>단계형</th><th>최종 적용</th><th>행동</th></tr></thead><tbody>${historyRows}</tbody></table></div>
+    <div class="cash-note" style="margin-top:10px">당일 모델값이 0%로 바뀌어도 단계형 현금은 월간 재진입 신호가 확인되기 전까지 유지됩니다.</div>
+  </section>` : '';
   const steps = (data.rule_steps || []).map(step=>`<div class="cash-step"><strong>${escapeHtml(step.title)}</strong><p>${escapeHtml(step.description)}</p></div>`).join('');
   root.innerHTML = `
     <div class="cash-hero">
@@ -1698,6 +1711,7 @@ function renderCashManagement(data){
       <div class="cash-flow">${steps}</div>
       <div class="cash-note" style="margin-top:10px"><strong>다음 확인:</strong> ${escapeHtml(next.condition)}<br><strong>확인되면:</strong> ${escapeHtml(next.if_confirmed)}<br><strong>확인되지 않으면:</strong> ${escapeHtml(next.if_not_confirmed)}</div>
     </section>
+    ${historySection}
     <section class="cash-card">
       <div class="cash-card-head"><div><div class="cash-card-title">백테스트 비교</div><div class="cash-status">${escapeHtml(backtest.period)} · ${escapeHtml(backtest.execution_assumption)}</div></div></div>
       <div class="table-scroll"><table class="cash-table"><thead><tr><th>방법</th><th>누적수익</th><th>MDD</th><th>Sharpe</th><th>회전율</th><th>리밸런싱</th></tr></thead><tbody>${rows}</tbody></table></div>
