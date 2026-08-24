@@ -256,7 +256,7 @@
     .daily-leader-summary,.daily-leader-map,.daily-ecosystem-board,.leader-cumulative-top,.leader-history-quarter{grid-template-columns:1fr;}
     .daily-leader-toolbar{align-items:flex-start;}.daily-leader-tabs{width:100%;}.daily-leader-tab{flex:1;min-height:40px;}
     .leader-mode-tabs{width:100%;}.leader-mode-btn{flex:1;min-height:40px;}.daily-leader-subtoolbar{justify-content:flex-start;}.leader-history-day{grid-template-columns:58px 1fr;}.leader-history-date{grid-row:span 3;}.leader-history-pick{border-bottom:1px solid var(--border);}.leader-history-bar-row{grid-template-columns:minmax(105px,1fr) 2fr 50px;}
-    .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}.daily-ecosystem-mobile button{padding:10px;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:5px;background:var(--bg3);color:var(--text);font-size:12px;text-align:left;cursor:pointer;}.daily-ecosystem-mobile button.active{border-color:var(--accent);background:rgba(0,229,255,.08);}.daily-sector-detail{width:100%;}.daily-sector-detail-grid{grid-template-columns:1fr;}
+    .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}.daily-ecosystem-mobile>div{display:grid;align-content:start;gap:5px;}.daily-ecosystem-mobile>div>b{font-size:12px;margin-bottom:2px;}.daily-ecosystem-mobile button{padding:10px;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:5px;background:var(--bg3);color:var(--text);font-size:12px;text-align:left;cursor:pointer;}.daily-ecosystem-mobile button.active{border-color:var(--accent);background:rgba(0,229,255,.08);}.daily-sector-detail{width:100%;}.daily-sector-detail-grid{grid-template-columns:1fr;}
     header{height:52px;padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:8px;}
     .logo{font-size:14px;letter-spacing:1px;white-space:nowrap;}
     .time-display{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0;font-size:11px;white-space:nowrap;}
@@ -902,7 +902,7 @@
     <div class="section-title">당일 주도주 · DAILY MARKET LEADERS</div>
     <div class="daily-leader-shell" data-layout-zone="daily-leaders">
       <div class="daily-leader-toolbar">
-        <span class="daily-leader-date">시장 기준일 2026-08-20 · V2 교차검증 2026-08-20 17:33 · 누적 이력 5거래일</span>
+        <span class="daily-leader-date">시장 기준일 2026-08-24 · V2 교차검증 2026-08-24 18:52 · 누적 이력 7거래일</span>
         <div class="leader-mode-tabs" aria-label="주도주 화면 선택">
           <button type="button" class="leader-mode-btn active" data-leader-mode="daily">당일</button>
           <button type="button" class="leader-mode-btn" data-leader-mode="cumulative">누적</button>
@@ -910,44 +910,44 @@
       </div>
       <div id="leaderDailyPane">
       <div class="daily-leader-subtoolbar"><span>당일 시장</span><div class="daily-leader-tabs" aria-label="당일 시장 선택"><button type="button" class="daily-leader-tab active" data-leader-view="all">통합</button><button type="button" class="daily-leader-tab" data-leader-view="KOSPI">KOSPI</button><button type="button" class="daily-leader-tab" data-leader-view="KOSDAQ">KOSDAQ</button></div></div>
-      <div class="daily-v2-audit"><b>검증 상태</b> · 8/20 섹터 55개/종목 562행·제외 29건 · V2 원신호 85건/결과 58종목 · 8/20 신호 29종목 중 품질필터 통과 4종목 · 누적 이력 5거래일(8/13·14·18·19·20) · 전체 실행 종료코드는 별도 최신 로그가 없어 확인 불가</div>
+      <div class="daily-v2-audit"><b>검증 상태</b> · 8/24 섹터 55개/종목 562행·제외 29건·필수값 누락 0·중복 0 · V2 원신호 77건/결과 56종목 · 8/24 신호 31종목 중 품질필터 통과 1종목 · 누적 이력 7거래일(8/13·14·18·19·20·21·24) · 전체 실행 종료코드는 최신 로그 부재로 확인 불가</div>
       <div class="daily-leader-summary">
-        <div class="daily-leader-stat"><small>시장별 중심 주도주</small><strong id="dailyLeaderConfirmed">SK하이닉스 · 서산</strong><span id="dailyLeaderConfirmedNote">KOSPI 반도체 · KOSDAQ 건자재·시멘트 / 시장별 독립 산정</span></div>
-        <div class="daily-leader-stat"><small>당일 V2 품질통과</small><strong id="dailyLeaderEmerging">KS 1종목 · KQ 3종목</strong><span id="dailyLeaderEmergingNote">금호건설 · 샘씨엔에스 · 뉴파워프라즈마 · 파마리서치</span></div>
-        <div class="daily-leader-stat"><small>지속성 한계</small><strong id="dailyLeaderWatch">5일 누적 가능 · 20일 판단 불가</strong><span id="dailyLeaderWatchNote">8/20부터 시장별 독립 순위 적용 · 이전 4일은 대표주 시장 임시 분리</span></div>
+        <div class="daily-leader-stat"><small>시장별 중심 주도주</small><strong id="dailyLeaderConfirmed">포스코퓨처엠 · 에코프로</strong><span id="dailyLeaderConfirmedNote">KOSPI·KOSDAQ 모두 2차전지 / 시장별 독립 산정</span></div>
+        <div class="daily-leader-stat"><small>당일 V2 품질통과</small><strong id="dailyLeaderEmerging">KS 1종목 · KQ 0종목</strong><span id="dailyLeaderEmergingNote">금호건설 1종목 · 중심 2차전지와 직접 교집합 없음</span></div>
+        <div class="daily-leader-stat"><small>지속성 한계</small><strong id="dailyLeaderWatch">7일 누적 가능 · 20일 판단 불가</strong><span id="dailyLeaderWatchNote">당일 순위는 종목 상세행에서 시장별 재집계 · 원본 누적순서 미사용</span></div>
       </div>
       <div class="daily-ecosystem">
         <div class="daily-ecosystem-title"><b>시장별 중심 주도주 → 연결 산업군 · 산업군을 누르면 우선 종목 보기</b><span>실선: 당일 확산 확인 · 점선: 산업 연관(동반강세 미확정)</span></div>
         <div class="daily-ecosystem-board">
-          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>SK하이닉스 중심 반도체 확산 · 지수 +5.89%</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 주도주 SK하이닉스를 중심으로 반도체와 연관 산업을 표시한 다이어그램">
+          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>포스코퓨처엠 중심 2차전지 확산 · 지수 −3.12%</span></div>
+            <svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 주도주 포스코퓨처엠을 중심으로 2차전지와 연관 산업을 표시한 다이어그램">
               <defs><marker id="ecoArrowKS" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="semiconductor,machine" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="150" y="205">반도체 장비</text><line class="eco-leader-link" data-eco-link="semiconductor,electronics" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="192" y="76">부품·패키징</text><line class="eco-leader-link eco-link-weak" data-eco-link="semiconductor,software" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="368" y="76">AI·데이터센터</text><line class="eco-leader-link" data-eco-link="semiconductor,materials" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="205">첨단소재 공급망</text></g>
-              <g class="eco-node leader-center" data-eco-sector="semiconductor" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSPI 중심 주도주</text><text class="eco-leader-name" x="280" y="149">SK하이닉스</text><text class="eco-name" x="280" y="174">반도체 71.5점 · 신뢰도 보정 1위</text><text class="eco-score" x="280" y="195">주도 76.3 · RS +6.84%p</text></g>
-              <g class="eco-node" data-eco-sector="machine" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">기계·장비</text><text class="eco-score" x="75" y="289">현대엘리베이터 · 40.6</text></g><g class="eco-node" data-eco-sector="electronics" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">전자부품</text><text class="eco-score" x="130" y="58">금호전기 · 82.6</text></g><g class="eco-node" data-eco-sector="software" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">SW·IT</text><text class="eco-score" x="430" y="58">현대오토에버 · 55.6</text></g><g class="eco-node" data-eco-sector="materials" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">첨단소재</text><text class="eco-score" x="485" y="289">KCC · 77.9</text></g>
+              <g class="eco-links"><line class="eco-leader-link" data-eco-link="ksBattery,ksChem" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="150" y="205">소재·전해질</text><line class="eco-leader-link" data-eco-link="ksBattery,ksEss" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="192" y="76">셀·저장장치</text><line class="eco-leader-link" data-eco-link="ksBattery,ksSoftware" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="368" y="76">스마트팩토리</text><line class="eco-leader-link" data-eco-link="ksBattery,ksSteel" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="205">양극재·소재</text></g>
+              <g class="eco-node leader-center" data-eco-sector="ksBattery" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSPI 중심 주도주</text><text class="eco-leader-name" x="280" y="149">포스코퓨처엠</text><text class="eco-name" x="280" y="174">2차전지 100점 · 독립 1위</text><text class="eco-score" x="280" y="195">주도 89.2 · RS +13.45%p</text></g>
+              <g class="eco-node" data-eco-sector="ksChem" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">범용화학</text><text class="eco-score" x="75" y="289">SK케미칼 · 69.4</text></g><g class="eco-node" data-eco-sector="ksEss" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">ESS·저장</text><text class="eco-score" x="130" y="58">LG에너지솔루션 · 76.9</text></g><g class="eco-node" data-eco-sector="ksSoftware" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">SW·IT</text><text class="eco-score" x="430" y="58">포스코DX · 72.4</text></g><g class="eco-node" data-eco-sector="ksSteel" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">철강·소재</text><text class="eco-score" x="485" y="289">POSCO홀딩스 · 77.1</text></g>
             </svg>
-            <div class="eco-cross-note"><b>판정</b> · 반도체 3종목 중 2종목 상승, 전 종목 20일선 위·거래대금 평균 이상. SK하이닉스 +12.73%·9.11조원·RS +6.84%p. 1종목 업종 급등은 확산 부족으로 중심에서 제외.</div>
+            <div class="eco-cross-note"><b>판정</b> · 2차전지 7종목 전부 상승·20일선 위·거래대금 평균 이상, 합산 5,268.0억원. 포스코퓨처엠 +10.33%·980.7억원·RS +13.45%p로 중심축이며 ESS·화학·철강·SW까지 동반 강세.</div>
           </div>
-          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>서산 중심 건자재·시멘트 확산 · 지수 +1.99%</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 주도주 서산을 중심으로 건자재와 연관 산업을 표시한 다이어그램">
+          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>에코프로 중심 2차전지 확산 · 지수 +1.42%</span></div>
+            <svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 주도주 에코프로를 중심으로 2차전지와 연관 산업을 표시한 다이어그램">
               <defs><marker id="ecoArrowKQ" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="cement,environment" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="150" y="205">환경·순환자원</text><line class="eco-leader-link" data-eco-link="cement,construction" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="192" y="76">건설 투입재</text><line class="eco-leader-link" data-eco-link="cement,logistics" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="368" y="76">자재 운송</text><line class="eco-leader-link eco-link-weak" data-eco-link="cement,machine" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="410" y="205">생산·건설 장비</text></g>
-              <g class="eco-node leader-center" data-eco-sector="cement" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSDAQ 중심 주도주</text><text class="eco-leader-name" x="280" y="149">서산</text><text class="eco-name" x="280" y="174">건자재·시멘트 61.5점 · 1위</text><text class="eco-score" x="280" y="195">주도 86.1 · RS +14.21%p</text></g>
-              <g class="eco-node" data-eco-sector="environment" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">환경·폐기물</text><text class="eco-score" x="75" y="289">에코아이 · 61.5</text></g><g class="eco-node" data-eco-sector="construction" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">건설</text><text class="eco-score" x="130" y="58">누리플랜 · 49.9</text></g><g class="eco-node" data-eco-sector="logistics" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">물류</text><text class="eco-score" x="430" y="58">에스디시스템 · 62.3</text></g><g class="eco-node" data-eco-sector="machine" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">기계·장비</text><text class="eco-score" x="485" y="289">삼미금속 · 60.1</text></g>
+              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="kqBattery,kqMachine" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="150" y="205">생산·자동화 장비</text><line class="eco-leader-link" data-eco-link="kqBattery,kqEss" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="192" y="76">저장장치 확산</text><line class="eco-leader-link" data-eco-link="kqBattery,kqPower" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="368" y="76">충전·전력망</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqBattery,kqSoftware" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="410" y="205">BMS·공정제어</text></g>
+              <g class="eco-node leader-center" data-eco-sector="kqBattery" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSDAQ 중심 주도주</text><text class="eco-leader-name" x="280" y="149">에코프로</text><text class="eco-name" x="280" y="174">2차전지 65.5점 · 확산보정 중심</text><text class="eco-score" x="280" y="195">주도 76.1 · RS +6.17%p</text></g>
+              <g class="eco-node" data-eco-sector="kqMachine" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">기계·장비</text><text class="eco-score" x="75" y="289">톱텍 · 51.8</text></g><g class="eco-node" data-eco-sector="kqEss" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">ESS·저장</text><text class="eco-score" x="130" y="58">서진시스템 · 68.9</text></g><g class="eco-node" data-eco-sector="kqPower" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">전력기기</text><text class="eco-score" x="430" y="58">티씨머티리얼즈 · 79.7</text></g><g class="eco-node" data-eco-sector="kqSoftware" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">SW·IT</text><text class="eco-score" x="485" y="289">비투엔 · 48.4</text></g>
             </svg>
-            <div class="eco-cross-note"><b>판정</b> · 건자재·시멘트 6종목 중 4종목 상승, 서산 +16.20%·646.6억·RS +14.21%p·3.19배. 강동씨앤엘도 +8.44%로 동반했고 물류가 시장별 2위로 연결.</div>
+            <div class="eco-cross-note"><b>판정</b> · 원점수 1위 해운은 1종목·6.2억원·RS −0.33%p라 중심에서 제외. 2차전지는 5종목 중 3종목 상승·전 종목 20일선 위·합산 1,164.1억원이며 에코프로가 +7.59%·1,116.5억원·RS +6.17%p로 확산과 유동성을 주도.</div>
           </div>
         </div>
-        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · SK하이닉스</b><button type="button" data-eco-sector="semiconductor" data-node-market="KOSPI">반도체 신뢰도 보정 1위 · 주도 76.3</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 서산</b><button type="button" data-eco-sector="cement" data-node-market="KOSDAQ">건자재·시멘트 1위 · 주도 86.1</button></div></div>
+        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 포스코퓨처엠</b><button type="button" data-eco-sector="ksBattery" data-node-market="KOSPI">2차전지 · 주도 89.2</button><button type="button" data-eco-sector="ksEss" data-node-market="KOSPI">ESS·저장 · LG에너지솔루션</button><button type="button" data-eco-sector="ksChem" data-node-market="KOSPI">범용화학 · SK케미칼</button><button type="button" data-eco-sector="ksSteel" data-node-market="KOSPI">철강·소재 · POSCO홀딩스</button><button type="button" data-eco-sector="ksSoftware" data-node-market="KOSPI">SW·IT · 포스코DX</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 에코프로</b><button type="button" data-eco-sector="kqBattery" data-node-market="KOSDAQ">2차전지 · 주도 76.1</button><button type="button" data-eco-sector="kqEss" data-node-market="KOSDAQ">ESS·저장 · 서진시스템</button><button type="button" data-eco-sector="kqPower" data-node-market="KOSDAQ">전력기기 · 티씨머티리얼즈</button><button type="button" data-eco-sector="kqMachine" data-node-market="KOSDAQ">기계·장비 · 톱텍</button><button type="button" data-eco-sector="kqSoftware" data-node-market="KOSDAQ">SW·IT · 비투엔</button></div></div>
         <div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div>
       </div>
-      <div class="daily-relation-strip"><span>핵심 연결</span><b>반도체 ↔ 전자부품·첨단소재: 부품·공급망</b><b>반도체 ↔ SW·기계장비: AI·생산설비</b><b>건자재·시멘트 ↔ 건설·물류: 투입재·운송</b><b>건자재·시멘트 ↔ 기계·환경: 생산장비·순환자원</b></div>
+      <div class="daily-relation-strip"><span>핵심 연결</span><b>2차전지 ↔ ESS: 셀·저장장치</b><b>2차전지 ↔ 화학·철강: 양극재·소재 공급망</b><b>2차전지 ↔ 기계·전력: 생산설비·충전망</b><b>2차전지 ↔ SW·IT: BMS·공정제어·스마트팩토리</b></div>
       <div class="daily-leader-detail" id="dailyLeaderDetail">종목을 누르면 시장 주도주 판정 근거가 표시됩니다.</div>
       </div>
       <div class="leader-cumulative daily-leader-hidden" id="leaderCumulativePane">
         <div class="leader-cumulative-top" aria-label="2026년 8월 누적 상위 섹터">
-          <div class="leader-cumulative-market"><b>KOSPI · 8월 누적 TOP3</b><div class="leader-cumulative-items"><span>2차전지 <strong>4회</strong></span><span>보험 <strong>3회</strong></span><span>반도체 <strong>3회</strong></span></div></div>
-          <div class="leader-cumulative-market"><b>KOSDAQ · 8월 누적 TOP3</b><div class="leader-cumulative-items"><span>환경·폐기물 <strong>4회</strong></span><span>SW·IT서비스 <strong>4회</strong></span><span>의료기기·진단 <strong>3회</strong></span></div></div>
+          <div class="leader-cumulative-market"><b>KOSPI · 8월 누적 TOP3</b><div class="leader-cumulative-items"><span>지주·종합상사 <strong>5회</strong></span><span>의료기기·진단 <strong>4회</strong></span><span>보험 <strong>4회</strong></span></div></div>
+          <div class="leader-cumulative-market"><b>KOSDAQ · 8월 누적 TOP3</b><div class="leader-cumulative-items"><span>건설 <strong>7회</strong></span><span>해운 <strong>5회</strong></span><span>물류 <strong>5회</strong></span></div></div>
         </div>
         <div class="leader-cumulative-controls">
           <div class="leader-cumulative-control"><span>시장</span><button type="button" class="leader-cumulative-btn active" data-cumulative-market="KOSPI">KOSPI</button><button type="button" class="leader-cumulative-btn" data-cumulative-market="KOSDAQ">KOSDAQ</button></div>
@@ -1099,30 +1099,34 @@ const LEGACY_DAILY_SECTOR_STOCKS = {
 };
 const LEGACY_DAILY_SECTOR_LINKS={robot:['auto','software','machine','battery'],auto:['robot'],software:['robot'],machine:['robot'],battery:['robot'],insurance:['holding','bank','securities'],holding:['insurance'],bank:['insurance'],securities:['insurance']};
 const DAILY_LEADER_SUMMARY = {
-  all: ['SK하이닉스 · 서산','8/20 KOSPI 반도체·KOSDAQ 건자재·시멘트 시장별 독립 주도축','V2 품질통과 4종목','KS 1·KQ 3종목 / 중심 주도주와 직접 코드 교집합은 없음','5일 누적 가능 · 20일 판단 불가','8/20부터 시장별 독립 산정 · 이전 4일은 대표주 시장 임시 분리'],
-  KOSPI: ['SK하이닉스','반도체 신뢰도 보정 1위 · 주도 76.3 · +12.73%·RS +6.84%p·9.11조','V2 품질통과 1종목','금호건설 / 반도체 직접 교집합 없음','반도체 공급망 확산','전자부품은 동반 강세, SW·기계장비는 산업 연결 단계'],
-  KOSDAQ: ['서산','건자재·시멘트 독립 1위 · 주도 86.1 · +16.20%·RS +14.21%p·646.6억','V2 품질통과 3종목','샘씨엔에스·뉴파워프라즈마·파마리서치 / 직접 교집합 없음','건자재·물류 연결축','건자재 6종목 중 4종목 상승 · 강동씨앤엘 동반 강세']
+  all: ['포스코퓨처엠 · 에코프로','8/24 KOSPI·KOSDAQ 2차전지 시장별 독립 주도축','V2 품질통과 1종목','KS 금호건설 1종목 · 중심 2차전지와 직접 코드 교집합 없음','7일 누적 가능 · 20일 판단 불가','종목 상세행에서 시장별 재집계 · 원본 누적순서 미사용'],
+  KOSPI: ['포스코퓨처엠','2차전지 독립 1위 · 주도 89.2 · +10.33%·RS +13.45%p·980.7억','V2 품질통과 1종목','금호건설 / 2차전지 직접 교집합 없음','2차전지 전면 확산','7종목 전부 상승·20일선 위·거래대금 평균 이상'],
+  KOSDAQ: ['에코프로','2차전지 확산보정 중심 · 주도 76.1 · +7.59%·RS +6.17%p·1,116.5억','V2 품질통과 0종목','8/24 KOSDAQ 품질필터 통과 종목 없음','2차전지·ESS·전력 연결축','원점수 1위 해운은 1종목·6.2억·RS 음수로 중심 제외']
 };
 const LEADER_CUMULATIVE_DATA={
   KOSPI:{
     days:[
-      ['8/13',[[1,'전자부품·디스플레이','금호전기'],[2,'반도체','미래산업'],[4,'제약·바이오','한올바이오파마']]],
-      ['8/14',[[2,'보험','한화생명'],[4,'2차전지','DN오토모티브'],[5,'SW·IT서비스','현대오토에버']]],
-      ['8/18',[[1,'해운','HMM'],[3,'보험','현대해상'],[4,'반도체','유니퀘스트']]],
-      ['8/19',[[1,'보험','한화손해보험'],[2,'해운','STX그린로지스'],[3,'건설','현대건설']]],
-      ['8/20',[[1,'의료기기·진단','삼양바이오팜'],[2,'정밀·첨단소재','KCC'],[3,'반도체','SK하이닉스']]]
+      ['8/13',[[1,'전자부품·디스플레이','금호전기'],[2,'수소·연료전지','두산퓨얼셀'],[3,'신재생','씨에스윈드']]],
+      ['8/14',[[1,'보험','한화생명'],[2,'2차전지','DN오토모티브'],[3,'로봇·자동화','두산로보틱스']]],
+      ['8/18',[[1,'해운','HMM'],[2,'통신장비·광네트워크','한화비전'],[3,'반도체','유니퀘스트']]],
+      ['8/19',[[1,'수소·연료전지','두산퓨얼셀'],[2,'ESS·에너지저장','LG에너지솔루션'],[3,'농업·비료·사료','남해화학']]],
+      ['8/20',[[1,'의료기기·진단','삼양바이오팜'],[2,'정밀·첨단소재','KCC'],[3,'반도체','SK하이닉스']]],
+      ['8/21',[[1,'의료기기·진단','삼양바이오팜'],[2,'정밀·첨단소재','KCC'],[3,'화장품·패션·생활소비재','TBH글로벌']]],
+      ['8/24',[[1,'2차전지','포스코퓨처엠'],[2,'ESS·에너지저장','LG에너지솔루션'],[3,'의료기기·진단','삼양바이오팜']]]
     ],
-    frequency:[['2차전지',4,1,0],['보험',3,3,1],['반도체',3,3,0],['해운',3,2,1],['기계·산업장비',3,1,0],['전자부품·디스플레이',2,2,1]]
+    frequency:[['지주·종합상사',5,2,0],['의료기기·진단',4,4,2],['보험',4,4,1],['수소·연료전지',4,3,1],['해운',4,1,1],['제약·바이오',4,1,0]]
   },
   KOSDAQ:{
     days:[
-      ['8/13',[[3,'SW·IT서비스','씨이랩'],[5,'전력기기·전선·전력망','티씨머티리얼즈'],[6,'자동차·일반부품','삼기']]],
-      ['8/14',[[1,'로봇·자동화','로보티즈'],[3,'기계·산업장비','엔비알모션'],[7,'자동차·일반부품','한라캐스트']]],
-      ['8/18',[[2,'환경·폐기물','한성크린텍'],[8,'전자부품·디스플레이','이브이첨단소재'],[10,'정밀·첨단소재','아스플로']]],
-      ['8/19',[[9,'환경·폐기물','엔바이오니아'],[15,'SW·IT서비스','아이크래프트'],[null,'TOP15 내 추가 자료 없음','—']]],
-      ['8/20',[[1,'건자재·시멘트','서산'],[2,'물류','에스디시스템'],[3,'포장·제지','무림SP']]]
+      ['8/13',[[1,'자동차·일반부품','삼기'],[2,'전력기기·전선·전력망','티씨머티리얼즈'],[3,'소프트웨어·IT서비스','씨이랩']]],
+      ['8/14',[[1,'조선·해양','현대힘스'],[2,'해운','팬스타엔터프라이즈'],[3,'로봇·자동화','로보티즈']]],
+      ['8/18',[[1,'강관','티피씨글로벌'],[2,'해운','팬스타엔터프라이즈'],[3,'물류','대아티아이']]],
+      ['8/19',[[1,'해운','팬스타엔터프라이즈'],[2,'강관','티피씨글로벌'],[3,'물류','대아티아이']]],
+      ['8/20',[[1,'건자재·시멘트','서산'],[2,'물류','에스디시스템'],[3,'포장·제지','무림SP']]],
+      ['8/21',[[1,'해운','팬스타엔터프라이즈'],[2,'강관','티피씨글로벌'],[3,'물류','대아티아이']]],
+      ['8/24',[[1,'해운','팬스타엔터프라이즈'],[2,'2차전지','에코프로'],[3,'건설','국보디자인']]]
     ],
-    frequency:[['환경·폐기물',4,1,0],['SW·IT서비스',4,1,0],['의료기기·진단',3,0,0],['전력기기·전선·전력망',2,2,0],['로봇·자동화',2,1,1],['항공우주·위성',2,0,0]]
+    frequency:[['건설',7,2,0],['해운',5,5,3],['물류',5,4,0],['강관',4,3,1],['환경·폐기물',4,0,0],['소프트웨어·IT서비스',3,3,0]]
   }
 };
 let leaderMode='daily';
@@ -1140,18 +1144,18 @@ function renderLeaderCumulative(){
   if(!host)return;
   const data=LEADER_CUMULATIVE_DATA[leaderCumulativeMarket];
   if(leaderCumulativePeriod==='daily'){
-    host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 최근 일별 흐름</b><span>현재 5/60거래일</span></div><div class="leader-history-days">${data.days.map(day=>`<div class="leader-history-day"><div class="leader-history-date">${escapeHtml(day[0])}</div>${day[1].map(pick=>`<div class="leader-history-pick"><b>${pick[0]===null?'':`<i>${escapeHtml(pick[0])}위</i>`}${escapeHtml(pick[1])}</b><small>${escapeHtml(pick[2])}</small></div>`).join('')}</div>`).join('')}</div><div class="leader-history-foot">8/20은 시장별 구성 종목으로 독립 산정했습니다. 8/13~19는 당시 누적 원본의 대표주 소속시장으로 임시 분리한 값이라 동일 기준 장기 비교에는 주의가 필요합니다.</div>`;
+    host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 최근 일별 흐름</b><span>현재 7/60거래일</span></div><div class="leader-history-days">${data.days.map(day=>`<div class="leader-history-day"><div class="leader-history-date">${escapeHtml(day[0])}</div>${day[1].map(pick=>`<div class="leader-history-pick"><b>${pick[0]===null?'':`<i>${escapeHtml(pick[0])}위</i>`}${escapeHtml(pick[1])}</b><small>${escapeHtml(pick[2])}</small></div>`).join('')}</div>`).join('')}</div><div class="leader-history-foot">7거래일 모두 종목 상세행에서 KOSPI·KOSDAQ을 독립 재집계했습니다. 20거래일 연속 미등장 탈락 규칙은 아직 관측기간이 부족해 적용하지 않습니다.</div>`;
     return;
   }
   if(leaderCumulativePeriod==='monthly'){
-    const max=5;
-    host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 2026년 8월 누적</b><span>현재 5거래일</span></div><div class="leader-history-bars">${data.frequency.map(row=>`<div class="leader-history-bar-row"><span>${escapeHtml(row[0])}</span><div class="leader-history-track"><span class="leader-history-top5" style="width:${row[2]/max*100}%"></span><span class="leader-history-top15" style="width:${(row[1]-row[2])/max*100}%"></span></div><span class="leader-history-value">${row[1]}회</span></div>`).join('')}</div><div class="leader-history-foot">초록은 TOP5, 청록은 TOP6~15 등장 횟수입니다. 등장 일수와 1위 횟수는 분리해 보존합니다.</div>`;
+    const max=7;
+    host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 2026년 8월 누적</b><span>현재 7거래일</span></div><div class="leader-history-bars">${data.frequency.map(row=>`<div class="leader-history-bar-row"><span>${escapeHtml(row[0])}</span><div class="leader-history-track"><span class="leader-history-top5" style="width:${row[2]/max*100}%"></span><span class="leader-history-top15" style="width:${(row[1]-row[2])/max*100}%"></span></div><span class="leader-history-value">${row[1]}회</span></div>`).join('')}</div><div class="leader-history-foot">초록은 TOP5, 청록은 TOP6~15 등장 횟수입니다. 동일 날짜는 한 번만 집계했고 1위 횟수는 별도로 보존합니다.</div>`;
     return;
   }
   const lead=data.frequency[0];
-  host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 2026년 3분기 누적</b><span>현재 5/~60거래일</span></div><div class="leader-history-quarter"><div class="leader-history-month"><b>7월</b><strong>자료 없음</strong><span>판단 불가</span></div><div class="leader-history-month current"><b>8월 · 진행 중</b><strong>${escapeHtml(lead[0])} ${lead[1]}회</strong><span>TOP5 ${lead[2]}회 · 1위 ${lead[3]}회</span></div><div class="leader-history-month"><b>9월</b><strong>미도래</strong><span>월 마감 후 자동 연결</span></div></div><div class="leader-history-foot">분기에는 총 등장 일수, TOP5 일수, 1위 횟수, 재등장 사이클, 최장 휴식, 마지막 등장일을 저장합니다.</div>`;
+  host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · 2026년 3분기 누적</b><span>현재 7/~60거래일</span></div><div class="leader-history-quarter"><div class="leader-history-month"><b>7월</b><strong>자료 없음</strong><span>판단 불가</span></div><div class="leader-history-month current"><b>8월 · 진행 중</b><strong>${escapeHtml(lead[0])} ${lead[1]}회</strong><span>TOP5 ${lead[2]}회 · 1위 ${lead[3]}회</span></div><div class="leader-history-month"><b>9월</b><strong>미도래</strong><span>월 마감 후 자동 연결</span></div></div><div class="leader-history-foot">분기에는 등장 일수·TOP5·1위 횟수를 분리합니다. 20거래일 미등장 시 탈락 처리는 충분한 이력부터 적용합니다.</div>`;
 }
-const DAILY_SECTOR_STOCKS = {
+const LEGACY_20260820_DAILY_SECTOR_STOCKS = {
   semiconductor:{name:'반도체',score:'71.5 · KOSPI 독립 3위 / 신뢰도 보정 중심',stocks:[
     {priority:1,leaderScore:'76.3',name:'SK하이닉스',market:'KOSPI',state:'중심 주도주',kind:'leader',metric:'+12.73% · 91,095.9억 · RS +6.84%p · 1.01배 · 수급 +4.3',v2:'8/20 V2 직접 신호 없음'},
     {priority:2,leaderScore:'74.6',name:'유니퀘스트',market:'KOSPI',state:'동반 강세',kind:'leader',metric:'+7.29% · 32.5억 · RS +1.40%p · 2.34배 · 수급 +4.6'},
@@ -1189,7 +1193,53 @@ const DAILY_SECTOR_STOCKS = {
     {priority:2,leaderScore:'54.6',name:'엔바이오니아',market:'KOSDAQ',state:'동반 강세·유동성 주의',kind:'',metric:'+2.81% · 2.2억 · RS +0.82%p · 2.78배 · 수급 0.0'},
     {priority:3,leaderScore:'42.0',name:'자연과환경',market:'KOSDAQ',state:'동반 상승·거래확산 대기',kind:'',metric:'+2.73% · 0.7억 · RS +0.73%p · 0.69배 · 수급 0.0'}]}
 };
-const DAILY_SECTOR_LINKS={semiconductor:['electronics','materials','software','machine'],electronics:['semiconductor'],materials:['semiconductor'],software:['semiconductor'],machine:['semiconductor','cement'],cement:['construction','logistics','machine','environment'],construction:['cement'],logistics:['cement'],environment:['cement']};
+const DAILY_SECTOR_STOCKS = {
+  ksBattery:{name:'2차전지',score:'100.0 · KOSPI 독립 1위 · 7종목',stocks:[
+    {priority:1,leaderScore:'89.2',name:'포스코퓨처엠',market:'KOSPI',state:'중심 주도주',kind:'leader',metric:'+10.33% · 980.7억 · RS +13.45%p · 2.09배 · 수급 +6.1',v2:'8/24 V2 직접 신호 없음'},
+    {priority:2,leaderScore:'86.7',name:'삼성SDI',market:'KOSPI',state:'대형주 동반 강세',kind:'leader',metric:'+7.74% · 3,444.5억 · RS +10.87%p · 1.80배 · 수급 +9.0',v2:'8/24 Pocket Pivot B등급 · 품질필터 미통과'},
+    {priority:3,leaderScore:'80.7',name:'코스모신소재',market:'KOSPI',state:'소재 확산',kind:'leader',metric:'+6.53% · 43.5억 · RS +9.66%p · 1.17배 · 수급 +9.0'},
+    {priority:4,leaderScore:'79.1',name:'SK아이이테크놀로지',market:'KOSPI',state:'분리막 동반 강세',kind:'leader',metric:'+9.75% · 27.9억 · RS +12.87%p · 1.18배 · 수급 −13.2'},
+    {priority:5,leaderScore:'78.1',name:'DN오토모티브',market:'KOSPI',state:'후발 확인',kind:'',metric:'+8.14% · 167.9억 · RS +11.27%p · 1.07배 · 수급 0.0'}]},
+  ksEss:{name:'ESS·에너지저장',score:'100.0 · KOSPI 독립 2위 · 표본 1종목',stocks:[
+    {priority:1,leaderScore:'76.9',name:'LG에너지솔루션',market:'KOSPI',state:'저장장치 연결축·단일표본',kind:'leader',metric:'+5.39% · 1,342.9억 · RS +8.51%p · 1.32배 · 수급 +16.0',v2:'8/24 Pocket Pivot B등급 · 품질필터 미통과'}]},
+  ksChem:{name:'범용화학',score:'74.0 · KOSPI 독립 13위 · 12종목',stocks:[
+    {priority:1,leaderScore:'69.4',name:'SK케미칼',market:'KOSPI',state:'화학 연결 1순위',kind:'',metric:'+0.40% · 33.8억 · RS +3.53%p · 1.00배 · 수급 0.0'},
+    {priority:2,leaderScore:'64.7',name:'SKC',market:'KOSPI',state:'동반 상승·거래확산 대기',kind:'',metric:'+2.04% · 82.0억 · RS +5.16%p · 0.54배 · 수급 0.0'},
+    {priority:3,leaderScore:'61.5',name:'OCI홀딩스',market:'KOSPI',state:'동반 상승·거래확산 대기',kind:'',metric:'+1.51% · 415.7억 · RS +4.63%p · 0.38배 · 수급 0.0'},
+    {priority:4,leaderScore:'61.0',name:'금호석유화학',market:'KOSPI',state:'상대강도 양호',kind:'',metric:'+2.39% · 109.4억 · RS +5.51%p · 0.74배 · 수급 0.0'},
+    {priority:5,leaderScore:'59.7',name:'코스모화학',market:'KOSPI',state:'배터리 소재 급등',kind:'leader',metric:'+9.19% · 15.8억 · RS +12.32%p · 1.35배 · 수급 0.0'}]},
+  ksSteel:{name:'철강·소재',score:'67.7 · KOSPI 독립 15위 · 10종목',stocks:[
+    {priority:1,leaderScore:'77.1',name:'POSCO홀딩스',market:'KOSPI',state:'소재 공급망 중심',kind:'leader',metric:'+5.65% · 1,299.7억 · RS +8.77%p · 1.40배 · 수급 +12.0'},
+    {priority:2,leaderScore:'68.3',name:'현대제철',market:'KOSPI',state:'동반 상승·거래확산 대기',kind:'',metric:'+3.70% · 118.2억 · RS +6.83%p · 0.82배 · 수급 0.0'},
+    {priority:3,leaderScore:'67.7',name:'세아베스틸지주',market:'KOSPI',state:'상대강도 양호',kind:'',metric:'+6.23% · 47.4억 · RS +9.35%p · 0.77배 · 수급 0.0'}]},
+  ksSoftware:{name:'소프트웨어·IT서비스',score:'77.6 · KOSPI 독립 11위 · 3종목',stocks:[
+    {priority:1,leaderScore:'72.4',name:'포스코DX',market:'KOSPI',state:'스마트팩토리 연결축',kind:'leader',metric:'+5.59% · 65.0억 · RS +8.71%p · 1.12배 · 수급 0.0'},
+    {priority:2,leaderScore:'68.5',name:'현대오토에버',market:'KOSPI',state:'자동화·SW 동반 상승',kind:'',metric:'+2.12% · 272.9억 · RS +5.24%p · 0.67배 · 수급 0.0'},
+    {priority:3,leaderScore:'56.7',name:'삼성에스디에스',market:'KOSPI',state:'20일선 위·거래확산 대기',kind:'',metric:'0.00% · 361.2억 · RS +3.12%p · 0.50배 · 수급 0.0'}]},
+  kqBattery:{name:'2차전지',score:'65.5 · KOSDAQ 독립 2위 / 확산보정 중심 · 5종목',stocks:[
+    {priority:1,leaderScore:'76.1',name:'에코프로',market:'KOSDAQ',state:'중심 주도주',kind:'leader',metric:'+7.59% · 1,116.5억 · RS +6.17%p · 1.42배 · 수급 −12.5',v2:'8/24 V2 직접 신호 없음'},
+    {priority:2,leaderScore:'69.7',name:'SFA넥셀',market:'KOSDAQ',state:'동반 강세·거래확산 근접',kind:'leader',metric:'+5.07% · 39.2억 · RS +3.65%p · 0.97배 · 수급 0.0'},
+    {priority:3,leaderScore:'53.3',name:'지에프아이',market:'KOSDAQ',state:'후발 동반 강세',kind:'',metric:'+4.19% · 6.4억 · RS +2.77%p · 1.57배 · 수급 0.0'},
+    {priority:4,leaderScore:'35.6',name:'아이비젼웍스',market:'KOSDAQ',state:'확산 미참여',kind:'',metric:'−1.43% · 1.2억 · RS −2.85%p · 0.43배 · 수급 0.0'},
+    {priority:5,leaderScore:'32.7',name:'민테크',market:'KOSDAQ',state:'확산 미참여',kind:'',metric:'−1.38% · 0.8억 · RS −2.80%p · 0.41배 · 수급 0.0'}]},
+  kqEss:{name:'ESS·에너지저장',score:'46.9 · KOSDAQ 독립 16위 · 6종목',stocks:[
+    {priority:1,leaderScore:'68.9',name:'서진시스템',market:'KOSDAQ',state:'ESS 연결 1순위',kind:'leader',metric:'+5.24% · 316.6억 · RS +3.82%p · 0.91배 · 수급 0.0'},
+    {priority:2,leaderScore:'42.0',name:'비나텍',market:'KOSDAQ',state:'동반 상승·거래확산 대기',kind:'',metric:'+2.09% · 28.1억 · RS +0.67%p · 0.46배 · 수급 0.0'},
+    {priority:3,leaderScore:'34.5',name:'에이아이코리아',market:'KOSDAQ',state:'후발 상승·유동성 주의',kind:'',metric:'+2.72% · 0.8억 · RS +1.30%p · 0.83배 · 수급 0.0'}]},
+  kqPower:{name:'전력기기·전선·전력망',score:'51.2 · KOSDAQ 독립 9위 · 8종목',stocks:[
+    {priority:1,leaderScore:'79.7',name:'티씨머티리얼즈',market:'KOSDAQ',state:'충전·전력망 선도',kind:'leader',metric:'+9.07% · 92.9억 · RS +7.65%p · 2.45배 · 수급 +19.5'},
+    {priority:2,leaderScore:'49.3',name:'웰킵스하이텍',market:'KOSDAQ',state:'거래확산·지수보다 약함',kind:'',metric:'+0.96% · 2.6억 · RS −0.46%p · 2.90배 · 수급 0.0'},
+    {priority:3,leaderScore:'45.8',name:'지엔씨에너지',market:'KOSDAQ',state:'동반 상승·거래확산 대기',kind:'',metric:'+1.55% · 249.8억 · RS +0.13%p · 0.42배 · 수급 0.0'}]},
+  kqMachine:{name:'기계·산업장비',score:'42.7 · KOSDAQ 독립 24위 · 8종목',stocks:[
+    {priority:1,leaderScore:'51.8',name:'톱텍',market:'KOSDAQ',state:'자동화 장비 급등·단일 확산',kind:'leader',metric:'+6.83% · 166.7억 · RS +5.41%p · 73.42배 · 수급 0.0'},
+    {priority:2,leaderScore:'50.5',name:'링크솔루션',market:'KOSDAQ',state:'동반 강세',kind:'leader',metric:'+9.43% · 11.2억 · RS +8.01%p · 1.22배 · 수급 0.0'},
+    {priority:3,leaderScore:'32.9',name:'코윈테크',market:'KOSDAQ',state:'배터리 장비 후발',kind:'',metric:'+2.79% · 1.4억 · RS +1.37%p · 0.27배 · 수급 0.0'}]},
+  kqSoftware:{name:'소프트웨어·IT서비스',score:'40.4 · KOSDAQ 독립 28위 · 9종목',stocks:[
+    {priority:1,leaderScore:'48.4',name:'비투엔',market:'KOSDAQ',state:'거래대금만 확산·강도 미확인',kind:'',metric:'0.00% · 35.7억 · RS −1.42%p · 6.91배 · 수급 0.0'},
+    {priority:2,leaderScore:'43.5',name:'엑스게이트',market:'KOSDAQ',state:'보합·시장보다 약함',kind:'',metric:'+0.09% · 51.9억 · RS −1.33%p · 0.45배 · 수급 0.0'},
+    {priority:3,leaderScore:'33.3',name:'모비스',market:'KOSDAQ',state:'연결 단계·확산 미확인',kind:'',metric:'+1.09% · 2.3억 · RS −0.33%p · 0.44배 · 수급 0.0'}]}
+};
+const DAILY_SECTOR_LINKS={ksBattery:['ksEss','ksChem','ksSteel','ksSoftware'],ksEss:['ksBattery'],ksChem:['ksBattery'],ksSteel:['ksBattery'],ksSoftware:['ksBattery'],kqBattery:['kqEss','kqPower','kqMachine','kqSoftware'],kqEss:['kqBattery'],kqPower:['kqBattery'],kqMachine:['kqBattery'],kqSoftware:['kqBattery']};
 let dailyLeaderView='all';
 let dailySelectedSector='';
 let dailySelectedMarket='';
@@ -1232,8 +1282,8 @@ function setDailyLeaderView(view){
   ['dailyLeaderConfirmed','dailyLeaderConfirmedNote','dailyLeaderEmerging','dailyLeaderEmergingNote','dailyLeaderWatch','dailyLeaderWatchNote'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=s[i];});
   const detail=document.getElementById('dailyLeaderDetail');
   if(detail) detail.textContent=`${view==='all'?'통합':view} 기준 · 종목을 누르면 시장 주도주 판정 근거가 표시됩니다.`;
-  if(view==='KOSPI')selectDailySector('semiconductor','KOSPI');
-  else if(view==='KOSDAQ')selectDailySector('cement','KOSDAQ');
+  if(view==='KOSPI')selectDailySector('ksBattery','KOSPI');
+  else if(view==='KOSDAQ')selectDailySector('kqBattery','KOSDAQ');
   else{
     dailySelectedSector='';dailySelectedMarket='';
     document.querySelectorAll('[data-eco-sector],[data-eco-link]').forEach(el=>el.classList.remove('selected','active','eco-dim'));
