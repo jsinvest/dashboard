@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "trade_date": "20260825",
+  "generated_at_kst": "2026-08-25T22:43:37+09:00",
+  "status": "OK",
+  "can_use_for_decision": true,
+  "source_policy": {
+    "source": "Kiwoom REST (KOSPI/KOSDAQ) + Yahoo Finance/Nikkei official EOD crosscheck (Nikkei225)",
+    "tier": "mixed_primary_secondary",
+    "role": "차트 구조와 동조·괴리 확인용",
+    "kospi": "키움 REST ka20005 5분봉·ka20006 일봉, 주·월봉은 일봉 재표본화; 같은 거래일 ka20001 확정 종가와 교차검증",
+    "kosdaq": "키움 REST ka20005 5분봉·ka20006 일봉, 주·월봉은 일봉 재표본화; ka20005 마지막 분봉 및 날짜별 ka20009 종가와 교차검증",
+    "nikkei225": "Yahoo 지연 보조 시세; 가능한 경우 Nikkei 공식 EOD CSV와 OHLC 교차검증",
+    "limitation": "Nikkei 무료 분봉은 공식 원천이 아니므로 장중 실시간·주문·정산·단독 방향판정에 사용하지 않음"
+  },
+  "instruments": {
+    "KOSPI": {
+      "status": "OK",
+      "can_use_for_decision": true,
+      "issues": [],
+      "history_counts": {
+        "daily": 1800,
+        "weekly": 384,
+        "monthly": 89,
+        "intraday_5m": 2700,
+        "intraday_15m": 938
+      },
+      "latest_complete_bars": {
+        "daily": "2026-08-25",
+        "intraday_15m": "2026-08-25T15:30:00+09:00"
+      },
+      "target_session_bar_counts": {
+        "5m": 78,
+        "15m": 27
+      },
+      "source_audits": [
+        {
+          "instrument": "KOSPI",
+          "symbol": "001",
+          "interval": "daily",
+          "source": "Kiwoom REST API",
+          "source_tier": "primary_broker",
+          "api_id": "ka20006",
+          "exchange_name": "KRX",
+          "exchange_timezone": "Asia/Seoul",
+          "requested_base_date": "2026-08-25",
+          "pages": 3,
+          "source_rows": 1800,
+          "usable_rows": 1800,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T00:00:00",
+          "raw_file": "kospi_ka20006_daily_20260825.json",
+          "raw_sha256": "cb6426e7a9998161d298d9535390e60094623c8f83b0308c443329b41ee0f4b8"
+        },
+        {
+          "instrument": "KOSPI",
+          "symbol": "001",
+          "interval": "intraday_5m",
+          "source": "Kiwoom REST API",
+          "source_tier": "primary_broker",
+          "api_id": "ka20005",
+          "exchange_name": "KRX",
+          "exchange_timezone": "Asia/Seoul",
+          "requested_base_date": "2026-08-25",
+          "pages": 3,
+          "source_rows": 2700,
+          "usable_rows": 2700,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T15:30:00+09:00",
+          "raw_file": "kospi_ka20005_5m_20260825.json",
+          "raw_sha256": "03ade9003393781cd399625b35c013f67fbfc6ab38926c3498852acdbf61917f"
+        }
+      ],
+      "official_close_crosscheck": {
+        "status": "MATCH",
+        "message": "키움 ka20001 6,742.74 / ka20006 6,742.74 / 차이 0.0000% (허용 0.10% 이내)",
+        "file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\cash_management\\wise_daily\\wise_final_latest.json",
+        "file_sha256": "139563d62163153527864ee6d34eae8a6bdcb7cd53a8edfac8f31372ab899317",
+        "trade_date": "2026-08-25",
+        "official_source": "Kiwoom REST ka20001 (update_wise final 검증본)",
+        "chart_source": "Kiwoom REST ka20006",
+        "official_close": 6742.74,
+        "chart_close": 6742.74,
+        "absolute_difference_pct": 0.0,
+        "tolerance_pct": 0.1
+      },
+      "daily_intraday_close_crosscheck": {
+        "status": "MATCH",
+        "message": "KOSPI ka20006 6,742.74 / ka20005 6,742.74 / 차이 0.0000%",
+        "trade_date": "2026-08-25",
+        "daily_source": "Kiwoom REST ka20006",
+        "intraday_source": "Kiwoom REST ka20005",
+        "daily_close": 6742.74,
+        "intraday_close": 6742.74,
+        "intraday_latest_timestamp": "2026-08-25T15:30:00+09:00",
+        "absolute_difference_pct": 0.0,
+        "tolerance_pct": 0.1
+      },
+      "daily_report_crosscheck": null,
+      "nikkei_official_daily_crosscheck": null,
+      "volume_note": "지수 거래량은 공급자 정의 차이 때문에 상대비교 점수에 사용하지 않음"
+    },
+    "KOSDAQ": {
+      "status": "OK",
+      "can_use_for_decision": true,
+      "issues": [],
+      "history_counts": {
+        "daily": 1800,
+        "weekly": 384,
+        "monthly": 89,
+        "intraday_5m": 2700,
+        "intraday_15m": 937
+      },
+      "latest_complete_bars": {
+        "daily": "2026-08-25",
+        "intraday_15m": "2026-08-25T15:30:00+09:00"
+      },
+      "target_session_bar_counts": {
+        "5m": 78,
+        "15m": 27
+      },
+      "source_audits": [
+        {
+          "instrument": "KOSDAQ",
+          "symbol": "101",
+          "interval": "daily",
+          "source": "Kiwoom REST API",
+          "source_tier": "primary_broker",
+          "api_id": "ka20006",
+          "exchange_name": "KRX",
+          "exchange_timezone": "Asia/Seoul",
+          "requested_base_date": "2026-08-25",
+          "pages": 3,
+          "source_rows": 1800,
+          "usable_rows": 1800,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T00:00:00",
+          "raw_file": "kosdaq_ka20006_daily_20260825.json",
+          "raw_sha256": "20eb15bf25eab0e4dfbc70599792951d87dbf9bfb23013e8281224fe066b4ccc"
+        },
+        {
+          "instrument": "KOSDAQ",
+          "symbol": "101",
+          "interval": "intraday_5m",
+          "source": "Kiwoom REST API",
+          "source_tier": "primary_broker",
+          "api_id": "ka20005",
+          "exchange_name": "KRX",
+          "exchange_timezone": "Asia/Seoul",
+          "requested_base_date": "2026-08-25",
+          "pages": 3,
+          "source_rows": 2700,
+          "usable_rows": 2700,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T15:30:00+09:00",
+          "raw_file": "kosdaq_ka20005_5m_20260825.json",
+          "raw_sha256": "9b09afb059ad94f1328f564f6b5d7ec06e9e8aad8086e88572928dd5ecadbaad"
+        }
+      ],
+      "official_close_crosscheck": null,
+      "daily_intraday_close_crosscheck": {
+        "status": "MATCH",
+        "message": "KOSDAQ ka20006 827.15 / ka20005 827.15 / 차이 0.0000%",
+        "trade_date": "2026-08-25",
+        "daily_source": "Kiwoom REST ka20006",
+        "intraday_source": "Kiwoom REST ka20005",
+        "daily_close": 827.15,
+        "intraday_close": 827.15,
+        "intraday_latest_timestamp": "2026-08-25T15:30:00+09:00",
+        "absolute_difference_pct": 0.0,
+        "tolerance_pct": 0.1
+      },
+      "daily_report_crosscheck": {
+        "trade_date": "2026-08-25",
+        "report_source": "Kiwoom REST ka20009",
+        "chart_source": "Kiwoom REST ka20006",
+        "return_code": 0,
+        "return_msg": "정상적으로 처리되었습니다",
+        "raw_file": "kosdaq_ka20009_daily_report_20260825.json",
+        "raw_sha256": "5eba628782fb8211843afda030d386f0da4ceabee96d4c47c0c52a934084ee6b",
+        "status": "MATCH",
+        "message": "KOSDAQ ka20006 827.15 / ka20009 827.15 / 차이 0.0000%",
+        "chart_close": 827.15,
+        "report_close": 827.15,
+        "absolute_difference_pct": 0.0,
+        "tolerance_pct": 0.1,
+        "row_count": 20
+      },
+      "nikkei_official_daily_crosscheck": null,
+      "volume_note": "지수 거래량은 공급자 정의 차이 때문에 상대비교 점수에 사용하지 않음"
+    },
+    "NIKKEI225": {
+      "status": "OK",
+      "can_use_for_decision": true,
+      "issues": [],
+      "history_counts": {
+        "daily": 2936,
+        "weekly": 627,
+        "monthly": 145,
+        "intraday_5m": 1408,
+        "intraday_15m": 484
+      },
+      "latest_complete_bars": {
+        "daily": "2026-08-25",
+        "intraday_15m": "2026-08-25T15:30:00+09:00"
+      },
+      "target_session_bar_counts": {
+        "5m": 68,
+        "15m": 24
+      },
+      "source_audits": [
+        {
+          "instrument": "NIKKEI225",
+          "symbol": "^N225",
+          "interval": "1d",
+          "source": "Kiwoom REST (KOSPI/KOSDAQ) + Yahoo Finance/Nikkei official EOD crosscheck (Nikkei225)",
+          "source_tier": "mixed_primary_secondary",
+          "exchange_name": "OSA",
+          "exchange_timezone": "Asia/Tokyo",
+          "currency": "JPY",
+          "requested_start": "2014-08-16T00:00:00+09:00",
+          "requested_end_exclusive": "2026-08-26T00:00:00+09:00",
+          "source_rows": 2957,
+          "usable_rows": 2936,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T09:00:00+09:00",
+          "raw_file": "nikkei225_yahoo_1d_20260825.json",
+          "raw_sha256": "6dee5fccf390373bb37625ce5168733951791f0a1355b16c0441731e80404232"
+        },
+        {
+          "instrument": "NIKKEI225",
+          "symbol": "^N225",
+          "interval": "5m",
+          "source": "Kiwoom REST (KOSPI/KOSDAQ) + Yahoo Finance/Nikkei official EOD crosscheck (Nikkei225)",
+          "source_tier": "mixed_primary_secondary",
+          "exchange_name": "OSA",
+          "exchange_timezone": "Asia/Tokyo",
+          "currency": "JPY",
+          "requested_start": "2026-07-25T00:00:00+09:00",
+          "requested_end_exclusive": "2026-08-26T00:00:00+09:00",
+          "source_rows": 1639,
+          "usable_rows": 1429,
+          "duplicate_rows_removed": 0,
+          "invalid_ohlc_rows_removed": 0,
+          "latest_timestamp": "2026-08-25T15:30:00+09:00",
+          "raw_file": "nikkei225_yahoo_5m_20260825.json",
+          "raw_sha256": "416f0d9dc7ff2a8ddf8f708bd5de50dc0e899c7f2a561db6435883c988b7bfe2"
+        }
+      ],
+      "official_close_crosscheck": null,
+      "daily_intraday_close_crosscheck": null,
+      "daily_report_crosscheck": null,
+      "nikkei_official_daily_crosscheck": {
+        "source": "https://indexes.nikkei.co.jp/nkave/historical/nikkei_stock_average_daily_en.csv",
+        "source_tier": "official_eod",
+        "raw_file": "nikkei225_official_daily_20260825.csv",
+        "raw_sha256": "aea7b9c5479572d8a7dfd145bf7505f9d911697ac0a3127f13d17f821df04b9a",
+        "latest_official_date": "2026-08-25",
+        "target_date": "2026-08-25",
+        "status": "MATCH",
+        "message": "Nikkei 공식/Yahoo OHLC 최대 차이 0.000003% (허용 0.02%)",
+        "maximum_difference_pct": 0.0,
+        "tolerance_pct": 0.02,
+        "differences_pct": {
+          "open": 0.0,
+          "high": 0.0,
+          "low": 0.0,
+          "close": 0.0
+        },
+        "official_ohlc": {
+          "open": 65195.26,
+          "high": 65904.24,
+          "low": 64609.47,
+          "close": 65856.43
+        },
+        "secondary_ohlc": {
+          "open": 65195.2617,
+          "high": 65904.2422,
+          "low": 64609.4688,
+          "close": 65856.4297
+        }
+      },
+      "volume_note": "지수 거래량은 공급자 정의 차이 때문에 상대비교 점수에 사용하지 않음"
+    }
+  }
+}

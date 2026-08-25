@@ -1,27 +1,27 @@
 {
-  "as_of": "20260821",
-  "generated_at": "2026-08-21T20:14:53+09:00",
+  "as_of": "20260825",
+  "generated_at": "2026-08-25T22:53:17+09:00",
   "summaries": [
     {
       "market": "KOSPI",
-      "etf_adr_20d": 113.5,
-      "stocks_adr_20d": 104.3,
-      "advance_decline_1d": 40.3,
-      "impulse": "GREEN",
+      "etf_adr_20d": 120.3,
+      "stocks_adr_20d": 114.4,
+      "advance_decline_1d": 262.2,
+      "impulse": "BLUE",
       "judgement": "방어 국면",
-      "fear_greed": 75.7,
+      "fear_greed": 69.4,
       "fear_stage": "GREED",
       "kosdaq_entry_allowed": null
     },
     {
       "market": "KOSDAQ",
-      "etf_adr_20d": 106.6,
-      "stocks_adr_20d": 99.2,
-      "advance_decline_1d": 20.5,
-      "impulse": "RED",
-      "judgement": "방어 국면",
-      "fear_greed": 0.0,
-      "fear_stage": "EXTREME_FEAR",
+      "etf_adr_20d": 113.3,
+      "stocks_adr_20d": 109.2,
+      "advance_decline_1d": 254.5,
+      "impulse": "BLUE",
+      "judgement": "순환매시장이다",
+      "fear_greed": 80.5,
+      "fear_stage": "EXTREME_GREED",
       "kosdaq_entry_allowed": true
     }
   ],
@@ -57,22 +57,386 @@
       "image": "impulse_adr.png"
     },
     {
+      "title": "KOSPI · KOSDAQ · 니케이225 다중 시간대",
+      "description": "국내 양 시장과 니케이의 월봉·주봉·일봉·15분봉 구조 및 동조·괴리",
+      "image": "kospi_kosdaq_nikkei_mtf.png"
+    },
+    {
       "title": "공포·탐욕 지수",
       "description": "KOSPI·KOSDAQ 6개월 심리 흐름",
       "image": "fear_greed.png"
     }
   ],
+  "index_multitimeframe": {
+    "validation": {
+      "status": "OK",
+      "can_use_for_decision": true,
+      "file": "validation_20260825.json"
+    },
+    "assessment": {
+      "conclusion": "KOSPI 중립·박스 · KOSDAQ 중립·박스 · 니케이 확인 KOSPI 상대약세",
+      "higher_timeframe_context": {
+        "monthly": "상승",
+        "weekly": "중립-하락"
+      },
+      "daily_state": "중립-하락",
+      "intraday_state": "상승",
+      "markets": {
+        "KOSPI": {
+          "confirmed_mtf": {
+            "score": 1.5,
+            "state": "중립·박스",
+            "valid_weight_pct": 100.0,
+            "timeframe_conflict": false,
+            "confidence_cap": 100,
+            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+          },
+          "monthly": "상승",
+          "weekly": "중립-하락",
+          "daily": "중립-하락",
+          "intraday_15m": "상승"
+        },
+        "KOSDAQ": {
+          "confirmed_mtf": {
+            "score": -12.0,
+            "state": "중립·박스",
+            "valid_weight_pct": 100.0,
+            "timeframe_conflict": false,
+            "confidence_cap": 100,
+            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+          },
+          "monthly": "중립·박스",
+          "weekly": "하락",
+          "daily": "중립-하락",
+          "intraday_15m": "상승"
+        }
+      },
+      "nikkei_confirmation": "KOSPI 상대약세",
+      "objective_supports": [
+        5262.77,
+        5262.77
+      ],
+      "objective_resistances": [
+        7216.62,
+        9385.59
+      ],
+      "kosdaq_objective_supports": [
+        630.99,
+        630.99
+      ],
+      "kosdaq_objective_resistances": [
+        879.29,
+        1136.13
+      ],
+      "invalidation_conditions": [
+        "세 지수 최신 거래일 불일치 시 상대비교는 마지막 공통 거래일까지 제한",
+        "60일 상관 0.3 미만 또는 공통 표본 부족 시 니케이 확인 가중치 비활성",
+        "시장 폭·ADR·수급·선물옵션과 충돌하면 니케이만으로 결론을 뒤집지 않음"
+      ],
+      "limitations": [
+        "Yahoo Finance 보조 원천 사용",
+        "미완성 주봉·월봉은 표시하되 확정 점수에서 제외",
+        "엘리어트 파동·눈대중 추세선은 자동 점수에서 제외"
+      ]
+    },
+    "cross_market": {
+      "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
+      "common_daily_observations": 1700,
+      "latest_common_daily_date": "2026-08-25",
+      "same_day": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.8618,
+          "same_direction_pct": 90.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.8488,
+          "same_direction_pct": 85.0
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": 0.8356,
+          "same_direction_pct": 82.5
+        }
+      },
+      "nikkei_tminus1_to_kospi": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.0027,
+          "same_direction_pct": 55.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": -0.1288,
+          "same_direction_pct": 48.33
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": -0.1105,
+          "same_direction_pct": 51.67
+        }
+      },
+      "relative_strength": {
+        "5d": {
+          "kospi_return_pct": -1.85,
+          "nikkei_return_pct": -2.378,
+          "kospi_minus_nikkei_pct_points": 0.528
+        },
+        "20d": {
+          "kospi_return_pct": 0.779,
+          "nikkei_return_pct": 1.927,
+          "kospi_minus_nikkei_pct_points": -1.148
+        },
+        "60d": {
+          "kospi_return_pct": -16.213,
+          "nikkei_return_pct": 1.324,
+          "kospi_minus_nikkei_pct_points": -17.537
+        }
+      },
+      "beta_adjusted_residual": {
+        "observations": 60,
+        "beta_60d": 2.1097,
+        "latest_residual_zscore": -0.043
+      },
+      "intraday_alignment": {
+        "common_15m_bars": 24,
+        "return_correlation": 0.6568,
+        "kospi_session_return_pct": 3.164,
+        "nikkei_session_return_pct": 1.014,
+        "kospi_minus_nikkei_pct_points": 2.15
+      },
+      "state": "KOSPI 상대약세",
+      "role": "confirmation_only",
+      "confirmation_active": true,
+      "modifier_points": 0,
+      "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
+    },
+    "market_comparisons": {
+      "KOSPI_NIKKEI225": {
+        "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
+        "common_daily_observations": 1700,
+        "latest_common_daily_date": "2026-08-25",
+        "same_day": {
+          "20d": {
+            "observations": 20,
+            "correlation": 0.8618,
+            "same_direction_pct": 90.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": 0.8488,
+            "same_direction_pct": 85.0
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": 0.8356,
+            "same_direction_pct": 82.5
+          }
+        },
+        "nikkei_tminus1_to_kospi": {
+          "20d": {
+            "observations": 20,
+            "correlation": 0.0027,
+            "same_direction_pct": 55.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": -0.1288,
+            "same_direction_pct": 48.33
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": -0.1105,
+            "same_direction_pct": 51.67
+          }
+        },
+        "relative_strength": {
+          "5d": {
+            "kospi_return_pct": -1.85,
+            "nikkei_return_pct": -2.378,
+            "kospi_minus_nikkei_pct_points": 0.528
+          },
+          "20d": {
+            "kospi_return_pct": 0.779,
+            "nikkei_return_pct": 1.927,
+            "kospi_minus_nikkei_pct_points": -1.148
+          },
+          "60d": {
+            "kospi_return_pct": -16.213,
+            "nikkei_return_pct": 1.324,
+            "kospi_minus_nikkei_pct_points": -17.537
+          }
+        },
+        "beta_adjusted_residual": {
+          "observations": 60,
+          "beta_60d": 2.1097,
+          "latest_residual_zscore": -0.043
+        },
+        "intraday_alignment": {
+          "common_15m_bars": 24,
+          "return_correlation": 0.6568,
+          "kospi_session_return_pct": 3.164,
+          "nikkei_session_return_pct": 1.014,
+          "kospi_minus_nikkei_pct_points": 2.15
+        },
+        "state": "KOSPI 상대약세",
+        "role": "confirmation_only",
+        "confirmation_active": true,
+        "modifier_points": 0,
+        "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
+      },
+      "KOSDAQ_NIKKEI225": {
+        "pair": [
+          "KOSDAQ",
+          "NIKKEI225"
+        ],
+        "common_daily_observations": 1700,
+        "latest_common_daily_date": "2026-08-25",
+        "same_day": {
+          "20d": {
+            "observations": 20,
+            "correlation": 0.7375,
+            "same_direction_pct": 80.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": 0.6165,
+            "same_direction_pct": 76.67
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": 0.6486,
+            "same_direction_pct": 78.33
+          }
+        },
+        "nikkei225_tminus1_to_kosdaq": {
+          "20d": {
+            "observations": 20,
+            "correlation": 0.1158,
+            "same_direction_pct": 55.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": -0.1789,
+            "same_direction_pct": 43.33
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": -0.0923,
+            "same_direction_pct": 47.5
+          }
+        },
+        "relative_strength": {
+          "5d": {
+            "kosdaq_return_pct": -0.845,
+            "nikkei225_return_pct": -2.378,
+            "first_minus_second_pct_points": 1.533
+          },
+          "20d": {
+            "kosdaq_return_pct": 10.549,
+            "nikkei225_return_pct": 1.927,
+            "first_minus_second_pct_points": 8.622
+          },
+          "60d": {
+            "kosdaq_return_pct": -29.455,
+            "nikkei225_return_pct": 1.324,
+            "first_minus_second_pct_points": -30.779
+          }
+        },
+        "intraday_alignment": {
+          "common_15m_bars": 24,
+          "return_correlation": 0.5881,
+          "kosdaq_session_return_pct": 2.506,
+          "nikkei225_session_return_pct": 1.014
+        },
+        "state": "NIKKEI225 상대강세",
+        "role": "cross_market_confirmation_only",
+        "rule": "동조·괴리 확인값이며 단독으로 국내시장 방향을 뒤집지 않음"
+      },
+      "KOSPI_KOSDAQ": {
+        "pair": [
+          "KOSPI",
+          "KOSDAQ"
+        ],
+        "common_daily_observations": 1800,
+        "latest_common_daily_date": "2026-08-25",
+        "same_day": {
+          "20d": {
+            "observations": 20,
+            "correlation": 0.7261,
+            "same_direction_pct": 80.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": 0.7111,
+            "same_direction_pct": 73.33
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": 0.7598,
+            "same_direction_pct": 70.83
+          }
+        },
+        "kosdaq_tminus1_to_kospi": {
+          "20d": {
+            "observations": 20,
+            "correlation": -0.0553,
+            "same_direction_pct": 60.0
+          },
+          "60d": {
+            "observations": 60,
+            "correlation": -0.1954,
+            "same_direction_pct": 48.33
+          },
+          "120d": {
+            "observations": 120,
+            "correlation": -0.2277,
+            "same_direction_pct": 47.5
+          }
+        },
+        "relative_strength": {
+          "5d": {
+            "kospi_return_pct": -1.85,
+            "kosdaq_return_pct": -0.845,
+            "first_minus_second_pct_points": -1.005
+          },
+          "20d": {
+            "kospi_return_pct": -0.193,
+            "kosdaq_return_pct": 8.144,
+            "first_minus_second_pct_points": -8.337
+          },
+          "60d": {
+            "kospi_return_pct": -17.624,
+            "kosdaq_return_pct": -25.101,
+            "first_minus_second_pct_points": 7.478
+          }
+        },
+        "intraday_alignment": {
+          "common_15m_bars": 27,
+          "return_correlation": 0.8698,
+          "kospi_session_return_pct": 3.164,
+          "kosdaq_session_return_pct": 2.506
+        },
+        "state": "혼조·중립",
+        "role": "domestic_relative_strength",
+        "rule": "동조·괴리 확인값이며 단독으로 국내시장 방향을 뒤집지 않음"
+      }
+    },
+    "analysis_file": "kospi_kosdaq_nikkei_mtf_analysis.json",
+    "validation_file": "kospi_kosdaq_nikkei_mtf_validation.json"
+  },
   "data_bundle": {
     "file": "market_data_bundle_latest.zip",
-    "as_of": "20260821",
-    "generated_at": "2026-08-21T20:14:53+09:00",
-    "file_count": 30,
-    "bytes": 666576,
-    "sha256": "6fcea0ba9c0aadc7ea3ab39969afed993d0e62daadf69265c8410298efd6c4c8"
+    "as_of": "20260825",
+    "generated_at": "2026-08-25T22:53:17+09:00",
+    "file_count": 61,
+    "bytes": 5136552,
+    "sha256": "9e6a09fd6713a31e4d106810e90ecae7b6901d5c1de55fad04e9220e7119a9df"
   },
   "downloads": [
     {
-      "title": "GPT용 전체 시장 데이터 ZIP (30개 파일)",
+      "title": "GPT용 전체 시장 데이터 ZIP (61개 파일)",
       "file": "market_data_bundle_latest.zip"
     },
     {
@@ -94,6 +458,26 @@
     {
       "title": "KOSDAQ 20일 ADR CSV",
       "file": "kosdaq_adr.csv"
+    },
+    {
+      "title": "KOSPI·KOSDAQ·니케이225 다중 시간대 분석 JSON",
+      "file": "kospi_kosdaq_nikkei_mtf_analysis.json"
+    },
+    {
+      "title": "KOSPI·KOSDAQ·니케이225 데이터 검증 JSON",
+      "file": "kospi_kosdaq_nikkei_mtf_validation.json"
+    },
+    {
+      "title": "KOSPI 다중 시간대 차트",
+      "file": "kospi_mtf.png"
+    },
+    {
+      "title": "KOSDAQ 다중 시간대 차트",
+      "file": "kosdaq_mtf.png"
+    },
+    {
+      "title": "니케이225 다중 시간대 차트",
+      "file": "nikkei225_mtf.png"
     }
   ]
 }
