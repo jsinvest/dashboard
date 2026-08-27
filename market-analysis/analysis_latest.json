@@ -10,9 +10,9 @@
   "data_validation": {
     "market_date": "20260827",
     "session": "CLOSED",
-    "run_all_completion": "1~9단계의 20260827 필수 산출물을 확인. 10단계 WISE 종가 확정과 11단계 index_multitimeframe은 아직 미완료이므로 전체 배치 완료로 판정하지 않음",
+    "run_all_completion": "1~9단계의 20260827 필수 산출물을 확인. 10단계 WISE 종가 확정은 EOD_CONFIRMED로 완료됐고 11단계 index_multitimeframe은 아직 미완료이므로 전체 배치 완료로 판정하지 않음",
     "index_validation": "PENDING · index_multitimeframe latest.json·validation_latest.json은 20260827 자료가 없어 월봉·주봉·일봉·15분봉과 니케이 동조를 이번 예비판에 사용하지 않음",
-    "index_crosscheck": "KOSPI 6,912.37(+1.53%)·KOSDAQ 837.65(+1.30%)은 마감 기사로 확인. 20260827 WISE final과 국내지수 다중 시간대 교차검증은 20시 이후 예정",
+    "index_crosscheck": "KOSPI 6,912.37(+1.53%)은 20260827 WISE final의 키움 REST ka20001 확정값과 일치. KOSDAQ 837.65(+1.30%)은 마감 기사로 확인했으며 국내지수 다중 시간대 교차검증은 아직 미완료",
     "breadth_universe": "20260827 · KOSPI 2,483종목(상승 1,254·하락 1,096·보합 133), KOSDAQ 1,824종목(상승 840·하락 794·보합 190) · 양 시장 Impulse BLUE",
     "adr": "20일 전체종목 ADR KOSPI 136.92, KOSDAQ 131.16 · ETF ADR KOSPI 155.51, KOSDAQ 134.41",
     "fear_greed": "KOSPI 78.23 EXTREME_GREED, KOSDAQ 90.32 EXTREME_GREED",
@@ -20,12 +20,12 @@
     "sector_leader_file": "sector_stock_leaders_20260827.xlsx · 55개 섹터·563종목행 · 2차전지·전력망·ESS·반도체 후보 비교",
     "scanner_file": "scan_result_20260827_164516.csv · 74종목(KOSPI 47·KOSDAQ 27) · S 38·B 14·C 15·대기 7 · 원신호 파일 존재",
     "candidate_review": "섹터·주도주·V2 스캔을 합쳐 18종목을 1차 후보로 비교하고 9종목을 예비 최종으로 선정. 새 일봉 재수집은 하지 않고 당일 스캐너와 섹터 파일의 확정값만 사용",
-    "cash_monthly": "PENDING · 20260827 WISE EOD_CONFIRMED 전이므로 월간 PRIMARY를 새로 산출하지 않음",
-    "cash_staged": "PENDING · 20260827 단계형 목표를 새로 산출하지 않음",
-    "cash_final_reference": "미적용 · 전일 현금비중을 20260827 값으로 재사용하지 않음",
+    "cash_monthly": "20260827 · status=OK · 종료코드 0 · PRIMARY 현금 0%·위험자산 100% · action=HOLD",
+    "cash_staged": "20260827 · status=OK · 종료코드 0 · DEFENSE_HOLD_WAITING_MONTHLY_REENTRY · 현금 10%·위험자산 90% · action=HOLD",
+    "cash_final_reference": "20260827 확정 최종 참고 현금 10%·위험자산 최대 90% · 월간 0%와 단계형 10% 중 보수적 값 적용 · X3·RV 보조 경보 없음",
     "us_sector_file": "이번 예비 게시에는 20260827 국내 1~9단계 자료와 확인된 뉴스만 사용. 8월 27일 미국 정규장 마감 자료는 아직 없음",
     "derivatives_current_day": "20260827 선물옵션 EOD 폴더는 존재하지만 이번 예비 게시 과정에서 전체 원천·OCR·만기 검증을 수행하지 않아 방향과 종목 순위에 사용하지 않음",
-    "duplicates_missing": "스캐너 종목 중복 0. 핵심 미완료는 20260827 WISE final과 index_multitimeframe 2개이며 명시적으로 비활성화"
+    "duplicates_missing": "스캐너 종목 중복 0. WISE 26개 업종과 데이터.xlsx 최신행은 중복·결측·비양수 값 없이 검증 완료. 핵심 미완료는 20260827 index_multitimeframe 1개이며 명시적으로 비활성화"
   },
   "executive_summary": [
     "예비 결론은 단기 상방 우세지만 추격보다 눌림 확인이 유리한 과열 국면입니다. KOSPI를 KOSDAQ보다 조금 우선합니다.",
@@ -123,9 +123,9 @@
     "원익IPS·티에프이·두산테스나는 반도체 후보지만 거래대금 또는 수급 확인이 부족합니다.",
     "바이오·게임·화장품·보험은 당일 시장과 섹터 방향이 맞지 않아 종목 수를 채우지 않았습니다."
   ],
-  "trading_rule": "예비 관심종목 목록이며 현금비중과 종목별 배분은 적용하지 않았습니다. TP·SL은 선정 조건으로 사용하지 않았습니다. 시초 +3% 이상 갭 또는 전일 급등 종목은 첫 눌림·VWAP 재회복·거래대금 유지 전 추격하지 않습니다.",
+  "trading_rule": "최종 참고 한도는 현금 10%·위험자산 최대 90%이며 자동 주문 지시가 아닙니다. 예비 관심종목 목록은 이 위험자산 한도 안에서 참고하고, TP·SL은 선정 조건으로 사용하지 않았습니다. 시초 +3% 이상 갭 또는 전일 급등 종목은 첫 눌림·VWAP 재회복·거래대금 유지 전 추격하지 않습니다.",
   "risk_flags": [
-    "20260827 WISE EOD_CONFIRMED와 현금비중 계산이 아직 없어 전일 비중을 재사용하지 않았습니다.",
+    "현금비중은 20260827 WISE EOD_CONFIRMED 기준 월간 0%·단계형 10%로 계산돼 최종 현금 10%·위험자산 90%를 적용하며, X3·RV 보조 경보는 없습니다.",
     "20260827 index_multitimeframe 11단계가 없어 다중 시간대와 지지·저항을 사용하지 못했습니다.",
     "KOSPI·KOSDAQ 공포탐욕 78.23·90.32, 전체종목 ADR20 136.92·131.16으로 되돌림 위험이 큽니다.",
     "상승/하락 비율이 1.144·1.058로 지수 상승만큼 종목 확산이 강하지 않았습니다.",
@@ -159,5 +159,5 @@
       "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
     ]
   },
-  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. 10단계 WISE 종가 확정과 11단계 다중 시간대 자료는 없어 비활성화했고, 현금비중과 지수 지지·저항을 제시하지 않았습니다. 20시 이후 최종 검증 전의 예비 게시물입니다."
+  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. WISE 공식 종가 26개가 반영된 20260827 EOD_CONFIRMED 자료로 월간·단계형 현금비중을 계산했고 두 실행 모두 status=OK·종료코드 0이며 최종 참고 한도는 현금 10%·위험자산 90%입니다. 11단계 다중 시간대 자료는 아직 없어 지수 지지·저항은 비활성화한 예비 게시물입니다."
 }
