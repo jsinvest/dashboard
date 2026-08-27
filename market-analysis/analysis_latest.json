@@ -2,61 +2,61 @@
   "as_of": "20260827",
   "target_session": "20260828",
   "source_generated_at": "2026-08-27T16:45:16+09:00",
-  "generated_at": "2026-08-27T18:56:53+09:00",
-  "headline": "예비 결론: 단기 상방 우세지만 과열 경고 · KOSPI 상대 우위 · 2차전지·ESS와 전력기기 우선, 반도체는 거래 확산 확인",
-  "market_preference": "KOSPI 우선 · KOSDAQ은 종목별 선별 · 시초 급등 추격 금지",
-  "stance": "PRELIMINARY_RISK_ON_WITH_OVERHEAT",
-  "confidence": "중간 이하 · 10단계 WISE 종가 확정과 11단계 다중 시간대 검증 전 예비판",
+  "generated_at": "2026-08-27T20:23:00+09:00",
+  "headline": "최종 결론: KOSPI·KOSDAQ 중립·박스 · KOSPI 상대 우위 · KOSPI 6,866 지지와 6,970~6,996 돌파, KOSDAQ 829 지지와 840 돌파 확인",
+  "market_preference": "KOSPI 우선 · 2차전지·전력기기 선별 · KOSDAQ은 거래대금 확인형만",
+  "stance": "NEUTRAL_RANGE_WITH_SELECTIVE_LEADERS",
+  "confidence": "중간 · 10단계 WISE EOD 확정과 11단계 다중 시간대 검증 완료",
   "data_validation": {
     "market_date": "20260827",
     "session": "CLOSED",
-    "run_all_completion": "1~9단계의 20260827 필수 산출물을 확인. 10단계 WISE 종가 확정은 EOD_CONFIRMED로 완료됐고 11단계 index_multitimeframe은 아직 미완료이므로 전체 배치 완료로 판정하지 않음",
-    "index_validation": "PENDING · index_multitimeframe latest.json·validation_latest.json은 20260827 자료가 없어 월봉·주봉·일봉·15분봉과 니케이 동조를 이번 예비판에 사용하지 않음",
-    "index_crosscheck": "KOSPI 6,912.37(+1.53%)은 20260827 WISE final의 키움 REST ka20001 확정값과 일치. KOSDAQ 837.65(+1.30%)은 마감 기사로 확인했으며 국내지수 다중 시간대 교차검증은 아직 미완료",
+    "run_all_completion": "20260827의 1~9단계 산출물과 10단계 WISE EOD_CONFIRMED, 11단계 index_multitimeframe 종료코드 0을 모두 확인",
+    "index_validation": "20260827 · status=OK · can_use_for_decision=true · KOSPI·KOSDAQ·니케이 일봉과 15분봉 최신일 일치 · 중복·유효 OHLC 제거 0",
+    "index_crosscheck": "KOSPI ka20001·ka20006·ka20005 종가 6,912.37 완전 일치, KOSDAQ ka20006·ka20005·ka20009 종가 837.65 완전 일치, 니케이 공식 EOD·Yahoo OHLC 최대 차이 0.000006%",
     "breadth_universe": "20260827 · KOSPI 2,483종목(상승 1,254·하락 1,096·보합 133), KOSDAQ 1,824종목(상승 840·하락 794·보합 190) · 양 시장 Impulse BLUE",
     "adr": "20일 전체종목 ADR KOSPI 136.92, KOSDAQ 131.16 · ETF ADR KOSPI 155.51, KOSDAQ 134.41",
     "fear_greed": "KOSPI 78.23 EXTREME_GREED, KOSDAQ 90.32 EXTREME_GREED",
     "sector_file": "sector_rs_20260827.xlsx · 국내 A급 2개(전력·2차전지), B급 3개(방산·반도체·반도체전공정)",
     "sector_leader_file": "sector_stock_leaders_20260827.xlsx · 55개 섹터·563종목행 · 2차전지·전력망·ESS·반도체 후보 비교",
     "scanner_file": "scan_result_20260827_164516.csv · 74종목(KOSPI 47·KOSDAQ 27) · S 38·B 14·C 15·대기 7 · 원신호 파일 존재",
-    "candidate_review": "섹터·주도주·V2 스캔을 합쳐 18종목을 1차 후보로 비교하고 9종목을 예비 최종으로 선정. 새 일봉 재수집은 하지 않고 당일 스캐너와 섹터 파일의 확정값만 사용",
+    "candidate_review": "섹터·주도주·V2 스캔을 합쳐 18종목을 1차 후보로 비교하고 8종목을 최종 선정. 11단계의 KOSDAQ 주봉 하락과 과열도를 반영해 서진시스템을 최종에서 제외",
     "cash_monthly": "20260827 · status=OK · 종료코드 0 · PRIMARY 현금 0%·위험자산 100% · action=HOLD",
     "cash_staged": "20260827 · status=OK · 종료코드 0 · DEFENSE_HOLD_WAITING_MONTHLY_REENTRY · 현금 10%·위험자산 90% · action=HOLD",
     "cash_final_reference": "20260827 확정 최종 참고 현금 10%·위험자산 최대 90% · 월간 0%와 단계형 10% 중 보수적 값 적용 · X3·RV 보조 경보 없음",
-    "us_sector_file": "이번 예비 게시에는 20260827 국내 1~9단계 자료와 확인된 뉴스만 사용. 8월 27일 미국 정규장 마감 자료는 아직 없음",
-    "derivatives_current_day": "20260827 선물옵션 EOD 폴더는 존재하지만 이번 예비 게시 과정에서 전체 원천·OCR·만기 검증을 수행하지 않아 방향과 종목 순위에 사용하지 않음",
-    "duplicates_missing": "스캐너 종목 중복 0. WISE 26개 업종과 데이터.xlsx 최신행은 중복·결측·비양수 값 없이 검증 완료. 핵심 미완료는 20260827 index_multitimeframe 1개이며 명시적으로 비활성화"
+    "us_sector_file": "이번 최종 게시에는 20260827 국내 자료와 확인된 뉴스만 사용. 8월 27일 미국 정규장 마감 자료는 아직 없음",
+    "derivatives_current_day": "20260827 선물옵션 EOD 폴더는 존재하지만 이번 최종 게시 과정에서 전체 원천·OCR·만기 검증을 수행하지 않아 방향과 종목 순위에 사용하지 않음",
+    "duplicates_missing": "스캐너 종목 중복 0. WISE 26개 업종과 데이터.xlsx 최신행은 중복·결측·비양수 값 없이 검증 완료. 20260827 index_multitimeframe도 status=OK·can_use_for_decision=true로 검증 완료"
   },
   "executive_summary": [
-    "예비 결론은 단기 상방 우세지만 추격보다 눌림 확인이 유리한 과열 국면입니다. KOSPI를 KOSDAQ보다 조금 우선합니다.",
+    "최종 결론은 KOSPI·KOSDAQ 모두 중립·박스이며, 상대적으로 KOSPI를 우선하는 선별 주도주 장세입니다.",
     "KOSPI는 6,912.37(+1.53%), KOSDAQ은 837.65(+1.30%)로 마감했습니다.",
     "상승/하락 비율은 KOSPI 1.144, KOSDAQ 1.058입니다. 지수 상승과 달리 시장 전체 확산은 강한 일방 상승장 수준이 아닙니다.",
     "전체종목 ADR20은 KOSPI 136.92, KOSDAQ 131.16이고 공포탐욕은 각각 78.23·90.32로 두 시장 모두 단기 과열 경고가 큽니다.",
+    "다중 시간대 점수는 KOSPI -9.8, KOSDAQ -12.8로 모두 중립·박스입니다. KOSPI는 월봉 상승·주봉/일봉 중립-하락·15분봉 박스이고 KOSDAQ은 월봉 박스·주봉 하락·일봉 중립-하락·15분봉 상승입니다.",
+    "KOSPI는 6,866 지지 후 6,970~6,996 돌파 시 7,216 확인, 6,866 이탈 시 6,664 재지지를 봅니다. KOSDAQ은 829 지지와 840 돌파가 우선이며 이후 879를 확인합니다.",
+    "KOSPI와 니케이는 동일일 60일 상관 0.849·방향 일치율 83.33%지만 Nikkei(t-1)→KOSPI(t) 60일 상관은 -0.138로 선행 예측력은 확인되지 않았습니다.",
     "국내 A급 섹터는 전력과 2차전지입니다. 누적 분석에서는 2차전지가 5관측 지속성 80%·누적점수 70.3으로 1위, 전력망은 지속성 60%·누적점수 56.7입니다.",
-    "삼성SDI·LG에너지솔루션은 2차전지·ESS 섹터와 V2 신호가 동시에 정렬됐고, 에코프로는 KOSDAQ 후보 중 당일·5일·20일 수급 균형이 가장 좋았습니다.",
-    "LS ELECTRIC은 수급 백분위 99.2·97.4·100과 거래대금 증가가 확인됐지만 당일 급등으로 첫 눌림 확인형입니다.",
-    "삼성전자·SK하이닉스는 엔비디아 실적 효과의 국내 대형 반도체 확인 종목이지만 반도체 섹터는 거래량 부족 B급입니다.",
-    "KOSDAQ은 공포탐욕 90.32와 약한 상승/하락 비율 때문에 종목 수를 줄였습니다. 에코프로·솔브레인·심텍·서진시스템만 조건부로 남겼습니다.",
-    "현금비중과 TP·SL은 선정에 사용하지 않았습니다. 10·11단계 완료 후 방향·지지저항·종목 순위를 다시 검증합니다."
+    "LG에너지솔루션을 당일 급등 부담이 더 큰 삼성SDI보다 1순위로 올렸습니다. 에코프로는 KOSDAQ 후보 중 수급 균형이 가장 좋지만 KOSDAQ 주봉 하락 때문에 조건부입니다.",
+    "서진시스템은 ESS 지속성 20%와 당일 +10.89% 과열을 반영해 최종 9개에서 제외했습니다. 최종 참고 한도는 현금 10%·위험자산 90%이며 TP·SL은 선정 조건으로 사용하지 않았습니다."
   ],
   "market_views": [
     {
       "market": "KOSPI",
-      "view": "단기 상방 우세·과열",
-      "evidence": ["종가 +1.53%, 상승/하락 1.144, 전체종목 ADR20 136.92, Impulse BLUE", "전력·2차전지 A급과 대형 2차전지·전력기기 거래대금 확대"],
-      "action": "갭 추격보다 전일 종가·장중 VWAP 재지지 확인. 2차전지와 전력기기에서 거래대금이 유지되는 종목을 우선"
+      "view": "중립·박스 · 상대 우위",
+      "evidence": ["다중 시간대 -9.8: 월봉 상승·주봉/일봉 중립-하락·15분봉 박스", "종가 +1.53%, 상승/하락 1.144, 전체종목 ADR20 136.92, Impulse BLUE"],
+      "action": "6,866 지지와 6,970~6,996 돌파를 확인. 돌파 전에는 2차전지·전력기기 눌림형만 우선"
     },
     {
       "market": "KOSDAQ",
-      "view": "상방이나 고과열·선별 종목장",
-      "evidence": ["종가 +1.30%지만 상승/하락 1.058로 확산은 제한적", "전체종목 ADR20 131.16·공포탐욕 90.32 EXTREME_GREED"],
-      "action": "에코프로·ESS·반도체 소부장 중 거래대금 증가 종목만 대응. 시초 강세 후 VWAP 이탈 시 후보 수 축소"
+      "view": "중립·박스 · 고과열 선별",
+      "evidence": ["다중 시간대 -12.8: 월봉 박스·주봉 하락·일봉 중립-하락·15분봉 상승", "종가 +1.30%지만 상승/하락 1.058, ADR20 131.16·공포탐욕 90.32"],
+      "action": "829 지지와 840 돌파 전까지 종목 수를 줄임. 돌파 시 879 확인, 829 이탈 시 816 재지지 확인"
     },
     {
       "market": "니케이225·다중 시간대",
-      "view": "판단 대기",
-      "evidence": ["20260827 index_multitimeframe 11단계가 아직 생성되지 않음"],
-      "action": "20시 이후 KOSPI·KOSDAQ·니케이 월봉·주봉·일봉·15분봉과 동조·괴리를 검증한 뒤 최종 방향을 갱신"
+      "view": "확인값 혼조·중립",
+      "evidence": ["니케이 다중 시간대 +12.0: 월봉·주봉 상승, 일봉 중립-하락, 15분봉 박스", "KOSPI와 동일일 60일 상관 0.849·방향 일치율 83.33%, 전일→당일 60일 상관 -0.138"],
+      "action": "65,783 지지와 66,511~66,955 돌파를 확인하되 국내 방향을 단독으로 뒤집는 신호로 사용하지 않음"
     }
   ],
   "cumulative_context": {
@@ -64,14 +64,14 @@
     "kosdaq_breadth_ratios": "당일 1.058 · ADLine -151·ADLine20 204·ADLine30 89",
     "adr20": "KOSPI 전체종목 136.92·ETF 155.51, KOSDAQ 전체종목 131.16·ETF 134.41",
     "sector_persistence": "5관측 기준 2차전지 80%·전력망 60%·반도체 60%·ESS 20%",
-    "interpretation": "KOSPI는 ADLine과 지수 강도가 함께 우위입니다. KOSDAQ도 반등했지만 당일 확산과 누적 ADLine이 약하고 과열도가 더 높아 종목별 순환매로 제한합니다."
+    "interpretation": "KOSPI는 시장 폭과 다중 시간대 점수에서 상대 우위지만 추세 확정은 아닙니다. KOSDAQ은 15분봉 반등에도 주봉 하락·고과열이 남아 종목별 순환매로 제한합니다. 니케이는 동일일 동조는 높지만 선행성은 약해 확인값으로만 사용합니다."
   },
   "derivatives_overlay": {
     "date": "20260827",
-    "status": "NOT_AUDITED_FOR_PRELIMINARY_POST",
+    "status": "NOT_AUDITED_FOR_FINAL_POST",
     "eod_files": 86,
     "validation_warnings": 0,
-    "assessment": "당일 EOD 폴더의 파일 86개 존재만 확인했으며 원천 화면·OCR·상품·만기·누적 장부를 이번 작업에서 검증하지 않았습니다. 파생 방향은 예비 시장 방향과 종목 순위에 반영하지 않았습니다."
+    "assessment": "당일 EOD 폴더의 파일 86개 존재만 확인했으며 원천 화면·OCR·상품·만기·누적 장부를 이번 작업에서 검증하지 않았습니다. 파생 방향은 최종 시장 방향과 종목 순위에 반영하지 않았습니다."
   },
   "strong_sectors": [
     {"name":"2차전지","reason":"국내 섹터 A급·당일 평균 +5.39%·5관측 지속성 80%·누적점수 70.3. 삼성SDI·LG에너지솔루션·에코프로의 가격과 거래대금 확산 확인"},
@@ -85,19 +85,19 @@
     "금융은 평균 -0.46%, 보험 세부 섹터도 평균 -1.93%라 전일 보험 우선순위를 해제했습니다."
   ],
   "candidate_stocks": [
-    {"market":"KOSPI","code":"006400","name":"삼성SDI","sector":"2차전지","stage":"예비 최종","evidence":"주도점수 89.7·당일 +10.27%·거래대금 2.45배·V2 S 가격40/120+PP","script_signal":"V2 S · 가격40/120·Pocket Pivot","chart":"569,000원·10일선/20일선 위·수급 99.2/88.9/69.6","data_limit":"전체 공통필터 MA역배열·당일 급등","chase_risk":"높음"},
-    {"market":"KOSPI","code":"373220","name":"LG에너지솔루션","sector":"2차전지·ESS","stage":"예비 최종","evidence":"ESS 주도점수 74.6·당일 +5.70%·거래대금 1.33배","script_signal":"V2 S · 삼각수렴+Pocket Pivot","chart":"370,500원·10일선/20일선 위·수급 90.9/73.5/55.9","data_limit":"전체 공통필터 MA역배열","chase_risk":"중간"},
-    {"market":"KOSPI","code":"010120","name":"LS ELECTRIC","sector":"전력기기·전력망","stage":"예비 최종","evidence":"전력망 1위·주도점수 80.1·당일 +8.44%·거래대금 1.53배","script_signal":"V2 B · Pocket Pivot","chart":"219,500원·10일선/20일선 위·수급 99.2/97.4/100","data_limit":"전체 공통필터 MA역배열·당일 급등","chase_risk":"높음"},
-    {"market":"KOSPI","code":"005930","name":"삼성전자","sector":"AI 반도체","stage":"예비 최종","evidence":"V2 S 삼각수렴·20일 수급 89.2·엔비디아 실적 연동 대형주","script_signal":"V2 S · 삼각수렴","chart":"266,000원·거래대금 0.6배·수급 67.8/40.2/89.2","data_limit":"전체 공통필터 MA역배열·당일 거래 확산 부족","chase_risk":"중간"},
-    {"market":"KOSPI","code":"000660","name":"SK하이닉스","sector":"AI 반도체","stage":"예비 최종","evidence":"반도체 대표주·당일 +1.66%·거래대금 4조9,980.6억원","script_signal":"V2 당일 신호 없음·뉴스·섹터 비교 후보","chart":"10일선/20일선 위·시장대비 RS +0.56%p","data_limit":"거래대금 20일 평균의 0.59배","chase_risk":"낮음"},
+    {"market":"KOSPI","code":"006400","name":"삼성SDI","sector":"2차전지","stage":"최종","evidence":"주도점수 89.7·당일 +10.27%·거래대금 2.45배·V2 S 가격40/120+PP","script_signal":"V2 S · 가격40/120·Pocket Pivot","chart":"569,000원·10일선/20일선 위·수급 99.2/88.9/69.6","data_limit":"전체 공통필터 MA역배열·당일 급등","chase_risk":"높음"},
+    {"market":"KOSPI","code":"373220","name":"LG에너지솔루션","sector":"2차전지·ESS","stage":"최종","evidence":"ESS 주도점수 74.6·당일 +5.70%·거래대금 1.33배","script_signal":"V2 S · 삼각수렴+Pocket Pivot","chart":"370,500원·10일선/20일선 위·수급 90.9/73.5/55.9","data_limit":"전체 공통필터 MA역배열","chase_risk":"중간"},
+    {"market":"KOSPI","code":"010120","name":"LS ELECTRIC","sector":"전력기기·전력망","stage":"최종","evidence":"전력망 1위·주도점수 80.1·당일 +8.44%·거래대금 1.53배","script_signal":"V2 B · Pocket Pivot","chart":"219,500원·10일선/20일선 위·수급 99.2/97.4/100","data_limit":"전체 공통필터 MA역배열·당일 급등","chase_risk":"높음"},
+    {"market":"KOSPI","code":"005930","name":"삼성전자","sector":"AI 반도체","stage":"최종","evidence":"V2 S 삼각수렴·20일 수급 89.2·엔비디아 실적 연동 대형주","script_signal":"V2 S · 삼각수렴","chart":"266,000원·거래대금 0.6배·수급 67.8/40.2/89.2","data_limit":"전체 공통필터 MA역배열·당일 거래 확산 부족","chase_risk":"중간"},
+    {"market":"KOSPI","code":"000660","name":"SK하이닉스","sector":"AI 반도체","stage":"최종","evidence":"반도체 대표주·당일 +1.66%·거래대금 4조9,980.6억원","script_signal":"V2 당일 신호 없음·뉴스·섹터 비교 후보","chart":"10일선/20일선 위·시장대비 RS +0.56%p","data_limit":"거래대금 20일 평균의 0.59배","chase_risk":"낮음"},
     {"market":"KOSPI","code":"003670","name":"포스코퓨처엠","sector":"2차전지","stage":"1차 후보","evidence":"주도점수 87.8·당일 +9.07%·거래대금 2.20배","script_signal":"섹터 주도주 비교","chart":"10일선/20일선 위","data_limit":"당일 급등·수급점수 9.1","chase_risk":"높음"},
     {"market":"KOSPI","code":"267260","name":"HD현대일렉트릭","sector":"전력기기·전력망","stage":"1차 후보","evidence":"주도점수 77.6·당일 +11.32%·거래대금 1.31배","script_signal":"섹터 주도주 비교","chart":"10일선/20일선 위","data_limit":"당일 두 자릿수 급등","chase_risk":"매우 높음"},
     {"market":"KOSPI","code":"298040","name":"효성중공업","sector":"전력기기","stage":"1차 후보","evidence":"V2 B PP·거래대금 1.9배·수급 99.2/90.6/88.2","script_signal":"V2 B · Pocket Pivot","chart":"3,079,000원","data_limit":"전체 공통필터 MA역배열·당일 급등","chase_risk":"매우 높음"},
     {"market":"KOSPI","code":"450080","name":"에코프로머티","sector":"2차전지","stage":"1차 후보","evidence":"당일 +3.90%·거래대금 1.05배·10일선/20일선 위","script_signal":"섹터 비교 후보","chart":"주도점수 69.1","data_limit":"수급점수 -6.8","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"086520","name":"에코프로","sector":"2차전지","stage":"예비 최종","evidence":"주도점수 75.1·당일 +5.63%·거래대금 1.20배","script_signal":"V2 B · Pocket Pivot","chart":"92,000원·10일선/20일선 위·수급 95.9/84.6/93.1","data_limit":"전체 공통필터 MA역배열","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"357780","name":"솔브레인","sector":"반도체 소재","stage":"예비 최종","evidence":"V2 S 삼각수렴·수급 81.8/81.2/99.0","script_signal":"V2 S · 삼각수렴","chart":"341,000원","data_limit":"거래대금 0.3배·전체 공통필터 MA역배열","chase_risk":"낮음"},
-    {"market":"KOSDAQ","code":"222800","name":"심텍","sector":"반도체 부품","stage":"예비 최종","evidence":"V2 S 삼각수렴·거래대금 2.3배·당일 수급 92.6","script_signal":"V2 S · 삼각수렴","chart":"126,900원","data_limit":"20일 수급 19.6·전체 공통필터 MA역배열","chase_risk":"중간"},
-    {"market":"KOSDAQ","code":"178320","name":"서진시스템","sector":"ESS","stage":"예비 최종","evidence":"ESS 주도점수 85.9·당일 +10.89%·거래대금 2.37배","script_signal":"섹터 주도주 비교","chart":"10일선/20일선 위","data_limit":"당일 두 자릿수 급등·수급점수 -1.1","chase_risk":"매우 높음"},
+    {"market":"KOSDAQ","code":"086520","name":"에코프로","sector":"2차전지","stage":"최종","evidence":"주도점수 75.1·당일 +5.63%·거래대금 1.20배","script_signal":"V2 B · Pocket Pivot","chart":"92,000원·10일선/20일선 위·수급 95.9/84.6/93.1","data_limit":"전체 공통필터 MA역배열","chase_risk":"중간"},
+    {"market":"KOSDAQ","code":"357780","name":"솔브레인","sector":"반도체 소재","stage":"최종","evidence":"V2 S 삼각수렴·수급 81.8/81.2/99.0","script_signal":"V2 S · 삼각수렴","chart":"341,000원","data_limit":"거래대금 0.3배·전체 공통필터 MA역배열","chase_risk":"낮음"},
+    {"market":"KOSDAQ","code":"222800","name":"심텍","sector":"반도체 부품","stage":"최종","evidence":"V2 S 삼각수렴·거래대금 2.3배·당일 수급 92.6","script_signal":"V2 S · 삼각수렴","chart":"126,900원","data_limit":"20일 수급 19.6·전체 공통필터 MA역배열","chase_risk":"중간"},
+    {"market":"KOSDAQ","code":"178320","name":"서진시스템","sector":"ESS","stage":"1차 후보","evidence":"ESS 주도점수 85.9·당일 +10.89%·거래대금 2.37배","script_signal":"섹터 주도주 비교","chart":"10일선/20일선 위","data_limit":"당일 두 자릿수 급등·수급점수 -1.1","chase_risk":"매우 높음"},
     {"market":"KOSDAQ","code":"240810","name":"원익IPS","sector":"반도체 장비","stage":"1차 후보","evidence":"주도점수 58.6·당일 +2.84%·V2 S 삼각수렴","script_signal":"V2 S · 삼각수렴","chart":"112,700원·10일선/20일선 위·수급 76.0/49.6/71.6","data_limit":"거래대금 0.49배·전체 공통필터 MA역배열","chase_risk":"낮음"},
     {"market":"KOSDAQ","code":"126340","name":"비나텍","sector":"ESS","stage":"1차 후보","evidence":"주도점수 61.9·당일 +1.95%·10일선/20일선 위","script_signal":"섹터 주도주 비교","chart":"거래대금 51.8억원","data_limit":"거래대금 0.88배·V2 당일 신호 없음","chase_risk":"낮음"},
     {"market":"KOSDAQ","code":"425420","name":"티에프이","sector":"반도체","stage":"1차 후보","evidence":"반도체 주도점수 62.7·거래대금 1.82배","script_signal":"섹터 주도주 비교","chart":"10일선/20일선 위","data_limit":"수급점수 -22.0","chase_risk":"중간"},
@@ -105,15 +105,14 @@
     {"market":"KOSDAQ","code":"222080","name":"SFA넥셀","sector":"2차전지","stage":"1차 후보","evidence":"당일 +3.84%·거래대금 1.17배·10일선/20일선 위","script_signal":"섹터 비교 후보","chart":"주도점수 70.4","data_limit":"거래대금 47.1억원·수급점수 -2.7","chase_risk":"중간"}
   ],
   "final_picks": [
-    {"market":"KOSPI","sector":"2차전지","code":"006400","name":"삼성SDI","priority":1,"reason":"섹터·주도점수·거래대금·V2 S 신호·수급이 가장 강하게 정렬","condition":"시초 갭 추격 없이 첫 눌림에서 전일 종가 또는 장중 VWAP을 회복하고 2차전지 동반 강세 유지","risk":"당일 +10.27% 급등과 전체 MA역배열"},
-    {"market":"KOSPI","sector":"2차전지·ESS","code":"373220","name":"LG에너지솔루션","priority":2,"reason":"2차전지 A급과 ESS 주도력, 삼각수렴+PP 및 수급 개선 동시 확인","condition":"전일 종가 부근 눌림을 지키고 거래대금이 20일 평균 이상 속도를 유지","risk":"공통필터 MA역배열·섹터 동반 되돌림"},
+    {"market":"KOSPI","sector":"2차전지·ESS","code":"373220","name":"LG에너지솔루션","priority":1,"reason":"2차전지 A급과 ESS 주도력, 삼각수렴+PP·수급 개선이 정렬되고 삼성SDI보다 당일 과열 부담이 낮음","condition":"KOSPI 6,866 지지와 전일 종가 부근 눌림 유지, 거래대금이 20일 평균 이상 속도","risk":"공통필터 MA역배열·섹터 동반 되돌림"},
+    {"market":"KOSPI","sector":"2차전지","code":"006400","name":"삼성SDI","priority":2,"reason":"섹터 주도점수 89.7·거래대금 2.45배·V2 S 신호·수급이 가장 강하게 정렬","condition":"시초 갭 추격 없이 첫 눌림에서 전일 종가 또는 VWAP 회복과 2차전지 동반 강세","risk":"당일 +10.27% 급등과 전체 MA역배열"},
     {"market":"KOSDAQ","sector":"2차전지","code":"086520","name":"에코프로","priority":3,"reason":"KOSDAQ 2차전지 중 거래대금과 당일·5일·20일 수급의 균형 우위","condition":"KOSDAQ 시초 저점 유지와 VWAP 위 거래대금 1배 이상 속도","risk":"KOSDAQ 공포탐욕 90.32·MA역배열"},
-    {"market":"KOSPI","sector":"전력기기·전력망","code":"010120","name":"LS ELECTRIC","priority":4,"reason":"전력 A급과 3개 기간 수급 최상위, 거래대금 확대로 주도주 확인","condition":"갭이 작거나 첫 눌림 뒤 VWAP 재돌파 시에만 유지","risk":"당일 +8.44%로 추격 위험"},
+    {"market":"KOSPI","sector":"전력기기·전력망","code":"010120","name":"LS ELECTRIC","priority":4,"reason":"전력 A급과 3개 기간 수급 최상위, 거래대금 확대로 주도주 확인","condition":"KOSPI 6,970~6,996 돌파 또는 첫 눌림 뒤 VWAP 재돌파 시에만 유지","risk":"당일 +8.44%로 추격 위험"},
     {"market":"KOSPI","sector":"AI 반도체","code":"005930","name":"삼성전자","priority":5,"reason":"V2 S 삼각수렴과 장기 수급, 엔비디아 실적 이후 대형 반도체 확산 확인용","condition":"SK하이닉스와 동반 상승하고 장중 거래대금이 전일 속도를 웃돌 때 유지","risk":"거래대금 0.6배·MA역배열"},
-    {"market":"KOSDAQ","sector":"반도체 소재","code":"357780","name":"솔브레인","priority":6,"reason":"삼각수렴 S등급과 5일·20일 수급이 강한 눌림형 후보","condition":"거래대금이 20일 평균의 0.8배 이상으로 회복하고 소부장 상승종목 확대","risk":"현재 거래대금 0.3배"},
+    {"market":"KOSDAQ","sector":"반도체 소재","code":"357780","name":"솔브레인","priority":6,"reason":"삼각수렴 S등급과 5일·20일 수급이 강한 눌림형 후보","condition":"KOSDAQ 840 돌파와 거래대금 20일 평균의 0.8배 이상 회복","risk":"현재 거래대금 0.3배·KOSDAQ 주봉 하락"},
     {"market":"KOSPI","sector":"AI 반도체","code":"000660","name":"SK하이닉스","priority":7,"reason":"엔비디아 메모리 협력 재료와 10일선·20일선 위의 대형주 구조","condition":"삼성전자와 동반 강세 및 거래대금 20일 평균 대비 1배 속도 회복","risk":"V2 당일 신호 없음·거래대금 0.59배"},
-    {"market":"KOSDAQ","sector":"반도체 부품","code":"222800","name":"심텍","priority":8,"reason":"삼각수렴 S등급과 거래대금 2.3배·당일 수급 92.6","condition":"초반 급등 후에도 VWAP·전일 종가 유지와 반도체 섹터 확산","risk":"20일 수급 19.6로 지속성 약함"},
-    {"market":"KOSDAQ","sector":"ESS","code":"178320","name":"서진시스템","priority":9,"reason":"ESS 주도점수 1위와 거래대금 2.37배","condition":"시초 추격 금지. 충분한 눌림 뒤 VWAP 재회복 확인","risk":"당일 +10.89%·ESS 지속성 20%·수급점수 -1.1"}
+    {"market":"KOSDAQ","sector":"반도체 부품","code":"222800","name":"심텍","priority":8,"reason":"삼각수렴 S등급과 거래대금 2.3배·당일 수급 92.6","condition":"KOSDAQ 829 지지·840 돌파와 VWAP·전일 종가 유지","risk":"20일 수급 19.6·KOSDAQ 주봉 하락"}
   ],
   "excluded_summary": [
     "에이피알은 V2 S등급이지만 화장품/미용 섹터 평균 -2.60%로 제외했습니다.",
@@ -121,34 +120,34 @@
     "효성중공업·HD현대일렉트릭은 전력 주도력은 강하지만 당일 급등과 높은 추격 위험 때문에 LS ELECTRIC보다 후순위입니다.",
     "포스코퓨처엠은 주도점수 87.8과 거래대금 2.20배가 강하지만 당일 +9.07%로 추격 부담이 큽니다.",
     "원익IPS·티에프이·두산테스나는 반도체 후보지만 거래대금 또는 수급 확인이 부족합니다.",
+    "서진시스템은 ESS 주도점수는 높지만 당일 +10.89% 급등, 수급점수 -1.1, ESS 5관측 지속성 20%와 KOSDAQ 주봉 하락을 반영해 최종에서 제외했습니다.",
     "바이오·게임·화장품·보험은 당일 시장과 섹터 방향이 맞지 않아 종목 수를 채우지 않았습니다."
   ],
-  "trading_rule": "최종 참고 한도는 현금 10%·위험자산 최대 90%이며 자동 주문 지시가 아닙니다. 예비 관심종목 목록은 이 위험자산 한도 안에서 참고하고, TP·SL은 선정 조건으로 사용하지 않았습니다. 시초 +3% 이상 갭 또는 전일 급등 종목은 첫 눌림·VWAP 재회복·거래대금 유지 전 추격하지 않습니다.",
+  "trading_rule": "최종 참고 한도는 현금 10%·위험자산 최대 90%이며 자동 주문 지시가 아닙니다. 최종 8종목을 동일가중한다고 가정할 때 종목당 참고 상한은 11.25%지만, 장중 확인 조건을 충족한 종목만 대상으로 합니다. TP·SL은 선정 조건으로 사용하지 않았습니다. 시초 +3% 이상 갭 또는 전일 급등 종목은 첫 눌림·VWAP 재회복·거래대금 유지 전 추격하지 않습니다.",
   "risk_flags": [
     "현금비중은 20260827 WISE EOD_CONFIRMED 기준 월간 0%·단계형 10%로 계산돼 최종 현금 10%·위험자산 90%를 적용하며, X3·RV 보조 경보는 없습니다.",
-    "20260827 index_multitimeframe 11단계가 없어 다중 시간대와 지지·저항을 사용하지 못했습니다.",
+    "다중 시간대 점수는 KOSPI -9.8, KOSDAQ -12.8로 모두 중립·박스이며 KOSDAQ 주봉은 하락입니다.",
     "KOSPI·KOSDAQ 공포탐욕 78.23·90.32, 전체종목 ADR20 136.92·131.16으로 되돌림 위험이 큽니다.",
     "상승/하락 비율이 1.144·1.058로 지수 상승만큼 종목 확산이 강하지 않았습니다.",
     "주요 V2 후보들의 공통필터는 MA역배열로 표시됐습니다.",
     "전력기기와 2차전지 대표주가 당일 급등해 시초 갭 추격 손익비가 불리할 수 있습니다.",
     "국내 반도체는 B급이며 거래량 부족 경고가 있어 엔비디아 호재만으로 확산을 단정하지 않습니다.",
-    "20260827 선물옵션 EOD 자료는 이번 예비 분석에서 원천 검증하지 않아 반영하지 않았습니다."
+    "20260827 선물옵션 EOD 자료는 이번 최종 분석에서 원천 검증하지 않아 반영하지 않았습니다."
   ],
   "next_session_checks": [
-    "20시 이후 WISE final의 KOSPI·KOSDAQ 종가와 26개 업종 종가 완결성 확인",
-    "11단계의 KOSPI·KOSDAQ·니케이 월봉·주봉·일봉·15분봉 추세와 지지·저항 확인",
+    "KOSPI 6,866 지지와 6,970~6,996 돌파 여부. 6,866 이탈 시 6,664, 돌파 시 7,216 확인",
+    "KOSDAQ 829 지지와 840 돌파 여부. 829 이탈 시 816, 돌파 시 879 확인",
+    "니케이225 65,783 지지와 66,511~66,955 돌파 여부를 국내시장 보조 확인값으로 사용",
     "삼성SDI·LG에너지솔루션·에코프로가 전일 종가와 장중 VWAP을 지키는지",
     "LS ELECTRIC·효성중공업·HD현대일렉트릭이 갭 상승 후 거래대금을 유지하는지",
     "삼성전자·SK하이닉스 동반 상승과 반도체 소부장 상승종목 수·거래대금 확대",
-    "KOSDAQ이 시초 저점과 상승/하락 비율 1 이상을 유지하는지",
-    "서진시스템은 시초 추격 없이 눌림 뒤 VWAP을 회복하는지",
-    "10·11단계 검증 후 예비 종목 9개의 순위와 제외 여부를 다시 계산"
+    "KOSDAQ이 시초 저점과 상승/하락 비율 1 이상을 유지하는지"
   ],
   "news_check": {
-    "checked_at": "2026-08-27T18:45:00+09:00",
+    "checked_at": "2026-08-27T20:23:00+09:00",
     "domestic_close": "KOSPI 6,912.37(+1.53%), KOSDAQ 837.65(+1.30%)",
     "us_close": "8월 27일 미국 정규장은 아직 시작 전이므로 새 마감값 없음",
-    "us_sector_close": "이번 예비 게시에는 새 미국 섹터 마감값을 사용하지 않음",
+    "us_sector_close": "8월 27일 미국 정규장 마감 전이므로 새 미국 섹터 마감값을 사용하지 않음",
     "nvidia": "공식 FY2027 2분기 매출 962.21억달러·데이터센터 890억달러·3분기 가이던스 1,080억달러 ±2%를 반도체 보조 재료로만 사용",
     "macro": "한국은행의 기준금리 인상과 성장률 전망 상향은 지수 강세와 성장주 할인율 부담이 함께 존재하는 변수로 해석. 종목 순위는 국내 섹터·거래대금 자료를 우선",
     "sources": [
@@ -159,5 +158,5 @@
       "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
     ]
   },
-  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. WISE 공식 종가 26개가 반영된 20260827 EOD_CONFIRMED 자료로 월간·단계형 현금비중을 계산했고 두 실행 모두 status=OK·종료코드 0이며 최종 참고 한도는 현금 10%·위험자산 90%입니다. 11단계 다중 시간대 자료는 아직 없어 지수 지지·저항은 비활성화한 예비 게시물입니다."
+  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. WISE 공식 종가 26개가 반영된 EOD_CONFIRMED 자료로 월간·단계형 현금비중을 계산했고 두 실행 모두 status=OK·종료코드 0입니다. 11단계 다중 시간대 자료는 종료코드 0·status=OK·can_use_for_decision=true이며 국내 두 지수 교차검증과 니케이 공식 EOD 교차검증을 통과했습니다. 최종 참고 한도는 현금 10%·위험자산 90%입니다. 선물옵션은 원천·OCR·만기 누적을 이번 작업에서 검증하지 않아 반영하지 않았습니다."
 }
