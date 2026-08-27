@@ -1,26 +1,27 @@
 {
-  "as_of": "2026-08-26",
-  "generated_at": "2026-08-27 07:26:46+0900",
+  "as_of": "2026-08-27",
+  "generated_at": "2026-08-27 18:28:16+0900",
   "futures_contract": "F202609",
-  "current_price": 1073.5,
+  "current_price": 1089.85,
   "bin_size": 5,
-  "foreign_estimated_position": -13059.0,
-  "foreign_position_side": "검증 13관측 순매매 누적은 순매도(실제 잔존 숏 확정 아님)",
-  "foreign_average_price": 1022.56,
-  "institution_estimated_position": 14182.0,
-  "institution_position_side": "검증 13관측 순매매 누적은 순매수(실제 잔존 롱 확정 아님)",
-  "institution_average_price": 1030.26,
+  "foreign_estimated_position": -9877.0,
+  "foreign_position_side": "14개 검증 관측의 선물 만기합계 순매매 누적은 순매도(실제 F202609 잔존 숏 확정 아님)",
+  "foreign_average_price": 1009.74,
+  "institution_estimated_position": 8543.0,
+  "institution_position_side": "14개 검증 관측의 선물 만기합계 순매매 누적은 순매수(실제 F202609 잔존 롱 확정 아님)",
+  "institution_average_price": 1024.17,
   "active_zone": {
     "low": 995.0,
-    "high": 1080.0
+    "high": 1095.0
   },
   "cumulative_from": "2026-07-30",
-  "cumulative_to": "2026-08-26",
-  "cumulative_trading_days": 13,
-  "whole_position_method": "F202609 정규장 가격과 같은 날짜의 0787 통합 순매매를 연결한 13개 검증 관측치의 조건부 추정. 0787에는 만기별 분해가 없어 실제 F202609 보유잔고로 확정하지 않음",
+  "cumulative_to": "2026-08-27",
+  "cumulative_trading_days": 14,
+  "whole_position_method": "F202609 정규장 가격과 같은 날짜의 KOSPI200 선물 만기합계 수급을 연결한 14개 검증 관측의 조건부 추정. 7/30·7/31·8/3은 KRX OFFICIAL_SEED를, 이후는 검증 0787 값을 우선했으며 실제 F202609 보유잔고·평균단가로 확정하지 않음",
   "data_quality": {
-    "active_contract_only": "F202609",
-    "validation": "F202609 가격 CSV 48행 중 확정(is_final=1) 47행(6/12~8/26), 엄격 선물 수급 원장 47관측(6/12~8/26), 옵션 델타까지 같은 계약·날짜로 연결된 현 만기 유효 관측 13개 사용. 8/26 0787 파싱 54행·필수값 결측 0·논리 중복 0",
+    "active_contract_only": "가격 앵커만 F202609; 수급은 KOSPI200 선물 만기합계",
+    "position_scope": "개별 월물 잔존 포지션이 아니라 F202609 종가에 연결한 선물 만기합계 순매매 프록시",
+    "validation": "F202609 가격 CSV 49행 중 확정(is_final=1) 48행(6/12~8/27), 선물 엄격 수급 CSV 48행·날짜 중복 0, 8/27 0787 파싱 54행·필수 투자자 값 확인. EOD validation 경고 0이었으나 원본 화면 수동 검수로 거래량 OCR과 보조 차트 주기 오류를 추가 발견·정정",
     "included_dates": [
       "20260730",
       "20260731",
@@ -34,264 +35,275 @@
       "20260821",
       "20260824",
       "20260825",
-      "20260826"
+      "20260826",
+      "20260827"
     ],
     "excluded_dates": {
       "20260801": "비거래일",
       "20260804": "원천 브리지 불일치(date=20260804, contract=UNKNOWN)",
-      "20260805": "원천 브리지 불일치(date=20260805, contract=UNKNOWN)",
+      "20260805": "원천 브리지 불일치(date=20260805, contract=UNKNOWN)"
+    },
+    "missing_or_unusable_dates": {
+      "20260806": "수집 실패로 검증 관측 없음",
       "20260810": "파생 누적 원장 계약 식별 실패(contract=UNKNOWN)",
       "20260811": "파생 누적 원장 계약 식별 실패(contract=UNKNOWN)",
       "20260814": "파생 누적 원장 계약 식별 실패(contract=UNKNOWN)"
     },
-    "pipeline_repair_status": "최초 8/26 EOD는 1~4단계 완료 후 가려진 0441 때문에 5단계에서 실패. 전체 run_eod_pipeline은 재실행하지 않고 검증된 F202609 원장·수급·5단계 시각화·게시 JSON을 개별 재생성",
-    "ocr_notice": "원본 8/26 0441은 중복 로그인 팝업으로 계약·종가 OCR이 실패. 사용자 제공 8/27 장전 재조회 화면을 원본과 교차해 마지막 완료 세션 F202609 종가 1073.50·고가 1087.85·저가 1055.10·거래량 110944·OI 153033으로 확정",
-    "capture_repair": "가려진 원본 SHA-256 AA9E86F5...와 사용자 확인 화면 SHA-256 6DC00653...를 모두 보존하고 EOD manifest manual_correction에 전체 경로·해시·정정값을 기록",
-    "session_warning": "8/26 0787은 18:04 통합 화면이지만 선물 수량은 16:06 0786 마감 화면과 외국인 +3856·기관 -4767로 일치. 옵션은 별도의 정규장/야간 분리 화면이 없어 세션 분리 확인 불가",
-    "option_delta_warning": "모든 콜 +0.5·풋 -0.5 단순 환산이며 실제 행사가·만기별 델타가 아님",
+    "pipeline_status": "20260827 run_eod 1~7단계 산출물과 stage7 JSON까지 존재하고 71개 수집 결과·validation warning 0을 확인. 전체 배치는 재실행하지 않고 원본 검수 후 게시 종속 산출물만 다시 생성",
+    "manual_correction": "0441 원본 화면 거래량은 109502인데 OCR이 103502로 오독. 원본 SHA-256 71E9181B...를 근거로 가격 CSV·ingestion audit·OI history·OCR bridge·manifest를 109502로 정정하고 매물대 JSON·이미지를 재생성",
+    "strict_flow_priority": "7/30·7/31·8/3의 HTS 선물 전체 화면값이 KRX KOSPI200 OFFICIAL_SEED와 충돌해 원본 화면값은 보존하되 게시용 선물 수급은 공식 seed를 우선. 이후 날짜는 strict CSV의 검증 0787 값을 사용",
+    "session_warning": "8/27 0787 선물 수량은 0786 마감 화면과 외국인 +5801·기관 -5777로 일치. 다만 0787은 만기별·정규장/야간 분해가 없어 F202609 개별 월물 수급으로 확정 불가",
+    "option_delta_warning": "콜 +0.5·풋 -0.5 단순 환산이며 실제 행사가·만기별 델타가 아님. 옵션 수량과 금액 방향도 다를 수 있어 합성값은 저신뢰 보조지표",
     "rollover_warning": "F202612 거래량·미결제약정·참여자 수급이 없어 최근월물과 차기월물 롤오버 판단 불가",
-    "volatility_warning": "사용자 제공 0471은 일별조회·KOSPI200·60일·HV30/60/100·대표/콜/풋 IV·VKOSPI가 확인됨. 8/27 장전 조회이므로 마지막 완료 관측을 8/26 보조자료로만 사용하고 정확한 수치는 CSV가 없어 판독하지 않음",
-    "overnight_chart_warning": "사용자 제공 5605는 F202609 10분봉 600개로 8/27 06:00까지 포함. 1080.35는 야간/장전 보조값이며 8/26 정규장 종가 1073.50을 대체하지 않음",
-    "position_profile_warning": "0791 전 구간 56개 PNG는 수치 CSV가 아닌 화면 경로 메타데이터만 있어 이번 평단·매물대 계산에 사용하지 않음",
-    "ledger_warning": "보존용 derivatives history/DB에는 과거 contract=UNKNOWN 8행(8/4·10·11·14)과 재사용 레코드(7/31→8/1, 8/4→8/5)가 남아 있어 DB 전체 누적값을 사용하지 않음. 게시 수치는 included_dates 13개와 F202609만 명시적으로 재집계",
+    "volatility_warning": "0471 파일명은 일별 60일이지만 원본은 시간별조회가 선택된 8/27 장중 화면이므로 일별 HV·IV 수치와 추세 계산에서 제외",
+    "intraday_chart_warning": "5605 파일명은 10분봉이지만 실제 3분이 선택됐고 18:08 야간/통합시세 1095.40이 포함되어 정규장 종가·지지저항 근거에서 제외",
+    "daily_chart_warning": "5605 일봉 캡처는 102봉이고 상단 통합시세 1094.70이 정규장 종가 1089.85와 충돌해 candlestick_image를 비활성화. 정규장 CSV 기반 f202609_candlestick_position_profile.png만 대표 일봉으로 사용",
+    "position_profile_warning": "0791 화면 경로 메타데이터는 포지션 수치가 아니어서 평단 계산에 사용하지 않음. 게시 평균가는 strict 순매매의 조건부 가중 추정가",
+    "ledger_warning": "보존용 derivatives history/DB와 derivatives_position_ledger_latest에는 contract=UNKNOWN 및 과거 재사용 레코드가 섞여 있어 DB 전체 누적을 사용하지 않음. 게시 수치는 included_dates 14개와 strict 선물 수급을 명시적으로 재집계",
+    "run_all_warning": "8/27 run_all 파생 시장폭·섹터 산출물은 있으나 검증된 KOSPI·KOSDAQ·니케이 다중시간대 latest는 8/25로 2거래일 오래되어 8/27 방향 확정 근거로 사용하지 않음",
     "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외"
   },
   "daily_flow": {
-    "as_of": "2026-08-26",
-    "price": 1073.5,
-    "price_change": 9.9,
-    "price_change_pct": 0.93,
-    "day_high": 1087.85,
-    "day_low": 1055.1,
-    "volume": 110944,
-    "open_interest": 153033,
-    "open_interest_change": 2138,
-    "close_location_in_day_range_pct": 56.18,
-    "zone_low": 1070,
-    "zone_high": 1075,
-    "foreign_futures_net": 3856.0,
-    "foreign_option_delta_net": 111.0,
-    "foreign_composite_delta": 3967.0,
-    "institution_futures_net": -4767.0,
-    "institution_option_delta_net": 65.5,
-    "institution_composite_delta": -4701.5
+    "as_of": "2026-08-27",
+    "price": 1089.85,
+    "price_change": 16.35,
+    "price_change_pct": 1.52,
+    "day_high": 1109.4,
+    "day_low": 1078.2,
+    "volume": 109502,
+    "open_interest": 153446,
+    "open_interest_change": 413,
+    "open_interest_change_pct": 0.27,
+    "close_location_in_day_range_pct": 37.34,
+    "zone_low": 1085,
+    "zone_high": 1090,
+    "foreign_futures_net": 5801.0,
+    "foreign_option_delta_net": -988.0,
+    "foreign_composite_delta": 4813.0,
+    "institution_futures_net": -5777.0,
+    "institution_option_delta_net": -260.0,
+    "institution_composite_delta": -6037.0
   },
   "daily_option_amount": {
     "unit": "0787 금액 화면 표시 단위(억원)",
-    "foreign_call": -1.0,
-    "foreign_put": 53.0,
-    "institution_call": 12.0,
-    "institution_put": -74.0
-  },
-  "open_interest": {
-    "as_of": "20260826",
-    "contract": "F202609",
-    "close_price": 1073.5,
-    "close_open_interest": 153033,
-    "oi_change_vs_prev": 2138,
-    "oi_change_vs_prev_pct": 1.42,
-    "volume": 110944,
-    "volume_change_vs_prev": -10108,
-    "volume_change_vs_prev_pct": -8.35,
-    "price_change_vs_prev": 9.9,
-    "price_change_vs_prev_pct": 0.93,
-    "day_high": 1087.85,
-    "day_low": 1055.1,
-    "close_location_in_day_range_pct": 56.18,
-    "interpretation": "가격 상승·미결제약정 증가 조합은 신규 롱 유입 가능성과 맞지만, 1087.85 고점 뒤 1073.50으로 밀려 1075~1085 강한 충돌대 안착에는 실패. 외국인 매수·기관 매도는 기존 숏커버·롱청산과도 맞고 OI가 늘어 신규 포지션이 함께 섞인 상태로 해석"
-  },
-  "volatility_environment": {
-    "source": "사용자 제공 0471 일별 60일 화면, 2026/08/27 장전 조회·마지막 완료 관측 8/26",
-    "observation": "풋평균 IV가 콜평균 IV보다 높은 상태가 화면에서 확인돼 하방 헤지 프리미엄이 남아 있음",
-    "limitation": "원천 수치 CSV가 없어 정확한 IV·HV·VKOSPI 값과 일별 변화율은 판단 불가"
+    "foreign_futures": 15867.0,
+    "institution_futures": -15798.0,
+    "foreign_call": -11.0,
+    "foreign_put": 33.0,
+    "institution_call": 5.0,
+    "institution_put": -27.0,
+    "interpretation": "외국인은 선물 수량·금액 모두 순매수였지만 콜 금액 순매도와 풋 금액 순매수가 함께 나타나 방어적 옵션 흐름이 공존. 기관은 선물 순매도였고 콜 금액 순매수·풋 금액 순매도로 반대편"
   },
   "recent_validated_flow": {
-    "basis": "F202609 가격과 같은 날짜의 0787 통합 수급만 사용하며 누락 거래일을 보간하지 않음",
     "latest_3_observations": {
-      "dates": ["20260824", "20260825", "20260826"],
-      "foreign_futures_net": 6156.0,
-      "foreign_option_delta_net": -1412.5,
-      "foreign_composite_delta": 4743.5,
-      "institution_futures_net": -6631.0,
-      "institution_option_delta_net": 975.0,
-      "institution_composite_delta": -5656.0,
-      "price_change_pct": 2.08,
-      "open_interest_change": 2453,
-      "open_interest_change_pct": 1.63
+      "dates": ["20260825", "20260826", "20260827"],
+      "foreign_futures_net": 9300.0,
+      "foreign_option_delta_net": -131.0,
+      "foreign_composite_delta": 9169.0,
+      "institution_futures_net": -9068.0,
+      "institution_option_delta_net": 12.0,
+      "institution_composite_delta": -9056.0,
+      "price_change_pct": 2.47,
+      "open_interest_change": 2551,
+      "open_interest_change_pct": 1.69,
+      "volume_sum": 341498,
+      "volume_average": 113832.7,
+      "interpretation": "가격·OI가 함께 증가하고 외국인 선물 매수가 가격과 비교적 정렬돼 신규 매수 유입 가능성이 우세. 다만 옵션 델타는 소폭 반대"
     },
     "latest_5_observations": {
-      "dates": ["20260820", "20260821", "20260824", "20260825", "20260826"],
-      "foreign_futures_net": 303.0,
-      "foreign_option_delta_net": -1450.0,
-      "foreign_composite_delta": -1147.0,
-      "institution_futures_net": 910.0,
-      "institution_option_delta_net": 270.5,
-      "institution_composite_delta": 1180.5,
-      "price_change_pct": -0.81,
-      "open_interest_change": 55,
-      "open_interest_change_pct": 0.04
+      "dates": ["20260821", "20260824", "20260825", "20260826", "20260827"],
+      "foreign_futures_net": 13082.0,
+      "foreign_option_delta_net": -2021.5,
+      "foreign_composite_delta": 11060.5,
+      "institution_futures_net": -13099.0,
+      "institution_option_delta_net": 233.5,
+      "institution_composite_delta": -12865.5,
+      "price_change_pct": -0.9,
+      "open_interest_change": 788,
+      "open_interest_change_pct": 0.52,
+      "volume_sum": 579229,
+      "volume_average": 115845.8,
+      "interpretation": "외국인 선물 누적 매수에도 가격은 5관측 전보다 0.90% 낮아 단순 추세 일치가 아님. 기관과 외국인이 강하게 맞선 충돌 구간"
     },
-    "full_13_observations": {
-      "dates": ["20260730", "20260731", "20260803", "20260807", "20260812", "20260813", "20260818", "20260819", "20260820", "20260821", "20260824", "20260825", "20260826"],
-      "foreign_futures_net": -13059.0,
-      "foreign_option_delta_net": -12302.5,
-      "foreign_composite_delta": -25361.5,
-      "institution_futures_net": 14182.0,
-      "institution_option_delta_net": 3084.5,
-      "institution_composite_delta": 17266.5,
-      "price_change_pct": 23.73,
-      "open_interest_change": -15640,
-      "open_interest_change_pct": -9.27,
-      "interpretation": "가격은 누적 상승했지만 OI는 9.27% 감소하고 외국인 누적 합성은 하방이어서 상승 과정에 숏커버·기존 포지션 정리가 많이 섞인 것으로 해석"
+    "current_maturity_proxy_14_observations": {
+      "scope": "F202609 가격 앵커 + KOSPI200 선물 만기합계 strict 수급의 조건부 프록시",
+      "foreign_futures_net": -9877.0,
+      "foreign_option_delta_net": -13290.5,
+      "foreign_composite_delta": -23167.5,
+      "institution_futures_net": 8543.0,
+      "institution_option_delta_net": 2824.5,
+      "institution_composite_delta": 11367.5,
+      "price_change_pct": 25.62,
+      "open_interest_change": -15227,
+      "open_interest_change_pct": -9.03,
+      "volume_sum": 1894257,
+      "volume_average": 135304.1,
+      "interpretation": "가격은 크게 올랐지만 OI가 9.03% 감소하고 외국인 선물·옵션 합성 누적은 하방. 상승 과정에 기존 포지션 청산·숏커버가 많이 섞였을 가능성이 있으며 실제 F202609 잔고로 확정할 수 없음"
     },
     "latest_20_joint_observations": {
-      "foreign_futures_net": -11656.0,
-      "institution_futures_net": 10389.0,
-      "price_change_pct": -1.11,
-      "open_interest_change": -8110,
-      "open_interest_change_pct": -5.03,
-      "option_delta": "검증 옵션 관측이 13개뿐이라 20관측 계산 불가"
+      "foreign_futures_net": -5031.0,
+      "institution_futures_net": 5104.0,
+      "price_change_pct": -3.77,
+      "open_interest_change": -9220,
+      "open_interest_change_pct": -5.67,
+      "volume_sum": 2782126,
+      "volume_average": 139106.3,
+      "option_delta": "검증 옵션 관측이 14개뿐이라 20관측 계산 불가"
     }
   },
   "participant_price_alignment": {
-    "latest_20_joint_observations": {
-      "method": "같은 거래일 선물 순매매와 선물 가격 변화의 상관 및 방향 일치 횟수",
-      "foreign_same_day_correlation": -0.352,
-      "foreign_direction_matches": "7/20",
-      "institution_same_day_correlation": 0.302,
-      "institution_direction_matches": "13/20"
+    "latest_3_joint_observations": {
+      "foreign_same_day_correlation": 0.498,
+      "foreign_direction_matches": "2/3",
+      "institution_same_day_correlation": -0.33,
+      "institution_direction_matches": "1/3"
     },
-    "interpretation": "최근 20관측에서는 기관 수급이 당일 가격 방향과 더 자주 정렬됐고 외국인은 반대편·헤지 성격이 상대적으로 강했음. 상관은 인과관계나 다음 날 예측력을 의미하지 않음"
+    "latest_5_joint_observations": {
+      "foreign_same_day_correlation": 0.003,
+      "foreign_direction_matches": "3/5",
+      "institution_same_day_correlation": 0.133,
+      "institution_direction_matches": "2/5"
+    },
+    "latest_20_joint_observations": {
+      "method": "같은 거래일 선물 순매매와 선물 가격 변화의 피어슨 상관 및 방향 일치 횟수",
+      "foreign_same_day_correlation": -0.311,
+      "foreign_direction_matches": "7/20",
+      "institution_same_day_correlation": 0.267,
+      "institution_direction_matches": "12/20"
+    },
+    "interpretation": "최근 3일 반등은 외국인 수급이 더 잘 정렬됐지만 20관측에서는 기관이 가격 방향과 더 자주 일치. 상관은 인과관계나 다음 날 예측력을 의미하지 않음"
   },
   "post_close_context": {
-    "checked_at": "2026-08-27 06:45+0900",
+    "checked_at": "2026-08-27 18:25+0900",
     "facts": [
-      "최신 완료 국내장 8/26 KOSPI +0.97%, KOSDAQ -0.03%, 원·달러 1384.8원으로 전일 대비 1.3원 하락",
-      "8/26 현물은 기관 순매수·외국인과 개인 순매도 방향이 확인됐으나 외국인 정확 금액은 웹 출처끼리 1052억원과 1161억원으로 충돌",
-      "미국 8/26 정규장은 Dow -0.21%, S&P500 -0.02%, Nasdaq -0.08%",
-      "NVIDIA 공식 Q2 FY27 매출 962.21억달러·비GAAP EPS 2.22달러, Q3 매출 전망 1080억달러±2%이며 시간외 +4.4% 반전은 진행 중 값",
-      "미국 7월 PCE는 전년 대비 3.7%, 근원 3.3%로 물가 부담이 남아 있음",
-      "한국은행 8/27 통화정책방향 회의 결과는 확인시각 현재 미발표"
+      "KRX 공식 지수: KOSPI +1.53%, KOSPI200 +1.63%, KOSDAQ +1.30%",
+      "KRX 인용 마감 보도에서 외국인·기관은 KOSPI와 KOSDAQ 현물을 함께 순매수했고 원·달러는 1380.9원으로 3.9원 하락",
+      "공식 상장종목 기준 KOSPI 상승 317·하락 539로 지수 상승보다 시장 폭이 약한 대형주 주도 장세",
+      "내부 ADR20과 ADLine20은 3일 연속 개선했지만 KOSPI·KOSDAQ Impulse는 BLUE, 내부 공포탐욕 프록시는 EXTREME_GREED",
+      "한국은행은 기준금리를 2.75%에서 3.00%로 25bp 인상",
+      "NVIDIA FY2027 Q2 매출 962.21억달러·데이터센터 890억달러, Q3 매출 가이던스 1080억달러±2%",
+      "미국 7월 PCE는 전년 대비 3.7%, 근원 3.3%로 금리 부담이 남음",
+      "검증된 국내·니케이 다중시간대 latest는 8/25로 오래돼 8/27 추세 확정에 사용하지 않음"
     ],
     "sources": [
-      "https://www.koreatimes.co.kr/economy/20260826/kospi-inches-up-as-corporate-buying-offsets-foreign-retail-sell-off",
-      "https://www.seoul.co.kr/news/economy/securities/2026/08/26/20260826500229",
-      "https://au.investing.com/news/economy-news/wall-st-muted-ahead-of-nvidia-results-hot-inflation-fuels-ratehike-bets-4617868",
-      "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
-      "https://www.axios.com/2026/08/26/nvidia-earnings-jensen-huang-ai",
-      "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026",
-      "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A"
+      "https://indices.krx.co.kr/main/main.jsp",
+      "https://m.tf.co.kr/amp/economy/2358812.htm",
+      "https://m.wikitree.co.kr/articles/1155434",
+      "https://www.bok.or.kr/portal/bbs/P0000559/view.do?depth=200690&menuNo=200690&nttId=11064191&programType=newsData&relate=Y",
+      "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+      "https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026"
     ],
-    "interpretation": "NVIDIA 실적·시간외 반전과 원화 강세는 상방 보조재료지만 미국 물가·금통위 불확실성, 국내 외국인 현물 매도는 반대 신호. 8/27 장 마감 방향으로 확정하지 않음"
+    "interpretation": "현물·환율·반도체와 단기 ADR 개선은 상방 보조지만 시장 폭 괴리·금리 인상·과열·오래된 다중시간대 자료가 추격 위험을 높임"
   },
   "overall_assessment": {
-    "headline": "결론: 단기 상방 우세(중립-상방) · 현재 1차 지지(중·전환 확인 필요) 1070~1073.50 · 1070 이탈 및 1065.90 회복 실패 시 다음 지지 1063.40~1065.90(중), 이어 1049.10~1055.10(중)·1030~1040(강) · 현재 저항 1075~1085(강) 돌파·안착 확인, 1087.85 상회 시 다음 저항 1094~1105.25(강)",
+    "headline": "결론: 단기 상방 우세(중립-상방) · 현재 1차 지지 1080~1090(강) 지지 여부 확인 · 1080 정규장 종가 이탈 및 1078.20 회복 실패 시 다음 지지 1070~1075(강), 추가 하락 시 1050~1055(중)·1030~1040(중) · 현재 저항 1095~1110(강) 돌파·종가 안착 확인, 돌파 시 다음 저항 1125~1145(중)",
     "stance": "단기 상방 우세(중립-상방)",
-    "confidence": "중하(가격·OI·외국인 선물은 상방이나 1075~1085 안착 실패, 기관 선물 매도·풋 IV 우위·최근 5관측 중립이 반대)",
-    "pivot": "1070~1073.50(중·현재가 충돌대의 지지 전환 확인 필요)",
-    "first_resistance": "1075~1085(강)",
-    "breakout_confirmation": "1085 위 종가 안착과 1087.85 상회, 미결제약정 증가 지속 여부 확인",
-    "second_resistance_target": "1094~1105.25(강)",
-    "downside_scenario": "1070 이탈 후 1065.90 회복 실패 시 1063.40~1065.90(중), 이어 1049.10~1055.10(중), 추가 약세 시 1030~1040(강)과 1015~1020(중) 확인",
-    "caution": "지지·저항 강도는 반복 가격반응·가격대별 누적 수급·미결제약정·최신 일봉/10분봉 반응을 평가한 조건부 등급입니다. 0787은 만기별 분해가 없고 옵션 델타는 단순 근사치입니다.",
+    "confidence": "중(최근 3일 가격·OI·외국인 선물은 상방이나 당일 상단 거절·옵션 방어·14관측 외국인 하방 누적·금리 인상이 반대)",
+    "pivot": "1080~1090(강)",
+    "first_resistance": "1095~1110(강)",
+    "breakout_confirmation": "1110 위 정규장 종가 안착과 외국인 선물 매수·OI 증가의 동시 지속 확인",
+    "second_resistance_target": "1125~1145(중)",
+    "downside_scenario": "1080 정규장 종가 이탈 및 장중 저점 1078.20 회복 실패 시 1070~1075(강), 이어 1050~1055(중)·1030~1040(중). 990~1000은 강한 충돌 반응대지만 순수 매수 지지로 확정하지 않음",
+    "caution": "지지·저항 강도는 반복 가격반응·거래량·가격대별 누적 수급·OI를 결합한 조건부 등급입니다. 0787은 만기분해가 없고 옵션 델타는 단순 근사치입니다.",
     "levels": [
       {
-        "label": "현재 1차 지지(중·전환 확인 필요)",
-        "range": "1070~1073.50",
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 6,
-        "data_confidence": "중",
-        "reason": "현재가가 1070~1075 외국인 +3352·기관 -4508의 7860계약 충돌대 안에 있고 사용자 제공 야간 10분봉에서도 1070 부근 반응이 확인됨. 다만 8/26 종가가 구간 내부라 지지 전환 확정 전",
-        "color": "#f59e0b"
-      },
-      {
-        "label": "이탈 후 다음 지지(중)",
-        "range": "1063.40~1065.90",
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 6,
-        "data_confidence": "중",
-        "reason": "8/25 고가 1065.90과 직전 돌파 구간이 겹치며 8/26 저가 1055.10 위에서 마감. 1070 이탈 시 첫 재확인 구간",
-        "color": "#3b82f6"
-      },
-      {
-        "label": "다음 지지(중)",
-        "range": "1049.10~1055.10",
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 6,
-        "data_confidence": "중",
-        "reason": "8/24 저가 1049.10·8/26 저가 1055.10과 1050~1055 참여자 충돌 5997계약이 중첩",
-        "color": "#2563eb"
-      },
-      {
-        "label": "추가 하단 지지(강)",
-        "range": "1030~1040",
+        "label": "현재 1차 지지(강)",
+        "range": "1080~1090",
         "strength": "강",
         "reaction_strength": "강",
-        "strength_score": 8,
+        "strength_score": 9,
         "data_confidence": "중상",
-        "reason": "엄격 일별에서 반복 확인되고 8/20 저가 1033.65와 광역 거래량 상위 구간이 중첩",
+        "reason": "48공동관측의 1075~1100 종가대가 8일·거래량 1120321로 최대이며 1080~1085 gross 15210(2위), 1085~1090 gross 11578(3위), 당일 저가 1078.20 뒤 회복이 중첩",
         "color": "#1d4ed8"
       },
       {
+        "label": "이탈 후 다음 지지(강)",
+        "range": "1070~1075",
+        "strength": "강",
+        "reaction_strength": "강",
+        "strength_score": 8,
+        "data_confidence": "중상",
+        "reason": "누적 수급 gross 7860(4위)과 최근 반복 종가·저가 반응이 겹침. 1080 종가 이탈 시 첫 재확인 구간",
+        "color": "#2563eb"
+      },
+      {
         "label": "추가 하단 지지(중)",
-        "range": "1015~1020",
+        "range": "1050~1055",
         "strength": "중",
         "reaction_strength": "중",
         "strength_score": 7,
-        "data_confidence": "중",
-        "reason": "8/19 종가 1016.25 뒤 반등과 반복 가격반응이 확인되지만 극단 변동일 영향이 커 중 등급",
+        "data_confidence": "중상",
+        "reason": "8/24 종가 1051.65·8/26 저가 1055.10과 1050~1055 참여자 충돌 gross 5997이 중첩",
         "color": "#3b82f6"
       },
       {
-        "label": "현재 주요 저항(강)",
-        "range": "1075~1085",
+        "label": "추가 하단 지지(중)",
+        "range": "1030~1040",
+        "strength": "중",
+        "reaction_strength": "중",
+        "strength_score": 6,
+        "data_confidence": "중",
+        "reason": "최근 반복 가격반응과 3일·거래량 435364·OI 증가가 확인되지만 참여자 집중은 상위 구간보다 약함",
+        "color": "#3b82f6"
+      },
+      {
+        "label": "원거리 충돌 반응대(강·방향 불명)",
+        "range": "990~1000",
         "strength": "강",
         "reaction_strength": "강",
         "strength_score": 8,
+        "data_confidence": "중",
+        "reason": "990~995 gross 25482로 14관측 1위지만 외국인 숏·기관 롱 충돌대라 방향성 지지로 단정할 수 없음",
+        "color": "#64748b"
+      },
+      {
+        "label": "현재 주요 저항(강)",
+        "range": "1095~1110",
+        "strength": "강",
+        "reaction_strength": "중~강",
+        "strength_score": 8,
         "data_confidence": "중상",
-        "reason": "1080~1085 외국인 -6978·기관 +8232의 15210계약 충돌대. 8/26 고가 1087.85 뒤 종가 1073.50으로 되밀려 종가 안착 실패",
+        "reason": "8/21 고가 1105.25와 8/27 고가 1109.40에서 종가 1089.85로 되밀린 최신 가격 거절. 다만 1095~1100 누적 수급 gross 1816으로 수급 집중만 보면 약함",
         "color": "#ef4444"
       },
       {
-        "label": "돌파 후 다음 저항(강)",
-        "range": "1094~1105.25",
-        "strength": "강",
-        "reaction_strength": "강",
-        "strength_score": 8,
-        "data_confidence": "중상",
-        "reason": "8/24 고가 1094.00 거절과 8/21 고가 1105.25가 겹치는 상단 공급 구간",
+        "label": "돌파 후 다음 저항(중)",
+        "range": "1125~1145",
+        "strength": "중",
+        "reaction_strength": "중",
+        "strength_score": 6,
+        "data_confidence": "중",
+        "reason": "7/23 고가 1137.45와 8/18 고가 1144.90이 겹치지만 관측 횟수가 적어 종가 안착 확인 필요",
         "color": "#b91c1c"
       }
     ],
     "scenarios": [
       {
         "tone": "up",
-        "condition": "1085 위 종가 안착·1087.85 상회와 OI 증가 지속",
-        "target": "1094~1105.25(강)"
+        "condition": "1110 위 정규장 종가 안착과 외국인 선물 매수·OI 증가 지속",
+        "target": "1125~1145(중)"
       },
       {
         "tone": "neutral",
-        "condition": "1070~1085 안에서 OI 증가가 둔화",
+        "condition": "1080~1110 안에서 OI 증가 둔화 또는 외국인·기관 수급 교차",
         "target": "참여자 충돌 박스권으로 보고 방향 확정 보류"
       },
       {
         "tone": "down",
-        "condition": "1070 이탈 후 1065.90 회복 실패",
-        "target": "1063.40~1065.90, 이어 1049.10~1055.10·1030~1040"
+        "condition": "1080 정규장 종가 이탈 및 1078.20 회복 실패",
+        "target": "1070~1075, 이어 1050~1055·1030~1040"
       }
     ],
     "evidence": [
-      "8/26 F202609 종가 1073.50·전일 대비 +9.90(+0.93%), 고가 1087.85·저가 1055.10·종가 위치 56.18%",
-      "거래량 110944·미결제약정 153033, 전일 대비 +2138(+1.42%)",
-      "외국인 선물 +3856·옵션델타 +111, 기관 선물 -4767·옵션델타 +65.5",
-      "최근 3관측 외국인 합성 +4743.5·기관 -5656, 가격 +2.08%·OI +1.63%",
-      "최근 5관측 외국인 합성 -1147·기관 +1180.5, 가격 -0.81%·OI +0.04%로 사실상 혼조",
-      "13관측 누적 외국인 합성 -25361.5·기관 +17266.5, 가격 +23.73%·OI -9.27%",
-      "최근 20관측 당일 가격 방향 일치 기관 13/20·외국인 7/20로 기관 수급이 상대적으로 더 자주 정렬",
-      "0471 일별 화면의 풋평균 IV 우위와 1075~1085 종가 안착 실패는 상방의 반대 신호"
+      "8/27 F202609 종가 1089.85·전일 대비 +16.35(+1.52%), 고가 1109.40·저가 1078.20·종가 위치 37.34%",
+      "거래량 109502·미결제약정 153446, 전일 대비 +413(+0.27%)",
+      "외국인 선물 +5801·옵션델타 -988, 기관 선물 -5777·옵션델타 -260",
+      "최근 3관측 외국인 합성 +9169·기관 -9056, 가격 +2.47%·OI +1.69%",
+      "최근 5관측 외국인 합성 +11060.5·기관 -12865.5지만 가격 -0.90%로 지속 신호는 혼조",
+      "14관측 strict 누적 외국인 합성 -23167.5·기관 +11367.5, 가격 +25.62%·OI -9.03%",
+      "최근 20관측 당일 가격 방향 일치 기관 12/20·외국인 7/20이나 최근 3일은 외국인이 2/3으로 우세",
+      "KOSPI200 +1.63%·현물 외국인/기관 순매수·원화 강세와 ADR 개선은 상방 보조",
+      "당일 고점 거절·KOSPI 시장 폭 괴리·Impulse BLUE·한국은행 금리 인상은 반대 신호"
     ]
   },
   "support_resistance_strength_method": {
@@ -303,15 +315,15 @@
       "low": 990.0,
       "high": 995.0,
       "center": 992.5,
-      "foreign_contracts": -14821.0,
-      "institution_contracts": 14560.0,
-      "net_contracts": -261.0,
-      "gross_contracts": 29381.0,
+      "foreign_contracts": -12589.0,
+      "institution_contracts": 12893.0,
+      "net_contracts": 304.0,
+      "gross_contracts": 25482.0,
       "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
       "rank": 1,
       "reaction_strength": "강",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 29,381계약, 전체 12개 구간 중 1위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 25,482계약, 전체 13개 구간 중 1위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1080.0,
@@ -321,11 +333,25 @@
       "institution_contracts": 8232.0,
       "net_contracts": 1254.0,
       "gross_contracts": 15210.0,
-      "location": "현재가 상단",
+      "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
       "rank": 2,
       "reaction_strength": "강",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 15,210계약, 전체 12개 구간 중 2위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 15,210계약, 전체 13개 구간 중 2위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+    },
+    {
+      "low": 1085.0,
+      "high": 1090.0,
+      "center": 1087.5,
+      "foreign_contracts": 5801.0,
+      "institution_contracts": -5777.0,
+      "net_contracts": 24.0,
+      "gross_contracts": 11578.0,
+      "location": "현재가 구간",
+      "direction": "외국인 롱·기관 숏 충돌",
+      "rank": 3,
+      "reaction_strength": "강",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 11,578계약, 전체 13개 구간 중 3위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1070.0,
@@ -335,11 +361,11 @@
       "institution_contracts": -4508.0,
       "net_contracts": -1156.0,
       "gross_contracts": 7860.0,
-      "location": "현재가 구간",
+      "location": "현재가 하단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 3,
+      "rank": 4,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,860계약, 전체 12개 구간 중 3위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,860계약, 전체 13개 구간 중 4위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 975.0,
@@ -351,9 +377,23 @@
       "gross_contracts": 7028.0,
       "location": "현재가 하단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 4,
+      "rank": 5,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,028계약, 전체 12개 구간 중 4위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,028계약, 전체 13개 구간 중 5위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+    },
+    {
+      "low": 865.0,
+      "high": 870.0,
+      "center": 867.5,
+      "foreign_contracts": -4241.0,
+      "institution_contracts": 2764.0,
+      "net_contracts": -1477.0,
+      "gross_contracts": 7005.0,
+      "location": "현재가 하단",
+      "direction": "외국인 숏·기관 롱 충돌",
+      "rank": 6,
+      "reaction_strength": "중",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,005계약, 전체 13개 구간 중 6위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1050.0,
@@ -365,9 +405,23 @@
       "gross_contracts": 5997.0,
       "location": "현재가 하단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 5,
+      "rank": 7,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 5,997계약, 전체 12개 구간 중 5위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 5,997계약, 전체 13개 구간 중 7위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+    },
+    {
+      "low": 1030.0,
+      "high": 1035.0,
+      "center": 1032.5,
+      "foreign_contracts": -1966.0,
+      "institution_contracts": 1281.0,
+      "net_contracts": -685.0,
+      "gross_contracts": 3247.0,
+      "location": "현재가 하단",
+      "direction": "외국인 숏·기관 롱 충돌",
+      "rank": 8,
+      "reaction_strength": "약",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 3,247계약, 전체 13개 구간 중 8위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1075.0,
@@ -377,11 +431,11 @@
       "institution_contracts": -2252.0,
       "net_contracts": -1444.0,
       "gross_contracts": 3060.0,
-      "location": "현재가 상단",
+      "location": "현재가 하단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 6,
-      "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 3,060계약, 전체 12개 구간 중 6위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "rank": 9,
+      "reaction_strength": "약",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 3,060계약, 전체 13개 구간 중 9위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1015.0,
@@ -393,23 +447,9 @@
       "gross_contracts": 2506.0,
       "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 7,
-      "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 2,506계약, 전체 12개 구간 중 7위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
-    },
-    {
-      "low": 865.0,
-      "high": 870.0,
-      "center": 867.5,
-      "foreign_contracts": -1448.0,
-      "institution_contracts": 1046.0,
-      "net_contracts": -402.0,
-      "gross_contracts": 2494.0,
-      "location": "현재가 하단",
-      "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 8,
+      "rank": 10,
       "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 2,494계약, 전체 12개 구간 중 8위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 2,506계약, 전체 13개 구간 중 10위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1060.0,
@@ -421,9 +461,9 @@
       "gross_contracts": 1833.0,
       "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 9,
+      "rank": 11,
       "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,833계약, 전체 12개 구간 중 9위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,833계약, 전체 13개 구간 중 11위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1095.0,
@@ -435,9 +475,9 @@
       "gross_contracts": 1816.0,
       "location": "현재가 상단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 10,
+      "rank": 12,
       "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,816계약, 전체 12개 구간 중 10위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,816계약, 전체 13개 구간 중 12위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1035.0,
@@ -449,23 +489,9 @@
       "gross_contracts": 1666.0,
       "location": "현재가 하단",
       "direction": "외국인·기관 동반 숏 누적",
-      "rank": 11,
+      "rank": 13,
       "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,666계약, 전체 12개 구간 중 11위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
-    },
-    {
-      "low": 1030.0,
-      "high": 1035.0,
-      "center": 1032.5,
-      "foreign_contracts": 92.0,
-      "institution_contracts": 1194.0,
-      "net_contracts": 1286.0,
-      "gross_contracts": 1286.0,
-      "location": "현재가 하단",
-      "direction": "외국인·기관 동반 롱 누적",
-      "rank": 12,
-      "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,286계약, 전체 12개 구간 중 12위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 1,666계약, 전체 13개 구간 중 13위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     }
   ],
   "conflict_zones": [
@@ -473,8 +499,8 @@
       "low": 990.0,
       "high": 995.0,
       "center": 992.5,
-      "foreign_contracts": -14821.0,
-      "institution_contracts": 14560.0
+      "foreign_contracts": -12589.0,
+      "institution_contracts": 12893.0
     },
     {
       "low": 1080.0,
@@ -482,6 +508,13 @@
       "center": 1082.5,
       "foreign_contracts": -6978.0,
       "institution_contracts": 8232.0
+    },
+    {
+      "low": 1085.0,
+      "high": 1090.0,
+      "center": 1087.5,
+      "foreign_contracts": 5801.0,
+      "institution_contracts": -5777.0
     },
     {
       "low": 1070.0,
@@ -498,33 +531,14 @@
       "institution_contracts": -3115.0
     },
     {
-      "low": 1050.0,
-      "high": 1055.0,
-      "center": 1052.5,
-      "foreign_contracts": 2657.0,
-      "institution_contracts": -3340.0
-    },
-    {
       "low": 865.0,
       "high": 870.0,
       "center": 867.5,
-      "foreign_contracts": -1448.0,
-      "institution_contracts": 1046.0
+      "foreign_contracts": -4241.0,
+      "institution_contracts": 2764.0
     }
   ],
   "upper_zones": [
-    {
-      "low": 1080.0,
-      "high": 1085.0,
-      "center": 1082.5,
-      "contracts": 15210.0
-    },
-    {
-      "low": 1075.0,
-      "high": 1080.0,
-      "center": 1077.5,
-      "contracts": 3060.0
-    },
     {
       "low": 1095.0,
       "high": 1100.0,
@@ -537,25 +551,25 @@
       "low": 990.0,
       "high": 995.0,
       "center": 992.5,
-      "contracts": 29381.0
+      "contracts": 25482.0
     },
     {
-      "low": 1070.0,
-      "high": 1075.0,
-      "center": 1072.5,
-      "contracts": 7860.0
+      "low": 1080.0,
+      "high": 1085.0,
+      "center": 1082.5,
+      "contracts": 15210.0
     },
     {
-      "low": 975.0,
-      "high": 980.0,
-      "center": 977.5,
-      "contracts": 7028.0
+      "low": 1085.0,
+      "high": 1090.0,
+      "center": 1087.5,
+      "contracts": 11578.0
     }
   ],
   "foreign_image": "foreign_supply_zone.png",
   "institution_image": "institution_supply_zone.png",
   "summary_image": "market_structure_summary.png",
-  "candlestick_image": "kospi200_futures_daily_supply_zones.png",
+  "candlestick_image": null,
   "position_profile_image": "f202609_candlestick_position_profile.png",
-  "source_note": "0787 당일 순매매 누적 기반 추정치이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 검증된 0441 정규장 가격과 같은 날짜의 0787 순매매를 가격대별로 재집계한 참고용 추정치입니다. 8/26 가격은 원본 캡처와 사용자 제공 8/27 장전 재조회 화면을 교차확인했습니다."
+  "source_note": "KRX 공식 seed와 검증 0787 수급을 날짜별 우선순위로 연결한 조건부 누적이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 검증된 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 당일 흐름과 관측 시작일부터의 누적 가격대는 별도 표시합니다."
 }
