@@ -278,11 +278,20 @@
   #marketAIContent th,#marketAIContent td{padding:8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;}
   .hit-rate-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px;}
   .hit-rate-stat{padding:15px;border:1px solid var(--border);border-radius:9px;background:var(--bg2);min-width:0;}
-  .hit-rate-stat small{display:block;color:var(--text-muted);font-size:11px;margin-bottom:7px;}
+  .hit-rate-stat small{display:block;color:#aebdd0;font-size:12px;font-weight:700;letter-spacing:.02em;margin-bottom:7px;}
   .hit-rate-stat strong{display:block;font:800 23px 'JetBrains Mono',monospace;color:var(--text);}
-  .hit-rate-stat span{display:block;margin-top:5px;color:var(--text-dim);font-size:11px;line-height:1.45;}
-  .hit-rate-rule{padding:13px 15px;border:1px solid rgba(0,229,255,.35);border-radius:9px;background:rgba(0,229,255,.05);font-size:13px;line-height:1.7;margin-bottom:16px;}
+  .hit-rate-stat span{display:block;margin-top:6px;color:#c4d0df;font-size:12px;font-weight:500;line-height:1.5;}
+  .hit-rate-rule{padding:13px 15px;border:1px solid rgba(0,229,255,.48);border-radius:9px;background:rgba(0,229,255,.07);color:#dbe7f5;font-size:13px;font-weight:500;line-height:1.7;margin-bottom:16px;}
   .hit-rate-rule b{color:var(--accent);}
+  .hit-rate-rule-note{color:#c4d0df;font-weight:500;}
+  .market-subpane[data-market-subpane="hit-rate"] .report-meta{color:#cbd5e1;font-size:12px;font-weight:600;}
+  .hit-rate-details{margin-bottom:22px;border:1px solid var(--border);border-radius:9px;background:rgba(10,12,16,.28);overflow:hidden;}
+  .hit-rate-details>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;color:#dbe7f5;font:700 13px 'JetBrains Mono',monospace;cursor:pointer;list-style:none;}
+  .hit-rate-details>summary::-webkit-details-marker{display:none;}
+  .hit-rate-details>summary::after{content:'펼치기 +';color:var(--accent);font-size:11px;white-space:nowrap;}
+  .hit-rate-details[open]>summary{border-bottom:1px solid var(--border);}
+  .hit-rate-details[open]>summary::after{content:'접기 −';}
+  .hit-rate-details-body{padding:14px;}
   .hit-rate-badge{display:inline-block;min-width:40px;padding:3px 7px;border-radius:12px;text-align:center;font:700 11px 'JetBrains Mono',monospace;}
   .hit-rate-badge.win{color:var(--up);background:rgba(46,213,115,.12);}
   .hit-rate-badge.draw{color:#f5c542;background:rgba(245,197,66,.12);}
@@ -1048,24 +1057,34 @@
     <div class="report-meta" id="marketViewHitRateMeta">시장뷰 누적 기록을 불러오는 중...</div>
     <div class="hit-rate-stats" id="marketViewHitRateStats"></div>
     <div class="hit-rate-rule" id="marketViewHitRateRule"></div>
-    <div class="grid-2" id="marketViewHitRateMarkets" style="margin-bottom:16px"></div>
-    <div class="chart-card" style="padding:14px 16px;margin-bottom:24px">
-      <div class="card-header"><span class="card-title">시장뷰별 다음 거래일 판정</span><span class="card-tag tag-global">종가→종가</span></div>
-      <div class="table-scroll" id="marketViewHitRateRecords"></div>
-    </div>
+    <details class="hit-rate-details" id="marketViewHitRateDetails">
+      <summary>시장뷰 판정 누적데이터</summary>
+      <div class="hit-rate-details-body">
+        <div class="grid-2" id="marketViewHitRateMarkets" style="margin-bottom:16px"></div>
+        <div class="chart-card" style="padding:14px 16px">
+          <div class="card-header"><span class="card-title">시장뷰별 다음 거래일 판정</span><span class="card-tag tag-global">종가→종가</span></div>
+          <div class="table-scroll" id="marketViewHitRateRecords"></div>
+        </div>
+      </div>
+    </details>
     <div class="section-title" style="margin-top:8px">후보종목 누적승률 · 다음 거래일 시가→고가</div>
     <div class="report-meta" id="candidateHitRateMeta">후보종목 누적 기록을 불러오는 중...</div>
     <div class="hit-rate-stats" id="candidateHitRateStats"></div>
     <div class="hit-rate-rule" id="candidateHitRateRule"></div>
-    <div class="grid-2" id="candidateHitRateMarkets" style="margin-bottom:16px"></div>
-    <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
-      <div class="card-header"><span class="card-title">추천일별 성적</span><span class="card-tag tag-kr">승 · 무 · 패</span></div>
-      <div class="table-scroll" id="candidateHitRateDates"></div>
-    </div>
-    <div class="chart-card" style="padding:14px 16px">
-      <div class="card-header"><span class="card-title">종목별 판정 기록</span><span class="card-tag tag-global">candidate_stocks</span></div>
-      <div class="table-scroll" id="candidateHitRateRecords"></div>
-    </div>
+    <details class="hit-rate-details" id="candidateHitRateDetails">
+      <summary>종목추천 판정 누적데이터</summary>
+      <div class="hit-rate-details-body">
+        <div class="grid-2" id="candidateHitRateMarkets" style="margin-bottom:16px"></div>
+        <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
+          <div class="card-header"><span class="card-title">추천일별 성적</span><span class="card-tag tag-kr">승 · 무 · 패</span></div>
+          <div class="table-scroll" id="candidateHitRateDates"></div>
+        </div>
+        <div class="chart-card" style="padding:14px 16px">
+          <div class="card-header"><span class="card-title">종목별 판정 기록</span><span class="card-tag tag-global">candidate_stocks</span></div>
+          <div class="table-scroll" id="candidateHitRateRecords"></div>
+        </div>
+      </div>
+    </details>
     </div>
   </div>
 
@@ -2924,7 +2943,7 @@ function renderMarketViewHitRate(data){
     hitRateStatCard('하방뷰 적중률',hitRatePct(down.accuracy_pct),`${hitRateNumber(down.wins)} / ${hitRateNumber(down.evaluated)}건`,'var(--down)'),
   ].join('');
   const rule=document.getElementById('marketViewHitRateRule');
-  if(rule)rule.innerHTML=`<b>판정 기준</b> · 게시 후 첫 완전한 거래일의 직전 종가→대상일 종가 · 상방뷰는 상승 마감, 하방뷰는 하락 마감이면 적중<br><span style="color:var(--text-muted)">단순 상대우위·근거 충돌·박스권은 중립 관찰로 남기고 방향 적중률 분모에서 제외합니다. 장중 게시 뷰는 이미 진행된 장을 평가하지 않습니다.</span>`;
+  if(rule)rule.innerHTML=`<b>판정 기준</b> · 게시 후 첫 완전한 거래일의 직전 종가→대상일 종가 · 상방뷰는 상승 마감, 하방뷰는 하락 마감이면 적중<br><span class="hit-rate-rule-note">단순 상대우위·근거 충돌·박스권은 중립 관찰로 남기고 방향 적중률 분모에서 제외합니다. 장중 게시 뷰는 이미 진행된 장을 평가하지 않습니다.</span>`;
   const markets=document.getElementById('marketViewHitRateMarkets');
   if(markets)markets.innerHTML=['KOSPI','KOSDAQ'].map(market=>{
     const row=data.by_market?.[market]||{};
@@ -2966,7 +2985,7 @@ function renderCandidateHitRate(data){
   ].join('');
 
   const rule=document.getElementById('candidateHitRateRule');
-  if(rule)rule.innerHTML=`<b>판정 기준</b> · 추천 다음 거래일 시가 진입 → 같은 날 고가 기준 · <b>+1.00% 이상은 승</b> · 0% 초과~+1.00% 미만은 무 · 0% 이하는 패<br><span style="color:var(--text-muted)">${escapeHtml(data.rule?.lookahead_note||'')} · 판정대기와 판정불가는 승률 분모에서 제외합니다.</span>`;
+  if(rule)rule.innerHTML=`<b>판정 기준</b> · 추천 다음 거래일 시가 진입 → 같은 날 고가 기준 · <b>+1.00% 이상은 승</b> · 0% 초과~+1.00% 미만은 무 · 0% 이하는 패<br><span class="hit-rate-rule-note">${escapeHtml(data.rule?.lookahead_note||'')} · 판정대기와 판정불가는 승률 분모에서 제외합니다.</span>`;
 
   const markets=document.getElementById('candidateHitRateMarkets');
   if(markets)markets.innerHTML=['KOSPI','KOSDAQ'].map(market=>{
