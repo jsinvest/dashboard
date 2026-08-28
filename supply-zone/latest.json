@@ -1,86 +1,39 @@
 {
   "as_of": "2026-08-28",
-  "generated_at": "2026-08-28 23:52:00+0900",
+  "generated_at": "2026-08-29 01:21:47+0900",
   "futures_contract": "F202609",
   "current_price": 1068.0,
-  "display_reference_price": 1068.0,
-  "display_reference_basis": "검증된 2026-08-28 F202609 정규장 0441 종가. 23:27 5605 야간 참고값 1078.10은 별도 표시",
+  "session_references": {
+    "regular": {
+      "price": 1068.0,
+      "as_of": "2026-08-28",
+      "basis": "검증된 0441 정규장 종가"
+    },
+    "overnight": {
+      "snapshot_price": 1078.1,
+      "low": 1064.25,
+      "low_time_visible": "18:10",
+      "high": 1082.2,
+      "high_time_visible": "23:00",
+      "visual_sequence": "1064.25 저점 뒤 1070과 1075를 회복해 1078.10 부근",
+      "separate_from_regular_close": true
+    },
+    "mixing_policy": "정규장 종가와 야간 화면값을 합치지 않고 별도 표시"
+  },
   "bin_size": 5,
+  "bin_size_role": "legacy participant-flow activity display only; not structural support/resistance",
   "foreign_estimated_position": -7588.0,
-  "foreign_position_side": "15개 검증 관측의 선물 만기합계 순매매 누적은 순매도(실제 F202609 잔존 숏 확정 아님)",
   "foreign_average_price": 1009.74,
   "institution_estimated_position": 5708.0,
-  "institution_position_side": "15개 검증 관측의 선물 만기합계 순매매 누적은 순매수(실제 F202609 잔존 롱 확정 아님)",
   "institution_average_price": 1024.17,
   "active_zone": {
-    "low": 995.0,
-    "high": 1080.0
+    "low": 1064.7,
+    "high": 1088.25,
+    "role": "corridor_between_nearest_structural_candidates"
   },
   "cumulative_from": "2026-07-30",
   "cumulative_to": "2026-08-28",
   "cumulative_trading_days": 15,
-  "whole_position_method": "F202609 정규장 가격과 같은 날짜의 KOSPI200 선물 만기합계 수급을 연결한 15개 검증 관측의 조건부 추정. 7/30·7/31·8/3은 KRX OFFICIAL_SEED를, 이후는 검증 0787 값을 우선했으며 실제 F202609 보유잔고·평균단가로 확정하지 않음",
-  "hts_0791_position_inference": {
-    "as_of": "2026-08-28",
-    "screen": "0791",
-    "mode": "누적·수량",
-    "scope": "KOSPI200 최근월 선물합 누적",
-    "reference_range": "1000~1100",
-    "source_image_count": 56,
-    "foreign": {
-      "direction": "LONG",
-      "label": "롱 우세",
-      "confidence": "중",
-      "curve_basis": "현재 가격을 포함하는 1000~1100 구간의 선물합성 손익곡선이 우상향",
-      "current_evaluation_pnl_million_krw": -621228,
-      "contracts": null,
-      "average_price": null
-    },
-    "institution": {
-      "direction": "SHORT",
-      "label": "숏 우세",
-      "confidence": "중",
-      "curve_basis": "금융투자·투신·기타금융은 우하향, 은행·보험·연기금등은 우상향이며 금융투자·투신의 숏 기울기가 기관계 방향을 주도",
-      "current_evaluation_pnl_million_krw": 640053,
-      "contracts": null,
-      "average_price": null,
-      "components": [
-        {
-          "investor": "금융투자",
-          "direction": "SHORT",
-          "current_evaluation_pnl_million_krw": 464560
-        },
-        {
-          "investor": "투신",
-          "direction": "SHORT",
-          "current_evaluation_pnl_million_krw": 237855
-        },
-        {
-          "investor": "기타금융",
-          "direction": "SHORT",
-          "current_evaluation_pnl_million_krw": 693
-        },
-        {
-          "investor": "은행",
-          "direction": "LONG",
-          "current_evaluation_pnl_million_krw": -1915
-        },
-        {
-          "investor": "보험",
-          "direction": "LONG",
-          "current_evaluation_pnl_million_krw": -52524
-        },
-        {
-          "investor": "연기금등",
-          "direction": "LONG",
-          "current_evaluation_pnl_million_krw": -8616
-        }
-      ]
-    },
-    "recent_flow_alignment": "당일 외국인 선물 +2289·기관 -2835, 최근 3관측 +11946·-13379, 최근 5관측 +14246·-15243으로 0791 외국인 롱·기관 숏 방향과 정렬",
-    "flow_proxy_comparison": "15관측 KRX·0787 순매매 누적은 외국인 -7588·기관 +5708로 0791 방향과 반대지만 현재 잔존 포지션이 아니라 관측기간 순매매 프록시",
-    "limitation": "0791_range_scan CSV의 clipboard·csv 값이 56행 모두 비어 있어 원본 PNG 손익곡선 기울기로 방향만 판정. 평가손익 부호는 롱·숏 방향이 아니며 정확 계약수와 평균단가는 확인 불가"
-  },
   "data_quality": {
     "active_contract_only": "F202609",
     "excluded_dates": {
@@ -88,25 +41,7 @@
       "20260804": "원천 브리지 불일치(date=20260804, contract=UNKNOWN)",
       "20260805": "원천 브리지 불일치(date=20260805, contract=UNKNOWN)"
     },
-    "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외",
-    "pipeline_validation": {
-      "manifest_version": 17,
-      "eod_result_count": 71,
-      "validation_warning_count": 0,
-      "parsed_0787_rows": 54,
-      "price_csv_rows": 50,
-      "strict_flow_csv_rows": 49,
-      "duplicate_dates": 0,
-      "screen_0471": "일별조회·60일·KOSPI200·7개 변동성 항목 선택 확인",
-      "screen_5605_daily": "234/234로 최소 120봉 충족",
-      "screen_5605_10minute": "59/600 중 총 600봉으로 최소 480봉 충족"
-    },
-    "warnings": [
-      "5605 일봉·10분봉은 23시대 야간 시세 화면이므로 정규장 0441 종가와 분리",
-      "5605 보조지표 수치 일부는 자동 검증하지 못해 분석 수치 근거로 사용하지 않음",
-      "0791은 PNG 곡선 기울기만 검증돼 정확 계약수·평균단가 판단 불가",
-      "0787은 KOSPI200 선물 만기합계 선택이며 개별 만기 잔존 포지션으로 확정 불가"
-    ]
+    "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외"
   },
   "daily_flow": {
     "as_of": "2026-08-28",
@@ -118,279 +53,10 @@
     "institution_futures_net": -2835.0,
     "institution_option_delta_net": -290.0
   },
-  "daily_option_amount": {
-    "unit": "0787 금액 화면 표시 단위(억원)",
-    "foreign_futures": 6137.0,
-    "institution_futures": -7603.0,
-    "foreign_call": 61.0,
-    "foreign_put": -238.0,
-    "institution_call": -62.0,
-    "institution_put": 235.0,
-    "interpretation": "외국인은 선물 순매수와 단순 0.5 델타 기준 상방 옵션 노출이 함께 확인됐고 기관은 선물 순매도와 하방 옵션 노출이 정렬. 옵션은 실제 종목별 델타가 아닌 근사치"
-  },
-  "recent_validated_flow": {
-    "latest_3_observations": {
-      "dates": [
-        "20260826",
-        "20260827",
-        "20260828"
-      ],
-      "foreign_futures_net": 11946.0,
-      "foreign_option_delta_net": 642.5,
-      "foreign_composite_delta": 12588.5,
-      "institution_futures_net": -13379.0,
-      "institution_option_delta_net": -484.5,
-      "institution_composite_delta": -13863.5,
-      "price_change_pct": -0.51,
-      "open_interest_change": 2165,
-      "open_interest_change_pct": 1.41,
-      "volume_sum": 313078,
-      "volume_average": 104359.3,
-      "interpretation": "외국인 매수·기관 매도가 강하게 맞선 가운데 가격은 3관측 시작값보다 0.51% 낮고 OI는 1.41% 증가. 최근 3일은 기관 매도 방향이 가격과 더 가까웠음"
-    },
-    "latest_5_observations": {
-      "dates": [
-        "20260824",
-        "20260825",
-        "20260826",
-        "20260827",
-        "20260828"
-      ],
-      "foreign_futures_net": 14246.0,
-      "foreign_option_delta_net": -881.0,
-      "foreign_composite_delta": 13365.0,
-      "institution_futures_net": -15243.0,
-      "institution_option_delta_net": 425.0,
-      "institution_composite_delta": -14818.0,
-      "price_change_pct": 1.55,
-      "open_interest_change": 4618,
-      "open_interest_change_pct": 3.07,
-      "volume_sum": 553998,
-      "volume_average": 110799.6,
-      "interpretation": "5관측 전체는 가격·OI가 증가하고 외국인 선물 누적 매수가 정렬됐지만, 8/28에는 외국인 +2289에도 가격 -2.00%·OI +1.14%로 단순 외국인 매수=상승 규칙이 깨짐"
-    },
-    "current_maturity_proxy_15_observations": {
-      "scope": "F202609 가격 앵커 + KOSPI200 선물 만기합계 strict 수급의 조건부 프록시",
-      "foreign_futures_net": -7588.0,
-      "foreign_option_delta_net": -11771.0,
-      "foreign_composite_delta": -19359.0,
-      "institution_futures_net": 5708.0,
-      "institution_option_delta_net": 2534.5,
-      "institution_composite_delta": 8242.5,
-      "price_change_pct": 23.1,
-      "open_interest_change": -13475,
-      "open_interest_change_pct": -7.99,
-      "volume_sum": 1986889,
-      "volume_average": 132459.3,
-      "interpretation": "가격은 15관측 시작값보다 23.10% 높지만 OI는 7.99% 감소하고 외국인 합성 누적은 하방. 상승 과정에 청산·숏커버가 섞였을 가능성이 있으며 실제 F202609 잔고로 확정할 수 없음"
-    },
-    "latest_20_joint_observations": {
-      "foreign_futures_net": 441.0,
-      "institution_futures_net": -912.0,
-      "price_change_pct": 0.42,
-      "open_interest_change": -5547,
-      "open_interest_change_pct": -3.45,
-      "volume_sum": 2762865,
-      "volume_average": 138143.3,
-      "option_delta": "검증 옵션 관측이 15개뿐이라 20관측 계산 불가"
-    }
-  },
-  "participant_price_alignment": {
-    "latest_3_joint_observations": {
-      "foreign_same_day_correlation": 0.91,
-      "foreign_direction_matches": "2/3",
-      "institution_same_day_correlation": -0.983,
-      "institution_direction_matches": "1/3"
-    },
-    "latest_5_joint_observations": {
-      "foreign_same_day_correlation": 0.165,
-      "foreign_direction_matches": "2/5",
-      "institution_same_day_correlation": 0.006,
-      "institution_direction_matches": "3/5"
-    },
-    "latest_20_joint_observations": {
-      "method": "같은 거래일 선물 순매매와 F202609 가격 변화의 피어슨 상관 및 방향 일치 횟수",
-      "foreign_same_day_correlation": -0.296,
-      "foreign_direction_matches": "7/20",
-      "institution_same_day_correlation": 0.253,
-      "institution_direction_matches": "12/20"
-    },
-    "interpretation": "최근 3일은 외국인 수급이 2/3으로 더 잘 맞았지만 5일은 기관 3/5, 20관측은 기관 12/20으로 우세. 특히 8/28 기관 매도는 하락과 정렬되고 외국인 매수는 흡수돼, 현재 영향 주체는 기관 쪽이 조금 더 가깝다고 추론. 소표본 상관은 인과나 다음 날 예측력을 뜻하지 않음"
-  },
-  "post_close_context": {
-    "checked_at": "2026-08-28 23:50+0900",
-    "facts": [
-      "연합뉴스 마감 보도 기준 KOSPI는 6788.88로 1.79% 하락했고 외국인·기관이 현물을 합산 약 2조원 순매도",
-      "반도체 관세 우려와 잭슨홀 연설 대기 속 삼성전자 -3.38%, SK하이닉스 -4.45%로 기술 대형주가 약세",
-      "KRX·연합인포맥스 시세표의 F202609 종가 1068.00·전일 대비 -21.85·거래량 92632가 0441 원본과 일치",
-      "5605 10분봉 캡처의 23:27 야간 참고값은 1078.10, 야간 고가 1082.20·저가 1064.25로 정규장 종가보다 10.10포인트 회복"
-    ],
-    "sources": [
-      "https://en.yna.co.kr/view/AEN20260828006652320",
-      "https://www.yna.co.kr/amp/view/AKR20260828140100008",
-      "C:/Users/skylo/Desktop/trading_strength/output/futures_options_eod/20260828/5605_KOSPI200최근월_10분봉_20260828.png"
-    ],
-    "interpretation": "야간 회복은 상방 반대 신호지만 정규장 가격 하락·OI 증가와 현물 외국인·기관 매도, 기술주 약세를 뒤집을 정도로 확정되지 않아 단기 하방 우세를 유지"
-  },
-  "overall_assessment": {
-    "reference_price": 1068.0,
-    "reference_price_source": "검증된 2026-08-28 F202609 정규장 0441 종가",
-    "headline": "결론: 단기 하방 우세(중립-하방) · 현재 1차 지지: 1065~1070(중) 지지 여부 확인 · 하단 시나리오: 1065 정규장 종가 이탈 시 1060~1065(약), 이어 1050~1055(중)·1030~1040(중) · 상단 시나리오: 1070~1075(중~강) 돌파·안착 여부 확인, 돌파 시 1080~1090(강), 그 위 1095~1110(강)",
-    "stance": "단기 하방 우세(중립-하방)",
-    "confidence": "중(가격 -2.00%·OI +1.14%·저가 근접 종가와 기관 매도 정렬은 하방이나 외국인 선물·옵션 상방 및 야간 1078.10 회복이 반대)",
-    "pivot": "1065~1070(중)",
-    "first_resistance": "1070~1075(중~강)",
-    "breakout_confirmation": "1075 위 정규장 종가 안착과 외국인 선물 매수 지속, 가격 상승·OI 증가의 동시 확인",
-    "second_resistance_target": "1080~1090(강), 돌파 시 1095~1110(강)",
-    "downside_scenario": "1065 정규장 종가 이탈 시 1060~1065(약), 이어 1050~1055(중)·1030~1040(중). 990~1000은 강한 충돌 반응대지만 순수 매수 지지로 확정하지 않음",
-    "caution": "지지·저항 강도는 반복 가격반응·거래량 매물대·가격대별 누적 수급·OI를 결합한 조건부 등급입니다. 0787은 만기분해가 없고 옵션 델타는 절대 0.5 가정 근사치입니다.",
-    "levels": [
-      {
-        "label": "현재 1차 지지(중)",
-        "range": "1065~1070",
-        "side": "current",
-        "sequence": 0,
-        "low": 1065,
-        "high": 1070,
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 7,
-        "data_confidence": "중상",
-        "reason": "8/28 저가 1066.90·종가 1068.00과 당일 참여자 충돌 gross 5124(8위)가 중첩되고 야간에도 1064.25 저점 뒤 회복",
-        "color": "#1d4ed8"
-      },
-      {
-        "label": "이탈 후 다음 지지(약)",
-        "range": "1060~1065",
-        "side": "support",
-        "sequence": 1,
-        "low": 1060,
-        "high": 1065,
-        "strength": "약",
-        "reaction_strength": "약",
-        "strength_score": 4,
-        "data_confidence": "중",
-        "reason": "야간 저가 1064.25 반응은 확인됐지만 누적 수급 gross 1833(12위)로 집중도가 낮아 완충 구간 성격",
-        "color": "#60a5fa"
-      },
-      {
-        "label": "추가 하단 지지(중)",
-        "range": "1050~1055",
-        "side": "support",
-        "sequence": 2,
-        "low": 1050,
-        "high": 1055,
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 7,
-        "data_confidence": "중상",
-        "reason": "8/24 종가 1051.65·8/26 저가 1055.10과 참여자 충돌 gross 5997(7위), 1050~1075 7관측 거래량 828644가 중첩",
-        "color": "#3b82f6"
-      },
-      {
-        "label": "추가 하단 지지(중)",
-        "range": "1030~1040",
-        "side": "support",
-        "sequence": 3,
-        "low": 1030,
-        "high": 1040,
-        "strength": "중",
-        "reaction_strength": "중",
-        "strength_score": 6,
-        "data_confidence": "중",
-        "reason": "1025~1050 가격대 3관측·거래량 435364·OI +9836과 1030~1040 누적 수급 gross 4913이 겹침",
-        "color": "#3b82f6"
-      },
-      {
-        "label": "원거리 충돌 반응대(강·방향 불명)",
-        "range": "990~1000",
-        "side": "conflict",
-        "sequence": 1,
-        "low": 990,
-        "high": 1000,
-        "strength": "강",
-        "reaction_strength": "강",
-        "strength_score": 8,
-        "data_confidence": "중",
-        "reason": "990~995 gross 25482로 15관측 1위지만 외국인 숏·기관 롱 충돌대라 방향성 지지로 단정할 수 없음",
-        "color": "#64748b"
-      },
-      {
-        "label": "현재 저항(중~강)",
-        "range": "1070~1075",
-        "side": "resistance",
-        "sequence": 1,
-        "low": 1070,
-        "high": 1075,
-        "strength": "중~강",
-        "reaction_strength": "중",
-        "strength_score": 8,
-        "data_confidence": "중상",
-        "reason": "누적 수급 gross 7860(4위), 8/26 종가 1073.50과 8/28 정규장 종가 아래·야간 회복 위의 전환 구간",
-        "color": "#f97316"
-      },
-      {
-        "label": "돌파 후 다음 저항(강)",
-        "range": "1080~1090",
-        "side": "resistance",
-        "sequence": 2,
-        "low": 1080,
-        "high": 1090,
-        "strength": "강",
-        "reaction_strength": "강",
-        "strength_score": 9,
-        "data_confidence": "중상",
-        "reason": "1080~1085 gross 15210(2위)와 1085~1090 gross 11578(3위), 8/28 고가 1089.10·8/27 종가 1089.85가 중첩",
-        "color": "#ef4444"
-      },
-      {
-        "label": "추가 상단 저항(강)",
-        "range": "1095~1110",
-        "side": "resistance",
-        "sequence": 3,
-        "low": 1095,
-        "high": 1110,
-        "strength": "강",
-        "reaction_strength": "중~강",
-        "strength_score": 8,
-        "data_confidence": "중상",
-        "reason": "8/21 고가 1105.25와 8/27 고가 1109.40의 반복 거절이 확인되며 1095~1100 누적 수급 집중 자체는 약함",
-        "color": "#b91c1c"
-      }
-    ],
-    "scenarios": [
-      {
-        "tone": "neutral",
-        "condition": "1065~1075 안에서 OI 증가 둔화 또는 외국인·기관 수급 교차",
-        "target": "참여자 충돌 박스권으로 보고 방향 확정 보류"
-      },
-      {
-        "tone": "down",
-        "condition": "1065 정규장 종가 이탈",
-        "target": "1060~1065, 이어 1050~1055·1030~1040"
-      },
-      {
-        "tone": "up",
-        "condition": "1075 위 정규장 종가 안착과 외국인 선물 매수·가격 상승·OI 증가 확인",
-        "target": "1080~1090, 돌파 시 1095~1110"
-      }
-    ],
-    "evidence": [
-      "8/28 F202609 종가 1068.00·전일 대비 -21.85(-2.00%), 고가 1089.10·저가 1066.90·종가 위치 4.95%",
-      "거래량 92632·미결제약정 155198, 전일 대비 +1752(+1.14%)로 가격 하락·OI 증가",
-      "외국인 선물 +2289·옵션델타 +1519.5, 기관 선물 -2835·옵션델타 -290",
-      "최근 3관측 외국인 합성 +12588.5·기관 -13863.5, 가격 -0.51%·OI +1.41%",
-      "최근 5관측 외국인 합성 +13365·기관 -14818, 가격 +1.55%·OI +3.07%",
-      "15관측 strict 누적 외국인 합성 -19359·기관 +8242.5, 가격 +23.10%·OI -7.99%",
-      "최근 20관측 당일 가격 방향 일치 기관 12/20·외국인 7/20, 8/28도 기관 매도가 가격 하락과 정렬",
-      "0791 PNG 곡선은 외국인 롱·기관 숏으로 최근 3·5일 수급과 정렬하지만 정확 계약수·평단은 판단 불가",
-      "23:27 야간선물 1078.10 회복은 하방 결론의 반대 신호",
-      "현물 외국인·기관 합산 약 2조원 순매도와 기술 대형주 약세는 하방 보조"
-    ]
-  },
   "support_resistance_strength_method": {
-    "directional_score": "엄격 일별 반복·거래량 매물대·미결제약정 지속·참여자 수급·최신 일봉/분봉 반응을 각각 0~2점으로 평가. 8~10 강, 5~7 중, 0~4 약",
-    "reaction_strength": "cumulative_zones의 reaction_strength는 참여자 절대 순매매 합계 순위만 나타내며 방향성 지지·저항 등급으로 직접 사용하지 않음"
+    "structural_levels": "동일 월물의 검증된 정규장 일봉에서 ATR 가변폭 스윙·거절·서로 다른 반응일·거래량·절대 OI 활동·최근성을 계산. 고정 5포인트 가격망을 사용하지 않음",
+    "reaction_strength": "cumulative_zones의 reaction_strength는 참여자 절대 순매매 합계 순위만 나타내며 구조 지지·저항 등급이나 다음날 방향으로 사용하지 않음",
+    "execution_gate": "원시 분봉 종가 안착·재시험과 동시간 거래량·OI가 없으면 execution_ready=false"
   },
   "cumulative_zones": [
     {
@@ -634,7 +300,7 @@
       "institution_contracts": 2764.0
     }
   ],
-  "upper_zones": [
+  "legacy_flow_upper_zones": [
     {
       "low": 1080.0,
       "high": 1085.0,
@@ -654,7 +320,7 @@
       "contracts": 7860.0
     }
   ],
-  "lower_zones": [
+  "legacy_flow_lower_zones": [
     {
       "low": 990.0,
       "high": 995.0,
@@ -674,10 +340,4301 @@
       "contracts": 7005.0
     }
   ],
+  "upper_zones": [
+    {
+      "low": 1088.25,
+      "high": 1094.55,
+      "center": 1091.4,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1101.35,
+      "high": 1107.65,
+      "center": 1104.5,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1116.7,
+      "high": 1123.0,
+      "center": 1119.85,
+      "strength": "방어 경향·신뢰구간 미달",
+      "execution_ready": false
+    },
+    {
+      "low": 1140.1,
+      "high": 1146.45,
+      "center": 1143.3,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    }
+  ],
+  "lower_zones": [
+    {
+      "low": 1058.4,
+      "high": 1064.7,
+      "center": 1061.55,
+      "strength": "과거 실패 우세",
+      "execution_ready": false
+    },
+    {
+      "low": 1031.95,
+      "high": 1040.2,
+      "center": 1036.05,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1016.25,
+      "high": 1023.25,
+      "center": 1019.75,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1002.1,
+      "high": 1008.65,
+      "center": 1005.35,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    }
+  ],
+  "structural_level_model": {
+    "schema_version": "1.0",
+    "model": "price_structure_atr_v1",
+    "status": "OK",
+    "fixed_five_point_bins_used": false,
+    "execution_ready": false,
+    "analysis_scope": "daily_structure_only",
+    "level_status": "candidate_before_intraday_confirmation",
+    "as_of": "2026-08-28",
+    "contract": {
+      "code": "A0169000",
+      "name": "F 202609",
+      "month": "202609",
+      "session": "regular"
+    },
+    "market": {
+      "current_price": 1068.0,
+      "atr_period": 14,
+      "atr": 52.7214,
+      "cluster_radius": 5.2721,
+      "swing_window_observations_each_side": 2
+    },
+    "methodology": {
+      "source": "validated same-contract daily OHLCV/OI",
+      "candidate_events": [
+        "swing_high",
+        "swing_low",
+        "upper_rejection",
+        "lower_rejection"
+      ],
+      "clustering": "ATR-adaptive, no fixed price grid",
+      "ranking": "current-price proximity first, evidence score second",
+      "strength_inputs": [
+        "repeated reaction dates",
+        "swing confirmations",
+        "volume",
+        "absolute OI change",
+        "recency"
+      ],
+      "oi_limit": "daily OI sign is not treated as long/short direction"
+    },
+    "data_quality": {
+      "source_path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
+      "source_sha256": "B79FE03B10491F9FEE6F4134DC31FB90D9F8D8AB013BBAC2B862A424001B043F",
+      "requested_as_of_date": "2026-08-28",
+      "total_csv_rows": 50,
+      "validated_rows": 49,
+      "rejected_rows": {
+        "non_regular": 0,
+        "non_final": 1,
+        "unvalidated": 0,
+        "contract_mismatch": 0,
+        "after_as_of_date": 0,
+        "invalid_core": 0
+      },
+      "duplicate_equal_dates": [],
+      "duplicate_conflict_dates_excluded": [],
+      "missing_open_rows": 12,
+      "missing_oi_rows": 0,
+      "missing_oi_change_rows": 1,
+      "weekday_gap_details": [
+        {
+          "after": "2026-07-16",
+          "before": "2026-07-20",
+          "missing_weekdays": [
+            "2026-07-17"
+          ],
+          "note": "거래소 휴장일일 수 있어 보간하지 않음"
+        },
+        {
+          "after": "2026-08-04",
+          "before": "2026-08-07",
+          "missing_weekdays": [
+            "2026-08-05",
+            "2026-08-06"
+          ],
+          "note": "거래소 휴장일일 수 있어 보간하지 않음"
+        },
+        {
+          "after": "2026-08-07",
+          "before": "2026-08-12",
+          "missing_weekdays": [
+            "2026-08-10",
+            "2026-08-11"
+          ],
+          "note": "거래소 휴장일일 수 있어 보간하지 않음"
+        },
+        {
+          "after": "2026-08-13",
+          "before": "2026-08-18",
+          "missing_weekdays": [
+            "2026-08-14",
+            "2026-08-17"
+          ],
+          "note": "거래소 휴장일일 수 있어 보간하지 않음"
+        }
+      ],
+      "gap_policy": "공백을 보간하지 않고 공백을 가로지르는 스윙 후보를 제외",
+      "first_validated_date": "2026-06-12",
+      "last_validated_date": "2026-08-28",
+      "volume_coverage": 1.0,
+      "oi_coverage": 1.0,
+      "oi_change_coverage": 0.98,
+      "warnings": [
+        "시가 결측 행은 갭 분석에서 제외; ATR·스윙은 고가/저가/종가로 계산",
+        "거래일 공백은 보간하지 않았고 공백을 가로지르는 스윙 후보를 제외"
+      ]
+    },
+    "candidate_reaction_count": 38,
+    "cluster_count": 22,
+    "active_zones": [],
+    "supports": [
+      {
+        "center": 1061.55,
+        "lower": 1058.4,
+        "upper": 1064.7,
+        "width": 6.35,
+        "score": 30.9,
+        "strength": "weak",
+        "strong_grade_allowed": false,
+        "reaction_count": 1,
+        "swing_confirmation_count": 0,
+        "support_reactions": 1,
+        "resistance_reactions": 0,
+        "last_reaction_date": "2026-08-21",
+        "age_calendar_days": 7,
+        "mean_volume_ratio": 0.842,
+        "mean_abs_oi_activity_ratio": 0.134,
+        "evidence_dates": [
+          "2026-08-21"
+        ],
+        "evidence_types": [
+          "lower_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 1,
+        "distance_from_current": 6.45,
+        "distance_atr": 0.122,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      },
+      {
+        "center": 1036.05,
+        "lower": 1031.95,
+        "upper": 1040.2,
+        "width": 8.25,
+        "score": 73.6,
+        "strength": "strong",
+        "strong_grade_allowed": true,
+        "reaction_count": 3,
+        "swing_confirmation_count": 2,
+        "support_reactions": 3,
+        "resistance_reactions": 1,
+        "last_reaction_date": "2026-08-20",
+        "age_calendar_days": 8,
+        "mean_volume_ratio": 1.144,
+        "mean_abs_oi_activity_ratio": 3.003,
+        "evidence_dates": [
+          "2026-07-14",
+          "2026-07-31",
+          "2026-08-20"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "swing_high",
+          "swing_low"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 2,
+        "distance_from_current": 31.95,
+        "distance_atr": 0.606,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      },
+      {
+        "center": 1019.75,
+        "lower": 1016.25,
+        "upper": 1023.25,
+        "width": 7.0,
+        "score": 49.8,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 3,
+        "swing_confirmation_count": 0,
+        "support_reactions": 1,
+        "resistance_reactions": 2,
+        "last_reaction_date": "2026-08-03",
+        "age_calendar_days": 25,
+        "mean_volume_ratio": 0.922,
+        "mean_abs_oi_activity_ratio": 1.615,
+        "evidence_dates": [
+          "2026-07-21",
+          "2026-07-28",
+          "2026-08-03"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "upper_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 3,
+        "distance_from_current": 48.25,
+        "distance_atr": 0.915,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      },
+      {
+        "center": 1005.35,
+        "lower": 1002.1,
+        "upper": 1008.65,
+        "width": 6.5,
+        "score": 52.7,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 2,
+        "swing_confirmation_count": 1,
+        "support_reactions": 3,
+        "resistance_reactions": 0,
+        "last_reaction_date": "2026-08-25",
+        "age_calendar_days": 3,
+        "mean_volume_ratio": 0.879,
+        "mean_abs_oi_activity_ratio": 0.927,
+        "evidence_dates": [
+          "2026-08-12",
+          "2026-08-25"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "swing_low"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 4,
+        "distance_from_current": 62.65,
+        "distance_atr": 1.188,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      }
+    ],
+    "resistances": [
+      {
+        "center": 1091.4,
+        "lower": 1088.25,
+        "upper": 1094.55,
+        "width": 6.35,
+        "score": 53.6,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 3,
+        "swing_confirmation_count": 0,
+        "support_reactions": 0,
+        "resistance_reactions": 3,
+        "last_reaction_date": "2026-08-28",
+        "age_calendar_days": 0,
+        "mean_volume_ratio": 0.828,
+        "mean_abs_oi_activity_ratio": 1.059,
+        "evidence_dates": [
+          "2026-07-20",
+          "2026-08-24",
+          "2026-08-28"
+        ],
+        "evidence_types": [
+          "upper_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 1,
+        "distance_from_current": 23.4,
+        "distance_atr": 0.444,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      },
+      {
+        "center": 1104.5,
+        "lower": 1101.35,
+        "upper": 1107.65,
+        "width": 6.35,
+        "score": 47.5,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 2,
+        "swing_confirmation_count": 1,
+        "support_reactions": 1,
+        "resistance_reactions": 1,
+        "last_reaction_date": "2026-08-21",
+        "age_calendar_days": 7,
+        "mean_volume_ratio": 0.783,
+        "mean_abs_oi_activity_ratio": 0.386,
+        "evidence_dates": [
+          "2026-07-23",
+          "2026-08-21"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "swing_high"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 2,
+        "distance_from_current": 36.5,
+        "distance_atr": 0.692,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      },
+      {
+        "center": 1119.85,
+        "lower": 1116.7,
+        "upper": 1123.0,
+        "width": 6.35,
+        "score": 30.3,
+        "strength": "weak",
+        "strong_grade_allowed": false,
+        "reaction_count": 1,
+        "swing_confirmation_count": 0,
+        "support_reactions": 0,
+        "resistance_reactions": 1,
+        "last_reaction_date": "2026-07-24",
+        "age_calendar_days": 35,
+        "mean_volume_ratio": 0.938,
+        "mean_abs_oi_activity_ratio": 0.804,
+        "evidence_dates": [
+          "2026-07-24"
+        ],
+        "evidence_types": [
+          "upper_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 3,
+        "distance_from_current": 51.85,
+        "distance_atr": 0.983,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      },
+      {
+        "center": 1143.3,
+        "lower": 1140.1,
+        "upper": 1146.45,
+        "width": 6.35,
+        "score": 58.3,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 2,
+        "swing_confirmation_count": 1,
+        "support_reactions": 1,
+        "resistance_reactions": 1,
+        "last_reaction_date": "2026-08-18",
+        "age_calendar_days": 10,
+        "mean_volume_ratio": 1.125,
+        "mean_abs_oi_activity_ratio": 2.741,
+        "evidence_dates": [
+          "2026-07-02",
+          "2026-08-18"
+        ],
+        "evidence_types": [
+          "swing_low",
+          "upper_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 4,
+        "distance_from_current": 75.3,
+        "distance_atr": 1.428,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      }
+    ],
+    "execution_conditions": {
+      "confirmation": [
+        "정규장과 야간장을 분리해 판정",
+        "5분봉 2개 또는 15분봉 1개 종가의 구간 방어·돌파 확인",
+        "첫 이탈을 추격하지 않고 되돌림 재시험 확인",
+        "동시간 거래량과 OI 변화가 가격 반응을 확인할 것"
+      ],
+      "invalidation": [
+        "지지는 15분봉 종가의 구간 하단 이탈 후 되돌림 회복 실패 시 무효",
+        "저항은 15분봉 종가의 구간 상단 돌파 후 재시험 방어 시 무효",
+        "월물 변경 또는 원천 검증 실패 시 모든 후보 레벨 재계산"
+      ]
+    },
+    "execution_note": "일봉 레벨은 후보 구간이다. 실제 진입은 정규장/야간장별 분봉 종가 안착·재시험과 동시간 OI/거래량 확인이 필요하다."
+  },
+  "execution_levels": [
+    {
+      "label": "1차 일봉 구조 후보 지지(구조 약 · 과거 실패 우세)",
+      "range": "1058.40~1064.70",
+      "side": "support",
+      "sequence": 1,
+      "low": 1058.4,
+      "high": 1064.7,
+      "center": 1061.55,
+      "strength": "과거 실패 우세",
+      "structure_strength": "약",
+      "reaction_strength": "과거 실패 우세",
+      "strength_score": 30.9,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 1일 · 확정 스윙 0회 · 최근 반응 2026-08-21. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 4회, 종가 비실패 0.0% (과거 실패 우세)",
+      "color": "#2563eb",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+      "source_types": [
+        "lower_rejection"
+      ],
+      "evidence_dates": [
+        "2026-08-21"
+      ],
+      "walk_forward_validation": {
+        "available": 10,
+        "touched": 4,
+        "close_nonfailure": 0,
+        "close_confirmed": 0,
+        "failed_close": 4,
+        "close_nonfailure_rate_pct": 0.0,
+        "close_confirmed_rate_pct": 0.0,
+        "nonfailure_wilson_95_pct": [
+          0.0,
+          48.99
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "과거 실패 우세"
+    },
+    {
+      "label": "2차 일봉 구조 후보 지지(구조 강 · 표본 부족·미검증)",
+      "range": "1031.95~1040.20",
+      "side": "support",
+      "sequence": 2,
+      "low": 1031.95,
+      "high": 1040.2,
+      "center": 1036.05,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "강",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 73.6,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 2회 · 최근 반응 2026-08-20. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 100.0% (표본 부족·미검증)",
+      "color": "#2563eb",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+      "source_types": [
+        "lower_rejection",
+        "swing_high",
+        "swing_low"
+      ],
+      "evidence_dates": [
+        "2026-07-14",
+        "2026-07-31",
+        "2026-08-20"
+      ],
+      "walk_forward_validation": {
+        "available": 3,
+        "touched": 1,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 0,
+        "close_nonfailure_rate_pct": 100.0,
+        "close_confirmed_rate_pct": 100.0,
+        "nonfailure_wilson_95_pct": [
+          20.65,
+          100.0
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    },
+    {
+      "label": "3차 일봉 구조 후보 지지(구조 중 · 표본 부족·미검증)",
+      "range": "1016.25~1023.25",
+      "side": "support",
+      "sequence": 3,
+      "low": 1016.25,
+      "high": 1023.25,
+      "center": 1019.75,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "중",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 49.8,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 0회 · 최근 반응 2026-08-03. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 0.0% (표본 부족·미검증)",
+      "color": "#2563eb",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+      "source_types": [
+        "lower_rejection",
+        "upper_rejection"
+      ],
+      "evidence_dates": [
+        "2026-07-21",
+        "2026-07-28",
+        "2026-08-03"
+      ],
+      "walk_forward_validation": {
+        "available": 7,
+        "touched": 1,
+        "close_nonfailure": 0,
+        "close_confirmed": 0,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 0.0,
+        "close_confirmed_rate_pct": 0.0,
+        "nonfailure_wilson_95_pct": [
+          0.0,
+          79.35
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    },
+    {
+      "label": "4차 일봉 구조 후보 지지(구조 중 · 표본 부족·미검증)",
+      "range": "1002.10~1008.65",
+      "side": "support",
+      "sequence": 4,
+      "low": 1002.1,
+      "high": 1008.65,
+      "center": 1005.35,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "중",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 52.7,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-25. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 0.0% (표본 부족·미검증)",
+      "color": "#2563eb",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+      "source_types": [
+        "lower_rejection",
+        "swing_low"
+      ],
+      "evidence_dates": [
+        "2026-08-12",
+        "2026-08-25"
+      ],
+      "walk_forward_validation": {
+        "available": 7,
+        "touched": 1,
+        "close_nonfailure": 0,
+        "close_confirmed": 0,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 0.0,
+        "close_confirmed_rate_pct": 0.0,
+        "nonfailure_wilson_95_pct": [
+          0.0,
+          79.35
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    },
+    {
+      "label": "1차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+      "range": "1088.25~1094.55",
+      "side": "resistance",
+      "sequence": 1,
+      "low": 1088.25,
+      "high": 1094.55,
+      "center": 1091.4,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "중",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 53.6,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 0회 · 최근 반응 2026-08-28. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+      "color": "#dc2626",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+      "source_types": [
+        "upper_rejection"
+      ],
+      "evidence_dates": [
+        "2026-07-20",
+        "2026-08-24",
+        "2026-08-28"
+      ],
+      "walk_forward_validation": {
+        "available": 6,
+        "touched": 2,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 50.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          9.45,
+          90.55
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    },
+    {
+      "label": "2차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+      "range": "1101.35~1107.65",
+      "side": "resistance",
+      "sequence": 2,
+      "low": 1101.35,
+      "high": 1107.65,
+      "center": 1104.5,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "중",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 47.5,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-21. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+      "color": "#dc2626",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+      "source_types": [
+        "lower_rejection",
+        "swing_high"
+      ],
+      "evidence_dates": [
+        "2026-07-23",
+        "2026-08-21"
+      ],
+      "walk_forward_validation": {
+        "available": 6,
+        "touched": 2,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 50.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          9.45,
+          90.55
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    },
+    {
+      "label": "3차 일봉 구조 후보 저항(구조 약 · 방어 경향·신뢰구간 미달)",
+      "range": "1116.70~1123.00",
+      "side": "resistance",
+      "sequence": 3,
+      "low": 1116.7,
+      "high": 1123.0,
+      "center": 1119.85,
+      "strength": "방어 경향·신뢰구간 미달",
+      "structure_strength": "약",
+      "reaction_strength": "방어 경향·신뢰구간 미달",
+      "strength_score": 30.3,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 1일 · 확정 스윙 0회 · 최근 반응 2026-07-24. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 8회, 종가 비실패 75.0% (방어 경향·신뢰구간 미달)",
+      "color": "#dc2626",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+      "source_types": [
+        "upper_rejection"
+      ],
+      "evidence_dates": [
+        "2026-07-24"
+      ],
+      "walk_forward_validation": {
+        "available": 19,
+        "touched": 8,
+        "close_nonfailure": 6,
+        "close_confirmed": 4,
+        "failed_close": 2,
+        "close_nonfailure_rate_pct": 75.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          40.93,
+          92.85
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "방어 경향·신뢰구간 미달"
+    },
+    {
+      "label": "4차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+      "range": "1140.10~1146.45",
+      "side": "resistance",
+      "sequence": 4,
+      "low": 1140.1,
+      "high": 1146.45,
+      "center": 1143.3,
+      "strength": "표본 부족·미검증",
+      "structure_strength": "중",
+      "reaction_strength": "표본 부족·미검증",
+      "strength_score": 58.3,
+      "data_confidence": "일봉 구조",
+      "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-18. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+      "color": "#dc2626",
+      "execution_ready": false,
+      "level_status": "candidate_before_intraday_confirmation",
+      "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+      "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+      "source_types": [
+        "swing_low",
+        "upper_rejection"
+      ],
+      "evidence_dates": [
+        "2026-07-02",
+        "2026-08-18"
+      ],
+      "walk_forward_validation": {
+        "available": 6,
+        "touched": 2,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 50.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          9.45,
+          90.55
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "validation_label": "표본 부족·미검증"
+    }
+  ],
+  "next_day_flow_edge": {
+    "schema_version": 1,
+    "generated_at": "2026-08-29T01:21:47+09:00",
+    "contract_price_target": "F 202609",
+    "as_of_date": "2026-08-28",
+    "inputs": {
+      "strict_flow_csv": {
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
+        "sha256": "1080cd930066b8fb4fd45ce7f4099cda2b917f6aa5a6b2369baef653ac6a725e"
+      },
+      "validated_price_csv": {
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
+        "sha256": "b79fe03b10491f9fee6f4134dc31fb90d9f8d8ab013bbac2b862a424001b043f",
+        "contract_code": "A0169000",
+        "excluded_rows": {
+          "not_final": 1
+        }
+      },
+      "option_delta_csv": {
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\derivatives_daily_history.csv",
+        "sha256": "59208064c2afc57d15454267f9ee765012ca99d12b53888e3b5b01a7f9306788",
+        "requested_contract": "F 202609",
+        "exact_contract_only": "F202609"
+      }
+    },
+    "validation": {
+      "status": "OK_WITH_WARNINGS",
+      "as_of_filter": {
+        "as_of_date": "2026-08-28",
+        "applied": true,
+        "rows_before": {
+          "flow_rows": 49,
+          "price_rows": 49,
+          "option_delta_dates": 18,
+          "option_delta_rows": 36
+        },
+        "rows_after": {
+          "flow_rows": 49,
+          "price_rows": 49,
+          "option_delta_dates": 18,
+          "option_delta_rows": 36
+        }
+      },
+      "flow_rows": 49,
+      "validated_price_rows": 49,
+      "joined_rows": 49,
+      "flow_dates_without_validated_price": [],
+      "validated_price_dates_without_flow": [],
+      "same_day_targets_available": 44,
+      "next_day_targets_available": 44,
+      "same_day_targets_omitted_for_missing_predecessor": [
+        "2026-06-12",
+        "2026-07-20",
+        "2026-08-07",
+        "2026-08-12",
+        "2026-08-18"
+      ],
+      "next_day_targets_omitted_for_missing_successor": [
+        "2026-07-16",
+        "2026-08-04",
+        "2026-08-07",
+        "2026-08-13",
+        "2026-08-28"
+      ],
+      "warnings": [
+        "option delta is an abs-delta approximation and is diagnostic only; it cannot receive primary directional weight",
+        "strict flow is KOSPI200 futures all-expiry regular-session flow, while price is F202609; the scope mismatch is disclosed and prevents position inference"
+      ]
+    },
+    "methodology": {
+      "same_day": "diagnostic only: sign(flow_T) versus close_T/close_T-1; flow is not known before that same session outcome",
+      "next_trading_day": "no-lookahead: sign(flow_T) versus close_T+1/close_T using the first validated final regular-session row, only when no unaccounted weekday exists between T and T+1",
+      "rolling_features": "3d/5d sums contain observations through T only and are omitted across unaccounted trading-day gaps",
+      "direction_gate": {
+        "primary_indicators": [
+          "foreign_futures_daily",
+          "institution_futures_daily"
+        ],
+        "minimum_samples": 20,
+        "beta_prior_strength_centered_at_50pct": 8.0,
+        "minimum_edge_over_majority_baseline": 0.03,
+        "wilson_lower_bound_must_exceed": 0.5,
+        "maximum_total_flow_weight": 0.25,
+        "no_automatic_inversion": true,
+        "non_primary_features": "diagnostic/supporting only"
+      }
+    },
+    "indicators": {
+      "foreign_composite_3d_sum": {
+        "same_day": {
+          "indicator": "foreign_composite_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 9,
+          "directional_sample_n": 9,
+          "direction_match": {
+            "successes": 5,
+            "n": 9,
+            "rate": 0.5555555556,
+            "wilson_95": {
+              "lower": 0.2666512935,
+              "upper": 0.8112214789
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 4,
+              "rate": 0.75,
+              "wilson_95": {
+                "lower": 0.3006418426,
+                "upper": 0.9544127392
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.3963257583
+            },
+            "negative": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.1584537934
+            }
+          },
+          "pearson_correlation": 0.0861234059,
+          "mean_target_return_pct": 0.2641746667,
+          "mean_signed_return_pct": 0.0881148963,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.5294117647,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 12588.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_composite_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 7,
+          "directional_sample_n": 7,
+          "direction_match": {
+            "successes": 3,
+            "n": 7,
+            "rate": 0.4285714286,
+            "wilson_95": {
+              "lower": 0.1582198553,
+              "upper": 0.7495416355
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.1496644749
+            },
+            "negative": {
+              "successes": 1,
+              "n": 4,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0455872608,
+                "upper": 0.6993581574
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.2124462199
+            }
+          },
+          "pearson_correlation": -0.0928981563,
+          "mean_target_return_pct": -0.0572559221,
+          "mean_signed_return_pct": 0.1855397577,
+          "majority_direction_baseline_accuracy": 0.7142857143,
+          "beta_shrunk_accuracy": 0.4666666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 12588.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_composite_5d_sum": {
+        "same_day": {
+          "indicator": "foreign_composite_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 5,
+          "directional_sample_n": 5,
+          "direction_match": {
+            "successes": 2,
+            "n": 5,
+            "rate": 0.4,
+            "wilson_95": {
+              "lower": 0.1176207742,
+              "upper": 0.7692757187
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 1,
+              "n": 3,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.0614919447,
+                "upper": 0.7923403992
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.2409038142
+            },
+            "negative": {
+              "successes": 1,
+              "n": 3,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.0614919447,
+                "upper": 0.7923403992
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.7674209346
+            }
+          },
+          "pearson_correlation": 0.1326008538,
+          "mean_target_return_pct": -0.5568140864,
+          "mean_signed_return_pct": 0.3640910351,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.4615384615,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 13365.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_composite_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 4,
+          "directional_sample_n": 4,
+          "direction_match": {
+            "successes": 0,
+            "n": 4,
+            "rate": 0.0,
+            "wilson_95": {
+              "lower": 0.0,
+              "upper": 0.4898908365
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 0,
+              "n": 3,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.5614970318
+              }
+            },
+            "down": {
+              "successes": 0,
+              "n": 1,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.7934506856
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 0,
+              "n": 1,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.7934506856
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -2.0048630545
+            },
+            "negative": {
+              "successes": 0,
+              "n": 3,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.5614970318
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 1.1967220293
+            }
+          },
+          "pearson_correlation": -0.9027703721,
+          "mean_target_return_pct": 0.3963257583,
+          "mean_signed_return_pct": -1.3987572856,
+          "majority_direction_baseline_accuracy": 0.75,
+          "beta_shrunk_accuracy": 0.3333333333,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 13365.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_composite_daily": {
+        "same_day": {
+          "indicator": "foreign_composite_daily",
+          "target": "same_day_return",
+          "sample_n": 13,
+          "directional_sample_n": 13,
+          "direction_match": {
+            "successes": 8,
+            "n": 13,
+            "rate": 0.6153846154,
+            "wilson_95": {
+              "lower": 0.3552289151,
+              "upper": 0.822902922
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 5,
+              "n": 8,
+              "rate": 0.625,
+              "wilson_95": {
+                "lower": 0.3057423946,
+                "upper": 0.8631557142
+              }
+            },
+            "down": {
+              "successes": 3,
+              "n": 5,
+              "rate": 0.6,
+              "wilson_95": {
+                "lower": 0.2307242813,
+                "upper": 0.8823792258
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 5,
+              "n": 7,
+              "rate": 0.7142857143,
+              "wilson_95": {
+                "lower": 0.3589344518,
+                "upper": 0.917781076
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 2.5173619805
+            },
+            "negative": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.3244850139
+            }
+          },
+          "pearson_correlation": 0.1475961109,
+          "mean_target_return_pct": 1.2057402908,
+          "mean_signed_return_pct": 1.505264919,
+          "majority_direction_baseline_accuracy": 0.6153846154,
+          "beta_shrunk_accuracy": 0.5714285714,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 3808.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_composite_daily",
+          "target": "next_day_return",
+          "sample_n": 12,
+          "directional_sample_n": 12,
+          "direction_match": {
+            "successes": 3,
+            "n": 12,
+            "rate": 0.25,
+            "wilson_95": {
+              "lower": 0.0889416684,
+              "upper": 0.5323053349
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 8,
+              "rate": 0.375,
+              "wilson_95": {
+                "lower": 0.1368442858,
+                "upper": 0.6942576054
+              }
+            },
+            "down": {
+              "successes": 0,
+              "n": 4,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.4898908365
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 7,
+              "rate": 0.4285714286,
+              "wilson_95": {
+                "lower": 0.1582198553,
+                "upper": 0.7495416355
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -1.7500328408
+            },
+            "negative": {
+              "successes": 0,
+              "n": 5,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.4344824648
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 6.276007288
+            }
+          },
+          "pearson_correlation": -0.3382033167,
+          "mean_target_return_pct": 1.5941505462,
+          "mean_signed_return_pct": -3.6358555271,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.35,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 3808.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_futures_3d_sum": {
+        "same_day": {
+          "indicator": "foreign_futures_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 40,
+          "directional_sample_n": 40,
+          "direction_match": {
+            "successes": 19,
+            "n": 40,
+            "rate": 0.475,
+            "wilson_95": {
+              "lower": 0.3293547011,
+              "upper": 0.6250263789
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 13,
+              "n": 22,
+              "rate": 0.5909090909,
+              "wilson_95": {
+                "lower": 0.3873481848,
+                "upper": 0.767441838
+              }
+            },
+            "down": {
+              "successes": 6,
+              "n": 18,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.1627877475,
+                "upper": 0.562505327
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 13,
+              "n": 25,
+              "rate": 0.52,
+              "wilson_95": {
+                "lower": 0.3349851695,
+                "upper": 0.6996871405
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.9117026043
+            },
+            "negative": {
+              "successes": 6,
+              "n": 15,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1982449614,
+                "upper": 0.6425316988
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.1824278281
+            }
+          },
+          "pearson_correlation": -0.1354683347,
+          "mean_target_return_pct": -0.5014036921,
+          "mean_signed_return_pct": -0.6382245632,
+          "majority_direction_baseline_accuracy": 0.55,
+          "beta_shrunk_accuracy": 0.4791666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 11946.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_futures_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 37,
+          "directional_sample_n": 37,
+          "direction_match": {
+            "successes": 18,
+            "n": 37,
+            "rate": 0.4864864865,
+            "wilson_95": {
+              "lower": 0.334464043,
+              "upper": 0.6410510333
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 12,
+              "n": 20,
+              "rate": 0.6,
+              "wilson_95": {
+                "lower": 0.3865815008,
+                "upper": 0.7811934676
+              }
+            },
+            "down": {
+              "successes": 6,
+              "n": 17,
+              "rate": 0.3529411765,
+              "wilson_95": {
+                "lower": 0.173097204,
+                "upper": 0.5869963651
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 12,
+              "n": 23,
+              "rate": 0.5217391304,
+              "wilson_95": {
+                "lower": 0.3296273734,
+                "upper": 0.7076284258
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.3978195586
+            },
+            "negative": {
+              "successes": 6,
+              "n": 14,
+              "rate": 0.4285714286,
+              "wilson_95": {
+                "lower": 0.213807989,
+                "upper": 0.6740935542
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -1.3796427527
+            }
+          },
+          "pearson_correlation": 0.1888723634,
+          "mean_target_return_pct": -0.7693202266,
+          "mean_signed_return_pct": 0.2747337484,
+          "majority_direction_baseline_accuracy": 0.5405405405,
+          "beta_shrunk_accuracy": 0.4888888889,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 11946.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_futures_5d_sum": {
+        "same_day": {
+          "indicator": "foreign_futures_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 34,
+          "directional_sample_n": 34,
+          "direction_match": {
+            "successes": 16,
+            "n": 34,
+            "rate": 0.4705882353,
+            "wilson_95": {
+              "lower": 0.3145150448,
+              "upper": 0.6326328702
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 10,
+              "n": 17,
+              "rate": 0.5882352941,
+              "wilson_95": {
+                "lower": 0.3600544264,
+                "upper": 0.7838894321
+              }
+            },
+            "down": {
+              "successes": 6,
+              "n": 17,
+              "rate": 0.3529411765,
+              "wilson_95": {
+                "lower": 0.173097204,
+                "upper": 0.5869963651
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 10,
+              "n": 21,
+              "rate": 0.4761904762,
+              "wilson_95": {
+                "lower": 0.283440061,
+                "upper": 0.6763046542
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -1.1165710778
+            },
+            "negative": {
+              "successes": 6,
+              "n": 13,
+              "rate": 0.4615384615,
+              "wilson_95": {
+                "lower": 0.2320606781,
+                "upper": 0.7085620429
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.9838043013
+            }
+          },
+          "pearson_correlation": -0.1613642502,
+          "mean_target_return_pct": -1.0658073104,
+          "mean_signed_return_pct": -0.313486374,
+          "majority_direction_baseline_accuracy": 0.5,
+          "beta_shrunk_accuracy": 0.4761904762,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 14246.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_futures_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 31,
+          "directional_sample_n": 31,
+          "direction_match": {
+            "successes": 16,
+            "n": 31,
+            "rate": 0.5161290323,
+            "wilson_95": {
+              "lower": 0.3484039545,
+              "upper": 0.6802974844
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 10,
+              "n": 16,
+              "rate": 0.625,
+              "wilson_95": {
+                "lower": 0.3864104055,
+                "upper": 0.8151876744
+              }
+            },
+            "down": {
+              "successes": 6,
+              "n": 15,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1982449614,
+                "upper": 0.6425316988
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 10,
+              "n": 19,
+              "rate": 0.5263157895,
+              "wilson_95": {
+                "lower": 0.3170780925,
+                "upper": 0.7267019484
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.0661127536
+            },
+            "negative": {
+              "successes": 6,
+              "n": 12,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.2537815976,
+                "upper": 0.7462184024
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -2.2838462153
+            }
+          },
+          "pearson_correlation": 0.2453119763,
+          "mean_target_return_pct": -0.9245902227,
+          "mean_signed_return_pct": 0.8435487828,
+          "majority_direction_baseline_accuracy": 0.5161290323,
+          "beta_shrunk_accuracy": 0.5128205128,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 14246.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_futures_daily": {
+        "same_day": {
+          "indicator": "foreign_futures_daily",
+          "target": "same_day_return",
+          "sample_n": 44,
+          "directional_sample_n": 44,
+          "direction_match": {
+            "successes": 13,
+            "n": 44,
+            "rate": 0.2954545455,
+            "wilson_95": {
+              "lower": 0.1815552912,
+              "upper": 0.4422020013
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 8,
+              "n": 25,
+              "rate": 0.32,
+              "wilson_95": {
+                "lower": 0.1720519031,
+                "upper": 0.5158973073
+              }
+            },
+            "down": {
+              "successes": 5,
+              "n": 19,
+              "rate": 0.2631578947,
+              "wilson_95": {
+                "lower": 0.1180641235,
+                "upper": 0.487915509
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 8,
+              "n": 22,
+              "rate": 0.3636363636,
+              "wilson_95": {
+                "lower": 0.1973320467,
+                "upper": 0.5704829191
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -3.1498495522
+            },
+            "negative": {
+              "successes": 5,
+              "n": 22,
+              "rate": 0.2272727273,
+              "wilson_95": {
+                "lower": 0.1012303999,
+                "upper": 0.4343995318
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 2.6195984873
+            }
+          },
+          "pearson_correlation": -0.5230112314,
+          "mean_target_return_pct": -0.2651255324,
+          "mean_signed_return_pct": -2.8847240197,
+          "majority_direction_baseline_accuracy": 0.5681818182,
+          "beta_shrunk_accuracy": 0.3269230769,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 2289.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_futures_daily",
+          "target": "next_day_return",
+          "sample_n": 44,
+          "directional_sample_n": 44,
+          "direction_match": {
+            "successes": 24,
+            "n": 44,
+            "rate": 0.5454545455,
+            "wilson_95": {
+              "lower": 0.400661832,
+              "upper": 0.6829476586
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 14,
+              "n": 25,
+              "rate": 0.56,
+              "wilson_95": {
+                "lower": 0.3706733187,
+                "upper": 0.7333436112
+              }
+            },
+            "down": {
+              "successes": 10,
+              "n": 19,
+              "rate": 0.5263157895,
+              "wilson_95": {
+                "lower": 0.3170780925,
+                "upper": 0.7267019484
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 14,
+              "n": 23,
+              "rate": 0.6086956522,
+              "wilson_95": {
+                "lower": 0.4078552239,
+                "upper": 0.7784237721
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.0195241136
+            },
+            "negative": {
+              "successes": 10,
+              "n": 21,
+              "rate": 0.4761904762,
+              "wilson_95": {
+                "lower": 0.283440061,
+                "upper": 0.6763046542
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.5768846686
+            }
+          },
+          "pearson_correlation": 0.0627137839,
+          "mean_target_return_pct": -0.2651255324,
+          "mean_signed_return_pct": 0.2855371058,
+          "majority_direction_baseline_accuracy": 0.5681818182,
+          "beta_shrunk_accuracy": 0.5384615385,
+          "decision_gate": {
+            "status": "NO_ROBUST_EDGE",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 2289.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_option_delta_3d_sum": {
+        "same_day": {
+          "indicator": "foreign_option_delta_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 9,
+          "directional_sample_n": 9,
+          "direction_match": {
+            "successes": 2,
+            "n": 9,
+            "rate": 0.2222222222,
+            "wilson_95": {
+              "lower": 0.0632251071,
+              "upper": 0.5474110309
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 0,
+              "n": 6,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.3903342879
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 0,
+              "n": 1,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.7934506856
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -2.0048630545
+            },
+            "negative": {
+              "successes": 2,
+              "n": 8,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0714792128,
+                "upper": 0.5907245697
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.5478043819
+            }
+          },
+          "pearson_correlation": 0.0335441234,
+          "mean_target_return_pct": 0.2641746667,
+          "mean_signed_return_pct": -0.7096997899,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.3529411765,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 642.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_option_delta_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 7,
+          "directional_sample_n": 7,
+          "direction_match": {
+            "successes": 2,
+            "n": 7,
+            "rate": 0.2857142857,
+            "wilson_95": {
+              "lower": 0.082218924,
+              "upper": 0.6410655482
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 0,
+              "n": 5,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.4344824648
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 2,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.3423802275,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "wilson_95": {
+                "lower": null,
+                "upper": null
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": null
+            },
+            "negative": {
+              "successes": 2,
+              "n": 7,
+              "rate": 0.2857142857,
+              "wilson_95": {
+                "lower": 0.082218924,
+                "upper": 0.6410655482
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.0572559221
+            }
+          },
+          "pearson_correlation": -0.3753339986,
+          "mean_target_return_pct": -0.0572559221,
+          "mean_signed_return_pct": 0.0572559221,
+          "majority_direction_baseline_accuracy": 0.7142857143,
+          "beta_shrunk_accuracy": 0.4,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 642.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "foreign_option_delta_5d_sum": {
+        "same_day": {
+          "indicator": "foreign_option_delta_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 5,
+          "directional_sample_n": 5,
+          "direction_match": {
+            "successes": 2,
+            "n": 5,
+            "rate": 0.4,
+            "wilson_95": {
+              "lower": 0.1176207742,
+              "upper": 0.7692757187
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 0,
+              "n": 3,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.5614970318
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 2,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.3423802275,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "wilson_95": {
+                "lower": null,
+                "upper": null
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": null
+            },
+            "negative": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.5568140864
+            }
+          },
+          "pearson_correlation": 0.2168621472,
+          "mean_target_return_pct": -0.5568140864,
+          "mean_signed_return_pct": 0.5568140864,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.4615384615,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -881.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_option_delta_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 4,
+          "directional_sample_n": 4,
+          "direction_match": {
+            "successes": 1,
+            "n": 4,
+            "rate": 0.25,
+            "wilson_95": {
+              "lower": 0.0455872608,
+              "upper": 0.6993581574
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 0,
+              "n": 3,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.5614970318
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 1,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.2065493144,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "wilson_95": {
+                "lower": null,
+                "upper": null
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": null
+            },
+            "negative": {
+              "successes": 1,
+              "n": 4,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0455872608,
+                "upper": 0.6993581574
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.3963257583
+            }
+          },
+          "pearson_correlation": -0.1154323906,
+          "mean_target_return_pct": 0.3963257583,
+          "mean_signed_return_pct": -0.3963257583,
+          "majority_direction_baseline_accuracy": 0.75,
+          "beta_shrunk_accuracy": 0.4166666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -881.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "foreign_option_delta_daily": {
+        "same_day": {
+          "indicator": "foreign_option_delta_daily",
+          "target": "same_day_return",
+          "sample_n": 13,
+          "directional_sample_n": 13,
+          "direction_match": {
+            "successes": 8,
+            "n": 13,
+            "rate": 0.6153846154,
+            "wilson_95": {
+              "lower": 0.3552289151,
+              "upper": 0.822902922
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 4,
+              "n": 8,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.2152160622,
+                "upper": 0.7847839378
+              }
+            },
+            "down": {
+              "successes": 4,
+              "n": 5,
+              "rate": 0.8,
+              "wilson_95": {
+                "lower": 0.3755346298,
+                "upper": 0.9637758914
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 4,
+              "n": 5,
+              "rate": 0.8,
+              "wilson_95": {
+                "lower": 0.3755346298,
+                "upper": 0.9637758914
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 4.0935703806
+            },
+            "negative": {
+              "successes": 4,
+              "n": 8,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.2152160622,
+                "upper": 0.7847839378
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.5991535154
+            }
+          },
+          "pearson_correlation": 0.4973758034,
+          "mean_target_return_pct": 1.2057402908,
+          "mean_signed_return_pct": 1.943160002,
+          "majority_direction_baseline_accuracy": 0.6153846154,
+          "beta_shrunk_accuracy": 0.5714285714,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 1519.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "foreign_option_delta_daily",
+          "target": "next_day_return",
+          "sample_n": 12,
+          "directional_sample_n": 12,
+          "direction_match": {
+            "successes": 3,
+            "n": 12,
+            "rate": 0.25,
+            "wilson_95": {
+              "lower": 0.0889416684,
+              "upper": 0.5323053349
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 2,
+              "n": 8,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0714792128,
+                "upper": 0.5907245697
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 4,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0455872608,
+                "upper": 0.6993581574
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -2.276335288
+            },
+            "negative": {
+              "successes": 1,
+              "n": 7,
+              "rate": 0.1428571429,
+              "wilson_95": {
+                "lower": 0.0256796243,
+                "upper": 0.5131278293
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 4.3587832849
+            }
+          },
+          "pearson_correlation": -0.3619941064,
+          "mean_target_return_pct": 1.5941505462,
+          "mean_signed_return_pct": -3.4910966195,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.35,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 1519.5,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "institution_composite_3d_sum": {
+        "same_day": {
+          "indicator": "institution_composite_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 9,
+          "directional_sample_n": 9,
+          "direction_match": {
+            "successes": 4,
+            "n": 9,
+            "rate": 0.4444444444,
+            "wilson_95": {
+              "lower": 0.1887785211,
+              "upper": 0.7333487065
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 3,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.0614919447,
+                "upper": 0.7923403992
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 5,
+              "rate": 0.6,
+              "wilson_95": {
+                "lower": 0.2307242813,
+                "upper": 0.8823792258
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.1584537934
+            },
+            "negative": {
+              "successes": 1,
+              "n": 4,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0455872608,
+                "upper": 0.6993581574
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.3963257583
+            }
+          },
+          "pearson_correlation": -0.0020631794,
+          "mean_target_return_pct": 0.2641746667,
+          "mean_signed_return_pct": -0.0881148963,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.4705882353,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -13863.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_composite_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 7,
+          "directional_sample_n": 7,
+          "direction_match": {
+            "successes": 4,
+            "n": 7,
+            "rate": 0.5714285714,
+            "wilson_95": {
+              "lower": 0.2504583645,
+              "upper": 0.8417801447
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 5,
+              "rate": 0.6,
+              "wilson_95": {
+                "lower": 0.2307242813,
+                "upper": 0.8823792258
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 4,
+              "rate": 0.75,
+              "wilson_95": {
+                "lower": 0.3006418426,
+                "upper": 0.9544127392
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.2124462199
+            },
+            "negative": {
+              "successes": 1,
+              "n": 3,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.0614919447,
+                "upper": 0.7923403992
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.1496644749
+            }
+          },
+          "pearson_correlation": -0.0158183053,
+          "mean_target_return_pct": -0.0572559221,
+          "mean_signed_return_pct": -0.1855397577,
+          "majority_direction_baseline_accuracy": 0.7142857143,
+          "beta_shrunk_accuracy": 0.5333333333,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -13863.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_composite_5d_sum": {
+        "same_day": {
+          "indicator": "institution_composite_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 5,
+          "directional_sample_n": 5,
+          "direction_match": {
+            "successes": 3,
+            "n": 5,
+            "rate": 0.6,
+            "wilson_95": {
+              "lower": 0.2307242813,
+              "upper": 0.8823792258
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.7674209346
+            },
+            "negative": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.2409038142
+            }
+          },
+          "pearson_correlation": -0.0464323453,
+          "mean_target_return_pct": -0.5568140864,
+          "mean_signed_return_pct": -0.3640910351,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.5384615385,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -14818.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_composite_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 4,
+          "directional_sample_n": 4,
+          "direction_match": {
+            "successes": 4,
+            "n": 4,
+            "rate": 1.0,
+            "wilson_95": {
+              "lower": 0.5101091635,
+              "upper": 1.0
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 1,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.2065493144,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 1.1967220293
+            },
+            "negative": {
+              "successes": 1,
+              "n": 1,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.2065493144,
+                "upper": 1.0
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -2.0048630545
+            }
+          },
+          "pearson_correlation": 0.8879196225,
+          "mean_target_return_pct": 0.3963257583,
+          "mean_signed_return_pct": 1.3987572856,
+          "majority_direction_baseline_accuracy": 0.75,
+          "beta_shrunk_accuracy": 0.6666666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -14818.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_composite_daily": {
+        "same_day": {
+          "indicator": "institution_composite_daily",
+          "target": "same_day_return",
+          "sample_n": 13,
+          "directional_sample_n": 13,
+          "direction_match": {
+            "successes": 5,
+            "n": 13,
+            "rate": 0.3846153846,
+            "wilson_95": {
+              "lower": 0.177097078,
+              "upper": 0.6447710849
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 8,
+              "rate": 0.375,
+              "wilson_95": {
+                "lower": 0.1368442858,
+                "upper": 0.6942576054
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.7532783849
+            },
+            "negative": {
+              "successes": 2,
+              "n": 7,
+              "rate": 0.2857142857,
+              "wilson_95": {
+                "lower": 0.082218924,
+                "upper": 0.6410655482
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 2.8848991557
+            }
+          },
+          "pearson_correlation": -0.1314066035,
+          "mean_target_return_pct": 1.2057402908,
+          "mean_signed_return_pct": -1.9010741846,
+          "majority_direction_baseline_accuracy": 0.6153846154,
+          "beta_shrunk_accuracy": 0.4285714286,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -3125.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_composite_daily",
+          "target": "next_day_return",
+          "sample_n": 12,
+          "directional_sample_n": 12,
+          "direction_match": {
+            "successes": 10,
+            "n": 12,
+            "rate": 0.8333333333,
+            "wilson_95": {
+              "lower": 0.5519691377,
+              "upper": 0.9530348578
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 6,
+              "n": 8,
+              "rate": 0.75,
+              "wilson_95": {
+                "lower": 0.4092754303,
+                "upper": 0.9285207872
+              }
+            },
+            "down": {
+              "successes": 4,
+              "n": 4,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.5101091635,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 6,
+              "n": 6,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.6096657121,
+                "upper": 1.0
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 5.3851395822
+            },
+            "negative": {
+              "successes": 4,
+              "n": 6,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2999933151,
+                "upper": 0.9032285889
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -2.1968384898
+            }
+          },
+          "pearson_correlation": 0.2989462008,
+          "mean_target_return_pct": 1.5941505462,
+          "mean_signed_return_pct": 3.790989036,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.7,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -3125.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_futures_3d_sum": {
+        "same_day": {
+          "indicator": "institution_futures_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 40,
+          "directional_sample_n": 40,
+          "direction_match": {
+            "successes": 22,
+            "n": 40,
+            "rate": 0.55,
+            "wilson_95": {
+              "lower": 0.398290918,
+              "upper": 0.6929469219
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 9,
+              "n": 22,
+              "rate": 0.4090909091,
+              "wilson_95": {
+                "lower": 0.232558162,
+                "upper": 0.6126518152
+              }
+            },
+            "down": {
+              "successes": 13,
+              "n": 18,
+              "rate": 0.7222222222,
+              "wilson_95": {
+                "lower": 0.4912734344,
+                "upper": 0.8750024662
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 9,
+              "n": 14,
+              "rate": 0.6428571429,
+              "wilson_95": {
+                "lower": 0.387644231,
+                "upper": 0.8365526825
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.5046836534
+            },
+            "negative": {
+              "successes": 13,
+              "n": 26,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.3206059353,
+                "upper": 0.6793940647
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -1.043143032
+            }
+          },
+          "pearson_correlation": 0.1261788364,
+          "mean_target_return_pct": -0.5014036921,
+          "mean_signed_return_pct": 0.8546822495,
+          "majority_direction_baseline_accuracy": 0.55,
+          "beta_shrunk_accuracy": 0.5416666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -13379.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_futures_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 37,
+          "directional_sample_n": 37,
+          "direction_match": {
+            "successes": 20,
+            "n": 37,
+            "rate": 0.5405405405,
+            "wilson_95": {
+              "lower": 0.3838404689,
+              "upper": 0.689614302
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 8,
+              "n": 20,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.2188065324,
+                "upper": 0.6134184992
+              }
+            },
+            "down": {
+              "successes": 12,
+              "n": 17,
+              "rate": 0.7058823529,
+              "wilson_95": {
+                "lower": 0.4686688993,
+                "upper": 0.8672001039
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 8,
+              "n": 13,
+              "rate": 0.6153846154,
+              "wilson_95": {
+                "lower": 0.3552289151,
+                "upper": 0.822902922
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -1.0051155033
+            },
+            "negative": {
+              "successes": 12,
+              "n": 24,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.3142742582,
+                "upper": 0.6857257418
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.6415977851
+            }
+          },
+          "pearson_correlation": -0.1871530992,
+          "mean_target_return_pct": -0.7693202266,
+          "mean_signed_return_pct": 0.0630228459,
+          "majority_direction_baseline_accuracy": 0.5405405405,
+          "beta_shrunk_accuracy": 0.5333333333,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -13379.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_futures_5d_sum": {
+        "same_day": {
+          "indicator": "institution_futures_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 34,
+          "directional_sample_n": 34,
+          "direction_match": {
+            "successes": 18,
+            "n": 34,
+            "rate": 0.5294117647,
+            "wilson_95": {
+              "lower": 0.3673671298,
+              "upper": 0.6854849552
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 7,
+              "n": 17,
+              "rate": 0.4117647059,
+              "wilson_95": {
+                "lower": 0.2161105679,
+                "upper": 0.6399455736
+              }
+            },
+            "down": {
+              "successes": 11,
+              "n": 17,
+              "rate": 0.6470588235,
+              "wilson_95": {
+                "lower": 0.4130036349,
+                "upper": 0.826902796
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 7,
+              "n": 13,
+              "rate": 0.5384615385,
+              "wilson_95": {
+                "lower": 0.2914379571,
+                "upper": 0.7679393219
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.7447643958
+            },
+            "negative": {
+              "successes": 11,
+              "n": 21,
+              "rate": 0.5238095238,
+              "wilson_95": {
+                "lower": 0.3236953458,
+                "upper": 0.716559939
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -1.2645481622
+            }
+          },
+          "pearson_correlation": 0.1152676977,
+          "mean_target_return_pct": -1.0658073104,
+          "mean_signed_return_pct": 0.4962815959,
+          "majority_direction_baseline_accuracy": 0.5,
+          "beta_shrunk_accuracy": 0.5238095238,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -15243.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_futures_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 31,
+          "directional_sample_n": 31,
+          "direction_match": {
+            "successes": 17,
+            "n": 31,
+            "rate": 0.5483870968,
+            "wilson_95": {
+              "lower": 0.3777216764,
+              "upper": 0.7083826402
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 7,
+              "n": 16,
+              "rate": 0.4375,
+              "wilson_95": {
+                "lower": 0.2309865241,
+                "upper": 0.668214436
+              }
+            },
+            "down": {
+              "successes": 10,
+              "n": 15,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.4171354774,
+                "upper": 0.8482367556
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 7,
+              "n": 12,
+              "rate": 0.5833333333,
+              "wilson_95": {
+                "lower": 0.3195113125,
+                "upper": 0.8067396863
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -1.3042680658
+            },
+            "negative": {
+              "successes": 10,
+              "n": 19,
+              "rate": 0.5263157895,
+              "wilson_95": {
+                "lower": 0.3170780925,
+                "upper": 0.7267019484
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.6847936902
+            }
+          },
+          "pearson_correlation": -0.211134996,
+          "mean_target_return_pct": -0.9245902227,
+          "mean_signed_return_pct": -0.0851656992,
+          "majority_direction_baseline_accuracy": 0.5161290323,
+          "beta_shrunk_accuracy": 0.5384615385,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -15243.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_futures_daily": {
+        "same_day": {
+          "indicator": "institution_futures_daily",
+          "target": "same_day_return",
+          "sample_n": 44,
+          "directional_sample_n": 44,
+          "direction_match": {
+            "successes": 32,
+            "n": 44,
+            "rate": 0.7272727273,
+            "wilson_95": {
+              "lower": 0.5815112691,
+              "upper": 0.8365361838
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 17,
+              "n": 25,
+              "rate": 0.68,
+              "wilson_95": {
+                "lower": 0.4841026927,
+                "upper": 0.8279480969
+              }
+            },
+            "down": {
+              "successes": 15,
+              "n": 19,
+              "rate": 0.7894736842,
+              "wilson_95": {
+                "lower": 0.5666572156,
+                "upper": 0.9149232337
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 17,
+              "n": 21,
+              "rate": 0.8095238095,
+              "wilson_95": {
+                "lower": 0.5999943531,
+                "upper": 0.9233243495
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 2.7469717957
+            },
+            "negative": {
+              "successes": 15,
+              "n": 23,
+              "rate": 0.652173913,
+              "wilson_95": {
+                "lower": 0.4489033538,
+                "upper": 0.8118872406
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -3.0153013538
+            }
+          },
+          "pearson_correlation": 0.4558693757,
+          "mean_target_return_pct": -0.2651255324,
+          "mean_signed_return_pct": 2.8872349738,
+          "majority_direction_baseline_accuracy": 0.5681818182,
+          "beta_shrunk_accuracy": 0.6923076923,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -2835.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_futures_daily",
+          "target": "next_day_return",
+          "sample_n": 44,
+          "directional_sample_n": 44,
+          "direction_match": {
+            "successes": 18,
+            "n": 44,
+            "rate": 0.4090909091,
+            "wilson_95": {
+              "lower": 0.2768785563,
+              "upper": 0.5559024626
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 9,
+              "n": 25,
+              "rate": 0.36,
+              "wilson_95": {
+                "lower": 0.2024788077,
+                "upper": 0.5548150225
+              }
+            },
+            "down": {
+              "successes": 9,
+              "n": 19,
+              "rate": 0.4736842105,
+              "wilson_95": {
+                "lower": 0.2732980516,
+                "upper": 0.6829219075
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 9,
+              "n": 19,
+              "rate": 0.4736842105,
+              "wilson_95": {
+                "lower": 0.2732980516,
+                "upper": 0.6829219075
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -1.0604549695
+            },
+            "negative": {
+              "successes": 9,
+              "n": 25,
+              "rate": 0.36,
+              "wilson_95": {
+                "lower": 0.2024788077,
+                "upper": 0.5548150225
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.3393248397
+            }
+          },
+          "pearson_correlation": -0.0702168672,
+          "mean_target_return_pct": -0.2651255324,
+          "mean_signed_return_pct": -0.6507219412,
+          "majority_direction_baseline_accuracy": 0.5681818182,
+          "beta_shrunk_accuracy": 0.4230769231,
+          "decision_gate": {
+            "status": "NO_ROBUST_EDGE",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -2835.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_option_delta_3d_sum": {
+        "same_day": {
+          "indicator": "institution_option_delta_3d_sum",
+          "target": "same_day_return",
+          "sample_n": 9,
+          "directional_sample_n": 9,
+          "direction_match": {
+            "successes": 6,
+            "n": 9,
+            "rate": 0.6666666667,
+            "wilson_95": {
+              "lower": 0.3542021356,
+              "upper": 0.8794161816
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              }
+            },
+            "down": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 1.1967220293
+            },
+            "negative": {
+              "successes": 3,
+              "n": 6,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1876163065,
+                "upper": 0.8123836935
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.2020990146
+            }
+          },
+          "pearson_correlation": 0.1313316518,
+          "mean_target_return_pct": 0.2641746667,
+          "mean_signed_return_pct": 0.5336400195,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.5882352941,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -484.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_option_delta_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 7,
+          "directional_sample_n": 7,
+          "direction_match": {
+            "successes": 3,
+            "n": 7,
+            "rate": 0.4285714286,
+            "wilson_95": {
+              "lower": 0.1582198553,
+              "upper": 0.7495416355
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 2,
+              "n": 5,
+              "rate": 0.4,
+              "wilson_95": {
+                "lower": 0.1176207742,
+                "upper": 0.7692757187
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 2,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.0945312057,
+                "upper": 0.9054687943
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
+              "wilson_95": {
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.1496644749
+            },
+            "negative": {
+              "successes": 1,
+              "n": 4,
+              "rate": 0.25,
+              "wilson_95": {
+                "lower": 0.0455872608,
+                "upper": 0.6993581574
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -0.2124462199
+            }
+          },
+          "pearson_correlation": 0.4125371255,
+          "mean_target_return_pct": -0.0572559221,
+          "mean_signed_return_pct": 0.1855397577,
+          "majority_direction_baseline_accuracy": 0.7142857143,
+          "beta_shrunk_accuracy": 0.4666666667,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -484.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      },
+      "institution_option_delta_5d_sum": {
+        "same_day": {
+          "indicator": "institution_option_delta_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 5,
+          "directional_sample_n": 5,
+          "direction_match": {
+            "successes": 3,
+            "n": 5,
+            "rate": 0.6,
+            "wilson_95": {
+              "lower": 0.2307242813,
+              "upper": 0.8823792258
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              }
+            },
+            "down": {
+              "successes": 0,
+              "n": 2,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.6576197725
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 5,
+              "rate": 0.6,
+              "wilson_95": {
+                "lower": 0.2307242813,
+                "upper": 0.8823792258
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.5568140864
+            },
+            "negative": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "wilson_95": {
+                "lower": null,
+                "upper": null
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": null
+            }
+          },
+          "pearson_correlation": 0.5616128929,
+          "mean_target_return_pct": -0.5568140864,
+          "mean_signed_return_pct": -0.5568140864,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.5384615385,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 425.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_option_delta_5d_sum",
+          "target": "next_day_return",
+          "sample_n": 4,
+          "directional_sample_n": 4,
+          "direction_match": {
+            "successes": 3,
+            "n": 4,
+            "rate": 0.75,
+            "wilson_95": {
+              "lower": 0.3006418426,
+              "upper": 0.9544127392
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 3,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.4385029682,
+                "upper": 1.0
+              }
+            },
+            "down": {
+              "successes": 0,
+              "n": 1,
+              "rate": 0.0,
+              "wilson_95": {
+                "lower": 0.0,
+                "upper": 0.7934506856
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 4,
+              "rate": 0.75,
+              "wilson_95": {
+                "lower": 0.3006418426,
+                "upper": 0.9544127392
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 0.3963257583
+            },
+            "negative": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "wilson_95": {
+                "lower": null,
+                "upper": null
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": null
+            }
+          },
+          "pearson_correlation": 0.0579598636,
+          "mean_target_return_pct": 0.3963257583,
+          "mean_signed_return_pct": 0.3963257583,
+          "majority_direction_baseline_accuracy": 0.75,
+          "beta_shrunk_accuracy": 0.5833333333,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": 425.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
+          }
+        }
+      },
+      "institution_option_delta_daily": {
+        "same_day": {
+          "indicator": "institution_option_delta_daily",
+          "target": "same_day_return",
+          "sample_n": 13,
+          "directional_sample_n": 13,
+          "direction_match": {
+            "successes": 4,
+            "n": 13,
+            "rate": 0.3076923077,
+            "wilson_95": {
+              "lower": 0.1268070366,
+              "upper": 0.5763065682
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 3,
+              "n": 8,
+              "rate": 0.375,
+              "wilson_95": {
+                "lower": 0.1368442858,
+                "upper": 0.6942576054
+              }
+            },
+            "down": {
+              "successes": 1,
+              "n": 5,
+              "rate": 0.2,
+              "wilson_95": {
+                "lower": 0.0362241086,
+                "upper": 0.6244653702
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 3,
+              "n": 7,
+              "rate": 0.4285714286,
+              "wilson_95": {
+                "lower": 0.1582198553,
+                "upper": 0.7495416355
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -2.0646725238
+            },
+            "negative": {
+              "successes": 1,
+              "n": 6,
+              "rate": 0.1666666667,
+              "wilson_95": {
+                "lower": 0.0300533697,
+                "upper": 0.5635028222
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 5.0212219078
+            }
+          },
+          "pearson_correlation": -0.5028742623,
+          "mean_target_return_pct": 1.2057402908,
+          "mean_signed_return_pct": -3.429233778,
+          "majority_direction_baseline_accuracy": 0.6153846154,
+          "beta_shrunk_accuracy": 0.380952381,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -290.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_option_delta_daily",
+          "target": "next_day_return",
+          "sample_n": 12,
+          "directional_sample_n": 12,
+          "direction_match": {
+            "successes": 11,
+            "n": 12,
+            "rate": 0.9166666667,
+            "wilson_95": {
+              "lower": 0.6461200889,
+              "upper": 0.9851349056
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 7,
+              "n": 8,
+              "rate": 0.875,
+              "wilson_95": {
+                "lower": 0.5291118178,
+                "upper": 0.9775825085
+              }
+            },
+            "down": {
+              "successes": 4,
+              "n": 4,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.5101091635,
+                "upper": 1.0
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 7,
+              "n": 7,
+              "rate": 1.0,
+              "wilson_95": {
+                "lower": 0.6456695649,
+                "upper": 1.0
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": 4.7654029879
+            },
+            "negative": {
+              "successes": 4,
+              "n": 5,
+              "rate": 0.8,
+              "wilson_95": {
+                "lower": 0.3755346298,
+                "upper": 0.9637758914
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": -2.8456028723
+            }
+          },
+          "pearson_correlation": 0.2680812138,
+          "mean_target_return_pct": 1.5941505462,
+          "mean_signed_return_pct": 3.9654862731,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.75,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-08-28",
+            "latest_value": -290.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        }
+      }
+    },
+    "aggregate_flow_gate": {
+      "direction": "NO_DIRECTIONAL_EDGE",
+      "direction_weight": 0.0,
+      "signed_direction_contribution": 0.0,
+      "meaning": "Flow may only be a capped supporting input. Zero means do not infer the next regular close from participant buying/selling."
+    },
+    "latest_observation": {
+      "trade_date": "2026-08-28",
+      "close": 1068.0,
+      "foreign_futures_daily": 2289.0,
+      "institution_futures_daily": -2835.0,
+      "foreign_option_delta_daily": 1519.5,
+      "foreign_composite_daily": 3808.5,
+      "institution_option_delta_daily": -290.0,
+      "institution_composite_daily": -3125.0,
+      "previous_trade_date": "2026-08-27",
+      "foreign_composite_3d_sum": 12588.5,
+      "foreign_futures_3d_sum": 11946.0,
+      "foreign_option_delta_3d_sum": 642.5,
+      "institution_composite_3d_sum": -13863.5,
+      "institution_futures_3d_sum": -13379.0,
+      "institution_option_delta_3d_sum": -484.5,
+      "foreign_composite_5d_sum": 13365.0,
+      "foreign_futures_5d_sum": 14246.0,
+      "foreign_option_delta_5d_sum": -881.0,
+      "institution_composite_5d_sum": -14818.0,
+      "institution_futures_5d_sum": -15243.0,
+      "institution_option_delta_5d_sum": 425.0
+    }
+  },
+  "direction_model": {
+    "stance": "판단 불가(중립-하방 경계)",
+    "bias": "중립-하방 경계",
+    "combined_backdrop_score": -52.04,
+    "forecast_confidence_score": 63,
+    "direction_threshold": 95,
+    "direction_published": false,
+    "flow_used_as_direction": false
+  },
+  "analysis_quality": {
+    "fixed_five_point_bins_used_for_levels": false,
+    "structural_level_status": "OK",
+    "intraday_raw_bars_available": false,
+    "execution_ready": false,
+    "reason": "검증된 원시 분봉과 동시간 OI·거래량이 없어 일봉 구조 후보까지만 제공",
+    "walk_forward_evaluated_dates": 25
+  },
+  "price_context": {
+    "status": "OK",
+    "as_of": "2026-08-28",
+    "current_price": 1068.0,
+    "returns_pct": {
+      "one_observation": -2.005,
+      "three_observations": 0.414,
+      "five_observations": -2.883
+    },
+    "sma5": 1069.32,
+    "sma20": 1029.74,
+    "close_location_in_daily_range": 0.0495,
+    "open_interest": 155198.0,
+    "oi_change": 1752.0,
+    "price_oi_interpretation": "가격 하락·OI 증가: 신규 매도 유입 가능성(해석)",
+    "components": {
+      "one_day_momentum": -16.0,
+      "three_day_momentum": 1.93,
+      "five_day_momentum": -10.38,
+      "close_vs_sma5": -0.86,
+      "daily_close_location": -9.01,
+      "price_oi_regime": -10.0
+    },
+    "score": -54.05,
+    "meaning": "동시점 가격·OI 배경 점수이며 다음날 예측 확률이 아님"
+  },
+  "technical_next_day_edge": {
+    "sample_count": 36,
+    "successes": 12,
+    "accuracy_pct": 33.33,
+    "majority_baseline_pct": 52.78,
+    "wilson_95_pct": [
+      20.21,
+      49.67
+    ],
+    "shrunk_accuracy_pct": 36.36,
+    "gate": "NO_ROBUST_EDGE",
+    "rule": "price-only score at T versus the immediately following validated regular close",
+    "neutral_predictions_excluded": true
+  },
+  "structural_level_walk_forward": {
+    "method": "walk-forward as-of nearest level versus immediately following validated regular daily bar",
+    "minimum_history_rows": 20,
+    "evaluated_as_of_dates": 25,
+    "intraday_order_known": false,
+    "groups": {
+      "resistance:medium": {
+        "available": 6,
+        "touched": 2,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 50.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          9.45,
+          90.55
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "resistance:weak": {
+        "available": 19,
+        "touched": 8,
+        "close_nonfailure": 6,
+        "close_confirmed": 4,
+        "failed_close": 2,
+        "close_nonfailure_rate_pct": 75.0,
+        "close_confirmed_rate_pct": 50.0,
+        "nonfailure_wilson_95_pct": [
+          40.93,
+          92.85
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "support:medium": {
+        "available": 7,
+        "touched": 1,
+        "close_nonfailure": 0,
+        "close_confirmed": 0,
+        "failed_close": 1,
+        "close_nonfailure_rate_pct": 0.0,
+        "close_confirmed_rate_pct": 0.0,
+        "nonfailure_wilson_95_pct": [
+          0.0,
+          79.35
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "support:strong": {
+        "available": 3,
+        "touched": 1,
+        "close_nonfailure": 1,
+        "close_confirmed": 1,
+        "failed_close": 0,
+        "close_nonfailure_rate_pct": 100.0,
+        "close_confirmed_rate_pct": 100.0,
+        "nonfailure_wilson_95_pct": [
+          20.65,
+          100.0
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      },
+      "support:weak": {
+        "available": 10,
+        "touched": 4,
+        "close_nonfailure": 0,
+        "close_confirmed": 0,
+        "failed_close": 4,
+        "close_nonfailure_rate_pct": 0.0,
+        "close_confirmed_rate_pct": 0.0,
+        "nonfailure_wilson_95_pct": [
+          0.0,
+          48.99
+        ],
+        "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+      }
+    },
+    "by_side": {
+      "support": {
+        "touched": 6,
+        "close_nonfailure": 1,
+        "close_nonfailure_rate_pct": 16.67,
+        "nonfailure_wilson_95_pct": [
+          3.01,
+          56.35
+        ]
+      },
+      "resistance": {
+        "touched": 10,
+        "close_nonfailure": 7,
+        "close_nonfailure_rate_pct": 70.0,
+        "nonfailure_wilson_95_pct": [
+          39.68,
+          89.22
+        ]
+      }
+    },
+    "limit": "일봉 고저 범위 교차와 종가 방어만 측정; 터치 순서·장중 손절 여부는 판단 불가"
+  },
+  "index_crosscheck": {
+    "status": "OK",
+    "as_of": "2026-08-28",
+    "daily": {
+      "bar_status": "complete",
+      "latest_bar": "2026-08-28T00:00:00",
+      "score": -30.0,
+      "state": "중립-하락"
+    },
+    "intraday_15m": {
+      "bar_status": "complete",
+      "latest_bar": "2026-08-28T15:30:00+09:00",
+      "score": -65.0,
+      "state": "하락"
+    },
+    "analysis_sha256": "EA31B99184B67CB019AF96439053A528C9F6E8247C58B2DDF27EE96DA3012A18",
+    "validation_sha256": "F52B83625364051370C12A037805066F67274C5761961A7A2724D2734236EE4F"
+  },
+  "chart_crosscheck": {
+    "schema_version": "1.0",
+    "as_of": "2026-08-28",
+    "reviewed_on": "2026-08-29",
+    "status": "REVIEWED_FROM_ORIGINAL_HTS_SCREEN",
+    "contract": "F202609",
+    "review_scope": "5605 일봉·10분봉 원본 화면과 0441 정규장 마감 화면의 세션 분리 확인",
+    "regular_session": {
+      "reference_price": 1068.0,
+      "reference_basis": "검증된 0441 정규장 종가 및 futures_f202609_daily.csv",
+      "high": 1089.1,
+      "low": 1066.9
+    },
+    "overnight_session": {
+      "snapshot_price": 1078.1,
+      "low": 1064.25,
+      "low_time_visible": "18:10",
+      "high": 1082.2,
+      "high_time_visible": "23:00",
+      "visual_sequence": "1064.25 저점 뒤 1070과 1075를 회복해 1078.10 부근",
+      "separate_from_regular_close": true
+    },
+    "structural_crosscheck": {
+      "candidate_zone": "1058.40~1064.70",
+      "observation": "야간 저점 1064.25가 일봉 ATR 구조 후보 상단에 닿은 뒤 반등한 모습은 확인",
+      "limitation": "화면 PNG만으로 각 봉의 원시 OHLCV와 동시간 OI 순서를 재계산할 수 없어 방어 성공률·실행 신호로 승격하지 않음"
+    },
+    "volatility_screen_0471": {
+      "status": "VISUALLY_REVIEWED_NOT_STRUCTURED",
+      "use": "변동성 환경 보조 경고만; 지지·저항 가격 산정에는 사용하지 않음",
+      "limitation": "원본 화면에 선 그래프는 있으나 날짜별 숫자 시계열이 없어 정확 값·변화율을 만들지 않음"
+    },
+    "execution_ready": false,
+    "missing_for_execution": [
+      "정규장·야간장을 구분한 원시 5분 또는 10분 OHLCV",
+      "같은 타임스탬프의 미결제약정",
+      "터치 후 종가 안착과 재시험 순서를 기계 검증할 수 있는 시계열"
+    ],
+    "source_files": [
+      {
+        "role": "5605_daily_screen",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260828\\5605_KOSPI200최근월_일봉_20260828.png",
+        "sha256": "9018F88DC4D38DED71F9C0438786EFC07B15CE296D10576DE701BF2D9DFCF100"
+      },
+      {
+        "role": "5605_10minute_screen",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260828\\5605_KOSPI200최근월_10분봉_20260828.png",
+        "sha256": "C9541D8BBD439002A3DB9867384A456CA632E22CFA6AC2672540D13C0D3BBB68"
+      },
+      {
+        "role": "0441_regular_close_screen",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260828\\0441_close_snapshot_20260828.png",
+        "sha256": "E3C05C060F136986AA0F8B0C4B46DC5A74E9F4C66539893CE4E5BCD6A6E46E46"
+      },
+      {
+        "role": "0471_volatility_screen",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260828\\0471_KOSPI200_일별_60일_20260828.png",
+        "sha256": "151CE0A4F3BE51278C566136EDF04C90C473C3ED388D2B8D88C5BFA080847C60"
+      }
+    ],
+    "review_file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260828\\chart_structure_review_20260828.json",
+    "review_file_sha256": "E6E9C1C0C07D19B1ED162A149A4B86A510A63FD361DD1754AC0AEFFEB8D320CA"
+  },
+  "overall_assessment": {
+    "reference_price": 1068.0,
+    "reference_price_source": "검증된 2026-08-28 F 202609 정규장 종가",
+    "headline": "결론: 판단 불가(중립-하방 경계) · 정규장 기준 1,068.00 · 1차 일봉 후보 지지 1058.40~1064.70(구조 약 · 과거 실패 우세) · 이탈 후 다음 후보 지지 1031.95~1040.20(구조 강 · 표본 부족·미검증) · 1차 일봉 후보 저항 1088.25~1094.55(구조 중 · 표본 부족·미검증) · 돌파 후 다음 후보 저항 1101.35~1107.65(구조 중 · 표본 부족·미검증)",
+    "stance": "판단 불가(중립-하방 경계)",
+    "bias": "중립-하방 경계",
+    "confidence": "예측 63/100 · 95 미만이면 방향 확정 금지",
+    "pivot": "1064.70~1088.25 구조 박스",
+    "first_resistance": "1088.25~1094.55(구조 중 · 표본 부족·미검증)",
+    "breakout_confirmation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+    "second_resistance_target": "1101.35~1107.65(구조 중 · 표본 부족·미검증)",
+    "downside_scenario": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효 → 1031.95~1040.20(구조 강 · 표본 부족·미검증)",
+    "caution": "표시 레벨은 정규장 일봉 구조 후보입니다. 5포인트 누적수급은 실행 레벨 산정에서 제외했습니다. 실제 진입·이탈 판단에는 동일 세션의 원시 5/10/15분봉, 동시간 거래량·OI, 재시험 순서가 필요합니다. 5605 야간 화면은 저점 1064.25 후 1078.1 회복을 보였지만 원시 분봉/OI 시계열이 없어 실행 확인으로 승격하지 않음.",
+    "levels": [
+      {
+        "label": "1차 일봉 구조 후보 지지(구조 약 · 과거 실패 우세)",
+        "range": "1058.40~1064.70",
+        "side": "support",
+        "sequence": 1,
+        "low": 1058.4,
+        "high": 1064.7,
+        "center": 1061.55,
+        "strength": "과거 실패 우세",
+        "structure_strength": "약",
+        "reaction_strength": "과거 실패 우세",
+        "strength_score": 30.9,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 1일 · 확정 스윙 0회 · 최근 반응 2026-08-21. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 4회, 종가 비실패 0.0% (과거 실패 우세)",
+        "color": "#2563eb",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+        "source_types": [
+          "lower_rejection"
+        ],
+        "evidence_dates": [
+          "2026-08-21"
+        ],
+        "walk_forward_validation": {
+          "available": 10,
+          "touched": 4,
+          "close_nonfailure": 0,
+          "close_confirmed": 0,
+          "failed_close": 4,
+          "close_nonfailure_rate_pct": 0.0,
+          "close_confirmed_rate_pct": 0.0,
+          "nonfailure_wilson_95_pct": [
+            0.0,
+            48.99
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "과거 실패 우세"
+      },
+      {
+        "label": "2차 일봉 구조 후보 지지(구조 강 · 표본 부족·미검증)",
+        "range": "1031.95~1040.20",
+        "side": "support",
+        "sequence": 2,
+        "low": 1031.95,
+        "high": 1040.2,
+        "center": 1036.05,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "강",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 73.6,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 2회 · 최근 반응 2026-08-20. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 100.0% (표본 부족·미검증)",
+        "color": "#2563eb",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+        "source_types": [
+          "lower_rejection",
+          "swing_high",
+          "swing_low"
+        ],
+        "evidence_dates": [
+          "2026-07-14",
+          "2026-07-31",
+          "2026-08-20"
+        ],
+        "walk_forward_validation": {
+          "available": 3,
+          "touched": 1,
+          "close_nonfailure": 1,
+          "close_confirmed": 1,
+          "failed_close": 0,
+          "close_nonfailure_rate_pct": 100.0,
+          "close_confirmed_rate_pct": 100.0,
+          "nonfailure_wilson_95_pct": [
+            20.65,
+            100.0
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      },
+      {
+        "label": "3차 일봉 구조 후보 지지(구조 중 · 표본 부족·미검증)",
+        "range": "1016.25~1023.25",
+        "side": "support",
+        "sequence": 3,
+        "low": 1016.25,
+        "high": 1023.25,
+        "center": 1019.75,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "중",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 49.8,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 0회 · 최근 반응 2026-08-03. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 0.0% (표본 부족·미검증)",
+        "color": "#2563eb",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+        "source_types": [
+          "lower_rejection",
+          "upper_rejection"
+        ],
+        "evidence_dates": [
+          "2026-07-21",
+          "2026-07-28",
+          "2026-08-03"
+        ],
+        "walk_forward_validation": {
+          "available": 7,
+          "touched": 1,
+          "close_nonfailure": 0,
+          "close_confirmed": 0,
+          "failed_close": 1,
+          "close_nonfailure_rate_pct": 0.0,
+          "close_confirmed_rate_pct": 0.0,
+          "nonfailure_wilson_95_pct": [
+            0.0,
+            79.35
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      },
+      {
+        "label": "4차 일봉 구조 후보 지지(구조 중 · 표본 부족·미검증)",
+        "range": "1002.10~1008.65",
+        "side": "support",
+        "sequence": 4,
+        "low": 1002.1,
+        "high": 1008.65,
+        "center": 1005.35,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "중",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 52.7,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-25. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 1회, 종가 비실패 0.0% (표본 부족·미검증)",
+        "color": "#2563eb",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+        "source_types": [
+          "lower_rejection",
+          "swing_low"
+        ],
+        "evidence_dates": [
+          "2026-08-12",
+          "2026-08-25"
+        ],
+        "walk_forward_validation": {
+          "available": 7,
+          "touched": 1,
+          "close_nonfailure": 0,
+          "close_confirmed": 0,
+          "failed_close": 1,
+          "close_nonfailure_rate_pct": 0.0,
+          "close_confirmed_rate_pct": 0.0,
+          "nonfailure_wilson_95_pct": [
+            0.0,
+            79.35
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      },
+      {
+        "label": "1차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+        "range": "1088.25~1094.55",
+        "side": "resistance",
+        "sequence": 1,
+        "low": 1088.25,
+        "high": 1094.55,
+        "center": 1091.4,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "중",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 53.6,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 3일 · 확정 스윙 0회 · 최근 반응 2026-08-28. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+        "color": "#dc2626",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+        "source_types": [
+          "upper_rejection"
+        ],
+        "evidence_dates": [
+          "2026-07-20",
+          "2026-08-24",
+          "2026-08-28"
+        ],
+        "walk_forward_validation": {
+          "available": 6,
+          "touched": 2,
+          "close_nonfailure": 1,
+          "close_confirmed": 1,
+          "failed_close": 1,
+          "close_nonfailure_rate_pct": 50.0,
+          "close_confirmed_rate_pct": 50.0,
+          "nonfailure_wilson_95_pct": [
+            9.45,
+            90.55
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      },
+      {
+        "label": "2차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+        "range": "1101.35~1107.65",
+        "side": "resistance",
+        "sequence": 2,
+        "low": 1101.35,
+        "high": 1107.65,
+        "center": 1104.5,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "중",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 47.5,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-21. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+        "color": "#dc2626",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+        "source_types": [
+          "lower_rejection",
+          "swing_high"
+        ],
+        "evidence_dates": [
+          "2026-07-23",
+          "2026-08-21"
+        ],
+        "walk_forward_validation": {
+          "available": 6,
+          "touched": 2,
+          "close_nonfailure": 1,
+          "close_confirmed": 1,
+          "failed_close": 1,
+          "close_nonfailure_rate_pct": 50.0,
+          "close_confirmed_rate_pct": 50.0,
+          "nonfailure_wilson_95_pct": [
+            9.45,
+            90.55
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      },
+      {
+        "label": "3차 일봉 구조 후보 저항(구조 약 · 방어 경향·신뢰구간 미달)",
+        "range": "1116.70~1123.00",
+        "side": "resistance",
+        "sequence": 3,
+        "low": 1116.7,
+        "high": 1123.0,
+        "center": 1119.85,
+        "strength": "방어 경향·신뢰구간 미달",
+        "structure_strength": "약",
+        "reaction_strength": "방어 경향·신뢰구간 미달",
+        "strength_score": 30.3,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 1일 · 확정 스윙 0회 · 최근 반응 2026-07-24. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 8회, 종가 비실패 75.0% (방어 경향·신뢰구간 미달)",
+        "color": "#dc2626",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+        "source_types": [
+          "upper_rejection"
+        ],
+        "evidence_dates": [
+          "2026-07-24"
+        ],
+        "walk_forward_validation": {
+          "available": 19,
+          "touched": 8,
+          "close_nonfailure": 6,
+          "close_confirmed": 4,
+          "failed_close": 2,
+          "close_nonfailure_rate_pct": 75.0,
+          "close_confirmed_rate_pct": 50.0,
+          "nonfailure_wilson_95_pct": [
+            40.93,
+            92.85
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "방어 경향·신뢰구간 미달"
+      },
+      {
+        "label": "4차 일봉 구조 후보 저항(구조 중 · 표본 부족·미검증)",
+        "range": "1140.10~1146.45",
+        "side": "resistance",
+        "sequence": 4,
+        "low": 1140.1,
+        "high": 1146.45,
+        "center": 1143.3,
+        "strength": "표본 부족·미검증",
+        "structure_strength": "중",
+        "reaction_strength": "표본 부족·미검증",
+        "strength_score": 58.3,
+        "data_confidence": "일봉 구조",
+        "reason": "ATR 가변폭 군집 · 서로 다른 반응일 2일 · 확정 스윙 1회 · 최근 반응 2026-08-18. 5포인트 수급 구간은 사용하지 않음 · 워크포워드 동일등급 터치 2회, 종가 비실패 50.0% (표본 부족·미검증)",
+        "color": "#dc2626",
+        "execution_ready": false,
+        "level_status": "candidate_before_intraday_confirmation",
+        "confirmation": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+        "source_types": [
+          "swing_low",
+          "upper_rejection"
+        ],
+        "evidence_dates": [
+          "2026-07-02",
+          "2026-08-18"
+        ],
+        "walk_forward_validation": {
+          "available": 6,
+          "touched": 2,
+          "close_nonfailure": 1,
+          "close_confirmed": 1,
+          "failed_close": 1,
+          "close_nonfailure_rate_pct": 50.0,
+          "close_confirmed_rate_pct": 50.0,
+          "nonfailure_wilson_95_pct": [
+            9.45,
+            90.55
+          ],
+          "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
+        },
+        "validation_label": "표본 부족·미검증"
+      }
+    ],
+    "scenarios": [
+      {
+        "tone": "neutral",
+        "condition": "1064.70~1088.25 사이",
+        "target": "방향 예측 대신 구조 박스와 분봉 확인 조건을 우선"
+      },
+      {
+        "tone": "down",
+        "condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효",
+        "target": "1031.95~1040.20(구조 강 · 표본 부족·미검증)"
+      },
+      {
+        "tone": "up",
+        "condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효",
+        "target": "1101.35~1107.65(구조 중 · 표본 부족·미검증)"
+      }
+    ],
+    "evidence": [
+      "가격·OI 배경점수 -54.05, KOSPI 동일일 다중시간대 기여 -8.80, 검증 수급 기여 +0.00",
+      "가격 전용 다음날 검증: 12/36 · 33.33% · NO_ROBUST_EDGE",
+      "외국인 다음날 방향 일치 24/44, gate=NO_ROBUST_EDGE",
+      "기관 다음날 방향 일치 18/44, gate=NO_ROBUST_EDGE",
+      "가격 하락·OI 증가: 신규 매도 유입 가능성(해석)",
+      "구조 레벨 ATR 52.7214, 고정 5포인트 구간 사용=False"
+    ]
+  },
+  "hts_0791_position_inference": {
+    "as_of": "2026-08-28",
+    "screen": "0791",
+    "mode": "누적·수량",
+    "scope": "KOSPI200 최근월 선물합 누적",
+    "reference_range": "1000~1100",
+    "source_image_count": 56,
+    "foreign": {
+      "direction": "LONG",
+      "label": "롱 우세",
+      "confidence": "중",
+      "curve_basis": "현재 가격을 포함하는 1000~1100 구간의 선물합성 손익곡선이 우상향",
+      "current_evaluation_pnl_million_krw": -621228,
+      "contracts": null,
+      "average_price": null
+    },
+    "institution": {
+      "direction": "SHORT",
+      "label": "숏 우세",
+      "confidence": "중",
+      "curve_basis": "금융투자·투신·기타금융은 우하향, 은행·보험·연기금등은 우상향이며 금융투자·투신의 숏 기울기가 기관계 방향을 주도",
+      "current_evaluation_pnl_million_krw": 640053,
+      "contracts": null,
+      "average_price": null,
+      "components": [
+        {
+          "investor": "금융투자",
+          "direction": "SHORT",
+          "current_evaluation_pnl_million_krw": 464560
+        },
+        {
+          "investor": "투신",
+          "direction": "SHORT",
+          "current_evaluation_pnl_million_krw": 237855
+        },
+        {
+          "investor": "기타금융",
+          "direction": "SHORT",
+          "current_evaluation_pnl_million_krw": 693
+        },
+        {
+          "investor": "은행",
+          "direction": "LONG",
+          "current_evaluation_pnl_million_krw": -1915
+        },
+        {
+          "investor": "보험",
+          "direction": "LONG",
+          "current_evaluation_pnl_million_krw": -52524
+        },
+        {
+          "investor": "연기금등",
+          "direction": "LONG",
+          "current_evaluation_pnl_million_krw": -8616
+        }
+      ]
+    },
+    "recent_flow_alignment": "당일 외국인 선물 +2289·기관 -2835, 최근 3관측 +11946·-13379, 최근 5관측 +14246·-15243으로 0791 외국인 롱·기관 숏 방향과 정렬",
+    "flow_proxy_comparison": "15관측 KRX·0787 순매매 누적은 외국인 -7588·기관 +5708로 0791 방향과 반대지만 현재 잔존 포지션이 아니라 관측기간 순매매 프록시",
+    "limitation": "0791_range_scan CSV의 clipboard·csv 값이 56행 모두 비어 있어 원본 PNG 손익곡선 기울기로 방향만 판정. 평가손익 부호는 롱·숏 방향이 아니며 정확 계약수와 평균단가는 확인 불가"
+  },
   "foreign_image": "foreign_supply_zone.png",
   "institution_image": "institution_supply_zone.png",
   "summary_image": "market_structure_summary.png",
-  "candlestick_image": null,
+  "candlestick_image": "kospi200_futures_daily_supply_zones.png",
   "position_profile_image": "f202609_candlestick_position_profile.png",
-  "source_note": "KRX 공식 seed와 검증 0787 수급을 날짜별 우선순위로 연결한 조건부 누적이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 검증된 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 0791은 PNG 손익곡선 기울기 기반 방향 추론일 뿐 계약수·평균단가가 아닙니다. 정규장 기준값 1068.00과 야간 참고값 1078.10을 분리했습니다."
+  "source_note": "KRX 공식 seed와 검증 0787 수급을 날짜별 우선순위로 연결한 조건부 누적이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 검증된 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 5포인트 구간은 참여자 누적수급 활동 참고표로만 남기고, 지지·저항은 동일 월물 일봉 가격구조의 ATR 가변폭 후보로 별도 산출합니다. 외국인·기관 수급은 다음날 적중력 검증 gate를 통과할 때만 제한적으로 방향에 반영합니다."
 }

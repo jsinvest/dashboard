@@ -1046,7 +1046,7 @@
 
   <!-- 추정 매물대: supply-zone/latest.json -->
   <div class="tab-panel" data-tab-panel="supply">
-    <div class="section-title">선물옵션 매물대 · KOSPI200 선물 외국인·기관 추정 매물대</div>
+    <div class="section-title">선물옵션 가격구조 · KOSPI200 선물 가변폭 지지·저항 후보와 누적수급</div>
     <div class="chart-card" style="padding:14px 16px;margin-bottom:16px">
       <div class="card-header"><span class="card-title">데이터 다운로드</span><span class="card-tag tag-kr">ZIP · JSON · CSV · PNG</span></div>
       <div id="supplyDownloads" style="display:flex;gap:8px;flex-wrap:wrap"></div>
@@ -1062,20 +1062,20 @@
     </div>
     <div class="grid-2" style="margin-bottom:16px">
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">외국인 전체 포지션 + 최근 가격대 활동</span><span class="card-tag tag-kr">LONG/SHORT</span></div>
-        <figure style="margin:0"><img id="supplyForeignImg" src="" alt="외국인 추정 매물대" style="width:100%;height:auto;display:block"></figure>
+        <div class="card-header"><span class="card-title">외국인 누적 순매매 프록시 + 종가구간 활동</span><span class="card-tag tag-kr">수급 참고</span></div>
+        <figure style="margin:0"><img id="supplyForeignImg" src="" alt="외국인 종가구간별 누적 수급 활동" style="width:100%;height:auto;display:block"></figure>
       </div>
       <div class="chart-card">
-        <div class="card-header"><span class="card-title">기관계 전체 포지션 + 최근 가격대 활동</span><span class="card-tag tag-kr">LONG/SHORT</span></div>
-        <figure style="margin:0"><img id="supplyInstitutionImg" src="" alt="기관계 추정 매물대" style="width:100%;height:auto;display:block"></figure>
+        <div class="card-header"><span class="card-title">기관계 누적 순매매 프록시 + 종가구간 활동</span><span class="card-tag tag-kr">수급 참고</span></div>
+        <figure style="margin:0"><img id="supplyInstitutionImg" src="" alt="기관계 종가구간별 누적 수급 활동" style="width:100%;height:auto;display:block"></figure>
       </div>
     </div>
     <div class="chart-card" style="margin-bottom:16px">
-      <div class="card-header"><span class="card-title">외국인·기관 전체 포지션 종합</span><span class="card-tag tag-kr">V2</span></div>
-      <figure style="margin:0"><img id="supplySummaryImg" src="" alt="추정 매물대 종합 요약" style="width:100%;height:auto;display:block"></figure>
+      <div class="card-header"><span class="card-title">외국인·기관 누적 수급 활동 요약</span><span class="card-tag tag-kr">실행 레벨 아님</span></div>
+      <figure style="margin:0"><img id="supplySummaryImg" src="" alt="누적 수급 활동 종합 요약" style="width:100%;height:auto;display:block"></figure>
     </div>
     <div class="chart-card" style="margin-top:16px">
-      <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">누적 핵심 매물대</span></div>
+      <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">종가구간별 누적 수급 활동 · 실행 레벨 아님</span></div>
       <div id="supplyCumulativeZones" style="padding:12px 14px"></div>
     </div>
     <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:12px"></div>
@@ -3115,7 +3115,7 @@ function renderSupplyAssessment(assessment,currentPrice,referenceSource){
       <div><div style="font-size:17px;font-weight:800">외국인·기관 포지션 종합 평가</div><div class="supply-assessment-headline">${assessment.headline}</div></div>
       <span class="card-tag tag-kr">${assessment.stance} · 신뢰도 ${assessment.confidence}</span>
     </div>
-    <div class="supply-reference"><div class="supply-reference-price">현재 기준 ${Number.isFinite(referencePrice)?referencePrice.toLocaleString():'-'}</div><div class="supply-reference-position"><strong>${currentPosition}</strong><span>${referenceSource||'게시 JSON 기준값'} · 검증된 EOD 종가와 구분해 표시</span></div></div>
+    <div class="supply-reference"><div class="supply-reference-price">현재 기준 ${Number.isFinite(referencePrice)?referencePrice.toLocaleString():'-'}</div><div class="supply-reference-position"><strong>${currentPosition}</strong><span>${referenceSource||'게시 JSON 기준값'} · 정규장/야간 기준 분리 확인</span></div></div>
     ${currentCards}
     <div class="supply-level-layout">${supplyAssessmentSection('down','▼ 하단 지지','가까운 → 먼',supports)}${supplyAssessmentSection('up','▲ 상단 저항','가까운 → 먼',resistances)}</div>
     ${conflictCards}
@@ -3128,7 +3128,7 @@ function supplyCumulativeRow(zone){
     <strong style="color:${color}">#${zone.rank}</strong>
     <strong>${Number(zone.low).toLocaleString()}–${Number(zone.high).toLocaleString()}</strong>
     <span><b>${zone.location}</b> · ${zone.direction}<br><small style="color:var(--text-dim)">외국인 ${Number(zone.foreign_contracts).toLocaleString()} / 기관 ${Number(zone.institution_contracts).toLocaleString()}</small></span>
-    <span style="text-align:right;color:${color}">누적강도<br><b>${Number(zone.gross_contracts).toLocaleString()}계약</b></span>
+    <span style="text-align:right;color:${color}">수급활동<br><b>${Number(zone.gross_contracts).toLocaleString()}계약</b></span>
   </div>`;
 }
 async function loadSupplyZone(){
@@ -3147,7 +3147,9 @@ async function loadSupplyZone(){
     const assessmentReferencePrice=Number(d.display_reference_price??d.overall_assessment?.reference_price??d.current_price);
     const assessmentReferenceSource=d.display_reference_basis||d.overall_assessment?.reference_price_source||(assessmentReferencePrice===Number(d.current_price)?'검증된 EOD 종가':'별도 표시 기준값');
     const referenceMeta=assessmentReferencePrice!==Number(d.current_price)?` · 화면 기준 ${assessmentReferencePrice.toLocaleString()} (${assessmentReferenceSource})`:'';
-    if(metaEl) metaEl.textContent = `기준일 ${d.as_of} · 생성 ${d.generated_at} · 월물 ${d.futures_contract||'-'} · EOD 종가 ${Number(d.current_price).toLocaleString()}${referenceMeta} · ${d.bin_size}포인트 구간`;
+    const overnightPrice=Number(d.session_references?.overnight?.snapshot_price);
+    const overnightMeta=Number.isFinite(overnightPrice)?` · 야간 화면 ${overnightPrice.toLocaleString()}(정규장과 분리)`:'';
+    if(metaEl) metaEl.textContent = `기준일 ${d.as_of} · 생성 ${d.generated_at} · 월물 ${d.futures_contract||'-'} · EOD 종가 ${Number(d.current_price).toLocaleString()}${overnightMeta}${referenceMeta} · 구조 레벨 가변폭 · ${d.bin_size}포인트는 누적수급 참고만`;
 
     const positionInferenceEl=document.getElementById('supplyPositionInference');
     if(positionInferenceEl)positionInferenceEl.innerHTML=render0791PositionInference(d.hts_0791_position_inference);
@@ -3173,7 +3175,7 @@ async function loadSupplyZone(){
     if(assessmentEl) assessmentEl.innerHTML = renderSupplyAssessment(d.overall_assessment,assessmentReferencePrice,assessmentReferenceSource);
 
     const cumulativeTitle = document.getElementById('supplyCumulativeTitle');
-    if(cumulativeTitle) cumulativeTitle.textContent = `누적 핵심 매물대 · ${d.cumulative_from||'-'}~${d.cumulative_to||'-'} (${d.cumulative_trading_days||0}거래일)`;
+    if(cumulativeTitle) cumulativeTitle.textContent = `종가구간별 누적 수급 활동 · 실행 레벨 아님 · ${d.cumulative_from||'-'}~${d.cumulative_to||'-'} (${d.cumulative_trading_days||0}거래일)`;
     const cumulativeEl = document.getElementById('supplyCumulativeZones');
     if(cumulativeEl) cumulativeEl.innerHTML = (d.cumulative_zones||[]).length ? d.cumulative_zones.map(supplyCumulativeRow).join('') : '<span style="color:var(--text-dim)">누적 데이터 없음</span>';
 
@@ -3182,9 +3184,11 @@ async function loadSupplyZone(){
       const files = [
         {title:'전체 분석 JSON', file:'latest.json'},
         {title:'포지션 요약 CSV', file:'position_summary_latest.csv'},
-        {title:'누적 매물대 CSV', file:'cumulative_zones_latest.csv'},
+        {title:'종가구간별 누적 수급 활동 CSV', file:'cumulative_zones_latest.csv'},
       ];
-      if(dataBundle && dataBundle.file){
+      const bundleDate=String(dataBundle?.as_of||'').replaceAll('-','');
+      const analysisDate=String(d.as_of||'').replaceAll('-','');
+      if(dataBundle && dataBundle.file && bundleDate===analysisDate){
         files.unshift({
           title:`GPT용 전체 선물옵션 데이터 ZIP (${dataBundle.as_of} · ${dataBundle.file_count}개 파일)`,
           file:dataBundle.file,
