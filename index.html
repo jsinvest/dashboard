@@ -63,6 +63,10 @@
   .grid-2>*,.grid-3>*,.grid-4>*{min-width:0;}
   .chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative;}
   .card-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);}
+  .supply-cumulative-details>summary{cursor:pointer;list-style:none;}
+  .supply-cumulative-details>summary::-webkit-details-marker{display:none;}
+  .supply-cumulative-toggle::before{content:'펼치기';}
+  .supply-cumulative-details[open] .supply-cumulative-toggle::before{content:'접기';}
   .expand-chart-btn{margin-left:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);border-radius:5px;padding:5px 8px;font-size:12px;line-height:1;cursor:pointer;white-space:nowrap;}
   .expand-chart-btn:hover{border-color:var(--accent);color:var(--accent);}
   body.chart-expanded-open{overflow:hidden;}
@@ -1074,10 +1078,10 @@
       <div class="card-header"><span class="card-title">외국인·기관 누적 수급 활동 요약</span><span class="card-tag tag-kr">실행 레벨 아님</span></div>
       <figure style="margin:0"><img id="supplySummaryImg" src="" alt="누적 수급 활동 종합 요약" style="width:100%;height:auto;display:block"></figure>
     </div>
-    <div class="chart-card" style="margin-top:16px">
-      <div class="card-header"><span class="card-title" id="supplyCumulativeTitle">종가구간별 누적 수급 활동 · 실행 레벨 아님</span></div>
+    <details class="chart-card supply-cumulative-details" style="margin-top:16px">
+      <summary class="card-header"><span class="card-title" id="supplyCumulativeTitle">종가구간별 누적 수급 활동 · 실행 레벨 아님</span><span class="card-tag tag-kr supply-cumulative-toggle" aria-hidden="true"></span></summary>
       <div id="supplyCumulativeZones" style="padding:12px 14px"></div>
-    </div>
+    </details>
     <div id="supplySourceNote" style="margin-top:10px;color:var(--text-dim);font-size:12px"></div>
   </div>
 
