@@ -20,9 +20,9 @@
     "sector_leader_file": "sector_stock_leaders_20260827.xlsx · 55개 섹터·563종목행 · 2차전지·전력망·ESS·반도체 후보 비교",
     "scanner_file": "scan_result_20260827_164516.csv · 74종목(KOSPI 47·KOSDAQ 27) · S 38·B 14·C 15·대기 7 · 원신호 파일 존재",
     "candidate_review": "섹터·주도주·V2 스캔을 합쳐 18종목을 1차 후보로 비교하고 8종목을 최종 선정. 11단계의 KOSDAQ 주봉 하락과 과열도를 반영해 서진시스템을 최종에서 제외",
-    "cash_monthly": "20260827 · status=OK · 종료코드 0 · PRIMARY 현금 0%·위험자산 100% · action=HOLD",
-    "cash_staged": "20260827 · status=OK · 종료코드 0 · DEFENSE_HOLD_WAITING_MONTHLY_REENTRY · 현금 10%·위험자산 90% · action=HOLD",
-    "cash_final_reference": "20260827 확정 최종 참고 현금 10%·위험자산 최대 90% · 월간 0%와 단계형 10% 중 보수적 값 적용 · X3·RV 보조 경보 없음",
+    "cash_monthly": "20260828 · status=OK · 종료코드 0 · PRIMARY 현금 0%·위험자산 100% · action=HOLD",
+    "cash_staged": "20260828 · status=OK · 종료코드 0 · DEFENSE_HOLD_WAITING_MONTHLY_REENTRY · 현금 10%·위험자산 90% · action=HOLD",
+    "cash_final_reference": "20260828 확정 최종 참고 현금 10%·위험자산 최대 90% · 월간 0%와 단계형 10% 중 보수적 값 적용 · X3·RV 보조 경보 없음",
     "us_sector_file": "이번 최종 게시에는 20260827 국내 자료와 확인된 뉴스만 사용. 8월 27일 미국 정규장 마감 자료는 아직 없음",
     "derivatives_current_day": "20260827 선물옵션 EOD 폴더는 존재하지만 이번 최종 게시 과정에서 전체 원천·OCR·만기 검증을 수행하지 않아 방향과 종목 순위에 사용하지 않음",
     "duplicates_missing": "스캐너 종목 중복 0. WISE 26개 업종과 데이터.xlsx 최신행은 중복·결측·비양수 값 없이 검증 완료. 20260827 index_multitimeframe도 status=OK·can_use_for_decision=true로 검증 완료"
@@ -125,7 +125,7 @@
   ],
   "trading_rule": "최종 참고 한도는 현금 10%·위험자산 최대 90%이며 자동 주문 지시가 아닙니다. 최종 8종목을 동일가중한다고 가정할 때 종목당 참고 상한은 11.25%지만, 장중 확인 조건을 충족한 종목만 대상으로 합니다. TP·SL은 선정 조건으로 사용하지 않았습니다. 시초 +3% 이상 갭 또는 전일 급등 종목은 첫 눌림·VWAP 재회복·거래대금 유지 전 추격하지 않습니다.",
   "risk_flags": [
-    "현금비중은 20260827 WISE EOD_CONFIRMED 기준 월간 0%·단계형 10%로 계산돼 최종 현금 10%·위험자산 90%를 적용하며, X3·RV 보조 경보는 없습니다.",
+    "현금비중은 20260828 WISE EOD_CONFIRMED 기준 월간 0%·단계형 10%로 계산돼 최종 현금 10%·위험자산 90%를 적용하며, X3·RV 보조 경보는 없습니다.",
     "다중 시간대 점수는 KOSPI -9.8, KOSDAQ -12.8로 모두 중립·박스이며 KOSDAQ 주봉은 하락입니다.",
     "KOSPI·KOSDAQ 공포탐욕 78.23·90.32, 전체종목 ADR20 136.92·131.16으로 되돌림 위험이 큽니다.",
     "상승/하락 비율이 1.144·1.058로 지수 상승만큼 종목 확산이 강하지 않았습니다.",
@@ -158,5 +158,5 @@
       "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
     ]
   },
-  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. WISE 공식 종가 26개가 반영된 EOD_CONFIRMED 자료로 월간·단계형 현금비중을 계산했고 두 실행 모두 status=OK·종료코드 0입니다. 11단계 다중 시간대 자료는 종료코드 0·status=OK·can_use_for_decision=true이며 국내 두 지수 교차검증과 니케이 공식 EOD 교차검증을 통과했습니다. 최종 참고 한도는 현금 10%·위험자산 90%입니다. 선물옵션은 원천·OCR·만기 누적을 이번 작업에서 검증하지 않아 반영하지 않았습니다."
+  "source_note": "국내 시장 폭·ADR·Impulse·공포탐욕·섹터·55개 섹터 주도주·V2 스캐너는 20260827 기준입니다. 현금비중은 WISE 공식 종가 26개가 반영된 20260828 EOD_CONFIRMED 자료로 계산했고 월간·단계형 두 실행 모두 status=OK·종료코드 0입니다. 20260827의 11단계 다중 시간대 자료는 종료코드 0·status=OK·can_use_for_decision=true이며 국내 두 지수 교차검증과 니케이 공식 EOD 교차검증을 통과했습니다. 최종 참고 한도는 현금 10%·위험자산 90%입니다. 선물옵션은 원천·OCR·만기 누적을 이번 작업에서 검증하지 않아 반영하지 않았습니다."
 }
