@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-08-27",
-  "trade_date": "20260827",
+  "as_of": "2026-08-28",
+  "trade_date": "20260828",
   "source_generated_at": {
-    "monthly": "2026-08-27T20:13:38+09:00",
-    "staged_weekly": "2026-08-27T20:13:41.790972+09:00"
+    "monthly": "2026-08-28T21:46:20+09:00",
+    "staged_weekly": "2026-08-28T21:46:23.488478+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 10% 유지",
     "state": "방어 현금 10% 유지 · 월간 재진입 대기",
-    "reason": "8월 27일 당일 모델값과 월간 PRIMARY, 확정 주간 모델은 모두 현금 0%입니다. 다만 주간 신호로 현금을 줄이지 않고 월간 재진입만 허용하는 단계형 규칙에 따라 기존 현금 10%를 유지합니다.",
+    "reason": "8월 28일 당일 모델값은 현금 25%이지만 월간 PRIMARY와 확정 주간 모델은 현금 0%입니다. 주간 신호로 현금을 줄이지 않고 월간 재진입만 허용하는 단계형 규칙에 따라 기존 현금 10%를 유지합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -137,6 +137,17 @@
       "applied_risky_pct": 90.0,
       "action": "HOLD",
       "action_label": "현금 10% 유지"
+    },
+    {
+      "as_of": "2026-08-28",
+      "daily_model_cash_pct": 25.0,
+      "daily_model_mode": "NON_TREND_V22_NEUTRAL_NON_TREND",
+      "monthly_primary_cash_pct": 0.0,
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지"
     }
   ],
   "rule_steps": [
@@ -193,8 +204,8 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-08-27",
-    "workbook_rows": 2613,
+    "workbook_last_date": "2026-08-28",
+    "workbook_rows": 2614,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
