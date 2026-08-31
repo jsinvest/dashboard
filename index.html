@@ -314,6 +314,17 @@
   .hit-rate-final{display:inline-block;margin-left:5px;padding:2px 5px;border:1px solid rgba(0,229,255,.35);border-radius:4px;color:var(--accent);font-size:9px;vertical-align:1px;}
   .supply-zone-row{display:grid;grid-template-columns:70px 110px minmax(0,1fr) 150px;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--border);}
   .supply-assessment-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px;}.supply-assessment-headline{margin-top:5px;color:var(--text-dim);line-height:1.55;}.supply-conclusion{margin-bottom:12px;padding:12px 14px;border:1px solid rgba(255,71,87,.55);border-left:5px solid var(--down);border-radius:9px;background:linear-gradient(90deg,rgba(255,71,87,.13),rgba(255,71,87,.025));}.supply-conclusion strong{display:block;color:#ff8795;font-size:18px;line-height:1.35;}.supply-conclusion span{display:block;margin-top:5px;color:var(--text-dim);font-size:12px;line-height:1.55;}.supply-reference{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 14px;align-items:center;margin-bottom:12px;padding:12px 14px;border:1px solid rgba(0,229,255,.42);border-radius:9px;background:linear-gradient(90deg,rgba(0,229,255,.09),rgba(0,229,255,.025));}.supply-reference-price{font:800 22px 'JetBrains Mono',monospace;color:var(--accent);white-space:nowrap;}.supply-reference-position strong{display:block;font-size:14px;color:var(--text);}.supply-reference-position span{display:block;margin-top:3px;color:var(--text-muted);font-size:11px;}.supply-level-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:10px;}.supply-level-group{min-width:0;padding:11px;border:1px solid var(--border);border-radius:9px;background:rgba(10,12,16,.28);}.supply-level-group.down{border-top:3px solid #2563eb;}.supply-level-group.up{border-top:3px solid #ef4444;}.supply-level-title{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px;font-size:13px;font-weight:800;}.supply-level-group.down .supply-level-title{color:#60a5fa;}.supply-level-group.up .supply-level-title{color:#f87171;}.supply-level-title small{font-size:10px;color:var(--text-muted);font-weight:500;}.supply-level-list{display:grid;gap:7px;}.supply-level-card{padding:9px 10px;border:1px solid var(--border);border-radius:7px;background:var(--bg3);}.supply-level-card strong{display:block;line-height:1.4;}.supply-level-card div{margin-top:4px;font-size:12px;line-height:1.5;color:var(--text-dim);}.supply-level-current{margin-bottom:10px;border-left:4px solid var(--accent);}.supply-conflict-reference{margin-bottom:12px;padding:10px 11px;border:1px dashed #64748b;border-radius:8px;background:rgba(100,116,139,.07);}.supply-conflict-reference>strong{display:block;margin-bottom:7px;color:#94a3b8;font-size:12px;}.supply-scenarios{display:grid;gap:0;}.supply-scenario{padding:8px 0;border-bottom:1px solid var(--border);line-height:1.5;}.supply-scenario strong{display:inline-block;min-width:76px;}.supply-scenario span{margin-left:8px;}.supply-scenario .target{color:var(--text-dim);}.supply-level-empty{padding:12px;color:var(--text-muted);font-size:12px;text-align:center;}
+  .supply-price-map{margin:0 0 12px;padding:13px;border:1px solid var(--border);border-radius:10px;background:linear-gradient(180deg,rgba(15,23,42,.58),rgba(10,12,16,.36));overflow:hidden;}
+  .supply-price-map-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+  .supply-price-map-head b{font-size:14px;}.supply-price-map-head small{display:block;margin-top:3px;color:var(--text-muted);font-size:10px;line-height:1.45;}
+  .supply-map-legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--text-dim);font-size:10px;}.supply-map-legend span{display:inline-flex;align-items:center;gap:5px;}.supply-map-legend i{display:inline-block;width:15px;height:3px;border-radius:9px;background:currentColor;}.supply-map-legend .support{color:#60a5fa;}.supply-map-legend .resistance{color:#f87171;}.supply-map-legend .current{color:#22d3ee;}
+  .supply-price-map-desktop{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto;overflow:visible;}
+  .supply-price-map-desktop text{font-family:'Noto Sans KR',sans-serif;}.supply-price-map-desktop .mono{font-family:'JetBrains Mono',monospace;}
+  .supply-price-map-desktop .map-grid{stroke:rgba(148,163,184,.14);stroke-width:1;}.supply-price-map-desktop .map-axis{stroke:rgba(148,163,184,.42);stroke-width:1.2;}.supply-price-map-desktop .map-axis-label{fill:#6f7b8c;font-size:10px;}
+  .supply-price-map-desktop .map-zone{stroke-width:2;}.supply-price-map-desktop .map-zone.strong{stroke-width:5;filter:url(#supplyStrongGlow);}.supply-price-map-desktop .map-zone.medium{stroke-width:3;}.supply-price-map-desktop .map-zone.weak{stroke-width:2;stroke-dasharray:8 5;}.supply-price-map-desktop .map-zone.support{fill:rgba(59,130,246,.13);stroke:#3b82f6;}.supply-price-map-desktop .map-zone.resistance{fill:rgba(239,68,68,.13);stroke:#ef4444;}.supply-price-map-desktop .map-zone.current{fill:rgba(34,211,238,.08);stroke:#22d3ee;stroke-dasharray:7 5;}
+  .supply-price-map-desktop .map-current-line{stroke:#22d3ee;stroke-width:3;}.supply-price-map-desktop .map-current-tag{fill:#06161a;stroke:#22d3ee;stroke-width:1.2;}.supply-price-map-desktop .map-current-text{fill:#67e8f9;font-size:12px;font-weight:800;}
+  .supply-price-map-desktop .map-callout.support rect{fill:#111827;stroke:#3b82f6;}.supply-price-map-desktop .map-callout.resistance rect{fill:#181113;stroke:#ef4444;}.supply-price-map-desktop .map-callout rect{stroke-width:1.25;rx:8;}.supply-price-map-desktop .map-callout-title{font-size:11px;font-weight:800;}.supply-price-map-desktop .map-callout.support .map-callout-title,.supply-price-map-desktop .map-callout.support .map-callout-range{fill:#60a5fa;}.supply-price-map-desktop .map-callout.resistance .map-callout-title,.supply-price-map-desktop .map-callout.resistance .map-callout-range{fill:#f87171;}.supply-price-map-desktop .map-callout-range{font-size:14px;font-weight:800;}.supply-price-map-desktop .map-callout-detail{fill:#a8b3c4;font-size:9.5px;}.supply-price-map-desktop .map-leader{fill:none;stroke-width:1.7;}.supply-price-map-desktop .map-leader.support{stroke:#3b82f6;marker-end:url(#supplySupportArrow);}.supply-price-map-desktop .map-leader.resistance{stroke:#ef4444;marker-end:url(#supplyResistanceArrow);}
+  .supply-price-map-mobile{display:none;}.supply-map-mobile-row{--map-color:#22d3ee;margin-bottom:9px;padding:9px 10px;border:1px solid color-mix(in srgb,var(--map-color) 55%,transparent);border-left:4px solid var(--map-color);border-radius:8px;background:color-mix(in srgb,var(--map-color) 8%,transparent);}.supply-map-mobile-row.support{--map-color:#3b82f6;}.supply-map-mobile-row.resistance{--map-color:#ef4444;}.supply-map-mobile-row.current{--map-color:#22d3ee;}.supply-map-mobile-row.weak{border-left-style:dashed;}.supply-map-mobile-head{display:flex;justify-content:space-between;gap:8px;color:var(--map-color);font-size:11px;font-weight:800;}.supply-map-mobile-range{margin-top:3px;color:var(--text);font:800 14px 'JetBrains Mono',monospace;}.supply-map-mobile-copy{margin-top:4px;color:var(--text-dim);font-size:10px;line-height:1.45;}.supply-map-mobile-arrow{display:flex;align-items:center;gap:6px;margin:6px 0 2px;color:var(--map-color);font-size:10px;}.supply-map-mobile-arrow::before{content:'';flex:1;border-top:2px solid var(--map-color);}.supply-level-details{margin-bottom:10px;border:1px solid var(--border);border-radius:8px;background:rgba(10,12,16,.25);}.supply-level-details>summary{padding:10px 12px;color:var(--text-dim);font-size:12px;font-weight:700;cursor:pointer;}.supply-level-details[open]>summary{border-bottom:1px solid var(--border);}.supply-level-details-body{padding:10px;}
   .supply-0791-panel{padding:16px 18px;margin-bottom:16px;border-color:rgba(245,158,11,.5);}.supply-0791-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:11px;}.supply-0791-head strong{font-size:16px;}.supply-0791-head small{display:block;margin-top:4px;color:var(--text-muted);line-height:1.45;}.supply-0791-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.supply-0791-card{padding:12px 13px;border:1px solid var(--border);border-radius:9px;background:var(--bg3);}.supply-0791-card.long{border-left:4px solid var(--up);}.supply-0791-card.short{border-left:4px solid var(--down);}.supply-0791-card-head{display:flex;justify-content:space-between;align-items:center;gap:9px;margin-bottom:7px;}.supply-0791-card-head b{font-size:14px;}.supply-0791-side{font:800 18px 'JetBrains Mono',monospace;}.supply-0791-card.long .supply-0791-side{color:var(--up);}.supply-0791-card.short .supply-0791-side{color:var(--down);}.supply-0791-basis{color:var(--text-dim);font-size:12px;line-height:1.5;}.supply-0791-unknown{margin-top:7px;color:#f59e0b;font-size:11px;}.supply-0791-components{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}.supply-0791-components span{padding:3px 6px;border:1px solid var(--border);border-radius:10px;color:var(--text-muted);font-size:10px;}.supply-0791-components .long{color:var(--up);}.supply-0791-components .short{color:var(--down);}.supply-0791-compare{margin-top:10px;padding:10px 11px;border:1px solid rgba(245,158,11,.35);border-radius:8px;background:rgba(245,158,11,.06);font-size:12px;line-height:1.55;}.supply-0791-compare b{color:#f59e0b;}.supply-0791-note{margin-top:8px;color:var(--text-muted);font-size:11px;line-height:1.5;}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   footer{text-align:center;padding:20px;color:var(--text-muted);font-size:12px;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:20px;}
@@ -411,7 +422,7 @@
     .supply-zone-row{grid-template-columns:auto minmax(0,1fr);gap:5px 10px;padding:10px 2px;align-items:start;}
     .supply-zone-row>:nth-child(3){grid-column:1/-1;grid-row:2;line-height:1.5;}
     .supply-zone-row>:nth-child(4){grid-column:2;grid-row:1;text-align:right!important;}
-    .supply-reference{grid-template-columns:1fr;gap:7px;}.supply-level-layout,.supply-0791-grid{grid-template-columns:1fr;}.supply-scenario strong{display:block;min-width:0;margin-bottom:3px;}.supply-scenario span{margin-left:0;}
+    .supply-reference{grid-template-columns:1fr;gap:7px;}.supply-level-layout,.supply-0791-grid{grid-template-columns:1fr;}.supply-scenario strong{display:block;min-width:0;margin-bottom:3px;}.supply-scenario span{margin-left:0;}.supply-price-map{padding:10px;}.supply-price-map-desktop{display:none;}.supply-price-map-mobile{display:block;}.supply-price-map-head{align-items:flex-start;}.supply-map-legend{width:100%;}
     footer{padding:16px 12px calc(16px + env(safe-area-inset-bottom));font-size:10px;line-height:1.6;}
   }
   @media(max-width:360px){
@@ -3194,7 +3205,7 @@ function render0791PositionInference(inference){
   return `<div class="chart-card supply-0791-panel">
     <div class="supply-0791-head"><div><strong>키움 0791 누적 손익곡선 · 현재 포지션 방향</strong><small>${escapeHtml(inference.scope||'')} · ${escapeHtml(inference.reference_range||'')} 구간 · 곡선 기울기 기준</small></div><span class="card-tag tag-kr">${escapeHtml(inference.as_of||'')} · ${escapeHtml(inference.mode||'')}</span></div>
     <div class="supply-0791-grid">${supply0791DirectionCard('외국인',inference.foreign)}${supply0791DirectionCard('기관계 합성 추론',inference.institution)}</div>
-    <div class="supply-0791-compare"><b>최근 수급과의 정렬</b> · ${escapeHtml(inference.recent_flow_alignment||'확인 불가')}<br><b>14관측 프록시와 구분</b> · ${escapeHtml(inference.flow_proxy_comparison||'')}</div>
+    <div class="supply-0791-compare"><b>최근 수급과의 정렬</b> · ${escapeHtml(inference.recent_flow_alignment||'확인 불가')}<br><b>검증 관측 프록시와 구분</b> · ${escapeHtml(inference.flow_proxy_comparison||'')}</div>
     <div class="supply-0791-note">${escapeHtml(inference.limitation||'')}</div>
   </div>`;
 }
@@ -3235,6 +3246,141 @@ function supplyAssessmentSection(side,title,note,levels){
   const content=levels.length?levels.map(item=>supplyAssessmentLevel(item.level)).join(''):'<div class="supply-level-empty">확인된 가격대 없음</div>';
   return `<section class="supply-level-group ${side}"><div class="supply-level-title"><span>${title}</span><small>${note}</small></div><div class="supply-level-list">${content}</div></section>`;
 }
+function supplyMapStrengthClass(level){
+  const value=String(level?.strength||'');
+  if(value.includes('강'))return 'strong';
+  if(value.includes('약')||value.includes('보조'))return 'weak';
+  return 'medium';
+}
+function supplyMapTrim(value,maxLength=44){
+  const text=String(value||'확인 가능한 설명 없음').replace(/\s+/g,' ').trim();
+  return text.length>maxLength?`${text.slice(0,maxLength-1)}…`:text;
+}
+function supplyMapCalloutCopy(level,side){
+  const rule=side==='support'
+    ?`무효: ${level?.invalidation||'이탈 기준 확인 불가'}`
+    :`돌파: ${level?.invalidation||'돌파 기준 확인 불가'}`;
+  return {
+    reason:supplyMapTrim(level?.reason,32),
+    rule:supplyMapTrim(rule,34)
+  };
+}
+function supplyMapArrangeCallouts(items,yFor){
+  const minCenter=58;
+  const maxCenter=522;
+  const gap=88;
+  const arranged=items.map(item=>({...item,targetY:yFor((item.bounds.low+item.bounds.high)/2)})).sort((a,b)=>a.targetY-b.targetY);
+  arranged.forEach((item,index)=>{
+    item.calloutY=Math.max(item.targetY,index?arranged[index-1].calloutY+gap:minCenter);
+  });
+  if(arranged.length&&arranged[arranged.length-1].calloutY>maxCenter){
+    arranged[arranged.length-1].calloutY=maxCenter;
+    for(let index=arranged.length-2;index>=0;index--){
+      arranged[index].calloutY=Math.min(arranged[index].calloutY,arranged[index+1].calloutY-gap);
+    }
+  }
+  if(arranged.length&&arranged[0].calloutY<minCenter){
+    const offset=minCenter-arranged[0].calloutY;
+    arranged.forEach(item=>{item.calloutY+=offset;});
+  }
+  return arranged;
+}
+function supplyMapMobileRow(item,referencePrice){
+  const level=item.level||{};
+  const side=item.side;
+  const title=side==='support'?`하단 지지 ${item.mapRank}`:side==='resistance'?`상단 저항 ${item.mapRank}`:'현재 기준가';
+  const range=side==='current'?Number(referencePrice).toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2}):(level.range||'확인 불가');
+  const rule=side==='support'?level.invalidation:side==='resistance'?level.invalidation:'정규장 종가 기준 · 실시간값 아님';
+  return `<div class="supply-map-mobile-row ${side} ${supplyMapStrengthClass(level)}">
+    <div class="supply-map-mobile-head"><span>${escapeHtml(title)}</span><span>${escapeHtml(level.strength||'')}</span></div>
+    <div class="supply-map-mobile-range">${escapeHtml(range)}</div>
+    <div class="supply-map-mobile-arrow">${side==='support'?'지지선 설명':side==='resistance'?'저항선 설명':'기준선'}</div>
+    <div class="supply-map-mobile-copy">${escapeHtml(level.reason||'게시 JSON 기준값')}</div>
+    <div class="supply-map-mobile-copy"><b>${side==='support'?'무효':side==='resistance'?'돌파':'기준'}:</b> ${escapeHtml(rule||'확인 불가')}</div>
+  </div>`;
+}
+function renderSupplyPriceMap(currentItem,supports,resistances,referencePrice,referenceSource){
+  if(!Number.isFinite(referencePrice))return '';
+  const selectedSupports=supports.filter(item=>item.bounds).slice(0,3).map((item,index)=>({...item,mapRank:index+1}));
+  const selectedResistances=resistances.filter(item=>item.bounds).slice(0,3).map((item,index)=>({...item,mapRank:index+1}));
+  const selected=[...selectedSupports,...selectedResistances];
+  if(!selected.length)return '';
+
+  const currentBounds=currentItem?.bounds;
+  const domainValues=[referencePrice,...selected.flatMap(item=>[item.bounds.low,item.bounds.high])];
+  if(currentBounds)domainValues.push(currentBounds.low,currentBounds.high);
+  let domainLow=Math.min(...domainValues);
+  let domainHigh=Math.max(...domainValues);
+  const rawSpan=Math.max(domainHigh-domainLow,1);
+  const padding=Math.max(rawSpan*.06,.5);
+  domainLow-=padding;
+  domainHigh+=padding;
+  const span=domainHigh-domainLow;
+  const plotTop=34;
+  const plotBottom=546;
+  const yFor=price=>plotTop+(domainHigh-price)/span*(plotBottom-plotTop);
+  const calloutHeight=78;
+  const axisTicks=Array.from({length:6},(_,index)=>{
+    const price=domainHigh-span*(index/5);
+    const y=yFor(price);
+    return `<line class="map-grid" x1="318" y1="${y.toFixed(1)}" x2="682" y2="${y.toFixed(1)}"></line><text class="map-axis-label mono" x="688" y="${(y+3).toFixed(1)}">${price.toFixed(1)}</text>`;
+  }).join('');
+  const bandMarkup=selected.map(item=>{
+    const highY=yFor(item.bounds.high);
+    const lowY=yFor(item.bounds.low);
+    const height=Math.max(lowY-highY,5);
+    const y=(highY+lowY)/2-height/2;
+    return `<rect class="map-zone ${item.side} ${supplyMapStrengthClass(item.level)}" x="340" y="${y.toFixed(1)}" width="320" height="${height.toFixed(1)}" rx="3"></rect>`;
+  }).join('');
+  const pivotMarkup=currentBounds?(()=>{
+    const highY=yFor(currentBounds.high);
+    const lowY=yFor(currentBounds.low);
+    const height=Math.max(lowY-highY,5);
+    const y=(highY+lowY)/2-height/2;
+    return `<rect class="map-zone current weak" x="328" y="${y.toFixed(1)}" width="344" height="${height.toFixed(1)}" rx="3"></rect><text class="map-axis-label mono" x="500" y="${Math.max(plotTop+10,y-5).toFixed(1)}" text-anchor="middle">피벗 ${escapeHtml(currentItem.level?.range||'')}</text>`;
+  })():'';
+
+  const renderCallouts=(items,side)=>supplyMapArrangeCallouts(items,yFor).map(item=>{
+    const level=item.level||{};
+    const copy=supplyMapCalloutCopy(level,side);
+    const boxX=side==='support'?12:706;
+    const boxY=item.calloutY-calloutHeight/2;
+    const path=side==='support'
+      ?`M 294 ${item.calloutY.toFixed(1)} H 322 V ${item.targetY.toFixed(1)} H 340`
+      :`M 706 ${item.calloutY.toFixed(1)} H 678 V ${item.targetY.toFixed(1)} H 660`;
+    return `<g class="map-callout ${side}">
+      <rect x="${boxX}" y="${boxY.toFixed(1)}" width="282" height="${calloutHeight}"></rect>
+      <text class="map-callout-title" x="${boxX+12}" y="${(boxY+17).toFixed(1)}">${side==='support'?'하단 지지':'상단 저항'} ${item.mapRank} · ${escapeHtml(level.strength||'강도 확인 불가')}</text>
+      <text class="map-callout-range mono" x="${boxX+12}" y="${(boxY+37).toFixed(1)}">${escapeHtml(level.range||'확인 불가')}</text>
+      <text class="map-callout-detail" x="${boxX+12}" y="${(boxY+55).toFixed(1)}">${escapeHtml(copy.reason)}</text>
+      <text class="map-callout-detail" x="${boxX+12}" y="${(boxY+70).toFixed(1)}">${escapeHtml(copy.rule)}</text>
+      <path class="map-leader ${side}" d="${path}"></path>
+    </g>`;
+  }).join('');
+
+  const currentY=yFor(referencePrice);
+  const currentText=referencePrice.toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const desktop=`<svg class="supply-price-map-desktop" viewBox="0 0 1000 580" role="img" aria-label="현재가와 가까운 지지 저항 가격지도">
+    <defs>
+      <filter id="supplyStrongGlow" x="-20%" y="-70%" width="140%" height="240%"><feGaussianBlur stdDeviation="2.1" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+      <marker id="supplySupportArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"></path></marker>
+      <marker id="supplyResistanceArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ef4444"></path></marker>
+    </defs>
+    ${axisTicks}<line class="map-axis" x1="682" y1="${plotTop}" x2="682" y2="${plotBottom}"></line>
+    ${bandMarkup}${pivotMarkup}
+    <line class="map-current-line" x1="312" y1="${currentY.toFixed(1)}" x2="688" y2="${currentY.toFixed(1)}"></line>
+    <rect class="map-current-tag" x="435" y="${(currentY-13).toFixed(1)}" width="130" height="25" rx="12"></rect>
+    <text class="map-current-text mono" x="500" y="${(currentY+4).toFixed(1)}" text-anchor="middle">현재 ${currentText}</text>
+    ${renderCallouts(selectedSupports,'support')}${renderCallouts(selectedResistances,'resistance')}
+  </svg>`;
+  const currentMobile={side:'current',mapRank:0,bounds:{low:referencePrice,high:referencePrice},level:{range:currentText,strength:'현재',reason:`${referenceSource||'게시 JSON 기준값'} · ${currentItem?.level?.range?`${currentItem.level.range} 피벗 안`:'현재 피벗 확인 불가'}`}};
+  const mobileItems=[...selectedResistances,currentMobile,...selectedSupports].sort((a,b)=>((b.bounds.low+b.bounds.high)/2)-((a.bounds.low+a.bounds.high)/2));
+  const mobile=`<div class="supply-price-map-mobile">${mobileItems.map(item=>supplyMapMobileRow(item,referencePrice)).join('')}</div>`;
+  return `<section class="supply-price-map" aria-label="선물 지지 저항 가격지도">
+    <div class="supply-price-map-head"><div><b>현재가 기준 지지·저항 가격지도</b><small>가까운 지지·저항 3개씩 · 가격축 비례 · 선 굵기는 종합 강도</small></div><div class="supply-map-legend"><span class="support"><i></i>지지</span><span class="resistance"><i></i>저항</span><span class="current"><i></i>현재 기준가</span></div></div>
+    ${desktop}${mobile}
+  </section>`;
+}
 function renderSupplyAssessment(assessment,currentPrice,referenceSource){
   if(!assessment) return '<span style="color:var(--text-dim)">종합 평가 없음</span>';
   const referencePrice=Number(currentPrice);
@@ -3249,7 +3395,7 @@ function renderSupplyAssessment(assessment,currentPrice,referenceSource){
   const resistances=enriched.filter(item=>item.side==='resistance').sort((a,b)=>distance(a)-distance(b)||((a.bounds?.low||0)-(b.bounds?.low||0))||a.index-b.index);
   const conflicts=enriched.filter(item=>item.side==='conflict').sort((a,b)=>distance(a)-distance(b)||a.index-b.index);
   const currentLevel=current[0]?.level;
-  const currentPosition=currentLevel?`${currentLevel.range} ${currentLevel.strength||''} 방어구간 안`:'확인된 현재 구간 없음';
+  const currentPosition=currentLevel?`${currentLevel.range} ${currentLevel.strength||''} 현재 구간 안`:'확인된 현재 구간 없음';
   const currentCards=current.length?`<div class="supply-level-list supply-level-current">${current.map(item=>supplyAssessmentLevel(item.level)).join('')}</div>`:'';
   const conflictCards=conflicts.length?`<div class="supply-conflict-reference"><strong>원거리 충돌·방향 불명 · 지지/저항과 분리한 참고 구간</strong><div class="supply-level-list">${conflicts.map(item=>supplyAssessmentLevel(item.level)).join('')}</div></div>`:'';
   const scenarioOrder={neutral:0,down:1,up:2};
@@ -3261,15 +3407,20 @@ function renderSupplyAssessment(assessment,currentPrice,referenceSource){
   </div>`).join('');
   const conclusion=assessment.dashboard_conclusion || assessment.stance || '판단 불가';
   const conclusionDetail=assessment.dashboard_conclusion_detail || assessment.headline || '';
+  const priceMap=renderSupplyPriceMap(current[0],supports,resistances,referencePrice,referenceSource);
+  const secondaryLevels=`<details class="supply-level-details"><summary>전체 지지·저항 근거 펼쳐보기</summary><div class="supply-level-details-body">
+    ${currentCards}
+    <div class="supply-level-layout">${supplyAssessmentSection('down','▼ 하단 지지','가까운 → 먼',supports)}${supplyAssessmentSection('up','▲ 상단 저항','가까운 → 먼',resistances)}</div>
+    ${conflictCards}
+  </div></details>`;
   return `<div class="supply-conclusion"><strong>결론: ${escapeHtml(conclusion)}</strong><span>${escapeHtml(conclusionDetail)}</span></div>
     <div class="supply-assessment-head">
       <div><div style="font-size:17px;font-weight:800">외국인·기관 포지션 종합 평가</div><div class="supply-assessment-headline">${assessment.headline}</div></div>
       <span class="card-tag tag-kr">${assessment.stance} · 신뢰도 ${assessment.confidence}</span>
     </div>
     <div class="supply-reference"><div class="supply-reference-price">현재 기준 ${Number.isFinite(referencePrice)?referencePrice.toLocaleString():'-'}</div><div class="supply-reference-position"><strong>${currentPosition}</strong><span>${referenceSource||'게시 JSON 기준값'} · 정규장/야간 기준 분리 확인</span></div></div>
-    ${currentCards}
-    <div class="supply-level-layout">${supplyAssessmentSection('down','▼ 하단 지지','가까운 → 먼',supports)}${supplyAssessmentSection('up','▲ 상단 저항','가까운 → 먼',resistances)}</div>
-    ${conflictCards}
+    ${priceMap}
+    ${secondaryLevels}
     <div class="supply-scenarios">${scenarios}</div>
     <div style="margin-top:10px;font-size:12px;color:var(--text-dim)">${assessment.caution}</div>`;
 }
