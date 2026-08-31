@@ -178,9 +178,11 @@
   .schedule-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
   .schedule-input-row{display:flex;gap:8px;margin-bottom:14px;}
   .schedule-input-row input{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 12px;font-size:14px;outline:none;}
-  .schedule-input-row button,.schedule-del-btn,.schedule-edit-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:13px;}
+  .schedule-input-row button,.schedule-del-btn,.schedule-edit-btn,.schedule-primary-btn{background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:13px;}
   .schedule-del-btn{background:transparent;color:var(--down);border:1px solid var(--border);padding:5px 9px;margin-left:6px;}
   .schedule-edit-btn{background:transparent;color:var(--accent);border:1px solid var(--border);padding:5px 9px;}
+  .schedule-primary-btn{background:transparent;color:var(--text-dim);border:1px solid var(--border);padding:5px 9px;}
+  .schedule-primary-btn.is-primary{color:var(--accent);border-color:var(--accent);cursor:default;}
   .schedule-table{width:100%;border-collapse:collapse;font-size:14px;}
   .schedule-table th,.schedule-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;}
   .schedule-table th{color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:12px;}
@@ -198,8 +200,8 @@
   .schedule-detail-item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:8px 9px;background:var(--bg3);border-radius:6px;}
   .schedule-detail-content{min-width:0;display:flex;align-items:flex-start;gap:8px;line-height:1.55;overflow-wrap:anywhere;}
   .schedule-detail-label{flex:0 0 auto;margin-top:1px;padding:1px 6px;border:1px solid var(--border);border-radius:999px;color:var(--text-dim);font:700 10px 'JetBrains Mono',monospace;}
-  .schedule-detail-item:first-child .schedule-detail-label{border-color:var(--accent);color:var(--accent);}
-  .schedule-detail-actions{flex:0 0 auto;display:flex;align-items:center;gap:5px;}
+  .schedule-detail-label.is-primary{border-color:var(--accent);color:var(--accent);}
+  .schedule-detail-actions{flex:0 0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:5px;}
   .schedule-detail-actions .schedule-del-btn{margin-left:0;}
 
   .link-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
@@ -1214,7 +1216,7 @@ function applyDashboardMode(){
   const scheduleNote = document.getElementById('scheduleModeNote');
   const linkNote = document.getElementById('linkModeNote');
   const msg = IS_EDIT_MODE
-    ? '<span class="admin">관리자 모드</span> · 일정/링크 등록·수정·삭제 가능 · 서버 저장'
+    ? '<span class="admin">관리자 모드</span> · 일정 대표 선택·등록·수정·삭제 가능 · 서버 저장'
     : '<span class="readonly">보기 전용 모드</span> · 일정/링크는 열람만 가능';
   if(scheduleNote) scheduleNote.innerHTML = msg;
   if(linkNote) linkNote.innerHTML = msg;
@@ -2036,7 +2038,7 @@ function normalizeScheduleItem(item){
   if(item && item.sortKey) return item;
   const base = `${item?.date || ''} ${item?.day || ''} ${item?.text || ''}`.trim();
   const parsed = parseScheduleText(base);
-  return {...parsed, text:item?.text || parsed.text};
+  return {...parsed, text:item?.text || parsed.text, ...(item?.isRepresentative===true ? {isRepresentative:true} : {})};
 }
 function sortSchedules(){
   dashboardData.schedules = (dashboardData.schedules || []).map(normalizeScheduleItem);
@@ -2068,16 +2070,38 @@ function loadSchedules(){
   const expandedKeys=new Set([...body.querySelectorAll('.schedule-group[open]')].map(group=>group.dataset.scheduleKey));
   body.innerHTML = items.length ? '' : '<tr><td colspan="3" style="color:var(--text-dim);">등록된 일정이 없습니다.</td></tr>';
   groupSchedulesByDate(items).forEach(group=>{
-    const representative=group.items[0].item;
+    const representativeEntry=group.items.find(({item})=>item.isRepresentative===true) || group.items[0];
+    const representative=representativeEntry.item;
     const detailItems=group.items.map(({item,index},detailIndex)=>{
-      const manage=IS_EDIT_MODE ? `<div class="schedule-detail-actions"><button class="schedule-edit-btn" onclick="editSchedule(${index})">수정</button><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></div>` : '';
-      const label=detailIndex===0 ? '대표' : `일정 ${detailIndex+1}`;
-      return `<div class="schedule-detail-item"><div class="schedule-detail-content"><span class="schedule-detail-label">${label}</span><span>${escapeHtml(item.text)}</span></div>${manage}</div>`;
+      const isRepresentative=index===representativeEntry.index;
+      const primaryButton=isRepresentative
+        ? '<button class="schedule-primary-btn is-primary" type="button" disabled>현재 대표</button>'
+        : `<button class="schedule-primary-btn" type="button" onclick="setScheduleRepresentative(${index})">대표로 선택</button>`;
+      const manage=IS_EDIT_MODE ? `<div class="schedule-detail-actions">${primaryButton}<button class="schedule-edit-btn" onclick="editSchedule(${index})">수정</button><button class="schedule-del-btn" onclick="deleteSchedule(${index})">삭제</button></div>` : '';
+      const label=isRepresentative ? '대표' : `일정 ${detailIndex+1}`;
+      return `<div class="schedule-detail-item"><div class="schedule-detail-content"><span class="schedule-detail-label${isRepresentative?' is-primary':''}">${label}</span><span>${escapeHtml(item.text)}</span></div>${manage}</div>`;
     }).join('');
     const tr=document.createElement('tr');
     tr.innerHTML=`<td>${escapeHtml(group.date)}</td><td>${escapeHtml(group.day)}</td><td><details class="schedule-group" data-schedule-key="${escapeHtml(group.key)}"${expandedKeys.has(group.key)?' open':''}><summary><span class="schedule-representative">${escapeHtml(representative.text)}</span><span class="schedule-count">${group.items.length}건</span><span class="schedule-chevron" aria-hidden="true">&#9662;</span></summary><div class="schedule-detail-list">${detailItems}</div></details></td>`;
     body.appendChild(tr);
   });
+}
+async function setScheduleRepresentative(index){
+  if(!IS_EDIT_MODE) return;
+  if(!ADMIN_KEY){
+    alert('관리자 key가 없습니다. 주소를 ?edit=1&key=관리자키 형태로 열어야 저장됩니다.');
+    return;
+  }
+  const items=getSortedSchedules();
+  const selected=items[index];
+  if(!selected) return;
+  items.forEach(item=>{
+    if(item.sortKey===selected.sortKey) delete item.isRepresentative;
+  });
+  selected.isRepresentative=true;
+  dashboardData.schedules=items;
+  await saveDashboardData();
+  loadSchedules();
 }
 async function addSchedule(){
   if(!IS_EDIT_MODE) return;
@@ -2097,7 +2121,14 @@ async function editSchedule(index){
   if(next === null) return;
   const value = next.trim();
   if(!value) return;
-  items[index] = parseScheduleText(value);
+  const parsed = parseScheduleText(value);
+  if(item.isRepresentative===true){
+    items.forEach(other=>{
+      if(other.sortKey===parsed.sortKey) delete other.isRepresentative;
+    });
+    parsed.isRepresentative=true;
+  }
+  items[index] = parsed;
   dashboardData.schedules = items;
   await saveDashboardData();
   loadSchedules();
