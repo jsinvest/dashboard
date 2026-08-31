@@ -144,7 +144,7 @@
   .sector-weight-panel>summary::after{content:'접기 −';flex:0 0 auto;color:var(--accent);font:600 11px 'JetBrains Mono',monospace;}.sector-weight-panel:not([open])>summary::after{content:'펼치기 +';}
   .sector-weight-body{display:grid;gap:13px;padding:0 16px 16px;}.sector-weight-highlights{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;}
   .sector-weight-kpi{min-width:0;padding:10px 11px;border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:8px;background:rgba(10,12,16,.48);}.sector-weight-kpi.theme{border-top-color:#f59e0b;}.sector-weight-kpi small,.sector-weight-kpi strong,.sector-weight-kpi span{display:block;}.sector-weight-kpi small{color:var(--text-dim);font-size:10px;}.sector-weight-kpi strong{margin:5px 0 3px;color:var(--accent);font:800 21px 'JetBrains Mono',monospace;}.sector-weight-kpi.theme strong{color:#f59e0b;}.sector-weight-kpi span{overflow:hidden;color:var(--text-muted);font-size:10px;line-height:1.4;text-overflow:ellipsis;white-space:nowrap;}
-  .sector-weight-markets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.sector-weight-market{min-width:0;padding:12px 13px;border:1px solid var(--border);border-radius:9px;background:var(--bg2);}.sector-weight-market-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px;}.sector-weight-market-head b{color:var(--accent);font:700 13px 'JetBrains Mono',monospace;}.sector-weight-market-head span{color:var(--text-muted);font-size:10px;text-align:right;}.sector-weight-list{display:grid;gap:7px;}.sector-weight-row{display:grid;grid-template-columns:108px minmax(0,1fr) 47px;align-items:center;gap:8px;font-size:11px;}.sector-weight-name{overflow:hidden;color:var(--text-dim);text-overflow:ellipsis;white-space:nowrap;}.sector-weight-track{height:8px;border-radius:999px;background:var(--bg3);overflow:hidden;}.sector-weight-fill{display:block;min-width:2px;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),#3b82f6);}.sector-weight-market.kosdaq .sector-weight-fill{background:linear-gradient(90deg,#f59e0b,#ef4444);}.sector-weight-value{text-align:right;color:var(--text);font:600 10px 'JetBrains Mono',monospace;}
+  .sector-weight-markets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.sector-weight-panel[data-sector-weight-view="KOSPI"] .sector-weight-highlights{grid-template-columns:minmax(0,280px);}.sector-weight-panel[data-sector-weight-view="KOSDAQ"] .sector-weight-highlights{grid-template-columns:repeat(4,minmax(0,1fr));}.sector-weight-panel[data-sector-weight-view="KOSPI"] .sector-weight-markets,.sector-weight-panel[data-sector-weight-view="KOSDAQ"] .sector-weight-markets{grid-template-columns:1fr;}.sector-weight-market{min-width:0;padding:12px 13px;border:1px solid var(--border);border-radius:9px;background:var(--bg2);}.sector-weight-market-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px;}.sector-weight-market-head b{color:var(--accent);font:700 13px 'JetBrains Mono',monospace;}.sector-weight-market-head span{color:var(--text-muted);font-size:10px;text-align:right;}.sector-weight-list{display:grid;gap:7px;}.sector-weight-row{display:grid;grid-template-columns:108px minmax(0,1fr) 47px;align-items:center;gap:8px;font-size:11px;}.sector-weight-name{overflow:hidden;color:var(--text-dim);text-overflow:ellipsis;white-space:nowrap;}.sector-weight-track{height:8px;border-radius:999px;background:var(--bg3);overflow:hidden;}.sector-weight-fill{display:block;min-width:2px;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),#3b82f6);}.sector-weight-market.kosdaq .sector-weight-fill{background:linear-gradient(90deg,#f59e0b,#ef4444);}.sector-weight-value{text-align:right;color:var(--text);font:600 10px 'JetBrains Mono',monospace;}
   .sector-weight-note{padding:10px 11px;border-left:3px solid #f59e0b;background:rgba(245,158,11,.055);color:#cbd5e1;font-size:11px;line-height:1.55;}.sector-weight-note b{color:#f59e0b;}.sector-weight-sources{color:var(--text-muted);font-size:10px;line-height:1.55;}.sector-weight-sources a{color:var(--accent);text-decoration:none;}.sector-weight-sources a:hover{text-decoration:underline;}
   .layout-manager{background:var(--bg2);border-bottom:1px solid var(--border);padding:9px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative;z-index:85;}
   .layout-manager-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-right:2px;}
@@ -326,7 +326,7 @@
   @media(max-width:640px){
     .hit-rate-stats{grid-template-columns:1fr;gap:9px;}
     .daily-leader-summary,.daily-leader-map,.daily-ecosystem-board,.leader-cumulative-top,.leader-history-quarter{grid-template-columns:1fr;}
-    .sector-weight-highlights{grid-template-columns:repeat(2,minmax(0,1fr));}.sector-weight-markets{grid-template-columns:1fr;}.sector-weight-panel>summary{align-items:flex-start;padding:13px;}.sector-weight-body{padding:0 13px 13px;}.sector-weight-row{grid-template-columns:96px minmax(0,1fr) 45px;}.sector-weight-kpi:last-child{grid-column:1/-1;}
+    .sector-weight-highlights,.sector-weight-panel[data-sector-weight-view="KOSDAQ"] .sector-weight-highlights{grid-template-columns:repeat(2,minmax(0,1fr));}.sector-weight-panel[data-sector-weight-view="KOSPI"] .sector-weight-highlights{grid-template-columns:1fr;}.sector-weight-markets{grid-template-columns:1fr;}.sector-weight-panel>summary{align-items:flex-start;padding:13px;}.sector-weight-body{padding:0 13px 13px;}.sector-weight-row{grid-template-columns:96px minmax(0,1fr) 45px;}.sector-weight-panel[data-sector-weight-view="all"] .sector-weight-kpi:last-child{grid-column:1/-1;}
     .daily-leader-toolbar{align-items:flex-start;}.daily-leader-tabs{width:100%;}.daily-leader-tab{flex:1;min-height:40px;}
     .leader-mode-tabs{width:100%;}.leader-mode-btn{flex:1;min-height:40px;}.daily-leader-subtoolbar{justify-content:flex-start;}.leader-history-day{grid-template-columns:58px 1fr;}.leader-history-date{grid-row:span 3;}.leader-history-pick{border-bottom:1px solid var(--border);}.leader-history-bar-row{grid-template-columns:minmax(105px,1fr) 2fr 50px;}.leader-tree-families{grid-template-columns:1fr;border-top:0;padding-top:4px;}.leader-tree-family{padding-top:25px;}.leader-tree-family:before{top:0;height:22px;}.leader-tree-root{width:122px;}.leader-tree-trunk{height:18px;}.leader-tree-sectors{gap:8px;}.leader-tree-node{--node-size:104px;min-height:80px;padding:8px 6px;}.leader-tree-detail{padding:11px;}
     .daily-ecosystem svg{display:none;}.daily-ecosystem-mobile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}.daily-ecosystem-mobile>div{display:grid;align-content:start;gap:5px;}.daily-ecosystem-mobile>div>b{font-size:12px;margin-bottom:2px;}.daily-ecosystem-mobile button{padding:10px;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:5px;background:var(--bg3);color:var(--text);font-size:12px;text-align:left;cursor:pointer;}.daily-ecosystem-mobile button.active{border-color:var(--accent);background:rgba(0,229,255,.08);}.daily-sector-detail{width:100%;}.daily-sector-detail-grid{grid-template-columns:1fr;}
@@ -984,20 +984,20 @@
           <button type="button" class="leader-mode-btn" data-leader-mode="cumulative">누적</button>
         </div>
       </div>
-      <details class="sector-weight-panel" data-sector-weight-date="2026-08-28" open>
+      <details class="sector-weight-panel" data-sector-weight-date="2026-08-28" data-sector-weight-view="all" open>
         <summary>
           <span class="sector-weight-heading"><b>시장 섹터 시총 지도</b><span>2026-08-28 · 보통주 시가총액 기준 · ETF/ETN/우선주 제외</span></span>
         </summary>
         <div class="sector-weight-body">
           <div class="sector-weight-highlights" aria-label="주요 관심 섹터 시가총액 비중">
-            <div class="sector-weight-kpi"><small>KOSPI · 반도체</small><strong>53.3%</strong><span>2,883.1조원 · WICS</span></div>
-            <div class="sector-weight-kpi"><small>KOSDAQ · 반도체</small><strong>22.7%</strong><span>104.5조원 · WICS</span></div>
-            <div class="sector-weight-kpi"><small>KOSDAQ · 제약·바이오</small><strong>19.3%</strong><span>88.9조원 · WICS</span></div>
-            <div class="sector-weight-kpi theme"><small>KOSDAQ · 2차전지</small><strong>10.2%</strong><span>46.9조원 · 테마</span></div>
-            <div class="sector-weight-kpi theme"><small>KOSDAQ · 로봇</small><strong>7.4%</strong><span>34.1조원 · 좁은 테마</span></div>
+            <div class="sector-weight-kpi" data-sector-market="KOSPI"><small>KOSPI · 반도체</small><strong>53.3%</strong><span>2,883.1조원 · WICS</span></div>
+            <div class="sector-weight-kpi" data-sector-market="KOSDAQ"><small>KOSDAQ · 반도체</small><strong>22.7%</strong><span>104.5조원 · WICS</span></div>
+            <div class="sector-weight-kpi" data-sector-market="KOSDAQ"><small>KOSDAQ · 제약·바이오</small><strong>19.3%</strong><span>88.9조원 · WICS</span></div>
+            <div class="sector-weight-kpi theme" data-sector-market="KOSDAQ"><small>KOSDAQ · 2차전지</small><strong>10.2%</strong><span>46.9조원 · 테마</span></div>
+            <div class="sector-weight-kpi theme" data-sector-market="KOSDAQ"><small>KOSDAQ · 로봇</small><strong>7.4%</strong><span>34.1조원 · 좁은 테마</span></div>
           </div>
           <div class="sector-weight-markets">
-            <section class="sector-weight-market kospi" aria-label="코스피 WICS 대분류 시가총액 비중">
+            <section class="sector-weight-market kospi" data-sector-market="KOSPI" aria-label="코스피 WICS 대분류 시가총액 비중">
               <div class="sector-weight-market-head"><b>KOSPI</b><span>798종목 · 합계 5,414.2조원</span></div>
               <div class="sector-weight-list">
                 <div class="sector-weight-row"><span class="sector-weight-name">IT</span><span class="sector-weight-track"><span class="sector-weight-fill" style="width:60.1%"></span></span><span class="sector-weight-value">60.1%</span></div>
@@ -1012,7 +1012,7 @@
                 <div class="sector-weight-row"><span class="sector-weight-name">유틸리티</span><span class="sector-weight-track"><span class="sector-weight-fill" style="width:.7%"></span></span><span class="sector-weight-value">0.7%</span></div>
               </div>
             </section>
-            <section class="sector-weight-market kosdaq" aria-label="코스닥 WICS 대분류 시가총액 비중">
+            <section class="sector-weight-market kosdaq" data-sector-market="KOSDAQ" aria-label="코스닥 WICS 대분류 시가총액 비중">
               <div class="sector-weight-market-head"><b>KOSDAQ</b><span>1,678종목 · 합계 459.7조원</span></div>
               <div class="sector-weight-list">
                 <div class="sector-weight-row"><span class="sector-weight-name">IT</span><span class="sector-weight-track"><span class="sector-weight-fill" style="width:41.7%"></span></span><span class="sector-weight-value">41.7%</span></div>
@@ -1028,7 +1028,7 @@
               </div>
             </section>
           </div>
-          <div class="sector-weight-note"><b>읽는 법</b> · 반도체는 IT의 하위 업종입니다. 2차전지·로봇은 다른 업종과 겹칠 수 있는 테마라 비중을 단순 합산하면 안 돼요. 코스닥 4개 관심군은 단순합 59.7%, 중복 제거 시 57.7%입니다.</div>
+          <div class="sector-weight-note"><b>읽는 법</b> · 반도체는 IT의 하위 업종입니다. <span data-sector-market="KOSDAQ">2차전지·로봇은 다른 업종과 겹칠 수 있는 테마라 비중을 단순 합산하면 안 돼요. 코스닥 4개 관심군은 단순합 59.7%, 중복 제거 시 57.7%입니다.</span></div>
           <div class="sector-weight-sources">분류: <a href="https://www.wiseindex.com/About/WICS" target="_blank" rel="noopener">WiseIndex WICS</a> · 시총: <a href="https://finance.naver.com/sise/sise_market_sum.naver?sosok=0&amp;page=1" target="_blank" rel="noopener">KOSPI</a> / <a href="https://finance.naver.com/sise/sise_market_sum.naver?sosok=1&amp;page=1" target="_blank" rel="noopener">KOSDAQ</a> · 테마: 네이버금융/인포스탁(2차전지, 산업·협동로봇, 피지컬 AI·휴머노이드) · WICS 미매핑 1종목 제외</div>
         </div>
       </details>
@@ -1705,6 +1705,15 @@ function selectDailySector(sectorKey,market){
 function setDailyLeaderView(view){
   dailyLeaderView=view;
   document.querySelectorAll('.daily-leader-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.leaderView===view));
+  const sectorWeightPanel=document.querySelector('.sector-weight-panel');
+  if(sectorWeightPanel){
+    sectorWeightPanel.dataset.sectorWeightView=view;
+    sectorWeightPanel.querySelectorAll('[data-sector-market]').forEach(item=>{
+      const hidden=view!=='all'&&item.dataset.sectorMarket!==view;
+      item.classList.toggle('daily-leader-hidden',hidden);
+      item.setAttribute('aria-hidden',String(hidden));
+    });
+  }
   document.querySelectorAll('[data-daily-market]').forEach(lane=>lane.classList.toggle('daily-leader-hidden',view!=='all'&&lane.dataset.dailyMarket!==view));
   document.querySelectorAll('.eco-market-card,.daily-ecosystem-mobile > [data-eco-market]').forEach(card=>card.classList.toggle('daily-leader-hidden',view!=='all'&&card.dataset.ecoMarket!==view));
   const s=DAILY_LEADER_SUMMARY[view]||DAILY_LEADER_SUMMARY.all;
