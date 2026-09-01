@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "updated_through": "2026-08-31",
+  "updated_through": "2026-09-01",
   "description": "당일 모델값과 실제 적용 비중을 구분한 현금비중 누적 이력",
   "records": [
     {
@@ -119,6 +119,20 @@
       "monthly_primary_cash_pct": 0.0,
       "monthly_raw_model_cash_pct": 0.0,
       "monthly_sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
+    },
+    {
+      "as_of": "2026-09-01",
+      "daily_model_cash_pct": 50.0,
+      "daily_model_mode": "RECOVERY_LEADER_PULLBACK",
+      "monthly_primary_cash_pct": 10.0,
+      "monthly_raw_model_cash_pct": 50.0,
+      "monthly_sizing_rule": "ABOVE_MA10_STARTER10",
       "staged_cash_pct": 10.0,
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,

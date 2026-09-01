@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-08-31",
-  "trade_date": "20260831",
+  "as_of": "2026-09-01",
+  "trade_date": "20260901",
   "source_generated_at": {
-    "monthly": "2026-08-31T20:04:30+09:00",
-    "staged_weekly": "2026-08-31T20:04:33.859111+09:00"
+    "monthly": "2026-09-01T20:02:49+09:00",
+    "staged_weekly": "2026-09-01T20:02:52.713131+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
@@ -13,28 +13,28 @@
     "action": "HOLD",
     "action_label": "현금 10% 유지",
     "state": "방어 현금 10% 유지 · 월간 재진입 대기",
-    "reason": "8월 31일 당일 모델값은 현금 50%이고, 8월 28일 확정 주간 모델 25%가 8월 31일 적용됐습니다. 월간 원모델과 MA10 단계형 PRIMARY는 모두 현금 0%지만 주간 방어 이후 위험자산 재진입은 새로운 월간 재진입 신호에서만 허용하므로 기존 현금 10%를 유지합니다.",
+    "reason": "9월 1일 당일 모델값은 현금 50%입니다. 8월 31일 월간 원모델 현금 50%가 새로 확정됐지만 KOSPI가 10일선 위여서 MA10 단계형 월간 PRIMARY는 현금 10%만 적용됐고, 주간 단계형도 현금 10%여서 최종 현금 10%를 유지합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
   "monthly_primary": {
-    "target_cash_pct": 0.0,
-    "target_risky_pct": 100.0,
-    "raw_model_target_cash_pct": 0.0,
+    "target_cash_pct": 10.0,
+    "target_risky_pct": 90.0,
+    "raw_model_target_cash_pct": 50.0,
     "sizing_policy": "monthly-ma10-staged-v1.0.0",
-    "sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
-    "kospi_close_on_signal_date": 6595.45,
-    "kospi_ma10_on_signal_date": 6448.1089999999995,
+    "sizing_rule": "ABOVE_MA10_STARTER10",
+    "kospi_close_on_signal_date": 6820.02,
+    "kospi_ma10_on_signal_date": 6787.571000000001,
     "below_ma10": false,
     "previous_below_ma10": true,
     "ma10_falling": true,
     "two_close_confirmed": false,
-    "action": "HOLD",
-    "signal_date": "2026-07-31",
-    "effective_date": "2026-08-03",
-    "mode": "CONTRARIAN_KOSPI",
-    "breadth_pct": 11.538461538461538,
-    "kospi_drawdown_252_pct": -27.638226791229403,
+    "action": "RAISE_CASH",
+    "signal_date": "2026-08-31",
+    "effective_date": "2026-09-01",
+    "mode": "RECOVERY_LEADER_PULLBACK",
+    "breadth_pct": 38.46153846153847,
+    "kospi_drawdown_252_pct": -25.174364066245715,
     "role": "MA10 단계형 월간 PRIMARY"
   },
   "staged_weekly": {
@@ -170,6 +170,19 @@
       "applied_risky_pct": 90.0,
       "action": "HOLD",
       "action_label": "현금 10% 유지"
+    },
+    {
+      "as_of": "2026-09-01",
+      "daily_model_cash_pct": 50.0,
+      "daily_model_mode": "RECOVERY_LEADER_PULLBACK",
+      "monthly_primary_cash_pct": 10.0,
+      "monthly_raw_model_cash_pct": 50.0,
+      "monthly_sizing_rule": "ABOVE_MA10_STARTER10",
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지"
     }
   ],
   "rule_steps": [
@@ -226,14 +239,14 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-08-31",
-    "workbook_rows": 2615,
+    "workbook_last_date": "2026-09-01",
+    "workbook_rows": 2616,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "85487f89d545410858dba2c971f83dd863f30939101beb15d05c045ac7bb99cc",
+    "workbook_sha256": "e6159873d335ab9a72ae23706fe9f4d66b873ebca466e3d8ab2134c864840480",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363"
   },
