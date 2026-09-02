@@ -1,6 +1,6 @@
 {
   "as_of": "2026-09-02",
-  "generated_at": "2026-09-02 19:04:44+09:00",
+  "generated_at": "2026-09-02 19:22:47+09:00",
   "futures_contract": "F202609",
   "current_price": 1029.15,
   "session_references": {
@@ -66,7 +66,8 @@
   "support_resistance_strength_method": {
     "structural_levels": "동일 월물의 검증된 정규장 일봉에서 ATR 가변폭 스윙·거절·서로 다른 반응일·거래량·절대 OI 활동·최근성을 계산. 고정 5포인트 가격망을 사용하지 않음",
     "reaction_strength": "cumulative_zones의 reaction_strength는 참여자 절대 순매매 합계 순위만 나타내며 구조 지지·저항 등급이나 다음날 방향으로 사용하지 않음",
-    "execution_gate": "원시 분봉 종가 안착·재시험과 동시간 거래량·OI가 없으면 execution_ready=false"
+    "execution_gate": "원시 분봉 종가 안착·재시험과 동시간 거래량·OI가 없으면 execution_ready=false",
+    "break_severity_policy": "강한 구조 지지 이탈은 가속 가능성을 높이고, 중간 구조 지지 이탈은 1차 경고 뒤 다음 구조선 또는 연속 이탈을 확인하며, 약한 구조 지지 이탈은 단독 방향 확정에 쓰지 않음. 수급 활동대는 구조 지지와 별도"
   },
   "cumulative_zones": [
     {
@@ -4161,24 +4162,43 @@
     "reference_price": 1025.55,
     "reference_price_source": "2026-09-02 18:29:30 KST 키움 5605 야간 10분봉 우측 가격",
     "dashboard_conclusion": "야간 1,025.55 기준 단기 하방 우세 · 1,031.95 회복 전 반등은 되돌림",
-    "dashboard_conclusion_detail": "현재는 1,019.65~1,027.95 지지 후보 내부라 이 자리에서 숏 추격은 불리합니다. 1,019.65 이탈 후 되돌림 회복 실패 시 1,015.88(5605 시각 중간선)→1,008.65~1,002.10을 보고, 1,027.95 회복 뒤 1,031.95 위에 안착하면 1,040.15까지 역추세 반등을 봅니다. 구조 완화는 1,040.15~1,042.30 돌파·재시험 방어부터입니다.",
+    "dashboard_conclusion_detail": "현재는 1,019.65~1,027.95 중간 구조 지지 후보 내부라 이 자리에서 숏 추격은 불리합니다. 1,019.65 이탈 후 되돌림 회복 실패 시 1차 경고, 이어 1,002.10까지 연속 이탈하면 가속 경보를 강화합니다. 990~995는 구조 지지가 아니라 수급 활동·충돌 관찰대입니다. 1,027.95 회복 뒤 1,031.95 위에 안착하면 1,040.15까지 역추세 반등을 보고, 구조 완화는 1,040.15~1,042.30 돌파·재시험 방어부터입니다.",
+    "support_break_policy": {
+      "basis": "구조 강도와 수급 활동 강도를 분리하며, 5605 10분봉 화면에 맞춘 수동 AI 확인 규칙을 사용",
+      "confirmation": "첫 이탈 추격 금지 · 10분봉 2개 또는 15분봉 1개 종가 이탈과 되돌림 회복 실패를 함께 확인",
+      "strong": "이탈 확인 시 하락 가속 가능성을 한 단계 높임",
+      "medium": "1차 경고로 보고 다음 구조선 또는 연속 이탈에서 강화",
+      "weak": "단독 하방 확정 금지 · 다음 구조선과 거래량·OI 확인",
+      "activity": "구조 지지가 아니므로 이탈만으로 방향 확정하지 않음"
+    },
     "acceleration_triggers": [
       {
         "label": "1차 가속 · 1,019.65",
         "tone": "down",
+        "kind": "structure_support",
+        "structure_strength": "중",
+        "classification": "중간 구조 지지 이탈",
+        "impact": "1차 경고",
         "condition": "현재 1,025.55는 1차 지지 내부라 아직 미발동. 10분봉 2개 또는 15분봉 1개가 1,019.65 아래에서 마감하고, 되돌림에서도 1,019.65를 회복하지 못할 때",
         "target": "1,015.88(5605 시각 중간선) → 1,008.65~1,002.10"
       },
       {
         "label": "2차 가속 · 1,002.10",
         "tone": "down",
-        "condition": "같은 종가·재시험 조건으로 1,002.10까지 이탈해 2차 구조 지지가 무효화될 때",
-        "target": "990~995 강한 매물 활동·충돌대(구조 지지 아님) → 975~980 하단 활동대"
+        "kind": "structure_support",
+        "structure_strength": "중",
+        "classification": "중간 구조 지지 연속 이탈",
+        "impact": "가속 경보 강화 · 근거 제한",
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,002.10 아래에서 마감하고, 되돌림에서도 1,002.10을 회복하지 못해 2차 구조 지지까지 무효화될 때",
+        "target": "990~995 누적 수급 활동 1위의 충돌 관찰대(구조 지지 아님) → 975~980 하단 활동대"
       },
       {
         "label": "가속 무효·보류 · 1,031.95",
         "tone": "cancel",
-        "condition": "1,031.95를 분봉 종가로 회복하고 재시험에서 지지로 전환할 때",
+        "kind": "cancellation",
+        "classification": "가속 무효 확인",
+        "impact": "하방 뷰 낮춤",
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,031.95 위에서 마감하고, 재시험에서도 1,031.95를 지지로 방어할 때",
         "target": "즉시 하방 가속 뷰를 낮추고 1,040.15~1,042.30 구조 완화 구간 확인"
       }
     ],
@@ -4195,9 +4215,12 @@
     "caution": "1,025.55는 확정 정산가가 아니라 18:29:30 야간 5605 화면값입니다. 정규장 종가 1,029.15와 분리했습니다. 현재가가 지지 후보 안에 있어 첫 하향 이탈을 추격하지 말고 10분봉/15분봉 종가와 되돌림 실패를 확인해야 합니다.",
     "levels": [
       {
-        "label": "현재 시험 중인 일봉 구조 지지",
+        "label": "현재 시험 중인 1차 일봉 구조 지지",
         "range": "1019.65~1027.95",
         "side": "current",
+        "level_type": "structural_support",
+        "structure_strength": "중",
+        "break_meaning": "하단 1,019.65 확인 이탈 시 1차 가속 경고",
         "sequence": 0,
         "low": 1019.65,
         "high": 1027.95,
@@ -4211,6 +4234,9 @@
         "label": "2차 일봉 구조 지지",
         "range": "1002.10~1008.65",
         "side": "support",
+        "level_type": "structural_support",
+        "structure_strength": "중",
+        "break_meaning": "하단 1,002.10 확인 이탈 시 연속 구조 이탈로 가속 경보 강화",
         "sequence": 1,
         "low": 1002.1,
         "high": 1008.65,
@@ -4221,9 +4247,11 @@
         "color": "#2563eb"
       },
       {
-        "label": "강한 매물 활동대(구조 지지 확정 아님)",
+        "label": "누적 수급 활동·충돌 관찰대(구조 지지 아님)",
         "range": "990.00~995.00",
-        "side": "support",
+        "side": "conflict",
+        "level_type": "activity_zone",
+        "activity_strength": "강",
         "sequence": 2,
         "low": 990.0,
         "high": 995.0,
@@ -4236,7 +4264,9 @@
       {
         "label": "하단 매물 활동대",
         "range": "975.00~980.00",
-        "side": "support",
+        "side": "conflict",
+        "level_type": "activity_zone",
+        "activity_strength": "중",
         "sequence": 3,
         "low": 975.0,
         "high": 980.0,
@@ -4250,6 +4280,8 @@
         "label": "1차 전환·마찰 저항",
         "range": "1027.95~1031.95",
         "side": "resistance",
+        "level_type": "transition_resistance",
+        "structure_strength": "중",
         "sequence": 1,
         "low": 1027.95,
         "high": 1031.95,
@@ -4263,6 +4295,8 @@
         "label": "2차 강한 일봉 구조 저항",
         "range": "1031.95~1040.15",
         "side": "resistance",
+        "level_type": "structural_resistance",
+        "structure_strength": "강",
         "sequence": 2,
         "low": 1031.95,
         "high": 1040.15,
@@ -4276,6 +4310,8 @@
         "label": "3차 일봉 구조 저항",
         "range": "1051.50~1057.60",
         "side": "resistance",
+        "level_type": "structural_resistance",
+        "structure_strength": "중",
         "sequence": 3,
         "low": 1051.5,
         "high": 1057.6,
@@ -4375,7 +4411,7 @@
   "display_reference_price": 1025.55,
   "display_reference_basis": "2026-09-02 18:29:30 KST 키움 5605 야간 10분봉 우측 가격(잠정 화면값)",
   "manual_ai_review": {
-    "reviewed_at": "2026-09-02 19:04:44+09:00",
+    "reviewed_at": "2026-09-02 19:22:47+09:00",
     "reviewer": "Codex",
     "scope": "2026-09-02 F202609 정규장 EOD + 5605 야간 일봉/10분봉 + 0471 + 0787 + 0791 원본 곡선",
     "facts": {
@@ -4396,7 +4432,7 @@
       "active_contract_foreign_flow_proxy": -17555.0,
       "active_contract_institution_flow_proxy": 14627.0
     },
-    "interpretation": "야간 1,025.55 기준 단기 하방 우세. 다만 현재는 1,019.65~1,027.95 지지 후보 내부라 추격 숏보다 하단 이탈·되돌림 실패 또는 1,031.95 회복을 확인",
+    "interpretation": "야간 1,025.55 기준 단기 하방 우세. 현재 1,019.65~1,027.95와 다음 1,002.10~1,008.65는 모두 중간 구조 지지 후보로, 첫 이탈은 1차 경고·두 구간 연속 이탈은 가속 경보 강화로 구분. 990~995는 구조 지지가 아닌 수급 활동·충돌 관찰대",
     "unknowns": [
       "야간 동시간 거래량·OI 원시계열",
       "0791 정확 계약수와 평균단가",
