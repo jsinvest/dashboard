@@ -671,6 +671,20 @@
           {"symbol": "CAPITALCOM:VIX", "interval": "D", "timezone": "America/New_York", "theme": "dark", "style": "1", "locale": "kr", "toolbar_bg": "#111318", "hide_side_toolbar": false, "allow_symbol_change": false, "save_image": false, "height": "300", "width": "100%", "withdateranges": true}</script></div>
         </div>
       </div>
+      <div class="chart-card">
+        <div class="card-header"><span class="card-title">필라델피아 반도체지수</span><span class="card-tag tag-us">yasun · ^SOX</span></div>
+        <div class="naver-chart-wrap">
+          <div class="naver-chart-info">
+            <div><span class="naver-price" id="soxPrice">--</span><span id="soxChange" style="margin-left:8px;font-size:12px;"></span></div>
+            <span style="color:var(--text-muted);font-size:11px;" id="soxDate">로딩중...</span>
+          </div>
+          <div class="tf-row" data-chart="sox">
+            <button class="tf-btn" onclick="setYasunInterval('sox','1d')">일봉</button>
+            <button class="tf-btn" onclick="setYasunInterval('sox','1w')">주봉</button>
+          </div>
+          <canvas class="naver-canvas" id="soxCanvas"></canvas>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2651,6 +2665,33 @@ async function applyNightSettlementHeader(data, priceId, changeId, dateId){
   }
 }
 
+async function applySoxQuoteHeader(priceId, changeId){
+  // SOX 상단 등락률은 차트 시간대와 무관하게 최신 전일 종가 대비 값을 표시한다.
+  // 캔들 마지막 두 봉이 캐시로 하루 늦어져도 /api/prices의 현재 지수값을 우선한다.
+  try{
+    const prices = await fetchYasunPrices();
+    const quote = prices.find(x => x.symbol === '^SOX');
+    const price = Number(quote?.price);
+    const chg = Number(quote?.change);
+    const chgPct = Number(quote?.changePercent);
+    if(!Number.isFinite(price) || !Number.isFinite(chg) || !Number.isFinite(chgPct)) return;
+
+    const priceEl = document.getElementById(priceId);
+    const changeEl = document.getElementById(changeId);
+    if(priceEl){
+      priceEl.textContent = price.toLocaleString(undefined,{maximumFractionDigits:3});
+      priceEl.className = 'naver-price ' + (chg>0?'price-up':chg<0?'price-down':'price-flat');
+    }
+    if(changeEl){
+      const dir = chg > 0 ? '▲' : chg < 0 ? '▼' : '━';
+      changeEl.textContent = `${dir} ${chg>=0?'+':''}${chg.toFixed(2)} (${chgPct.toFixed(2)}%)`;
+      changeEl.style.color = chg>0?'var(--up)':chg<0?'var(--down)':'var(--text-dim)';
+    }
+  }catch(e){
+    console.warn('SOX quote header failed', e);
+  }
+}
+
 function formatCandleTime(t, interval){
   if(!t) return '';
   let d;
@@ -2738,7 +2779,9 @@ async function loadYasunChart({symbol, fallbackSymbols, interval, limit, canvasI
     try{
       const requestInterval = interval === '1w' ? '1d' : interval;
       const requestLimit = interval === '1w' ? Math.max(limit, 900) : limit;
-      const res = await fetch(yasunUrl(sym, requestInterval, requestLimit), {cache:'no-store'});
+      const baseUrl = yasunUrl(sym, requestInterval, requestLimit);
+      const requestUrl = sym === '^SOX' ? `${baseUrl}&_=${Date.now()}` : baseUrl;
+      const res = await fetch(requestUrl, {cache:'no-store'});
       if(!res.ok) throw new Error('HTTP '+res.status);
       const raw = await res.json();
       let data = normalizeYasunCandles(raw);
@@ -2746,6 +2789,7 @@ async function loadYasunChart({symbol, fallbackSymbols, interval, limit, canvasI
       if(!data.length) throw new Error('empty data');
       drawYasunChart(canvasId, data, priceId, changeId, dateId, interval);
       if(symbol === '^KS200' || sym === '^KS200') applyNightSettlementHeader(data, priceId, changeId, dateId);
+      if(symbol === '^SOX' || sym === '^SOX') await applySoxQuoteHeader(priceId, changeId);
       return;
     }catch(e){
       lastError = e;
@@ -2764,6 +2808,7 @@ const chartConfigs = {
   kospi:  {symbol:'^KS11',  interval:'1d', canvasId:'kospiCanvas',  priceId:'kospiPrice',  changeId:'kospiChange',  dateId:'kospiDate'},
   kosdaq: {symbol:'^KQ11',  interval:'1d', canvasId:'kosdaqCanvas', priceId:'kosdaqPrice', changeId:'kosdaqChange', dateId:'kosdaqDate'},
   night:  {symbol:'^KS200', interval:'1m', canvasId:'nightCanvas',  priceId:'nightPrice',  changeId:'nightChange',  dateId:'nightTime'},
+  sox:    {symbol:'^SOX',   interval:'1d', canvasId:'soxCanvas',    priceId:'soxPrice',    changeId:'soxChange',    dateId:'soxDate'},
   us10y:  {symbol:'^TNX',   interval:'1d', canvasId:'us10yCanvas',  priceId:'us10yPrice',  changeId:'us10yChange',  dateId:'us10yDate'}
 };
 
