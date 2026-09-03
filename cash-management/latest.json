@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-09-02",
-  "trade_date": "20260902",
+  "as_of": "2026-09-03",
+  "trade_date": "20260903",
   "source_generated_at": {
-    "monthly": "2026-09-02T19:41:23+09:00",
-    "staged_weekly": "2026-09-02T19:41:31.082281+09:00"
+    "monthly": "2026-09-03T19:46:34+09:00",
+    "staged_weekly": "2026-09-03T19:46:42.429236+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 10% 유지",
     "state": "방어 현금 10% 유지 · 월간 재진입 대기",
-    "reason": "9월 2일 당일 모델값은 현금 0%입니다. 다만 월간 재진입 신호가 없고 8월 31일 확정 월간 원모델 50%에 적용된 MA10 단계형 월간 PRIMARY가 현금 10%이며, 주간 단계형도 현금 10%라서 최종 현금 10%를 유지합니다.",
+    "reason": "9월 3일 당일 모델값은 현금 0%입니다. 다만 월간 재진입 신호가 없고 8월 31일 확정 월간 원모델 50%에 적용된 MA10 단계형 월간 PRIMARY가 현금 10%이며, 주간 단계형도 현금 10%라서 최종 현금 10%를 유지합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -196,6 +196,19 @@
       "applied_risky_pct": 90.0,
       "action": "HOLD",
       "action_label": "현금 10% 유지"
+    },
+    {
+      "as_of": "2026-09-03",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 10.0,
+      "monthly_raw_model_cash_pct": 50.0,
+      "monthly_sizing_rule": "ABOVE_MA10_STARTER10",
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지"
     }
   ],
   "rule_steps": [
@@ -252,14 +265,14 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-09-02",
-    "workbook_rows": 2617,
+    "workbook_last_date": "2026-09-03",
+    "workbook_rows": 2618,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "971ce50b591d28bcbe4ea270ca03297aba1795128763f49ebb137131c5ce2811",
+    "workbook_sha256": "2a9e322a9ddc4a89dfc40d3f1492c7c9568521a81c6cfa900ff3e4c607739e6b",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363"
   },
