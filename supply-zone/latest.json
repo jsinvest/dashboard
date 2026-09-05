@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-09-03",
-  "generated_at": "2026-09-03T17:36:45+09:00",
+  "as_of": "2026-09-04",
+  "generated_at": "2026-09-04T17:20:53+09:00",
   "futures_contract": "F202609",
-  "current_price": 1030.0,
+  "current_price": 1052.5,
   "session_references": {
     "regular": {
-      "price": 1030.0,
-      "as_of": "2026-09-03",
+      "price": 1052.5,
+      "as_of": "2026-09-04",
       "basis": "검증된 0441 정규장 종가"
     },
     "overnight": null,
@@ -14,18 +14,18 @@
   },
   "bin_size": 5,
   "bin_size_role": "legacy participant-flow activity display only; not structural support/resistance",
-  "foreign_estimated_position": -14478.0,
+  "foreign_estimated_position": -6685.0,
   "foreign_average_price": 1031.32,
-  "institution_estimated_position": 13416.0,
+  "institution_estimated_position": 6110.0,
   "institution_average_price": 1036.84,
   "active_zone": {
-    "low": 1027.95,
-    "high": 1031.95,
-    "role": "corridor_between_nearest_structural_candidates"
+    "low": 1051.7,
+    "high": 1057.4,
+    "role": "active_structural_candidate"
   },
   "cumulative_from": "2026-07-30",
-  "cumulative_to": "2026-09-03",
-  "cumulative_trading_days": 19,
+  "cumulative_to": "2026-09-04",
+  "cumulative_trading_days": 20,
   "data_quality": {
     "active_contract_only": "F202609",
     "excluded_dates": {
@@ -36,14 +36,14 @@
     "note": "원본은 보존하고 비거래일·원천 OCR 브리지 불일치 날짜를 출력 계산에서 제외"
   },
   "daily_flow": {
-    "as_of": "2026-09-03",
-    "price": 1030.0,
-    "zone_low": 1030,
-    "zone_high": 1035,
-    "foreign_futures_net": 3077.0,
-    "foreign_option_delta_net": 931.5,
-    "institution_futures_net": -1211.0,
-    "institution_option_delta_net": 226.5
+    "as_of": "2026-09-04",
+    "price": 1052.5,
+    "zone_low": 1050,
+    "zone_high": 1055,
+    "foreign_futures_net": 7793.0,
+    "foreign_option_delta_net": -634.5,
+    "institution_futures_net": -7306.0,
+    "institution_option_delta_net": -721.5
   },
   "support_resistance_strength_method": {
     "structural_levels": "동일 월물의 검증된 정규장 일봉에서 ATR 가변폭 스윙·거절·서로 다른 반응일·거래량·절대 OI 활동·최근성을 계산. 고정 5포인트 가격망을 사용하지 않음",
@@ -66,6 +66,20 @@
       "reaction_strength_basis": "외국인·기관 절대 순매매 합계 25,482계약, 전체 15개 구간 중 1위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
+      "low": 1050.0,
+      "high": 1055.0,
+      "center": 1052.5,
+      "foreign_contracts": 10450.0,
+      "institution_contracts": -10646.0,
+      "net_contracts": -196.0,
+      "gross_contracts": 21096.0,
+      "location": "현재가 구간",
+      "direction": "외국인 롱·기관 숏 충돌",
+      "rank": 2,
+      "reaction_strength": "강",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 21,096계약, 전체 15개 구간 중 2위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+    },
+    {
       "low": 1080.0,
       "high": 1085.0,
       "center": 1082.5,
@@ -75,9 +89,9 @@
       "gross_contracts": 15210.0,
       "location": "현재가 상단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 2,
+      "rank": 3,
       "reaction_strength": "강",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 15,210계약, 전체 15개 구간 중 2위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 15,210계약, 전체 15개 구간 중 3위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1025.0,
@@ -87,11 +101,11 @@
       "institution_contracts": 6014.0,
       "net_contracts": -2093.0,
       "gross_contracts": 14121.0,
-      "location": "현재가 구간",
+      "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 3,
-      "reaction_strength": "강",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 14,121계약, 전체 15개 구간 중 3위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "rank": 4,
+      "reaction_strength": "중",
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 14,121계약, 전체 15개 구간 중 4위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1085.0,
@@ -103,9 +117,9 @@
       "gross_contracts": 11578.0,
       "location": "현재가 상단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 4,
+      "rank": 5,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 11,578계약, 전체 15개 구간 중 4위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 11,578계약, 전체 15개 구간 중 5위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1070.0,
@@ -117,9 +131,9 @@
       "gross_contracts": 7860.0,
       "location": "현재가 상단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 5,
+      "rank": 6,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,860계약, 전체 15개 구간 중 5위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,860계약, 전체 15개 구간 중 6위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 975.0,
@@ -131,9 +145,9 @@
       "gross_contracts": 7028.0,
       "location": "현재가 하단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 6,
+      "rank": 7,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,028계약, 전체 15개 구간 중 6위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,028계약, 전체 15개 구간 중 7위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 865.0,
@@ -145,9 +159,9 @@
       "gross_contracts": 7005.0,
       "location": "현재가 하단",
       "direction": "외국인 숏·기관 롱 충돌",
-      "rank": 7,
+      "rank": 8,
       "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,005계약, 전체 15개 구간 중 7위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 7,005계약, 전체 15개 구간 중 8위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1065.0,
@@ -159,23 +173,9 @@
       "gross_contracts": 6367.0,
       "location": "현재가 상단",
       "direction": "외국인 롱·기관 숏 충돌",
-      "rank": 8,
-      "reaction_strength": "중",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 6,367계약, 전체 15개 구간 중 8위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
-    },
-    {
-      "low": 1050.0,
-      "high": 1055.0,
-      "center": 1052.5,
-      "foreign_contracts": 2657.0,
-      "institution_contracts": -3340.0,
-      "net_contracts": -683.0,
-      "gross_contracts": 5997.0,
-      "location": "현재가 상단",
-      "direction": "외국인 롱·기관 숏 충돌",
       "rank": 9,
       "reaction_strength": "약",
-      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 5,997계약, 전체 15개 구간 중 9위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
+      "reaction_strength_basis": "외국인·기관 절대 순매매 합계 6,367계약, 전체 15개 구간 중 9위. 실제 잔존 포지션이나 방향성 지지·저항 강도와는 구분"
     },
     {
       "low": 1075.0,
@@ -241,7 +241,7 @@
       "institution_contracts": -595.0,
       "net_contracts": -1666.0,
       "gross_contracts": 1666.0,
-      "location": "현재가 상단",
+      "location": "현재가 하단",
       "direction": "외국인·기관 동반 숏 누적",
       "rank": 14,
       "reaction_strength": "약",
@@ -255,7 +255,7 @@
       "institution_contracts": 70.0,
       "net_contracts": 1181.0,
       "gross_contracts": 1181.0,
-      "location": "현재가 구간",
+      "location": "현재가 하단",
       "direction": "외국인·기관 동반 롱 누적",
       "rank": 15,
       "reaction_strength": "약",
@@ -269,6 +269,13 @@
       "center": 992.5,
       "foreign_contracts": -12589.0,
       "institution_contracts": 12893.0
+    },
+    {
+      "low": 1050.0,
+      "high": 1055.0,
+      "center": 1052.5,
+      "foreign_contracts": 10450.0,
+      "institution_contracts": -10646.0
     },
     {
       "low": 1080.0,
@@ -297,13 +304,6 @@
       "center": 1072.5,
       "foreign_contracts": 3352.0,
       "institution_contracts": -4508.0
-    },
-    {
-      "low": 975.0,
-      "high": 980.0,
-      "center": 977.5,
-      "foreign_contracts": 3913.0,
-      "institution_contracts": -3115.0
     }
   ],
   "legacy_flow_upper_zones": [
@@ -348,35 +348,42 @@
   ],
   "upper_zones": [
     {
+      "low": 1058.7,
+      "high": 1064.4,
+      "center": 1061.55,
+      "strength": "방어 경향·신뢰구간 미달",
+      "execution_ready": false
+    },
+    {
+      "low": 1088.55,
+      "high": 1094.25,
+      "center": 1091.4,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1103.65,
+      "high": 1109.75,
+      "center": 1106.7,
+      "strength": "표본 부족·미검증",
+      "execution_ready": false
+    },
+    {
+      "low": 1117.0,
+      "high": 1122.7,
+      "center": 1119.85,
+      "strength": "방어 경향·신뢰구간 미달",
+      "execution_ready": false
+    }
+  ],
+  "lower_zones": [
+    {
       "low": 1031.95,
       "high": 1040.15,
       "center": 1036.05,
       "strength": "표본 부족·미검증",
       "execution_ready": false
     },
-    {
-      "low": 1051.65,
-      "high": 1057.5,
-      "center": 1054.55,
-      "strength": "표본 부족·미검증",
-      "execution_ready": false
-    },
-    {
-      "low": 1058.6,
-      "high": 1064.5,
-      "center": 1061.55,
-      "strength": "방어 경향·신뢰구간 미달",
-      "execution_ready": false
-    },
-    {
-      "low": 1088.45,
-      "high": 1094.35,
-      "center": 1091.4,
-      "strength": "표본 부족·미검증",
-      "execution_ready": false
-    }
-  ],
-  "lower_zones": [
     {
       "low": 1019.6,
       "high": 1027.95,
@@ -392,16 +399,9 @@
       "execution_ready": false
     },
     {
-      "low": 952.7,
-      "high": 958.6,
+      "low": 952.8,
+      "high": 958.5,
       "center": 955.65,
-      "strength": "표본 부족·미검증",
-      "execution_ready": false
-    },
-    {
-      "low": 936.4,
-      "high": 945.65,
-      "center": 941.05,
       "strength": "표본 부족·미검증",
       "execution_ready": false
     }
@@ -414,7 +414,7 @@
     "execution_ready": false,
     "analysis_scope": "daily_structure_only",
     "level_status": "candidate_before_intraday_confirmation",
-    "as_of": "2026-09-03",
+    "as_of": "2026-09-04",
     "contract": {
       "code": "A0169000",
       "name": "F 202609",
@@ -422,10 +422,10 @@
       "session": "regular"
     },
     "market": {
-      "current_price": 1030.0,
+      "current_price": 1052.5,
       "atr_period": 14,
-      "atr": 48.9714,
-      "cluster_radius": 4.8971,
+      "atr": 47.6643,
+      "cluster_radius": 4.7664,
       "swing_window_observations_each_side": 2
     },
     "methodology": {
@@ -449,10 +449,10 @@
     },
     "data_quality": {
       "source_path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
-      "source_sha256": "C28C7F37A8668CE8569489D3A24F5BF79E1E5FDBEA599B26CAE06D37B84A7DE1",
-      "requested_as_of_date": "2026-09-03",
-      "total_csv_rows": 54,
-      "validated_rows": 53,
+      "source_sha256": "6D8770703831BF4CABA3EB613936D8B596BC1E84246A86D7CE0C7BD46DE08C31",
+      "requested_as_of_date": "2026-09-04",
+      "total_csv_rows": 55,
+      "validated_rows": 54,
       "rejected_rows": {
         "non_regular": 0,
         "non_final": 1,
@@ -463,7 +463,7 @@
       },
       "duplicate_equal_dates": [],
       "duplicate_conflict_dates_excluded": [],
-      "missing_open_rows": 16,
+      "missing_open_rows": 17,
       "missing_oi_rows": 0,
       "missing_oi_change_rows": 1,
       "weekday_gap_details": [
@@ -505,7 +505,7 @@
       ],
       "gap_policy": "공백을 보간하지 않고 공백을 가로지르는 스윙 후보를 제외",
       "first_validated_date": "2026-06-12",
-      "last_validated_date": "2026-09-03",
+      "last_validated_date": "2026-09-04",
       "volume_coverage": 1.0,
       "oi_coverage": 1.0,
       "oi_change_coverage": 0.981,
@@ -516,145 +516,47 @@
     },
     "candidate_reaction_count": 43,
     "cluster_count": 23,
-    "active_zones": [],
-    "supports": [
+    "active_zones": [
       {
-        "center": 1023.75,
-        "lower": 1019.6,
-        "upper": 1027.95,
-        "width": 8.35,
-        "score": 68.1,
+        "center": 1054.55,
+        "lower": 1051.7,
+        "upper": 1057.4,
+        "width": 5.7,
+        "score": 46.6,
         "strength": "medium",
-        "strong_grade_allowed": false,
-        "reaction_count": 4,
-        "swing_confirmation_count": 1,
-        "support_reactions": 3,
-        "resistance_reactions": 2,
-        "last_reaction_date": "2026-08-31",
-        "age_calendar_days": 3,
-        "mean_volume_ratio": 0.94,
-        "mean_abs_oi_activity_ratio": 1.232,
-        "evidence_dates": [
-          "2026-07-21",
-          "2026-07-28",
-          "2026-08-03",
-          "2026-08-31"
-        ],
-        "evidence_types": [
-          "lower_rejection",
-          "swing_low",
-          "upper_rejection"
-        ],
-        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
-        "rank": 1,
-        "distance_from_current": 6.25,
-        "distance_atr": 0.128,
-        "role_at_current_price": "support",
-        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
-      },
-      {
-        "center": 1005.35,
-        "lower": 1002.05,
-        "upper": 1008.65,
-        "width": 6.55,
-        "score": 51.0,
-        "strength": "medium",
-        "strong_grade_allowed": false,
-        "reaction_count": 2,
-        "swing_confirmation_count": 1,
-        "support_reactions": 3,
-        "resistance_reactions": 0,
-        "last_reaction_date": "2026-08-25",
-        "age_calendar_days": 9,
-        "mean_volume_ratio": 0.879,
-        "mean_abs_oi_activity_ratio": 0.927,
-        "evidence_dates": [
-          "2026-08-12",
-          "2026-08-25"
-        ],
-        "evidence_types": [
-          "lower_rejection",
-          "swing_low"
-        ],
-        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
-        "rank": 2,
-        "distance_from_current": 24.65,
-        "distance_atr": 0.503,
-        "role_at_current_price": "support",
-        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
-      },
-      {
-        "center": 955.65,
-        "lower": 952.7,
-        "upper": 958.6,
-        "width": 5.9,
-        "score": 36.0,
-        "strength": "weak",
-        "strong_grade_allowed": false,
-        "reaction_count": 1,
-        "swing_confirmation_count": 0,
-        "support_reactions": 1,
-        "resistance_reactions": 0,
-        "last_reaction_date": "2026-08-04",
-        "age_calendar_days": 30,
-        "mean_volume_ratio": 0.901,
-        "mean_abs_oi_activity_ratio": 1.479,
-        "evidence_dates": [
-          "2026-08-04"
-        ],
-        "evidence_types": [
-          "lower_rejection"
-        ],
-        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
-        "rank": 3,
-        "distance_from_current": 74.35,
-        "distance_atr": 1.518,
-        "role_at_current_price": "support",
-        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
-      },
-      {
-        "center": 941.05,
-        "lower": 936.4,
-        "upper": 945.65,
-        "width": 9.25,
-        "score": 39.6,
-        "strength": "weak",
         "strong_grade_allowed": false,
         "reaction_count": 2,
         "swing_confirmation_count": 0,
         "support_reactions": 1,
         "resistance_reactions": 1,
-        "last_reaction_date": "2026-07-31",
-        "age_calendar_days": 34,
-        "mean_volume_ratio": 1.141,
-        "mean_abs_oi_activity_ratio": 0.819,
+        "last_reaction_date": "2026-09-02",
+        "age_calendar_days": 2,
+        "mean_volume_ratio": 0.848,
+        "mean_abs_oi_activity_ratio": 1.194,
         "evidence_dates": [
-          "2026-07-30",
-          "2026-07-31"
+          "2026-09-01",
+          "2026-09-02"
         ],
         "evidence_types": [
           "lower_rejection",
           "upper_rejection"
         ],
         "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
-        "rank": 4,
-        "distance_from_current": 88.95,
-        "distance_atr": 1.816,
-        "role_at_current_price": "support",
-        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+        "rank": 1,
+        "distance_from_current": 2.05,
+        "distance_atr": 0.043,
+        "role_at_current_price": "undetermined",
+        "confirmation_condition": "현재가가 구간 안에 있어 이탈 방향과 재시험이 확인될 때까지 역할 미확정",
+        "invalidation_condition": "구간 이탈 후 반대편 재진입·안착 시 최초 이탈 해석 무효"
       }
     ],
-    "resistances": [
+    "supports": [
       {
         "center": 1036.05,
         "lower": 1031.95,
         "upper": 1040.15,
         "width": 8.2,
-        "score": 72.1,
+        "score": 72.0,
         "strength": "strong",
         "strong_grade_allowed": true,
         "reaction_count": 3,
@@ -662,9 +564,9 @@
         "support_reactions": 3,
         "resistance_reactions": 1,
         "last_reaction_date": "2026-08-20",
-        "age_calendar_days": 14,
+        "age_calendar_days": 15,
         "mean_volume_ratio": 1.144,
-        "mean_abs_oi_activity_ratio": 3.003,
+        "mean_abs_oi_activity_ratio": 3.251,
         "evidence_dates": [
           "2026-07-14",
           "2026-07-31",
@@ -677,50 +579,117 @@
         ],
         "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
         "rank": 1,
-        "distance_from_current": 6.05,
-        "distance_atr": 0.124,
-        "role_at_current_price": "resistance",
-        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+        "distance_from_current": 16.45,
+        "distance_atr": 0.345,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
       },
       {
-        "center": 1054.55,
-        "lower": 1051.65,
-        "upper": 1057.5,
-        "width": 5.9,
-        "score": 46.5,
+        "center": 1023.75,
+        "lower": 1019.6,
+        "upper": 1027.95,
+        "width": 8.35,
+        "score": 68.0,
         "strength": "medium",
         "strong_grade_allowed": false,
-        "reaction_count": 2,
-        "swing_confirmation_count": 0,
-        "support_reactions": 1,
-        "resistance_reactions": 1,
-        "last_reaction_date": "2026-09-02",
-        "age_calendar_days": 1,
-        "mean_volume_ratio": 0.848,
-        "mean_abs_oi_activity_ratio": 1.103,
+        "reaction_count": 4,
+        "swing_confirmation_count": 1,
+        "support_reactions": 3,
+        "resistance_reactions": 2,
+        "last_reaction_date": "2026-08-31",
+        "age_calendar_days": 4,
+        "mean_volume_ratio": 0.94,
+        "mean_abs_oi_activity_ratio": 1.334,
         "evidence_dates": [
-          "2026-09-01",
-          "2026-09-02"
+          "2026-07-21",
+          "2026-07-28",
+          "2026-08-03",
+          "2026-08-31"
         ],
         "evidence_types": [
           "lower_rejection",
+          "swing_low",
           "upper_rejection"
         ],
         "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
         "rank": 2,
-        "distance_from_current": 24.55,
-        "distance_atr": 0.501,
-        "role_at_current_price": "resistance",
-        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
-        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+        "distance_from_current": 28.75,
+        "distance_atr": 0.603,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
       },
       {
+        "center": 1005.35,
+        "lower": 1002.05,
+        "upper": 1008.65,
+        "width": 6.55,
+        "score": 50.7,
+        "strength": "medium",
+        "strong_grade_allowed": false,
+        "reaction_count": 2,
+        "swing_confirmation_count": 1,
+        "support_reactions": 3,
+        "resistance_reactions": 0,
+        "last_reaction_date": "2026-08-25",
+        "age_calendar_days": 10,
+        "mean_volume_ratio": 0.879,
+        "mean_abs_oi_activity_ratio": 1.004,
+        "evidence_dates": [
+          "2026-08-12",
+          "2026-08-25"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "swing_low"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 3,
+        "distance_from_current": 47.15,
+        "distance_atr": 0.989,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      },
+      {
+        "center": 955.65,
+        "lower": 952.8,
+        "upper": 958.5,
+        "width": 5.7,
+        "score": 36.6,
+        "strength": "weak",
+        "strong_grade_allowed": false,
+        "reaction_count": 1,
+        "swing_confirmation_count": 0,
+        "support_reactions": 1,
+        "resistance_reactions": 0,
+        "last_reaction_date": "2026-08-04",
+        "age_calendar_days": 31,
+        "mean_volume_ratio": 0.901,
+        "mean_abs_oi_activity_ratio": 1.602,
+        "evidence_dates": [
+          "2026-08-04"
+        ],
+        "evidence_types": [
+          "lower_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 4,
+        "distance_from_current": 96.85,
+        "distance_atr": 2.032,
+        "role_at_current_price": "support",
+        "confirmation_condition": "정규장/야간장별로 구간 하단을 종가 이탈하지 않고, 5분봉 2개 또는 15분봉 1개가 구간 위에서 마감한 뒤 재시험을 방어하며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 하단 아래에서 마감하고 되돌림이 구간 하단을 회복하지 못하면 지지 무효"
+      }
+    ],
+    "resistances": [
+      {
         "center": 1061.55,
-        "lower": 1058.6,
-        "upper": 1064.5,
-        "width": 5.9,
-        "score": 29.3,
+        "lower": 1058.7,
+        "upper": 1064.4,
+        "width": 5.7,
+        "score": 29.1,
         "strength": "weak",
         "strong_grade_allowed": false,
         "reaction_count": 1,
@@ -728,9 +697,9 @@
         "support_reactions": 1,
         "resistance_reactions": 0,
         "last_reaction_date": "2026-08-21",
-        "age_calendar_days": 13,
+        "age_calendar_days": 14,
         "mean_volume_ratio": 0.842,
-        "mean_abs_oi_activity_ratio": 0.134,
+        "mean_abs_oi_activity_ratio": 0.145,
         "evidence_dates": [
           "2026-08-21"
         ],
@@ -738,19 +707,19 @@
           "lower_rejection"
         ],
         "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
-        "rank": 3,
-        "distance_from_current": 31.55,
-        "distance_atr": 0.644,
+        "rank": 1,
+        "distance_from_current": 9.05,
+        "distance_atr": 0.19,
         "role_at_current_price": "resistance",
         "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
         "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
       },
       {
         "center": 1091.4,
-        "lower": 1088.45,
-        "upper": 1094.35,
-        "width": 5.9,
-        "score": 51.6,
+        "lower": 1088.55,
+        "upper": 1094.25,
+        "width": 5.7,
+        "score": 51.8,
         "strength": "medium",
         "strong_grade_allowed": false,
         "reaction_count": 3,
@@ -758,9 +727,9 @@
         "support_reactions": 0,
         "resistance_reactions": 3,
         "last_reaction_date": "2026-08-28",
-        "age_calendar_days": 6,
+        "age_calendar_days": 7,
         "mean_volume_ratio": 0.828,
-        "mean_abs_oi_activity_ratio": 1.059,
+        "mean_abs_oi_activity_ratio": 1.146,
         "evidence_dates": [
           "2026-07-20",
           "2026-08-24",
@@ -770,9 +739,72 @@
           "upper_rejection"
         ],
         "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 2,
+        "distance_from_current": 38.9,
+        "distance_atr": 0.816,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      },
+      {
+        "center": 1106.7,
+        "lower": 1103.65,
+        "upper": 1109.75,
+        "width": 6.1,
+        "score": 62.4,
+        "strength": "medium",
+        "strong_grade_allowed": true,
+        "reaction_count": 3,
+        "swing_confirmation_count": 2,
+        "support_reactions": 1,
+        "resistance_reactions": 2,
+        "last_reaction_date": "2026-08-27",
+        "age_calendar_days": 8,
+        "mean_volume_ratio": 0.794,
+        "mean_abs_oi_activity_ratio": 0.341,
+        "evidence_dates": [
+          "2026-07-23",
+          "2026-08-21",
+          "2026-08-27"
+        ],
+        "evidence_types": [
+          "lower_rejection",
+          "swing_high"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
+        "rank": 3,
+        "distance_from_current": 54.2,
+        "distance_atr": 1.137,
+        "role_at_current_price": "resistance",
+        "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
+        "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
+      },
+      {
+        "center": 1119.85,
+        "lower": 1117.0,
+        "upper": 1122.7,
+        "width": 5.7,
+        "score": 29.9,
+        "strength": "weak",
+        "strong_grade_allowed": false,
+        "reaction_count": 1,
+        "swing_confirmation_count": 0,
+        "support_reactions": 0,
+        "resistance_reactions": 1,
+        "last_reaction_date": "2026-07-24",
+        "age_calendar_days": 42,
+        "mean_volume_ratio": 0.938,
+        "mean_abs_oi_activity_ratio": 0.87,
+        "evidence_dates": [
+          "2026-07-24"
+        ],
+        "evidence_types": [
+          "upper_rejection"
+        ],
+        "interpretation_limit": "일봉 가격구조 레벨이며 장중 체결 순서·흡수 여부는 분봉으로 별도 확인",
         "rank": 4,
-        "distance_from_current": 61.4,
-        "distance_atr": 1.254,
+        "distance_from_current": 67.35,
+        "distance_atr": 1.413,
         "role_at_current_price": "resistance",
         "confirmation_condition": "정규장/야간장별로 구간 상단을 종가 돌파하지 못하고, 5분봉 2개 또는 15분봉 1개가 구간 아래에서 마감한 뒤 재시험이 거부되며 동시간 거래량·OI가 확인될 것",
         "invalidation_condition": "15분봉 종가가 구간 상단 위에서 마감하고 재시험에서 구간 상단을 지키면 저항 무효"
@@ -795,36 +827,68 @@
   },
   "execution_levels": [
     {
-      "label": "1차 중간 지지 · 당일 이탈 후 종가 회복",
+      "label": "현재 전환대 · 역할 미확정",
+      "range": "1051.70~1057.40",
+      "side": "current",
+      "level_type": "active_pivot",
+      "structure_strength": "중",
+      "sequence": 0,
+      "low": 1051.7,
+      "high": 1057.4,
+      "center": 1054.55,
+      "strength": "중",
+      "reason": "ATR 일봉 구조점수 46.6, 9/1·9/2의 상·하단 반응이 섞인 구간. 9/4 종가 1,052.50이 구간 안에 있어 아직 지지와 저항 중 역할이 확정되지 않음",
+      "confirmation": "10분봉 2개 또는 15분봉 1개가 구간 밖에서 마감하고 재시험까지 성공해야 이탈 방향을 채택",
+      "invalidation": "최초 이탈 뒤 반대편으로 다시 진입해 안착하면 최초 방향 해석 무효",
+      "color": "#0891b2"
+    },
+    {
+      "label": "1차 강한 구조 지지 · 역할 전환 확인대",
+      "range": "1031.95~1040.15",
+      "side": "support",
+      "level_type": "structural_support",
+      "structure_strength": "강",
+      "break_meaning": "1,031.95 확인 이탈 시 하락 가속 경보",
+      "sequence": 1,
+      "low": 1031.95,
+      "high": 1040.15,
+      "center": 1036.05,
+      "strength": "강",
+      "reason": "ATR 구조점수 72.0, 서로 다른 반응일 3일·확정 스윙 2회, 평균 거래량 1.144배·절대 OI 활동 3.251배. 9/4 저가 1,042.30과 종가 1,052.50이 모두 구간 위여서 전일 저항에서 지지로 역할 전환을 시도",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,031.95 아래 마감하고 되돌림에서도 1,031.95 회복 실패",
+      "color": "#1d4ed8"
+    },
+    {
+      "label": "2차 중간 구조 지지",
       "range": "1019.60~1027.95",
       "side": "support",
       "level_type": "structural_support",
       "structure_strength": "중",
-      "break_meaning": "1,019.60 확인 이탈 시 강지지 1,010.30~1,002.05 재시험",
-      "sequence": 1,
+      "break_meaning": "이탈 시 1,002.05~1,010.30 재시험",
+      "sequence": 2,
       "low": 1019.6,
       "high": 1027.95,
       "center": 1023.775,
       "strength": "중",
-      "reason": "ATR 일봉 구조점수 68.1, 서로 다른 반응일 4일·확정 스윙 1회. 9/3 장중에는 훼손됐지만 정규장 종가 1,030.00으로 다시 위에서 마감해 지지력은 중간으로 판정",
-      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 1,019.60 회복 실패",
+      "reason": "ATR 구조점수 68.0, 반응일 4일·확정 스윙 1회, 최근 반응 8/31. 첫 강지지 이탈 뒤의 다음 구조 방어선",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 회복 실패",
       "color": "#2563eb"
     },
     {
-      "label": "2차 강한 방어 지지 · 핵심 가속선",
+      "label": "3차 강한 하단 방어대",
       "range": "1002.05~1010.30",
       "side": "support",
       "level_type": "structural_support",
       "structure_strength": "강",
-      "break_meaning": "1,002.05 확인 이탈 시 하락 가속 경보",
-      "sequence": 2,
+      "break_meaning": "1,002.05 확인 이탈 시 하락 연장 경보",
+      "sequence": 3,
       "low": 1002.05,
       "high": 1010.3,
       "center": 1006.175,
       "strength": "강",
-      "reason": "자동 일봉 등급은 중이지만 8/25 저가 1,007.10, 5605 일봉 수평대 1,008.48, 9/3 정규장 저가 1,008.70과 0441 분봉 저점 1,010.30이 겹치고 9/3에 급락 뒤 1,030.00까지 반등해 수동 종합 강지지로 상향",
-      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,002.05 아래 마감하고 되돌림에서도 1,002.05 회복 실패",
-      "color": "#1d4ed8"
+      "reason": "자동 일봉 등급은 중이지만 8/25 저가 1,007.10, 9/3 저가 1,008.70, 0441 분봉 저점 1,010.30과 반복 반등이 겹쳐 수동 종합 방어대는 강으로 판정",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,002.05 아래 마감하고 되돌림에서도 회복 실패",
+      "color": "#1e40af"
     },
     {
       "label": "누적 수급 활동·충돌 관찰대 · 지지선 아님",
@@ -832,93 +896,77 @@
       "side": "conflict",
       "level_type": "activity_zone",
       "activity_strength": "강",
-      "sequence": 3,
+      "sequence": 4,
       "low": 990.0,
       "high": 995.0,
       "center": 992.5,
       "strength": "강(활동)",
-      "reason": "품질검사를 통과한 19거래일 중 해당 가격구간에서 외국인·기관 절대 순매매 합계 25,482계약으로 활동 1위. 외국인 -12,589·기관 +12,893의 충돌이며 실제 잔존 포지션이나 방어 성공을 뜻하지 않음",
+      "reason": "품질검사를 통과한 20거래일 중 외국인·기관 절대 순매매 합계 25,482계약으로 활동 1위. 외국인 -12,589·기관 +12,893의 충돌이며 방어 성공을 뜻하지 않음",
       "invalidation": "분봉 반응과 재시험 방어가 없으면 구조 지지로 사용하지 않음",
       "color": "#7c3aed"
     },
     {
-      "label": "3차 약한 일봉 구조 지지",
-      "range": "952.70~958.60",
-      "side": "support",
-      "level_type": "structural_support",
-      "structure_strength": "약",
-      "break_meaning": "단독 진입 근거가 아니라 하락 연장 시 반응 확인대",
-      "sequence": 4,
-      "low": 952.7,
-      "high": 958.6,
-      "center": 955.65,
-      "strength": "약",
-      "reason": "ATR 일봉 구조점수 36.0, 반응일 1일·확정 스윙 0회라 강한 지지로 볼 근거가 부족함",
-      "invalidation": "가격 반응 없이 15분봉이 952.70 아래 안착하면 지지 전제 폐기",
-      "color": "#60a5fa"
-    },
-    {
-      "label": "1차 강한 근접 저항 · 하방 뷰 완화선",
-      "range": "1031.95~1040.15",
-      "side": "resistance",
-      "level_type": "structural_resistance",
-      "structure_strength": "강",
-      "break_meaning": "1,040.15 안착 시 단기 하방 우세 완화",
-      "sequence": 1,
-      "low": 1031.95,
-      "high": 1040.15,
-      "center": 1036.05,
-      "strength": "강",
-      "reason": "ATR 일봉 구조점수 72.1, 반응일 3일·확정 스윙 2회, 평균 거래량 1.144배·절대 OI 활동 3.003배. 10분봉의 하향 이동평균 군집도 겹쳐 현재가 위 가장 강한 근접 저항",
-      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,040.15 위 마감하고 재시험에서 상단을 지지",
-      "color": "#dc2626"
-    },
-    {
-      "label": "2차 중간 저항 · 당일 고가 공급대",
-      "range": "1051.65~1057.50",
+      "label": "1차 중간 근접 저항 · 당일 고가 거부대",
+      "range": "1058.70~1064.40",
       "side": "resistance",
       "level_type": "structural_resistance",
       "structure_strength": "중",
-      "break_meaning": "1,057.50 안착 시 1,058.60~1,064.50 시험",
-      "sequence": 2,
-      "low": 1051.65,
-      "high": 1057.5,
-      "center": 1054.575,
+      "break_meaning": "1,064.40 안착 시 단기 상방 시도 확인",
+      "sequence": 1,
+      "low": 1058.7,
+      "high": 1064.4,
+      "center": 1061.55,
       "strength": "중",
-      "reason": "9/1·9/2 반응과 9/3 정규장 고가 1,051.65가 겹친 공급대. 자동 구조점수 46.5로 강등급은 아님",
-      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,057.50 위 마감하고 재시험 방어",
+      "reason": "자동 구조점수는 29.1로 약하지만 9/4 정규장 고가 1,063.85와 10분봉 고가 1,063.70에서 즉시 밀린 사실을 합쳐 당일 실행상 중간 저항으로 상향. 구조 자체의 장기 강도는 약함",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,064.40 위 마감하고 재시험에서 상단을 지지",
       "color": "#ef4444"
     },
     {
-      "label": "3차 약한 보조 저항",
-      "range": "1058.60~1064.50",
+      "label": "2차 중간 구조 저항",
+      "range": "1088.55~1094.25",
       "side": "resistance",
       "level_type": "structural_resistance",
-      "structure_strength": "약",
-      "break_meaning": "돌파 시 다음 상단 구조를 다시 계산",
+      "structure_strength": "중",
+      "break_meaning": "돌파 시 1,103.65~1,109.75 시험",
+      "sequence": 2,
+      "low": 1088.55,
+      "high": 1094.25,
+      "center": 1091.4,
+      "strength": "중",
+      "reason": "ATR 구조점수 51.8, 서로 다른 저항 반응일 3일. 1차 저항 돌파 뒤의 다음 공급 후보",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,094.25 위 마감하고 재시험 방어",
+      "color": "#dc2626"
+    },
+    {
+      "label": "3차 중간 구조 저항 · 스윙 겹침",
+      "range": "1103.65~1109.75",
+      "side": "resistance",
+      "level_type": "structural_resistance",
+      "structure_strength": "중",
+      "break_meaning": "돌파 시 상단 구조 재계산",
       "sequence": 3,
-      "low": 1058.6,
-      "high": 1064.5,
-      "center": 1061.55,
-      "strength": "약",
-      "reason": "자동 구조점수 29.3·확정 스윙 0회라 구조 자체는 약함. 다만 과거 동일등급 저항은 8회 터치 중 종가 비실패 6회로 반응 가능성만 보조 확인",
-      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,064.50 위 마감하고 재시험 방어",
-      "color": "#f87171"
+      "low": 1103.65,
+      "high": 1109.75,
+      "center": 1106.7,
+      "strength": "중",
+      "reason": "ATR 구조점수 62.4, 반응일 3일·확정 스윙 2회로 2차 저항보다 구조 증거는 많지만 현재가에서 멀어 즉시 진입선으로 사용하지 않음",
+      "invalidation": "10분봉 2개 또는 15분봉 1개가 1,109.75 위 마감하고 재시험 방어",
+      "color": "#b91c1c"
     }
   ],
   "next_day_flow_edge": {
     "schema_version": 1,
-    "generated_at": "2026-09-03T17:18:31+09:00",
+    "generated_at": "2026-09-04T17:16:51+09:00",
     "contract_price_target": "F 202609",
-    "as_of_date": "2026-09-03",
+    "as_of_date": "2026-09-04",
     "inputs": {
       "strict_flow_csv": {
         "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
-        "sha256": "297c77e69c2cda650b13f90e04e663aebfe16e268d816d0afc13c76aeccdd301"
+        "sha256": "823f7c99f59749c03f79af416ae706eced8cbd6747a7379a35e2f4ce676923b1"
       },
       "validated_price_csv": {
         "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
-        "sha256": "c28c7f37a8668ce8569489d3a24f5bf79e1e5fdbea599b26cae06d37b84a7de1",
+        "sha256": "6d8770703831bf4caba3eb613936d8b596bc1e84246a86d7ce0c7bd46de08c31",
         "contract_code": "A0169000",
         "excluded_rows": {
           "not_final": 1
@@ -926,7 +974,7 @@
       },
       "option_delta_csv": {
         "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\derivatives_daily_history.csv",
-        "sha256": "eddd1ad753cdb3176b0bb3c1e37ecf9a805aa3fd4c6774664cd0106071e9e9ce",
+        "sha256": "5a9cb8549356da80cbb17b68f0adb21489b35c0798c2b521313b84341d3bdc3d",
         "requested_contract": "F 202609",
         "exact_contract_only": "F202609"
       }
@@ -934,28 +982,28 @@
     "validation": {
       "status": "OK_WITH_WARNINGS",
       "as_of_filter": {
-        "as_of_date": "2026-09-03",
+        "as_of_date": "2026-09-04",
         "applied": true,
         "rows_before": {
-          "flow_rows": 53,
-          "price_rows": 53,
-          "option_delta_dates": 22,
-          "option_delta_rows": 44
+          "flow_rows": 54,
+          "price_rows": 54,
+          "option_delta_dates": 23,
+          "option_delta_rows": 46
         },
         "rows_after": {
-          "flow_rows": 53,
-          "price_rows": 53,
-          "option_delta_dates": 22,
-          "option_delta_rows": 44
+          "flow_rows": 54,
+          "price_rows": 54,
+          "option_delta_dates": 23,
+          "option_delta_rows": 46
         }
       },
-      "flow_rows": 53,
-      "validated_price_rows": 53,
-      "joined_rows": 53,
+      "flow_rows": 54,
+      "validated_price_rows": 54,
+      "joined_rows": 54,
       "flow_dates_without_validated_price": [],
       "validated_price_dates_without_flow": [],
-      "same_day_targets_available": 48,
-      "next_day_targets_available": 48,
+      "same_day_targets_available": 49,
+      "next_day_targets_available": 49,
       "same_day_targets_omitted_for_missing_predecessor": [
         "2026-06-12",
         "2026-07-20",
@@ -968,7 +1016,7 @@
         "2026-08-04",
         "2026-08-07",
         "2026-08-13",
-        "2026-09-03"
+        "2026-09-04"
       ],
       "warnings": [
         "option delta is an abs-delta approximation and is diagnostic only; it cannot receive primary directional weight",
@@ -998,25 +1046,25 @@
         "same_day": {
           "indicator": "foreign_composite_3d_sum",
           "target": "same_day_return",
-          "sample_n": 13,
-          "directional_sample_n": 13,
+          "sample_n": 14,
+          "directional_sample_n": 14,
           "direction_match": {
-            "successes": 7,
-            "n": 13,
-            "rate": 0.5384615385,
+            "successes": 8,
+            "n": 14,
+            "rate": 0.5714285714,
             "wilson_95": {
-              "lower": 0.2914379571,
-              "upper": 0.7679393219
+              "lower": 0.3259064458,
+              "upper": 0.786192011
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 4,
-              "n": 8,
-              "rate": 0.5,
+              "successes": 5,
+              "n": 9,
+              "rate": 0.5555555556,
               "wilson_95": {
-                "lower": 0.2152160622,
-                "upper": 0.7847839378
+                "lower": 0.2666512935,
+                "upper": 0.8112214789
               }
             },
             "down": {
@@ -1031,15 +1079,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 4,
-              "n": 6,
-              "rate": 0.6666666667,
+              "successes": 5,
+              "n": 7,
+              "rate": 0.7142857143,
               "wilson_95": {
-                "lower": 0.2999933151,
-                "upper": 0.9032285889
+                "lower": 0.3589344518,
+                "upper": 0.917781076
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 0.4226355061
+              "mean_target_return_pct": 0.6743255794
             },
             "negative": {
               "successes": 3,
@@ -1053,44 +1101,44 @@
               "mean_target_return_pct": -0.5242801073
             }
           },
-          "pearson_correlation": 0.1773535137,
-          "mean_target_return_pct": -0.0872421319,
-          "mean_signed_return_pct": 0.4773672144,
-          "majority_direction_baseline_accuracy": 0.6153846154,
-          "beta_shrunk_accuracy": 0.5238095238,
+          "pearson_correlation": 0.1935072524,
+          "mean_target_return_pct": 0.075022736,
+          "mean_signed_return_pct": 0.5993028434,
+          "majority_direction_baseline_accuracy": 0.6428571429,
+          "beta_shrunk_accuracy": 0.5454545455,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -9677.5,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1165.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         },
         "next_trading_day": {
           "indicator": "foreign_composite_3d_sum",
           "target": "next_day_return",
-          "sample_n": 11,
-          "directional_sample_n": 11,
+          "sample_n": 12,
+          "directional_sample_n": 12,
           "direction_match": {
             "successes": 4,
-            "n": 11,
-            "rate": 0.3636363636,
+            "n": 12,
+            "rate": 0.3333333333,
             "wilson_95": {
-              "lower": 0.151664711,
-              "upper": 0.6461988255
+              "lower": 0.1381200911,
+              "upper": 0.6093779111
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 3,
-              "n": 7,
-              "rate": 0.4285714286,
+              "n": 8,
+              "rate": 0.375,
               "wilson_95": {
-                "lower": 0.1582198553,
-                "upper": 0.7495416355
+                "lower": 0.1368442858,
+                "upper": 0.6942576054
               }
             },
             "down": {
@@ -1117,30 +1165,30 @@
             },
             "negative": {
               "successes": 1,
-              "n": 5,
-              "rate": 0.2,
+              "n": 6,
+              "rate": 0.1666666667,
               "wilson_95": {
-                "lower": 0.0362241086,
-                "upper": 0.6244653702
+                "lower": 0.0300533697,
+                "upper": 0.5635028222
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -0.1534384898
+              "mean_target_return_pct": 0.2362122618
             }
           },
-          "pearson_correlation": -0.0696336453,
-          "mean_target_return_pct": -0.3556828337,
-          "mean_signed_return_pct": -0.2161932975,
-          "majority_direction_baseline_accuracy": 0.6363636364,
-          "beta_shrunk_accuracy": 0.4210526316,
+          "pearson_correlation": -0.1464473175,
+          "mean_target_return_pct": -0.1440037626,
+          "mean_signed_return_pct": -0.3802160243,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.4,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -9677.5,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1165.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         }
       },
@@ -1148,25 +1196,25 @@
         "same_day": {
           "indicator": "foreign_composite_5d_sum",
           "target": "same_day_return",
-          "sample_n": 9,
-          "directional_sample_n": 9,
+          "sample_n": 10,
+          "directional_sample_n": 10,
           "direction_match": {
             "successes": 4,
-            "n": 9,
-            "rate": 0.4444444444,
+            "n": 10,
+            "rate": 0.4,
             "wilson_95": {
-              "lower": 0.1887785211,
-              "upper": 0.7333487065
+              "lower": 0.1681803297,
+              "upper": 0.6873262303
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 2,
-              "n": 5,
-              "rate": 0.4,
+              "n": 6,
+              "rate": 0.3333333333,
               "wilson_95": {
-                "lower": 0.1176207742,
-                "upper": 0.7692757187
+                "lower": 0.0967714111,
+                "upper": 0.7000066849
               }
             },
             "down": {
@@ -1193,28 +1241,28 @@
             },
             "negative": {
               "successes": 2,
-              "n": 5,
-              "rate": 0.4,
+              "n": 6,
+              "rate": 0.3333333333,
               "wilson_95": {
-                "lower": 0.1176207742,
-                "upper": 0.7692757187
+                "lower": 0.0967714111,
+                "upper": 0.7000066849
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -1.3528985044
+              "mean_target_return_pct": -0.7633377505
             }
           },
-          "pearson_correlation": 0.2994130677,
-          "mean_target_return_pct": -0.6995322386,
-          "mean_signed_return_pct": 0.8036883219,
-          "majority_direction_baseline_accuracy": 0.5555555556,
-          "beta_shrunk_accuracy": 0.4705882353,
+          "pearson_correlation": 0.2247920574,
+          "mean_target_return_pct": -0.4111324128,
+          "mean_signed_return_pct": 0.5048728877,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.4444444444,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -3366.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -16.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -1222,25 +1270,25 @@
         "next_trading_day": {
           "indicator": "foreign_composite_5d_sum",
           "target": "next_day_return",
-          "sample_n": 8,
-          "directional_sample_n": 8,
+          "sample_n": 9,
+          "directional_sample_n": 9,
           "direction_match": {
             "successes": 1,
-            "n": 8,
-            "rate": 0.125,
+            "n": 9,
+            "rate": 0.1111111111,
             "wilson_95": {
-              "lower": 0.0224174915,
-              "upper": 0.4708881822
+              "lower": 0.0198908876,
+              "upper": 0.4349997056
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 1,
-              "n": 5,
-              "rate": 0.2,
+              "n": 6,
+              "rate": 0.1666666667,
               "wilson_95": {
-                "lower": 0.0362241086,
-                "upper": 0.6244653702
+                "lower": 0.0300533697,
+                "upper": 0.5635028222
               }
             },
             "down": {
@@ -1267,28 +1315,28 @@
             },
             "negative": {
               "successes": 0,
-              "n": 4,
+              "n": 5,
               "rate": 0.0,
               "wilson_95": {
                 "lower": 0.0,
-                "upper": 0.4898908365
+                "upper": 0.4344824648
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": 0.9181896296
+              "mean_target_return_pct": 1.1714449076
             }
           },
-          "pearson_correlation": -0.4906716333,
-          "mean_target_return_pct": -0.2408020853,
-          "mean_signed_return_pct": -1.1589917149,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.3125,
+          "pearson_correlation": -0.5447847025,
+          "mean_target_return_pct": 0.0286721486,
+          "mean_signed_return_pct": -1.2729333043,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.2941176471,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -3366.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -16.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -1298,25 +1346,25 @@
         "same_day": {
           "indicator": "foreign_composite_daily",
           "target": "same_day_return",
-          "sample_n": 17,
-          "directional_sample_n": 17,
+          "sample_n": 18,
+          "directional_sample_n": 18,
           "direction_match": {
-            "successes": 10,
-            "n": 17,
-            "rate": 0.5882352941,
+            "successes": 11,
+            "n": 18,
+            "rate": 0.6111111111,
             "wilson_95": {
-              "lower": 0.3600544264,
-              "upper": 0.7838894321
+              "lower": 0.386190416,
+              "upper": 0.7969475343
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 6,
-              "n": 10,
-              "rate": 0.6,
+              "successes": 7,
+              "n": 11,
+              "rate": 0.6363636364,
               "wilson_95": {
-                "lower": 0.3126737697,
-                "upper": 0.8318196703
+                "lower": 0.3538011745,
+                "upper": 0.848335289
               }
             },
             "down": {
@@ -1331,15 +1379,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 6,
-              "n": 9,
-              "rate": 0.6666666667,
+              "successes": 7,
+              "n": 10,
+              "rate": 0.7,
               "wilson_95": {
-                "lower": 0.3542021356,
-                "upper": 0.8794161816
+                "lower": 0.3967781475,
+                "upper": 0.8922087326
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 1.9655645945
+              "mean_target_return_pct": 1.987454737
             },
             "negative": {
               "successes": 4,
@@ -1353,18 +1401,18 @@
               "mean_target_return_pct": -0.6908971607
             }
           },
-          "pearson_correlation": 0.1978421684,
-          "mean_target_return_pct": 0.715464945,
-          "mean_signed_return_pct": 1.3657210962,
-          "majority_direction_baseline_accuracy": 0.5882352941,
-          "beta_shrunk_accuracy": 0.56,
+          "pearson_correlation": 0.2068849609,
+          "mean_target_return_pct": 0.7970761158,
+          "mean_signed_return_pct": 1.4112069253,
+          "majority_direction_baseline_accuracy": 0.6111111111,
+          "beta_shrunk_accuracy": 0.5769230769,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 4008.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 7158.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -1372,25 +1420,25 @@
         "next_trading_day": {
           "indicator": "foreign_composite_daily",
           "target": "next_day_return",
-          "sample_n": 16,
-          "directional_sample_n": 16,
+          "sample_n": 17,
+          "directional_sample_n": 17,
           "direction_match": {
-            "successes": 5,
-            "n": 16,
-            "rate": 0.3125,
+            "successes": 6,
+            "n": 17,
+            "rate": 0.3529411765,
             "wilson_95": {
-              "lower": 0.1416464385,
-              "upper": 0.5559564417
+              "lower": 0.173097204,
+              "upper": 0.5869963651
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 4,
-              "n": 10,
-              "rate": 0.4,
+              "successes": 5,
+              "n": 11,
+              "rate": 0.4545454545,
               "wilson_95": {
-                "lower": 0.1681803297,
-                "upper": 0.6873262303
+                "lower": 0.2127127162,
+                "upper": 0.7199084626
               }
             },
             "down": {
@@ -1405,15 +1453,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 4,
-              "n": 9,
-              "rate": 0.4444444444,
+              "successes": 5,
+              "n": 10,
+              "rate": 0.5,
               "wilson_95": {
-                "lower": 0.1887785211,
-                "upper": 0.7333487065
+                "lower": 0.2365930905,
+                "upper": 0.7634069095
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.2555244314
+              "mean_target_return_pct": -0.9115253863
             },
             "negative": {
               "successes": 1,
@@ -1427,18 +1475,18 @@
               "mean_target_return_pct": 3.8454009602
             }
           },
-          "pearson_correlation": -0.2519498906,
-          "mean_target_return_pct": 0.9761304274,
-          "mean_signed_return_pct": -2.3885954128,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.375,
+          "pearson_correlation": -0.2304123333,
+          "mean_target_return_pct": 1.0472089917,
+          "mean_signed_return_pct": -2.1195917991,
+          "majority_direction_baseline_accuracy": 0.6470588235,
+          "beta_shrunk_accuracy": 0.4,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 4008.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 7158.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -1448,25 +1496,25 @@
         "same_day": {
           "indicator": "foreign_futures_3d_sum",
           "target": "same_day_return",
-          "sample_n": 44,
-          "directional_sample_n": 44,
+          "sample_n": 45,
+          "directional_sample_n": 45,
           "direction_match": {
-            "successes": 21,
-            "n": 44,
-            "rate": 0.4772727273,
+            "successes": 22,
+            "n": 45,
+            "rate": 0.4888888889,
             "wilson_95": {
-              "lower": 0.3375499103,
-              "upper": 0.6206453444
+              "lower": 0.3495702375,
+              "upper": 0.6299553536
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 14,
-              "n": 24,
-              "rate": 0.5833333333,
+              "successes": 15,
+              "n": 25,
+              "rate": 0.6,
               "wilson_95": {
-                "lower": 0.3883466587,
-                "upper": 0.7553239739
+                "lower": 0.4073945736,
+                "upper": 0.7659669762
               }
             },
             "down": {
@@ -1481,15 +1529,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 14,
-              "n": 27,
-              "rate": 0.5185185185,
+              "successes": 15,
+              "n": 28,
+              "rate": 0.5357142857,
               "wilson_95": {
-                "lower": 0.3398561575,
-                "upper": 0.6925677302
+                "lower": 0.3581268923,
+                "upper": 0.7046843002
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.8089650039
+              "mean_target_return_pct": -0.702056753
             },
             "negative": {
               "successes": 7,
@@ -1503,44 +1551,44 @@
               "mean_target_return_pct": -0.1015183704
             }
           },
-          "pearson_correlation": -0.1020668502,
-          "mean_target_return_pct": -0.53563335,
-          "mean_signed_return_pct": -0.4571873365,
-          "majority_direction_baseline_accuracy": 0.5454545455,
-          "beta_shrunk_accuracy": 0.4807692308,
+          "pearson_correlation": -0.0987187448,
+          "mean_target_return_pct": -0.4751866974,
+          "mean_signed_return_pct": -0.3984839286,
+          "majority_direction_baseline_accuracy": 0.5555555556,
+          "beta_shrunk_accuracy": 0.4905660377,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -8267.0,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 2763.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         },
         "next_trading_day": {
           "indicator": "foreign_futures_3d_sum",
           "target": "next_day_return",
-          "sample_n": 41,
-          "directional_sample_n": 41,
+          "sample_n": 42,
+          "directional_sample_n": 42,
           "direction_match": {
             "successes": 19,
-            "n": 41,
-            "rate": 0.4634146341,
+            "n": 42,
+            "rate": 0.4523809524,
             "wilson_95": {
-              "lower": 0.3205623398,
-              "upper": 0.6125352873
+              "lower": 0.3122339323,
+              "upper": 0.6005088097
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 13,
-              "n": 22,
-              "rate": 0.5909090909,
+              "n": 23,
+              "rate": 0.5652173913,
               "wilson_95": {
-                "lower": 0.3873481848,
-                "upper": 0.767441838
+                "lower": 0.3681137509,
+                "upper": 0.7436536467
               }
             },
             "down": {
@@ -1567,30 +1615,30 @@
             },
             "negative": {
               "successes": 6,
-              "n": 15,
-              "rate": 0.4,
+              "n": 16,
+              "rate": 0.375,
               "wilson_95": {
-                "lower": 0.1982449614,
-                "upper": 0.6425316988
+                "lower": 0.1848123256,
+                "upper": 0.6135895945
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -1.2821604071
+              "mean_target_return_pct": -1.0654962555
             }
           },
-          "pearson_correlation": 0.1831587038,
-          "mean_target_return_pct": -0.7799162952,
-          "mean_signed_return_pct": 0.1582498564,
-          "majority_direction_baseline_accuracy": 0.5365853659,
-          "beta_shrunk_accuracy": 0.4693877551,
+          "pearson_correlation": 0.1606336728,
+          "mean_target_return_pct": -0.7093357639,
+          "mean_signed_return_pct": 0.102470907,
+          "majority_direction_baseline_accuracy": 0.5476190476,
+          "beta_shrunk_accuracy": 0.46,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -8267.0,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 2763.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         }
       },
@@ -1598,25 +1646,25 @@
         "same_day": {
           "indicator": "foreign_futures_5d_sum",
           "target": "same_day_return",
-          "sample_n": 38,
-          "directional_sample_n": 38,
+          "sample_n": 39,
+          "directional_sample_n": 39,
           "direction_match": {
-            "successes": 18,
-            "n": 38,
-            "rate": 0.4736842105,
+            "successes": 19,
+            "n": 39,
+            "rate": 0.4871794872,
             "wilson_95": {
-              "lower": 0.3247902332,
-              "upper": 0.6274102862
+              "lower": 0.3386517533,
+              "upper": 0.6380063712
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 11,
-              "n": 19,
-              "rate": 0.5789473684,
+              "successes": 12,
+              "n": 20,
+              "rate": 0.6,
               "wilson_95": {
-                "lower": 0.3627590353,
-                "upper": 0.7685810872
+                "lower": 0.3865815008,
+                "upper": 0.7811934676
               }
             },
             "down": {
@@ -1631,15 +1679,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 11,
-              "n": 23,
-              "rate": 0.4782608696,
+              "successes": 12,
+              "n": 24,
+              "rate": 0.5,
               "wilson_95": {
-                "lower": 0.2923715742,
-                "upper": 0.6703726266
+                "lower": 0.3142742582,
+                "upper": 0.6857257418
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.9781514188
+              "mean_target_return_pct": -0.8463756922
             },
             "negative": {
               "successes": 7,
@@ -1653,44 +1701,44 @@
               "mean_target_return_pct": -1.1501123757
             }
           },
-          "pearson_correlation": -0.1327394976,
-          "mean_target_return_pct": -1.0460307439,
-          "mean_signed_return_pct": -0.1380472894,
-          "majority_direction_baseline_accuracy": 0.5,
-          "beta_shrunk_accuracy": 0.4782608696,
+          "pearson_correlation": -0.1359349115,
+          "mean_target_return_pct": -0.9631974935,
+          "mean_signed_return_pct": -0.0784956661,
+          "majority_direction_baseline_accuracy": 0.5128205128,
+          "beta_shrunk_accuracy": 0.4893617021,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -4601.0,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 903.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         },
         "next_trading_day": {
           "indicator": "foreign_futures_5d_sum",
           "target": "next_day_return",
-          "sample_n": 35,
-          "directional_sample_n": 35,
+          "sample_n": 36,
+          "directional_sample_n": 36,
           "direction_match": {
             "successes": 17,
-            "n": 35,
-            "rate": 0.4857142857,
+            "n": 36,
+            "rate": 0.4722222222,
             "wilson_95": {
-              "lower": 0.32994236,
-              "upper": 0.644311954
+              "lower": 0.3198604152,
+              "upper": 0.6299406198
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 11,
-              "n": 18,
-              "rate": 0.6111111111,
+              "n": 19,
+              "rate": 0.5789473684,
               "wilson_95": {
-                "lower": 0.386190416,
-                "upper": 0.7969475343
+                "lower": 0.3627590353,
+                "upper": 0.7685810872
               }
             },
             "down": {
@@ -1717,30 +1765,30 @@
             },
             "negative": {
               "successes": 6,
-              "n": 13,
-              "rate": 0.4615384615,
+              "n": 14,
+              "rate": 0.4285714286,
               "wilson_95": {
-                "lower": 0.2320606781,
-                "upper": 0.7085620429
+                "lower": 0.213807989,
+                "upper": 0.6740935542
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -2.1018124733
+              "mean_target_return_pct": -1.7956497239
             }
           },
-          "pearson_correlation": 0.2256574949,
-          "mean_target_return_pct": -0.9192576176,
-          "mean_signed_return_pct": 0.6420887911,
-          "majority_direction_baseline_accuracy": 0.5142857143,
-          "beta_shrunk_accuracy": 0.488372093,
+          "pearson_correlation": 0.2050078507,
+          "mean_target_return_pct": -0.8330430722,
+          "mean_signed_return_pct": 0.5635733797,
+          "majority_direction_baseline_accuracy": 0.5277777778,
+          "beta_shrunk_accuracy": 0.4772727273,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -4601.0,
-            "latest_signal": "DOWN",
-            "current_direction_contribution": -0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 903.0,
+            "latest_signal": "UP",
+            "current_direction_contribution": 0.0
           }
         }
       },
@@ -1748,25 +1796,25 @@
         "same_day": {
           "indicator": "foreign_futures_daily",
           "target": "same_day_return",
-          "sample_n": 48,
-          "directional_sample_n": 48,
+          "sample_n": 49,
+          "directional_sample_n": 49,
           "direction_match": {
-            "successes": 15,
-            "n": 48,
-            "rate": 0.3125,
+            "successes": 16,
+            "n": 49,
+            "rate": 0.3265306122,
             "wilson_95": {
-              "lower": 0.1994568345,
-              "upper": 0.4533307142
+              "lower": 0.21207497,
+              "upper": 0.4662079469
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 9,
-              "n": 27,
-              "rate": 0.3333333333,
+              "successes": 10,
+              "n": 28,
+              "rate": 0.3571428571,
               "wilson_95": {
-                "lower": 0.186432615,
-                "upper": 0.5217523949
+                "lower": 0.2070582951,
+                "upper": 0.5416969349
               }
             },
             "down": {
@@ -1781,15 +1829,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 9,
-              "n": 24,
-              "rate": 0.375,
+              "successes": 10,
+              "n": 25,
+              "rate": 0.4,
               "wilson_95": {
-                "lower": 0.2115936756,
-                "upper": 0.5729003756
+                "lower": 0.2340330238,
+                "upper": 0.5926054264
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -2.8845059442
+              "mean_target_return_pct": -2.6817470657
             },
             "negative": {
               "successes": 6,
@@ -1803,18 +1851,18 @@
               "mean_target_return_pct": 2.2521208133
             }
           },
-          "pearson_correlation": -0.464601864,
-          "mean_target_return_pct": -0.3161925655,
-          "mean_signed_return_pct": -2.5683133787,
-          "majority_direction_baseline_accuracy": 0.5625,
-          "beta_shrunk_accuracy": 0.3392857143,
+          "pearson_correlation": -0.4331552385,
+          "mean_target_return_pct": -0.2651587168,
+          "mean_signed_return_pct": -2.4713178808,
+          "majority_direction_baseline_accuracy": 0.5714285714,
+          "beta_shrunk_accuracy": 0.350877193,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 3077.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 7793.0,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -1822,25 +1870,25 @@
         "next_trading_day": {
           "indicator": "foreign_futures_daily",
           "target": "next_day_return",
-          "sample_n": 48,
-          "directional_sample_n": 48,
+          "sample_n": 49,
+          "directional_sample_n": 49,
           "direction_match": {
-            "successes": 26,
-            "n": 48,
-            "rate": 0.5416666667,
+            "successes": 27,
+            "n": 49,
+            "rate": 0.5510204082,
             "wilson_95": {
-              "lower": 0.4029107455,
-              "upper": 0.6742475771
+              "lower": 0.4131510822,
+              "upper": 0.6814715893
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 15,
-              "n": 27,
-              "rate": 0.5555555556,
+              "successes": 16,
+              "n": 28,
+              "rate": 0.5714285714,
               "wilson_95": {
-                "lower": 0.3731302451,
-                "upper": 0.7241414182
+                "lower": 0.3907078563,
+                "upper": 0.7349145288
               }
             },
             "down": {
@@ -1855,15 +1903,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 15,
-              "n": 25,
-              "rate": 0.6,
+              "successes": 16,
+              "n": 26,
+              "rate": 0.6153846154,
               "wilson_95": {
-                "lower": 0.4073945736,
-                "upper": 0.7659669762
+                "lower": 0.4253485009,
+                "upper": 0.7757140556
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 0.0559825846
+              "mean_target_return_pct": 0.1378473321
             },
             "negative": {
               "successes": 11,
@@ -1877,18 +1925,18 @@
               "mean_target_return_pct": -0.7207307721
             }
           },
-          "pearson_correlation": 0.0714511948,
-          "mean_target_return_pct": -0.3161925655,
-          "mean_signed_return_pct": 0.3745077578,
-          "majority_direction_baseline_accuracy": 0.5625,
-          "beta_shrunk_accuracy": 0.5357142857,
+          "pearson_correlation": 0.077539542,
+          "mean_target_return_pct": -0.2651587168,
+          "mean_signed_return_pct": 0.4114456815,
+          "majority_direction_baseline_accuracy": 0.5714285714,
+          "beta_shrunk_accuracy": 0.5438596491,
           "decision_gate": {
             "status": "NO_ROBUST_EDGE",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 3077.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 7793.0,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -1898,25 +1946,25 @@
         "same_day": {
           "indicator": "foreign_option_delta_3d_sum",
           "target": "same_day_return",
-          "sample_n": 13,
-          "directional_sample_n": 13,
+          "sample_n": 14,
+          "directional_sample_n": 14,
           "direction_match": {
             "successes": 4,
-            "n": 13,
-            "rate": 0.3076923077,
+            "n": 14,
+            "rate": 0.2857142857,
             "wilson_95": {
-              "lower": 0.1268070366,
-              "upper": 0.5763065682
+              "lower": 0.1172137864,
+              "upper": 0.5464908433
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 1,
-              "n": 8,
-              "rate": 0.125,
+              "n": 9,
+              "rate": 0.1111111111,
               "wilson_95": {
-                "lower": 0.0224174915,
-                "upper": 0.4708881822
+                "lower": 0.0198908876,
+                "upper": 0.4349997056
               }
             },
             "down": {
@@ -1943,28 +1991,28 @@
             },
             "negative": {
               "successes": 3,
-              "n": 10,
-              "rate": 0.3,
+              "n": 11,
+              "rate": 0.2727272727,
               "wilson_95": {
-                "lower": 0.1077912674,
-                "upper": 0.6032218525
+                "lower": 0.0974605929,
+                "upper": 0.5656453012
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -0.0079794663
+              "mean_target_return_pct": 0.1913337596
             }
           },
-          "pearson_correlation": 0.1216495687,
-          "mean_target_return_pct": -0.0872421319,
-          "mean_signed_return_pct": -0.0749660299,
-          "majority_direction_baseline_accuracy": 0.6153846154,
-          "beta_shrunk_accuracy": 0.380952381,
+          "pearson_correlation": 0.068150372,
+          "mean_target_return_pct": 0.075022736,
+          "mean_signed_return_pct": -0.2256446005,
+          "majority_direction_baseline_accuracy": 0.6428571429,
+          "beta_shrunk_accuracy": 0.3636363636,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -1410.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -1598.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -1972,25 +2020,25 @@
         "next_trading_day": {
           "indicator": "foreign_option_delta_3d_sum",
           "target": "next_day_return",
-          "sample_n": 11,
-          "directional_sample_n": 11,
+          "sample_n": 12,
+          "directional_sample_n": 12,
           "direction_match": {
             "successes": 3,
-            "n": 11,
-            "rate": 0.2727272727,
+            "n": 12,
+            "rate": 0.25,
             "wilson_95": {
-              "lower": 0.0974605929,
-              "upper": 0.5656453012
+              "lower": 0.0889416684,
+              "upper": 0.5323053349
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 1,
-              "n": 7,
-              "rate": 0.1428571429,
+              "n": 8,
+              "rate": 0.125,
               "wilson_95": {
-                "lower": 0.0256796243,
-                "upper": 0.5131278293
+                "lower": 0.0224174915,
+                "upper": 0.4708881822
               }
             },
             "down": {
@@ -2017,28 +2065,28 @@
             },
             "negative": {
               "successes": 2,
-              "n": 8,
-              "rate": 0.25,
+              "n": 9,
+              "rate": 0.2222222222,
               "wilson_95": {
-                "lower": 0.0714792128,
-                "upper": 0.5907245697
+                "lower": 0.0632251071,
+                "upper": 0.5474110309
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -0.039774878
+              "mean_target_return_pct": 0.2073629995
             }
           },
-          "pearson_correlation": -0.421781604,
-          "mean_target_return_pct": -0.3556828337,
-          "mean_signed_return_pct": -0.2978284656,
-          "majority_direction_baseline_accuracy": 0.6363636364,
-          "beta_shrunk_accuracy": 0.3684210526,
+          "pearson_correlation": -0.4595481952,
+          "mean_target_return_pct": -0.1440037626,
+          "mean_signed_return_pct": -0.4550482618,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.35,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -1410.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -1598.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -2048,25 +2096,25 @@
         "same_day": {
           "indicator": "foreign_option_delta_5d_sum",
           "target": "same_day_return",
-          "sample_n": 9,
-          "directional_sample_n": 9,
+          "sample_n": 10,
+          "directional_sample_n": 10,
           "direction_match": {
             "successes": 5,
-            "n": 9,
-            "rate": 0.5555555556,
+            "n": 10,
+            "rate": 0.5,
             "wilson_95": {
-              "lower": 0.2666512935,
-              "upper": 0.8112214789
+              "lower": 0.2365930905,
+              "upper": 0.7634069095
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 2,
-              "n": 5,
-              "rate": 0.4,
+              "n": 6,
+              "rate": 0.3333333333,
               "wilson_95": {
-                "lower": 0.1176207742,
-                "upper": 0.7692757187
+                "lower": 0.0967714111,
+                "upper": 0.7000066849
               }
             },
             "down": {
@@ -2093,54 +2141,54 @@
             },
             "negative": {
               "successes": 3,
-              "n": 6,
-              "rate": 0.5,
+              "n": 7,
+              "rate": 0.4285714286,
               "wilson_95": {
-                "lower": 0.1876163065,
-                "upper": 0.8123836935
+                "lower": 0.1582198553,
+                "upper": 0.7495416355
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -1.2214820969
+              "mean_target_return_pct": -0.7349180803
             }
           },
-          "pearson_correlation": 0.2204695722,
-          "mean_target_return_pct": -0.6995322386,
-          "mean_signed_return_pct": 0.9291105572,
-          "majority_direction_baseline_accuracy": 0.5555555556,
-          "beta_shrunk_accuracy": 0.5294117647,
+          "pearson_correlation": 0.1837342661,
+          "mean_target_return_pct": -0.4111324128,
+          "mean_signed_return_pct": 0.6177528995,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.5,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1235.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -919.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         },
         "next_trading_day": {
           "indicator": "foreign_option_delta_5d_sum",
           "target": "next_day_return",
-          "sample_n": 8,
-          "directional_sample_n": 8,
+          "sample_n": 9,
+          "directional_sample_n": 9,
           "direction_match": {
-            "successes": 3,
-            "n": 8,
-            "rate": 0.375,
+            "successes": 4,
+            "n": 9,
+            "rate": 0.4444444444,
             "wilson_95": {
-              "lower": 0.1368442858,
-              "upper": 0.6942576054
+              "lower": 0.1887785211,
+              "upper": 0.7333487065
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 1,
-              "n": 5,
-              "rate": 0.2,
+              "successes": 2,
+              "n": 6,
+              "rate": 0.3333333333,
               "wilson_95": {
-                "lower": 0.0362241086,
-                "upper": 0.6244653702
+                "lower": 0.0967714111,
+                "upper": 0.7000066849
               }
             },
             "down": {
@@ -2155,15 +2203,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 1,
-              "n": 2,
-              "rate": 0.5,
+              "successes": 2,
+              "n": 3,
+              "rate": 0.6666666667,
               "wilson_95": {
-                "lower": 0.0945312057,
-                "upper": 0.9054687943
+                "lower": 0.2076596008,
+                "upper": 0.9385080553
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.7901336011
+              "mean_target_return_pct": -0.4652670609
             },
             "negative": {
               "successes": 2,
@@ -2177,20 +2225,20 @@
               "mean_target_return_pct": 0.2756417534
             }
           },
-          "pearson_correlation": -0.3361748419,
-          "mean_target_return_pct": -0.2408020853,
-          "mean_signed_return_pct": -0.6542647153,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.4375,
+          "pearson_correlation": -0.148184487,
+          "mean_target_return_pct": 0.0286721486,
+          "mean_signed_return_pct": -0.3388501892,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.4705882353,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1235.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -919.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         }
       },
@@ -2198,25 +2246,25 @@
         "same_day": {
           "indicator": "foreign_option_delta_daily",
           "target": "same_day_return",
-          "sample_n": 17,
-          "directional_sample_n": 17,
+          "sample_n": 18,
+          "directional_sample_n": 18,
           "direction_match": {
             "successes": 10,
-            "n": 17,
-            "rate": 0.5882352941,
+            "n": 18,
+            "rate": 0.5555555556,
             "wilson_95": {
-              "lower": 0.3600544264,
-              "upper": 0.7838894321
+              "lower": 0.3371641564,
+              "upper": 0.7544048187
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 5,
-              "n": 10,
-              "rate": 0.5,
+              "n": 11,
+              "rate": 0.4545454545,
               "wilson_95": {
-                "lower": 0.2365930905,
-                "upper": 0.7634069095
+                "lower": 0.2127127162,
+                "upper": 0.7199084626
               }
             },
             "down": {
@@ -2243,54 +2291,54 @@
             },
             "negative": {
               "successes": 5,
-              "n": 10,
-              "rate": 0.5,
+              "n": 11,
+              "rate": 0.4545454545,
               "wilson_95": {
-                "lower": 0.2365930905,
-                "upper": 0.7634069095
+                "lower": 0.2127127162,
+                "upper": 0.7199084626
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -0.8373495325
+              "mean_target_return_pct": -0.5626390278
             }
           },
-          "pearson_correlation": 0.4758254026,
-          "mean_target_return_pct": 0.715464945,
-          "mean_signed_return_pct": 1.700582042,
-          "majority_direction_baseline_accuracy": 0.5882352941,
-          "beta_shrunk_accuracy": 0.56,
+          "pearson_correlation": 0.4734646671,
+          "mean_target_return_pct": 0.7970761158,
+          "mean_signed_return_pct": 1.4847460386,
+          "majority_direction_baseline_accuracy": 0.6111111111,
+          "beta_shrunk_accuracy": 0.5384615385,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 931.5,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -634.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         },
         "next_trading_day": {
           "indicator": "foreign_option_delta_daily",
           "target": "next_day_return",
-          "sample_n": 16,
-          "directional_sample_n": 16,
+          "sample_n": 17,
+          "directional_sample_n": 17,
           "direction_match": {
-            "successes": 5,
-            "n": 16,
-            "rate": 0.3125,
+            "successes": 6,
+            "n": 17,
+            "rate": 0.3529411765,
             "wilson_95": {
-              "lower": 0.1416464385,
-              "upper": 0.5559564417
+              "lower": 0.173097204,
+              "upper": 0.5869963651
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 3,
-              "n": 10,
-              "rate": 0.3,
+              "successes": 4,
+              "n": 11,
+              "rate": 0.3636363636,
               "wilson_95": {
-                "lower": 0.1077912674,
-                "upper": 0.6032218525
+                "lower": 0.151664711,
+                "upper": 0.6461988255
               }
             },
             "down": {
@@ -2305,15 +2353,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 3,
-              "n": 7,
-              "rate": 0.4285714286,
+              "successes": 4,
+              "n": 8,
+              "rate": 0.5,
               "wilson_95": {
-                "lower": 0.1582198553,
-                "upper": 0.7495416355
+                "lower": 0.2152160622,
+                "upper": 0.7847839378
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.4901666338
+              "mean_target_return_pct": -1.0308375522
             },
             "negative": {
               "successes": 2,
@@ -2327,20 +2375,20 @@
               "mean_target_return_pct": 2.8943614751
             }
           },
-          "pearson_correlation": -0.3180554685,
-          "mean_target_return_pct": 0.9761304274,
-          "mean_signed_return_pct": -2.280026232,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.375,
+          "pearson_correlation": -0.3002026301,
+          "mean_target_return_pct": 1.0472089917,
+          "mean_signed_return_pct": -2.0174090408,
+          "majority_direction_baseline_accuracy": 0.6470588235,
+          "beta_shrunk_accuracy": 0.4,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 931.5,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -634.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         }
       },
@@ -2348,25 +2396,25 @@
         "same_day": {
           "indicator": "institution_composite_3d_sum",
           "target": "same_day_return",
-          "sample_n": 13,
-          "directional_sample_n": 13,
+          "sample_n": 14,
+          "directional_sample_n": 14,
           "direction_match": {
             "successes": 7,
-            "n": 13,
-            "rate": 0.5384615385,
+            "n": 14,
+            "rate": 0.5,
             "wilson_95": {
-              "lower": 0.2914379571,
-              "upper": 0.7679393219
+              "lower": 0.2679920245,
+              "upper": 0.7320079755
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 5,
-              "n": 8,
-              "rate": 0.625,
+              "n": 9,
+              "rate": 0.5555555556,
               "wilson_95": {
-                "lower": 0.3057423946,
-                "upper": 0.8631557142
+                "lower": 0.2666512935,
+                "upper": 0.8112214789
               }
             },
             "down": {
@@ -2393,6 +2441,80 @@
             },
             "negative": {
               "successes": 2,
+              "n": 6,
+              "rate": 0.3333333333,
+              "wilson_95": {
+                "lower": 0.0967714111,
+                "upper": 0.7000066849
+              },
+              "meaning": "target_down_rate",
+              "mean_target_return_pct": 0.6259540182
+            }
+          },
+          "pearson_correlation": -0.1314719542,
+          "mean_target_return_pct": 0.075022736,
+          "mean_signed_return_pct": -0.4615092795,
+          "majority_direction_baseline_accuracy": 0.6428571429,
+          "beta_shrunk_accuracy": 0.5,
+          "decision_gate": {
+            "status": "DIAGNOSTIC_ONLY",
+            "minimum_samples": 20,
+            "minimum_edge_over_majority_baseline": 0.03,
+            "reliability_weight": 0.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -2170.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
+          }
+        },
+        "next_trading_day": {
+          "indicator": "institution_composite_3d_sum",
+          "target": "next_day_return",
+          "sample_n": 12,
+          "directional_sample_n": 12,
+          "direction_match": {
+            "successes": 7,
+            "n": 12,
+            "rate": 0.5833333333,
+            "wilson_95": {
+              "lower": 0.3195113125,
+              "upper": 0.8067396863
+            }
+          },
+          "by_realized_direction": {
+            "up": {
+              "successes": 5,
+              "n": 8,
+              "rate": 0.625,
+              "wilson_95": {
+                "lower": 0.3057423946,
+                "upper": 0.8631557142
+              }
+            },
+            "down": {
+              "successes": 2,
+              "n": 4,
+              "rate": 0.5,
+              "wilson_95": {
+                "lower": 0.1500389892,
+                "upper": 0.8499610108
+              }
+            }
+          },
+          "by_signal_direction": {
+            "positive": {
+              "successes": 5,
+              "n": 7,
+              "rate": 0.7142857143,
+              "wilson_95": {
+                "lower": 0.3589344518,
+                "upper": 0.917781076
+              },
+              "meaning": "target_up_rate",
+              "mean_target_return_pct": -0.4467926541
+            },
+            "negative": {
+              "successes": 2,
               "n": 5,
               "rate": 0.4,
               "wilson_95": {
@@ -2400,47 +2522,49 @@
                 "upper": 0.7692757187
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": 0.3142516179
+              "mean_target_return_pct": 0.2799006855
             }
           },
-          "pearson_correlation": -0.1065253701,
-          "mean_target_return_pct": -0.0872421319,
-          "mean_signed_return_pct": -0.3289741457,
-          "majority_direction_baseline_accuracy": 0.6153846154,
-          "beta_shrunk_accuracy": 0.5238095238,
+          "pearson_correlation": 0.036452503,
+          "mean_target_return_pct": -0.1440037626,
+          "mean_signed_return_pct": -0.3772543339,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.55,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 9305.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -2170.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
-        },
-        "next_trading_day": {
-          "indicator": "institution_composite_3d_sum",
-          "target": "next_day_return",
-          "sample_n": 11,
-          "directional_sample_n": 11,
+        }
+      },
+      "institution_composite_5d_sum": {
+        "same_day": {
+          "indicator": "institution_composite_5d_sum",
+          "target": "same_day_return",
+          "sample_n": 10,
+          "directional_sample_n": 10,
           "direction_match": {
             "successes": 6,
-            "n": 11,
-            "rate": 0.5454545455,
+            "n": 10,
+            "rate": 0.6,
             "wilson_95": {
-              "lower": 0.2800915374,
-              "upper": 0.7872872838
+              "lower": 0.3126737697,
+              "upper": 0.8318196703
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 4,
-              "n": 7,
-              "rate": 0.5714285714,
+              "n": 6,
+              "rate": 0.6666666667,
               "wilson_95": {
-                "lower": 0.2504583645,
-                "upper": 0.8417801447
+                "lower": 0.2999933151,
+                "upper": 0.9032285889
               }
             },
             "down": {
@@ -2463,83 +2587,7 @@
                 "upper": 0.9032285889
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.8853357663
-            },
-            "negative": {
-              "successes": 2,
-              "n": 5,
-              "rate": 0.4,
-              "wilson_95": {
-                "lower": 0.1176207742,
-                "upper": 0.7692757187
-              },
-              "meaning": "target_down_rate",
-              "mean_target_return_pct": 0.2799006855
-            }
-          },
-          "pearson_correlation": -0.0488767929,
-          "mean_target_return_pct": -0.3556828337,
-          "mean_signed_return_pct": -0.6101380023,
-          "majority_direction_baseline_accuracy": 0.6363636364,
-          "beta_shrunk_accuracy": 0.5263157895,
-          "decision_gate": {
-            "status": "DIAGNOSTIC_ONLY",
-            "minimum_samples": 20,
-            "minimum_edge_over_majority_baseline": 0.03,
-            "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 9305.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
-          }
-        }
-      },
-      "institution_composite_5d_sum": {
-        "same_day": {
-          "indicator": "institution_composite_5d_sum",
-          "target": "same_day_return",
-          "sample_n": 9,
-          "directional_sample_n": 9,
-          "direction_match": {
-            "successes": 5,
-            "n": 9,
-            "rate": 0.5555555556,
-            "wilson_95": {
-              "lower": 0.2666512935,
-              "upper": 0.8112214789
-            }
-          },
-          "by_realized_direction": {
-            "up": {
-              "successes": 3,
-              "n": 5,
-              "rate": 0.6,
-              "wilson_95": {
-                "lower": 0.2307242813,
-                "upper": 0.8823792258
-              }
-            },
-            "down": {
-              "successes": 2,
-              "n": 4,
-              "rate": 0.5,
-              "wilson_95": {
-                "lower": 0.1500389892,
-                "upper": 0.8499610108
-              }
-            }
-          },
-          "by_signal_direction": {
-            "positive": {
-              "successes": 3,
-              "n": 5,
-              "rate": 0.6,
-              "wilson_95": {
-                "lower": 0.2307242813,
-                "upper": 0.8823792258
-              },
-              "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.3528985044
+              "mean_target_return_pct": -0.7633377505
             },
             "negative": {
               "successes": 2,
@@ -2553,18 +2601,18 @@
               "mean_target_return_pct": 0.1171755937
             }
           },
-          "pearson_correlation": -0.1872106358,
-          "mean_target_return_pct": -0.6995322386,
-          "mean_signed_return_pct": -0.8036883219,
-          "majority_direction_baseline_accuracy": 0.5555555556,
-          "beta_shrunk_accuracy": 0.5294117647,
+          "pearson_correlation": -0.1046272896,
+          "mean_target_return_pct": -0.4111324128,
+          "mean_signed_return_pct": -0.5048728877,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.5555555556,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 6768.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1865.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -2572,25 +2620,25 @@
         "next_trading_day": {
           "indicator": "institution_composite_5d_sum",
           "target": "next_day_return",
-          "sample_n": 8,
-          "directional_sample_n": 8,
+          "sample_n": 9,
+          "directional_sample_n": 9,
           "direction_match": {
-            "successes": 7,
-            "n": 8,
-            "rate": 0.875,
+            "successes": 8,
+            "n": 9,
+            "rate": 0.8888888889,
             "wilson_95": {
-              "lower": 0.5291118178,
-              "upper": 0.9775825085
+              "lower": 0.5650002944,
+              "upper": 0.9801091124
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 4,
-              "n": 5,
-              "rate": 0.8,
+              "successes": 5,
+              "n": 6,
+              "rate": 0.8333333333,
               "wilson_95": {
-                "lower": 0.3755346298,
-                "upper": 0.9637758914
+                "lower": 0.4364971778,
+                "upper": 0.9699466303
               }
             },
             "down": {
@@ -2605,15 +2653,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 4,
-              "n": 4,
+              "successes": 5,
+              "n": 5,
               "rate": 1.0,
               "wilson_95": {
-                "lower": 0.5101091635,
+                "lower": 0.5655175352,
                 "upper": 1.0
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 0.9181896296
+              "mean_target_return_pct": 1.1714449076
             },
             "negative": {
               "successes": 3,
@@ -2627,18 +2675,18 @@
               "mean_target_return_pct": -1.3997938001
             }
           },
-          "pearson_correlation": 0.5080724457,
-          "mean_target_return_pct": -0.2408020853,
-          "mean_signed_return_pct": 1.1589917149,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.6875,
+          "pearson_correlation": 0.5839061896,
+          "mean_target_return_pct": 0.0286721486,
+          "mean_signed_return_pct": 1.2729333043,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.7058823529,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 6768.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1865.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -2648,25 +2696,25 @@
         "same_day": {
           "indicator": "institution_composite_daily",
           "target": "same_day_return",
-          "sample_n": 17,
-          "directional_sample_n": 17,
+          "sample_n": 18,
+          "directional_sample_n": 18,
           "direction_match": {
             "successes": 6,
-            "n": 17,
-            "rate": 0.3529411765,
+            "n": 18,
+            "rate": 0.3333333333,
             "wilson_95": {
-              "lower": 0.173097204,
-              "upper": 0.5869963651
+              "lower": 0.1627877475,
+              "upper": 0.562505327
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 4,
-              "n": 10,
-              "rate": 0.4,
+              "n": 11,
+              "rate": 0.3636363636,
               "wilson_95": {
-                "lower": 0.1681803297,
-                "upper": 0.6873262303
+                "lower": 0.151664711,
+                "upper": 0.6461988255
               }
             },
             "down": {
@@ -2693,28 +2741,28 @@
             },
             "negative": {
               "successes": 2,
-              "n": 8,
-              "rate": 0.25,
+              "n": 9,
+              "rate": 0.2222222222,
               "wilson_95": {
-                "lower": 0.0714792128,
-                "upper": 0.5907245697
+                "lower": 0.0632251071,
+                "upper": 0.5474110309
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": 2.534610815
+              "mean_target_return_pct": 2.4957058377
             }
           },
-          "pearson_correlation": -0.1848979394,
-          "mean_target_return_pct": 0.715464945,
-          "mean_signed_return_pct": -1.6700511162,
-          "majority_direction_baseline_accuracy": 0.5882352941,
-          "beta_shrunk_accuracy": 0.4,
+          "pearson_correlation": -0.194316711,
+          "mean_target_return_pct": 0.7970761158,
+          "mean_signed_return_pct": -1.698629722,
+          "majority_direction_baseline_accuracy": 0.6111111111,
+          "beta_shrunk_accuracy": 0.3846153846,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -984.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -8027.5,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -2722,25 +2770,25 @@
         "next_trading_day": {
           "indicator": "institution_composite_daily",
           "target": "next_day_return",
-          "sample_n": 16,
-          "directional_sample_n": 16,
+          "sample_n": 17,
+          "directional_sample_n": 17,
           "direction_match": {
             "successes": 13,
-            "n": 16,
-            "rate": 0.8125,
+            "n": 17,
+            "rate": 0.7647058824,
             "wilson_95": {
-              "lower": 0.5699111904,
-              "upper": 0.9340840093
+              "lower": 0.5273820188,
+              "upper": 0.9044495568
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 8,
-              "n": 10,
-              "rate": 0.8,
+              "n": 11,
+              "rate": 0.7272727273,
               "wilson_95": {
-                "lower": 0.4901624715,
-                "upper": 0.9433178485
+                "lower": 0.4343546988,
+                "upper": 0.9025394071
               }
             },
             "down": {
@@ -2767,28 +2815,28 @@
             },
             "negative": {
               "successes": 5,
-              "n": 7,
-              "rate": 0.7142857143,
+              "n": 8,
+              "rate": 0.625,
               "wilson_95": {
-                "lower": 0.3589344518,
-                "upper": 0.917781076
+                "lower": 0.3057423946,
+                "upper": 0.8631557142
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -1.8850108404
+              "mean_target_return_pct": -1.3763262329
             }
           },
-          "pearson_correlation": 0.2436610574,
-          "mean_target_return_pct": 0.9761304274,
-          "mean_signed_return_pct": 2.6255149128,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.7083333333,
+          "pearson_correlation": 0.2350656243,
+          "mean_target_return_pct": 1.0472089917,
+          "mean_signed_return_pct": 2.3425748579,
+          "majority_direction_baseline_accuracy": 0.6470588235,
+          "beta_shrunk_accuracy": 0.68,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -984.5,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -8027.5,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -2798,25 +2846,25 @@
         "same_day": {
           "indicator": "institution_futures_3d_sum",
           "target": "same_day_return",
-          "sample_n": 44,
-          "directional_sample_n": 44,
+          "sample_n": 45,
+          "directional_sample_n": 45,
           "direction_match": {
             "successes": 25,
-            "n": 44,
-            "rate": 0.5681818182,
+            "n": 45,
+            "rate": 0.5555555556,
             "wilson_95": {
-              "lower": 0.4222414699,
-              "upper": 0.7031727659
+              "lower": 0.4117613449,
+              "upper": 0.6906106997
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 11,
-              "n": 24,
-              "rate": 0.4583333333,
+              "n": 25,
+              "rate": 0.44,
               "wilson_95": {
-                "lower": 0.2789133373,
-                "upper": 0.6492513464
+                "lower": 0.2666563888,
+                "upper": 0.6293266813
               }
             },
             "down": {
@@ -2843,54 +2891,54 @@
             },
             "negative": {
               "successes": 14,
-              "n": 27,
-              "rate": 0.5185185185,
+              "n": 28,
+              "rate": 0.5,
               "wilson_95": {
-                "lower": 0.3398561575,
-                "upper": 0.6925677302
+                "lower": 0.3263312746,
+                "upper": 0.6736687254
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -1.005028288
+              "mean_target_return_pct": -0.891117777
             }
           },
-          "pearson_correlation": 0.0970475536,
-          "mean_target_return_pct": -0.53563335,
-          "mean_signed_return_pct": 0.697810458,
-          "majority_direction_baseline_accuracy": 0.5454545455,
-          "beta_shrunk_accuracy": 0.5576923077,
+          "pearson_correlation": 0.0942717767,
+          "mean_target_return_pct": -0.4751866974,
+          "mean_signed_return_pct": 0.6337598696,
+          "majority_direction_baseline_accuracy": 0.5555555556,
+          "beta_shrunk_accuracy": 0.5471698113,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 7574.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -2503.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         },
         "next_trading_day": {
           "indicator": "institution_futures_3d_sum",
           "target": "next_day_return",
-          "sample_n": 41,
-          "directional_sample_n": 41,
+          "sample_n": 42,
+          "directional_sample_n": 42,
           "direction_match": {
-            "successes": 22,
-            "n": 41,
-            "rate": 0.5365853659,
+            "successes": 23,
+            "n": 42,
+            "rate": 0.5476190476,
             "wilson_95": {
-              "lower": 0.3874647127,
-              "upper": 0.6794376602
+              "lower": 0.3994911903,
+              "upper": 0.6877660677
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 9,
-              "n": 22,
-              "rate": 0.4090909091,
+              "successes": 10,
+              "n": 23,
+              "rate": 0.4347826087,
               "wilson_95": {
-                "lower": 0.232558162,
-                "upper": 0.6126518152
+                "lower": 0.2563463533,
+                "upper": 0.6318862491
               }
             },
             "down": {
@@ -2905,15 +2953,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 9,
-              "n": 15,
-              "rate": 0.6,
+              "successes": 10,
+              "n": 16,
+              "rate": 0.625,
               "wilson_95": {
-                "lower": 0.3574683012,
-                "upper": 0.8017550386
+                "lower": 0.3864104055,
+                "upper": 0.8151876744
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.1685820841
+              "mean_target_return_pct": -0.9590165777
             },
             "negative": {
               "successes": 13,
@@ -2927,20 +2975,20 @@
               "mean_target_return_pct": -0.5556860323
             }
           },
-          "pearson_correlation": -0.1829246241,
-          "mean_target_return_pct": -0.7799162952,
-          "mean_signed_return_pct": -0.0751437664,
-          "majority_direction_baseline_accuracy": 0.5365853659,
-          "beta_shrunk_accuracy": 0.5306122449,
+          "pearson_correlation": -0.1613778846,
+          "mean_target_return_pct": -0.7093357639,
+          "mean_signed_return_pct": -0.0213435334,
+          "majority_direction_baseline_accuracy": 0.5476190476,
+          "beta_shrunk_accuracy": 0.54,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 7574.0,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -2503.0,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         }
       },
@@ -2948,25 +2996,25 @@
         "same_day": {
           "indicator": "institution_futures_5d_sum",
           "target": "same_day_return",
-          "sample_n": 38,
-          "directional_sample_n": 38,
+          "sample_n": 39,
+          "directional_sample_n": 39,
           "direction_match": {
-            "successes": 20,
-            "n": 38,
-            "rate": 0.5263157895,
+            "successes": 21,
+            "n": 39,
+            "rate": 0.5384615385,
             "wilson_95": {
-              "lower": 0.3725897138,
-              "upper": 0.6752097668
+              "lower": 0.3856944827,
+              "upper": 0.6843311439
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 8,
-              "n": 19,
-              "rate": 0.4210526316,
+              "successes": 9,
+              "n": 20,
+              "rate": 0.45,
               "wilson_95": {
-                "lower": 0.2314189128,
-                "upper": 0.6372409647
+                "lower": 0.2581978583,
+                "upper": 0.6579146575
               }
             },
             "down": {
@@ -2981,15 +3029,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 8,
-              "n": 15,
-              "rate": 0.5333333333,
+              "successes": 9,
+              "n": 16,
+              "rate": 0.5625,
               "wilson_95": {
-                "lower": 0.3011698003,
-                "upper": 0.7519046463
+                "lower": 0.331785564,
+                "upper": 0.7690134759
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.9429444576
+              "mean_target_return_pct": -0.7474813028
             },
             "negative": {
               "successes": 12,
@@ -3003,18 +3051,18 @@
               "mean_target_return_pct": -1.1132609306
             }
           },
-          "pearson_correlation": 0.0930835448,
-          "mean_target_return_pct": -1.0460307439,
-          "mean_signed_return_pct": 0.3016009089,
-          "majority_direction_baseline_accuracy": 0.5,
-          "beta_shrunk_accuracy": 0.5217391304,
+          "pearson_correlation": 0.0989942534,
+          "mean_target_return_pct": -0.9631974935,
+          "mean_signed_return_pct": 0.3498795015,
+          "majority_direction_baseline_accuracy": 0.5128205128,
+          "beta_shrunk_accuracy": 0.5319148936,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 4873.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 402.0,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3022,25 +3070,25 @@
         "next_trading_day": {
           "indicator": "institution_futures_5d_sum",
           "target": "next_day_return",
-          "sample_n": 35,
-          "directional_sample_n": 35,
+          "sample_n": 36,
+          "directional_sample_n": 36,
           "direction_match": {
-            "successes": 20,
-            "n": 35,
-            "rate": 0.5714285714,
+            "successes": 21,
+            "n": 36,
+            "rate": 0.5833333333,
             "wilson_95": {
-              "lower": 0.4085741114,
-              "upper": 0.7201543182
+              "lower": 0.4220025157,
+              "upper": 0.7285943795
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 8,
-              "n": 18,
-              "rate": 0.4444444444,
+              "successes": 9,
+              "n": 19,
+              "rate": 0.4736842105,
               "wilson_95": {
-                "lower": 0.2455951813,
-                "upper": 0.6628358436
+                "lower": 0.2732980516,
+                "upper": 0.6829219075
               }
             },
             "down": {
@@ -3055,15 +3103,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 8,
-              "n": 13,
-              "rate": 0.6153846154,
+              "successes": 9,
+              "n": 14,
+              "rate": 0.6428571429,
               "wilson_95": {
-                "lower": 0.3552289151,
-                "upper": 0.822902922
+                "lower": 0.387644231,
+                "upper": 0.8365526825
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -1.1975864891
+              "mean_target_return_pct": -0.9560113099
             },
             "negative": {
               "successes": 12,
@@ -3077,18 +3125,18 @@
               "mean_target_return_pct": -0.7547905572
             }
           },
-          "pearson_correlation": -0.1929990819,
-          "mean_target_return_pct": -0.9192576176,
-          "mean_signed_return_pct": 0.02962194,
-          "majority_direction_baseline_accuracy": 0.5142857143,
-          "beta_shrunk_accuracy": 0.5581395349,
+          "pearson_correlation": -0.1717006791,
+          "mean_target_return_pct": -0.8330430722,
+          "mean_signed_return_pct": 0.08947872,
+          "majority_direction_baseline_accuracy": 0.5277777778,
+          "beta_shrunk_accuracy": 0.5681818182,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 4873.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 402.0,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3098,25 +3146,25 @@
         "same_day": {
           "indicator": "institution_futures_daily",
           "target": "same_day_return",
-          "sample_n": 48,
-          "directional_sample_n": 48,
+          "sample_n": 49,
+          "directional_sample_n": 49,
           "direction_match": {
             "successes": 33,
-            "n": 48,
-            "rate": 0.6875,
+            "n": 49,
+            "rate": 0.6734693878,
             "wilson_95": {
-              "lower": 0.5466692858,
-              "upper": 0.8005431655
+              "lower": 0.5337920531,
+              "upper": 0.78792503
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 18,
-              "n": 27,
-              "rate": 0.6666666667,
+              "n": 28,
+              "rate": 0.6428571429,
               "wilson_95": {
-                "lower": 0.4782476051,
-                "upper": 0.813567385
+                "lower": 0.4583030651,
+                "upper": 0.7929417049
               }
             },
             "down": {
@@ -3143,28 +3191,28 @@
             },
             "negative": {
               "successes": 15,
-              "n": 24,
-              "rate": 0.625,
+              "n": 25,
+              "rate": 0.6,
               "wilson_95": {
-                "lower": 0.4270996244,
-                "upper": 0.7884063244
+                "lower": 0.4073945736,
+                "upper": 0.7659669762
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": -2.8862224461
+              "mean_target_return_pct": -2.6833949075
             }
           },
-          "pearson_correlation": 0.4172776486,
-          "mean_target_return_pct": -0.3161925655,
-          "mean_signed_return_pct": 2.5700298806,
-          "majority_direction_baseline_accuracy": 0.5625,
-          "beta_shrunk_accuracy": 0.6607142857,
+          "pearson_correlation": 0.3870696753,
+          "mean_target_return_pct": -0.2651587168,
+          "mean_signed_return_pct": 2.472999352,
+          "majority_direction_baseline_accuracy": 0.5714285714,
+          "beta_shrunk_accuracy": 0.649122807,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -1211.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -7306.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -3172,25 +3220,25 @@
         "next_trading_day": {
           "indicator": "institution_futures_daily",
           "target": "next_day_return",
-          "sample_n": 48,
-          "directional_sample_n": 48,
+          "sample_n": 49,
+          "directional_sample_n": 49,
           "direction_match": {
             "successes": 21,
-            "n": 48,
-            "rate": 0.4375,
+            "n": 49,
+            "rate": 0.4285714286,
             "wilson_95": {
-              "lower": 0.3070126904,
-              "upper": 0.5772498258
+              "lower": 0.3002331908,
+              "upper": 0.5672950691
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 11,
-              "n": 27,
-              "rate": 0.4074074074,
+              "n": 28,
+              "rate": 0.3928571429,
               "wilson_95": {
-                "lower": 0.2451475707,
-                "upper": 0.5927329903
+                "lower": 0.2356568654,
+                "upper": 0.575909557
               }
             },
             "down": {
@@ -3217,28 +3265,28 @@
             },
             "negative": {
               "successes": 10,
-              "n": 26,
-              "rate": 0.3846153846,
+              "n": 27,
+              "rate": 0.3703703704,
               "wilson_95": {
-                "lower": 0.2242859444,
-                "upper": 0.5746514991
+                "lower": 0.2153251296,
+                "upper": 0.5577076559
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": 0.3257336942
+              "mean_target_return_pct": 0.3945756322
             }
           },
-          "pearson_correlation": -0.077689223,
-          "mean_target_return_pct": -0.3161925655,
-          "mean_signed_return_pct": -0.6690707342,
-          "majority_direction_baseline_accuracy": 0.5625,
-          "beta_shrunk_accuracy": 0.4464285714,
+          "pearson_correlation": -0.0797232929,
+          "mean_target_return_pct": -0.2651587168,
+          "mean_signed_return_pct": -0.6999971686,
+          "majority_direction_baseline_accuracy": 0.5714285714,
+          "beta_shrunk_accuracy": 0.4385964912,
           "decision_gate": {
             "status": "NO_ROBUST_EDGE",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": -1211.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -7306.0,
             "latest_signal": "DOWN",
             "current_direction_contribution": -0.0
           }
@@ -3248,25 +3296,25 @@
         "same_day": {
           "indicator": "institution_option_delta_3d_sum",
           "target": "same_day_return",
-          "sample_n": 13,
-          "directional_sample_n": 13,
+          "sample_n": 14,
+          "directional_sample_n": 14,
           "direction_match": {
-            "successes": 9,
-            "n": 13,
-            "rate": 0.6923076923,
+            "successes": 10,
+            "n": 14,
+            "rate": 0.7142857143,
             "wilson_95": {
-              "lower": 0.4236934318,
-              "upper": 0.8731929634
+              "lower": 0.4535091567,
+              "upper": 0.8827862136
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 5,
-              "n": 8,
-              "rate": 0.625,
+              "successes": 6,
+              "n": 9,
+              "rate": 0.6666666667,
               "wilson_95": {
-                "lower": 0.3057423946,
-                "upper": 0.8631557142
+                "lower": 0.3542021356,
+                "upper": 0.8794161816
               }
             },
             "down": {
@@ -3281,15 +3329,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 5,
-              "n": 6,
-              "rate": 0.8333333333,
+              "successes": 6,
+              "n": 7,
+              "rate": 0.8571428571,
               "wilson_95": {
-                "lower": 0.4364971778,
-                "upper": 0.9699466303
+                "lower": 0.4868721707,
+                "upper": 0.9743203757
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 0.0154152194
+              "mean_target_return_pct": 0.3252796194
             },
             "negative": {
               "successes": 4,
@@ -3303,18 +3351,18 @@
               "mean_target_return_pct": -0.1752341473
             }
           },
-          "pearson_correlation": -0.2091124872,
-          "mean_target_return_pct": -0.0872421319,
-          "mean_signed_return_pct": 0.1014715652,
-          "majority_direction_baseline_accuracy": 0.6153846154,
-          "beta_shrunk_accuracy": 0.619047619,
+          "pearson_correlation": -0.2056414195,
+          "mean_target_return_pct": 0.075022736,
+          "mean_signed_return_pct": 0.2502568834,
+          "majority_direction_baseline_accuracy": 0.6428571429,
+          "beta_shrunk_accuracy": 0.6363636364,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1731.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 332.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3322,25 +3370,25 @@
         "next_trading_day": {
           "indicator": "institution_option_delta_3d_sum",
           "target": "next_day_return",
-          "sample_n": 11,
-          "directional_sample_n": 11,
+          "sample_n": 12,
+          "directional_sample_n": 12,
           "direction_match": {
-            "successes": 5,
-            "n": 11,
-            "rate": 0.4545454545,
+            "successes": 6,
+            "n": 12,
+            "rate": 0.5,
             "wilson_95": {
-              "lower": 0.2127127162,
-              "upper": 0.7199084626
+              "lower": 0.2537815976,
+              "upper": 0.7462184024
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 3,
-              "n": 7,
-              "rate": 0.4285714286,
+              "successes": 4,
+              "n": 8,
+              "rate": 0.5,
               "wilson_95": {
-                "lower": 0.1582198553,
-                "upper": 0.7495416355
+                "lower": 0.2152160622,
+                "upper": 0.7847839378
               }
             },
             "down": {
@@ -3355,15 +3403,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 3,
-              "n": 5,
-              "rate": 0.6,
+              "successes": 4,
+              "n": 6,
+              "rate": 0.6666666667,
               "wilson_95": {
-                "lower": 0.2307242813,
-                "upper": 0.8823792258
+                "lower": 0.2999933151,
+                "upper": 0.9032285889
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.8026472588
+              "mean_target_return_pct": -0.3047950457
             },
             "negative": {
               "successes": 2,
@@ -3377,18 +3425,18 @@
               "mean_target_return_pct": 0.0167875206
             }
           },
-          "pearson_correlation": -0.0095481234,
-          "mean_target_return_pct": -0.3556828337,
-          "mean_signed_return_pct": -0.3739964925,
-          "majority_direction_baseline_accuracy": 0.6363636364,
-          "beta_shrunk_accuracy": 0.4736842105,
+          "pearson_correlation": 0.159395732,
+          "mean_target_return_pct": -0.1440037626,
+          "mean_signed_return_pct": -0.1607912832,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.5,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1731.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 332.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3398,24 +3446,24 @@
         "same_day": {
           "indicator": "institution_option_delta_5d_sum",
           "target": "same_day_return",
-          "sample_n": 9,
-          "directional_sample_n": 9,
+          "sample_n": 10,
+          "directional_sample_n": 10,
           "direction_match": {
-            "successes": 5,
-            "n": 9,
-            "rate": 0.5555555556,
+            "successes": 6,
+            "n": 10,
+            "rate": 0.6,
             "wilson_95": {
-              "lower": 0.2666512935,
-              "upper": 0.8112214789
+              "lower": 0.3126737697,
+              "upper": 0.8318196703
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 5,
-              "n": 5,
+              "successes": 6,
+              "n": 6,
               "rate": 1.0,
               "wilson_95": {
-                "lower": 0.5655175352,
+                "lower": 0.6096657121,
                 "upper": 1.0
               }
             },
@@ -3431,15 +3479,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 5,
-              "n": 9,
-              "rate": 0.5555555556,
+              "successes": 6,
+              "n": 10,
+              "rate": 0.6,
               "wilson_95": {
-                "lower": 0.2666512935,
-                "upper": 0.8112214789
+                "lower": 0.3126737697,
+                "upper": 0.8318196703
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.6995322386
+              "mean_target_return_pct": -0.4111324128
             },
             "negative": {
               "successes": 0,
@@ -3453,18 +3501,18 @@
               "mean_target_return_pct": null
             }
           },
-          "pearson_correlation": -0.103000488,
-          "mean_target_return_pct": -0.6995322386,
-          "mean_signed_return_pct": -0.6995322386,
-          "majority_direction_baseline_accuracy": 0.5555555556,
-          "beta_shrunk_accuracy": 0.5294117647,
+          "pearson_correlation": 0.0673319027,
+          "mean_target_return_pct": -0.4111324128,
+          "mean_signed_return_pct": -0.4111324128,
+          "majority_direction_baseline_accuracy": 0.6,
+          "beta_shrunk_accuracy": 0.5555555556,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1895.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1463.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3472,24 +3520,24 @@
         "next_trading_day": {
           "indicator": "institution_option_delta_5d_sum",
           "target": "next_day_return",
-          "sample_n": 8,
-          "directional_sample_n": 8,
+          "sample_n": 9,
+          "directional_sample_n": 9,
           "direction_match": {
-            "successes": 5,
-            "n": 8,
-            "rate": 0.625,
+            "successes": 6,
+            "n": 9,
+            "rate": 0.6666666667,
             "wilson_95": {
-              "lower": 0.3057423946,
-              "upper": 0.8631557142
+              "lower": 0.3542021356,
+              "upper": 0.8794161816
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 5,
-              "n": 5,
+              "successes": 6,
+              "n": 6,
               "rate": 1.0,
               "wilson_95": {
-                "lower": 0.5655175352,
+                "lower": 0.6096657121,
                 "upper": 1.0
               }
             },
@@ -3505,15 +3553,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 5,
-              "n": 8,
-              "rate": 0.625,
+              "successes": 6,
+              "n": 9,
+              "rate": 0.6666666667,
               "wilson_95": {
-                "lower": 0.3057423946,
-                "upper": 0.8631557142
+                "lower": 0.3542021356,
+                "upper": 0.8794161816
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": -0.2408020853
+              "mean_target_return_pct": 0.0286721486
             },
             "negative": {
               "successes": 0,
@@ -3527,18 +3575,18 @@
               "mean_target_return_pct": null
             }
           },
-          "pearson_correlation": -0.1969229981,
-          "mean_target_return_pct": -0.2408020853,
-          "mean_signed_return_pct": -0.2408020853,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.5625,
+          "pearson_correlation": 0.1751159217,
+          "mean_target_return_pct": 0.0286721486,
+          "mean_signed_return_pct": 0.0286721486,
+          "majority_direction_baseline_accuracy": 0.6666666667,
+          "beta_shrunk_accuracy": 0.5882352941,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 1895.0,
+            "latest_trade_date": "2026-09-04",
+            "latest_value": 1463.5,
             "latest_signal": "UP",
             "current_direction_contribution": 0.0
           }
@@ -3548,25 +3596,25 @@
         "same_day": {
           "indicator": "institution_option_delta_daily",
           "target": "same_day_return",
-          "sample_n": 17,
-          "directional_sample_n": 17,
+          "sample_n": 18,
+          "directional_sample_n": 18,
           "direction_match": {
             "successes": 6,
-            "n": 17,
-            "rate": 0.3529411765,
+            "n": 18,
+            "rate": 0.3333333333,
             "wilson_95": {
-              "lower": 0.173097204,
-              "upper": 0.5869963651
+              "lower": 0.1627877475,
+              "upper": 0.562505327
             }
           },
           "by_realized_direction": {
             "up": {
               "successes": 5,
-              "n": 10,
-              "rate": 0.5,
+              "n": 11,
+              "rate": 0.4545454545,
               "wilson_95": {
-                "lower": 0.2365930905,
-                "upper": 0.7634069095
+                "lower": 0.2127127162,
+                "upper": 0.7199084626
               }
             },
             "down": {
@@ -3593,54 +3641,54 @@
             },
             "negative": {
               "successes": 1,
-              "n": 6,
-              "rate": 0.1666666667,
+              "n": 7,
+              "rate": 0.1428571429,
               "wilson_95": {
-                "lower": 0.0300533697,
-                "upper": 0.5635028222
+                "lower": 0.0256796243,
+                "upper": 0.5131278293
               },
               "meaning": "target_down_rate",
-              "mean_target_return_pct": 5.0212219078
+              "mean_target_return_pct": 4.6159710666
             }
           },
-          "pearson_correlation": -0.520491583,
-          "mean_target_return_pct": 0.715464945,
-          "mean_signed_return_pct": -2.8289269899,
-          "majority_direction_baseline_accuracy": 0.5882352941,
-          "beta_shrunk_accuracy": 0.4,
+          "pearson_correlation": -0.5232296505,
+          "mean_target_return_pct": 0.7970761158,
+          "mean_signed_return_pct": -2.7931236027,
+          "majority_direction_baseline_accuracy": 0.6111111111,
+          "beta_shrunk_accuracy": 0.3846153846,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 226.5,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -721.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         },
         "next_trading_day": {
           "indicator": "institution_option_delta_daily",
           "target": "next_day_return",
-          "sample_n": 16,
-          "directional_sample_n": 16,
+          "sample_n": 17,
+          "directional_sample_n": 17,
           "direction_match": {
-            "successes": 14,
-            "n": 16,
-            "rate": 0.875,
+            "successes": 15,
+            "n": 17,
+            "rate": 0.8823529412,
             "wilson_95": {
-              "lower": 0.6397717273,
-              "upper": 0.9650225123
+              "lower": 0.6566364941,
+              "upper": 0.9671202262
             }
           },
           "by_realized_direction": {
             "up": {
-              "successes": 9,
-              "n": 10,
-              "rate": 0.9,
+              "successes": 10,
+              "n": 11,
+              "rate": 0.9090909091,
               "wilson_95": {
-                "lower": 0.5958499732,
-                "upper": 0.9821237869
+                "lower": 0.6226415635,
+                "upper": 0.9837678271
               }
             },
             "down": {
@@ -3655,15 +3703,15 @@
           },
           "by_signal_direction": {
             "positive": {
-              "successes": 9,
-              "n": 10,
-              "rate": 0.9,
+              "successes": 10,
+              "n": 11,
+              "rate": 0.9090909091,
               "wilson_95": {
-                "lower": 0.5958499732,
-                "upper": 0.9821237869
+                "lower": 0.6226415635,
+                "upper": 0.9837678271
               },
               "meaning": "target_up_rate",
-              "mean_target_return_pct": 2.9860146144
+              "mean_target_return_pct": 2.9131465603
             },
             "negative": {
               "successes": 5,
@@ -3677,20 +3725,20 @@
               "mean_target_return_pct": -2.3736765509
             }
           },
-          "pearson_correlation": 0.2543358441,
-          "mean_target_return_pct": 0.9761304274,
-          "mean_signed_return_pct": 2.7563878406,
-          "majority_direction_baseline_accuracy": 0.625,
-          "beta_shrunk_accuracy": 0.75,
+          "pearson_correlation": 0.2517182397,
+          "mean_target_return_pct": 1.0472089917,
+          "mean_signed_return_pct": 2.7227453805,
+          "majority_direction_baseline_accuracy": 0.6470588235,
+          "beta_shrunk_accuracy": 0.76,
           "decision_gate": {
             "status": "DIAGNOSTIC_ONLY",
             "minimum_samples": 20,
             "minimum_edge_over_majority_baseline": 0.03,
             "reliability_weight": 0.0,
-            "latest_trade_date": "2026-09-03",
-            "latest_value": 226.5,
-            "latest_signal": "UP",
-            "current_direction_contribution": 0.0
+            "latest_trade_date": "2026-09-04",
+            "latest_value": -721.5,
+            "latest_signal": "DOWN",
+            "current_direction_contribution": -0.0
           }
         }
       }
@@ -3702,34 +3750,34 @@
       "meaning": "Flow may only be a capped supporting input. Zero means do not infer the next regular close from participant buying/selling."
     },
     "latest_observation": {
-      "trade_date": "2026-09-03",
-      "close": 1030.0,
-      "foreign_futures_daily": 3077.0,
-      "institution_futures_daily": -1211.0,
-      "foreign_option_delta_daily": 931.5,
-      "foreign_composite_daily": 4008.5,
-      "institution_option_delta_daily": 226.5,
-      "institution_composite_daily": -984.5,
-      "previous_trade_date": "2026-09-02",
-      "foreign_composite_3d_sum": -9677.5,
-      "foreign_futures_3d_sum": -8267.0,
-      "foreign_option_delta_3d_sum": -1410.5,
-      "institution_composite_3d_sum": 9305.0,
-      "institution_futures_3d_sum": 7574.0,
-      "institution_option_delta_3d_sum": 1731.0,
-      "foreign_composite_5d_sum": -3366.0,
-      "foreign_futures_5d_sum": -4601.0,
-      "foreign_option_delta_5d_sum": 1235.0,
-      "institution_composite_5d_sum": 6768.0,
-      "institution_futures_5d_sum": 4873.0,
-      "institution_option_delta_5d_sum": 1895.0
+      "trade_date": "2026-09-04",
+      "close": 1052.5,
+      "foreign_futures_daily": 7793.0,
+      "institution_futures_daily": -7306.0,
+      "foreign_option_delta_daily": -634.5,
+      "foreign_composite_daily": 7158.5,
+      "institution_option_delta_daily": -721.5,
+      "institution_composite_daily": -8027.5,
+      "previous_trade_date": "2026-09-03",
+      "foreign_composite_3d_sum": 1165.0,
+      "foreign_futures_3d_sum": 2763.0,
+      "foreign_option_delta_3d_sum": -1598.0,
+      "institution_composite_3d_sum": -2170.5,
+      "institution_futures_3d_sum": -2503.0,
+      "institution_option_delta_3d_sum": 332.5,
+      "foreign_composite_5d_sum": -16.0,
+      "foreign_futures_5d_sum": 903.0,
+      "foreign_option_delta_5d_sum": -919.0,
+      "institution_composite_5d_sum": 1865.5,
+      "institution_futures_5d_sum": 402.0,
+      "institution_option_delta_5d_sum": 1463.5
     }
   },
   "direction_model": {
-    "stance": "판단 불가(중립-하방 경계)",
-    "bias": "중립-하방 경계",
-    "combined_backdrop_score": -41.38,
-    "forecast_confidence_score": 59,
+    "stance": "판단 불가(중립)",
+    "bias": "중립",
+    "combined_backdrop_score": 2.72,
+    "forecast_confidence_score": 46,
     "direction_threshold": 95,
     "direction_published": false,
     "flow_used_as_direction": false,
@@ -3745,44 +3793,44 @@
     "intraday_raw_bars_available": false,
     "execution_ready": false,
     "reason": "검증된 원시 분봉과 동시간 OI·거래량이 없어 일봉 구조 후보까지만 제공",
-    "walk_forward_evaluated_dates": 29
+    "walk_forward_evaluated_dates": 30
   },
   "price_context": {
     "status": "OK",
-    "as_of": "2026-09-03",
-    "current_price": 1030.0,
+    "as_of": "2026-09-04",
+    "current_price": 1052.5,
     "returns_pct": {
-      "one_observation": 0.083,
-      "three_observations": -3.545,
-      "five_observations": -5.492
+      "one_observation": 2.184,
+      "three_observations": -2.379,
+      "five_observations": -1.451
     },
-    "sma5": 1054.63,
-    "sma20": 1040.327,
-    "close_location_in_daily_range": 0.4959,
-    "open_interest": 148696.0,
-    "oi_change": -2804.0,
+    "sma5": 1051.53,
+    "sma20": 1049.572,
+    "close_location_in_daily_range": 0.4733,
+    "open_interest": 147443.0,
+    "oi_change": -1253.0,
     "price_oi_interpretation": "가격 상승·OI 감소: 숏커버 가능성(해석)",
     "components": {
-      "one_day_momentum": 0.66,
-      "three_day_momentum": -14.0,
-      "five_day_momentum": -18.0,
-      "close_vs_sma5": -14.0,
-      "daily_close_location": -0.08,
+      "one_day_momentum": 16.0,
+      "three_day_momentum": -11.1,
+      "five_day_momentum": -5.22,
+      "close_vs_sma5": 0.65,
+      "daily_close_location": -0.53,
       "price_oi_regime": 3.0
     },
-    "score": -51.73,
+    "score": 3.4,
     "meaning": "동시점 가격·OI 배경 점수이며 다음날 예측 확률이 아님"
   },
   "technical_next_day_edge": {
-    "sample_count": 39,
+    "sample_count": 40,
     "successes": 13,
-    "accuracy_pct": 33.33,
-    "majority_baseline_pct": 51.28,
+    "accuracy_pct": 32.5,
+    "majority_baseline_pct": 52.5,
     "wilson_95_pct": [
-      20.63,
-      49.02
+      20.08,
+      47.98
     ],
-    "shrunk_accuracy_pct": 36.17,
+    "shrunk_accuracy_pct": 35.42,
     "gate": "NO_ROBUST_EDGE",
     "rule": "price-only score at T versus the immediately following validated regular close",
     "neutral_predictions_excluded": true
@@ -3790,7 +3838,7 @@
   "structural_level_walk_forward": {
     "method": "walk-forward as-of nearest level versus immediately following validated regular daily bar",
     "minimum_history_rows": 20,
-    "evaluated_as_of_dates": 29,
+    "evaluated_as_of_dates": 30,
     "intraday_order_known": false,
     "groups": {
       "resistance:medium": {
@@ -3808,7 +3856,7 @@
         "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
       },
       "resistance:strong": {
-        "available": 1,
+        "available": 2,
         "touched": 1,
         "close_nonfailure": 1,
         "close_confirmed": 1,
@@ -3836,7 +3884,7 @@
         "validation_grade": "INSUFFICIENT_OR_UNSTABLE"
       },
       "support:medium": {
-        "available": 8,
+        "available": 9,
         "touched": 2,
         "close_nonfailure": 1,
         "close_confirmed": 1,
@@ -3906,36 +3954,38 @@
   },
   "chart_crosscheck": {
     "schema_version": "1.0",
-    "as_of": "2026-09-03",
-    "reviewed_on": "2026-09-03",
+    "as_of": "2026-09-04",
+    "reviewed_on": "2026-09-04",
     "status": "REVIEWED_FROM_ORIGINAL_HTS_SCREEN",
     "contract": "F202609",
-    "review_scope": "5605 일봉·10분봉, 0441 정규장 마감, 0471 변동성 원본 화면을 직접 대조",
+    "review_scope": "사용자 제공 5605 일봉 264봉·10분봉 600봉, 사용자 제공 0441 정규장 마감, 자동수집 0471 변동성 원본 화면을 직접 대조",
     "regular_session": {
-      "reference_price": 1030.0,
+      "reference_price": 1052.5,
       "reference_basis": "검증된 0441 정규장 종가 및 futures_f202609_daily.csv",
-      "high": 1051.65,
-      "low": 1008.7,
-      "change": 0.85,
-      "change_pct": 0.08,
-      "volume": 129109,
-      "open_interest": 148696,
-      "open_interest_change": -2804
+      "high": 1063.85,
+      "low": 1042.3,
+      "change": 22.5,
+      "change_pct": 2.18,
+      "volume": 103413,
+      "open_interest": 147443,
+      "open_interest_change": -1253
     },
     "overnight_session": null,
     "structural_crosscheck": {
-      "preferred_support_zone": "1002.05~1010.30",
-      "near_pivot_zone": "1019.60~1031.95",
-      "preferred_resistance_zone": "1031.95~1040.15",
-      "next_resistance_zone": "1051.65~1057.50",
-      "observation": "10분봉은 1008.70 급락 저점 뒤 1030.00까지 회복했지만 하향 이동평균 군집 아래에서 끝났다. 일봉은 장기 하락 뒤 1008 부근 매물대 하단에서 반등했으나 1031.95~1040.15 저항을 종가로 회복하지 못했다.",
-      "header_note": "5605 상단 1043.60 표시는 선택 봉 정보로 보이며 우측 최신값 1030.00 및 0441 정규장 종가와 다르므로 현재 기준가로 사용하지 않음",
-      "limitation": "화면 PNG만으로 각 봉의 원시 OHLCV와 동시간 OI 순서를 재계산할 수 없어 10분봉 종가 안착·재시험을 자동 검증한 실행 신호로 승격하지 않음"
+      "active_pivot_zone": "1051.70~1057.40",
+      "preferred_support_zone": "1031.95~1040.15",
+      "next_support_zone": "1019.60~1027.95",
+      "preferred_resistance_zone": "1058.70~1064.40",
+      "next_resistance_zone": "1088.55~1094.25",
+      "observation": "10분봉은 8월 28일 1,086.30에서 이어진 하락 추세선을 9월 4일 장중 상향 통과해 1,063.70까지 올랐지만 1,052.50으로 되밀렸다. 종가는 1,051.70~1,057.40 전환대 안이며, 일봉은 5일선·20일선을 소폭 회복했지만 당일 고가가 1,058.70~1,064.40 근접 저항에서 막혔다. 따라서 추세선 돌파 확정보다 전환대 안착 여부를 먼저 본다.",
+      "role_change": "9월 3일 저항이던 1,031.95~1,040.15를 9월 4일 종가가 회복했으므로 다음 재시험에서 방어하면 강한 지지로 역할 전환한다. 반대로 1,051.70 아래 확인 이탈 시 먼저 이 강지지 재시험을 본다.",
+      "header_note": "5605 10분봉 고가 표시는 1,063.70, 0441 검증 고가는 1,063.85로 0.15포인트 차이가 있어 정규장 수치는 0441을 우선한다.",
+      "limitation": "화면 PNG만으로 각 10분봉의 원시 OHLCV와 동시간 OI 순서를 재계산할 수 없어 종가 안착·재시험을 자동 검증한 실행 신호로 승격하지 않음"
     },
     "volatility_screen_0471": {
       "status": "VISUALLY_REVIEWED_NOT_STRUCTURED",
-      "observation": "화면 말단에서 풋평균 IV가 콜평균 IV보다 높아 하방 보호 수요가 상대적으로 우세하고, 단기·중기 실현변동성은 옵션 IV보다 높은 구간으로 보인다.",
-      "use": "변동성 확대 및 하방 꼬리 위험의 보조 경고만 사용; 지지·저항 가격 산정에는 사용하지 않음",
+      "observation": "화면 말단에서 풋평균 IV가 콜평균 IV보다 높아 하방 보호 수요가 상대적으로 우세하다. 단기 실현변동성은 급락했고 30·60일 HV는 여전히 높은 수준이라 변동성 정상화와 꼬리 위험이 함께 남아 있다.",
+      "use": "상방 반등에도 하방 꼬리 위험이 사라지지 않았다는 보조 경고로만 사용; 지지·저항 가격 산정에는 사용하지 않음",
       "limitation": "원본 화면에 날짜별 숫자 시계열이 없어 정확한 IV 수치와 변화율은 산출하지 않음"
     },
     "execution_ready": false,
@@ -3946,117 +3996,159 @@
     ],
     "source_files": [
       {
-        "role": "5605_daily_screen",
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\5605_KOSPI200최근월_일봉_20260903.png",
-        "sha256": "7028FFA89812E2B4BE8295E2DFEB9981A1C3535A46D0345291B70B7BF6F2130C"
+        "role": "5605_daily_screen_user_supplied",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\5605_KOSPI200최근월_일봉_20260904.png",
+        "sha256": "11597905DFFBD7A27D09C0A5E86542699B9F9C4823D77D53D42361D34DA9EF24"
       },
       {
-        "role": "5605_10minute_screen",
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\5605_KOSPI200최근월_10분봉_20260903.png",
-        "sha256": "D72E1919B9CDFC8B1E3D8324FD54EA6DD7B8F5DFCF6C664B47114852B71D7FAB"
+        "role": "5605_10minute_screen_user_supplied",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\5605_KOSPI200최근월_10분봉_20260904.png",
+        "sha256": "A6650792446995753DBDBA7C8BE0223805EADA0D44431CA77A826FA806D9C856"
       },
       {
-        "role": "0441_regular_close_screen",
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\0441_close_snapshot_20260903.png",
-        "sha256": "056DF19B9E69DBA0080AE1908A5C0C689EEFC34B4FDA04EEDD1859DF77EF339A"
+        "role": "0441_regular_close_screen_user_supplied",
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\0441_close_snapshot_20260904.png",
+        "sha256": "A65C2A0B9E9C3D7C90509B63ED1E732DEEA831F240AEF023D5CCB629FD693D48"
       },
       {
         "role": "0471_volatility_screen",
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\0471_KOSPI200_일별_60일_20260903.png",
-        "sha256": "9BC4C0ED415BCE2E11B7D410D09CD7E4172694588A8B3C8EEB9AF2ACC34FB26E"
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\0471_KOSPI200_일별_60일_20260904.png",
+        "sha256": "9DF08ED122CD1CB22BB4E018E8A6DCB20505C4C3A08D9C6CB708782BD398F049"
       }
     ],
-    "review_file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\chart_structure_review_20260903.json",
-    "review_file_sha256": "2908244B66C008C7782E25A9C0B286C53A83883477CF0C7905856FFF1C501FCF"
+    "review_file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\chart_structure_review_20260904.json",
+    "review_file_sha256": "9C5A603076A16CC1B04FBD84369CF98F50B16C3F2367658178E61698B9D49011"
   },
   "overall_assessment": {
-    "reference_price": 1030.0,
-    "reference_price_source": "검증된 2026-09-03 F202609 0441 정규장 종가",
-    "dashboard_conclusion": "1,030.00 기준 중립-하방 우세 · 1,031.95~1,040.15 회복 전 반등은 되돌림, 1,002.05~1,010.30 강지지 부근 추격 숏 금지",
-    "dashboard_conclusion_detail": "현재는 1,027.95~1,031.95 전환 경계입니다. 1,019.60 확인 이탈은 1차 경고이고 다음 강지지 1,010.30~1,002.05를 봅니다. 이 강지지까지 10분봉 2개 또는 15분봉 1개 종가로 이탈한 뒤 되돌림 회복에 실패하면 하락 가속으로 판정합니다. 반대로 1,040.15 위 안착·재시험 방어가 나오면 단기 하방 우세를 낮추고 1,051.65~1,057.50을 봅니다.",
+    "reference_price": 1052.5,
+    "reference_price_source": "검증된 2026-09-04 F202609 0441 정규장 종가",
+    "dashboard_conclusion": "1,052.50 기준 중립-상방 시도 · 1,064.40 안착 전 확정 아님 · 1,051.70 이탈 시 1,031.95~1,040.15 강지지 재시험",
+    "dashboard_conclusion_detail": "현재는 1,051.70~1,057.40 전환대 안입니다. 1,064.40 위에서 10분봉 2개 또는 15분봉 1개가 마감하고 재시험을 지키면 1,088.55~1,094.25를 봅니다. 반대로 1,051.70 아래 확인 이탈은 약한 경고이고, 1,031.95~1,040.15 강지지까지 내려갈 수 있습니다. 이 강지지를 확인 이탈하고 되돌림 회복에 실패할 때 하락 가속으로 판정합니다.",
     "support_break_policy": {
-      "basis": "일봉 ATR 구조, 5605 일봉·10분봉 파동, 0441 당일 고저·거래량·OI, 0787 누적수급과 0791 손익곡선을 수동 종합",
-      "confirmation": "첫 이탈 추격 금지 · 10분봉 2개 또는 15분봉 1개 종가 이탈과 되돌림 회복 실패를 함께 확인",
-      "strong": "1,002.05~1,010.30 강지지 이탈 확인 시 하락 가속 경보",
-      "medium": "1,019.60~1,027.95 이탈은 1차 경고이며 다음 강지지 도달 전까지 단독 가속 확정 금지",
-      "weak": "약한 구조선은 단독 진입 근거로 쓰지 않고 가격 반응·거래량·OI를 함께 확인",
-      "activity": "990~995는 거래 활동·충돌대이지 구조 지지가 아니므로 이탈만으로 방향을 확정하지 않음"
+      "basis": "일봉 ATR 구조, 사용자 제공 5605 일봉·10분봉 파동, 0441 당일 고저·거래량·OI, 0787 누적수급과 0791 손익곡선을 수동 종합",
+      "confirmation": "첫 이탈 추격 금지 · 10분봉 2개 또는 15분봉 1개 종가 이탈과 되돌림 실패를 함께 확인",
+      "strong": "1,031.95~1,040.15 강지지 확인 이탈 시 하락 가속 경보",
+      "medium": "1,019.60~1,027.95 이탈은 1,002.05~1,010.30 하단 방어대 재시험 신호",
+      "weak": "1,051.70~1,057.40 전환대 하단 이탈은 상방 시도 취소 경고이며 단독 하락 가속 확정은 아님",
+      "activity": "1,050~1,055 및 990~995는 수급 활동·충돌대이지 구조 지지 자체가 아님"
     },
     "acceleration_triggers": [
       {
-        "label": "1차 경고 · 1,019.60",
+        "label": "약한 경고 · 1,051.70",
         "tone": "down",
-        "kind": "structure_support",
-        "structure_strength": "중",
-        "classification": "중간 지지 확인 이탈",
-        "impact": "하방 경계 강화",
-        "condition": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 1,019.60을 회복하지 못할 때",
-        "target": "1,010.30~1,002.05 강한 방어 지지"
+        "kind": "pivot_support",
+        "structure_strength": "약",
+        "classification": "전환대 하단 확인 이탈",
+        "impact": "상방 시도 취소",
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,051.70 아래 마감하고 되돌림에서도 1,051.70 회복 실패",
+        "target": "1,040.15~1,031.95 강한 구조 지지"
       },
       {
-        "label": "하락 가속 · 1,002.05",
+        "label": "하락 가속 · 1,031.95",
         "tone": "down",
         "kind": "structure_support",
         "structure_strength": "강",
         "classification": "강한 구조 지지 확인 이탈",
         "impact": "하락 가속 경보",
-        "condition": "10분봉 2개 또는 15분봉 1개가 1,002.05 아래 마감하고 되돌림에서도 1,002.05를 회복하지 못할 때",
-        "target": "990~995 활동·충돌대 반응 확인 → 반응 없으면 952.70~958.60 약한 구조 지지"
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,031.95 아래 마감하고 되돌림에서도 1,031.95 회복 실패",
+        "target": "1,019.60~1,027.95 중간 지지"
       },
       {
-        "label": "하방 뷰 완화 · 1,040.15",
+        "label": "하락 연장 · 1,019.60",
+        "tone": "down",
+        "kind": "structure_support",
+        "structure_strength": "중",
+        "classification": "중간 구조 지지 확인 이탈",
+        "impact": "하단 방어대 재시험",
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 회복 실패",
+        "target": "1,002.05~1,010.30 강한 하단 방어대"
+      },
+      {
+        "label": "상방 확인 · 1,064.40",
         "tone": "cancel",
         "kind": "cancellation",
-        "structure_strength": "강",
-        "classification": "강한 근접 저항 돌파",
-        "impact": "단기 하방 우세 완화",
-        "condition": "10분봉 2개 또는 15분봉 1개가 1,040.15 위 마감하고 재시험에서 1,040.15를 지지로 방어할 때",
-        "target": "1,051.65~1,057.50 중간 저항"
+        "structure_strength": "중",
+        "classification": "근접 저항 돌파·안착",
+        "impact": "상방 시도 확인",
+        "condition": "10분봉 2개 또는 15분봉 1개가 1,064.40 위 마감하고 재시험에서 1,064.40을 지지로 방어",
+        "target": "1,088.55~1,094.25 중간 구조 저항"
       }
     ],
-    "headline": "9/3 정규장 종가는 1,030.00(+0.08%)이고 1,008.70까지 밀린 뒤 회복했습니다. 외국인은 선물 +3,077·옵션 델타 근사 +931.5, 기관은 선물 -1,211·옵션 델타 근사 +226.5였지만 OI가 2,804계약 줄어 신규 롱 확대보다 숏커버가 섞인 반등으로 봅니다. 최근 3·5일 외국인 선물은 각각 -8,267·-4,601이라 당일 매수만으로 다음날 상방을 확정하지 않습니다.",
-    "stance": "조건부 중립-하방 우세",
-    "bias": "하방 우세(강지지 위)",
-    "confidence": "중간 · 차트·누적수급은 하방, 1,008.70 반등·당일 외국인 매수·OI 감소는 반대",
-    "pivot": "1027.95~1031.95 전환 경계",
-    "intraday_hurdle": "1031.95 회복 후 1040.15 재시험",
-    "first_resistance": "1031.95~1040.15 강한 근접 저항",
-    "breakout_confirmation": "10분봉 2개 또는 15분봉 1개가 1,040.15 위 마감하고 재시험에서 상단을 지지",
-    "second_resistance_target": "1051.65~1057.50 중간 저항",
-    "downside_scenario": "1,019.60 확인 이탈 → 1,010.30~1,002.05 강지지; 1,002.05 확인 이탈·되돌림 실패 시 990~995 활동대, 반응 없으면 952.70~958.60",
-    "caution": "현재가는 정규장 종가이며 야간값은 포함하지 않았습니다. 가격이 강지지 위에 있고 9/3 반등에 OI 감소가 동반돼 1,030에서 추격 숏은 불리합니다. 5605 상단의 1,043.60 선택봉 표시는 최신값으로 사용하지 않았습니다.",
+    "headline": "9/4 정규장 종가는 1,052.50(+2.18%)이고 1,042.30~1,063.85 범위였습니다. 외국인은 선물 +7,793·옵션 델타 근사 -634.5, 기관은 선물 -7,306·옵션 델타 근사 -721.5였습니다. 종가는 5일선 1,051.53·20일선 1,049.57을 소폭 회복했지만 OI가 1,253계약 줄고 고가에서 되밀려 신규 롱 확정보다 숏커버가 섞인 전환 시도로 봅니다.",
+    "stance": "조건부 중립-상방 시도",
+    "bias": "상방 시도(전환대 안)",
+    "confidence": "중간 · 가격·외국인 단기수급은 상방, OI 감소·근접저항·옵션 하방스큐는 제약",
+    "pivot": "1051.70~1057.40 전환대",
+    "intraday_hurdle": "1058.70~1064.40 돌파 후 재시험",
+    "first_resistance": "1058.70~1064.40 중간 근접 저항",
+    "breakout_confirmation": "10분봉 2개 또는 15분봉 1개가 1,064.40 위 마감하고 재시험에서 상단을 지지",
+    "second_resistance_target": "1088.55~1094.25 중간 구조 저항",
+    "downside_scenario": "1,051.70 확인 이탈 → 1,040.15~1,031.95 강지지; 1,031.95 확인 이탈·되돌림 실패 시 1,019.60~1,027.95, 이어 1,002.05~1,010.30",
+    "caution": "현재가는 정규장 종가이며 야간값은 포함하지 않았습니다. 1,052.50은 전환대 안이라 첫 이탈을 추격하지 않습니다. 0791 손익곡선은 외국인 롱·기관 숏이지만 20일 순매매 프록시는 반대라 정확 보유계약으로 단정하지 않습니다.",
     "levels": [
       {
-        "label": "1차 중간 지지 · 당일 이탈 후 종가 회복",
+        "label": "현재 전환대 · 역할 미확정",
+        "range": "1051.70~1057.40",
+        "side": "current",
+        "level_type": "active_pivot",
+        "structure_strength": "중",
+        "sequence": 0,
+        "low": 1051.7,
+        "high": 1057.4,
+        "center": 1054.55,
+        "strength": "중",
+        "reason": "ATR 일봉 구조점수 46.6, 9/1·9/2의 상·하단 반응이 섞인 구간. 9/4 종가 1,052.50이 구간 안에 있어 아직 지지와 저항 중 역할이 확정되지 않음",
+        "confirmation": "10분봉 2개 또는 15분봉 1개가 구간 밖에서 마감하고 재시험까지 성공해야 이탈 방향을 채택",
+        "invalidation": "최초 이탈 뒤 반대편으로 다시 진입해 안착하면 최초 방향 해석 무효",
+        "color": "#0891b2"
+      },
+      {
+        "label": "1차 강한 구조 지지 · 역할 전환 확인대",
+        "range": "1031.95~1040.15",
+        "side": "support",
+        "level_type": "structural_support",
+        "structure_strength": "강",
+        "break_meaning": "1,031.95 확인 이탈 시 하락 가속 경보",
+        "sequence": 1,
+        "low": 1031.95,
+        "high": 1040.15,
+        "center": 1036.05,
+        "strength": "강",
+        "reason": "ATR 구조점수 72.0, 서로 다른 반응일 3일·확정 스윙 2회, 평균 거래량 1.144배·절대 OI 활동 3.251배. 9/4 저가 1,042.30과 종가 1,052.50이 모두 구간 위여서 전일 저항에서 지지로 역할 전환을 시도",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,031.95 아래 마감하고 되돌림에서도 1,031.95 회복 실패",
+        "color": "#1d4ed8"
+      },
+      {
+        "label": "2차 중간 구조 지지",
         "range": "1019.60~1027.95",
         "side": "support",
         "level_type": "structural_support",
         "structure_strength": "중",
-        "break_meaning": "1,019.60 확인 이탈 시 강지지 1,010.30~1,002.05 재시험",
-        "sequence": 1,
+        "break_meaning": "이탈 시 1,002.05~1,010.30 재시험",
+        "sequence": 2,
         "low": 1019.6,
         "high": 1027.95,
         "center": 1023.775,
         "strength": "중",
-        "reason": "ATR 일봉 구조점수 68.1, 서로 다른 반응일 4일·확정 스윙 1회. 9/3 장중에는 훼손됐지만 정규장 종가 1,030.00으로 다시 위에서 마감해 지지력은 중간으로 판정",
-        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 1,019.60 회복 실패",
+        "reason": "ATR 구조점수 68.0, 반응일 4일·확정 스윙 1회, 최근 반응 8/31. 첫 강지지 이탈 뒤의 다음 구조 방어선",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,019.60 아래 마감하고 되돌림에서도 회복 실패",
         "color": "#2563eb"
       },
       {
-        "label": "2차 강한 방어 지지 · 핵심 가속선",
+        "label": "3차 강한 하단 방어대",
         "range": "1002.05~1010.30",
         "side": "support",
         "level_type": "structural_support",
         "structure_strength": "강",
-        "break_meaning": "1,002.05 확인 이탈 시 하락 가속 경보",
-        "sequence": 2,
+        "break_meaning": "1,002.05 확인 이탈 시 하락 연장 경보",
+        "sequence": 3,
         "low": 1002.05,
         "high": 1010.3,
         "center": 1006.175,
         "strength": "강",
-        "reason": "자동 일봉 등급은 중이지만 8/25 저가 1,007.10, 5605 일봉 수평대 1,008.48, 9/3 정규장 저가 1,008.70과 0441 분봉 저점 1,010.30이 겹치고 9/3에 급락 뒤 1,030.00까지 반등해 수동 종합 강지지로 상향",
-        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,002.05 아래 마감하고 되돌림에서도 1,002.05 회복 실패",
-        "color": "#1d4ed8"
+        "reason": "자동 일봉 등급은 중이지만 8/25 저가 1,007.10, 9/3 저가 1,008.70, 0441 분봉 저점 1,010.30과 반복 반등이 겹쳐 수동 종합 방어대는 강으로 판정",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,002.05 아래 마감하고 되돌림에서도 회복 실패",
+        "color": "#1e40af"
       },
       {
         "label": "누적 수급 활동·충돌 관찰대 · 지지선 아님",
@@ -4064,120 +4156,104 @@
         "side": "conflict",
         "level_type": "activity_zone",
         "activity_strength": "강",
-        "sequence": 3,
+        "sequence": 4,
         "low": 990.0,
         "high": 995.0,
         "center": 992.5,
         "strength": "강(활동)",
-        "reason": "품질검사를 통과한 19거래일 중 해당 가격구간에서 외국인·기관 절대 순매매 합계 25,482계약으로 활동 1위. 외국인 -12,589·기관 +12,893의 충돌이며 실제 잔존 포지션이나 방어 성공을 뜻하지 않음",
+        "reason": "품질검사를 통과한 20거래일 중 외국인·기관 절대 순매매 합계 25,482계약으로 활동 1위. 외국인 -12,589·기관 +12,893의 충돌이며 방어 성공을 뜻하지 않음",
         "invalidation": "분봉 반응과 재시험 방어가 없으면 구조 지지로 사용하지 않음",
         "color": "#7c3aed"
       },
       {
-        "label": "3차 약한 일봉 구조 지지",
-        "range": "952.70~958.60",
-        "side": "support",
-        "level_type": "structural_support",
-        "structure_strength": "약",
-        "break_meaning": "단독 진입 근거가 아니라 하락 연장 시 반응 확인대",
-        "sequence": 4,
-        "low": 952.7,
-        "high": 958.6,
-        "center": 955.65,
-        "strength": "약",
-        "reason": "ATR 일봉 구조점수 36.0, 반응일 1일·확정 스윙 0회라 강한 지지로 볼 근거가 부족함",
-        "invalidation": "가격 반응 없이 15분봉이 952.70 아래 안착하면 지지 전제 폐기",
-        "color": "#60a5fa"
-      },
-      {
-        "label": "1차 강한 근접 저항 · 하방 뷰 완화선",
-        "range": "1031.95~1040.15",
-        "side": "resistance",
-        "level_type": "structural_resistance",
-        "structure_strength": "강",
-        "break_meaning": "1,040.15 안착 시 단기 하방 우세 완화",
-        "sequence": 1,
-        "low": 1031.95,
-        "high": 1040.15,
-        "center": 1036.05,
-        "strength": "강",
-        "reason": "ATR 일봉 구조점수 72.1, 반응일 3일·확정 스윙 2회, 평균 거래량 1.144배·절대 OI 활동 3.003배. 10분봉의 하향 이동평균 군집도 겹쳐 현재가 위 가장 강한 근접 저항",
-        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,040.15 위 마감하고 재시험에서 상단을 지지",
-        "color": "#dc2626"
-      },
-      {
-        "label": "2차 중간 저항 · 당일 고가 공급대",
-        "range": "1051.65~1057.50",
+        "label": "1차 중간 근접 저항 · 당일 고가 거부대",
+        "range": "1058.70~1064.40",
         "side": "resistance",
         "level_type": "structural_resistance",
         "structure_strength": "중",
-        "break_meaning": "1,057.50 안착 시 1,058.60~1,064.50 시험",
-        "sequence": 2,
-        "low": 1051.65,
-        "high": 1057.5,
-        "center": 1054.575,
+        "break_meaning": "1,064.40 안착 시 단기 상방 시도 확인",
+        "sequence": 1,
+        "low": 1058.7,
+        "high": 1064.4,
+        "center": 1061.55,
         "strength": "중",
-        "reason": "9/1·9/2 반응과 9/3 정규장 고가 1,051.65가 겹친 공급대. 자동 구조점수 46.5로 강등급은 아님",
-        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,057.50 위 마감하고 재시험 방어",
+        "reason": "자동 구조점수는 29.1로 약하지만 9/4 정규장 고가 1,063.85와 10분봉 고가 1,063.70에서 즉시 밀린 사실을 합쳐 당일 실행상 중간 저항으로 상향. 구조 자체의 장기 강도는 약함",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,064.40 위 마감하고 재시험에서 상단을 지지",
         "color": "#ef4444"
       },
       {
-        "label": "3차 약한 보조 저항",
-        "range": "1058.60~1064.50",
+        "label": "2차 중간 구조 저항",
+        "range": "1088.55~1094.25",
         "side": "resistance",
         "level_type": "structural_resistance",
-        "structure_strength": "약",
-        "break_meaning": "돌파 시 다음 상단 구조를 다시 계산",
+        "structure_strength": "중",
+        "break_meaning": "돌파 시 1,103.65~1,109.75 시험",
+        "sequence": 2,
+        "low": 1088.55,
+        "high": 1094.25,
+        "center": 1091.4,
+        "strength": "중",
+        "reason": "ATR 구조점수 51.8, 서로 다른 저항 반응일 3일. 1차 저항 돌파 뒤의 다음 공급 후보",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,094.25 위 마감하고 재시험 방어",
+        "color": "#dc2626"
+      },
+      {
+        "label": "3차 중간 구조 저항 · 스윙 겹침",
+        "range": "1103.65~1109.75",
+        "side": "resistance",
+        "level_type": "structural_resistance",
+        "structure_strength": "중",
+        "break_meaning": "돌파 시 상단 구조 재계산",
         "sequence": 3,
-        "low": 1058.6,
-        "high": 1064.5,
-        "center": 1061.55,
-        "strength": "약",
-        "reason": "자동 구조점수 29.3·확정 스윙 0회라 구조 자체는 약함. 다만 과거 동일등급 저항은 8회 터치 중 종가 비실패 6회로 반응 가능성만 보조 확인",
-        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,064.50 위 마감하고 재시험 방어",
-        "color": "#f87171"
+        "low": 1103.65,
+        "high": 1109.75,
+        "center": 1106.7,
+        "strength": "중",
+        "reason": "ATR 구조점수 62.4, 반응일 3일·확정 스윙 2회로 2차 저항보다 구조 증거는 많지만 현재가에서 멀어 즉시 진입선으로 사용하지 않음",
+        "invalidation": "10분봉 2개 또는 15분봉 1개가 1,109.75 위 마감하고 재시험 방어",
+        "color": "#b91c1c"
       }
     ],
     "scenarios": [
       {
         "tone": "neutral",
-        "condition": "1,019.60~1,040.15 사이",
-        "target": "중립-하방 우세 유지. 저항 재거부 또는 지지 확인 이탈 전에는 추격 진입보다 구간 대응"
+        "condition": "1,051.70~1,057.40 안",
+        "target": "전환대. 1,064.40 상단 확인 또는 1,051.70 하단 확인 전에는 추격 진입보다 재시험을 기다림"
       },
       {
         "tone": "up",
-        "condition": "1,002.05~1,010.30을 방어하고 1,019.60·1,027.95를 차례로 회복",
-        "target": "1,031.95~1,040.15 역추세 반등 시도"
+        "condition": "1,064.40 위 안착·재시험 방어",
+        "target": "상방 시도 확인 → 1,088.55~1,094.25"
       },
       {
         "tone": "down",
-        "condition": "1,002.05 아래 확인 마감 후 되돌림 회복 실패",
-        "target": "990~995 활동대 반응 확인, 반응 없으면 952.70~958.60"
+        "condition": "1,051.70 아래 확인 마감 후 되돌림 회복 실패",
+        "target": "1,040.15~1,031.95 강지지 재시험"
       },
       {
-        "tone": "up",
-        "condition": "1,040.15 위 안착·재시험 방어",
-        "target": "단기 하방 우세 완화 → 1,051.65~1,057.50, 이후 1,058.60~1,064.50"
+        "tone": "down",
+        "condition": "1,031.95 아래 확인 마감 후 되돌림 회복 실패",
+        "target": "하락 가속 → 1,019.60~1,027.95, 이어 1,002.05~1,010.30"
       }
     ],
     "evidence": [
-      "가격: 1일 +0.08%, 최근 3관측 -3.55%, 5관측 -5.49%, 종가 1,030.00은 SMA5 1,054.63·SMA20 1,040.33 아래",
-      "OI: 가격 소폭 상승과 OI -2,804로 숏커버 가능성; 신규 롱 확대 확정 아님",
-      "수급: 9/3 외국인 +3,077·기관 -1,211이나 최근 3일 외국인 -8,267·기관 +7,574, 최근 5일 외국인 -4,601·기관 +4,873",
-      "0791: 외국인 LONG·기관 구성 합성 SHORT 우세. 품질검사를 통과한 19거래일 게시 프록시 외국인 -14,478·기관 +13,416과 충돌한다. 제외 전 25개 원장 기록값 -17,111·+21,126도 실제 잔존 계약수로 해석 금지",
-      "다음날 검증: 외국인 당일 선물 방향 26/48(54.17%), 기관 21/48(43.75%)로 NO_ROBUST_EDGE; 당일 매수·매도를 다음날에 기계적으로 연장하지 않음",
-      "기관 옵션 델타 근사의 다음날 진단값은 14/16(87.5%)지만 표본 16·절대델타 0.5 근사라 보조 근거만 사용",
-      "0471: 풋평균 IV가 콜평균 IV보다 높은 하방 스큐가 보여 하방 꼬리 위험을 별도 경고"
+      "가격: 1일 +2.18%, 최근 3관측 -2.38%, 5관측 -1.45%, 종가 1,052.50은 SMA5 1,051.53·SMA20 1,049.57을 소폭 상회",
+      "OI: 가격 상승과 OI -1,253로 숏커버 가능성; 신규 롱 확대 확정 아님",
+      "수급: 9/4 외국인 +7,793·기관 -7,306, 최근 3일 외국인 +2,763·기관 -2,503, 최근 5일 외국인 +903·기관 +402",
+      "0791: 외국인 LONG·기관 구성 합성 SHORT 우세. 품질검사 통과 20거래일 순매매 프록시 외국인 -6,685·기관 +6,110과 충돌",
+      "다음날 검증: 외국인 당일 선물 방향 27/49(55.10%), 기관 21/49(42.86%)로 강건한 우위 없음; 당일 매수·매도를 다음날에 기계적으로 연장하지 않음",
+      "0471: 풋평균 IV가 콜평균 IV보다 높은 하방 스큐가 남아 상방 반등 중 하방 꼬리 위험을 별도 경고",
+      "차트: 10분봉 하락 추세선을 장중 상향 통과했지만 1,063.70~1,063.85에서 밀려 1,051.70~1,057.40 전환대 안에서 마감"
     ]
   },
   "hts_0791_position_inference": {
-    "as_of": "2026-09-03",
+    "as_of": "2026-09-04",
     "mode": "원본 손익곡선 수동 판독",
     "scope": "F202609 투자자별 누적 손익곡선",
     "reference_range": "800~1600 전 구간(100포인트씩 8개 화면)",
     "foreign": {
       "direction": "LONG",
-      "curve_basis": "800~1600의 8개 화면에서 선물·옵션 합성 손익곡선이 일관되게 우상향해 가격 상승 시 손익이 개선되는 롱 노출로 판독",
+      "curve_basis": "800~1600의 8개 화면에서 선물·옵션 합성 손익곡선이 가격 상승 방향으로 개선되는 우상향이라 롱 노출로 판독",
       "contracts": null,
       "average_price": null,
       "components": [
@@ -4189,7 +4265,7 @@
     },
     "institution": {
       "direction": "SHORT",
-      "curve_basis": "기관계 통합 곡선은 없지만 금융투자·투신·기타금융·연기금등의 우하향 곡선과 표시 손익 규모가 보험·은행의 우상향보다 우세해 기관 구성 합성은 숏 우세로 판독",
+      "curve_basis": "금융투자·투신·기타금융·연기금등의 우하향 곡선과 표시 손익 규모가 보험·은행의 우상향보다 우세해 기관 구성 합성은 숏 우세로 판독",
       "contracts": null,
       "average_price": null,
       "components": [
@@ -4219,9 +4295,9 @@
         }
       ]
     },
-    "recent_flow_alignment": "9/3 당일은 외국인 선물 +3,077·기관 -1,211로 0791 노출 방향과 맞지만, 최근 3일은 외국인 -8,267·기관 +7,574, 최근 5일은 외국인 -4,601·기관 +4,873으로 반대다. 하루 수급만 다음날 방향으로 연장하지 않는다.",
-    "flow_proxy_comparison": "게시용 품질검사를 통과한 2026-07-30~2026-09-03의 19거래일 순매매 프록시는 외국인 -14,478·기관 +13,416계약이다. 제외 전 F202609 원장 25개 기록의 마지막 누적값은 외국인 -17,111·기관 +21,126이지만 비거래일·OCR 브리지 불일치 기록이 섞여 현재 게시 계산에는 쓰지 않았다. 두 값 모두 0791 정적 손익곡선과 반대이며 실제 잔존 포지션 계약수·평균단가가 아니다.",
-    "limitation": "0791에서는 손익곡선의 기울기 방향만 판독했다. 기관계는 6개 구성주체의 직접 합계가 아니라 표시 방향과 규모의 수동 종합이며, 정확 계약수·평균단가·신규·청산 구분은 확인할 수 없다."
+    "recent_flow_alignment": "9/4 당일 선물은 외국인 +7,793·기관 -7,306, 최근 3일은 외국인 +2,763·기관 -2,503으로 0791 노출 방향과 일치한다. 최근 5일은 외국인 +903이나 기관 +402로 기관 쪽은 충돌하며, 옵션 델타 근사는 당일 양쪽 모두 음수다.",
+    "flow_proxy_comparison": "게시용 품질검사를 통과한 2026-07-30~2026-09-04의 20거래일 순매매 프록시는 외국인 -6,685·기관 +6,110계약으로 0791 정적 손익곡선과 반대다. 제외 전 F202609 원장 26개 기록의 마지막 값도 외국인 -9,318·기관 +13,820이다. 둘 다 실제 잔존 계약수·평균단가가 아니며 최근 방향전환 여부를 확정하지 못한다.",
+    "limitation": "0791에서는 손익곡선의 기울기 방향만 판독했다. 기관계는 6개 구성주체의 직접 계약 합계가 아니라 표시 방향과 규모의 수동 종합이며 정확 계약수·평균단가·신규·청산 구분은 확인할 수 없다."
   },
   "foreign_image": "foreign_supply_zone.png",
   "institution_image": "institution_supply_zone.png",
@@ -4229,38 +4305,38 @@
   "candlestick_image": "kospi200_futures_daily_supply_zones.png",
   "position_profile_image": "f202609_candlestick_position_profile.png",
   "source_note": "KRX 공식 seed와 검증 0787 수급을 날짜별 우선순위로 연결한 조건부 누적이며 신규·청산을 완전히 구분할 수 없습니다. 공개된 실제 보유량이 아니라 검증된 투자자별 순매매를 가격대별로 재집계한 참고용 추정치입니다. 5포인트 구간은 참여자 누적수급 활동 참고표로만 남기고, 지지·저항은 동일 월물 일봉 가격구조의 ATR 가변폭 후보로 별도 산출합니다. 외국인·기관 수급은 다음날 적중력 검증 gate를 통과할 때만 제한적으로 방향에 반영합니다.",
-  "machine_generated_at": "2026-09-03 17:18:31+0900",
-  "display_reference_price": 1030.0,
-  "display_reference_basis": "2026-09-03 키움 0441 검증 정규장 종가",
+  "machine_generated_at": "2026-09-04 17:16:51+0900",
+  "display_reference_price": 1052.5,
+  "display_reference_basis": "2026-09-04 키움 0441 검증 정규장 종가",
   "manual_ai_review": {
-    "reviewed_at": "2026-09-03T17:36:45+09:00",
+    "reviewed_at": "2026-09-04T17:20:53+09:00",
     "reviewer": "Codex",
-    "scope": "2026-09-03 F202609 정규장 EOD + 5605 일봉·10분봉 + 0471 + 0787 + 0791 56개 원본 곡선",
+    "scope": "2026-09-04 F202609 정규장 EOD + 사용자 제공 5605 일봉 264봉·10분봉 600봉 + 0441 + 0471 + 0787 + 0791 56개 원본 곡선",
     "facts": {
-      "regular_close": 1030.0,
-      "regular_change": 0.85,
-      "regular_change_pct": 0.083,
-      "regular_high": 1051.65,
-      "regular_low": 1008.7,
-      "regular_volume": 129109,
-      "regular_open_interest": 148696,
-      "regular_open_interest_change": -2804,
-      "foreign_daily_futures": 3077.0,
-      "institution_daily_futures": -1211.0,
-      "foreign_daily_option_delta_approx": 931.5,
-      "institution_daily_option_delta_approx": 226.5,
-      "foreign_three_day_futures": -8267.0,
-      "institution_three_day_futures": 7574.0,
-      "foreign_five_day_futures": -4601.0,
-      "institution_five_day_futures": 4873.0,
-      "validated_publish_foreign_net_trade_proxy": -14478.0,
-      "validated_publish_institution_net_trade_proxy": 13416.0,
-      "validated_publish_trading_days": 19,
-      "raw_ledger_foreign_before_quality_exclusions": -17111.0,
-      "raw_ledger_institution_before_quality_exclusions": 21126.0,
-      "raw_ledger_observations_each_before_quality_exclusions": 25
+      "regular_close": 1052.5,
+      "regular_change": 22.5,
+      "regular_change_pct": 2.184,
+      "regular_high": 1063.85,
+      "regular_low": 1042.3,
+      "regular_volume": 103413,
+      "regular_open_interest": 147443,
+      "regular_open_interest_change": -1253,
+      "foreign_daily_futures": 7793.0,
+      "institution_daily_futures": -7306.0,
+      "foreign_daily_option_delta_approx": -634.5,
+      "institution_daily_option_delta_approx": -721.5,
+      "foreign_three_day_futures": 2763.0,
+      "institution_three_day_futures": -2503.0,
+      "foreign_five_day_futures": 903.0,
+      "institution_five_day_futures": 402.0,
+      "validated_publish_foreign_net_trade_proxy": -6685.0,
+      "validated_publish_institution_net_trade_proxy": 6110.0,
+      "validated_publish_trading_days": 20,
+      "raw_ledger_foreign_before_quality_exclusions": -9318.0,
+      "raw_ledger_institution_before_quality_exclusions": 13820.0,
+      "raw_ledger_observations_each_before_quality_exclusions": 26
     },
-    "interpretation": "정규장 1,030.00 기준 우선 뷰는 중립-하방 우세다. 종가는 5일선·20일선 아래이고 최근 3·5일 외국인 선물 누적은 순매도이며, 1차 강저항 1,031.95~1,040.15도 회복하지 못했다. 반면 1,002.05~1,010.30에서 큰 아래꼬리 반등이 나왔고 가격 상승과 OI 감소는 숏커버 성격이라 1,030에서 추격 숏보다 저항 재거부 또는 강지지 확인 이탈을 기다린다.",
+    "interpretation": "정규장 1,052.50 기준 우선 뷰는 중립-상방 시도다. 종가는 5일선·20일선을 소폭 회복했고 10분봉 하락 추세선을 장중 상향 돌파했으며 외국인 선물 당일·3일·5일 누적이 양수다. 다만 종가가 1,051.70~1,057.40 전환대 안이고 1,063.85에서 밀렸으며 가격 상승과 OI 감소는 숏커버가 섞인 반등이다. 따라서 1,064.40 안착 전 추격 롱도, 1,031.95 강지지 확인 이탈 전 추격 숏도 피한다.",
     "unknowns": [
       "0791 정확 계약수와 평균단가",
       "0787 당일 순매매의 신규 진입·청산 구분",
@@ -4268,9 +4344,10 @@
       "정규장 종료 뒤 야간선물 확정 값"
     ],
     "source_audit": {
-      "eod_manifest": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\eod_manifest_20260903.json",
-      "eod_manifest_sha256": "9E4DB592982B390FABC22ACEEE68EAC8BE0D54C06E953F035EC26A857980C869",
-      "chart_review_file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260903\\chart_structure_review_20260903.json",
+      "eod_manifest": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\eod_manifest_20260904.json",
+      "eod_manifest_sha256": "C005F2F480524966AA9FB5E6B05B3271DFF89A7F6AC88EBCAF54820BBAE96F9A",
+      "chart_review_file": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260904\\chart_structure_review_20260904.json",
+      "chart_review_sha256": "9C5A603076A16CC1B04FBD84369CF98F50B16C3F2367658178E61698B9D49011",
       "0791_source_images_checked": 56
     }
   }
