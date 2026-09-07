@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "20260904",
-  "trade_date": "20260904",
+  "as_of": "20260907",
+  "trade_date": "20260907",
   "source_generated_at": {
-    "monthly": "2026-09-05T13:17:10+09:00",
-    "staged_weekly": "2026-09-05T13:17:15.783918+09:00"
+    "monthly": "2026-09-07T20:03:23+09:00",
+    "staged_weekly": "2026-09-07T20:03:26.68227+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 10% 유지",
     "state": "방어 현금 10% 유지 · 월간 재진입 대기",
-    "reason": "20260904 WISE 확정 기준 월간·단계형 모두 현금 10.0%를 유지합니다. 월간 신호는 20260831 기준 MA10 단계형 10%를 적용해 현재도 동일 구간입니다.",
+    "reason": "20260907 WISE 확정 기준 월간·단계형 모두 현금 10.0%를 유지합니다. 월간 신호는 20260831 기준 MA10 단계형 10%를 적용 중이며, 20260904 주간 모델은 현금 0%로 낮아졌지만 월간 재진입 전이라 기존 방어비중을 유지합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -42,10 +42,10 @@
     "target_risky_pct": 90.0,
     "action": "HOLD",
     "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY",
-    "signal_date": "2026-08-28",
-    "effective_date": "2026-09-01",
-    "weekly_model_cash_pct": 25.0,
-    "previous_weekly_model_cash_pct": 0.0,
+    "signal_date": "2026-09-04",
+    "effective_date": "2026-09-07",
+    "weekly_model_cash_pct": 0.0,
+    "previous_weekly_model_cash_pct": 25.0,
     "accepted_rule": "NONE",
     "role": "조기 방어용 단계형 보조 기준"
   },
@@ -222,6 +222,19 @@
       "applied_risky_pct": 90.0,
       "action": "HOLD",
       "action_label": "현금 10% 유지"
+    },
+    {
+      "as_of": "2026-09-07",
+      "daily_model_cash_pct": 25.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 10.0,
+      "monthly_raw_model_cash_pct": 50.0,
+      "monthly_sizing_rule": "ABOVE_MA10_STARTER10",
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지"
     }
   ],
   "rule_steps": [
@@ -278,14 +291,14 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-09-04",
-    "workbook_rows": 2619,
+    "workbook_last_date": "2026-09-07",
+    "workbook_rows": 2620,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "ca5c3ffe9d2df47c9a7262eb236de6f0a81dbb1a9877fb78a4b83bbc1e06385c",
+    "workbook_sha256": "39ef8ee86b9d2fd4e692045152409d25f095e976db49b007d45a1f959dd6c5c0",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363"
   },
