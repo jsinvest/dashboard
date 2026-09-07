@@ -1,5 +1,5 @@
 /* Optional cash-index view; the legacy futures renderer remains unchanged. */
-function renderCashIndexReview(data) {
+function renderCashIndexReview(data, targetPanel = null) {
   const required = ['KOSPI', 'NASDAQ', 'SOX', 'NIKKEI', 'DOW'];
   const tfs = ['monthly', 'weekly', 'daily', 'intraday_10m'];
   if (data.schema_version !== 'cash-index-review-v1' || !data.review ||
@@ -8,7 +8,8 @@ function renderCashIndexReview(data) {
       !Array.isArray(data.review.levels) || !data.data_validation?.ready_for_editorial_review) {
     throw new Error('현물 분석 필수 형식 또는 검증 결과 누락');
   }
-  const panel = document.querySelector('[data-tab-panel="supply"]');
+  const panel = targetPanel || document.querySelector('[data-tab-panel="supply"]');
+  const embedded = Boolean(targetPanel);
   const esc = value => escapeHtml(String(value ?? ''));
   const number = value => Number(value).toLocaleString('ko-KR', {maximumFractionDigits: 2, minimumFractionDigits: 2});
   const signed = value => (Number(value) > 0 ? '+' : '') + Number(value).toLocaleString('ko-KR');
@@ -43,9 +44,9 @@ function renderCashIndexReview(data) {
   }).join('');
   const flow = data.derivatives_evidence.all_expiry_flow;
   panel.innerHTML = `<div class="cash-review">
-    <div class="section-title">현물 다중 시간대 분석 · 선옵 누적 수급은 보조 근거</div>
-    <div class="report-meta" id="supplyMeta">분석 기준일 ${esc(data.as_of)} · 코스피·니케이 9/7 / 미국 9/4 · 선물 차트 분석 아님</div>
-    <section class="chart-card cash-conclusion" id="supplyOverallAssessment"><h2>${esc(review.headline)}</h2><p>${esc(review.summary)}</p><p>${esc(review.cross_market)}</p></section>
+    <div class="section-title">${embedded ? '지수 다중 시간대 · 선물 방향의 보조 확인' : '현물 다중 시간대 분석 · 선옵 누적 수급은 보조 근거'}</div>
+    <div class="report-meta" id="${embedded ? 'indexContextMeta' : 'supplyMeta'}">분석 기준일 ${esc(data.as_of)} · 코스피·니케이 9/7 / 미국 9/4 · 지수 포인트를 선물 가격으로 환산하지 않음</div>
+    <section class="chart-card cash-conclusion" id="${embedded ? 'indexContextAssessment' : 'supplyOverallAssessment'}"><h2>${esc(review.headline)}</h2><p>${esc(review.summary)}</p><p>${esc(review.cross_market)}</p></section>
     <section class="chart-card cash-card"><h3>다섯 지수 비교 · 각 지수의 포인트를 따로 사용</h3><div class="cash-table-wrap"><table class="cash-table"><thead><tr><th>현물 지수 · 기준일</th><th>종가</th><th>종합 판단</th><th>1 / 3 / 5 / 20거래일 변화</th></tr></thead><tbody>${rows}</tbody></table></div></section>
     <section class="chart-card cash-card"><h3>코스피 현물 · 지지 강도와 뷰 전환</h3><p class="cash-note">파랑은 지지, 빨강은 저항입니다. 5·10포인트 간격이 아니라 실제 고저점과 이평을 근거로 선택했어요. 현재 코스피 6,995.39와 과거 선물 1,0xx 가격은 섞지 않습니다.</p>
       <a href="${asset(data.primary_chart)}" target="_blank" rel="noopener"><img class="cash-chart" src="${asset(data.primary_chart)}" alt="코스피 현물 일봉 지지 저항과 유지 이탈 조건" /></a>

@@ -473,8 +473,9 @@
   @media(max-width:700px){.signal-filter-row{flex-direction:column}.signal-filter-row select{min-width:0}.signal-headline{align-items:flex-start;flex-direction:column}}
 
 </style>
-<link rel="stylesheet" href="supply-zone/cash-review.css?v=20260907a">
-<script src="scripts/cash-index-review.js?v=20260907a"></script>
+<link rel="stylesheet" href="supply-zone/cash-review.css?v=20260908b">
+<script src="scripts/cash-index-review.js?v=20260908b"></script>
+<script src="scripts/futures-index-context.js?v=20260908b"></script>
 </head>
 <body>
 <div id="dashboardLock" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
@@ -4146,7 +4147,7 @@ function render0791PositionInference(inference){
   if(!inference)return '';
   return `<div class="chart-card supply-0791-panel">
     <div class="supply-0791-head"><div><strong>키움 0791 누적 손익곡선 · 현재 포지션 방향</strong><small>${escapeHtml(inference.scope||'')} · ${escapeHtml(inference.reference_range||'')} 구간 · 곡선 기울기 기준</small></div><span class="card-tag tag-kr">${escapeHtml(inference.as_of||'')} · ${escapeHtml(inference.mode||'')}</span></div>
-    <div class="supply-0791-grid">${supply0791DirectionCard('외국인',inference.foreign)}${supply0791DirectionCard('기관계 합성 추론',inference.institution)}</div>
+    <div class="supply-0791-grid">${supply0791DirectionCard('외국인',inference.foreign)}${supply0791DirectionCard(escapeHtml(inference.institution_label||'기관계 합성 추론'),inference.institution)}</div>
     <div class="supply-0791-compare"><b>최근 수급과의 정렬</b> · ${escapeHtml(inference.recent_flow_alignment||'확인 불가')}<br><b>검증 관측 프록시와 구분</b> · ${escapeHtml(inference.flow_proxy_comparison||'')}</div>
     <div class="supply-0791-note">${escapeHtml(inference.limitation||'')}</div>
   </div>`;
@@ -4229,10 +4230,10 @@ function supplyMapCalloutCopy(level,side){
   const rule=activity
     ?`관찰: ${level?.invalidation||'가격 반응 확인 불가'}`
     :side==='support'
-    ?`무효: ${level?.invalidation||'이탈 기준 확인 불가'}`
-    :`돌파: ${level?.invalidation||'돌파 기준 확인 불가'}`;
+    ?`무효: ${level?.map_rule||level?.invalidation||'이탈 기준 확인 불가'}`
+    :`돌파: ${level?.map_rule||level?.invalidation||'돌파 기준 확인 불가'}`;
   return {
-    reason:supplyMapTrim(level?.reason,32),
+    reason:supplyMapTrim(level?.map_reason||level?.reason,32),
     rule:supplyMapTrim(rule,34)
   };
 }
@@ -4408,8 +4409,9 @@ function renderSupplyAssessment(assessment,currentPrice,referenceSource){
       impact:item?.impact||''
     };
   }).filter(item=>String(item.condition).trim()):[];
-  const accelerationBox=accelerationTriggers.length?`<div class="supply-conflict-reference supply-acceleration" role="note" aria-label="하락 가속 기준">
-    <strong>▼ 하락 가속 기준</strong>
+  const accelerationTitle=assessment.acceleration_title||'▼ 하락 가속 기준';
+  const accelerationBox=accelerationTriggers.length?`<div class="supply-conflict-reference supply-acceleration" role="note" aria-label="${escapeHtml(accelerationTitle)}">
+    <strong>${escapeHtml(accelerationTitle)}</strong>
     <small>${escapeHtml(supportBreakPolicy.confirmation||'첫 이탈 추격 금지 · 분봉 종가 이탈과 되돌림 실패를 함께 확인')}</small>
     ${supportBreakLegendHtml}
     <div class="supply-scenarios">${accelerationTriggers.map(item=>`<div class="supply-scenario supply-break-row ${item.strengthClass}">
@@ -4427,13 +4429,14 @@ function renderSupplyAssessment(assessment,currentPrice,referenceSource){
     ${conflictCards}
   </div></details>`;
   return `<div class="supply-conclusion"><strong>결론: ${escapeHtml(conclusion)}</strong><span>${escapeHtml(conclusionDetail)}</span></div>
-    ${accelerationBox}
+    ${assessment.acceleration_after_map?'':accelerationBox}
     <div class="supply-assessment-head">
       <div><div style="font-size:17px;font-weight:800">외국인·기관 포지션 종합 평가</div><div class="supply-assessment-headline">${assessment.headline}</div></div>
       <span class="card-tag tag-kr">${assessment.stance} · 신뢰도 ${assessment.confidence}</span>
     </div>
     <div class="supply-reference"><div class="supply-reference-price">현재 기준 ${Number.isFinite(referencePrice)?referencePrice.toLocaleString():'-'}</div><div class="supply-reference-position"><strong>${currentPosition}</strong><span>${referenceSource||'게시 JSON 기준값'} · 정규장/야간 기준 분리 확인</span></div></div>
     ${priceMap}
+    ${assessment.acceleration_after_map?accelerationBox:''}
     ${secondaryLevels}
     <div class="supply-scenarios">${scenarios}</div>
     <div style="margin-top:10px;font-size:12px;color:var(--text-dim)">${assessment.caution}</div>`;
@@ -4460,6 +4463,10 @@ async function loadSupplyZone(){
     const res = await fetch('supply-zone/latest.json?v='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
     const d = await res.json();
+    if(d.analysis_basis === 'FUTURES_OPTIONS_WITH_INDEX_CONTEXT'){
+      await renderFuturesIndexContext(d);
+      return;
+    }
     if(d.analysis_basis === 'CASH_INDEX_MTF'){
       renderCashIndexReview(d);
       return;

@@ -14,6 +14,10 @@ for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
   if (!/\bsrc=|application\/json|application\/ld\+json/i.test(m[1]) && m[2].trim()) new vm.Script(m[2]);
 }
 const expected = JSON.parse(fs.readFileSync(path.join(root,'supply-zone/latest.json'),'utf8'));
+const futuresMode = expected.analysis_basis === 'FUTURES_OPTIONS_WITH_INDEX_CONTEXT';
+for (const file of ['scripts/cash-index-review.js','scripts/futures-index-context.js']) {
+  if (fs.existsSync(path.join(root,file))) new vm.Script(fs.readFileSync(path.join(root,file),'utf8'));
+}
 // Git normalizes CRLF to LF; compare parsed content, retaining transport hash.
 const expectedHash = crypto.createHash('sha256').update(JSON.stringify(expected)).digest('hex');
 (async()=>{
@@ -49,7 +53,8 @@ const expectedHash = crypto.createHash('sha256').update(JSON.stringify(expected)
       await page.locator('#dashboardUnlockButton').click();
       await page.waitForFunction(()=>document.getElementById('dashboardLock').hidden);
       await page.locator('[data-tab="supply"]').click();
-      await page.waitForSelector('.cash-review',{state:'visible'});
+      await page.waitForSelector(futuresMode?'.futures-review':'.cash-review',{state:'visible'});
+      if(futuresMode) await page.waitForSelector('#supplyIndexContextBody [data-cash-index="DOW"]',{state:'attached'});
       await page.waitForFunction(()=>[...document.querySelectorAll('.cash-review img')].every(i=>i.complete && i.naturalWidth>100));
       const live = await page.evaluate(async()=>{
         const response=await fetch('supply-zone/latest.json?verify='+Date.now(),{cache:'no-store'});
@@ -59,21 +64,37 @@ const expectedHash = crypto.createHash('sha256').update(JSON.stringify(expected)
         const contentHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',canonical)),x=>x.toString(16).padStart(2,'0')).join('');
         const panel=document.querySelector('[data-tab-panel="supply"]');
         return {hash,contentHash,meta:document.getElementById('supplyMeta').textContent,
-          headline:panel.querySelector('h2').textContent,
+          headline:panel.querySelector('.futures-review .supply-conclusion strong')?.textContent || panel.querySelector('h2').textContent,
           indices:[...panel.querySelectorAll('[data-cash-index]')].map(x=>x.dataset.cashIndex),
           images:[...panel.querySelectorAll('img')].map(i=>({src:i.getAttribute('src'),width:i.naturalWidth,height:i.naturalHeight})),
           timeframeCards:panel.querySelectorAll('.cash-timeframes>div').length,
           flowCollapsed:!document.getElementById('cashDerivatives').open,
           originalChartsCollapsed:[...panel.querySelectorAll('.cash-index details')].every(x=>!x.open),
+          indexContextCollapsed:document.getElementById('supplyIndexContext')?!document.getElementById('supplyIndexContext').open:null,
+          indexContextError:document.getElementById('supplyIndexContextBody')?.dataset.loadError==='true',
+          primaryPriceMap:panel.querySelector('.supply-price-map')?.textContent,
+          primaryFlow:document.getElementById('futuresFlow')?.textContent,
+          positionText:document.getElementById('supplyPositionInference')?.textContent,
+          uniqueIds:new Set([...panel.querySelectorAll('[id]')].map(x=>x.id)).size===panel.querySelectorAll('[id]').length,
           bodyOverflow:document.documentElement.scrollWidth>innerWidth+2,
           failureVisible:[...panel.querySelectorAll('*')].some(x=>x.children.length===0 && /로딩 실패|AI 분석 준비되지 않음|필수 형식.*누락/.test(x.textContent) && x.getClientRects().length)};
       });
-      if(live.contentHash!==expectedHash || !live.meta.includes(expected.as_of) || live.headline!==expected.review.headline ||
-        live.indices.join(',')!=='KOSPI,NASDAQ,SOX,NIKKEI,DOW' || live.timeframeCards!==20 || live.images.length!==6 ||
+      const expectedHeadline=futuresMode?'결론: '+expected.overall_assessment.dashboard_conclusion:expected.review.headline;
+      if(live.contentHash!==expectedHash || !live.meta.includes(expected.as_of) || live.headline!==expectedHeadline ||
+        live.indices.join(',')!=='KOSPI,NASDAQ,SOX,NIKKEI,DOW' || live.timeframeCards!==20 || live.images.length!==(futuresMode?15:6) ||
         !live.flowCollapsed || !live.originalChartsCollapsed || live.failureVisible || live.bodyOverflow || errors.length) {
         throw new Error(JSON.stringify({name,live,errors}));
       }
+      if(futuresMode && (!live.indexContextCollapsed || live.indexContextError || !live.uniqueIds ||
+        !live.meta.includes('F202609') || !live.meta.includes('1,109.75') ||
+        !live.primaryPriceMap.includes('1,144.90') || live.primaryPriceMap.includes('6,995') ||
+        !live.primaryFlow.includes('21,837') || !live.positionText.includes('금융투자·투신'))) throw new Error('Futures-first scope check failed: '+JSON.stringify(live));
       await page.screenshot({path:path.join(output,name+'_top.png')});
+      if(futuresMode) {
+        await page.locator('.supply-price-map').screenshot({path:path.join(output,name+'_futures_levels.png')});
+        await page.locator('#supplyIndexContext>summary').click();
+        if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2)) throw new Error('Expanded appendix overflows viewport');
+      }
       await page.locator('.cash-levels').screenshot({path:path.join(output,name+'_levels.png')});
       await page.locator('[data-cash-index="SOX"] details').first().locator('summary').click();
       await page.locator('[data-cash-index="SOX"] .cash-chart').screenshot({path:path.join(output,name+'_sox_chart.png')});
