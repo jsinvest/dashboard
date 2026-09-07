@@ -473,6 +473,8 @@
   @media(max-width:700px){.signal-filter-row{flex-direction:column}.signal-filter-row select{min-width:0}.signal-headline{align-items:flex-start;flex-direction:column}}
 
 </style>
+<link rel="stylesheet" href="supply-zone/cash-review.css?v=20260907a">
+<script src="scripts/cash-index-review.js?v=20260907a"></script>
 </head>
 <body>
 <div id="dashboardLock" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
@@ -4458,6 +4460,10 @@ async function loadSupplyZone(){
     const res = await fetch('supply-zone/latest.json?v='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
     const d = await res.json();
+    if(d.analysis_basis === 'CASH_INDEX_MTF'){
+      renderCashIndexReview(d);
+      return;
+    }
     const assessmentReferencePrice=Number(d.display_reference_price??d.overall_assessment?.reference_price??d.current_price);
     const assessmentReferenceSource=d.display_reference_basis||d.overall_assessment?.reference_price_source||(assessmentReferencePrice===Number(d.current_price)?'검증된 EOD 종가':'별도 표시 기준값');
     const referenceMeta=assessmentReferencePrice!==Number(d.current_price)?` · 화면 기준 ${assessmentReferencePrice.toLocaleString()} (${assessmentReferenceSource})`:'';

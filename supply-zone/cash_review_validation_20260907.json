@@ -1,0 +1,180 @@
+{
+  "trade_date": "20260907",
+  "status": "OK_WITH_DISCLOSED_LIMITATIONS",
+  "ready_for_editorial_review": true,
+  "original_eod_status": "FAILED_STAGE_1_PRESERVED",
+  "recovered_stages": [
+    "OFFLINE_0787_PARSE_EXIT_0",
+    "MANUAL_OI_CORRECTION",
+    "ALL_EXPIRY_FLOW",
+    "FIVE_CASH_INDICES_FOUR_TIMEFRAMES"
+  ],
+  "skipped_stages": [
+    "HTS_UI_RECOLLECTION",
+    "LEGACY_FUTURES_PRICE_STRUCTURE_BY_USER_REQUEST",
+    "AUTOMATIC_EXPIRY_HOLDING_INFERENCE"
+  ],
+  "limitations": [
+    "미국 지수 시세는 Yahoo 지연 보조 원천이며 독립 공식 가격 교차검증 없음",
+    "진행 중 주봉·월봉은 확정 봉 판정에서 제외",
+    "0787 전월물 순매매를 만기별 실제 보유 포지션으로 해석하지 않음",
+    "이 지수 OHLCV로 실제 체결 매물대/강도/검증 승률을 산출하지 않음"
+  ],
+  "artifacts": [
+    {
+      "path": "0441_F202609_user_verified.png",
+      "sha256": "c9114faa169b493ce94044dc87e528837e126bd621ec698b006faeb4e9db928c",
+      "bytes": 21819
+    },
+    {
+      "path": "all_expiry_flow_history.csv",
+      "sha256": "5f4ff64f6bd8a5eccbb19812d3e8a4d1b28c8a12bf48a2e5cb172882932ec237",
+      "bytes": 7638
+    },
+    {
+      "path": "cash_DOW_mtf_20260907.png",
+      "sha256": "923532900a4e049b160ad10b57d52e99d7ffc4d78f5ae46541f6ef06b7679a13",
+      "bytes": 400637
+    },
+    {
+      "path": "cash_index_evidence.json",
+      "sha256": "c6cc4e94cbde8dcd5a94f5526ebac6a28e0d3a8d91c12f0cb2792e0dc76b1b8c",
+      "bytes": 140622
+    },
+    {
+      "path": "cash_KOSPI_mtf_20260907.png",
+      "sha256": "cfc560069f4550f3a52efb3e98acbb78f044f168e715eada4bb0b09bd5536ff0",
+      "bytes": 366979
+    },
+    {
+      "path": "cash_NASDAQ_mtf_20260907.png",
+      "sha256": "5169a30230d9497f52b351b9db271a9132067298ea468625fce9d964aef4a5bb",
+      "bytes": 410329
+    },
+    {
+      "path": "cash_NIKKEI_mtf_20260907.png",
+      "sha256": "eb23455f5bc5aae925bec424bd12d4366b063a7a1807ea42f03508ab32a17ff4",
+      "bytes": 385140
+    },
+    {
+      "path": "cash_SOX_mtf_20260907.png",
+      "sha256": "352c9cbf874ee9e60e3bde8d76625cd379dba6eb59d6e836cff2d3738534dbbc",
+      "bytes": 368156
+    },
+    {
+      "path": "contract_oi_corrected.csv",
+      "sha256": "b761ead3187ebad03a7f104304c497fa49ce54965001e80e35d9f99b8a46c52e",
+      "bytes": 217
+    },
+    {
+      "path": "DOW_daily_20260907.csv",
+      "sha256": "81413c8303e2891b7e5d6884be5176acd1129d2f30e294166022e5d9b86809e4",
+      "bytes": 1534022
+    },
+    {
+      "path": "DOW_intraday_10m_20260907.csv",
+      "sha256": "a662527e79709ec1ca79697c0e5831028dfdc0d526adcc1c2cdf39a8ba2a1fe5",
+      "bytes": 450943
+    },
+    {
+      "path": "DOW_monthly_20260907.csv",
+      "sha256": "a6fbdc2b7ad530d51606dc9422ae5d9fdaef0a983be5fc6f4fe2ce3c686e670a",
+      "bytes": 63748
+    },
+    {
+      "path": "DOW_weekly_20260907.csv",
+      "sha256": "b2f19310b2a24b64dbbb9f4c85d7b7d0f4d2dc46e216fbb7b18e7687f922f65f",
+      "bytes": 298671
+    },
+    {
+      "path": "eod_0787_parsed_20260907.csv",
+      "sha256": "f31a7700e5a75b706b0e3a5c4b3e8e49ed4d1ea34d516c8e61131356f95e452f",
+      "bytes": 4341
+    },
+    {
+      "path": "eod_ocr_bridge_corrected_20260907.json",
+      "sha256": "ec8dd3d2a4231549d05a8ea36255ba2877a8e3e2fac1d108523103d3d9aa54b3",
+      "bytes": 6204
+    },
+    {
+      "path": "KOSPI_daily_20260907.csv",
+      "sha256": "f34feed0294dfd26eecc8f7b836f29ec680ad5ce050eb03234b7344723ea793d",
+      "bytes": 772500
+    },
+    {
+      "path": "KOSPI_intraday_10m_20260907.csv",
+      "sha256": "522e9212963f6572466b3714725faa31f867e0b64cf427b4985f356b64d20382",
+      "bytes": 558233
+    },
+    {
+      "path": "KOSPI_monthly_20260907.csv",
+      "sha256": "bbf1f5fd24880bafdd7c0b3903c977351c713c5a876dbc3e68fc7393be1d1985",
+      "bytes": 30511
+    },
+    {
+      "path": "KOSPI_weekly_20260907.csv",
+      "sha256": "1d6316bfa0b708c078c2e64dce1f08754f5c00f965f9f73fb5c634d04fb5a1e1",
+      "bytes": 151169
+    },
+    {
+      "path": "NASDAQ_daily_20260907.csv",
+      "sha256": "fab3b74f46387814575072b64e684e9306d67cbee20ce5c187a55c41bc9887fd",
+      "bytes": 1572823
+    },
+    {
+      "path": "NASDAQ_intraday_10m_20260907.csv",
+      "sha256": "6d7934ee5b6284c7f9f2ab445e1894a96ba66d911c0d084bba9865d0c73bab89",
+      "bytes": 462942
+    },
+    {
+      "path": "NASDAQ_monthly_20260907.csv",
+      "sha256": "c8dbca45c709ab9425d12344e9adfa021391bc1f30ef518c94bf93952fbca05f",
+      "bytes": 64562
+    },
+    {
+      "path": "NASDAQ_weekly_20260907.csv",
+      "sha256": "c8d3680227a287db97836a778e239d3faf630ee19d0991c796dc06fb6cfd5dc5",
+      "bytes": 305981
+    },
+    {
+      "path": "NIKKEI_daily_20260907.csv",
+      "sha256": "d6ddce5feb76bafbef8b06b8a1c0582367b1e0310bcfc66fd8a1ff85ef073f06",
+      "bytes": 1492793
+    },
+    {
+      "path": "NIKKEI_intraday_10m_20260907.csv",
+      "sha256": "74c84c0a031f8369b8618df57c69f621fbcb845e6ceb113ce6007b46e707c69c",
+      "bytes": 335086
+    },
+    {
+      "path": "NIKKEI_monthly_20260907.csv",
+      "sha256": "fe80ad12348ebbfe45f80fe6d6481ac90e1ee5d309caca641a0b076a0d487cdc",
+      "bytes": 63902
+    },
+    {
+      "path": "NIKKEI_weekly_20260907.csv",
+      "sha256": "b2925dd236fb3f6a3af2ff38a015a676b9d03321965120b51f8afccf48f499e3",
+      "bytes": 299339
+    },
+    {
+      "path": "SOX_daily_20260907.csv",
+      "sha256": "4327aa0d89bf76cee528dc46e1eb4b131c4b003d422f1827e9df29038d7f465c",
+      "bytes": 1587427
+    },
+    {
+      "path": "SOX_intraday_10m_20260907.csv",
+      "sha256": "02f203211aed07410b823165846e630f4f4e9e742790a35453b339b72fddefc7",
+      "bytes": 463264
+    },
+    {
+      "path": "SOX_monthly_20260907.csv",
+      "sha256": "5a4cadde2a8ce0f53246f2bb01effa6c9095a5038151b34a88ed1c768b8d60a6",
+      "bytes": 64741
+    },
+    {
+      "path": "SOX_weekly_20260907.csv",
+      "sha256": "e671dbfb928cb124ea2aa3e1105e62b9125ef64c605c6863bc07d3e936d9d0f8",
+      "bytes": 308191
+    }
+  ]
+}
