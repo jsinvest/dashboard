@@ -14,7 +14,8 @@ for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
   if (!/\bsrc=|application\/json|application\/ld\+json/i.test(m[1]) && m[2].trim()) new vm.Script(m[2]);
 }
 const expected = JSON.parse(fs.readFileSync(path.join(root,'supply-zone/latest.json'),'utf8'));
-const expectedHash = crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'supply-zone/latest.json'))).digest('hex');
+// Git normalizes CRLF to LF; compare parsed content, retaining transport hash.
+const expectedHash = crypto.createHash('sha256').update(JSON.stringify(expected)).digest('hex');
 (async()=>{
   let server, browser;
   try {
@@ -54,8 +55,10 @@ const expectedHash = crypto.createHash('sha256').update(fs.readFileSync(path.joi
         const response=await fetch('supply-zone/latest.json?verify='+Date.now(),{cache:'no-store'});
         const bytes=await response.arrayBuffer();
         const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');
+        const canonical=new TextEncoder().encode(JSON.stringify(JSON.parse(new TextDecoder().decode(bytes))));
+        const contentHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',canonical)),x=>x.toString(16).padStart(2,'0')).join('');
         const panel=document.querySelector('[data-tab-panel="supply"]');
-        return {hash,meta:document.getElementById('supplyMeta').textContent,
+        return {hash,contentHash,meta:document.getElementById('supplyMeta').textContent,
           headline:panel.querySelector('h2').textContent,
           indices:[...panel.querySelectorAll('[data-cash-index]')].map(x=>x.dataset.cashIndex),
           images:[...panel.querySelectorAll('img')].map(i=>({src:i.getAttribute('src'),width:i.naturalWidth,height:i.naturalHeight})),
@@ -65,7 +68,7 @@ const expectedHash = crypto.createHash('sha256').update(fs.readFileSync(path.joi
           bodyOverflow:document.documentElement.scrollWidth>innerWidth+2,
           failureVisible:[...panel.querySelectorAll('*')].some(x=>x.children.length===0 && /로딩 실패|AI 분석 준비되지 않음|필수 형식.*누락/.test(x.textContent) && x.getClientRects().length)};
       });
-      if(live.hash!==expectedHash || !live.meta.includes(expected.as_of) || live.headline!==expected.review.headline ||
+      if(live.contentHash!==expectedHash || !live.meta.includes(expected.as_of) || live.headline!==expected.review.headline ||
         live.indices.join(',')!=='KOSPI,NASDAQ,SOX,NIKKEI,DOW' || live.timeframeCards!==20 || live.images.length!==6 ||
         !live.flowCollapsed || !live.originalChartsCollapsed || live.failureVisible || live.bodyOverflow || errors.length) {
         throw new Error(JSON.stringify({name,live,errors}));
