@@ -1023,7 +1023,7 @@
     <div class="section-title">당일 주도주 · DAILY MARKET LEADERS</div>
     <div class="daily-leader-shell" data-layout-zone="daily-leaders">
       <div class="daily-leader-toolbar">
-        <span class="daily-leader-date">시장 기준일 2026-09-03 · V2 교차검증 2026-09-03 15:22 · 누적 이력 15거래일</span>
+        <span class="daily-leader-date">시장 기준일 2026-09-04 · 장중 잠정본 (파일 생성 15:27) · V2 16:21 · 기존 누적 9/3까지 15거래일</span>
         <div class="leader-mode-tabs" aria-label="주도주 화면 선택">
           <button type="button" class="leader-mode-btn active" data-leader-mode="daily">당일</button>
           <button type="button" class="leader-mode-btn" data-leader-mode="cumulative">누적</button>
@@ -1079,42 +1079,12 @@
       </details>
       <div id="leaderDailyPane">
       <div class="daily-leader-subtoolbar"><span>당일 시장</span><div class="daily-leader-tabs" aria-label="당일 시장 선택"><button type="button" class="daily-leader-tab active" data-leader-view="all">통합</button><button type="button" class="daily-leader-tab" data-leader-view="KOSPI">KOSPI</button><button type="button" class="daily-leader-tab" data-leader-view="KOSDAQ">KOSDAQ</button></div></div>
-      <div class="daily-v2-audit"><b>검증 상태</b> · 9/3 장 마감 확정본 섹터 55개/종목 561행·제외 30건·필수값 누락 0·중복 0 · V2 결과 73행/당일 신호 34종목 · 품질필터 통과 2종목(KS 1·KQ 1) · 누적 이력 15거래일(8/13·14·18·19·20·21·24·25·26·27·28·31·9/1·2·3) · 주도주 맵핑 직접 실행 종료코드 0</div>
-      <div class="daily-leader-summary">
-        <div class="daily-leader-stat"><small>시장별 중심 주도 섹터</small><strong id="dailyLeaderConfirmed">보험 · 건자재·시멘트</strong><span id="dailyLeaderConfirmedNote">KOSPI 금융 확산 / KOSDAQ 6종목 가격·자금 중심</span></div>
-        <div class="daily-leader-stat"><small>당일 V2 품질통과</small><strong id="dailyLeaderEmerging">KS 1종목 · KQ 1종목</strong><span id="dailyLeaderEmergingNote">삼성화재 · 씨젠(코스닥 중심축과 직접 교차 없음)</span></div>
-        <div class="daily-leader-stat"><small>지속성 한계</small><strong id="dailyLeaderWatch">15일 누적 가능 · 20일 판단 불가</strong><span id="dailyLeaderWatchNote">KOSPI 보험 9회 · KOSDAQ 물류·건설 각 11회</span></div>
-      </div>
-<div class="daily-ecosystem">
-        <div class="daily-ecosystem-title"><b>시장별 중심 주도주 → 연결 산업군 · 산업군을 누르면 우선 종목 보기</b><span>실선: 당일 동반강세 확인 · 점선: 산업 연관(동반강세 미확정)</span></div>
-        <div class="daily-ecosystem-board">
-          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>보험 중심 금융 확산 · 보험 9종목 전부 상승 · 지수 +0.26%</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 보험을 중심으로 은행 금융지주, 증권 벤처금융, 지주 종합상사, 결제 핀테크를 연결한 다이어그램">
-              <defs><marker id="ecoArrowKS" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link" data-eco-link="ksInsurance,ksBank" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="185" y="89">금융업 동반</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksInsurance,ksSecurities" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="373" y="89">자본시장 연결</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksInsurance,ksHolding" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="150" y="205">지주 연결</text><line class="eco-leader-link" data-eco-link="ksInsurance,ksPayment" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="205">금융서비스</text></g>
-              <g class="eco-node leader-center" data-eco-sector="ksInsurance" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSPI 중심 주도 섹터</text><text class="eco-leader-name" x="280" y="149">보험</text><text class="eco-name" x="280" y="174">한화생명 87.5 · 삼성화재 86.1</text><text class="eco-score" x="280" y="195">9종목 전부 상승 · 누적 9회</text></g>
-              <g class="eco-node" data-eco-sector="ksHolding" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">지주·상사</text><text class="eco-score" x="75" y="289">당일 33.3% 상승</text></g><g class="eco-node" data-eco-sector="ksBank" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">은행·금융</text><text class="eco-score" x="130" y="58">11종목 중 10상승</text></g><g class="eco-node" data-eco-sector="ksSecurities" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">증권</text><text class="eco-score" x="430" y="58">2종목 모두 상승</text></g><g class="eco-node" data-eco-sector="ksPayment" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">결제·핀테크</text><text class="eco-score" x="485" y="289">2종목 모두 상승</text></g>
-            </svg>
-            <div class="eco-cross-note"><b>판정</b> · 보험은 9종목 전부 상승하고 합산 거래대금 4,911.6억원, 은행·금융지주는 11종목 중 10종목 상승·합산 8,352.6억원으로 금융업 동반 확산이 확인됐습니다. 삼성화재는 V2 품질필터도 통과했습니다. 점수 1위 ESS는 LG에너지솔루션 1종목만으로 계산돼 중심축이 아닌 별도 강세축으로 분리했습니다.</div>
-          </div>
-          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>건자재·시멘트 중심 인프라 연결 · 6종목 중 4종목 상승 · 지수 −1.70%</span></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 건자재 시멘트를 중심으로 강관, 건설, 물류, 해운을 연결한 다이어그램">
-              <defs><marker id="ecoArrowKQ" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="kqCement,kqPipe" x1="245" y1="110" x2="165" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="185" y="89">자재 공급</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCement,kqConstruction" x1="315" y1="110" x2="395" y2="55" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="373" y="89">건설 수요</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCement,kqLogistics" x1="230" y1="170" x2="105" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="150" y="205">자재 운송</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCement,kqShip" x1="330" y1="170" x2="455" y2="255" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="410" y="205">해상 운송</text></g>
-              <g class="eco-node leader-center" data-eco-sector="kqCement" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="121">KOSDAQ 중심 주도 섹터</text><text class="eco-leader-name" x="280" y="149">건자재·시멘트</text><text class="eco-name" x="280" y="174">서산 87.1 · 프럼파스트 66.6</text><text class="eco-score" x="280" y="195">6종목 중 4상승 · 누적 8회</text></g>
-              <g class="eco-node" data-eco-sector="kqLogistics" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="269">물류</text><text class="eco-score" x="75" y="289">누적 11회</text></g><g class="eco-node" data-eco-sector="kqPipe" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">강관</text><text class="eco-score" x="130" y="58">단일 종목·1.1억</text></g><g class="eco-node" data-eco-sector="kqConstruction" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">건설</text><text class="eco-score" x="430" y="58">누적 11회·당일 약세</text></g><g class="eco-node" data-eco-sector="kqShip" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="269">해운</text><text class="eco-score" x="485" y="289">단일 종목·4.3억</text></g>
-            </svg>
-            <div class="eco-cross-note"><b>판정</b> · 건자재·시멘트는 6종목 중 4종목 상승, 합산 거래대금 1,968.0억원이며 서산 +11.49%·RS +13.19%p가 가격과 자금의 중심입니다. 프럼파스트도 +7.08%로 동반했습니다. 원점수 1~3위 해운·가스·강관은 각각 1종목이고 합산 거래대금이 1.1~4.3억원에 그쳐 중앙에서 제외했습니다. 건설·물류·해운 연결은 당일 동반강세가 약해 점선으로 표시했습니다.</div>
-          </div>
-        </div>
-        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 보험 중심 금융 확산</b><button type="button" data-eco-sector="ksInsurance" data-node-market="KOSPI">보험 · 한화생명·삼성화재</button><button type="button" data-eco-sector="ksBank" data-node-market="KOSPI">은행·금융 · JB금융지주·KB금융</button><button type="button" data-eco-sector="ksSecurities" data-node-market="KOSPI">증권 · 미래에셋증권</button><button type="button" data-eco-sector="ksHolding" data-node-market="KOSPI">지주·상사 · LG·GS</button><button type="button" data-eco-sector="ksPayment" data-node-market="KOSPI">결제·핀테크 · 삼성카드</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 건자재·시멘트 중심</b><button type="button" data-eco-sector="kqCement" data-node-market="KOSDAQ">건자재·시멘트 · 서산·프럼파스트</button><button type="button" data-eco-sector="kqPipe" data-node-market="KOSDAQ">강관 · 티피씨글로벌</button><button type="button" data-eco-sector="kqConstruction" data-node-market="KOSDAQ">건설 · 베노티앤알·국보디자인</button><button type="button" data-eco-sector="kqLogistics" data-node-market="KOSDAQ">물류 · 유성티엔에스·대아티아이</button><button type="button" data-eco-sector="kqShip" data-node-market="KOSDAQ">해운 · 팬스타엔터프라이즈</button></div></div>
-        <div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div>
-      </div>
-      <div class="daily-relation-strip"><span>핵심 연결</span><b>보험 ↔ 은행·금융: 금융업 동반 확산</b><b>보험 ↔ 증권·지주·결제: 자본시장·금융서비스</b><b>건자재 ↔ 강관·건설: 공급·수요 연결</b><b>건자재 ↔ 물류·해운: 자재 운송 연결</b></div>
+      <div class="daily-v2-audit"><b>장중 잠정 · 종가 확정 미검증</b> · 9/4 15:27 생성 맵핑: 섹터 55개/종목 561행·제외 30건·필수값 누락 0·중복 0. 순차 조회 자료로 종목별 시각은 다를 수 있습니다. V2 16:21 결과 74행·당일 신호 39종목·품질통과 3종목(KS 3·KQ 0). 실행 종료코드는 로그 부재로 확인 불가. 9/4는 확정 누적에 미산입합니다.</div>
+      <div class="daily-leader-summary"><div class="daily-leader-stat"><small>시장별 중심 주도 섹터</small><strong id="dailyLeaderConfirmed">항공 · 로봇·자동화</strong><span id="dailyLeaderConfirmedNote">9/4 장중 잠정: KOSPI 한진칼·대한항공 / KOSDAQ 로보티즈·하이젠알앤엠</span></div><div class="daily-leader-stat"><small>당일 V2 품질통과</small><strong id="dailyLeaderEmerging">V2 품질통과 3종목</strong><span id="dailyLeaderEmergingNote">KOSPI 대한항공·S-Oil·삼성화재 / KOSDAQ 0종목</span></div><div class="daily-leader-stat"><small>누적 상태</small><strong id="dailyLeaderWatch">9/4 종가 확정·누적 반영 보류</strong><span id="dailyLeaderWatchNote">기존 누적은 9/3까지 15거래일 · 20일 지속성 판단 불가</span></div></div><div class="daily-ecosystem"><div class="daily-ecosystem-title"><b>9/4 장중 잠정 맵 · 산업군을 누르면 우선 종목 보기</b><span>실선: 가격·거래 동반 조건 충족 · 점선: 산업 연관 · 인과관계 미확정</span></div><div class="daily-ecosystem-board"><div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>항공 중심 · 9/4 장중 잠정 · 지수 약 +1.69%</span></div><svg viewBox="0 0 560 330" role="img" aria-label="KOSPI 항공 중심 산업 연결"><g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="ksAir,ksTravel" x1="245" y1="110" x2="165" y2="65"/><text class="eco-link-label" x="185" y="89">여객·관광</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksAir,ksLogistics" x1="315" y1="110" x2="395" y2="65"/><text class="eco-link-label" x="373" y="89">항공화물</text><line class="eco-leader-link" data-eco-link="ksAir,ksOil" x1="230" y1="180" x2="110" y2="250"/><text class="eco-link-label" x="150" y="215">항공유 공급</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksAir,ksHolding" x1="330" y1="180" x2="450" y2="250"/><text class="eco-link-label" x="410" y="215">지주·계열</text></g><g class="eco-node leader-center" data-eco-sector="ksAir" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="119">KOSPI 당일 확산 중심</text><text class="eco-leader-name" x="280" y="148">항공</text><text class="eco-name" x="280" y="173">한진칼 · 대한항공</text><text class="eco-score" x="280" y="195">7종목 전부 상승 · 잠정</text></g><g class="eco-node" data-eco-sector="ksTravel" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">여행·레저</text><text class="eco-score" x="130" y="60">53.2점 · 7종목</text></g><g class="eco-node" data-eco-sector="ksLogistics" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">물류</text><text class="eco-score" x="430" y="60">43.8점 · 8종목</text></g><g class="eco-node" data-eco-sector="ksOil" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="270">정유·연료</text><text class="eco-score" x="75" y="290">57.3점 · 7종목</text></g><g class="eco-node" data-eco-sector="ksHolding" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="270">지주·상사</text><text class="eco-score" x="485" y="290">52.8점 · 6종목</text></g></svg><div class="eco-cross-note"><b>자료 해석</b> · 항공 7종목 모두 상승, 합산 거래대금 1,642.6억원, RS 중앙값 +2.17%p. 한진칼은 주도점수 80.5, 대한항공은 77.1이며 대한항공은 V2 돌파 S등급 품질필터 통과. 점수 1위 수소·연료전지는 두산퓨얼셀 1종목으로 계산돼 별도 강세로 표시합니다. 연결은 산업 연관이며 상승 원인의 인과관계는 확인되지 않았습니다.</div><button type="button" class="daily-leader-tab" data-eco-sector="ksHydrogen" data-node-market="KOSPI">별도 강세: 수소·연료전지 · 두산퓨얼셀 +12.69% · 종목 보기</button></div><div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>로봇·자동화 중심 · 9/4 장중 잠정 · 지수 약 +2.99%</span></div><svg viewBox="0 0 560 330" role="img" aria-label="KOSDAQ 로봇·자동화 중심 산업 연결"><g class="eco-links"><line class="eco-leader-link" data-eco-link="kqRobot,kqSoftware" x1="245" y1="110" x2="165" y2="65"/><text class="eco-link-label" x="185" y="89">AI·제어</text><line class="eco-leader-link" data-eco-link="kqRobot,kqMachine" x1="315" y1="110" x2="395" y2="65"/><text class="eco-link-label" x="373" y="89">자동화 설비</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqRobot,kqAuto" x1="230" y1="180" x2="110" y2="250"/><text class="eco-link-label" x="150" y="215">생산 자동화</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqRobot,kqElectronics" x1="330" y1="180" x2="450" y2="250"/><text class="eco-link-label" x="410" y="215">센서·구동</text></g><g class="eco-node leader-center" data-eco-sector="kqRobot" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="280" cy="150" r="72"/><text class="eco-kicker" x="280" y="119">KOSDAQ 당일 확산 중심</text><text class="eco-leader-name" x="280" y="148">로봇·자동화</text><text class="eco-name" x="280" y="173">로보티즈 · 하이젠알앤엠</text><text class="eco-score" x="280" y="195">11종목 전부 상승 · 잠정</text></g><g class="eco-node" data-eco-sector="kqSoftware" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="130" cy="45" r="43"/><text class="eco-name" x="130" y="40">SW·IT</text><text class="eco-score" x="130" y="60">66.6점 · 9종목</text></g><g class="eco-node" data-eco-sector="kqMachine" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="430" cy="45" r="43"/><text class="eco-name" x="430" y="40">기계·장비</text><text class="eco-score" x="430" y="60">65.0점 · 8종목</text></g><g class="eco-node" data-eco-sector="kqAuto" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="75" cy="275" r="48"/><text class="eco-name" x="75" y="270">자동차·부품</text><text class="eco-score" x="75" y="290">61.4점 · 4종목</text></g><g class="eco-node" data-eco-sector="kqElectronics" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="275" r="48"/><text class="eco-name" x="485" y="270">전장·자율주행</text><text class="eco-score" x="485" y="290">50.1점 · 4종목</text></g></svg><div class="eco-cross-note"><b>자료 해석</b> · 로봇·자동화 11종목 모두 상승, 합산 거래대금 6,158.2억원, RS 중앙값 +2.16%p. 로보티즈 86.8점·+22.74%, 하이젠알앤엠 85.7점·+14.37%. 로보티즈의 V2 신호는 품질필터 미통과이며 매수 확정 신호가 아닙니다. 강관·가스는 각 1종목·1~2억원으로 중심에서 제외했습니다.</div></div></div><div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 항공 · 잠정</b><button type="button" data-eco-sector="ksAir" data-node-market="KOSPI">항공 · 한진칼</button><button type="button" data-eco-sector="ksTravel" data-node-market="KOSPI">여행·레저 · 파라다이스</button><button type="button" data-eco-sector="ksLogistics" data-node-market="KOSPI">물류 · 현대글로비스</button><button type="button" data-eco-sector="ksOil" data-node-market="KOSPI">정유·연료 · S-Oil</button><button type="button" data-eco-sector="ksHolding" data-node-market="KOSPI">지주·상사 · GS</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 로봇·자동화 · 잠정</b><button type="button" data-eco-sector="kqRobot" data-node-market="KOSDAQ">로봇·자동화 · 로보티즈</button><button type="button" data-eco-sector="kqSoftware" data-node-market="KOSDAQ">SW·IT · 에프앤가이드</button><button type="button" data-eco-sector="kqMachine" data-node-market="KOSDAQ">기계·장비 · 톱텍</button><button type="button" data-eco-sector="kqAuto" data-node-market="KOSDAQ">자동차·부품 · 한라캐스트</button><button type="button" data-eco-sector="kqElectronics" data-node-market="KOSDAQ">전장·자율주행 · 한국피아이엠</button></div></div><div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div></div><div class="daily-relation-strip"><span>핵심 연결</span><b>항공 ↔ 여행·물류: 여객·화물</b><b>항공 ↔ 정유·지주: 연료·계열</b><b>로봇 ↔ SW·기계: AI 제어·설비</b><b>로봇 ↔ 자동차·전장: 생산 자동화·구동</b></div>
       <div class="daily-leader-detail" id="dailyLeaderDetail">종목을 누르면 시장 주도주 판정 근거가 표시됩니다.</div>
       </div>
       <div class="leader-cumulative daily-leader-hidden" id="leaderCumulativePane">
-        <div class="leader-cumulative-top" aria-label="2026년 9월 3일까지 15거래일 누적 상위 5개 섹터와 대장주">
+        <div class="daily-v2-audit"><b>누적 기준: 9/3까지 15거래일</b> · 9/4 자료는 장중 잠정본으로 확정 누적에 미산입했습니다. 종가 확정 자료가 확보되면 해당 날짜를 한 번만 반영합니다.</div><div class="leader-cumulative-top" aria-label="2026년 9월 3일까지 15거래일 누적 상위 5개 섹터와 대장주">
           <div class="leader-cumulative-market"><b>KOSPI · 최근 15거래일 누적 TOP5</b><div class="leader-cumulative-items"><span>보험 <strong>9회</strong><small>한화손해보험 3회 · 삼성생명 2회 · 한화생명 2회</small></span><span>전자부품·디스플레이 <strong>8회</strong><small>금호전기 6회 · 삼성전기 1회 · 삼화콘덴서 1회</small></span><span>건자재·시멘트 <strong>8회</strong><small>한일시멘트 4회 · 영보화학 2회 · 대림바스 1회</small></span><span>지주·종합상사 <strong>8회</strong><small>GS 3회 · 삼성물산 2회 · LG 2회</small></span><span>렌탈·구독서비스 <strong>8회</strong><small>롯데렌탈 4회 · 코웨이 4회</small></span></div></div>
           <div class="leader-cumulative-market"><b>KOSDAQ · 최근 15거래일 누적 TOP5</b><div class="leader-cumulative-items"><span>물류 <strong>11회</strong><small>대아티아이 6회 · 에스디시스템 2회 · 유성티엔에스 2회</small></span><span>건설 <strong>11회</strong><small>국보디자인 6회 · 베노티앤알 3회 · 누리플랜 2회</small></span><span>가스·LNG·도시가스 <strong>8회</strong><small>지에스이 8회</small></span><span>여행·레저 <strong>8회</strong><small>아난티 5회 · 남화산업 2회 · 서부T&D 1회</small></span><span>건자재·시멘트 <strong>8회</strong><small>서산 5회 · 강동씨앤엘 2회 · 삼표시멘트 1회</small></span></div></div>
         </div>
@@ -1330,28 +1300,28 @@ const LEGACY_DAILY_SECTOR_STOCKS = {
 const LEGACY_DAILY_SECTOR_LINKS={robot:['auto','software','machine','battery'],auto:['robot'],software:['robot'],machine:['robot'],battery:['robot'],insurance:['holding','bank','securities'],holding:['insurance'],bank:['insurance'],securities:['insurance']};
 const DAILY_LEADER_SUMMARY = {
   "all": [
-    "보험 · 건자재·시멘트",
-    "9/3 KOSPI 보험 중심 금융 확산 / KOSDAQ 건자재·시멘트 가격·자금 중심",
-    "V2 품질통과 2종목",
-    "KS 삼성화재 / KQ 씨젠 · KOSDAQ 중심축과 직접 교차 없음",
-    "15일 누적 가능 · 20일 판단 불가",
-    "KOSPI 보험 9회 · KOSDAQ 물류·건설 각 11회"
+    "항공 · 로봇·자동화",
+    "9/4 장중 잠정: KOSPI 한진칼·대한항공 / KOSDAQ 로보티즈·하이젠알앤엠",
+    "V2 품질통과 3종목",
+    "KOSPI 대한항공·S-Oil·삼성화재 / KOSDAQ 0종목",
+    "9/4 종가 확정·누적 반영 보류",
+    "기존 누적은 9/3까지 15거래일 · 20일 지속성 판단 불가"
   ],
   "KOSPI": [
-    "보험",
-    "9종목 전부 상승 · 합산 4,911.6억 · 은행·금융 11종목 중 10종목 상승",
-    "V2 품질통과 1종목",
-    "삼성화재 Pocket Pivot B등급 · 품질필터 통과",
-    "보험 ↔ 은행·증권·지주·결제 금융 확산",
-    "ESS 1위는 LG에너지솔루션 단일 종목이라 별도 강세축"
+    "항공",
+    "7종목 전부 상승 · 1,642.6억 · RS 중앙값 +2.17%p · 장중 잠정",
+    "V2 품질통과 3종목",
+    "대한항공·S-Oil·삼성화재 · 9/4 16:21 스캔",
+    "항공 ↔ 여행·물류·연료·지주",
+    "수소·연료전지 1위는 두산퓨얼셀 1종목 · 별도 강세"
   ],
   "KOSDAQ": [
-    "건자재·시멘트",
-    "6종목 중 4종목 상승 · 합산 1,968.0억 · 서산 +11.49%·RS +13.19%p",
-    "V2 품질통과 1종목",
-    "씨젠 / 중심 건자재·시멘트와 직접 교차 없음",
-    "건자재 ↔ 강관·건설·물류·해운 인프라 연결",
-    "원점수 1~3위는 모두 단일 종목·저유동성이라 중앙 제외"
+    "로봇·자동화",
+    "11종목 전부 상승 · 6,158.2억 · RS 중앙값 +2.16%p · 장중 잠정",
+    "V2 품질통과 0종목",
+    "로보티즈 신호는 품질필터 미통과",
+    "로봇 ↔ SW·IT·기계·자동차·전장",
+    "당일 확산 확인 · 종가 확정·누적 반영 보류"
   ]
 };
 const LEADER_CUMULATIVE_DATA={
@@ -1782,368 +1752,565 @@ const DAILY_SECTOR_STOCKS = {
     {priority:4,leaderScore:'44.1',name:'민테크',market:'KOSDAQ',state:'후발 강세·거래 부족',kind:'',metric:'+2.44% · 0.7억 · RS +2.93%p · 0.34배 · 수급 0.0'},
     {priority:5,leaderScore:'33.3',name:'아이비젼웍스',market:'KOSDAQ',state:'확산 대기',kind:'',metric:'0.00% · 0.1억 · RS +0.49%p · 0.05배 · 수급 0.0'}]}
 };
-const DAILY_SECTOR_STOCKS_20260903 = {
-  "ksInsurance": {
-    "name": "보험",
-    "score": "80.6 · KOSPI 2위 · 금융 확산 중심축 · 9종목",
+const DAILY_SECTOR_STOCKS_20260904 = {
+  "ksAir": {
+    "name": "항공",
+    "score": "75.2 · KOSPI 2위 · 7종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "87.5",
-        "name": "한화생명",
+        "leaderScore": "80.5",
+        "name": "한진칼",
         "market": "KOSPI",
-        "state": "가격·RS·거래 확산 1위",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+5.89% · 1,394.4억 · RS +5.64%p · 5.21배 · 수급 +9.80"
+        "metric": "+8.22% · 172.2억 · RS +6.53%p · 1.39배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 2,
-        "leaderScore": "86.1",
-        "name": "삼성화재",
+        "leaderScore": "77.1",
+        "name": "대한항공",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산·V2 통과",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+6.85% · 1,164.2억 · RS +6.59%p · 1.76배 · 수급 +6.50",
-        "v2": "9/3 Pocket Pivot B등급 · 품질필터 통과"
+        "metric": "+3.60% · 1,409.9억 · RS +1.91%p · 1.99배 · 수급점수 +16.90",
+        "v2": "9/4 돌파 S등급 · 품질필터 통과"
       },
       {
         "priority": 3,
-        "leaderScore": "85.5",
-        "name": "한화손해보험",
+        "leaderScore": "63.9",
+        "name": "진에어",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+4.31% · 141.0억 · RS +4.06%p · 2.20배 · 수급 +35.30"
+        "metric": "+5.67% · 11.2억 · RS +3.98%p · 2.39배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 4,
-        "leaderScore": "82.6",
-        "name": "DB손해보험",
+        "leaderScore": "63.1",
+        "name": "제주항공",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+6.34% · 624.3억 · RS +6.08%p · 1.58배 · 수급 +10.80"
+        "metric": "+6.17% · 17.4억 · RS +4.48%p · 2.86배 · 수급점수 +5.60",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 5,
-        "leaderScore": "81.2",
-        "name": "코리안리",
+        "leaderScore": "60.3",
+        "name": "아시아나항공",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+4.18% · 76.0억 · RS +3.92%p · 1.99배 · 수급 +9.30"
+        "metric": "+3.86% · 29.8억 · RS +2.17%p · 3.26배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
-  "ksBank": {
-    "name": "은행·금융지주",
-    "score": "73.1 · KOSPI 4위 · 금융업 동반 확산 · 11종목",
+  "ksTravel": {
+    "name": "여행·레저",
+    "score": "53.2 · KOSPI 10위 · 7종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "84.4",
-        "name": "JB금융지주",
+        "leaderScore": "60.6",
+        "name": "파라다이스",
         "market": "KOSPI",
-        "state": "가격·RS·거래 확산 1위",
+        "state": "지수 대비 강세",
         "kind": "leader",
-        "metric": "+3.44% · 274.1억 · RS +3.18%p · 3.07배 · 수급 +40.90"
+        "metric": "+2.44% · 36.6억 · RS +0.75%p · 0.75배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 2,
-        "leaderScore": "80.2",
-        "name": "KB금융",
+        "leaderScore": "51.4",
+        "name": "강원랜드",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "지수 대비 약세",
         "kind": "leader",
-        "metric": "+5.20% · 2,704.9억 · RS +4.95%p · 1.49배 · 수급 +21.10"
+        "metric": "+0.20% · 28.8억 · RS −1.49%p · 0.67배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 3,
-        "leaderScore": "77.9",
-        "name": "BNK금융지주",
+        "leaderScore": "47.0",
+        "name": "GS피앤엘",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+4.49% · 216.4억 · RS +4.24%p · 1.50배 · 수급 +11.30"
+        "metric": "+3.74% · 19.7억 · RS +2.05%p · 0.84배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 4,
-        "leaderScore": "77.0",
-        "name": "신한지주",
+        "leaderScore": "40.2",
+        "name": "하나투어",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "지수 대비 약세",
         "kind": "",
-        "metric": "+3.62% · 1,703.2억 · RS +3.36%p · 1.42배 · 수급 +37.60"
+        "metric": "+0.77% · 6.7억 · RS −0.92%p · 0.75배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 5,
-        "leaderScore": "75.2",
-        "name": "하나금융지주",
+        "leaderScore": "39.0",
+        "name": "GKL",
         "market": "KOSPI",
-        "state": "동반 가격·거래 확산",
+        "state": "지수 대비 약세",
         "kind": "",
-        "metric": "+3.41% · 1,318.0억 · RS +3.15%p · 1.37배 · 수급 +27.10"
+        "metric": "+1.60% · 6.5억 · RS −0.09%p · 0.57배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
-  "ksSecurities": {
-    "name": "증권·벤처금융",
-    "score": "55.3 · KOSPI 13위 · 자본시장 연결축 · 2종목",
+  "ksLogistics": {
+    "name": "물류",
+    "score": "43.8 · KOSPI 22위 · 8종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "41.6",
-        "name": "미래에셋증권",
+        "leaderScore": "58.3",
+        "name": "현대글로비스",
         "market": "KOSPI",
-        "state": "가격·RS·거래 확산 1위",
+        "state": "지수 대비 강세",
         "kind": "leader",
-        "metric": "+0.61% · 514.9억 · RS +0.35%p · 1.08배 · 수급 +0.00"
+        "metric": "+1.98% · 255.4억 · RS +0.29%p · 0.79배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 2,
-        "leaderScore": "36.5",
-        "name": "다올투자증권",
+        "leaderScore": "37.2",
+        "name": "유수홀딩스",
         "market": "KOSPI",
-        "state": "지수 대비 상대강도",
+        "state": "지수 대비 약세",
         "kind": "leader",
-        "metric": "+0.91% · 1.5억 · RS +0.65%p · 0.66배 · 수급 +0.00"
+        "metric": "+1.67% · 1.3억 · RS −0.02%p · 0.46배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "37.0",
+        "name": "KB발해인프라",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "−1.13% · 14.0억 · RS −2.82%p · 1.13배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "30.0",
+        "name": "한국공항",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "+1.68% · 4.8억 · RS −0.01%p · 0.55배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "28.5",
+        "name": "천일고속",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "+1.40% · 1.7억 · RS −0.29%p · 0.43배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      }
+    ]
+  },
+  "ksOil": {
+    "name": "정유·석유제품·LPG",
+    "score": "57.3 · KOSPI 5위 · 7종목 · 9/4 장중 잠정",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "83.0",
+        "name": "S-Oil",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+5.88% · 1,438.1억 · RS +4.19%p · 2.76배 · 수급점수 +38.40",
+        "v2": "9/4 지지반등 · 품질필터 통과 (동일 종목의 다른 신호와 구분)"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "72.7",
+        "name": "SK이노베이션",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+5.81% · 1,729.2억 · RS +4.12%p · 1.30배 · 수급점수 +20.00",
+        "v2": "9/4 지지반등 B등급 · 품질필터 미통과"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "64.6",
+        "name": "SK가스",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+2.35% · 38.3억 · RS +0.66%p · 1.35배 · 수급점수 +16.10",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "43.2",
+        "name": "한국석유",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "+1.43% · 13.4억 · RS −0.26%p · 0.88배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "38.3",
+        "name": "E1",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "−0.81% · 7.5억 · RS −2.50%p · 1.02배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
   "ksHolding": {
     "name": "지주·종합상사",
-    "score": "40.3 · KOSPI 33위 · 지주 연결·당일 약세 · 6종목",
+    "score": "52.8 · KOSPI 11위 · 6종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "54.2",
-        "name": "LG",
-        "market": "KOSPI",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−0.17% · 371.1억 · RS −0.42%p · 1.06배 · 수급 +0.00"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "48.3",
+        "leaderScore": "62.7",
         "name": "GS",
         "market": "KOSPI",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−0.92% · 667.2억 · RS −1.17%p · 1.08배 · 수급 +0.00"
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+4.12% · 623.2억 · RS +2.43%p · 1.00배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "53.9",
+        "name": "LG",
+        "market": "KOSPI",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+2.37% · 296.7억 · RS +0.68%p · 0.83배 · 수급점수 +0.00",
+        "v2": "9/4 근접(0.3%) C등급 · 품질필터 미통과"
       },
       {
         "priority": 3,
-        "leaderScore": "47.7",
-        "name": "삼성물산",
-        "market": "KOSPI",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−0.27% · 1,166.0억 · RS −0.52%p · 0.87배 · 수급 +0.00",
-        "v2": "9/3 근접(-3.4%) 대기등급 · 품질필터 미통과"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "37.5",
+        "leaderScore": "50.5",
         "name": "SK스퀘어",
         "market": "KOSPI",
-        "state": "당일 약세·연결만 확인",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "−0.10% · 3,440.5억 · RS −0.36%p · 0.54배 · 수급 +0.00"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "26.1",
-        "name": "코오롱",
-        "market": "KOSPI",
-        "state": "지수 대비 상대강도",
-        "kind": "",
-        "metric": "+0.60% · 4.1억 · RS +0.34%p · 0.26배 · 수급 +0.00"
-      }
-    ]
-  },
-  "ksPayment": {
-    "name": "결제·핀테크·신용정보",
-    "score": "57.7 · KOSPI 10위 · 금융서비스 연결축 · 2종목",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "55.1",
-        "name": "삼성카드",
-        "market": "KOSPI",
-        "state": "가격·RS·거래 확산 1위",
-        "kind": "leader",
-        "metric": "+2.64% · 60.8억 · RS +2.39%p · 1.15배 · 수급 +0.00"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "42.0",
-        "name": "카카오페이",
-        "market": "KOSPI",
-        "state": "섹터 후순위",
-        "kind": "leader",
-        "metric": "+0.11% · 92.3억 · RS −0.14%p · 0.53배 · 수급 +0.00"
-      }
-    ]
-  },
-  "kqCement": {
-    "name": "건자재·시멘트",
-    "score": "65.8 · KOSDAQ 4위 · 인프라 가격 중심축 · 6종목",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "87.1",
-        "name": "서산",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 확산 1위",
-        "kind": "leader",
-        "metric": "+11.49% · 1,669.3억 · RS +13.19%p · 6.62배 · 수급 +13.00"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "69.2",
-        "name": "강동씨앤엘",
-        "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−1.87% · 259.4억 · RS −0.17%p · 3.60배 · 수급 −21.20"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "66.6",
-        "name": "프럼파스트",
-        "market": "KOSDAQ",
-        "state": "동반 가격·거래 확산",
-        "kind": "",
-        "metric": "+7.08% · 10.2억 · RS +8.78%p · 12.51배 · 수급 +0.00"
+        "metric": "+5.81% · 3,995.3억 · RS +4.12%p · 0.65배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 4,
-        "leaderScore": "46.4",
-        "name": "삼표시멘트",
-        "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
+        "leaderScore": "34.3",
+        "name": "대신 KOSPI200인덱스 X클래스",
+        "market": "KOSPI",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "−1.64% · 20.9억 · RS +0.06%p · 0.65배 · 수급 +0.00"
+        "metric": "+2.74% · 0.0억 · RS +1.05%p · 0.00배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 5,
-        "leaderScore": "46.1",
-        "name": "아세아텍",
-        "market": "KOSDAQ",
-        "state": "지수 대비 상대강도",
+        "leaderScore": "31.7",
+        "name": "삼성물산",
+        "market": "KOSPI",
+        "state": "지수 대비 약세",
         "kind": "",
-        "metric": "+0.89% · 0.3억 · RS +2.59%p · 0.61배 · 수급 +0.00"
+        "metric": "−2.28% · 1,338.2억 · RS −3.98%p · 0.99배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
-  "kqPipe": {
-    "name": "강관",
-    "score": "80.9 · KOSDAQ 3위 · 자재 공급 연결·단일 종목 · 1종목",
+  "ksHydrogen": {
+    "name": "수소·연료전지",
+    "score": "100.0 · KOSPI 1위 · 1종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "45.6",
-        "name": "티피씨글로벌",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 확산 1위",
+        "leaderScore": "75.3",
+        "name": "두산퓨얼셀",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+0.48% · 1.1억 · RS +2.19%p · 1.13배 · 수급 +0.00"
+        "metric": "+12.69% · 594.8억 · RS +11.00%p · 1.48배 · 수급점수 −14.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
-  "kqConstruction": {
-    "name": "건설",
-    "score": "38.7 · KOSDAQ 34위 · 수요 산업 연결·동반강세 미확정 · 3종목",
+  "kqRobot": {
+    "name": "로봇·자동화",
+    "score": "70.4 · KOSDAQ 1위 · 11종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "46.1",
-        "name": "베노티앤알",
+        "leaderScore": "86.8",
+        "name": "로보티즈",
         "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "+0.00% · 2.1억 · RS +1.70%p · 2.56배 · 수급 +0.00"
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+22.74% · 4,232.0억 · RS +19.74%p · 7.29배 · 수급점수 +14.50",
+        "v2": "9/4 가격BB40상단돌파·BB120아래 S등급 · 품질필터 미통과"
       },
       {
         "priority": 2,
-        "leaderScore": "42.2",
-        "name": "국보디자인",
+        "leaderScore": "85.7",
+        "name": "하이젠알앤엠",
         "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−0.58% · 1.5억 · RS +1.13%p · 0.91배 · 수급 +0.00"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "31.5",
-        "name": "누리플랜",
-        "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−0.97% · 0.6억 · RS +0.73%p · 0.66배 · 수급 +0.00"
-      }
-    ]
-  },
-  "kqLogistics": {
-    "name": "물류",
-    "score": "51.7 · KOSDAQ 12위 · 자재 운송 연결축 · 4종목",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "60.8",
-        "name": "유성티엔에스",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 확산 1위",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+4.24% · 4.2억 · RS +5.94%p · 3.86배 · 수급 +0.00"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "49.8",
-        "name": "대아티아이",
-        "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
-        "kind": "",
-        "metric": "−2.12% · 69.9억 · RS −0.42%p · 0.72배 · 수급 +0.00"
+        "metric": "+14.37% · 121.4억 · RS +11.38%p · 3.38배 · 수급점수 +0.10",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 3,
-        "leaderScore": "40.8",
-        "name": "삼일",
+        "leaderScore": "77.6",
+        "name": "에스피지",
         "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "−1.74% · 0.5억 · RS −0.04%p · 1.24배 · 수급 +0.00"
+        "metric": "+12.65% · 1,028.6억 · RS +9.66%p · 1.95배 · 수급점수 +6.90",
+        "v2": "9/4 교차신호 없음"
       },
       {
         "priority": 4,
-        "leaderScore": "33.3",
-        "name": "에스디시스템",
+        "leaderScore": "64.8",
+        "name": "TPC로보틱스",
         "market": "KOSDAQ",
-        "state": "당일 약세·연결만 확인",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "−2.23% · 0.9억 · RS −0.53%p · 0.43배 · 수급 +0.00"
+        "metric": "+30.00% · 70.1억 · RS +27.01%p · 8.41배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "63.9",
+        "name": "뉴로메카",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+8.31% · 89.5억 · RS +5.32%p · 1.11배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   },
-  "kqShip": {
-    "name": "해운",
-    "score": "81.1 · KOSDAQ 1위 · 해상 운송 연결·단일 종목 · 1종목",
+  "kqSoftware": {
+    "name": "소프트웨어·IT서비스",
+    "score": "66.6 · KOSDAQ 4위 · 9종목 · 9/4 장중 잠정",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "48.8",
-        "name": "팬스타엔터프라이즈",
+        "leaderScore": "58.6",
+        "name": "에프앤가이드",
         "market": "KOSDAQ",
-        "state": "가격·RS·거래 확산 1위",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+0.53% · 4.3억 · RS +2.23%p · 1.17배 · 수급 +0.00"
+        "metric": "+10.88% · 7.2억 · RS +7.88%p · 1.30배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "58.0",
+        "name": "씨이랩",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+10.87% · 37.1억 · RS +7.87%p · 0.38배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "52.3",
+        "name": "모비스",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+6.57% · 5.5억 · RS +3.58%p · 1.19배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "47.9",
+        "name": "슈어소프트테크",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+5.16% · 7.6억 · RS +2.16%p · 1.00배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "47.7",
+        "name": "엑스게이트",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+5.86% · 29.7억 · RS +2.86%p · 0.31배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      }
+    ]
+  },
+  "kqMachine": {
+    "name": "기계·산업장비",
+    "score": "65.0 · KOSDAQ 5위 · 8종목 · 9/4 장중 잠정",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "68.7",
+        "name": "톱텍",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+5.34% · 69.8억 · RS +2.34%p · 1.38배 · 수급점수 −0.70",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "62.2",
+        "name": "링크솔루션",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+14.41% · 14.6억 · RS +11.42%p · 1.67배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "58.9",
+        "name": "코메론",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+6.16% · 23.4억 · RS +3.17%p · 4.36배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "50.2",
+        "name": "엔비알모션",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+10.60% · 14.9억 · RS +7.61%p · 0.82배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "39.9",
+        "name": "코윈테크",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+3.32% · 2.2억 · RS +0.32%p · 0.41배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      }
+    ]
+  },
+  "kqAuto": {
+    "name": "자동차·일반부품",
+    "score": "61.4 · KOSDAQ 6위 · 4종목 · 9/4 장중 잠정",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "68.2",
+        "name": "한라캐스트",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+8.28% · 320.9억 · RS +5.28%p · 1.12배 · 수급점수 −10.30",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "57.2",
+        "name": "삼기에너지솔루션즈",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+6.50% · 30.8억 · RS +3.50%p · 0.40배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "55.3",
+        "name": "삼기",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+4.12% · 34.2억 · RS +1.13%p · 0.82배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "17.9",
+        "name": "엣지파운드리",
+        "market": "KOSDAQ",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "−0.16% · 1.1억 · RS −3.15%p · 0.15배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      }
+    ]
+  },
+  "kqElectronics": {
+    "name": "전장·자율주행부품",
+    "score": "50.1 · KOSDAQ 11위 · 4종목 · 9/4 장중 잠정",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "64.3",
+        "name": "한국피아이엠",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+10.65% · 55.8억 · RS +7.66%p · 0.99배 · 수급점수 −4.10",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "61.8",
+        "name": "신성델타테크",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+5.64% · 35.2억 · RS +2.65%p · 0.79배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "25.3",
+        "name": "모바일어플라이언스",
+        "market": "KOSDAQ",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "+0.00% · 0.0억 · RS −2.99%p · 0.00배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "22.5",
+        "name": "해성옵틱스",
+        "market": "KOSDAQ",
+        "state": "지수 대비 약세",
+        "kind": "",
+        "metric": "+1.85% · 5.8억 · RS −1.14%p · 0.17배 · 수급점수 +0.00",
+        "v2": "9/4 교차신호 없음"
       }
     ]
   }
 };
-const DAILY_SECTOR_LINKS_20260903={"ksInsurance":["ksBank","ksSecurities","ksHolding","ksPayment"],"ksBank":["ksInsurance"],"ksSecurities":["ksInsurance"],"ksHolding":["ksInsurance"],"ksPayment":["ksInsurance"],"kqCement":["kqPipe","kqConstruction","kqLogistics","kqShip"],"kqPipe":["kqCement"],"kqConstruction":["kqCement"],"kqLogistics":["kqCement"],"kqShip":["kqCement"]};
+const DAILY_SECTOR_LINKS_20260904={"ksAir":["ksTravel","ksLogistics","ksOil","ksHolding"],"kqRobot":["kqSoftware","kqMachine","kqAuto","kqElectronics"],"ksTravel":["ksAir"],"ksLogistics":["ksAir"],"ksOil":["ksAir"],"ksHolding":["ksAir"],"kqSoftware":["kqRobot"],"kqMachine":["kqRobot"],"kqAuto":["kqRobot"],"kqElectronics":["kqRobot"],"ksHydrogen":[]};
 let dailyLeaderView='all';
 let dailySelectedSector='';
 let dailySelectedMarket='';
@@ -2151,7 +2318,7 @@ function renderDailySectorDetail(){
   const host=document.getElementById('dailySectorDetail');
   if(!host)return;
   if(!dailySelectedSector){host.innerHTML='<div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div>';return;}
-  const sector=DAILY_SECTOR_STOCKS_20260903[dailySelectedSector];
+  const sector=DAILY_SECTOR_STOCKS_20260904[dailySelectedSector];
   const effectiveMarket=dailyLeaderView==='all'?dailySelectedMarket:dailyLeaderView;
   const stocks=sector.stocks.filter(s=>!effectiveMarket||s.market===effectiveMarket);
   host.innerHTML=`<div class="daily-sector-detail-head"><b>${escapeHtml(sector.name)} · 섹터 주도점수 우선순위</b><span>${escapeHtml(sector.score)} · ${effectiveMarket||'통합'} · V2는 보조근거</span></div>`+
@@ -2160,7 +2327,7 @@ function renderDailySectorDetail(){
 function selectDailySector(sectorKey,market){
   dailySelectedSector=sectorKey;
   dailySelectedMarket=market||'';
-  const related=new Set([sectorKey,...(DAILY_SECTOR_LINKS_20260903[sectorKey]||[])]);
+  const related=new Set([sectorKey,...(DAILY_SECTOR_LINKS_20260904[sectorKey]||[])]);
   document.querySelectorAll('[data-eco-sector]').forEach(node=>{
     const nodeMarket=node.dataset.nodeMarket||node.closest('[data-eco-market]')?.dataset.ecoMarket||'';
     const sameMarket=!market||nodeMarket===market;
@@ -2195,8 +2362,8 @@ function setDailyLeaderView(view){
   ['dailyLeaderConfirmed','dailyLeaderConfirmedNote','dailyLeaderEmerging','dailyLeaderEmergingNote','dailyLeaderWatch','dailyLeaderWatchNote'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=s[i];});
   const detail=document.getElementById('dailyLeaderDetail');
   if(detail) detail.textContent=`${view==='all'?'통합':view} 기준 · 종목을 누르면 시장 주도주 판정 근거가 표시됩니다.`;
-  if(view==='KOSPI')selectDailySector('ksInsurance','KOSPI');
-  else if(view==='KOSDAQ')selectDailySector('kqCement','KOSDAQ');
+  if(view==='KOSPI')selectDailySector('ksAir','KOSPI');
+  else if(view==='KOSDAQ')selectDailySector('kqRobot','KOSDAQ');
   else{
     dailySelectedSector='';dailySelectedMarket='';
     document.querySelectorAll('[data-eco-sector],[data-eco-link]').forEach(el=>el.classList.remove('selected','active','eco-dim'));
