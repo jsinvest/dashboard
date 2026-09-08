@@ -189,6 +189,8 @@ def main():
     ap.add_argument("--day", required=True)
     ap.add_argument("--us-dir", type=Path, required=True)
     ap.add_argument("--recovery", type=Path, required=True)
+    ap.add_argument("--derivatives-evidence", type=Path, help="Already reviewed, same-date derivatives evidence; no legacy recovery")
+    ap.add_argument("--flow-source", type=Path, help="Validated canonical all-expiry flow CSV")
     args = ap.parse_args()
     day = args.day
     output = args.recovery / "cash_index_review"
@@ -255,7 +257,14 @@ def main():
             "intraday_source": {"path": str(five_path), "sha256": mtf.sha256_file(five_path), "rows": len(five), "start": str(five.index[0]), "end": str(five.index[-1])},
             "latest_daily_ohlc": daily.iloc[-1][OHLCV[:4]].to_dict(), "timeframes": analyses, "ten_minute_validation": audit, "chart": chart_name,
             "daily_last_20": [{"date": str(t.date()), **r[OHLCV[:4]].to_dict()} for t, r in daily.tail(20).iterrows()]})
-    result["derivatives_evidence"] = recover_eod(args.recovery, output, day)
+    if args.derivatives_evidence:
+        result["derivatives_evidence"] = read_json(args.derivatives_evidence)
+        assert result["derivatives_evidence"]["trade_date"] == day
+        assert args.flow_source and args.flow_source.is_file()
+        flow = pd.read_csv(args.flow_source).rename(columns={"trade_date": "date"})
+        flow.to_csv(output / "all_expiry_flow_history.csv", index=False, encoding="utf-8-sig")
+    else:
+        result["derivatives_evidence"] = recover_eod(args.recovery, output, day)
     kdaily = read_frame(specs[0][4])
     flow = pd.read_csv(output / "all_expiry_flow_history.csv")
     last15 = pd.to_datetime(flow.tail(15).date).dt.date.tolist()
@@ -263,8 +272,8 @@ def main():
     result["derivatives_evidence"]["latest_15_trading_days_calendar_verified"] = True
     write_json(output / "cash_index_evidence.json", result)
     manifest = {"trade_date": day, "status": "OK_WITH_DISCLOSED_LIMITATIONS", "ready_for_editorial_review": True,
-        "original_eod_status": "FAILED_STAGE_1_PRESERVED", "recovered_stages": ["OFFLINE_0787_PARSE_EXIT_0", "MANUAL_OI_CORRECTION", "ALL_EXPIRY_FLOW", "FIVE_CASH_INDICES_FOUR_TIMEFRAMES"],
-        "skipped_stages": ["HTS_UI_RECOLLECTION", "LEGACY_FUTURES_PRICE_STRUCTURE_BY_USER_REQUEST", "AUTOMATIC_EXPIRY_HOLDING_INFERENCE"],
+        "original_eod_status": result["derivatives_evidence"].get("original_eod_status", "FAILED_STAGE_1_PRESERVED"), "recovered_stages": ["OFFLINE_0787_PARSE_EXIT_0", "MANUAL_OI_CORRECTION", "ALL_EXPIRY_FLOW", "FIVE_CASH_INDICES_FOUR_TIMEFRAMES"],
+        "skipped_stages": ["HTS_UI_RECOLLECTION", "AUTOMATIC_EXPIRY_HOLDING_INFERENCE"],
         "limitations": ["미국 지수 시세는 Yahoo 지연 보조 원천이며 독립 공식 가격 교차검증 없음", "진행 중 주봉·월봉은 확정 봉 판정에서 제외",
             "0787 전월물 순매매를 만기별 실제 보유 포지션으로 해석하지 않음", "이 지수 OHLCV로 실제 체결 매물대/강도/검증 승률을 산출하지 않음"],
         "artifacts": [{"path": p.name, "sha256": mtf.sha256_file(p), "bytes": p.stat().st_size} for p in sorted(output.iterdir()) if p.is_file() and p.name != "validation.json"]}

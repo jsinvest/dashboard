@@ -15,6 +15,8 @@ for (const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
 }
 const expected = JSON.parse(fs.readFileSync(path.join(root,'supply-zone/latest.json'),'utf8'));
 const futuresMode = expected.analysis_basis === 'FUTURES_OPTIONS_WITH_INDEX_CONTEXT';
+const expectedContext=futuresMode?JSON.parse(fs.readFileSync(path.join(root,'supply-zone',expected.index_context_file),'utf8')):expected;
+const displayNumber=n=>Number(n).toLocaleString('ko-KR',{maximumFractionDigits:2});
 for (const file of ['scripts/cash-index-review.js','scripts/futures-index-context.js']) {
   if (fs.existsSync(path.join(root,file))) new vm.Script(fs.readFileSync(path.join(root,file),'utf8'));
 }
@@ -73,22 +75,28 @@ const expectedHash = crypto.createHash('sha256').update(JSON.stringify(expected)
           indexContextCollapsed:document.getElementById('supplyIndexContext')?!document.getElementById('supplyIndexContext').open:null,
           indexContextError:document.getElementById('supplyIndexContextBody')?.dataset.loadError==='true',
           primaryPriceMap:panel.querySelector('.supply-price-map')?.textContent,
+          assessmentText:document.getElementById('supplyOverallAssessment')?.textContent,
           primaryFlow:document.getElementById('futuresFlow')?.textContent,
           positionText:document.getElementById('supplyPositionInference')?.textContent,
+          oiText:document.getElementById('futuresOi')?.textContent,
+          indexMeta:document.getElementById('indexContextMeta')?.textContent,
           uniqueIds:new Set([...panel.querySelectorAll('[id]')].map(x=>x.id)).size===panel.querySelectorAll('[id]').length,
           bodyOverflow:document.documentElement.scrollWidth>innerWidth+2,
           failureVisible:[...panel.querySelectorAll('*')].some(x=>x.children.length===0 && /로딩 실패|AI 분석 준비되지 않음|필수 형식.*누락/.test(x.textContent) && x.getClientRects().length)};
       });
       const expectedHeadline=futuresMode?'결론: '+expected.overall_assessment.dashboard_conclusion:expected.review.headline;
       if(live.contentHash!==expectedHash || !live.meta.includes(expected.as_of) || live.headline!==expectedHeadline ||
-        live.indices.join(',')!=='KOSPI,NASDAQ,SOX,NIKKEI,DOW' || live.timeframeCards!==20 || live.images.length!==(futuresMode?15:6) ||
+        live.indices.join(',')!=='KOSPI,NASDAQ,SOX,NIKKEI,DOW' || live.timeframeCards!==20 || live.images.length!==(futuresMode?expected.charts.length+6:6) ||
         !live.flowCollapsed || !live.originalChartsCollapsed || live.failureVisible || live.bodyOverflow || errors.length) {
         throw new Error(JSON.stringify({name,live,errors}));
       }
       if(futuresMode && (!live.indexContextCollapsed || live.indexContextError || !live.uniqueIds ||
-        !live.meta.includes('F202609') || !live.meta.includes('1,109.75') ||
-        !live.primaryPriceMap.includes('1,144.90') || live.primaryPriceMap.includes('6,995') ||
-        !live.primaryFlow.includes('21,837') || !live.positionText.includes('금융투자·투신'))) throw new Error('Futures-first scope check failed: '+JSON.stringify(live));
+        !live.meta.includes(expected.futures_contract) || !live.meta.includes(displayNumber(expected.current_price)) ||
+        !expected.overall_assessment.levels.every(x=>live.assessmentText.includes(x.range)) ||
+        !live.primaryPriceMap.includes(expected.overall_assessment.levels.find(x=>x.side==='resistance').range) ||
+        !live.primaryFlow.includes(displayNumber(expected.derivatives_evidence.all_expiry_flow['3'].foreign)) ||
+        !live.oiText.includes(displayNumber(expected.contract_observations[1].oi)) ||
+        !live.indexMeta.includes(expected.as_of) || !live.positionText.includes('금융투자·투신'))) throw new Error('Futures-first scope check failed: '+JSON.stringify({map:live.primaryPriceMap,flow:live.primaryFlow,meta:live.meta,missingLevels:expected.overall_assessment.levels.filter(x=>!live.primaryPriceMap.includes(displayNumber(x.high)))}));
       await page.screenshot({path:path.join(output,name+'_top.png')});
       if(futuresMode) {
         await page.locator('.supply-price-map').screenshot({path:path.join(output,name+'_futures_levels.png')});

@@ -1,0 +1,153 @@
+{
+  "trade_date": "20260908",
+  "status": "OK_WITH_DISCLOSED_LIMITATIONS",
+  "ready_for_editorial_review": true,
+  "original_eod_status": "FAILED_STAGE_5_PRESERVED",
+  "collection_rerun": false,
+  "futures_price_history_latest": "2026-09-08",
+  "flow_calendar_verified": true,
+  "expiry_holdings_verified": false,
+  "december_oi_volume_consistent": false,
+  "regular_oi_change_check": true,
+  "source_manifests": [
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260908\\manifest_20260908.json",
+      "sha256": "8776d90f0f4b870d4b40566414f83cdbdbc72f53d04ac2d0e1eedb9656e6f1eb",
+      "verified_files": 30
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260908\\201650\\validation.json",
+      "sha256": "aba56e6446c1ac1b7c10efad734309d6038ecc029f7092ad527e917333babd88",
+      "verified_files": 37
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
+      "sha256": "75963f8e9f5f55021b1451fbab76056ca9597be9212dbccadd73b74728d288ea",
+      "rows": 56,
+      "start": "2026-06-12"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
+      "sha256": "d0ff6edb265590cbb3ea5a844d5a3fdbb784fb9c345b41e8357bda27e84c654e",
+      "rows": 57,
+      "start": "2026-06-12"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_0787_parsed_20260908.csv",
+      "sha256": "bc01c410f34ee60fc6a649141695d0b3b281571d25320f62037a989813a36b00"
+    }
+  ],
+  "chart_sources": [
+    {
+      "file": "futures_daily_20260908.png",
+      "title": "5605 실제 선물 일봉 · 120봉 표시",
+      "kind": "price",
+      "interpretation": "큰 하락 뒤 하단이 높아진 회복 구간이지만 오늘 고점 돌파를 유지하지 못했습니다. 넓은 거래량 프로파일과 좁은 실행 관찰선을 구별합니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_일봉_20260908.png",
+      "sha256": "bffdc56c0cb53010b777c1619a875d5f2195d9fe7993d1044f396065e7b91946"
+    },
+    {
+      "file": "futures_10m_20260908.png",
+      "title": "5605 실제 선물 10분봉 · 600봉",
+      "kind": "price",
+      "interpretation": "9/3 이후 상승 뒤 9/8 13:05 고점 1,138.70에서 밀려 단기 이평과 이전 상단 아래로 내려왔습니다. 장중 과매도는 반등 가능성이지만 지지 회복의 증거는 아닙니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_10분봉_20260908.png",
+      "sha256": "c9a7f2d4811c14a0e2d4ae4af005f766d2b3fc24e57053f0867eec851e4be751"
+    },
+    {
+      "file": "futures_0790_20260908.png",
+      "title": "0790 누적 · 현재가 주변의 주체별 곡선",
+      "kind": "source",
+      "interpretation": "외국인 우상향 / 금융투자·투신 우하향. 은행·보험은 우상향으로 기관 내 차이가 있습니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0790_누적_20260908.png",
+      "sha256": "f9c0b6f303f576dece3882f586df96d217456b2d7778cc7e36e47279c00231f6"
+    },
+    {
+      "file": "futures_0791_foreign_20260908.png",
+      "title": "0791 외국인 추정 누적",
+      "kind": "source",
+      "interpretation": "입력 범위가 아니라 실제 보이는 1,100~1,150의 우상향 곡선을 읽었습니다. 현재가 1,098.40 주변은 0790으로 확인합니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_외국인_누적_1100_1200_20260908.png",
+      "sha256": "9d41c279917a41ca3baa43c60d67942dfc461986b2493c4a743f45153210cb89"
+    },
+    {
+      "file": "futures_0791_financial_20260908.png",
+      "title": "0791 금융투자 추정 누적",
+      "kind": "source",
+      "interpretation": "실제 표시 구간의 합성곡선은 우하향으로 하락에 유리한 추정 구조입니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_금융투자_누적_1100_1200_20260908.png",
+      "sha256": "ea9a06fd2edc7a5ed58dc31792a0dc629b2203a238eb25a75bcf1888bcc7891f"
+    },
+    {
+      "file": "futures_0791_trust_20260908.png",
+      "title": "0791 투신 추정 누적",
+      "kind": "source",
+      "interpretation": "금융투자와 같은 우하향 기울기입니다. 기관 전체의 확정 잔고와 구별합니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_투신_누적_1100_1200_20260908.png",
+      "sha256": "af38e0f17c25f4eaf44a441847fc83998e4927b2b9c3a0f746142c9b9ffec8d6"
+    },
+    {
+      "file": "futures_0471_20260908.png",
+      "title": "0471 KOSPI200 변동성 · 60일",
+      "kind": "source",
+      "interpretation": "우측 풋 평균 IV가 콜보다 높은 곡선 관계를 보조 확인합니다. 정확한 최신 IV 숫자는 읽을 수 없어 사용하지 않습니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0471_KOSPI200_일별_60일_20260908.png",
+      "sha256": "69ac4206e62b73d2db294b0e680d45bb76e935659f81e29aa5a78cf39d87b28f"
+    },
+    {
+      "file": "futures_0441_sep_20260908.png",
+      "title": "0441 9월물 · 정규장 원본",
+      "kind": "source",
+      "interpretation": "종가 1,098.40 / 거래량 125,850 / 미결제약정 100,612. 구조 판독과 셀 판독을 교차 대조했습니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_close_snapshot_20260908.png",
+      "sha256": "7a66cbe6fb93bb2bebe2247bf0c0c02d04a10fbc4d50bfe211078c9ca555ce9c"
+    },
+    {
+      "file": "futures_0441_dec_20260908.png",
+      "title": "0441 12월물 · 사용자 제공 10분 차트",
+      "kind": "source",
+      "interpretation": "종가 1,100.20 / 미결제약정 74,318. 전일 화면과의 차이가 당일 거래량보다 커 정확한 OI 이동 물량은 보류합니다.",
+      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_F202612_user_verified.png",
+      "sha256": "27c0d75752208e940540cfde5250b75e4a7ceb29b2009939f8990fc43717de78"
+    }
+  ],
+  "limitations": [
+    "기준은 9/8 정규장 15:45 선물 화면입니다. 이후 야간 현재가는 수집하지 않았으며 실시간 가격이 아닙니다.",
+    "가격 57행·수급 56행(6/12~9/8)의 검증된 저장자료를 사용했습니다. 과거 일부 거래일이 빠져 있어 전체 구간을 연속 57/56거래일이라고 하지 않습니다. 최근 15일은 국내 완료 일봉 달력과 일치합니다.",
+    "0441 원본 판독과 사용자 12월물 화면을 사용했습니다. 거래소 공식 월물 가격·OI와 독립 대조한 자료는 아닙니다. 원본, SHA256, 정정 전후 기록을 보존했습니다.",
+    "12월물 OI 차이와 거래량의 범위 충돌은 남아 있습니다. 두 만기를 합산한 실제 롤오버·보유계약수는 계산하지 않았습니다.",
+    "0787은 전체 월물 활동이며 0791은 최근월물 전환 시점을 기준으로 한 HTS 추정 누적입니다. 만기별 실제 포지션과 평균단가는 별도로 확인해야 합니다.",
+    "지지 강도는 가격 반응·파동·갭 경계를 종합한 상대 평가입니다. 5605의 거래량 프로파일은 선택 봉 수·야간 포함 설정에 영향을 받으며 보유물량을 의미하지 않습니다.",
+    "기존 EOD는 화면 71건 수집 뒤 5단계에서 실패했습니다. 실패 로그는 보존했고 실패 후처리만 복구했습니다. 전체 배치·HTS 화면 자동조작을 재실행하지 않았습니다.",
+    "원장 누락·숫자 오독·오래된 전일 비교를 막는 회귀검사는 통과했지만 새 설정의 다음 전체 실수집 성공까지 검증한 것은 아닙니다.",
+    "코스피·니케이는 9/8, 미국 현물은 9/4 완료 세션입니다. 미국 휴장으로 같은 세션을 다시 사용하며 새 미국 관측일로 중복 누적하지 않습니다. 진행 월·주봉은 확정 판단에서 제외합니다.",
+    "새 구간 도달 조건의 적중률은 이번에 산출하지 않았습니다. 해외 차트 추가 자체를 승률 향상으로 주장하지 않습니다."
+  ],
+  "review_script_sha256": "2c24c2f3f884f1f351c4e5ef002a268c0e2de1d533aaa3a8deb77ea304134134",
+  "original_manifest": {
+    "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_manifest_20260908.json",
+    "sha256": "84ab6195febf7d1b9ef7fd11eff85170e2f0b809efd6f6555f55f0c993f58a10",
+    "generated_at": "2026-09-08 17:28:46"
+  },
+  "original_validation": {
+    "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_validation_20260908.txt",
+    "sha256": "7e191bbb00948ff4c8fc48b363ea01a391295c38a5f78364a17e35105afea92e"
+  },
+  "recovery_tests": {
+    "regressions_passed": 9,
+    "full_eod_reexecuted": false,
+    "live_collection_after_fix_verified": false
+  },
+  "index_context_sha256": "2a623daaff03b92a221070d01c7b071c4e283d49d4f9877f87749c28ab2fb708"
+}
