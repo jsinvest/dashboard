@@ -1,34 +1,37 @@
 {
   "schema_version": "futures-options-review-v1",
   "analysis_basis": "FUTURES_OPTIONS_WITH_INDEX_CONTEXT",
-  "as_of": "2026-09-08",
-  "generated_at": "2026-09-08T20:44:21.026619+09:00",
+  "as_of": "2026-09-09",
+  "generated_at": "2026-09-09T18:47:02.333360+09:00",
   "review_status": "AI_REVIEWED_CONDITIONAL_SCENARIOS",
   "execution_ready": false,
   "primary_market": "KOSPI200_FUTURES",
   "futures_contract": "F202609",
   "contract_code": "A0169000",
-  "current_price": 1098.4,
-  "display_reference_basis": "9/8 정규장 0441 원본 직접 대조",
+  "current_price": 1117.2,
+  "display_reference_basis": "9/9 정규장 0441 사용자 제공값 · 원본 직접 대조",
   "session_references": {
     "regular": {
-      "trade_date": "2026-09-08",
-      "close": 1098.4,
-      "high": 1138.7,
-      "low": 1097.85,
+      "trade_date": "2026-09-09",
+      "close": 1117.2,
+      "high": 1128.7,
+      "low": 1100.55,
       "open": null
     },
-    "overnight": null
+    "overnight": {
+      "snapshot_price": 1117.1,
+      "snapshot_time": "9/9 18:00 초기 야간 부분봉 · 정규장과 분리"
+    }
   },
   "overall_assessment": {
-    "dashboard_conclusion": "9월물 1,098.40: 1,109.75 회복·재지지 전 단기 하방 조정 우세 · 1,097.85 이탈 시 1,084.25 시험",
-    "dashboard_conclusion_detail": "장중 1,138.70까지 올랐지만 이전 고점대 아래로 밀려 저가 부근 마감했습니다. 단기 상승 파동은 꺾였고, 일봉 반등 전체는 1,084.25·1,063.85가 남아 있어 별도로 봅니다. 지지 이탈 후 되돌림이 저항으로 바뀔 때 다음 구간으로 뷰를 이어갑니다.",
-    "headline": "외국인 최근 3·5일 순매수와 상승에 유리한 누적 추정 곡선은 남아 있지만, 오늘 가격과 니케이 급락이 충돌합니다. 수급만으로 다음 날 상방을 유지하지 않습니다.",
-    "stance": "단기 하방 조정 / 일봉은 박스·회복 구조 안",
-    "confidence": "가격 구조 근거 · 확정 승률 아님",
+    "dashboard_conclusion": "9월물 1,117.20: 주봉 회복 시도 · 일봉 반등 우세 · 분봉 박스권",
+    "dashboard_conclusion_detail": "1,097.85~1,100.55 방어를 전제로 일봉 반등 관점을 유지합니다. 1,128.70 위 10분봉 마감·재지지 → 1,138.70~1,144.90 재시험. 1,097.85 이탈·회복 실패 → 1,084.25 경계. 일봉 반등과 분봉 횡보를 구분하며 다음 날 무조건 상승으로 해석하지 않습니다.",
+    "headline": "외국인 최근 3·5일 순매수와 HTS 추정 곡선은 반등 관점에 합의합니다. 다만 전일 고점 1,138.70을 넘지 못했고 9월물 OI 감소는 12월물 증가와 맞물려 신규 롱·숏 강도로 단정할 수 없습니다.",
+    "stance": "일봉 반등 우세 / 분봉은 박스 상단 돌파 확인 필요",
+    "confidence": "직접 검토한 가격·수급의 조건부 해석 / 승률 아님",
     "levels": [
       {
-        "label": "큰 박스 상단 · 재차 매도 반응",
+        "label": "큰 스윙 상단 저항",
         "low": 1138.7,
         "high": 1144.9,
         "side": "resistance",
@@ -36,44 +39,59 @@
         "range": "1,138.70~1,144.90",
         "structure_strength": "중",
         "strength": "중",
-        "reason": "9/8 장중 고가 1,138.70에서 급히 밀렸고 8/18 고가 1,144.90은 넘지 못했습니다. 가까운 이전 고점 저항보다 위에 있는 큰 스윙 경계입니다.",
-        "invalidation": "1,144.90 위 정규장 종가 + 되돌림 재지지 때 큰 상방 전환 재평가",
-        "map_reason": "9/8 고점과 8/18 큰 스윙 고점",
-        "map_rule": "1,144.90 위 정규장 종가 + 되돌림 재지지 때 큰 상방 전환 재평가",
+        "reason": "9/8 고가와 8/18 고가. 아직 두 고점대 아래입니다.",
+        "invalidation": "1,144.90 위 정규장 종가·재지지 때 큰 박스 돌파로 재평가",
+        "map_reason": "8/18·9/8 스윙 고점",
+        "map_rule": "1,144.90 위 종가·재지지",
         "color": "#ef4444"
       },
       {
-        "label": "돌파 실패 뒤 첫 회복 관문",
+        "label": "분봉 박스 첫 돌파 관문",
+        "low": 1128.7,
+        "high": 1128.7,
+        "side": "resistance",
+        "level_type": "structural",
+        "range": "1,128.70",
+        "structure_strength": "약",
+        "strength": "약",
+        "reason": "9/9 정규장 고가. 단일 날짜 고점이므로 강한 누적 저항으로 격상하지 않음.",
+        "invalidation": "위 10분봉 마감·재지지 → 1,138.70~1,144.90. 재이탈하면 돌파 실패",
+        "map_reason": "9/9 고가 · 1회 관측",
+        "map_rule": "10분봉 돌파·재지지 → 1,138.70",
+        "color": "#ef4444"
+      },
+      {
+        "label": "회복한 이전 고점대",
         "low": 1105.25,
         "high": 1109.75,
-        "side": "resistance",
+        "side": "support",
         "level_type": "structural",
         "range": "1,105.25~1,109.75",
         "structure_strength": "중",
         "strength": "중",
-        "reason": "8/21 고가 1,105.25, 8/27 고가 1,109.40, 9/7 고가·종가 1,109.75. 오늘 장중 통과했지만 1,098.40으로 마감해 지지 전환에 실패했습니다.",
-        "invalidation": "1,109.75 위 10분봉 마감·재지지 전 단기 하방 조정 우선",
-        "map_reason": "이전 두 고점 + 9/7 종가 · 오늘 재이탈",
-        "map_rule": "1,109.75 위 10분봉 마감·재지지 전 단기 하방 조정 우선",
-        "color": "#ef4444"
-      },
-      {
-        "label": "바로 아래 당일 저점",
-        "low": 1097.85,
-        "high": 1097.85,
-        "side": "support",
-        "level_type": "structural",
-        "range": "1,097.85",
-        "structure_strength": "약",
-        "strength": "약",
-        "reason": "오늘 정규장 저점이며 종가보다 0.55포인트 아래입니다. 반복 방어가 확인된 누적 지지대가 아니라 현재 하락이 멈추는지 보는 첫 지점입니다.",
-        "invalidation": "10분봉 종가 이탈 뒤 재회복 실패 → 1,084.25 시험",
-        "map_reason": "9/8 저점 · 1회 관측 / 종가 근접",
-        "map_rule": "10분봉 종가 이탈 뒤 재회복 실패 → 1,084.25 시험",
+        "reason": "8/21 고가 1,105.25·8/27 고가 1,109.40·9/7 종가 1,109.75. 오늘 종가는 위로 회복했으나 지지 역할은 재시험 필요.",
+        "invalidation": "1,105.25 아래 10분봉 마감·회복 실패 → 1,097.85~1,100.55",
+        "map_reason": "8/21·8/27·9/7 고점",
+        "map_rule": "1,105.25 이탈·회복 실패",
         "color": "#3b82f6"
       },
       {
-        "label": "전일 갭 상승의 윗 경계",
+        "label": "일봉 반등의 가까운 방어대",
+        "low": 1097.85,
+        "high": 1100.55,
+        "side": "support",
+        "level_type": "structural",
+        "range": "1,097.85~1,100.55",
+        "structure_strength": "중",
+        "strength": "중",
+        "reason": "9/8·9/9 정규장 저점. 이틀의 저점 방어이며 반복 도달 승률을 검증한 강한 매물대는 아님.",
+        "invalidation": "1,097.85 아래 10분봉 마감·재회복 실패 → 1,084.25",
+        "map_reason": "9/8·9/9 저점 방어",
+        "map_rule": "1,097.85 이탈 → 1,084.25",
+        "color": "#3b82f6"
+      },
+      {
+        "label": "갭 반등 윗 경계",
         "low": 1084.25,
         "high": 1084.25,
         "side": "support",
@@ -81,14 +99,14 @@
         "range": "1,084.25",
         "structure_strength": "약",
         "strength": "약",
-        "reason": "9/7 정규장 저점입니다. 오늘 저점은 이보다 높아 일봉 반등 전체가 무너진 것은 아니지만 이 선을 잃으면 전일 급등의 방어력이 약해집니다.",
-        "invalidation": "이탈·재회복 실패 → 1,078.20을 거쳐 1,063.85 점검",
-        "map_reason": "9/7 저점 · 여러 날 반복 방어 아님",
-        "map_rule": "이탈·재회복 실패 → 1,078.20을 거쳐 1,063.85 점검",
+        "reason": "9/7 정규장 저점. 한 날짜 지지이지만 갭 구조의 경계로 중요.",
+        "invalidation": "정규장 종가 이탈·회복 실패 시 일봉 반등 약화. 1,078.20 → 1,063.85",
+        "map_reason": "9/7 저점 · 갭 윗 경계",
+        "map_rule": "종가 이탈 → 1,078.20",
         "color": "#3b82f6"
       },
       {
-        "label": "갭 반등 구조의 핵심 경계",
+        "label": "갭 반등 구조 훼손선",
         "low": 1063.85,
         "high": 1063.85,
         "side": "support",
@@ -96,14 +114,14 @@
         "range": "1,063.85",
         "structure_strength": "중",
         "strength": "중",
-        "reason": "9/4 고가와 9/7 저점 사이의 정규장 갭 하단입니다. 가격 공백은 매물대가 아니며 이 경계가 저항으로 바뀌면 갭 반등 전제가 훼손됩니다.",
-        "invalidation": "이탈·재회복 실패 → 1,052.50 / 1,042.30 차례로 점검",
-        "map_reason": "9/4 고가 · 갭 하단 / 반복 지지 아님",
-        "map_rule": "이탈·재회복 실패 → 1,052.50 / 1,042.30 차례로 점검",
+        "reason": "9/4 고가로 정규장 갭 하단. 가격 공백을 거래 없는 매물대로 단정하지 않음.",
+        "invalidation": "이탈 뒤 되돌림 저항 전환 → 1,052.50·1,042.30 점검",
+        "map_reason": "9/4 고점 · 갭 아랫 경계",
+        "map_rule": "이탈·회복 실패 → 1,052.50",
         "color": "#3b82f6"
       },
       {
-        "label": "반복 저점 · 먼 핵심 방어대",
+        "label": "먼 반복 저점 핵심 지지",
         "low": 1003.65,
         "high": 1008.7,
         "side": "support",
@@ -111,101 +129,103 @@
         "range": "1,003.65~1,008.70",
         "structure_strength": "강",
         "strength": "강",
-        "reason": "8/19 1,003.65, 8/25 1,007.10, 9/3 1,008.70의 세 저점이 모입니다. 최근 16거래일 안의 세 번의 일봉 하단 반응이며 현재가와 먼 구조 지지입니다.",
-        "invalidation": "1,003.65 이탈 뒤 1,008.70 재시험이 저항이면 큰 반등 가설 중단",
-        "map_reason": "서로 다른 세 날짜의 반복 하단 반응",
-        "map_rule": "1,003.65 이탈 뒤 1,008.70 재시험이 저항이면 큰 반등 가설 중단",
+        "reason": "8/19·8/25·9/3 저점 세 곳의 군집. 강도는 상대적 구조 평가.",
+        "invalidation": "1,003.65 이탈 뒤 1,008.70 재회복 실패면 반복 하단 반등 가설 중단",
+        "map_reason": "8/19·8/25·9/3 반복 저점",
+        "map_rule": "1,003.65 이탈·회복 실패",
         "color": "#3b82f6"
       }
     ],
-    "acceleration_title": "이탈 강도와 상·하방 가속 조건 · 9월물 가격",
+    "acceleration_title": "상승 연장·하락 가속을 나누는 가격 · 9월물 기준",
     "acceleration_after_map": true,
     "acceleration_triggers": [
       {
-        "label": "첫 하방 연장",
+        "label": "분봉 상방 연장",
+        "tone": "cancel",
         "structure_strength": "약",
-        "classification": "작은 지지 이탈 · 강한 붕괴 아님",
-        "condition": "1,097.85 아래 10분봉 마감 후 되돌림 회복 실패.",
-        "target": "1,084.25에서 반응 확인. 되찾으면 이탈 실패로 분류"
+        "classification": "당일 고점 돌파 확인",
+        "condition": "1,128.70 위 10분봉 종가 후 같은 선 재지지.",
+        "target": "1,138.70~1,144.90. 한 번 넘긴 꼬리만으로 확정하지 않음"
       },
       {
-        "label": "하방 속도가 붙을 조건",
-        "structure_strength": "약 → 중",
-        "classification": "전일 저점 이탈 + 갭 구간 진입",
-        "condition": "1,084.25 이탈·재회복 실패, 이어 1,078.20도 지키지 못할 때.",
-        "target": "1,063.85 갭 하단. 정규장 공백이지만 야간 거래는 있어 빈 매물 구간으로 단정하지 않음"
-      },
-      {
-        "label": "일봉 반등 훼손",
+        "label": "큰 박스 상방 전환 후보",
+        "tone": "cancel",
         "structure_strength": "중",
-        "classification": "갭 하단의 저항 전환",
-        "condition": "1,063.85를 이탈하고 되돌림에서 회복하지 못할 때.",
-        "target": "1,052.50·1,042.30부터 점검. 먼 1,003.65까지 직행한다고 가정하지 않음"
+        "classification": "스윙 고점대 돌파",
+        "condition": "1,144.90 위 정규장 종가와 이후 재지지.",
+        "target": "상승 확장으로 재평가. 더 위 목표는 실제 다음 저항을 확인한 후 설정"
       },
       {
-        "label": "단기 하방 뷰 해제",
-        "tone": "cancel",
-        "classification": "이전 고점의 지지 전환",
-        "condition": "1,109.75 위 10분봉 마감 후 1,105.25~1,109.75 재지지.",
-        "target": "1,138.70~1,144.90 재시험. 1,105.25 아래 복귀하면 돌파 실패"
+        "label": "작은 지지 약화",
+        "structure_strength": "중",
+        "classification": "회복 고점대 재이탈",
+        "condition": "1,105.25 아래 10분봉 마감 뒤 1,109.75 회복 실패.",
+        "target": "1,097.85~1,100.55. 아직 일봉 회복 전체의 붕괴는 아님"
       },
       {
-        "label": "더 큰 상승 전환 후보",
-        "tone": "cancel",
-        "classification": "큰 스윙 상단 돌파",
-        "condition": "1,144.90 위 정규장 종가와 이후 재지지. 만기별 거래량·OI 범위를 함께 확인.",
-        "target": "큰 박스 상단 돌파로 재평가. 위쪽 목표는 추가 실제 파동 확인 후 설정"
+        "label": "가까운 하방 가속 경계",
+        "structure_strength": "중",
+        "classification": "최근 두 저점 방어 실패",
+        "condition": "1,097.85 아래 10분봉 마감 뒤 재시험이 저항으로 전환.",
+        "target": "1,084.25. 다시 1,100.55를 회복하면 이탈 실패로 재평가"
       },
       {
-        "label": "강한 하단 붕괴",
+        "label": "일봉 반등 약화",
+        "structure_strength": "약 → 중",
+        "classification": "갭 윗 경계 이탈",
+        "condition": "1,084.25 아래 정규장 종가·회복 실패, 이어 1,078.20도 방어 실패.",
+        "target": "1,063.85 갭 하단. 추가 이탈이면 1,052.50·1,042.30"
+      },
+      {
+        "label": "강한 반복 지지 붕괴",
         "structure_strength": "강",
-        "classification": "반복 저점 구조 무효화",
-        "condition": "1,003.65 이탈 후 1,008.70까지 되돌림이 저항으로 전환.",
-        "target": "반복 하단 반등 가설 중단. 현재 바로 앞의 진입 신호가 아닌 먼 구조 경계"
+        "classification": "먼 하단 구조 무효화",
+        "condition": "1,003.65 이탈 후 1,008.70 재회복 실패.",
+        "target": "반복 저점 반등 가설 중단. 바로 앞 단기 진입선은 아님"
       }
     ],
     "support_break_policy": {
-      "strong": "반복 하단 반등 가설 중단",
-      "medium": "갭 반등의 구조 훼손",
-      "weak": "작은 파동의 하방 연장부터 확인",
-      "confirmation": "한 번의 체결·꼬리보다 10분봉 마감과 재시험을 확인합니다. 큰 경계는 정규장 종가도 봅니다. 이 조건의 도달 승률을 새로 검증한 것은 아닙니다."
+      "strong": "반복 저점의 반등 전제 중단",
+      "medium": "회복 구조 약화와 다음 구간 확인",
+      "weak": "당일·단일 파동 연장부터 확인",
+      "confirmation": "10분봉 종가와 재시험, 큰 경계는 정규장 종가를 확인합니다. 실시간 완료 여부와 새 도달 승률은 검증하지 않았습니다."
     },
     "scenarios": [
       {
-        "tone": "down",
-        "condition": "1,109.75 회복·재지지 전",
-        "target": "단기 하방 조정 우선 / 1,097.85·1,084.25 반응"
-      },
-      {
         "tone": "up",
-        "condition": "1,109.75 회복·재지지",
-        "target": "1,138.70~1,144.90까지 상단 재시험"
+        "condition": "1,128.70 돌파·재지지",
+        "target": "1,138.70~1,144.90 상단 재시험"
       },
       {
         "tone": "neutral",
-        "condition": "1,084.25 유지하나 회복 관문 미통과",
-        "target": "일봉 반등 속 단기 조정·박스"
+        "condition": "1,097.85~1,128.70 안",
+        "target": "일봉 반등 안 분봉 박스권"
+      },
+      {
+        "tone": "down",
+        "condition": "1,097.85 이탈·회복 실패",
+        "target": "1,084.25까지 하방 관찰"
       }
     ],
-    "caution": "강·중·약은 반복 가격 반응과 구조 중요도의 상대 평가입니다. 실제 가격별 잔존 계약수나 예측 성공률이 아닙니다. 가격지도에는 가까운 지지·저항 각각 최대 3개를 표시하며, 먼 핵심 방어대는 가속 조건과 전체 근거 펼치기에 있습니다. 약한 지지 이탈을 큰 추세 붕괴로 확대하지 않습니다."
+    "caution": "강·중·약은 반응 횟수·고저점 구조·갭의 상대 평가이지 확정 확률이나 해당 가격의 잔존 계약수는 아닙니다. 현재가 근처 지도는 지지·저항 각 최대 3개, 먼 경계는 전체 근거와 가속 조건에 표시됩니다. 만기 교체 후 이 9월물 가격을 12월물 실행선으로 그대로 옮기지 않습니다."
   },
   "hts_0791_position_inference": {
-    "as_of": "2026-09-08",
+    "as_of": "2026-09-09",
     "mode": "누적 · HTS 추정",
     "scope": "최근월물 기준 HTS 누적 손익곡선 직접 판독",
-    "reference_range": "0790 실제 표시 1,090.08~1,110.08 / 0791 상세 실제 1,100~1,150",
+    "reference_range": "0791 실제 표시 1,100~1,150 · 0790 현재가 주변 교차 확인",
     "institution_label": "금융투자·투신 · 기관 전체 합산 아님",
     "foreign": {
       "direction": "LONG",
       "contracts": null,
       "average_price": null,
-      "curve_basis": "0790의 현재가 주변과 0791 상세에서 합성 만기손익곡선이 우상향합니다. 외국인은 가격 상승에 유리한 추정 구조이지만, 현재 손익값이 음수라는 사실과 방향 기울기는 서로 다른 정보입니다."
+      "curve_basis": "9/9 0790·0791에서 합성 만기손익곡선이 우상향합니다. 상승에 유리한 추정 구조라는 뜻이며 확정 롱 계약수나 평균단가를 계산한 것은 아닙니다."
     },
     "institution": {
       "direction": "SHORT",
       "contracts": null,
       "average_price": null,
-      "curve_basis": "0790·0791의 금융투자와 투신은 우하향합니다. 은행·보험은 반대 기울기여서 기관 전체의 확정 순숏 잔고로 표현하지 않습니다.",
+      "curve_basis": "9/9 금융투자·투신 곡선은 우하향, 은행·보험은 반대 기울기입니다. 기관 전체의 확정 순숏 잔고와 구분합니다.",
       "components": [
         {
           "investor": "금융투자",
@@ -225,371 +245,423 @@
         }
       ]
     },
-    "recent_flow_alignment": "외국인 최근 1·3·5·15일 순매수와 추정 곡선 우상향은 정렬하지만, 오늘 종가 하락과 충돌합니다. 금융투자·투신의 곡선은 하락에 유리한 기울기이며 기관계 최근 순매도와 정렬합니다.",
-    "flow_proxy_comparison": "0787의 전월물 거래 활동과 0791의 최근월물 전환 시점 기준 추정 누적은 기간·범위가 다릅니다. 서로 합산하거나 평균단가를 역산하지 않습니다.",
-    "limitation": "0791은 실제 잔고가 아닌 추정 곡선입니다. 상세 화면의 입력 1,100~1,200과 실제 표시 1,100~1,150이 달라 실제 축만 읽었습니다. 현재가 주변은 0790으로 교차 확인했습니다. 정확한 계약수·평균단가·델타는 추정하지 않습니다."
+    "recent_flow_alignment": "외국인 최근 1·3·5일 순매수와 우상향 추정 곡선이 오늘 종가 상승·일봉 반등과 합의합니다. 금융투자·투신은 하락에 유리한 추정 곡선이며 기관계 순매도와 같은 방향입니다. 단기 박스 돌파까지 증명하지는 않습니다.",
+    "flow_proxy_comparison": "0787 전체 만기 순매매 활동과 0791 HTS 추정 손익곡선은 범위가 다릅니다. 서로 합산하거나 평균단가를 역산하지 않습니다.",
+    "limitation": "실제 잔고·정확한 델타가 아닌 HTS 추정 곡선입니다. 0791 입력 1,100~1,200과 실제 표시 1,100~1,150을 구별했습니다. 기관계 전체를 금융투자·투신과 동일시하지 않습니다."
   },
   "derivatives_evidence": {
-    "trade_date": "20260908",
-    "original_eod_status": "FAILED_STAGE_5_PRESERVED",
+    "trade_date": "20260909",
+    "original_eod_status": "FAILED_STAGE_2_PRESERVED",
     "all_expiry_flow": {
       "1": {
-        "start": "2026-09-08",
-        "end": "2026-09-08",
-        "foreign": 1288,
-        "institution": -4553
+        "start": "2026-09-09",
+        "end": "2026-09-09",
+        "foreign": 2176,
+        "institution": -1216
       },
       "3": {
-        "start": "2026-09-04",
-        "end": "2026-09-08",
-        "foreign": 20048,
-        "institution": -22289
+        "start": "2026-09-07",
+        "end": "2026-09-09",
+        "foreign": 14431,
+        "institution": -16199
       },
       "5": {
-        "start": "2026-09-02",
-        "end": "2026-09-08",
-        "foreign": 15018,
-        "institution": -17486
+        "start": "2026-09-03",
+        "end": "2026-09-09",
+        "foreign": 25301,
+        "institution": -24716
       },
       "15": {
+        "start": "2026-08-20",
+        "end": "2026-09-09",
+        "foreign": 23727,
+        "institution": -23499
+      },
+      "16": {
         "start": "2026-08-19",
-        "end": "2026-09-08",
-        "foreign": 21220,
-        "institution": -20108
+        "end": "2026-09-09",
+        "foreign": 23396,
+        "institution": -21324
       }
     },
     "daily_options": [
       {
         "investor": "외국인",
         "market": "콜옵션",
-        "quantity": 4472,
-        "amount_100m_krw": 7
+        "quantity": -2373,
+        "amount_100m_krw": -45
       },
       {
         "investor": "외국인",
         "market": "풋옵션",
-        "quantity": 6124,
-        "amount_100m_krw": -15
+        "quantity": -4702,
+        "amount_100m_krw": -1
       },
       {
         "investor": "기관계",
         "market": "콜옵션",
-        "quantity": -4368,
-        "amount_100m_krw": -25
+        "quantity": -1211,
+        "amount_100m_krw": 27
       },
       {
         "investor": "기관계",
         "market": "풋옵션",
-        "quantity": -1249,
-        "amount_100m_krw": 65
+        "quantity": -2651,
+        "amount_100m_krw": -12
       }
     ],
-    "scope_note": "0787 전체 월물 순매매 활동 누적입니다. 실제 9월물 잔존 포지션·평균단가가 아니며 0791 추정 손익곡선과 합산하지 않습니다.",
-    "flow_source": {
-      "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
-      "sha256": "75963f8e9f5f55021b1451fbab76056ca9597be9212dbccadd73b74728d288ea",
-      "rows": 56,
-      "start": "2026-06-12"
-    },
+    "scope_note": "0787 전체 월물 순매매 활동입니다. 15일 표는 8/20~9/9의 이동 누적이며, 연속 확보 16일(8/19~9/9) 전체는 본문에 별도 표시합니다. 실제 9월물 보유잔고·평균단가가 아닙니다. 원시 bridge가 전체 월물 수급에 붙인 F202612 표시는 사용하지 않았습니다.",
     "price_source": {
       "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
-      "sha256": "d0ff6edb265590cbb3ea5a844d5a3fdbb784fb9c345b41e8357bda27e84c654e",
+      "sha256": "965c8e2569bdeee030dc81e852bd116aa52e9e971509965903e1ea1b07106f40",
+      "rows": 58,
+      "start": "2026-06-12"
+    },
+    "flow_source": {
+      "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
+      "sha256": "feb2a58776932a40380889a13dfa8bd9c9de6532c32f52a4cc798361d50b615f",
       "rows": 57,
       "start": "2026-06-12"
     },
     "parsed_source": {
-      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_0787_parsed_20260908.csv",
-      "sha256": "bc01c410f34ee60fc6a649141695d0b3b281571d25320f62037a989813a36b00"
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\eod_0787_parsed_20260909.csv",
+      "sha256": "c86e48aad4017e3c3f41f887abcc61d0ec24323ba7ff9d15d9fb92fcd114ab44"
     },
-    "raw_bridge_sha256": "f62f47c4756d9a9dcd3c611851b27909111e3071c19a2820b259fe9bb5c85e03",
-    "latest_15_trading_days_calendar_verified": true
+    "raw_bridge_sha256": "f814d02be6cfaa6373768f472a20dc4e98d2b0e1352ebbc8834d816bc836959a",
+    "latest_16_trading_days_calendar_verified": true
   },
-  "flow_interpretation": "외국인 9/8 +1,288, 최근 3일 +20,048, 5일 +15,018, 연속 15거래일(8/19~9/8) +21,220계약입니다. 기관계는 같은 기간 -4,553 / -22,289 / -17,486 / -20,108계약입니다. 매수 누적은 남아 있지만 외국인 당일 순매수는 전일 +10,967보다 작고 가격은 하락했습니다. 매수 잔존과 단기 매수 압력 둔화를 구별합니다.",
-  "options_interpretation": "외국인 콜은 +4,472계약·+7억원으로 수량과 금액이 모두 순매수입니다. 풋은 +6,124계약인데 금액은 -15억원으로 엇갈립니다. 기관은 콜 -4,368계약·-25억원, 풋 -1,249계약·+65억원입니다. 행사가·만기·체결단가 구성이 달라질 수 있어 단순 콜-풋 계약수나 가정 델타 0.5로 전체 순롱·순숏을 계산하지 않습니다. 0471은 우측 풋 평균 IV가 콜보다 높은 모습만 보조로 확인했습니다.",
-  "oi_interpretation": "9월물은 1,109.75→1,098.40으로 -11.35포인트(-1.02%), OI는 134,903→100,612로 -34,291계약입니다. 거래량은 124,035→125,850으로 약 1.46% 증가해 거래 급증을 동반한 하락이라고 과장할 수 없습니다. 12월물은 1,111.00→1,100.20, OI 37,352→74,318입니다. 만기 이동·기존 포지션 청산이 섞일 가능성은 있지만 12월물 OI 화면 차이 +36,966이 거래량 18,158보다 커 정확한 롤오버 수량이나 신규 숏/롱 수량은 판정하지 않습니다. 원본 OCR의 -46,831은 9/4와 비교한 값이어서 전일 변화에 사용하지 않았습니다.",
+  "flow_interpretation": "외국인 당일 +2,176 / 최근 3일 +14,431 / 5일 +25,301계약, 기관계는 -1,216 / -16,199 / -24,716계약입니다. 연속 확보 16일(8/19~9/9)은 외국인 +23,396·기관계 -21,324계약입니다. 단일 매수일만으로 내일 상방을 정한 것이 아니라 최근 누적과 일봉 방어를 함께 봅니다. 0786에서는 외국인이 장중 늘렸던 순매수를 후반 줄이는 모습도 있어 매수 압력 강화 일변도로 보지 않습니다.",
+  "options_interpretation": "외국인 콜 -2,373계약·-45억원, 풋 -4,702계약·-1억원으로 양쪽 모두 순매도입니다. 기관은 콜 -1,211계약인데 금액은 +27억원, 풋 -2,651계약·-12억원입니다. 가격·만기·행사가 구성이 달라 수량과 금액이 엇갈릴 수 있습니다. 양매도를 자동으로 상방·하방으로 환산하지 않으며 원시 bridge의 가정 델타 0.5는 분석에서 제외했습니다.",
+  "oi_interpretation": "9월물은 종가 1,098.40→1,117.20(+18.80, +1.71%), OI 100,612→64,877(-35,735)입니다. 12월물은 1,100.20→1,119.00, OI 74,318→109,926(+35,608)입니다. 두 월물의 OI 스냅샷 합계는 174,930→174,803(-127)로 큰 감소·증가가 상쇄돼 롤오버 정황이 강합니다. 정확히 같은 계약이 이동했다거나 전부 숏커버·신규 롱이라고 증명하지는 못합니다. 이 합계는 이동 확인용이지 통합 보유포지션 누적이 아닙니다. 9월물 거래량 -25.85%도 만기 이동 영향과 분리하기 어려워 매수세 약화의 단독 근거로 쓰지 않습니다. 12월물 거래량은 원본의 24,258로 정정했으며 OI와 거래량의 세션·스프레드 집계 범위는 독립 대조하지 못했습니다.",
   "contract_observations": [
     {
       "contract": "F202609",
       "code": "A0169000",
-      "close": 1098.4,
-      "high": 1138.7,
-      "low": 1097.85,
-      "volume": 125850,
-      "oi": 100612,
-      "oi_change": -34291,
-      "status": "0441 직접 대조 · 9/7 OI 134,903과 비교",
-      "source_png": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_close_snapshot_20260908.png"
+      "close": 1117.2,
+      "high": 1128.7,
+      "low": 1100.55,
+      "volume": 93318,
+      "oi": 64877,
+      "oi_change": -35735,
+      "status": "사용자 제공 3개 화면 일치 / 독립 거래소 검증 아님",
+      "source_png": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_F202609_user_verified_daily.png"
     },
     {
       "contract": "F202612",
       "code": "A016C000",
-      "close": 1100.2,
-      "high": 1140.6,
-      "low": 1099.75,
-      "volume": 18158,
-      "oi": 74318,
-      "oi_change": 36966,
-      "status": "사용자 제공값 · 두 화면 차이 +36,966이 당일 거래량보다 커 집계 범위 확인 필요",
-      "source_png": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_F202612_user_verified.png"
+      "close": 1119.0,
+      "high": 1130.2,
+      "low": 1102.5,
+      "volume": 24258,
+      "oi": 109926,
+      "oi_change": 35608,
+      "status": "저장 원본 직접 판독 / 거래량 OCR 24,250을 24,258로 정정",
+      "source_png": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_close_snapshot_20260909.png"
     }
   ],
   "futures_structure": {
-    "daily": "선호 해석은 큰 하락 이후 반복 하단에서 반등한 박스 안의 조정입니다. 1,003.65→1,007.10→1,008.70의 하단 구조는 유지됐지만 1,144.90을 넘지 못했습니다. 1,084.25·1,063.85 이탈 여부가 최근 갭 반등 지속을 가릅니다.",
-    "intraday": "10분봉 상승 가지는 장중 고점 이후 저점·단기 이평을 빠르게 이탈했습니다. 지금의 하방 조정은 다음 날 방향을 자동 확정한 것이 아니라 1,109.75 회복·재지지까지 유지하는 구간 뷰입니다.",
-    "profile": "5605 일봉의 거래량 프로파일은 넓은 구간에 거래가 누적됐음을 보여 줍니다. 해당 구간 전체를 단일 지지선으로 쓰지 않고 반복 저점·갭 경계로 나눴습니다. 0791은 주체별 가격 민감도의 확인값이지 각 가격의 잔존 매수물량이 아닙니다.",
-    "wave_limit": "일봉은 회복 가지 안의 눌림을 선호하되 상단에서 끝난 B/X 반등이라는 대안을 둡니다. 1,109.75 회복 후 1,144.90 돌파·재지지가 상방 구조 개선, 1,063.85 이탈·회복 실패는 조정 확대 근거입니다. 누락 일봉·정규장/야간 범위 차이로 정확한 1~5·A~C 차수는 강제하지 않습니다. 코스피 월·주봉을 선물 차수로 그대로 옮기지 않습니다."
+    "daily": "주봉: 회복 시도입니다. 8/28 주 종가 1,068.00→9/4 주 1,052.50 뒤 이번 주는 현재 1,117.20으로 반등했습니다. 이번 주 고가 1,138.70은 앞선 두 주 고가를 넘었지만 8/18 고가 1,144.90 아래입니다. 같은 일별 HLC로 재표본화했고 9/7~9/9 3일뿐인 진행 주라 확정 주봉 상승 전환이라고 하지 않습니다.\n\n일봉: 반등 우세입니다. 종가 1,117.20은 5일 평균 1,081.57·10일 평균 1,074.085 위이며, 9/8 저점 1,097.85에서 오늘 저점 1,100.55로 높아졌습니다. 그러나 고점은 1,138.70→1,128.70으로 낮아져 전일 고저 범위 안입니다. 강한 상승 확장보다는 반등 속 수렴으로 봅니다. 시가가 없어 봉 몸통 형태는 판정하지 않았습니다.",
+    "weekly": "주봉: 회복 시도입니다. 8/28 주 종가 1,068.00→9/4 주 1,052.50 뒤 이번 주는 현재 1,117.20으로 반등했습니다. 이번 주 고가 1,138.70은 앞선 두 주 고가를 넘었지만 8/18 고가 1,144.90 아래입니다. 같은 일별 HLC로 재표본화했고 9/7~9/9 3일뿐인 진행 주라 확정 주봉 상승 전환이라고 하지 않습니다.",
+    "intraday": "10분봉: 9/3 이후 상승한 큰 가지 안에서 9/8 급락 뒤 저점을 방어하며 횡보하고, 우측 단기 이평이 모여 있습니다. 정규장 고가 1,128.70과 최근 저점 1,097.85~1,100.55가 관찰 범위입니다. 첨부 5605에는 18:00 초기 야간 값 1,117.10도 포함돼 정규장 종가 1,117.20과 구분했습니다. 야간 시가·부분봉으로 다음 정규장 방향을 확정하지 않습니다.",
+    "profile": "강도는 반복 가격 반응·일별 고저점·갭 경계와 수급 합의 여부를 종합한 상대 평가입니다. 0791은 가격 변화에 대한 추정 손익 기울기이지 해당 가격의 실제 잔존 물량이 아닙니다. 체결별 거래대금·월물별 가격대 OI가 없어 각 선의 정확한 매물량을 산출하지 않았습니다.",
+    "wave_limit": "선호는 반복 하단 이후 회복 가지 속 단기 수렴, 대안은 큰 박스 상단에서 끝나는 B/X 반등입니다. 1,144.90 돌파·재지지가 회복 확장의 확인, 1,063.85 이탈·회복 실패가 갭 반등 훼손입니다. 하위 파동·누락 일봉 때문에 1~5/A~C 차수는 강제하지 않았습니다. 주봉은 완료 봉과 진행 봉을 분리해 위 차트에 표시합니다."
   },
-  "index_confirmation": "코스피는 7,171.52까지 올랐다가 6,954.52로 마감해 6,996.12 돌파를 유지하지 못했고, 니케이는 65,600.42를 잃고 65,269.33으로 마감했습니다. 선물의 단기 하방 조정과 정렬합니다. 다만 미국은 새 세션이 없는 9/4 자료이며 나스닥·다우 월주봉 상승과 SOX 주일봉 조정이 엇갈려 큰 하락 확정 근거로 확대하지 않습니다.",
+  "index_confirmation": "오늘 결론은 선물 가격·누적 수급·월물별 OI 중심입니다. 코스피·해외 지수 보조자료는 한국 기준 9/8(미국 9/4 완료 세션)으로 오래돼 9/9 방향 근거에서 제외했습니다. 아래 지수 부록은 날짜 불일치로 비활성화되며 오늘의 신호처럼 재사용하지 않습니다.",
   "index_context_file": "cash_context_20260908.json",
+  "index_context_status": "STALE_EXCLUDED",
   "charts": [
     {
-      "file": "futures_daily_20260908.png",
-      "title": "5605 실제 선물 일봉 · 120봉 표시",
+      "file": "futures_daily_hlc_20260909.png",
+      "title": "9월물 정규장 일별 고저·종가 · 반등 속 수렴",
       "kind": "price",
-      "interpretation": "큰 하락 뒤 하단이 높아진 회복 구간이지만 오늘 고점 돌파를 유지하지 못했습니다. 넓은 거래량 프로파일과 좁은 실행 관찰선을 구별합니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_일봉_20260908.png",
-      "sha256": "bffdc56c0cb53010b777c1619a875d5f2195d9fe7993d1044f396065e7b91946"
+      "interpretation": "일봉: 반등 우세입니다. 종가 1,117.20은 5일 평균 1,081.57·10일 평균 1,074.085 위이며, 9/8 저점 1,097.85에서 오늘 저점 1,100.55로 높아졌습니다. 그러나 고점은 1,138.70→1,128.70으로 낮아져 전일 고저 범위 안입니다. 강한 상승 확장보다는 반등 속 수렴으로 봅니다. 시가가 없어 봉 몸통 형태는 판정하지 않았습니다.",
+      "source_note": "검증된 정규장 HLC로 재구성 · 주봉은 일별 자료 재표본화 / 시가 없음",
+      "path": "C:\\Users\\skylo\\Documents\\New project\\supply-zone\\futures_daily_hlc_20260909.png",
+      "sha256": "a5deccbda55039de035af9480bc35e9cef6054571e02edf52e76e8921290980f"
     },
     {
-      "file": "futures_10m_20260908.png",
-      "title": "5605 실제 선물 10분봉 · 600봉",
+      "file": "futures_weekly_hlc_20260909.png",
+      "title": "9월물 주별 고저·종가 · 이번 주 3일 진행 중",
       "kind": "price",
-      "interpretation": "9/3 이후 상승 뒤 9/8 13:05 고점 1,138.70에서 밀려 단기 이평과 이전 상단 아래로 내려왔습니다. 장중 과매도는 반등 가능성이지만 지지 회복의 증거는 아닙니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_10분봉_20260908.png",
-      "sha256": "c9a7f2d4811c14a0e2d4ae4af005f766d2b3fc24e57053f0867eec851e4be751"
+      "interpretation": "주봉: 회복 시도입니다. 8/28 주 종가 1,068.00→9/4 주 1,052.50 뒤 이번 주는 현재 1,117.20으로 반등했습니다. 이번 주 고가 1,138.70은 앞선 두 주 고가를 넘었지만 8/18 고가 1,144.90 아래입니다. 같은 일별 HLC로 재표본화했고 9/7~9/9 3일뿐인 진행 주라 확정 주봉 상승 전환이라고 하지 않습니다.",
+      "source_note": "검증된 정규장 HLC로 재구성 · 주봉은 일별 자료 재표본화 / 시가 없음",
+      "path": "C:\\Users\\skylo\\Documents\\New project\\supply-zone\\futures_weekly_hlc_20260909.png",
+      "sha256": "f18b1ed4b46f59a68b1bb92a970bfe40ca7efca1235ddd3b7275ea4f834401fc"
     },
     {
-      "file": "futures_0790_20260908.png",
-      "title": "0790 누적 · 현재가 주변의 주체별 곡선",
+      "file": "futures_10m_20260909.png",
+      "title": "5605 실제 10분봉 · 정규장/야간 혼합",
+      "kind": "price",
+      "interpretation": "10분봉: 9/3 이후 상승한 큰 가지 안에서 9/8 급락 뒤 저점을 방어하며 횡보하고, 우측 단기 이평이 모여 있습니다. 정규장 고가 1,128.70과 최근 저점 1,097.85~1,100.55가 관찰 범위입니다. 첨부 5605에는 18:00 초기 야간 값 1,117.10도 포함돼 정규장 종가 1,117.20과 구분했습니다. 야간 시가·부분봉으로 다음 정규장 방향을 확정하지 않습니다.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\5605_KOSPI200최근월_10분봉_20260909.png",
+      "sha256": "d2d876582cf5e08e951cbeb3431f6da06fbc50bb9e896d22ba17abc9ec08c8ef"
+    },
+    {
+      "file": "futures_0790_20260909.png",
+      "title": "0790 주체별 누적 추정 곡선",
       "kind": "source",
-      "interpretation": "외국인 우상향 / 금융투자·투신 우하향. 은행·보험은 우상향으로 기관 내 차이가 있습니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0790_누적_20260908.png",
-      "sha256": "f9c0b6f303f576dece3882f586df96d217456b2d7778cc7e36e47279c00231f6"
+      "interpretation": "외국인 상승에 유리 / 금융투자·투신 하락에 유리. 은행·보험은 기관 내 반대 기울기.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0790_누적_20260909.png",
+      "sha256": "1a6afb6c1a4e9eedc529c7ca7f37da6cb01daa980655baedda085bca15f2ed26"
     },
     {
-      "file": "futures_0791_foreign_20260908.png",
-      "title": "0791 외국인 추정 누적",
+      "file": "futures_0791_foreign_20260909.png",
+      "title": "0791 외국인 · 실제 표시 1,100~1,150",
       "kind": "source",
-      "interpretation": "입력 범위가 아니라 실제 보이는 1,100~1,150의 우상향 곡선을 읽었습니다. 현재가 1,098.40 주변은 0790으로 확인합니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_외국인_누적_1100_1200_20260908.png",
-      "sha256": "9d41c279917a41ca3baa43c60d67942dfc461986b2493c4a743f45153210cb89"
+      "interpretation": "입력란보다 실제 가로축과 우상향 손익 기울기를 읽었습니다. 확정 잔고 아님.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_외국인_누적_1100_1200_20260909.png",
+      "sha256": "c8c42f8bf6a9859f03863d660c9b6b891424d5f3fc82c29c6be64ad77d7a9f16"
     },
     {
-      "file": "futures_0791_financial_20260908.png",
+      "file": "futures_0791_financial_20260909.png",
       "title": "0791 금융투자 추정 누적",
       "kind": "source",
-      "interpretation": "실제 표시 구간의 합성곡선은 우하향으로 하락에 유리한 추정 구조입니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_금융투자_누적_1100_1200_20260908.png",
-      "sha256": "ea9a06fd2edc7a5ed58dc31792a0dc629b2203a238eb25a75bcf1888bcc7891f"
+      "interpretation": "우하향 합성곡선. 실제 순숏 계약수·평균단가는 계산하지 않았습니다.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_금융투자_누적_1100_1200_20260909.png",
+      "sha256": "f1446bba07fffb454fb14f1e0f470b0f9483c208e29807fbf2359946eeb2be50"
     },
     {
-      "file": "futures_0791_trust_20260908.png",
+      "file": "futures_0791_trust_20260909.png",
       "title": "0791 투신 추정 누적",
       "kind": "source",
-      "interpretation": "금융투자와 같은 우하향 기울기입니다. 기관 전체의 확정 잔고와 구별합니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_투신_누적_1100_1200_20260908.png",
-      "sha256": "af38e0f17c25f4eaf44a441847fc83998e4927b2b9c3a0f746142c9b9ffec8d6"
+      "interpretation": "우하향 합성곡선. 기관계 전체의 잔고를 뜻하지 않습니다.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_투신_누적_1100_1200_20260909.png",
+      "sha256": "71f989d023c1075373b3050415c8d2270d685cfdaafdb7b3b193d29648a19af4"
     },
     {
-      "file": "futures_0471_20260908.png",
-      "title": "0471 KOSPI200 변동성 · 60일",
+      "file": "futures_0441_sep_20260909.png",
+      "title": "0441 9월물 · 사용자 제공 정규장 원본",
       "kind": "source",
-      "interpretation": "우측 풋 평균 IV가 콜보다 높은 곡선 관계를 보조 확인합니다. 정확한 최신 IV 숫자는 읽을 수 없어 사용하지 않습니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0471_KOSPI200_일별_60일_20260908.png",
-      "sha256": "69ac4206e62b73d2db294b0e680d45bb76e935659f81e29aa5a78cf39d87b28f"
+      "interpretation": "1,117.20 / 거래량 93,318 / OI 64,877. 일간 OI 변화 -35,735는 전일 원본과 일치.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_F202609_user_verified_daily.png",
+      "sha256": "215554f25f8a322810b04468599eae5c7a81182c333880668993278cb1be31aa"
     },
     {
-      "file": "futures_0441_sep_20260908.png",
-      "title": "0441 9월물 · 정규장 원본",
+      "file": "futures_0441_dec_20260909.png",
+      "title": "0441 12월물 · 자동 수집 원본",
       "kind": "source",
-      "interpretation": "종가 1,098.40 / 거래량 125,850 / 미결제약정 100,612. 구조 판독과 셀 판독을 교차 대조했습니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_close_snapshot_20260908.png",
-      "sha256": "7a66cbe6fb93bb2bebe2247bf0c0c02d04a10fbc4d50bfe211078c9ca555ce9c"
+      "interpretation": "1,119.00 / 거래량 24,258 / OI 109,926. 원래 9월물 수집 단계에 12월물이 저장돼 검증 실패. 월물을 분리해 활용.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_close_snapshot_20260909.png",
+      "sha256": "3c6e17edca4e21d841730d09b1ff6839a33dc76f98ffb3a2a7a3dc23214fd0aa"
     },
     {
-      "file": "futures_0441_dec_20260908.png",
-      "title": "0441 12월물 · 사용자 제공 10분 차트",
+      "file": "futures_0787_20260909.png",
+      "title": "0787 선물 순매매 수량 원본",
       "kind": "source",
-      "interpretation": "종가 1,100.20 / 미결제약정 74,318. 전일 화면과의 차이가 당일 거래량보다 커 정확한 OI 이동 물량은 보류합니다.",
-      "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_F202612_user_verified.png",
-      "sha256": "27c0d75752208e940540cfde5250b75e4a7ceb29b2009939f8990fc43717de78"
+      "interpretation": "외국인 157,033-154,857=+2,176 / 기관계 89,140-90,356=-1,216. 전체 월물 활동.",
+      "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+      "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0787_선물_수량_20260909.png",
+      "sha256": "433582478712e1f04f7e9a4d7775b53684570a0d4e0eeae5e266e73088178f9b"
     }
   ],
   "limitations": [
-    "기준은 9/8 정규장 15:45 선물 화면입니다. 이후 야간 현재가는 수집하지 않았으며 실시간 가격이 아닙니다.",
-    "가격 57행·수급 56행(6/12~9/8)의 검증된 저장자료를 사용했습니다. 과거 일부 거래일이 빠져 있어 전체 구간을 연속 57/56거래일이라고 하지 않습니다. 최근 15일은 국내 완료 일봉 달력과 일치합니다.",
-    "0441 원본 판독과 사용자 12월물 화면을 사용했습니다. 거래소 공식 월물 가격·OI와 독립 대조한 자료는 아닙니다. 원본, SHA256, 정정 전후 기록을 보존했습니다.",
-    "12월물 OI 차이와 거래량의 범위 충돌은 남아 있습니다. 두 만기를 합산한 실제 롤오버·보유계약수는 계산하지 않았습니다.",
-    "0787은 전체 월물 활동이며 0791은 최근월물 전환 시점을 기준으로 한 HTS 추정 누적입니다. 만기별 실제 포지션과 평균단가는 별도로 확인해야 합니다.",
-    "지지 강도는 가격 반응·파동·갭 경계를 종합한 상대 평가입니다. 5605의 거래량 프로파일은 선택 봉 수·야간 포함 설정에 영향을 받으며 보유물량을 의미하지 않습니다.",
-    "기존 EOD는 화면 71건 수집 뒤 5단계에서 실패했습니다. 실패 로그는 보존했고 실패 후처리만 복구했습니다. 전체 배치·HTS 화면 자동조작을 재실행하지 않았습니다.",
-    "원장 누락·숫자 오독·오래된 전일 비교를 막는 회귀검사는 통과했지만 새 설정의 다음 전체 실수집 성공까지 검증한 것은 아닙니다.",
-    "코스피·니케이는 9/8, 미국 현물은 9/4 완료 세션입니다. 미국 휴장으로 같은 세션을 다시 사용하며 새 미국 관측일로 중복 누적하지 않습니다. 진행 월·주봉은 확정 판단에서 제외합니다.",
-    "새 구간 도달 조건의 적중률은 이번에 산출하지 않았습니다. 해외 차트 추가 자체를 승률 향상으로 주장하지 않습니다."
+    "기준은 2026-09-09 F202609 정규장 15:45. 사용자 제공 0441 3개 화면을 직접 대조했으나 거래소와 독립 검증한 값은 아닙니다. 시가는 공란입니다.",
+    "가격 58행·수급 57행은 6/12~9/9의 확보 기록이며 중간 누락이 있습니다. 연속 16일(8/19~9/9)은 달력 대조했고 최근 20거래일 중 8/14가 없어 20일 평균·20일 수급은 제시하지 않았습니다.",
+    "당초 EOD는 1단계 화면 수집 후 2단계 월물 대조에서 실패했습니다. 전체 배치·HTS 조작은 재실행하지 않았습니다. 정정 원본·가격/수급 후처리·수동 분석만 복구했으며 원래 실패 기록은 그대로입니다.",
+    "0787 전체 월물 활동을 F202612로 붙인 원시 bridge는 만기별 보유포지션 원장에 반영하지 않았습니다. 실제 현재 만기 잔고·평균단가·그릭스는 확인 불가입니다.",
+    "9월물 OI 감소와 12월물 증가의 상쇄는 롤오버 정황이지 확정 이동량·숏커버량이 아닙니다. OI의 매수·매도 주체별 분해가 없습니다.",
+    "5605 10분봉은 정규장·야간 혼합과 18:00 부분봉을 포함합니다. 일봉·주봉 그림은 검증된 정규장 고가·저가·종가(HLC)를 재구성한 것이며 실제 시가를 만든 캔들이 아닙니다.",
+    "지수 보조 최신 원천은 한국 기준 9/8(미국 완료 세션 9/4)으로 오늘보다 오래돼 현재 방향 확인에서 제외했습니다. 이전 지수 부록은 날짜 불일치로 화면에서 비활성화됩니다. 이번에 해외 자료를 새로 수집하지 않았습니다.",
+    "0471의 정확한 최신 IV·스큐는 사용하지 않았습니다. 팝업으로 가려진 원본은 보존하되 공개 차트에서 제외했습니다. 체결별 매물대 거래대금·실제 만기별 포지션은 추가 자료가 필요합니다.",
+    "상·하방 조건의 신규 도달 적중률을 이번에 검증한 것은 아닙니다. 강도·차트 합의는 95% 확률이나 수익 보장이 아닙니다."
   ],
   "data_validation": {
-    "trade_date": "20260908",
+    "trade_date": "20260909",
     "status": "OK_WITH_DISCLOSED_LIMITATIONS",
     "ready_for_editorial_review": true,
-    "original_eod_status": "FAILED_STAGE_5_PRESERVED",
+    "original_eod_status": "FAILED_STAGE_2_PRESERVED",
     "collection_rerun": false,
-    "futures_price_history_latest": "2026-09-08",
-    "flow_calendar_verified": true,
-    "expiry_holdings_verified": false,
-    "december_oi_volume_consistent": false,
-    "regular_oi_change_check": true,
-    "source_manifests": [
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260908\\manifest_20260908.json",
-        "sha256": "8776d90f0f4b870d4b40566414f83cdbdbc72f53d04ac2d0e1eedb9656e6f1eb",
-        "verified_files": 30
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260908\\201650\\validation.json",
-        "sha256": "aba56e6446c1ac1b7c10efad734309d6038ecc029f7092ad527e917333babd88",
-        "verified_files": 37
-      }
+    "automated_pipeline_completed": false,
+    "offline_daily_and_flow_exit_codes": [
+      0,
+      0
     ],
+    "previous_numeric_records_preserved": true,
+    "duplicate_price_keys": 0,
+    "duplicate_flow_dates": 0,
+    "price_rows": 58,
+    "flow_rows": 57,
+    "source_verified_recent_price_rows": 17,
+    "continuous_flow_sessions": 16,
+    "missing_recent_20_sessions": [
+      "2026-08-14"
+    ],
+    "parsed_rows": 54,
+    "expiry_holdings_verified": false,
+    "actual_options_delta_verified": false,
+    "regular_oi_change_check": true,
+    "contract_oi_snapshot_sum": {
+      "previous": 174930,
+      "current": 174803,
+      "change": -127,
+      "not_rollover_quantity": true
+    },
+    "index_context": {
+      "status": "STALE_EXCLUDED",
+      "source_as_of": "2026-09-08",
+      "can_use_for_current_decision": false
+    },
+    "daily_open_available": false,
+    "weekly_last_bar_partial": true,
     "sources": [
       {
-        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
-        "sha256": "75963f8e9f5f55021b1451fbab76056ca9597be9212dbccadd73b74728d288ea",
-        "rows": 56,
-        "start": "2026-06-12"
-      },
-      {
         "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_f202609_daily.csv",
-        "sha256": "d0ff6edb265590cbb3ea5a844d5a3fdbb784fb9c345b41e8357bda27e84c654e",
-        "rows": 57,
-        "start": "2026-06-12"
+        "sha256": "965c8e2569bdeee030dc81e852bd116aa52e9e971509965903e1ea1b07106f40"
       },
       {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_0787_parsed_20260908.csv",
-        "sha256": "bc01c410f34ee60fc6a649141695d0b3b281571d25320f62037a989813a36b00"
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\k200_futures_investor_net_daily.csv",
+        "sha256": "feb2a58776932a40380889a13dfa8bd9c9de6532c32f52a4cc798361d50b615f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\eod_0787_parsed_20260909.csv",
+        "sha256": "c86e48aad4017e3c3f41f887abcc61d0ec24323ba7ff9d15d9fb92fcd114ab44"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\eod_manifest_20260909.json",
+        "sha256": "3a0cb52a1762cd79a5e15fe26a806ba3885c244eff95c1c8ad50dbf6c0ffe007"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\pipeline_bootstrap_latest.log",
+        "sha256": "c40bfc14fd0e3ae56885b24d48b607a69816468c87799426c78ac7df26e1f567"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\eod_ocr_bridge_20260909.json",
+        "sha256": "f814d02be6cfaa6373768f472a20dc4e98d2b0e1352ebbc8834d816bc836959a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260908\\data\\kospi_daily_20260908.csv",
+        "sha256": "a6cc359193af65e47c815298d0bf8418d166e852592444bc15a5b15ee3a5f1c3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\input\\futures_verified_corrections.json",
+        "sha256": "73142ae02ac8b6b2ab64d7dac56f861c76d82292aea2af0aaed90669007f7a86"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_F202609_user_verified_1m.png",
+        "sha256": "50e5ca599bc7924981e7892d3657ea5faf86cfd40647ac84fde01d1b36bf0f58"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_F202609_user_verified_intraday.png",
+        "sha256": "929bb7246bbf5d92e92944c0bc5b27d869d61076d47a6996e7e64eb75ac7338b"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_F202612_user_verified.png",
+        "sha256": "27c0d75752208e940540cfde5250b75e4a7ceb29b2009939f8990fc43717de78"
       }
     ],
     "chart_sources": [
       {
-        "file": "futures_daily_20260908.png",
-        "title": "5605 실제 선물 일봉 · 120봉 표시",
+        "file": "futures_daily_hlc_20260909.png",
+        "title": "9월물 정규장 일별 고저·종가 · 반등 속 수렴",
         "kind": "price",
-        "interpretation": "큰 하락 뒤 하단이 높아진 회복 구간이지만 오늘 고점 돌파를 유지하지 못했습니다. 넓은 거래량 프로파일과 좁은 실행 관찰선을 구별합니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_일봉_20260908.png",
-        "sha256": "bffdc56c0cb53010b777c1619a875d5f2195d9fe7993d1044f396065e7b91946"
+        "interpretation": "일봉: 반등 우세입니다. 종가 1,117.20은 5일 평균 1,081.57·10일 평균 1,074.085 위이며, 9/8 저점 1,097.85에서 오늘 저점 1,100.55로 높아졌습니다. 그러나 고점은 1,138.70→1,128.70으로 낮아져 전일 고저 범위 안입니다. 강한 상승 확장보다는 반등 속 수렴으로 봅니다. 시가가 없어 봉 몸통 형태는 판정하지 않았습니다.",
+        "source_note": "검증된 정규장 HLC로 재구성 · 주봉은 일별 자료 재표본화 / 시가 없음",
+        "path": "C:\\Users\\skylo\\Documents\\New project\\supply-zone\\futures_daily_hlc_20260909.png",
+        "sha256": "a5deccbda55039de035af9480bc35e9cef6054571e02edf52e76e8921290980f"
       },
       {
-        "file": "futures_10m_20260908.png",
-        "title": "5605 실제 선물 10분봉 · 600봉",
+        "file": "futures_weekly_hlc_20260909.png",
+        "title": "9월물 주별 고저·종가 · 이번 주 3일 진행 중",
         "kind": "price",
-        "interpretation": "9/3 이후 상승 뒤 9/8 13:05 고점 1,138.70에서 밀려 단기 이평과 이전 상단 아래로 내려왔습니다. 장중 과매도는 반등 가능성이지만 지지 회복의 증거는 아닙니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\5605_KOSPI200최근월_10분봉_20260908.png",
-        "sha256": "c9a7f2d4811c14a0e2d4ae4af005f766d2b3fc24e57053f0867eec851e4be751"
+        "interpretation": "주봉: 회복 시도입니다. 8/28 주 종가 1,068.00→9/4 주 1,052.50 뒤 이번 주는 현재 1,117.20으로 반등했습니다. 이번 주 고가 1,138.70은 앞선 두 주 고가를 넘었지만 8/18 고가 1,144.90 아래입니다. 같은 일별 HLC로 재표본화했고 9/7~9/9 3일뿐인 진행 주라 확정 주봉 상승 전환이라고 하지 않습니다.",
+        "source_note": "검증된 정규장 HLC로 재구성 · 주봉은 일별 자료 재표본화 / 시가 없음",
+        "path": "C:\\Users\\skylo\\Documents\\New project\\supply-zone\\futures_weekly_hlc_20260909.png",
+        "sha256": "f18b1ed4b46f59a68b1bb92a970bfe40ca7efca1235ddd3b7275ea4f834401fc"
       },
       {
-        "file": "futures_0790_20260908.png",
-        "title": "0790 누적 · 현재가 주변의 주체별 곡선",
+        "file": "futures_10m_20260909.png",
+        "title": "5605 실제 10분봉 · 정규장/야간 혼합",
+        "kind": "price",
+        "interpretation": "10분봉: 9/3 이후 상승한 큰 가지 안에서 9/8 급락 뒤 저점을 방어하며 횡보하고, 우측 단기 이평이 모여 있습니다. 정규장 고가 1,128.70과 최근 저점 1,097.85~1,100.55가 관찰 범위입니다. 첨부 5605에는 18:00 초기 야간 값 1,117.10도 포함돼 정규장 종가 1,117.20과 구분했습니다. 야간 시가·부분봉으로 다음 정규장 방향을 확정하지 않습니다.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\5605_KOSPI200최근월_10분봉_20260909.png",
+        "sha256": "d2d876582cf5e08e951cbeb3431f6da06fbc50bb9e896d22ba17abc9ec08c8ef"
+      },
+      {
+        "file": "futures_0790_20260909.png",
+        "title": "0790 주체별 누적 추정 곡선",
         "kind": "source",
-        "interpretation": "외국인 우상향 / 금융투자·투신 우하향. 은행·보험은 우상향으로 기관 내 차이가 있습니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0790_누적_20260908.png",
-        "sha256": "f9c0b6f303f576dece3882f586df96d217456b2d7778cc7e36e47279c00231f6"
+        "interpretation": "외국인 상승에 유리 / 금융투자·투신 하락에 유리. 은행·보험은 기관 내 반대 기울기.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0790_누적_20260909.png",
+        "sha256": "1a6afb6c1a4e9eedc529c7ca7f37da6cb01daa980655baedda085bca15f2ed26"
       },
       {
-        "file": "futures_0791_foreign_20260908.png",
-        "title": "0791 외국인 추정 누적",
+        "file": "futures_0791_foreign_20260909.png",
+        "title": "0791 외국인 · 실제 표시 1,100~1,150",
         "kind": "source",
-        "interpretation": "입력 범위가 아니라 실제 보이는 1,100~1,150의 우상향 곡선을 읽었습니다. 현재가 1,098.40 주변은 0790으로 확인합니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_외국인_누적_1100_1200_20260908.png",
-        "sha256": "9d41c279917a41ca3baa43c60d67942dfc461986b2493c4a743f45153210cb89"
+        "interpretation": "입력란보다 실제 가로축과 우상향 손익 기울기를 읽었습니다. 확정 잔고 아님.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_외국인_누적_1100_1200_20260909.png",
+        "sha256": "c8c42f8bf6a9859f03863d660c9b6b891424d5f3fc82c29c6be64ad77d7a9f16"
       },
       {
-        "file": "futures_0791_financial_20260908.png",
+        "file": "futures_0791_financial_20260909.png",
         "title": "0791 금융투자 추정 누적",
         "kind": "source",
-        "interpretation": "실제 표시 구간의 합성곡선은 우하향으로 하락에 유리한 추정 구조입니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_금융투자_누적_1100_1200_20260908.png",
-        "sha256": "ea9a06fd2edc7a5ed58dc31792a0dc629b2203a238eb25a75bcf1888bcc7891f"
+        "interpretation": "우하향 합성곡선. 실제 순숏 계약수·평균단가는 계산하지 않았습니다.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_금융투자_누적_1100_1200_20260909.png",
+        "sha256": "f1446bba07fffb454fb14f1e0f470b0f9483c208e29807fbf2359946eeb2be50"
       },
       {
-        "file": "futures_0791_trust_20260908.png",
+        "file": "futures_0791_trust_20260909.png",
         "title": "0791 투신 추정 누적",
         "kind": "source",
-        "interpretation": "금융투자와 같은 우하향 기울기입니다. 기관 전체의 확정 잔고와 구별합니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0791_투신_누적_1100_1200_20260908.png",
-        "sha256": "af38e0f17c25f4eaf44a441847fc83998e4927b2b9c3a0f746142c9b9ffec8d6"
+        "interpretation": "우하향 합성곡선. 기관계 전체의 잔고를 뜻하지 않습니다.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0791_투신_누적_1100_1200_20260909.png",
+        "sha256": "71f989d023c1075373b3050415c8d2270d685cfdaafdb7b3b193d29648a19af4"
       },
       {
-        "file": "futures_0471_20260908.png",
-        "title": "0471 KOSPI200 변동성 · 60일",
+        "file": "futures_0441_sep_20260909.png",
+        "title": "0441 9월물 · 사용자 제공 정규장 원본",
         "kind": "source",
-        "interpretation": "우측 풋 평균 IV가 콜보다 높은 곡선 관계를 보조 확인합니다. 정확한 최신 IV 숫자는 읽을 수 없어 사용하지 않습니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0471_KOSPI200_일별_60일_20260908.png",
-        "sha256": "69ac4206e62b73d2db294b0e680d45bb76e935659f81e29aa5a78cf39d87b28f"
+        "interpretation": "1,117.20 / 거래량 93,318 / OI 64,877. 일간 OI 변화 -35,735는 전일 원본과 일치.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_F202609_user_verified_daily.png",
+        "sha256": "215554f25f8a322810b04468599eae5c7a81182c333880668993278cb1be31aa"
       },
       {
-        "file": "futures_0441_sep_20260908.png",
-        "title": "0441 9월물 · 정규장 원본",
+        "file": "futures_0441_dec_20260909.png",
+        "title": "0441 12월물 · 자동 수집 원본",
         "kind": "source",
-        "interpretation": "종가 1,098.40 / 거래량 125,850 / 미결제약정 100,612. 구조 판독과 셀 판독을 교차 대조했습니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_close_snapshot_20260908.png",
-        "sha256": "7a66cbe6fb93bb2bebe2247bf0c0c02d04a10fbc4d50bfe211078c9ca555ce9c"
+        "interpretation": "1,119.00 / 거래량 24,258 / OI 109,926. 원래 9월물 수집 단계에 12월물이 저장돼 검증 실패. 월물을 분리해 활용.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0441_close_snapshot_20260909.png",
+        "sha256": "3c6e17edca4e21d841730d09b1ff6839a33dc76f98ffb3a2a7a3dc23214fd0aa"
       },
       {
-        "file": "futures_0441_dec_20260908.png",
-        "title": "0441 12월물 · 사용자 제공 10분 차트",
+        "file": "futures_0787_20260909.png",
+        "title": "0787 선물 순매매 수량 원본",
         "kind": "source",
-        "interpretation": "종가 1,100.20 / 미결제약정 74,318. 전일 화면과의 차이가 당일 거래량보다 커 정확한 OI 이동 물량은 보류합니다.",
-        "source_note": "키움 저장 원본 · 2026-09-08 / 임의 파동·가상 가격을 덧그리지 않음",
-        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\0441_F202612_user_verified.png",
-        "sha256": "27c0d75752208e940540cfde5250b75e4a7ceb29b2009939f8990fc43717de78"
+        "interpretation": "외국인 157,033-154,857=+2,176 / 기관계 89,140-90,356=-1,216. 전체 월물 활동.",
+        "source_note": "2026-09-09 키움 원본 저장 화면 · 화면의 월물·세션 구분",
+        "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0787_선물_수량_20260909.png",
+        "sha256": "433582478712e1f04f7e9a4d7775b53684570a0d4e0eeae5e266e73088178f9b"
       }
     ],
     "limitations": [
-      "기준은 9/8 정규장 15:45 선물 화면입니다. 이후 야간 현재가는 수집하지 않았으며 실시간 가격이 아닙니다.",
-      "가격 57행·수급 56행(6/12~9/8)의 검증된 저장자료를 사용했습니다. 과거 일부 거래일이 빠져 있어 전체 구간을 연속 57/56거래일이라고 하지 않습니다. 최근 15일은 국내 완료 일봉 달력과 일치합니다.",
-      "0441 원본 판독과 사용자 12월물 화면을 사용했습니다. 거래소 공식 월물 가격·OI와 독립 대조한 자료는 아닙니다. 원본, SHA256, 정정 전후 기록을 보존했습니다.",
-      "12월물 OI 차이와 거래량의 범위 충돌은 남아 있습니다. 두 만기를 합산한 실제 롤오버·보유계약수는 계산하지 않았습니다.",
-      "0787은 전체 월물 활동이며 0791은 최근월물 전환 시점을 기준으로 한 HTS 추정 누적입니다. 만기별 실제 포지션과 평균단가는 별도로 확인해야 합니다.",
-      "지지 강도는 가격 반응·파동·갭 경계를 종합한 상대 평가입니다. 5605의 거래량 프로파일은 선택 봉 수·야간 포함 설정에 영향을 받으며 보유물량을 의미하지 않습니다.",
-      "기존 EOD는 화면 71건 수집 뒤 5단계에서 실패했습니다. 실패 로그는 보존했고 실패 후처리만 복구했습니다. 전체 배치·HTS 화면 자동조작을 재실행하지 않았습니다.",
-      "원장 누락·숫자 오독·오래된 전일 비교를 막는 회귀검사는 통과했지만 새 설정의 다음 전체 실수집 성공까지 검증한 것은 아닙니다.",
-      "코스피·니케이는 9/8, 미국 현물은 9/4 완료 세션입니다. 미국 휴장으로 같은 세션을 다시 사용하며 새 미국 관측일로 중복 누적하지 않습니다. 진행 월·주봉은 확정 판단에서 제외합니다.",
-      "새 구간 도달 조건의 적중률은 이번에 산출하지 않았습니다. 해외 차트 추가 자체를 승률 향상으로 주장하지 않습니다."
+      "기준은 2026-09-09 F202609 정규장 15:45. 사용자 제공 0441 3개 화면을 직접 대조했으나 거래소와 독립 검증한 값은 아닙니다. 시가는 공란입니다.",
+      "가격 58행·수급 57행은 6/12~9/9의 확보 기록이며 중간 누락이 있습니다. 연속 16일(8/19~9/9)은 달력 대조했고 최근 20거래일 중 8/14가 없어 20일 평균·20일 수급은 제시하지 않았습니다.",
+      "당초 EOD는 1단계 화면 수집 후 2단계 월물 대조에서 실패했습니다. 전체 배치·HTS 조작은 재실행하지 않았습니다. 정정 원본·가격/수급 후처리·수동 분석만 복구했으며 원래 실패 기록은 그대로입니다.",
+      "0787 전체 월물 활동을 F202612로 붙인 원시 bridge는 만기별 보유포지션 원장에 반영하지 않았습니다. 실제 현재 만기 잔고·평균단가·그릭스는 확인 불가입니다.",
+      "9월물 OI 감소와 12월물 증가의 상쇄는 롤오버 정황이지 확정 이동량·숏커버량이 아닙니다. OI의 매수·매도 주체별 분해가 없습니다.",
+      "5605 10분봉은 정규장·야간 혼합과 18:00 부분봉을 포함합니다. 일봉·주봉 그림은 검증된 정규장 고가·저가·종가(HLC)를 재구성한 것이며 실제 시가를 만든 캔들이 아닙니다.",
+      "지수 보조 최신 원천은 한국 기준 9/8(미국 완료 세션 9/4)으로 오늘보다 오래돼 현재 방향 확인에서 제외했습니다. 이전 지수 부록은 날짜 불일치로 화면에서 비활성화됩니다. 이번에 해외 자료를 새로 수집하지 않았습니다.",
+      "0471의 정확한 최신 IV·스큐는 사용하지 않았습니다. 팝업으로 가려진 원본은 보존하되 공개 차트에서 제외했습니다. 체결별 매물대 거래대금·실제 만기별 포지션은 추가 자료가 필요합니다.",
+      "상·하방 조건의 신규 도달 적중률을 이번에 검증한 것은 아닙니다. 강도·차트 합의는 95% 확률이나 수익 보장이 아닙니다."
     ],
-    "review_script_sha256": "2c24c2f3f884f1f351c4e5ef002a268c0e2de1d533aaa3a8deb77ea304134134",
-    "original_manifest": {
-      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_manifest_20260908.json",
-      "sha256": "84ab6195febf7d1b9ef7fd11eff85170e2f0b809efd6f6555f55f0c993f58a10",
-      "generated_at": "2026-09-08 17:28:46"
-    },
-    "original_validation": {
-      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260908\\eod_validation_20260908.txt",
-      "sha256": "7e191bbb00948ff4c8fc48b363ea01a391295c38a5f78364a17e35105afea92e"
-    },
-    "recovery_tests": {
-      "regressions_passed": 9,
-      "full_eod_reexecuted": false,
-      "live_collection_after_fix_verified": false
-    },
-    "index_context_sha256": "2a623daaff03b92a221070d01c7b071c4e283d49d4f9877f87749c28ab2fb708"
+    "review_script_sha256": "76c7a04251a3990846b3dc779b473befe7d47bde4ddc05b0ca1a2a049c91414b"
   },
-  "recovery_note": "9/8 원본 71건 수집 뒤 5단계 실패 기록은 보존했습니다. 전체 재수집 없이 0441 판독·전일 비교·수급 누적과 필요한 차트 후처리를 복구한 검토본입니다.",
+  "recovery_note": "전체 EOD 재실행 없이 사용자 제공 9월물 원본으로 가격·수급 후처리만 완료했습니다. 원래 2단계 실패와 12월물 원본은 보존했고 자동 포지션 장부에 월물 혼합 자료를 넣지 않았습니다.",
   "downloads": [
     {
       "label": "선물 중심 분석 JSON",
@@ -597,15 +669,19 @@
     },
     {
       "label": "분석 요약",
-      "file": "futures_review_20260908.md"
+      "file": "futures_review_20260909.md"
     },
     {
       "label": "검증 결과",
-      "file": "futures_review_validation_20260908.json"
+      "file": "futures_review_validation_20260909.json"
     },
     {
-      "label": "지수 보조 JSON",
-      "file": "cash_context_20260908.json"
+      "label": "일별 HLC 원자료",
+      "file": "futures_hlc_20260909.csv"
+    },
+    {
+      "label": "누적 순매매 원자료",
+      "file": "futures_flow_20260909.csv"
     }
   ]
 }
