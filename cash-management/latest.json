@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "20260909",
-  "trade_date": "20260909",
+  "as_of": "20260910",
+  "trade_date": "20260910",
   "source_generated_at": {
-    "monthly": "2026-09-09T19:46:37+09:00",
-    "staged_weekly": "2026-09-09T19:46:40.349105+09:00"
+    "monthly": "2026-09-10T20:02:49+09:00",
+    "staged_weekly": "2026-09-10T20:02:52.526471+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 10.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 10% 유지",
     "state": "방어 현금 10% 유지 · 월간 재진입 대기",
-    "reason": "20260909 WISE 확정 기준 월간·단계형 모두 현금 10.0%를 유지합니다. 월간 신호는 20260831 기준 MA10 단계형 10%를 적용 중이며, 20260904 주간 모델은 현금 0%로 낮아졌지만 월간 재진입 전이라 기존 방어비중을 유지합니다.",
+    "reason": "20260910 WISE 확정 기준 월간·단계형 모두 현금 10.0%를 유지합니다. 월간 신호는 20260831 기준 MA10 단계형 10%를 적용 중이며, 20260904 주간 모델은 현금 0%로 낮아졌지만 월간 재진입 전이라 기존 방어비중을 유지합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -48,6 +48,21 @@
     "previous_weekly_model_cash_pct": 25.0,
     "accepted_rule": "NONE",
     "role": "조기 방어용 단계형 보조 기준"
+  },
+  "alerts": {
+    "x3": {
+      "watch": false,
+      "status": "DISARMED_IN_DRAWDOWN",
+      "new_trigger": false,
+      "automatic_allocation_change": false
+    },
+    "rv": {
+      "watch": false,
+      "status": "DISARMED_RAW_TRUE",
+      "new_trigger": false,
+      "automatic_allocation_change": false
+    },
+    "interpretation": "X3·RV 모두 새 경보 또는 재무장 신호가 없습니다. 위험이 없다는 뜻은 아니며 최종 현금비중을 자동 변경하지 않습니다."
   },
   "next_check": {
     "condition": "월간 재진입 신호 또는 새 확정 주간 위험축소 신호",
@@ -261,6 +276,19 @@
       "applied_risky_pct": 90.0,
       "action": "HOLD",
       "action_label": "현금 10% 유지"
+    },
+    {
+      "as_of": "2026-09-10",
+      "daily_model_cash_pct": 25.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 10.0,
+      "monthly_raw_model_cash_pct": 50.0,
+      "monthly_sizing_rule": "ABOVE_MA10_STARTER10",
+      "staged_cash_pct": 10.0,
+      "applied_cash_pct": 10.0,
+      "applied_risky_pct": 90.0,
+      "action": "HOLD",
+      "action_label": "현금 10% 유지"
     }
   ],
   "rule_steps": [
@@ -317,24 +345,24 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-09-09",
-    "workbook_rows": 2622,
+    "workbook_last_date": "2026-09-10",
+    "workbook_rows": 2623,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "23398ebbe851ae9e673694ee31c9da13255aa2b0c010841eb630f59e9aec1c2d",
+    "workbook_sha256": "cb1eb1e7c6d1832b37c7b03ad1a00405feaa6fa59a37dfbc1b16e757967ab31d",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363",
     "monthly_runner_sha256": "7ddc5516166278d033583c541811d41f115366dd3f18d5b53a0b273eb1c629e2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "2e0234757a311715d59e753e4fd58f10d98d1179dd6fda5406e7fc19cb99b3ff",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "3c4db529e74f12777397ba8e5cb9f21cd4e0b0c22c0a99fe5e4d584f6e1b2b1c",
-    "staged_result_sha256": "5a5289ed049fa35a1082686d25639da36ec6e605514048263f7a587b7ea1f6e6",
-    "monthly_validation_sha256": "a5221a24ea3d6c7bba94b5489c5ea685ee0af33a1aef839ca6d9ca06cda6ff5a",
-    "staged_validation_sha256": "f30bc40c930894f0c06d977e62815f34b282247139a613723e0e975e77ab90a4"
+    "monthly_result_sha256": "2e9d136ceba5d260bf9a6ae097be9781a8a1e0923c70f9fc91b55ad557f55bb2",
+    "staged_result_sha256": "fcd7f1432ada54e903efce0f03af3b22a155c05c1385a4556db0beadd3edfdc5",
+    "monthly_validation_sha256": "911cbddd7bc798869981180d9c6f6e84b0bee46e94617effb05429880d5f30cc",
+    "staged_validation_sha256": "50023bcf0cc248c8726174ae2e1cca8e4c935194a86be5b386538562b6e25288"
   },
   "source_files": [
     "cash_weight_signal_runner.py",
