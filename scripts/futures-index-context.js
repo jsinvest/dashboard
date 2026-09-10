@@ -1,6 +1,8 @@
 /* Futures remain primary. Cash-index analysis is a dated, folded supplement. */
 async function renderFuturesIndexContext(data) {
-  if (data.schema_version !== 'futures-options-review-v1' || data.futures_contract !== 'F202609' ||
+  if (data.schema_version !== 'futures-options-review-v1' ||
+      !['F202609','F202612'].includes(data.futures_contract) ||
+      data.contract_code !== ({F202609:'A0169000',F202612:'A016C000'}[data.futures_contract]) ||
       !data.data_validation?.ready_for_editorial_review || !Array.isArray(data.overall_assessment?.levels) ||
       !Array.isArray(data.charts) || !data.hts_0791_position_inference || !data.derivatives_evidence?.all_expiry_flow) {
     throw new Error('선물 분석 필수 형식 또는 검증 결과 누락');
