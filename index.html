@@ -1026,7 +1026,7 @@
     <div class="section-title">당일 주도주 · DAILY MARKET LEADERS</div>
     <div class="daily-leader-shell" data-layout-zone="daily-leaders">
       <div class="daily-leader-toolbar">
-        <span class="daily-leader-date">시장 기준일 2026-09-09 · 장중 생성본 (파일 생성 18:37) · V2 15:34 · 누적 이력 19거래일</span>
+        <span class="daily-leader-date">시장 기준일 2026-09-10 · 14:49 장중 생성본 · V2 15:48 · 누적 20거래일</span>
         <div class="leader-mode-tabs" aria-label="주도주 화면 선택">
           <button type="button" class="leader-mode-btn active" data-leader-mode="daily">당일</button>
           <button type="button" class="leader-mode-btn" data-leader-mode="cumulative">누적</button>
@@ -1082,66 +1082,12 @@
       </details>
       <div id="leaderDailyPane">
       <div class="daily-leader-subtoolbar"><span>당일 시장</span><div class="daily-leader-tabs" aria-label="당일 시장 선택"><button type="button" class="daily-leader-tab active" data-leader-view="all">통합</button><button type="button" class="daily-leader-tab" data-leader-view="KOSPI">KOSPI</button><button type="button" class="daily-leader-tab" data-leader-view="KOSDAQ">KOSDAQ</button></div></div>
-      <div class="daily-v2-audit"><b>검증 상태</b> · 9/9 장중 생성본 섹터 55개/종목 561행·제외 30건·필수값 누락 0·중복 0 · V2 결과 81행/당일 신호 38행 · 품질필터 통과 5종목(KS 2·KQ 3) · 누적 이력 19거래일(8/13~9/9, 휴장일 제외) · 전체 실행 종료코드는 별도 로그 부재로 확인 불가</div>
-      <div class="daily-leader-summary">
-        <div class="daily-leader-stat"><small>시장별 중심 주도 섹터</small><strong id="dailyLeaderConfirmed">수소·연료전지 · 수소·연료전지</strong><span id="dailyLeaderConfirmedNote">KOSPI/KOSDAQ 모두 수소·연료전지 중심, 연결 섹터는 시장별로 분리</span></div>
-        <div class="daily-leader-stat"><small>당일 V2 품질통과</small><strong id="dailyLeaderEmerging">5종목</strong><span id="dailyLeaderEmergingNote">KS 2종목 · KQ 3종목, 중심축과 보조축 분리</span></div>
-        <div class="daily-leader-stat"><small>누적 지속성</small><strong id="dailyLeaderWatch">19일 누적 반영</strong><span id="dailyLeaderWatchNote">시장별 빈출 섹터와 대장주 이력 표시</span></div>
-      </div>
-      <div class="daily-ecosystem">
-        <div class="daily-ecosystem-title"><b>시장별 중심 주도주 → 연결 산업군 · 산업군을 누르면 우선 종목 보기</b><span>실선: 당일 가격·RS·거래 동반 확인 · 점선: 산업 연결 또는 확산 미확정</span></div>
-        <div class="daily-ecosystem-board">
-          <div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>원전 중심 에너지·인프라 확산 · 단일 V2 신호는 보조축으로 분리</span></div>
-            <svg viewBox="0 0 600 360" role="img" aria-label="KOSPI 원전을 중심으로 전력 유틸리티, 건설, 기계 산업장비, 방산, 항공 보조 신호를 연결한 다이어그램">
-              <defs><marker id="ecoArrowKS" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links">
-                <line class="eco-leader-link eco-link-weak" data-eco-link="ksNuclear,ksUtility" x1="250" y1="125" x2="150" y2="65" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="175" y="94">전력 계통</text>
-                <line class="eco-leader-link eco-link-weak" data-eco-link="ksNuclear,ksConstruction" x1="335" y1="132" x2="455" y2="67" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="410" y="97">인프라·시공</text>
-                <line class="eco-leader-link" data-eco-link="ksNuclear,ksMachine" x1="240" y1="205" x2="115" y2="290" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="160" y="244">원전 주기기</text>
-                <line class="eco-leader-link" data-eco-link="ksNuclear,ksDefense" x1="355" y1="210" x2="490" y2="290" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="447" y="247">정책·수주</text>
-                <line class="eco-leader-link eco-link-weak" data-eco-link="ksNuclear,ksAir" x1="302" y1="232" x2="302" y2="324" marker-end="url(#ecoArrowKS)"/><text class="eco-link-label" x="358" y="285">V2 보조축</text>
-              </g>
-              <g class="eco-node leader-center" data-eco-sector="ksNuclear" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="300" cy="175" r="76"/><text class="eco-kicker" x="300" y="144">KOSPI 중심 주도 섹터</text><text class="eco-leader-name" x="300" y="174">수소·연료전지</text><text class="eco-name" x="300" y="200">두산퓨얼셀</text><text class="eco-score" x="300" y="222">1종목 중 1상승 · RS +8.05%p</text></g>
-              <g class="eco-node" data-eco-sector="ksUtility" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="125" cy="55" r="47"/><text class="eco-name" x="125" y="48">전력·유틸리티</text><text class="eco-score" x="125" y="68">SGC에너지·한전산업</text></g>
-              <g class="eco-node" data-eco-sector="ksConstruction" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="55" r="47"/><text class="eco-name" x="485" y="48">건설</text><text class="eco-score" x="485" y="68">현대건설·대우건설</text></g>
-              <g class="eco-node" data-eco-sector="ksMachine" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="90" cy="305" r="47"/><text class="eco-name" x="90" y="299">기계·장비</text><text class="eco-score" x="90" y="319">두산에너빌리티</text></g>
-              <g class="eco-node" data-eco-sector="ksDefense" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="520" cy="305" r="47"/><text class="eco-name" x="520" y="299">방산</text><text class="eco-score" x="520" y="319">엠앤씨솔루션</text></g>
-              <g class="eco-node" data-eco-sector="ksAir" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="300" cy="330" r="34"/><text class="eco-name" x="300" y="326">항공</text><text class="eco-score" x="300" y="342">한진칼 V2</text></g>
-            </svg>
-            <div class="eco-cross-note"><b>판정</b> · 원전은 두산퓨얼셀 중심으로 3종목 전부 상승, RS 중앙값 +8.05%p, 합산 거래대금 1,686.8억원입니다. 전력·유틸리티와 건설도 동반 강세라 중앙축과 연결했고, 항공은 한진칼 V2 품질통과 보조축으로 분리했습니다.</div>
-          </div>
-          <div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>원전 중심 전력망·정책 수주 확산 · 반도체와 로봇은 별도 보조축</span></div>
-            <svg viewBox="0 0 600 360" role="img" aria-label="KOSDAQ 원전을 중심으로 전력망, 항공우주, 방산, 반도체, 플랜트 인프라를 연결한 다이어그램">
-              <defs><marker id="ecoArrowKQ" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" class="eco-arrow-head"/></marker></defs>
-              <g class="eco-links">
-                <line class="eco-leader-link eco-link-weak" data-eco-link="kqNuclear,kqPower" x1="250" y1="125" x2="150" y2="65" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="178" y="94">전력망</text>
-                <line class="eco-leader-link" data-eco-link="kqNuclear,kqAerospace" x1="335" y1="132" x2="455" y2="67" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="417" y="97">정책·수주</text>
-                <line class="eco-leader-link" data-eco-link="kqNuclear,kqDefense" x1="240" y1="205" x2="115" y2="290" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="160" y="244">방산·원전</text>
-                <line class="eco-leader-link" data-eco-link="kqNuclear,kqSemiconductor" x1="355" y1="210" x2="490" y2="290" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="447" y="247">V2·장비 자금</text>
-                <line class="eco-leader-link" data-eco-link="kqNuclear,kqPlant" x1="302" y1="232" x2="302" y2="324" marker-end="url(#ecoArrowKQ)"/><text class="eco-link-label" x="357" y="285">설비·인프라</text>
-              </g>
-              <g class="eco-node leader-center" data-eco-sector="kqNuclear" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="300" cy="175" r="76"/><text class="eco-kicker" x="300" y="144">KOSDAQ 중심 주도 섹터</text><text class="eco-leader-name" x="300" y="174">수소·연료전지</text><text class="eco-name" x="300" y="200">범한퓨얼셀·덕양에너젠</text><text class="eco-score" x="300" y="222">4종목 중 4상승 · RS +6.26%p</text></g>
-              <g class="eco-node" data-eco-sector="kqPower" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="125" cy="55" r="47"/><text class="eco-name" x="125" y="48">전력망</text><text class="eco-score" x="125" y="68">지엔씨에너지·보성파워텍</text></g>
-              <g class="eco-node" data-eco-sector="kqAerospace" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="55" r="47"/><text class="eco-name" x="485" y="48">항공우주</text><text class="eco-score" x="485" y="68">인텔리안테크</text></g>
-              <g class="eco-node" data-eco-sector="kqDefense" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="90" cy="305" r="47"/><text class="eco-name" x="90" y="299">방산</text><text class="eco-score" x="90" y="319">우리기술</text></g>
-              <g class="eco-node" data-eco-sector="kqSemiconductor" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="520" cy="305" r="47"/><text class="eco-name" x="520" y="299">반도체</text><text class="eco-score" x="520" y="319">심텍·티에스이 V2</text></g>
-              <g class="eco-node" data-eco-sector="kqPlant" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="300" cy="330" r="34"/><text class="eco-name" x="300" y="326">플랜트</text><text class="eco-score" x="300" y="342">한텍</text></g>
-            </svg>
-            <div class="eco-cross-note"><b>판정</b> · 원전은 범한퓨얼셀·덕양에너젠·에스프리즘 중심으로 3종목 전부 상승, RS 중앙값 +6.26%p, 합산 거래대금 213.4억원입니다. 전력망·항공우주·방산이 같이 붙고, 반도체는 심텍·티에스이 V2 품질통과가 있어 보조축으로 표시했습니다.</div>
-          </div>
-        </div>
-        <div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 원전 중심 에너지·인프라 확산</b><button type="button" data-eco-sector="ksNuclear" data-node-market="KOSPI">원전 · 두산퓨얼셀</button><button type="button" data-eco-sector="ksUtility" data-node-market="KOSPI">전력·유틸리티 · SGC에너지·한전산업</button><button type="button" data-eco-sector="ksConstruction" data-node-market="KOSPI">건설 · 현대건설·대우건설</button><button type="button" data-eco-sector="ksMachine" data-node-market="KOSPI">기계·장비 · 두산에너빌리티</button><button type="button" data-eco-sector="ksDefense" data-node-market="KOSPI">방산 · 엠앤씨솔루션</button><button type="button" data-eco-sector="ksAir" data-node-market="KOSPI">항공 · 한진칼</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 원전 중심 전력망·수주 확산</b><button type="button" data-eco-sector="kqNuclear" data-node-market="KOSDAQ">원전 · 범한퓨얼셀·덕양에너젠</button><button type="button" data-eco-sector="kqPower" data-node-market="KOSDAQ">전력망 · 지엔씨에너지·보성파워텍</button><button type="button" data-eco-sector="kqAerospace" data-node-market="KOSDAQ">항공우주 · 인텔리안테크</button><button type="button" data-eco-sector="kqDefense" data-node-market="KOSDAQ">방산 · 우리기술</button><button type="button" data-eco-sector="kqSemiconductor" data-node-market="KOSDAQ">반도체 · 심텍·티에스이</button><button type="button" data-eco-sector="kqPlant" data-node-market="KOSDAQ">플랜트 · 한텍</button></div></div>
-        <div class="daily-sector-detail" id="dailySectorDetail"><div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div></div>
-      </div>
-      <div class="daily-relation-strip"><span>핵심 연결</span><b>KOSPI 원전 ↔ 전력·건설·기계: 에너지 인프라축</b><b>KOSPI 원전 ↔ 항공: V2 보조축</b><b>KOSDAQ 원전 ↔ 전력망·방산·항공우주: 정책 수주축</b><b>KOSDAQ 원전 ↔ 반도체: V2 장비 자금</b></div>
+      <div class="daily-v2-audit"><b>검증 상태</b> · 55개 섹터 / 561행 / 제외 30행 · 필수값 누락 0·중복 0 · V2 101행 중 당일 신호 61행 · 배치 전체 종료코드 확인 불가 · 당일 종가 확정본 아님</div>
+      <div class="daily-leader-summary"><div class="daily-leader-stat"><small>동반 강세 중심 후보</small><strong id="dailyLeaderConfirmed">건설 · 반도체</strong><span id="dailyLeaderConfirmedNote"></span></div><div class="daily-leader-stat"><small>당일 V2</small><strong id="dailyLeaderEmerging"></strong><span id="dailyLeaderEmergingNote"></span></div><div class="daily-leader-stat"><small>누적</small><strong id="dailyLeaderWatch"></strong><span id="dailyLeaderWatchNote"></span></div></div><div class="daily-ecosystem"><div class="daily-ecosystem-title"><b>시장별 주도 후보 · 업종을 눌러 우선 종목 보기</b><span>점선: 산업 연관 또는 별도 강세 비교 · 자금 이동의 인과관계는 미확인</span></div><div class="daily-ecosystem-board"><div class="eco-market-card" data-eco-market="KOSPI"><div class="eco-market-label"><b>KOSPI</b><span>9/10 14:49 · 동반 강세와 단일 급등 구분</span></div><svg viewBox="0 0 600 365" role="img" aria-label="KOSPI 주도 후보 업종"><g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="ksCenter,ksProperty" x1="231.20788865158744" y1="137.23733618882463" x2="161.7106928908974" y2="94.0363766619092"/><text class="eco-link-label" x="207.5" y="114.5">부동산 개발</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksCenter,ksInsurance" x1="368.79211134841256" y1="137.23733618882463" x2="438.2893071091026" y2="94.0363766619092"/><text class="eco-link-label" x="392.5" y="114.5">별도 강세</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksCenter,ksOil" x1="232.04413575075966" y1="224.07947951302077" x2="161.14287078652123" y2="270.0694892195538"/><text class="eco-link-label" x="207.5" y="232.0">별도 급등</text><line class="eco-leader-link eco-link-weak" data-eco-link="ksCenter,ksDefense" x1="367.95586424924034" y1="224.07947951302077" x2="438.8571292134788" y2="270.0694892195538"/><text class="eco-link-label" x="392.5" y="232.0">별도 강세</text></g><g class="eco-node leader-center" data-eco-sector="ksCenter" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="300" cy="180" r="78"/><text class="eco-kicker" x="300" y="156">동반 강세 중심 후보</text><text class="eco-name" x="300" y="180">건설</text><text class="eco-score" x="300" y="203">GS건설·동부건설</text></g><g class="eco-node " data-eco-sector="ksProperty" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="115" cy="65" r="52"/><text class="eco-kicker" x="115" y="41">비교 1위 · 2종목</text><text class="eco-name" x="115" y="65">리츠·부동산</text><text class="eco-score" x="115" y="88">SK디앤디</text></g><g class="eco-node " data-eco-sector="ksInsurance" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="65" r="52"/><text class="eco-kicker" x="485" y="41">비교 3위 · 9종목</text><text class="eco-name" x="485" y="65">보험</text><text class="eco-score" x="485" y="88">한화손해보험</text></g><g class="eco-node " data-eco-sector="ksOil" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="115" cy="300" r="52"/><text class="eco-kicker" x="115" y="276">비교 5위 · 7종목</text><text class="eco-name" x="115" y="300">정유·석유</text><text class="eco-score" x="115" y="323">한국석유</text></g><g class="eco-node " data-eco-sector="ksDefense" data-node-market="KOSPI" role="button" tabindex="0"><circle cx="485" cy="300" r="52"/><text class="eco-kicker" x="485" y="276">비교 4위 · 7종목</text><text class="eco-name" x="485" y="300">방산</text><text class="eco-score" x="485" y="323">한국항공우주</text></g></svg><div class="eco-cross-note">건설: 8종목 중 6상승 · RS 중앙값 +1.46%p · 합산 2,486.3억원. 원자료 내 시장별 상대 비교이며 시장 전체 확정 주도 판단은 보류합니다.</div></div><div class="eco-market-card" data-eco-market="KOSDAQ"><div class="eco-market-label"><b>KOSDAQ</b><span>9/10 14:49 · 동반 강세와 단일 급등 구분</span></div><svg viewBox="0 0 600 365" role="img" aria-label="KOSDAQ 주도 후보 업종"><g class="eco-links"><line class="eco-leader-link eco-link-weak" data-eco-link="kqCenter,kqRobot" x1="231.20788865158744" y1="137.23733618882463" x2="161.7106928908974" y2="94.0363766619092"/><text class="eco-link-label" x="207.5" y="114.5">자동화 기술</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCenter,kqOil" x1="368.79211134841256" y1="137.23733618882463" x2="438.2893071091026" y2="94.0363766619092"/><text class="eco-link-label" x="392.5" y="114.5">별도 급등</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCenter,kqGas" x1="232.04413575075966" y1="224.07947951302077" x2="161.14287078652123" y2="270.0694892195538"/><text class="eco-link-label" x="207.5" y="232.0">별도 강세</text><line class="eco-leader-link eco-link-weak" data-eco-link="kqCenter,kqMachine" x1="367.95586424924034" y1="224.07947951302077" x2="438.8571292134788" y2="270.0694892195538"/><text class="eco-link-label" x="392.5" y="232.0">생산 장비</text></g><g class="eco-node leader-center" data-eco-sector="kqCenter" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="300" cy="180" r="78"/><text class="eco-kicker" x="300" y="156">동반 강세 중심 후보</text><text class="eco-name" x="300" y="180">반도체</text><text class="eco-score" x="300" y="203">두산테스나·티에프이</text></g><g class="eco-node " data-eco-sector="kqRobot" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="115" cy="65" r="52"/><text class="eco-kicker" x="115" y="41">비교 5위 · 11종목</text><text class="eco-name" x="115" y="65">로봇·자동화</text><text class="eco-score" x="115" y="88">에스피지</text></g><g class="eco-node " data-eco-sector="kqOil" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="65" r="52"/><text class="eco-kicker" x="485" y="41">단일 종목 급등</text><text class="eco-name" x="485" y="65">정유·석유</text><text class="eco-score" x="485" y="88">흥구석유</text></g><g class="eco-node " data-eco-sector="kqGas" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="115" cy="300" r="52"/><text class="eco-kicker" x="115" y="276">단일 종목 급등</text><text class="eco-name" x="115" y="300">가스·LNG</text><text class="eco-score" x="115" y="323">지에스이</text></g><g class="eco-node " data-eco-sector="kqMachine" data-node-market="KOSDAQ" role="button" tabindex="0"><circle cx="485" cy="300" r="52"/><text class="eco-kicker" x="485" y="276">비교 19위 · 8종목</text><text class="eco-name" x="485" y="300">기계·장비</text><text class="eco-score" x="485" y="323">삼미금속</text></g></svg><div class="eco-cross-note">반도체: 9종목 중 7상승 · RS 중앙값 +1.50%p · 합산 4,204.2억원. 원자료 내 시장별 상대 비교이며 시장 전체 확정 주도 판단은 보류합니다.</div></div></div><div class="daily-ecosystem-mobile"><div data-eco-market="KOSPI"><b>KOSPI · 건설</b><button type="button" data-eco-sector="ksCenter" data-node-market="KOSPI">건설 · GS건설·동부건설</button><button type="button" data-eco-sector="ksProperty" data-node-market="KOSPI">리츠·부동산 · SK디앤디</button><button type="button" data-eco-sector="ksInsurance" data-node-market="KOSPI">보험 · 한화손해보험</button><button type="button" data-eco-sector="ksOil" data-node-market="KOSPI">정유·석유 · 한국석유</button><button type="button" data-eco-sector="ksDefense" data-node-market="KOSPI">방산 · 한국항공우주</button></div><div data-eco-market="KOSDAQ"><b>KOSDAQ · 반도체</b><button type="button" data-eco-sector="kqCenter" data-node-market="KOSDAQ">반도체 · 두산테스나·티에프이</button><button type="button" data-eco-sector="kqRobot" data-node-market="KOSDAQ">로봇·자동화 · 에스피지</button><button type="button" data-eco-sector="kqOil" data-node-market="KOSDAQ">정유·석유 · 흥구석유</button><button type="button" data-eco-sector="kqGas" data-node-market="KOSDAQ">가스·LNG · 지에스이</button><button type="button" data-eco-sector="kqMachine" data-node-market="KOSDAQ">기계·장비 · 삼미금속</button></div></div><div class="daily-sector-detail" id="dailySectorDetail"></div></div><div class="daily-relation-strip"><span>판정 기준</span><b>시장별 RS·상승비율·거래대금·거래 확산으로 비교</b><b>작은 표본의 급등과 다종목 동반 강세 구분</b></div>
       <div class="daily-leader-detail" id="dailyLeaderDetail">종목을 누르면 시장 주도주 판정 근거가 표시됩니다.</div>
       </div>
       <div class="leader-cumulative daily-leader-hidden" id="leaderCumulativePane">
-        <div class="daily-v2-audit"><b>누적 기준: 9/9까지 19거래일</b> · 9/9 장중 생성본을 포함해 시장별 TOP15 이력을 한 번씩 반영했습니다. 20일 지속성 판단은 아직 표본 부족입니다.</div><div class="leader-cumulative-top" aria-label="2026년 9월 8일까지 19거래일 누적 상위 5개 섹터와 대장주">
-          <div class="leader-cumulative-market"><b>KOSPI · 최근 19거래일 누적 TOP5</b><div class="leader-cumulative-items"><span>은행·금융지주 <strong>15회</strong><small>제주은행 5회 · iM금융지주 4회 · JB금융지주 3회</small></span><span>범용화학 <strong>13회</strong><small>SK케미칼 6회 · OCI홀딩스 2회 · DL 2회</small></span><span>전자부품·디스플레이 <strong>12회</strong><small>금호전기 7회 · 삼화콘덴서 4회 · 삼성전기 1회</small></span><span>건설 <strong>12회</strong><small>자이에스앤디 5회 · 대우건설 3회 · 현대건설 2회</small></span><span>보험 <strong>11회</strong><small>한화생명 3회 · 한화손해보험 3회 · 삼성생명 2회</small></span></div></div>
-          <div class="leader-cumulative-market"><b>KOSDAQ · 최근 19거래일 누적 TOP5</b><div class="leader-cumulative-items"><span>반도체 <strong>11회</strong><small>티에프이 4회 · 에프에스티 3회 · 원익IPS 3회</small></span><span>전력기기·전선·전력망 <strong>10회</strong><small>지투파워 5회 · 티씨머티리얼즈 2회 · 보성파워텍 1회</small></span><span>여행·레저 <strong>10회</strong><small>아난티 6회 · 남화산업 2회 · 서부T&D 2회</small></span><span>가스·LNG·도시가스 <strong>9회</strong><small>지에스이 9회</small></span><span>제약·바이오 <strong>9회</strong><small>페니트리움바이오 5회 · 코오롱티슈진 1회 · 코오롱생명과학 1회</small></span></div></div>
-        </div>
-        <div class="leader-cumulative-controls">
+        <div class="daily-v2-audit"><b>누적 기준: 9/10까지 20거래일</b> · 확보한 날짜별 TOP15 등장횟수, TOP5·1위 횟수 별도 · 장중 생성본 포함 · 60일 전체 충족 전</div><div class="leader-cumulative-top"><div class="leader-cumulative-market"><b>KOSPI · 누적 TOP5</b><div class="leader-cumulative-items"><span>은행·금융지주 <strong>16회</strong><small>제주은행 5회 · iM금융지주 4회 · JB금융지주 3회</small></span><span>건설 <strong>13회</strong><small>자이에스앤디 5회 · 대우건설 3회 · 현대건설 2회</small></span><span>범용화학 <strong>13회</strong><small>SK케미칼 6회 · OCI홀딩스 2회 · DL 2회</small></span><span>전자부품·디스플레이 <strong>12회</strong><small>금호전기 7회 · 삼화콘덴서 4회 · 삼성전기 1회</small></span><span>보험 <strong>12회</strong><small>한화손해보험 4회 · 한화생명 3회 · 삼성생명 2회</small></span></div></div><div class="leader-cumulative-market"><b>KOSDAQ · 누적 TOP5</b><div class="leader-cumulative-items"><span>반도체 <strong>12회</strong><small>티에프이 4회 · 에프에스티 3회 · 원익IPS 3회</small></span><span>전력기기·전선·전력망 <strong>11회</strong><small>지투파워 5회 · 티씨머티리얼즈 2회 · 지엔씨에너지 2회</small></span><span>가스·LNG·도시가스 <strong>10회</strong><small>지에스이 10회</small></span><span>로봇·자동화 <strong>10회</strong><small>져스텍 3회 · 로보티즈 3회 · 하이젠알앤엠 2회</small></span><span>건자재·시멘트 <strong>10회</strong><small>서산 6회 · 강동씨앤엘 4회</small></span></div></div></div><div class="leader-cumulative-controls">
           <div class="leader-cumulative-control"><span>시장</span><button type="button" class="leader-cumulative-btn active" data-cumulative-market="KOSPI">KOSPI</button><button type="button" class="leader-cumulative-btn" data-cumulative-market="KOSDAQ">KOSDAQ</button></div>
           <div class="leader-cumulative-control"><span>기간</span><button type="button" class="leader-cumulative-btn active" data-cumulative-period="daily">일별 60일 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="monthly">월간 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="quarterly">분기 누적</button></div>
         </div>
@@ -1352,29 +1298,29 @@ const LEGACY_DAILY_SECTOR_STOCKS = {
 };
 const LEGACY_DAILY_SECTOR_LINKS={robot:['auto','software','machine','battery'],auto:['robot'],software:['robot'],machine:['robot'],battery:['robot'],insurance:['holding','bank','securities'],holding:['insurance'],bank:['insurance'],securities:['insurance']};
 const DAILY_LEADER_SUMMARY = {
-  "all": [
-    "수소·연료전지 · 수소·연료전지",
-    "9/9 KOSPI 수소·연료전지 중심 / KOSDAQ 수소·연료전지 중심 동반 주도축",
-    "V2 품질통과 5종목",
-    "KOSPI 한진칼·NHN / KOSDAQ 심텍·티에스이·지엔씨에너지",
-    "19일 누적 반영",
-    "시장별 TOP5 누적과 대장주 이력 표시"
-  ],
   "KOSPI": [
-    "수소·연료전지",
-    "3종목 전부 상승 · 합산 1,686.8억 · RS 중앙값 +8.05%p",
-    "V2 품질통과 2종목",
-    "한진칼·NHN은 보조 신호",
-    "수소·연료전지 ↔ 에너지·전력·2차전지",
-    "전력·유틸리티와 건설이 동반 확산"
+    "건설",
+    "건설: 8종목 중 6상승 · RS 중앙값 +1.46%p · 합산 2,486.3억원. 원자료 내 시장별 상대 비교이며 시장 전체 확정 주도 판단은 보류합니다.",
+    "V2 품질통과 3종목",
+    "메리츠금융지주·금호타이어·자이에스앤디",
+    "20거래일 누적",
+    "장중 업종 14:49 / V2 15:48 · 시점 차이 있음"
   ],
   "KOSDAQ": [
-    "수소·연료전지",
-    "3종목 전부 상승 · 합산 213.4억 · RS 중앙값 +6.26%p",
-    "V2 품질통과 3종목",
-    "심텍·티에스이·지엔씨에너지",
-    "수소·연료전지 ↔ 방산·기계·반도체",
-    "반도체는 V2 보조축"
+    "반도체",
+    "반도체: 9종목 중 7상승 · RS 중앙값 +1.50%p · 합산 4,204.2억원. 원자료 내 시장별 상대 비교이며 시장 전체 확정 주도 판단은 보류합니다.",
+    "V2 품질통과 8종목",
+    "지엔씨에너지·피에스케이홀딩스·심텍·티에스이·샘씨엔에스·주성엔지니어링·코스메카코리아·저스템",
+    "20거래일 누적",
+    "장중 업종 14:49 / V2 15:48 · 시점 차이 있음"
+  ],
+  "all": [
+    "건설 · 반도체",
+    "동반 강세 중심 후보 / 정유 급등은 별도 표시",
+    "V2 품질통과 11종목",
+    "코스피·코스닥 별도 교차 확인",
+    "20거래일 누적",
+    "8/13~9/10 · 날짜별 1회 반영"
   ]
 };
 const LEADER_CUMULATIVE_DATA={
@@ -1440,9 +1386,9 @@ Object.assign(LEADER_CUMULATIVE_HISTORY_ACTIVE.KOSDAQ,{
   '원전':{l:[['오르비텍',3],['일진파워',2]],d:[['20260813',7,'일진파워',89.7,'수급 확인'],['20260825',1,'일진파워',56.5,'수급 확인'],['20260826',1,'오르비텍',79.9,'수급 확인'],['20260827',3,'오르비텍',42.6,'수급 확인'],['20260828',12,'오르비텍',71.6,'수급 확인']]},
   '여행·레저':{l:[['아난티',3],['남화산업',1],['서부T&D',1]],d:[['20260818',4,'아난티',80,'후발 후보'],['20260820',12,'남화산업',77.8,'후발 후보'],['20260821',10,'아난티',76.4,'후발 후보'],['20260826',14,'서부T&D',67,'후발 후보'],['20260828',2,'아난티',56.6,'후발 후보']]}
 });
-const LEADER_CUMULATIVE_20260909={"KOSPI":{"days":[["8/13",[[1,"전자부품·디스플레이","금호전기"],[2,"신재생","씨에스윈드"],[3,"방산","엠앤씨솔루션"]]],["8/14",[[1,"보험","한화생명"],[2,"2차전지","DN오토모티브"],[3,"정유·석유제품·LPG","SK가스"]]],["8/18",[[1,"해운","HMM"],[2,"보험","현대해상"],[3,"정유·석유제품·LPG","S-Oil"]]],["8/19",[[1,"수소·연료전지","두산퓨얼셀"],[2,"보험","한화손해보험"],[3,"ESS·에너지저장","LG에너지솔루션"]]],["8/20",[[1,"의료기기·진단","삼양바이오팜"],[2,"반도체","SK하이닉스"],[3,"정밀·첨단소재","KCC"]]],["8/21",[[1,"의료기기·진단","삼양바이오팜"],[2,"은행·금융지주","하나금융지주"],[3,"정밀·첨단소재","KCC"]]],["8/24",[[1,"2차전지","포스코퓨처엠"],[2,"ESS·에너지저장","LG에너지솔루션"],[3,"의료기기·진단","삼양바이오팜"]]],["8/25",[[1,"원전","한전기술"],[2,"수소·연료전지","두산퓨얼셀"],[3,"기계·산업장비","두산에너빌리티"]]],["8/26",[[1,"건설","대우건설"],[2,"원전","우진"],[3,"수소·연료전지","두산퓨얼셀"]]],["8/27",[[1,"전력기기·전선·전력망","LS ELECTRIC"],[2,"ESS·에너지저장","LG에너지솔루션"],[3,"2차전지","삼성SDI"]]],["8/28",[[1,"전자부품·디스플레이","금호전기"],[2,"화장품·패션·생활소비재","에이피알"],[3,"은행·금융지주","JB금융지주"]]],["8/31",[[1,"전자부품·디스플레이","금호전기"],[2,"ESS·에너지저장","LG에너지솔루션"],[3,"반도체","유니퀘스트"]]],["9/1",[[1,"리츠·부동산","SK디앤디"],[2,"보험","한화손해보험"],[3,"정밀·첨단소재","KCC"]]],["9/2",[[1,"리츠·부동산","SK디앤디"],[2,"정유·석유제품·LPG","S-Oil"],[3,"은행·금융지주","JB금융지주"]]],["9/3",[[1,"보험","한화생명"],[2,"ESS·에너지저장","LG에너지솔루션"],[3,"건설","자이에스앤디"]]],["9/4",[[1,"수소·연료전지","두산퓨얼셀"],[2,"항공","한진칼"],[3,"신재생","SK오션플랜트"]]],["9/7",[[1,"수소·연료전지","두산퓨얼셀"],[2,"원전","한전기술"],[3,"전자부품·디스플레이","삼화콘덴서"]]],["9/8",[[1,"원전","한전기술"],[2,"전력·유틸리티","한전산업"],[3,"건설","대우건설"]]],["9/9",[[1,"수소·연료전지","두산퓨얼셀"],[2,"2차전지","코스모신소재"],[3,"ESS·에너지저장","LG에너지솔루션"]]]],"frequency":[["은행·금융지주",15,7,0],["범용화학",13,1,0],["전자부품·디스플레이",12,8,3],["건설",12,5,1],["보험",11,6,2],["2차전지",11,6,1]],"tree":[["은행·금융지주",15,7,0,"20260908",15,7.9],["범용화학",13,1,0,"20260909",5,9.9],["전자부품·디스플레이",12,8,3,"20260909",13,5.6],["건설",12,5,1,"20260908",3,8.7],["보험",11,6,2,"20260903",1,5.5],["2차전지",11,6,1,"20260909",2,7.1],["지주·종합상사",11,5,0,"20260908",7,6.3],["수소·연료전지",10,7,4,"20260909",1,4.2],["기계·산업장비",10,2,0,"20260909",9,8.9],["반도체",9,4,0,"20260909",15,7.4],["정유·석유제품·LPG",8,3,0,"20260909",14,6.8],["방산",8,2,0,"20260909",10,7.4],["항공",8,2,0,"20260908",6,7.4],["조선·해양",8,2,0,"20260909",4,8.5],["신재생",8,2,0,"20260909",7,8.6]],"history":{"은행·금융지주":{"l":[["제주은행",5],["iM금융지주",4],["JB금융지주",3],["케이뱅크",2],["하나금융지주",1]],"d":[["20260814",10,"iM금융지주",58.0,"섹터 대표주"],["20260818",10,"iM금융지주",52.4,"섹터 대표주"],["20260819",12,"iM금융지주",66.2,"섹터 대표주"],["20260821",2,"하나금융지주",59.7,"섹터 대표주"],["20260824",15,"제주은행",79.0,"섹터 대표주"],["20260825",7,"제주은행",72.5,"섹터 대표주"],["20260826",12,"제주은행",61.6,"섹터 대표주"],["20260827",11,"제주은행",66.3,"섹터 대표주"],["20260828",3,"JB금융지주",72.9,"섹터 대표주"],["20260831",5,"제주은행",77.8,"섹터 대표주"],["20260901",4,"iM금융지주",70.5,"섹터 대표주"],["20260902",3,"JB금융지주",85.0,"섹터 대표주"],["20260903",5,"JB금융지주",84.4,"섹터 대표주"],["20260907",5,"케이뱅크",63.8,"섹터 대표주"],["20260908",15,"케이뱅크",59.5,"섹터 대표주"]]},"범용화학":{"l":[["SK케미칼",6],["OCI홀딩스",2],["DL",2],["SKC",2],["이수화학",1]],"d":[["20260813",8,"이수화학",89.2,"섹터 대표주"],["20260814",13,"SK케미칼",86.8,"섹터 대표주"],["20260819",8,"OCI홀딩스",69.4,"섹터 대표주"],["20260820",10,"OCI홀딩스",52.2,"섹터 대표주"],["20260824",7,"SK케미칼",69.4,"섹터 대표주"],["20260826",14,"SK케미칼",74.6,"섹터 대표주"],["20260828",8,"SK케미칼",84.4,"섹터 대표주"],["20260831",8,"SK케미칼",65.5,"섹터 대표주"],["20260901",11,"SK케미칼",70.5,"섹터 대표주"],["20260902",15,"DL",67.3,"섹터 대표주"],["20260903",10,"DL",84.1,"섹터 대표주"],["20260907",12,"SKC",57.6,"섹터 대표주"],["20260909",5,"SKC",80.5,"섹터 대표주"]]},"전자부품·디스플레이":{"l":[["금호전기",7],["삼화콘덴서",4],["삼성전기",1]],"d":[["20260813",1,"금호전기",91.8,"섹터 대표주"],["20260820",5,"금호전기",82.6,"섹터 대표주"],["20260824",5,"금호전기",81.0,"섹터 대표주"],["20260825",6,"삼화콘덴서",78.5,"섹터 대표주"],["20260827",10,"삼성전기",57.5,"섹터 대표주"],["20260828",1,"금호전기",83.4,"섹터 대표주"],["20260831",1,"금호전기",84.2,"섹터 대표주"],["20260901",14,"금호전기",75.7,"섹터 대표주"],["20260902",4,"금호전기",69.4,"섹터 대표주"],["20260904",4,"삼화콘덴서",61.4,"섹터 대표주"],["20260907",3,"삼화콘덴서",58.5,"섹터 대표주"],["20260909",13,"삼화콘덴서",61.3,"섹터 대표주"]]},"건설":{"l":[["자이에스앤디",5],["대우건설",3],["현대건설",2],["까뮤이앤씨",1],["한신공영",1]],"d":[["20260813",13,"자이에스앤디",85.6,"섹터 대표주"],["20260814",7,"자이에스앤디",75.3,"섹터 대표주"],["20260819",5,"현대건설",81.6,"섹터 대표주"],["20260821",15,"자이에스앤디",52.6,"섹터 대표주"],["20260825",5,"현대건설",87.0,"섹터 대표주"],["20260826",1,"대우건설",88.0,"섹터 대표주"],["20260828",10,"자이에스앤디",65.1,"섹터 대표주"],["20260902",13,"까뮤이앤씨",52.5,"섹터 대표주"],["20260903",3,"자이에스앤디",72.2,"섹터 대표주"],["20260904",14,"한신공영",51.7,"섹터 대표주"],["20260907",15,"대우건설",69.9,"섹터 대표주"],["20260908",3,"대우건설",84.7,"섹터 대표주"]]},"보험":{"l":[["한화생명",3],["한화손해보험",3],["삼성생명",2],["현대해상",1],["미래에셋생명",1]],"d":[["20260813",12,"한화생명",84.0,"섹터 대표주"],["20260814",1,"한화생명",89.7,"섹터 대표주"],["20260818",2,"현대해상",90.7,"섹터 대표주"],["20260819",2,"한화손해보험",87.0,"섹터 대표주"],["20260821",6,"삼성생명",83.1,"섹터 대표주"],["20260825",9,"미래에셋생명",87.1,"섹터 대표주"],["20260826",11,"삼성생명",75.1,"섹터 대표주"],["20260828",4,"한화손해보험",90.3,"섹터 대표주"],["20260901",2,"한화손해보험",86.1,"섹터 대표주"],["20260902",10,"DB손해보험",67.2,"섹터 대표주"],["20260903",1,"한화생명",87.5,"섹터 대표주"]]},"2차전지":{"l":[["포스코퓨처엠",3],["후성",2],["DN오토모티브",2],["삼성SDI",2],["SK아이이테크놀로지",1]],"d":[["20260813",5,"후성",87.5,"섹터 대표주"],["20260814",2,"DN오토모티브",89.7,"섹터 대표주"],["20260819",10,"삼성SDI",70.4,"섹터 대표주"],["20260820",14,"DN오토모티브",52.0,"섹터 대표주"],["20260824",1,"포스코퓨처엠",89.2,"섹터 대표주"],["20260827",3,"삼성SDI",89.7,"섹터 대표주"],["20260831",4,"포스코퓨처엠",87.6,"섹터 대표주"],["20260903",15,"포스코퓨처엠",70.5,"섹터 대표주"],["20260904",10,"SK아이이테크놀로지",55.4,"섹터 대표주"],["20260908",12,"후성",58.6,"섹터 대표주"],["20260909",2,"코스모신소재",88.2,"섹터 대표주"]]},"지주·종합상사":{"l":[["GS",4],["SK스퀘어",3],["LG",2],["삼성물산",2]],"d":[["20260813",7,"GS",83.3,"섹터 대표주"],["20260814",4,"LG",78.8,"섹터 대표주"],["20260818",9,"GS",70.2,"섹터 대표주"],["20260820",7,"SK스퀘어",72.6,"섹터 대표주"],["20260821",5,"삼성물산",73.4,"섹터 대표주"],["20260826",9,"GS",74.8,"섹터 대표주"],["20260831",7,"LG",72.0,"섹터 대표주"],["20260901",5,"삼성물산",65.2,"섹터 대표주"],["20260904",5,"GS",62.7,"섹터 대표주"],["20260907",4,"SK스퀘어",65.9,"섹터 대표주"],["20260908",7,"SK스퀘어",57.8,"섹터 대표주"]]},"수소·연료전지":{"l":[["두산퓨얼셀",10]],"d":[["20260813",6,"두산퓨얼셀",76.1,"섹터 대표주"],["20260819",1,"두산퓨얼셀",74.7,"섹터 대표주"],["20260820",12,"두산퓨얼셀",46.7,"섹터 대표주"],["20260824",4,"두산퓨얼셀",71.9,"섹터 대표주"],["20260825",2,"두산퓨얼셀",71.8,"섹터 대표주"],["20260826",3,"두산퓨얼셀",77.9,"섹터 대표주"],["20260904",1,"두산퓨얼셀",75.3,"섹터 대표주"],["20260907",1,"두산퓨얼셀",86.8,"섹터 대표주"],["20260908",11,"두산퓨얼셀",53.1,"섹터 대표주"],["20260909",1,"두산퓨얼셀",90.4,"섹터 대표주"]]},"기계·산업장비":{"l":[["두산에너빌리티",8],["현대엘리베이터",1],["대동",1]],"d":[["20260814",14,"두산에너빌리티",63.0,"섹터 대표주"],["20260825",3,"두산에너빌리티",87.6,"섹터 대표주"],["20260826",8,"두산에너빌리티",83.9,"섹터 대표주"],["20260827",13,"두산에너빌리티",63.4,"섹터 대표주"],["20260828",7,"두산에너빌리티",78.0,"섹터 대표주"],["20260903",6,"현대엘리베이터",60.9,"섹터 대표주"],["20260904",15,"대동",51.4,"섹터 대표주"],["20260907",9,"두산에너빌리티",84.3,"섹터 대표주"],["20260908",5,"두산에너빌리티",72.3,"섹터 대표주"],["20260909",9,"두산에너빌리티",69.0,"섹터 대표주"]]},"반도체":{"l":[["SK하이닉스",6],["유니퀘스트",2],["미래산업",1]],"d":[["20260813",4,"미래산업",88.9,"섹터 대표주"],["20260814",6,"SK하이닉스",61.0,"섹터 대표주"],["20260818",5,"유니퀘스트",85.9,"섹터 대표주"],["20260820",2,"SK하이닉스",76.3,"섹터 대표주"],["20260825",15,"SK하이닉스",56.6,"섹터 대표주"],["20260827",8,"SK하이닉스",54.4,"섹터 대표주"],["20260831",3,"유니퀘스트",83.5,"섹터 대표주"],["20260904",9,"SK하이닉스",53.8,"섹터 대표주"],["20260909",15,"SK하이닉스",65.1,"섹터 대표주"]]},"정유·석유제품·LPG":{"l":[["S-Oil",4],["SK이노베이션",2],["SK가스",1],["우양피앤엘",1]],"d":[["20260814",3,"SK가스",73.5,"섹터 대표주"],["20260818",3,"S-Oil",74.7,"섹터 대표주"],["20260828",6,"S-Oil",77.6,"섹터 대표주"],["20260901",6,"SK이노베이션",83.5,"섹터 대표주"],["20260902",2,"S-Oil",72.1,"섹터 대표주"],["20260904",7,"S-Oil",83.0,"섹터 대표주"],["20260908",13,"우양피앤엘",53.0,"섹터 대표주"],["20260909",14,"SK이노베이션",87.6,"섹터 대표주"]]},"방산":{"l":[["엠앤씨솔루션",2],["풍산",2],["한화시스템",2],["한화에어로스페이스",1],["현대로템",1]],"d":[["20260813",3,"엠앤씨솔루션",84.5,"섹터 대표주"],["20260819",7,"한화에어로스페이스",79.9,"섹터 대표주"],["20260824",8,"풍산",71.2,"섹터 대표주"],["20260827",4,"한화시스템",67.3,"섹터 대표주"],["20260903",7,"현대로템",46.1,"섹터 대표주"],["20260907",11,"한화시스템",31.2,"섹터 대표주"],["20260908",9,"풍산",47.2,"섹터 대표주"],["20260909",10,"엠앤씨솔루션",74.7,"섹터 대표주"]]},"항공":{"l":[["한진칼",6],["대한항공",2]],"d":[["20260821",8,"한진칼",57.2,"섹터 대표주"],["20260824",9,"한진칼",77.8,"섹터 대표주"],["20260826",4,"대한항공",89.1,"섹터 대표주"],["20260828",9,"대한항공",72.4,"섹터 대표주"],["20260902",7,"한진칼",73.5,"섹터 대표주"],["20260904",2,"한진칼",80.5,"섹터 대표주"],["20260907",14,"한진칼",66.6,"섹터 대표주"],["20260908",6,"한진칼",67.0,"섹터 대표주"]]},"조선·해양":{"l":[["한화엔진",3],["삼성중공업",2],["대한조선",1],["HD현대마린솔루션",1],["STX엔진",1]],"d":[["20260814",11,"대한조선",80.6,"섹터 대표주"],["20260825",8,"한화엔진",66.3,"섹터 대표주"],["20260826",15,"HD현대마린솔루션",66.7,"섹터 대표주"],["20260827",7,"STX엔진",66.3,"섹터 대표주"],["20260901",9,"한화엔진",62.1,"섹터 대표주"],["20260903",4,"삼성중공업",83.7,"섹터 대표주"],["20260907",10,"삼성중공업",38.4,"섹터 대표주"],["20260909",4,"한화엔진",89.2,"섹터 대표주"]]},"신재생":{"l":[["씨에스윈드",4],["SK이터닉스",2],["SK오션플랜트",2]],"d":[["20260813",2,"씨에스윈드",90.0,"섹터 대표주"],["20260818",14,"SK이터닉스",55.3,"섹터 대표주"],["20260819",11,"씨에스윈드",68.6,"섹터 대표주"],["20260820",13,"씨에스윈드",57.7,"섹터 대표주"],["20260825",10,"SK이터닉스",61.6,"섹터 대표주"],["20260827",9,"SK오션플랜트",61.4,"섹터 대표주"],["20260904",3,"SK오션플랜트",81.4,"섹터 대표주"],["20260909",7,"씨에스윈드",73.5,"섹터 대표주"]]},"자동차·일반부품":{"l":[["금호타이어",2],["현대차",2],["HL만도",2],["기아",1],["삼성공조",1]],"d":[["20260813",11,"금호타이어",89.3,"섹터 대표주"],["20260814",5,"현대차",82.5,"섹터 대표주"],["20260825",11,"현대차",60.6,"섹터 대표주"],["20260828",15,"금호타이어",51.0,"섹터 대표주"],["20260831",6,"HL만도",53.0,"섹터 대표주"],["20260903",14,"기아",47.0,"섹터 대표주"],["20260907",7,"HL만도",43.5,"섹터 대표주"],["20260909",12,"삼성공조",51.5,"섹터 대표주"]]},"철강":{"l":[["현대제철",4],["세아베스틸지주",2],["POSCO홀딩스",2]],"d":[["20260813",9,"세아베스틸지주",87.2,"섹터 대표주"],["20260814",12,"세아베스틸지주",71.1,"섹터 대표주"],["20260824",13,"POSCO홀딩스",77.1,"섹터 대표주"],["20260825",12,"현대제철",87.3,"섹터 대표주"],["20260827",6,"현대제철",81.9,"섹터 대표주"],["20260901",7,"POSCO홀딩스",60.0,"섹터 대표주"],["20260902",11,"현대제철",50.8,"섹터 대표주"],["20260903",11,"현대제철",75.6,"섹터 대표주"]]},"인터넷·플랫폼":{"l":[["NAVER",4],["키다리스튜디오",3]],"d":[["20260813",10,"NAVER",68.1,"섹터 대표주"],["20260819",15,"키다리스튜디오",54.9,"섹터 대표주"],["20260820",4,"NAVER",53.9,"섹터 대표주"],["20260821",4,"NAVER",51.3,"섹터 대표주"],["20260824",14,"NAVER",72.5,"섹터 대표주"],["20260828",5,"키다리스튜디오",69.4,"섹터 대표주"],["20260904",8,"키다리스튜디오",65.3,"섹터 대표주"]]},"소프트웨어·IT서비스":{"l":[["삼성에스디에스",3],["포스코DX",2],["현대오토에버",2]],"d":[["20260813",14,"포스코DX",71.2,"섹터 대표주"],["20260814",9,"현대오토에버",84.7,"섹터 대표주"],["20260820",11,"현대오토에버",55.6,"섹터 대표주"],["20260827",14,"포스코DX",56.5,"섹터 대표주"],["20260828",13,"삼성에스디에스",74.4,"섹터 대표주"],["20260831",9,"삼성에스디에스",59.2,"섹터 대표주"],["20260904",11,"삼성에스디에스",66.6,"섹터 대표주"]]},"ESS·에너지저장":{"l":[["LG에너지솔루션",6]],"d":[["20260819",3,"LG에너지솔루션",74.1,"섹터 대표주"],["20260824",2,"LG에너지솔루션",76.9,"섹터 대표주"],["20260827",2,"LG에너지솔루션",74.6,"섹터 대표주"],["20260831",2,"LG에너지솔루션",66.2,"섹터 대표주"],["20260903",2,"LG에너지솔루션",71.5,"섹터 대표주"],["20260909",3,"LG에너지솔루션",74.9,"섹터 대표주"]]},"의료기기·진단":{"l":[["삼양바이오팜",6]],"d":[["20260820",1,"삼양바이오팜",84.0,"섹터 대표주"],["20260821",1,"삼양바이오팜",72.0,"섹터 대표주"],["20260824",3,"삼양바이오팜",81.3,"섹터 대표주"],["20260826",5,"삼양바이오팜",74.1,"섹터 대표주"],["20260831",11,"삼양바이오팜",55.5,"섹터 대표주"],["20260904",13,"삼양바이오팜",42.3,"섹터 대표주"]]},"정밀·첨단소재":{"l":[["KCC",6]],"d":[["20260820",3,"KCC",77.9,"섹터 대표주"],["20260821",3,"KCC",70.8,"섹터 대표주"],["20260826",13,"KCC",65.3,"섹터 대표주"],["20260901",3,"KCC",68.3,"섹터 대표주"],["20260907",13,"KCC",48.1,"섹터 대표주"],["20260908",10,"KCC",54.5,"섹터 대표주"]]},"해운":{"l":[["STX그린로지스",2],["팬오션",2],["HMM",1],["대한해운",1]],"d":[["20260818",1,"HMM",92.9,"섹터 대표주"],["20260819",13,"STX그린로지스",83.7,"섹터 대표주"],["20260821",9,"대한해운",63.6,"섹터 대표주"],["20260824",10,"팬오션",90.0,"섹터 대표주"],["20260902",5,"STX그린로지스",80.6,"섹터 대표주"],["20260903",9,"팬오션",84.1,"섹터 대표주"]]},"전력기기·전선·전력망":{"l":[["LS ELECTRIC",4],["대원전선",1],["HD현대일렉트릭",1]],"d":[["20260818",13,"LS ELECTRIC",62.2,"섹터 대표주"],["20260819",9,"대원전선",60.0,"섹터 대표주"],["20260826",10,"LS ELECTRIC",59.8,"섹터 대표주"],["20260827",1,"LS ELECTRIC",80.1,"섹터 대표주"],["20260907",6,"HD현대일렉트릭",62.0,"섹터 대표주"],["20260909",6,"LS ELECTRIC",72.2,"섹터 대표주"]]},"전력·유틸리티":{"l":[["한전산업",2],["한국전력",2],["SGC에너지",1]],"d":[["20260814",15,"SGC에너지",62.4,"섹터 대표주"],["20260825",4,"한전산업",85.4,"섹터 대표주"],["20260826",7,"한국전력",84.5,"섹터 대표주"],["20260903",12,"한국전력",55.9,"섹터 대표주"],["20260908",2,"한전산업",80.7,"섹터 대표주"]]},"화장품·패션·생활소비재":{"l":[["에이피알",3],["TBH글로벌",1],["F&F",1]],"d":[["20260821",10,"TBH글로벌",65.4,"섹터 대표주"],["20260824",11,"에이피알",78.8,"섹터 대표주"],["20260828",2,"에이피알",80.0,"섹터 대표주"],["20260831",15,"에이피알",56.8,"섹터 대표주"],["20260902",8,"F&F",66.3,"섹터 대표주"]]},"통신서비스":{"l":[["SK텔레콤",2],["LG유플러스",2],["KT",1]],"d":[["20260814",8,"SK텔레콤",80.0,"섹터 대표주"],["20260818",7,"KT",63.7,"섹터 대표주"],["20260821",7,"SK텔레콤",66.1,"섹터 대표주"],["20260831",12,"LG유플러스",52.3,"섹터 대표주"],["20260901",8,"LG유플러스",54.2,"섹터 대표주"]]},"원전":{"l":[["한전기술",3],["우진",1]],"d":[["20260825",1,"한전기술",87.3,"섹터 대표주"],["20260826",2,"우진",88.0,"섹터 대표주"],["20260907",2,"한전기술",87.8,"섹터 대표주"],["20260908",1,"한전기술",92.5,"섹터 대표주"]]},"제약·바이오":{"l":[["한올바이오파마",2],["SK바이오사이언스",2]],"d":[["20260819",14,"한올바이오파마",72.2,"섹터 대표주"],["20260820",6,"SK바이오사이언스",69.1,"섹터 대표주"],["20260824",6,"한올바이오파마",79.2,"섹터 대표주"],["20260828",11,"SK바이오사이언스",61.2,"섹터 대표주"]]},"로봇·자동화":{"l":[["두산로보틱스",4]],"d":[["20260827",12,"두산로보틱스",49.2,"섹터 대표주"],["20260904",12,"두산로보틱스",50.7,"섹터 대표주"],["20260907",8,"두산로보틱스",45.8,"섹터 대표주"],["20260909",8,"두산로보틱스",67.3,"섹터 대표주"]]},"증권·벤처금융":{"l":[["미래에셋증권",3],["다올투자증권",1]],"d":[["20260813",15,"미래에셋증권",81.3,"섹터 대표주"],["20260820",9,"미래에셋증권",53.0,"섹터 대표주"],["20260901",10,"다올투자증권",42.0,"섹터 대표주"],["20260908",8,"미래에셋증권",60.8,"섹터 대표주"]]},"건자재·시멘트":{"l":[["영보화학",2],["대림바스",1],["한일시멘트",1]],"d":[["20260818",8,"영보화학",55.7,"섹터 대표주"],["20260827",15,"대림바스",46.8,"섹터 대표주"],["20260831",14,"한일시멘트",66.3,"섹터 대표주"],["20260903",13,"영보화학",57.5,"섹터 대표주"]]},"플랜트·인프라":{"l":[["HD현대에너지솔루션",2],["삼성E&A",1]],"d":[["20260819",4,"HD현대에너지솔루션",72.8,"섹터 대표주"],["20260826",6,"삼성E&A",71.8,"섹터 대표주"],["20260909",11,"HD현대에너지솔루션",78.1,"섹터 대표주"]]},"유통":{"l":[["신세계",2],["한화갤러리아",1]],"d":[["20260901",13,"신세계",68.9,"섹터 대표주"],["20260904",6,"한화갤러리아",75.3,"섹터 대표주"],["20260908",4,"신세계",63.2,"섹터 대표주"]]},"통신장비·광네트워크":{"l":[["한화비전",3]],"d":[["20260818",4,"한화비전",73.3,"섹터 대표주"],["20260820",8,"한화비전",59.6,"섹터 대표주"],["20260825",14,"한화비전",54.9,"섹터 대표주"]]},"플라스틱·고무소재":{"l":[["진양화학",2],["테이팩스",1]],"d":[["20260827",5,"진양화학",65.2,"섹터 대표주"],["20260828",14,"테이팩스",66.5,"섹터 대표주"],["20260902",12,"진양화학",59.4,"섹터 대표주"]]},"농업·비료·사료":{"l":[["남해화학",2],["조비",1]],"d":[["20260818",6,"남해화학",76.0,"섹터 대표주"],["20260819",6,"남해화학",80.7,"섹터 대표주"],["20260902",9,"조비",70.1,"섹터 대표주"]]},"포장·제지":{"l":[["대영포장",1],["신풍",1],["한국수출포장",1]],"d":[["20260818",11,"대영포장",64.8,"섹터 대표주"],["20260831",10,"신풍",63.3,"섹터 대표주"],["20260902",6,"한국수출포장",45.1,"섹터 대표주"]]},"가스·LNG·도시가스":{"l":[["한국가스공사",3]],"d":[["20260818",15,"한국가스공사",56.4,"섹터 대표주"],["20260831",13,"한국가스공사",58.9,"섹터 대표주"],["20260901",12,"한국가스공사",56.6,"섹터 대표주"]]},"리츠·부동산":{"l":[["SK디앤디",2]],"d":[["20260901",1,"SK디앤디",87.1,"섹터 대표주"],["20260902",1,"SK디앤디",84.1,"섹터 대표주"]]},"강관":{"l":[["세아제강지주",1],["KBI동양철관",1]],"d":[["20260903",8,"세아제강지주",68.2,"섹터 대표주"],["20260908",14,"KBI동양철관",76.5,"섹터 대표주"]]},"결제·핀테크·신용정보":{"l":[["카카오페이",2]],"d":[["20260820",15,"카카오페이",73.9,"섹터 대표주"],["20260824",12,"카카오페이",78.3,"섹터 대표주"]]},"물류":{"l":[["한익스프레스",1],["KB발해인프라",1]],"d":[["20260821",14,"한익스프레스",41.8,"섹터 대표주"],["20260902",14,"KB발해인프라",50.0,"섹터 대표주"]]},"렌탈·구독서비스":{"l":[["코웨이",1]],"d":[["20260821",11,"코웨이",59.8,"섹터 대표주"]]},"생활·레저용품":{"l":[["시디즈",1]],"d":[["20260821",12,"시디즈",53.5,"섹터 대표주"]]},"식음료":{"l":[["KT&G",1]],"d":[["20260818",12,"KT&G",52.0,"섹터 대표주"]]},"여행·레저":{"l":[["파라다이스",1]],"d":[["20260828",12,"파라다이스",74.8,"섹터 대표주"]]},"게임":{"l":[["NC",1]],"d":[["20260821",13,"NC",40.0,"섹터 대표주"]]},"비철금속":{"l":[["고려아연",1]],"d":[["20260825",13,"고려아연",87.4,"섹터 대표주"]]},"전장·자율주행부품":{"l":[["아진전자부품",1]],"d":[["20260901",15,"아진전자부품",24.2,"섹터 대표주"]]}}},"KOSDAQ":{"days":[["8/13",[[1,"자동차·일반부품","삼기"],[2,"전자부품·디스플레이","PS일렉트로닉스"],[3,"제약·바이오","페니트리움바이오"]]],["8/14",[[1,"로봇·자동화","로보티즈"],[2,"조선·해양","현대힘스"],[3,"자동차·일반부품","한라캐스트"]]],["8/18",[[1,"여행·레저","아난티"],[2,"정유·석유제품·LPG","흥구석유"],[3,"물류","대아티아이"]]],["8/19",[[1,"해운","팬스타엔터프라이즈"],[2,"물류","대아티아이"],[3,"강관","티피씨글로벌"]]],["8/20",[[1,"건자재·시멘트","서산"],[2,"반도체","티에프이"],[3,"소프트웨어·IT서비스","씨이랩"]]],["8/21",[[1,"해운","팬스타엔터프라이즈"],[2,"강관","티피씨글로벌"],[3,"결제·핀테크·신용정보","다날"]]],["8/24",[[1,"2차전지","에코프로"],[2,"결제·핀테크·신용정보","NHN KCP"],[3,"증권·벤처금융","DSC인베스트먼트"]]],["8/25",[[1,"원전","일진파워"],[2,"반도체","에프에스티"],[3,"전력기기·전선·전력망","지투파워"]]],["8/26",[[1,"전력기기·전선·전력망","지투파워"],[2,"원전","오르비텍"],[3,"플랜트·인프라","태웅"]]],["8/27",[[1,"2차전지","에코프로"],[2,"통신장비·광네트워크","오이솔루션"],[3,"ESS·에너지저장","서진시스템"]]],["8/28",[[1,"결제·핀테크·신용정보","글로벌텍스프리"],[2,"제약·바이오","페니트리움바이오"],[3,"소프트웨어·IT서비스","엑스게이트"]]],["8/31",[[1,"건자재·시멘트","강동씨앤엘"],[2,"2차전지","SFA넥셀"],[3,"전장·자율주행부품","신성델타테크"]]],["9/1",[[1,"강관","티피씨글로벌"],[2,"정유·석유제품·LPG","흥구석유"],[3,"자동차·일반부품","삼기에너지솔루션즈"]]],["9/2",[[1,"정유·석유제품·LPG","흥구석유"],[2,"해운","팬스타엔터프라이즈"],[3,"정밀·첨단소재","아스플로"]]],["9/3",[[1,"건자재·시멘트","서산"],[2,"은행·금융지주","푸른저축은행"],[3,"해운","팬스타엔터프라이즈"]]],["9/4",[[1,"로봇·자동화","로보티즈"],[2,"소프트웨어·IT서비스","에프앤가이드"],[3,"기계·산업장비","톱텍"]]],["9/7",[[1,"ESS·에너지저장","비나텍"],[2,"원전","오르비텍"],[3,"가스·LNG·도시가스","지에스이"]]],["9/8",[[1,"원전","우진엔텍"],[2,"전력기기·전선·전력망","지투파워"],[3,"항공우주·위성","스피어"]]],["9/9",[[1,"수소·연료전지","범한퓨얼셀"],[2,"방산","우리기술"],[3,"기계·산업장비","삼미금속"]]]],"frequency":[["반도체",11,6,0],["전력기기·전선·전력망",10,5,1],["여행·레저",10,2,1],["가스·LNG·도시가스",9,4,0],["제약·바이오",9,4,0],["건자재·시멘트",9,3,3]],"tree":[["반도체",11,6,0,"20260909",4,5.9],["전력기기·전선·전력망",10,5,1,"20260909",10,6.3],["여행·레저",10,2,1,"20260903",7,8.0],["가스·LNG·도시가스",9,4,0,"20260908",10,7.9],["제약·바이오",9,4,0,"20260907",13,7.9],["건자재·시멘트",9,3,3,"20260909",12,7.1],["로봇·자동화",9,3,2,"20260908",9,6.6],["해운",8,5,2,"20260907",9,4.4],["원전",8,4,2,"20260909",8,5.8],["결제·핀테크·신용정보",8,3,1,"20260904",11,7.8],["소프트웨어·IT서비스",8,3,0,"20260909",14,7.4],["기계·산업장비",8,3,0,"20260909",3,9.2],["강관",7,5,1,"20260904",12,5.4],["2차전지",7,4,2,"20260909",7,6.1],["정유·석유제품·LPG",7,4,1,"20260909",15,5.6]],"history":{"반도체":{"l":[["티에프이",4],["에프에스티",3],["원익IPS",3],["제너셈",1]],"d":[["20260813",5,"에프에스티",86.9,"섹터 대표주"],["20260818",12,"티에프이",78.1,"섹터 대표주"],["20260820",2,"티에프이",79.7,"섹터 대표주"],["20260825",2,"에프에스티",88.1,"섹터 대표주"],["20260827",7,"티에프이",62.7,"섹터 대표주"],["20260831",10,"에프에스티",79.0,"섹터 대표주"],["20260902",5,"티에프이",73.1,"섹터 대표주"],["20260904",8,"원익IPS",74.1,"섹터 대표주"],["20260907",4,"제너셈",83.0,"섹터 대표주"],["20260908",6,"원익IPS",59.9,"섹터 대표주"],["20260909",4,"원익IPS",61.4,"섹터 대표주"]]},"전력기기·전선·전력망":{"l":[["지투파워",5],["티씨머티리얼즈",2],["보성파워텍",1],["웰킵스하이텍",1],["지엔씨에너지",1]],"d":[["20260813",4,"티씨머티리얼즈",90.2,"섹터 대표주"],["20260814",9,"보성파워텍",74.0,"섹터 대표주"],["20260820",5,"웰킵스하이텍",65.1,"섹터 대표주"],["20260824",12,"티씨머티리얼즈",79.7,"섹터 대표주"],["20260825",3,"지투파워",85.6,"섹터 대표주"],["20260826",1,"지투파워",78.0,"섹터 대표주"],["20260903",11,"지투파워",70.6,"섹터 대표주"],["20260907",6,"지투파워",72.4,"섹터 대표주"],["20260908",2,"지투파워",82.4,"섹터 대표주"],["20260909",10,"지엔씨에너지",77.6,"섹터 대표주"]]},"여행·레저":{"l":[["아난티",6],["남화산업",2],["서부T&D",2]],"d":[["20260818",1,"아난티",80.0,"섹터 대표주"],["20260819",8,"아난티",77.9,"섹터 대표주"],["20260820",7,"남화산업",77.8,"섹터 대표주"],["20260821",5,"아난티",76.4,"섹터 대표주"],["20260825",15,"서부T&D",63.9,"섹터 대표주"],["20260826",12,"서부T&D",67.0,"섹터 대표주"],["20260828",8,"아난티",57.7,"섹터 대표주"],["20260901",11,"아난티",76.4,"섹터 대표주"],["20260902",6,"남화산업",82.9,"섹터 대표주"],["20260903",7,"아난티",59.8,"섹터 대표주"]]},"가스·LNG·도시가스":{"l":[["지에스이",9]],"d":[["20260818",8,"지에스이",47.4,"섹터 대표주"],["20260824",14,"지에스이",34.7,"섹터 대표주"],["20260826",9,"지에스이",45.8,"섹터 대표주"],["20260827",4,"지에스이",44.6,"섹터 대표주"],["20260901",4,"지에스이",50.8,"섹터 대표주"],["20260903",4,"지에스이",46.4,"섹터 대표주"],["20260904",15,"지에스이",37.2,"섹터 대표주"],["20260907",3,"지에스이",51.1,"섹터 대표주"],["20260908",10,"지에스이",41.2,"섹터 대표주"]]},"제약·바이오":{"l":[["페니트리움바이오",5],["코오롱티슈진",1],["코오롱생명과학",1],["보로노이",1],["프로티나",1]],"d":[["20260813",3,"페니트리움바이오",87.6,"섹터 대표주"],["20260814",10,"코오롱티슈진",82.7,"섹터 대표주"],["20260818",15,"코오롱생명과학",71.3,"섹터 대표주"],["20260824",5,"보로노이",71.6,"섹터 대표주"],["20260826",5,"프로티나",78.9,"섹터 대표주"],["20260828",2,"페니트리움바이오",75.5,"섹터 대표주"],["20260903",8,"페니트리움바이오",76.2,"섹터 대표주"],["20260904",10,"페니트리움바이오",75.9,"섹터 대표주"],["20260907",13,"페니트리움바이오",75.1,"섹터 대표주"]]},"건자재·시멘트":{"l":[["서산",6],["강동씨앤엘",3]],"d":[["20260820",1,"서산",86.1,"섹터 대표주"],["20260827",14,"서산",47.8,"섹터 대표주"],["20260828",11,"서산",80.7,"섹터 대표주"],["20260831",1,"강동씨앤엘",87.6,"섹터 대표주"],["20260901",6,"강동씨앤엘",82.5,"섹터 대표주"],["20260902",11,"서산",81.5,"섹터 대표주"],["20260903",1,"서산",87.1,"섹터 대표주"],["20260908",7,"서산",81.2,"섹터 대표주"],["20260909",12,"강동씨앤엘",80.0,"섹터 대표주"]]},"로봇·자동화":{"l":[["져스텍",3],["로보티즈",3],["하이젠알앤엠",2],["레인보우로보틱스",1]],"d":[["20260813",7,"져스텍",88.4,"섹터 대표주"],["20260814",1,"로보티즈",89.1,"섹터 대표주"],["20260819",14,"져스텍",80.0,"섹터 대표주"],["20260825",4,"져스텍",71.6,"섹터 대표주"],["20260827",6,"레인보우로보틱스",62.2,"섹터 대표주"],["20260831",6,"로보티즈",65.2,"섹터 대표주"],["20260904",1,"로보티즈",86.8,"섹터 대표주"],["20260907",11,"하이젠알앤엠",82.0,"섹터 대표주"],["20260908",9,"하이젠알앤엠",81.0,"섹터 대표주"]]},"해운":{"l":[["팬스타엔터프라이즈",8]],"d":[["20260814",7,"팬스타엔터프라이즈",51.3,"섹터 대표주"],["20260818",5,"팬스타엔터프라이즈",67.0,"섹터 대표주"],["20260819",1,"팬스타엔터프라이즈",65.5,"섹터 대표주"],["20260821",1,"팬스타엔터프라이즈",64.9,"섹터 대표주"],["20260824",7,"팬스타엔터프라이즈",54.1,"섹터 대표주"],["20260902",2,"팬스타엔터프라이즈",62.4,"섹터 대표주"],["20260903",3,"팬스타엔터프라이즈",48.8,"섹터 대표주"],["20260907",9,"팬스타엔터프라이즈",46.5,"섹터 대표주"]]},"원전":{"l":[["오르비텍",4],["일진파워",2],["우진엔텍",2]],"d":[["20260813",10,"일진파워",89.7,"섹터 대표주"],["20260825",1,"일진파워",56.5,"섹터 대표주"],["20260826",2,"오르비텍",79.9,"섹터 대표주"],["20260827",10,"오르비텍",42.6,"섹터 대표주"],["20260828",12,"오르비텍",72.1,"섹터 대표주"],["20260907",2,"오르비텍",60.7,"섹터 대표주"],["20260908",1,"우진엔텍",92.2,"섹터 대표주"],["20260909",8,"우진엔텍",73.9,"섹터 대표주"]]},"결제·핀테크·신용정보":{"l":[["헥토파이낸셜",3],["NHN KCP",2],["다날",2],["글로벌텍스프리",1]],"d":[["20260814",8,"NHN KCP",66.2,"섹터 대표주"],["20260820",14,"다날",83.2,"섹터 대표주"],["20260821",3,"다날",75.3,"섹터 대표주"],["20260824",2,"NHN KCP",84.0,"섹터 대표주"],["20260825",11,"헥토파이낸셜",82.4,"섹터 대표주"],["20260828",1,"글로벌텍스프리",88.3,"섹터 대표주"],["20260901",12,"헥토파이낸셜",76.7,"섹터 대표주"],["20260904",11,"헥토파이낸셜",82.8,"섹터 대표주"]]},"소프트웨어·IT서비스":{"l":[["엑스게이트",3],["씨이랩",2],["에프앤가이드",2],["아이크래프트",1]],"d":[["20260813",6,"씨이랩",94.9,"섹터 대표주"],["20260814",6,"아이크래프트",74.2,"섹터 대표주"],["20260820",3,"씨이랩",68.9,"섹터 대표주"],["20260827",13,"엑스게이트",50.1,"섹터 대표주"],["20260828",3,"엑스게이트",74.0,"섹터 대표주"],["20260904",2,"에프앤가이드",58.6,"섹터 대표주"],["20260908",12,"에프앤가이드",55.9,"섹터 대표주"],["20260909",14,"엑스게이트",82.9,"섹터 대표주"]]},"기계·산업장비":{"l":[["삼미금속",4],["톱텍",2],["엔비알모션",1],["에너토크",1]],"d":[["20260813",14,"삼미금속",70.1,"섹터 대표주"],["20260814",5,"엔비알모션",86.1,"섹터 대표주"],["20260825",9,"삼미금속",88.0,"섹터 대표주"],["20260827",15,"톱텍",74.0,"섹터 대표주"],["20260904",3,"톱텍",68.7,"섹터 대표주"],["20260907",14,"삼미금속",82.8,"섹터 대표주"],["20260908",11,"에너토크",65.0,"섹터 대표주"],["20260909",3,"삼미금속",84.8,"섹터 대표주"]]},"강관":{"l":[["티피씨글로벌",7]],"d":[["20260818",4,"티피씨글로벌",63.4,"섹터 대표주"],["20260819",3,"티피씨글로벌",53.6,"섹터 대표주"],["20260821",2,"티피씨글로벌",48.9,"섹터 대표주"],["20260826",11,"티피씨글로벌",40.7,"섹터 대표주"],["20260901",1,"티피씨글로벌",55.1,"섹터 대표주"],["20260903",5,"티피씨글로벌",45.6,"섹터 대표주"],["20260904",12,"티피씨글로벌",40.5,"섹터 대표주"]]},"2차전지":{"l":[["SFA넥셀",3],["에코프로",3],["지에프아이",1]],"d":[["20260813",13,"SFA넥셀",71.1,"섹터 대표주"],["20260820",4,"SFA넥셀",55.3,"섹터 대표주"],["20260824",1,"에코프로",76.1,"섹터 대표주"],["20260827",1,"에코프로",75.1,"섹터 대표주"],["20260831",2,"SFA넥셀",66.1,"섹터 대표주"],["20260907",15,"지에프아이",78.0,"섹터 대표주"],["20260909",7,"에코프로",71.3,"섹터 대표주"]]},"정유·석유제품·LPG":{"l":[["흥구석유",7]],"d":[["20260818",2,"흥구석유",70.1,"섹터 대표주"],["20260828",7,"흥구석유",44.9,"섹터 대표주"],["20260831",5,"흥구석유",44.3,"섹터 대표주"],["20260901",2,"흥구석유",62.6,"섹터 대표주"],["20260902",1,"흥구석유",81.5,"섹터 대표주"],["20260907",7,"흥구석유",61.2,"섹터 대표주"],["20260909",15,"흥구석유",72.1,"섹터 대표주"]]},"물류":{"l":[["대아티아이",6],["삼일",1]],"d":[["20260814",13,"삼일",48.8,"섹터 대표주"],["20260818",3,"대아티아이",63.5,"섹터 대표주"],["20260819",2,"대아티아이",79.2,"섹터 대표주"],["20260821",9,"대아티아이",77.2,"섹터 대표주"],["20260901",5,"대아티아이",84.3,"섹터 대표주"],["20260902",4,"대아티아이",80.4,"섹터 대표주"],["20260904",14,"대아티아이",50.7,"섹터 대표주"]]},"플랜트·인프라":{"l":[["유니슨",2],["비에이치아이",2],["태웅",2],["한텍",1]],"d":[["20260814",12,"유니슨",83.3,"섹터 대표주"],["20260825",5,"비에이치아이",85.5,"섹터 대표주"],["20260826",3,"태웅",86.9,"섹터 대표주"],["20260828",4,"유니슨",82.0,"섹터 대표주"],["20260907",8,"비에이치아이",83.8,"섹터 대표주"],["20260908",8,"태웅",81.2,"섹터 대표주"],["20260909",9,"한텍",78.7,"섹터 대표주"]]},"항공우주·위성":{"l":[["이노스페이스",2],["스피어",2],["쎄트렉아이",2],["인텔리안테크",1]],"d":[["20260813",15,"이노스페이스",87.6,"섹터 대표주"],["20260814",15,"이노스페이스",70.6,"섹터 대표주"],["20260825",14,"스피어",46.3,"섹터 대표주"],["20260827",5,"쎄트렉아이",45.4,"섹터 대표주"],["20260904",7,"쎄트렉아이",50.5,"섹터 대표주"],["20260908",3,"스피어",63.7,"섹터 대표주"],["20260909",11,"인텔리안테크",53.6,"섹터 대표주"]]},"전자부품·디스플레이":{"l":[["제이앤티씨",4],["PS일렉트로닉스",1],["이노테크",1]],"d":[["20260813",2,"PS일렉트로닉스",90.2,"섹터 대표주"],["20260814",4,"이노테크",71.9,"섹터 대표주"],["20260827",8,"제이앤티씨",63.7,"섹터 대표주"],["20260831",4,"제이앤티씨",62.6,"섹터 대표주"],["20260904",9,"제이앤티씨",55.6,"섹터 대표주"],["20260909",13,"제이앤티씨",77.5,"섹터 대표주"]]},"ESS·에너지저장":{"l":[["코칩",2],["서진시스템",2],["세보엠이씨",1],["비나텍",1]],"d":[["20260819",9,"코칩",81.5,"섹터 대표주"],["20260824",10,"서진시스템",68.9,"섹터 대표주"],["20260825",10,"코칩",56.9,"섹터 대표주"],["20260826",14,"세보엠이씨",60.0,"섹터 대표주"],["20260827",3,"서진시스템",85.9,"섹터 대표주"],["20260907",1,"비나텍",69.9,"섹터 대표주"]]},"증권·벤처금융":{"l":[["SV인베스트먼트",3],["아주IB투자",2],["DSC인베스트먼트",1]],"d":[["20260813",9,"아주IB투자",88.0,"섹터 대표주"],["20260820",9,"아주IB투자",54.1,"섹터 대표주"],["20260824",3,"DSC인베스트먼트",81.3,"섹터 대표주"],["20260825",12,"SV인베스트먼트",55.7,"섹터 대표주"],["20260827",11,"SV인베스트먼트",70.2,"섹터 대표주"],["20260908",4,"SV인베스트먼트",84.6,"섹터 대표주"]]},"통신서비스":{"l":[["세종텔레콤",6]],"d":[["20260820",11,"세종텔레콤",40.9,"섹터 대표주"],["20260824",11,"세종텔레콤",53.7,"섹터 대표주"],["20260827",9,"세종텔레콤",44.5,"섹터 대표주"],["20260903",9,"세종텔레콤",48.0,"섹터 대표주"],["20260908",15,"세종텔레콤",44.6,"섹터 대표주"],["20260909",5,"세종텔레콤",63.2,"섹터 대표주"]]},"자동차·일반부품":{"l":[["한라캐스트",3],["삼기",1],["삼기에너지솔루션즈",1]],"d":[["20260813",1,"삼기",89.4,"섹터 대표주"],["20260814",3,"한라캐스트",83.7,"섹터 대표주"],["20260831",9,"한라캐스트",55.2,"섹터 대표주"],["20260901",3,"삼기에너지솔루션즈",61.3,"섹터 대표주"],["20260904",5,"한라캐스트",68.2,"섹터 대표주"]]},"수소·연료전지":{"l":[["범한퓨얼셀",4],["덕양에너젠",1]],"d":[["20260826",4,"범한퓨얼셀",40.9,"섹터 대표주"],["20260828",10,"범한퓨얼셀",84.2,"섹터 대표주"],["20260902",10,"덕양에너젠",43.1,"섹터 대표주"],["20260907",5,"범한퓨얼셀",87.3,"섹터 대표주"],["20260909",1,"범한퓨얼셀",90.0,"섹터 대표주"]]},"방산":{"l":[["우리기술",4],["삼양컴텍",1]],"d":[["20260820",6,"우리기술",65.2,"섹터 대표주"],["20260825",6,"우리기술",64.8,"섹터 대표주"],["20260904",4,"삼양컴텍",65.5,"섹터 대표주"],["20260908",5,"우리기술",81.0,"섹터 대표주"],["20260909",2,"우리기술",82.6,"섹터 대표주"]]},"통신장비·광네트워크":{"l":[["오이솔루션",2],["아이씨티케이",1],["RFHIC",1],["로스웰",1]],"d":[["20260820",8,"아이씨티케이",72.9,"섹터 대표주"],["20260827",2,"오이솔루션",63.4,"섹터 대표주"],["20260904",6,"RFHIC",49.2,"섹터 대표주"],["20260908",14,"로스웰",57.0,"섹터 대표주"],["20260909",6,"오이솔루션",86.3,"섹터 대표주"]]},"은행·금융지주":{"l":[["푸른저축은행",5]],"d":[["20260821",12,"푸른저축은행",47.1,"섹터 대표주"],["20260824",9,"푸른저축은행",35.8,"섹터 대표주"],["20260827",12,"푸른저축은행",44.6,"섹터 대표주"],["20260831",8,"푸른저축은행",43.1,"섹터 대표주"],["20260903",2,"푸른저축은행",49.2,"섹터 대표주"]]},"정밀·첨단소재":{"l":[["아스플로",5]],"d":[["20260814",14,"아스플로",73.3,"섹터 대표주"],["20260818",13,"아스플로",64.8,"섹터 대표주"],["20260831",12,"아스플로",63.4,"섹터 대표주"],["20260902",3,"아스플로",84.4,"섹터 대표주"],["20260903",14,"아스플로",72.0,"섹터 대표주"]]},"식음료":{"l":[["메지온",3],["한탑",1],["미래생명자원",1]],"d":[["20260813",12,"한탑",83.7,"섹터 대표주"],["20260819",15,"메지온",49.3,"섹터 대표주"],["20260828",5,"메지온",64.9,"섹터 대표주"],["20260831",14,"메지온",63.7,"섹터 대표주"],["20260902",12,"미래생명자원",56.9,"섹터 대표주"]]},"플라스틱·고무소재":{"l":[["S&K폴리텍",4],["에코플라스틱",1]],"d":[["20260821",7,"S&K폴리텍",53.5,"섹터 대표주"],["20260828",15,"에코플라스틱",48.4,"섹터 대표주"],["20260901",9,"S&K폴리텍",64.7,"섹터 대표주"],["20260902",7,"S&K폴리텍",55.7,"섹터 대표주"],["20260907",10,"S&K폴리텍",60.9,"섹터 대표주"]]},"포장·제지":{"l":[["대림제지",3],["승일",1],["무림SP",1]],"d":[["20260818",9,"대림제지",63.0,"섹터 대표주"],["20260821",11,"승일",47.6,"섹터 대표주"],["20260901",14,"무림SP",47.2,"섹터 대표주"],["20260902",8,"대림제지",38.0,"섹터 대표주"],["20260903",12,"대림제지",44.4,"섹터 대표주"]]},"농업·비료·사료":{"l":[["효성오앤비",2],["한일사료",2],["오에스피",1]],"d":[["20260818",7,"효성오앤비",63.0,"섹터 대표주"],["20260819",11,"효성오앤비",58.4,"섹터 대표주"],["20260821",15,"오에스피",44.7,"섹터 대표주"],["20260828",13,"한일사료",53.6,"섹터 대표주"],["20260902",13,"한일사료",57.3,"섹터 대표주"]]},"유통":{"l":[["홈캐스트",4],["소노스퀘어",1]],"d":[["20260819",13,"소노스퀘어",59.2,"섹터 대표주"],["20260825",13,"홈캐스트",61.3,"섹터 대표주"],["20260828",14,"홈캐스트",52.2,"섹터 대표주"],["20260831",13,"홈캐스트",59.0,"섹터 대표주"],["20260901",13,"홈캐스트",47.6,"섹터 대표주"]]},"건설":{"l":[["국보디자인",2],["누리플랜",1],["베노티앤알",1]],"d":[["20260818",6,"누리플랜",62.5,"섹터 대표주"],["20260819",4,"베노티앤알",57.1,"섹터 대표주"],["20260824",6,"국보디자인",43.7,"섹터 대표주"],["20260901",10,"국보디자인",56.2,"섹터 대표주"]]},"인터넷·플랫폼":{"l":[["탑코미디어",3],["코난테크놀로지",1]],"d":[["20260820",15,"탑코미디어",62.3,"섹터 대표주"],["20260821",8,"탑코미디어",57.4,"섹터 대표주"],["20260824",4,"코난테크놀로지",86.5,"섹터 대표주"],["20260901",15,"탑코미디어",77.0,"섹터 대표주"]]},"시험·인증·리서치":{"l":[["파마리서치",2],["나이스정보통신",1],["사람인",1]],"d":[["20260818",11,"나이스정보통신",62.0,"섹터 대표주"],["20260821",6,"사람인",54.2,"섹터 대표주"],["20260826",15,"파마리서치",73.6,"섹터 대표주"],["20260828",6,"파마리서치",75.4,"섹터 대표주"]]},"게임":{"l":[["카카오게임즈",2],["미투온",2]],"d":[["20260819",6,"카카오게임즈",58.3,"섹터 대표주"],["20260820",13,"미투온",79.3,"섹터 대표주"],["20260821",13,"미투온",59.0,"섹터 대표주"],["20260831",7,"카카오게임즈",83.1,"섹터 대표주"]]},"철강":{"l":[["광진실업",2],["대호특수강",2]],"d":[["20260819",10,"광진실업",35.2,"섹터 대표주"],["20260825",8,"광진실업",50.7,"섹터 대표주"],["20260902",9,"대호특수강",40.8,"섹터 대표주"],["20260907",12,"대호특수강",31.6,"섹터 대표주"]]},"콘텐츠·미디어·엔터":{"l":[["매드업",2],["KT나스미디어",1],["더핑크퐁컴퍼니",1]],"d":[["20260819",7,"매드업",63.4,"섹터 대표주"],["20260821",10,"KT나스미디어",56.8,"섹터 대표주"],["20260901",7,"매드업",80.8,"섹터 대표주"],["20260902",15,"더핑크퐁컴퍼니",74.0,"섹터 대표주"]]},"화장품·패션·생활소비재":{"l":[["에이유브랜즈",1],["태양",1],["내츄럴엔도텍",1],["에스제이그룹",1]],"d":[["20260813",11,"에이유브랜즈",68.7,"섹터 대표주"],["20260821",14,"태양",59.2,"섹터 대표주"],["20260824",15,"내츄럴엔도텍",42.7,"섹터 대표주"],["20260826",6,"에스제이그룹",66.7,"섹터 대표주"]]},"환경·폐기물":{"l":[["자연과환경",3],["한성크린텍",1]],"d":[["20260818",10,"한성크린텍",79.2,"섹터 대표주"],["20260826",13,"자연과환경",64.7,"섹터 대표주"],["20260828",9,"자연과환경",62.2,"섹터 대표주"],["20260831",15,"자연과환경",49.4,"섹터 대표주"]]},"조선·해양":{"l":[["현대힘스",1],["동방선기",1],["일승",1]],"d":[["20260814",2,"현대힘스",67.7,"섹터 대표주"],["20260826",8,"동방선기",55.6,"섹터 대표주"],["20260903",6,"일승",71.2,"섹터 대표주"]]},"교육":{"l":[["이퓨쳐",1],["아이스크림미디어",1],["아이스크림에듀",1]],"d":[["20260819",12,"이퓨쳐",58.5,"섹터 대표주"],["20260821",4,"아이스크림미디어",62.3,"섹터 대표주"],["20260903",15,"아이스크림에듀",50.1,"섹터 대표주"]]},"생활·레저용품":{"l":[["새로닉스",2],["오로라",1]],"d":[["20260820",12,"오로라",65.2,"섹터 대표주"],["20260824",8,"새로닉스",62.9,"섹터 대표주"],["20260831",11,"새로닉스",61.7,"섹터 대표주"]]},"지주·종합상사":{"l":[["에스와이스틸텍",2],["스튜디오삼익",1]],"d":[["20260826",7,"에스와이스틸텍",67.0,"섹터 대표주"],["20260903",13,"스튜디오삼익",47.3,"섹터 대표주"],["20260908",13,"에스와이스틸텍",57.3,"섹터 대표주"]]},"의료기기·진단":{"l":[["리센스메디컬",2],["디알텍",1]],"d":[["20260814",11,"디알텍",64.7,"섹터 대표주"],["20260818",14,"리센스메디컬",76.6,"섹터 대표주"],["20260820",10,"리센스메디컬",78.1,"섹터 대표주"]]},"렌탈·구독서비스":{"l":[["이상네트웍스",2]],"d":[["20260819",5,"이상네트웍스",41.5,"섹터 대표주"],["20260903",10,"이상네트웍스",30.8,"섹터 대표주"]]},"전장·자율주행부품":{"l":[["신성델타테크",1],["한국피아이엠",1]],"d":[["20260831",3,"신성델타테크",70.5,"섹터 대표주"],["20260904",13,"한국피아이엠",64.3,"섹터 대표주"]]},"비철금속":{"l":[["이렘",1],["EG",1]],"d":[["20260813",8,"이렘",65.2,"섹터 대표주"],["20260901",8,"EG",41.6,"섹터 대표주"]]},"전력·유틸리티":{"l":[["그리드위즈",1],["에이전트AI",1]],"d":[["20260825",7,"그리드위즈",44.8,"섹터 대표주"],["20260902",14,"에이전트AI",49.6,"섹터 대표주"]]},"신재생":{"l":[["씨엔플러스",1],["씨에스베어링",1]],"d":[["20260824",13,"씨엔플러스",58.1,"섹터 대표주"],["20260826",10,"씨에스베어링",52.0,"섹터 대표주"]]}}}};
+const LEADER_CUMULATIVE_20260910={"KOSPI": {"days": [["8/13", [[1, "전자부품·디스플레이", "금호전기"], [2, "신재생", "씨에스윈드"], [3, "방산", "엠앤씨솔루션"]]], ["8/14", [[1, "보험", "한화생명"], [2, "2차전지", "DN오토모티브"], [3, "정유·석유제품·LPG", "SK가스"]]], ["8/18", [[1, "해운", "HMM"], [2, "보험", "현대해상"], [3, "정유·석유제품·LPG", "S-Oil"]]], ["8/19", [[1, "수소·연료전지", "두산퓨얼셀"], [2, "보험", "한화손해보험"], [3, "ESS·에너지저장", "LG에너지솔루션"]]], ["8/20", [[1, "의료기기·진단", "삼양바이오팜"], [2, "반도체", "SK하이닉스"], [3, "정밀·첨단소재", "KCC"]]], ["8/21", [[1, "의료기기·진단", "삼양바이오팜"], [2, "은행·금융지주", "하나금융지주"], [3, "정밀·첨단소재", "KCC"]]], ["8/24", [[1, "2차전지", "포스코퓨처엠"], [2, "ESS·에너지저장", "LG에너지솔루션"], [3, "의료기기·진단", "삼양바이오팜"]]], ["8/25", [[1, "원전", "한전기술"], [2, "수소·연료전지", "두산퓨얼셀"], [3, "기계·산업장비", "두산에너빌리티"]]], ["8/26", [[1, "건설", "대우건설"], [2, "원전", "우진"], [3, "수소·연료전지", "두산퓨얼셀"]]], ["8/27", [[1, "전력기기·전선·전력망", "LS ELECTRIC"], [2, "ESS·에너지저장", "LG에너지솔루션"], [3, "2차전지", "삼성SDI"]]], ["8/28", [[1, "전자부품·디스플레이", "금호전기"], [2, "화장품·패션·생활소비재", "에이피알"], [3, "은행·금융지주", "JB금융지주"]]], ["8/31", [[1, "전자부품·디스플레이", "금호전기"], [2, "ESS·에너지저장", "LG에너지솔루션"], [3, "반도체", "유니퀘스트"]]], ["9/1", [[1, "리츠·부동산", "SK디앤디"], [2, "보험", "한화손해보험"], [3, "정밀·첨단소재", "KCC"]]], ["9/2", [[1, "리츠·부동산", "SK디앤디"], [2, "정유·석유제품·LPG", "S-Oil"], [3, "은행·금융지주", "JB금융지주"]]], ["9/3", [[1, "보험", "한화생명"], [2, "ESS·에너지저장", "LG에너지솔루션"], [3, "건설", "자이에스앤디"]]], ["9/4", [[1, "수소·연료전지", "두산퓨얼셀"], [2, "항공", "한진칼"], [3, "신재생", "SK오션플랜트"]]], ["9/7", [[1, "수소·연료전지", "두산퓨얼셀"], [2, "원전", "한전기술"], [3, "전자부품·디스플레이", "삼화콘덴서"]]], ["9/8", [[1, "원전", "한전기술"], [2, "전력·유틸리티", "한전산업"], [3, "건설", "대우건설"]]], ["9/9", [[1, "수소·연료전지", "두산퓨얼셀"], [2, "2차전지", "코스모신소재"], [3, "ESS·에너지저장", "LG에너지솔루션"]]], ["9/10", [[1, "리츠·부동산", "SK디앤디"], [2, "건설", "GS건설"], [3, "보험", "한화손해보험"]]]], "frequency": [["은행·금융지주", 16, 7, 0], ["건설", 13, 6, 1], ["범용화학", 13, 1, 0], ["전자부품·디스플레이", 12, 8, 3], ["보험", 12, 7, 2], ["2차전지", 12, 6, 1]], "tree": [["은행·금융지주", 16, 7, 0, "20260910", 8, 7.9], ["건설", 13, 6, 1, "20260910", 2, 8.2], ["범용화학", 13, 1, 0, "20260909", 5, 9.9], ["전자부품·디스플레이", 12, 8, 3, "20260909", 13, 5.6], ["보험", 12, 7, 2, "20260910", 3, 5.2], ["2차전지", 12, 6, 1, "20260910", 11, 7.4], ["지주·종합상사", 11, 5, 0, "20260908", 7, 6.3], ["수소·연료전지", 10, 7, 4, "20260909", 1, 4.2], ["반도체", 10, 4, 0, "20260910", 7, 7.4], ["기계·산업장비", 10, 2, 0, "20260909", 9, 8.9], ["정유·석유제품·LPG", 9, 4, 0, "20260910", 5, 6.6], ["방산", 9, 3, 0, "20260910", 4, 7.0], ["조선·해양", 9, 2, 0, "20260910", 14, 9.1], ["자동차·일반부품", 9, 1, 0, "20260910", 6, 9.7], ["철강", 9, 0, 0, "20260910", 9, 10.0]], "history": {"은행·금융지주": {"l": [["제주은행", 5], ["iM금융지주", 4], ["JB금융지주", 3], ["케이뱅크", 3], ["하나금융지주", 1]], "d": [["20260814", 10, "iM금융지주", 58.0, "섹터 대표주"], ["20260818", 10, "iM금융지주", 52.4, "섹터 대표주"], ["20260819", 12, "iM금융지주", 66.2, "섹터 대표주"], ["20260821", 2, "하나금융지주", 59.7, "섹터 대표주"], ["20260824", 15, "제주은행", 79.0, "섹터 대표주"], ["20260825", 7, "제주은행", 72.5, "섹터 대표주"], ["20260826", 12, "제주은행", 61.6, "섹터 대표주"], ["20260827", 11, "제주은행", 66.3, "섹터 대표주"], ["20260828", 3, "JB금융지주", 72.9, "섹터 대표주"], ["20260831", 5, "제주은행", 77.8, "섹터 대표주"], ["20260901", 4, "iM금융지주", 70.5, "섹터 대표주"], ["20260902", 3, "JB금융지주", 85.0, "섹터 대표주"], ["20260903", 5, "JB금융지주", 84.4, "섹터 대표주"], ["20260907", 5, "케이뱅크", 63.8, "섹터 대표주"], ["20260908", 15, "케이뱅크", 59.5, "섹터 대표주"], ["20260910", 8, "케이뱅크", 65.9, "섹터 대표주"]]}, "건설": {"l": [["자이에스앤디", 5], ["대우건설", 3], ["현대건설", 2], ["까뮤이앤씨", 1], ["한신공영", 1]], "d": [["20260813", 13, "자이에스앤디", 85.6, "섹터 대표주"], ["20260814", 7, "자이에스앤디", 75.3, "섹터 대표주"], ["20260819", 5, "현대건설", 81.6, "섹터 대표주"], ["20260821", 15, "자이에스앤디", 52.6, "섹터 대표주"], ["20260825", 5, "현대건설", 87.0, "섹터 대표주"], ["20260826", 1, "대우건설", 88.0, "섹터 대표주"], ["20260828", 10, "자이에스앤디", 65.1, "섹터 대표주"], ["20260902", 13, "까뮤이앤씨", 52.5, "섹터 대표주"], ["20260903", 3, "자이에스앤디", 72.2, "섹터 대표주"], ["20260904", 14, "한신공영", 51.7, "섹터 대표주"], ["20260907", 15, "대우건설", 69.9, "섹터 대표주"], ["20260908", 3, "대우건설", 84.7, "섹터 대표주"], ["20260910", 2, "GS건설", 65.8, "섹터 대표주"]]}, "범용화학": {"l": [["SK케미칼", 6], ["OCI홀딩스", 2], ["DL", 2], ["SKC", 2], ["이수화학", 1]], "d": [["20260813", 8, "이수화학", 89.2, "섹터 대표주"], ["20260814", 13, "SK케미칼", 86.8, "섹터 대표주"], ["20260819", 8, "OCI홀딩스", 69.4, "섹터 대표주"], ["20260820", 10, "OCI홀딩스", 52.2, "섹터 대표주"], ["20260824", 7, "SK케미칼", 69.4, "섹터 대표주"], ["20260826", 14, "SK케미칼", 74.6, "섹터 대표주"], ["20260828", 8, "SK케미칼", 84.4, "섹터 대표주"], ["20260831", 8, "SK케미칼", 65.5, "섹터 대표주"], ["20260901", 11, "SK케미칼", 70.5, "섹터 대표주"], ["20260902", 15, "DL", 67.3, "섹터 대표주"], ["20260903", 10, "DL", 84.1, "섹터 대표주"], ["20260907", 12, "SKC", 57.6, "섹터 대표주"], ["20260909", 5, "SKC", 80.5, "섹터 대표주"]]}, "전자부품·디스플레이": {"l": [["금호전기", 7], ["삼화콘덴서", 4], ["삼성전기", 1]], "d": [["20260813", 1, "금호전기", 91.8, "섹터 대표주"], ["20260820", 5, "금호전기", 82.6, "섹터 대표주"], ["20260824", 5, "금호전기", 81.0, "섹터 대표주"], ["20260825", 6, "삼화콘덴서", 78.5, "섹터 대표주"], ["20260827", 10, "삼성전기", 57.5, "섹터 대표주"], ["20260828", 1, "금호전기", 83.4, "섹터 대표주"], ["20260831", 1, "금호전기", 84.2, "섹터 대표주"], ["20260901", 14, "금호전기", 75.7, "섹터 대표주"], ["20260902", 4, "금호전기", 69.4, "섹터 대표주"], ["20260904", 4, "삼화콘덴서", 61.4, "섹터 대표주"], ["20260907", 3, "삼화콘덴서", 58.5, "섹터 대표주"], ["20260909", 13, "삼화콘덴서", 61.3, "섹터 대표주"]]}, "보험": {"l": [["한화손해보험", 4], ["한화생명", 3], ["삼성생명", 2], ["현대해상", 1], ["미래에셋생명", 1]], "d": [["20260813", 12, "한화생명", 84.0, "섹터 대표주"], ["20260814", 1, "한화생명", 89.7, "섹터 대표주"], ["20260818", 2, "현대해상", 90.7, "섹터 대표주"], ["20260819", 2, "한화손해보험", 87.0, "섹터 대표주"], ["20260821", 6, "삼성생명", 83.1, "섹터 대표주"], ["20260825", 9, "미래에셋생명", 87.1, "섹터 대표주"], ["20260826", 11, "삼성생명", 75.1, "섹터 대표주"], ["20260828", 4, "한화손해보험", 90.3, "섹터 대표주"], ["20260901", 2, "한화손해보험", 86.1, "섹터 대표주"], ["20260902", 10, "DB손해보험", 67.2, "섹터 대표주"], ["20260903", 1, "한화생명", 87.5, "섹터 대표주"], ["20260910", 3, "한화손해보험", 67.8, "섹터 대표주"]]}, "2차전지": {"l": [["포스코퓨처엠", 3], ["후성", 2], ["DN오토모티브", 2], ["삼성SDI", 2], ["SK아이이테크놀로지", 2]], "d": [["20260813", 5, "후성", 87.5, "섹터 대표주"], ["20260814", 2, "DN오토모티브", 89.7, "섹터 대표주"], ["20260819", 10, "삼성SDI", 70.4, "섹터 대표주"], ["20260820", 14, "DN오토모티브", 52.0, "섹터 대표주"], ["20260824", 1, "포스코퓨처엠", 89.2, "섹터 대표주"], ["20260827", 3, "삼성SDI", 89.7, "섹터 대표주"], ["20260831", 4, "포스코퓨처엠", 87.6, "섹터 대표주"], ["20260903", 15, "포스코퓨처엠", 70.5, "섹터 대표주"], ["20260904", 10, "SK아이이테크놀로지", 55.4, "섹터 대표주"], ["20260908", 12, "후성", 58.6, "섹터 대표주"], ["20260909", 2, "코스모신소재", 88.2, "섹터 대표주"], ["20260910", 11, "SK아이이테크놀로지", 69.9, "섹터 대표주"]]}, "지주·종합상사": {"l": [["GS", 4], ["SK스퀘어", 3], ["LG", 2], ["삼성물산", 2]], "d": [["20260813", 7, "GS", 83.3, "섹터 대표주"], ["20260814", 4, "LG", 78.8, "섹터 대표주"], ["20260818", 9, "GS", 70.2, "섹터 대표주"], ["20260820", 7, "SK스퀘어", 72.6, "섹터 대표주"], ["20260821", 5, "삼성물산", 73.4, "섹터 대표주"], ["20260826", 9, "GS", 74.8, "섹터 대표주"], ["20260831", 7, "LG", 72.0, "섹터 대표주"], ["20260901", 5, "삼성물산", 65.2, "섹터 대표주"], ["20260904", 5, "GS", 62.7, "섹터 대표주"], ["20260907", 4, "SK스퀘어", 65.9, "섹터 대표주"], ["20260908", 7, "SK스퀘어", 57.8, "섹터 대표주"]]}, "수소·연료전지": {"l": [["두산퓨얼셀", 10]], "d": [["20260813", 6, "두산퓨얼셀", 76.1, "섹터 대표주"], ["20260819", 1, "두산퓨얼셀", 74.7, "섹터 대표주"], ["20260820", 12, "두산퓨얼셀", 46.7, "섹터 대표주"], ["20260824", 4, "두산퓨얼셀", 71.9, "섹터 대표주"], ["20260825", 2, "두산퓨얼셀", 71.8, "섹터 대표주"], ["20260826", 3, "두산퓨얼셀", 77.9, "섹터 대표주"], ["20260904", 1, "두산퓨얼셀", 75.3, "섹터 대표주"], ["20260907", 1, "두산퓨얼셀", 86.8, "섹터 대표주"], ["20260908", 11, "두산퓨얼셀", 53.1, "섹터 대표주"], ["20260909", 1, "두산퓨얼셀", 90.4, "섹터 대표주"]]}, "반도체": {"l": [["SK하이닉스", 7], ["유니퀘스트", 2], ["미래산업", 1]], "d": [["20260813", 4, "미래산업", 88.9, "섹터 대표주"], ["20260814", 6, "SK하이닉스", 61.0, "섹터 대표주"], ["20260818", 5, "유니퀘스트", 85.9, "섹터 대표주"], ["20260820", 2, "SK하이닉스", 76.3, "섹터 대표주"], ["20260825", 15, "SK하이닉스", 56.6, "섹터 대표주"], ["20260827", 8, "SK하이닉스", 54.4, "섹터 대표주"], ["20260831", 3, "유니퀘스트", 83.5, "섹터 대표주"], ["20260904", 9, "SK하이닉스", 53.8, "섹터 대표주"], ["20260909", 15, "SK하이닉스", 65.1, "섹터 대표주"], ["20260910", 7, "SK하이닉스", 58.4, "섹터 대표주"]]}, "기계·산업장비": {"l": [["두산에너빌리티", 8], ["현대엘리베이터", 1], ["대동", 1]], "d": [["20260814", 14, "두산에너빌리티", 63.0, "섹터 대표주"], ["20260825", 3, "두산에너빌리티", 87.6, "섹터 대표주"], ["20260826", 8, "두산에너빌리티", 83.9, "섹터 대표주"], ["20260827", 13, "두산에너빌리티", 63.4, "섹터 대표주"], ["20260828", 7, "두산에너빌리티", 78.0, "섹터 대표주"], ["20260903", 6, "현대엘리베이터", 60.9, "섹터 대표주"], ["20260904", 15, "대동", 51.4, "섹터 대표주"], ["20260907", 9, "두산에너빌리티", 84.3, "섹터 대표주"], ["20260908", 5, "두산에너빌리티", 72.3, "섹터 대표주"], ["20260909", 9, "두산에너빌리티", 69.0, "섹터 대표주"]]}, "정유·석유제품·LPG": {"l": [["S-Oil", 4], ["SK이노베이션", 2], ["SK가스", 1], ["우양피앤엘", 1], ["한국석유", 1]], "d": [["20260814", 3, "SK가스", 73.5, "섹터 대표주"], ["20260818", 3, "S-Oil", 74.7, "섹터 대표주"], ["20260828", 6, "S-Oil", 77.6, "섹터 대표주"], ["20260901", 6, "SK이노베이션", 83.5, "섹터 대표주"], ["20260902", 2, "S-Oil", 72.1, "섹터 대표주"], ["20260904", 7, "S-Oil", 83.0, "섹터 대표주"], ["20260908", 13, "우양피앤엘", 53.0, "섹터 대표주"], ["20260909", 14, "SK이노베이션", 87.6, "섹터 대표주"], ["20260910", 5, "한국석유", 87.0, "섹터 대표주"]]}, "방산": {"l": [["엠앤씨솔루션", 2], ["풍산", 2], ["한화시스템", 2], ["한화에어로스페이스", 1], ["현대로템", 1]], "d": [["20260813", 3, "엠앤씨솔루션", 84.5, "섹터 대표주"], ["20260819", 7, "한화에어로스페이스", 79.9, "섹터 대표주"], ["20260824", 8, "풍산", 71.2, "섹터 대표주"], ["20260827", 4, "한화시스템", 67.3, "섹터 대표주"], ["20260903", 7, "현대로템", 46.1, "섹터 대표주"], ["20260907", 11, "한화시스템", 31.2, "섹터 대표주"], ["20260908", 9, "풍산", 47.2, "섹터 대표주"], ["20260909", 10, "엠앤씨솔루션", 74.7, "섹터 대표주"], ["20260910", 4, "한국항공우주", 58.6, "섹터 대표주"]]}, "조선·해양": {"l": [["한화엔진", 3], ["HD현대마린솔루션", 2], ["삼성중공업", 2], ["대한조선", 1], ["STX엔진", 1]], "d": [["20260814", 11, "대한조선", 80.6, "섹터 대표주"], ["20260825", 8, "한화엔진", 66.3, "섹터 대표주"], ["20260826", 15, "HD현대마린솔루션", 66.7, "섹터 대표주"], ["20260827", 7, "STX엔진", 66.3, "섹터 대표주"], ["20260901", 9, "한화엔진", 62.1, "섹터 대표주"], ["20260903", 4, "삼성중공업", 83.7, "섹터 대표주"], ["20260907", 10, "삼성중공업", 38.4, "섹터 대표주"], ["20260909", 4, "한화엔진", 89.2, "섹터 대표주"], ["20260910", 14, "HD현대마린솔루션", 79.1, "섹터 대표주"]]}, "자동차·일반부품": {"l": [["금호타이어", 3], ["현대차", 2], ["HL만도", 2], ["기아", 1], ["삼성공조", 1]], "d": [["20260813", 11, "금호타이어", 89.3, "섹터 대표주"], ["20260814", 5, "현대차", 82.5, "섹터 대표주"], ["20260825", 11, "현대차", 60.6, "섹터 대표주"], ["20260828", 15, "금호타이어", 51.0, "섹터 대표주"], ["20260831", 6, "HL만도", 53.0, "섹터 대표주"], ["20260903", 14, "기아", 47.0, "섹터 대표주"], ["20260907", 7, "HL만도", 43.5, "섹터 대표주"], ["20260909", 12, "삼성공조", 51.5, "섹터 대표주"], ["20260910", 6, "금호타이어", 68.7, "섹터 대표주"]]}, "철강": {"l": [["현대제철", 4], ["세아베스틸지주", 2], ["POSCO홀딩스", 2], ["넥스틸", 1]], "d": [["20260813", 9, "세아베스틸지주", 87.2, "섹터 대표주"], ["20260814", 12, "세아베스틸지주", 71.1, "섹터 대표주"], ["20260824", 13, "POSCO홀딩스", 77.1, "섹터 대표주"], ["20260825", 12, "현대제철", 87.3, "섹터 대표주"], ["20260827", 6, "현대제철", 81.9, "섹터 대표주"], ["20260901", 7, "POSCO홀딩스", 60.0, "섹터 대표주"], ["20260902", 11, "현대제철", 50.8, "섹터 대표주"], ["20260903", 11, "현대제철", 75.6, "섹터 대표주"], ["20260910", 9, "넥스틸", 79.7, "섹터 대표주"]]}, "항공": {"l": [["한진칼", 6], ["대한항공", 2]], "d": [["20260821", 8, "한진칼", 57.2, "섹터 대표주"], ["20260824", 9, "한진칼", 77.8, "섹터 대표주"], ["20260826", 4, "대한항공", 89.1, "섹터 대표주"], ["20260828", 9, "대한항공", 72.4, "섹터 대표주"], ["20260902", 7, "한진칼", 73.5, "섹터 대표주"], ["20260904", 2, "한진칼", 80.5, "섹터 대표주"], ["20260907", 14, "한진칼", 66.6, "섹터 대표주"], ["20260908", 6, "한진칼", 67.0, "섹터 대표주"]]}, "신재생": {"l": [["씨에스윈드", 4], ["SK이터닉스", 2], ["SK오션플랜트", 2]], "d": [["20260813", 2, "씨에스윈드", 90.0, "섹터 대표주"], ["20260818", 14, "SK이터닉스", 55.3, "섹터 대표주"], ["20260819", 11, "씨에스윈드", 68.6, "섹터 대표주"], ["20260820", 13, "씨에스윈드", 57.7, "섹터 대표주"], ["20260825", 10, "SK이터닉스", 61.6, "섹터 대표주"], ["20260827", 9, "SK오션플랜트", 61.4, "섹터 대표주"], ["20260904", 3, "SK오션플랜트", 81.4, "섹터 대표주"], ["20260909", 7, "씨에스윈드", 73.5, "섹터 대표주"]]}, "소프트웨어·IT서비스": {"l": [["포스코DX", 3], ["삼성에스디에스", 3], ["현대오토에버", 2]], "d": [["20260813", 14, "포스코DX", 71.2, "섹터 대표주"], ["20260814", 9, "현대오토에버", 84.7, "섹터 대표주"], ["20260820", 11, "현대오토에버", 55.6, "섹터 대표주"], ["20260827", 14, "포스코DX", 56.5, "섹터 대표주"], ["20260828", 13, "삼성에스디에스", 74.4, "섹터 대표주"], ["20260831", 9, "삼성에스디에스", 59.2, "섹터 대표주"], ["20260904", 11, "삼성에스디에스", 66.6, "섹터 대표주"], ["20260910", 13, "포스코DX", 54.3, "섹터 대표주"]]}, "인터넷·플랫폼": {"l": [["NAVER", 4], ["키다리스튜디오", 3]], "d": [["20260813", 10, "NAVER", 68.1, "섹터 대표주"], ["20260819", 15, "키다리스튜디오", 54.9, "섹터 대표주"], ["20260820", 4, "NAVER", 53.9, "섹터 대표주"], ["20260821", 4, "NAVER", 51.3, "섹터 대표주"], ["20260824", 14, "NAVER", 72.5, "섹터 대표주"], ["20260828", 5, "키다리스튜디오", 69.4, "섹터 대표주"], ["20260904", 8, "키다리스튜디오", 65.3, "섹터 대표주"]]}, "해운": {"l": [["STX그린로지스", 2], ["팬오션", 2], ["HMM", 1], ["대한해운", 1], ["흥아해운", 1]], "d": [["20260818", 1, "HMM", 92.9, "섹터 대표주"], ["20260819", 13, "STX그린로지스", 83.7, "섹터 대표주"], ["20260821", 9, "대한해운", 63.6, "섹터 대표주"], ["20260824", 10, "팬오션", 90.0, "섹터 대표주"], ["20260902", 5, "STX그린로지스", 80.6, "섹터 대표주"], ["20260903", 9, "팬오션", 84.1, "섹터 대표주"], ["20260910", 10, "흥아해운", 84.0, "섹터 대표주"]]}, "ESS·에너지저장": {"l": [["LG에너지솔루션", 6]], "d": [["20260819", 3, "LG에너지솔루션", 74.1, "섹터 대표주"], ["20260824", 2, "LG에너지솔루션", 76.9, "섹터 대표주"], ["20260827", 2, "LG에너지솔루션", 74.6, "섹터 대표주"], ["20260831", 2, "LG에너지솔루션", 66.2, "섹터 대표주"], ["20260903", 2, "LG에너지솔루션", 71.5, "섹터 대표주"], ["20260909", 3, "LG에너지솔루션", 74.9, "섹터 대표주"]]}, "의료기기·진단": {"l": [["삼양바이오팜", 6]], "d": [["20260820", 1, "삼양바이오팜", 84.0, "섹터 대표주"], ["20260821", 1, "삼양바이오팜", 72.0, "섹터 대표주"], ["20260824", 3, "삼양바이오팜", 81.3, "섹터 대표주"], ["20260826", 5, "삼양바이오팜", 74.1, "섹터 대표주"], ["20260831", 11, "삼양바이오팜", 55.5, "섹터 대표주"], ["20260904", 13, "삼양바이오팜", 42.3, "섹터 대표주"]]}, "정밀·첨단소재": {"l": [["KCC", 6]], "d": [["20260820", 3, "KCC", 77.9, "섹터 대표주"], ["20260821", 3, "KCC", 70.8, "섹터 대표주"], ["20260826", 13, "KCC", 65.3, "섹터 대표주"], ["20260901", 3, "KCC", 68.3, "섹터 대표주"], ["20260907", 13, "KCC", 48.1, "섹터 대표주"], ["20260908", 10, "KCC", 54.5, "섹터 대표주"]]}, "전력기기·전선·전력망": {"l": [["LS ELECTRIC", 4], ["대원전선", 1], ["HD현대일렉트릭", 1]], "d": [["20260818", 13, "LS ELECTRIC", 62.2, "섹터 대표주"], ["20260819", 9, "대원전선", 60.0, "섹터 대표주"], ["20260826", 10, "LS ELECTRIC", 59.8, "섹터 대표주"], ["20260827", 1, "LS ELECTRIC", 80.1, "섹터 대표주"], ["20260907", 6, "HD현대일렉트릭", 62.0, "섹터 대표주"], ["20260909", 6, "LS ELECTRIC", 72.2, "섹터 대표주"]]}, "전력·유틸리티": {"l": [["한전산업", 2], ["한국전력", 2], ["SGC에너지", 1]], "d": [["20260814", 15, "SGC에너지", 62.4, "섹터 대표주"], ["20260825", 4, "한전산업", 85.4, "섹터 대표주"], ["20260826", 7, "한국전력", 84.5, "섹터 대표주"], ["20260903", 12, "한국전력", 55.9, "섹터 대표주"], ["20260908", 2, "한전산업", 80.7, "섹터 대표주"]]}, "화장품·패션·생활소비재": {"l": [["에이피알", 3], ["TBH글로벌", 1], ["F&F", 1]], "d": [["20260821", 10, "TBH글로벌", 65.4, "섹터 대표주"], ["20260824", 11, "에이피알", 78.8, "섹터 대표주"], ["20260828", 2, "에이피알", 80.0, "섹터 대표주"], ["20260831", 15, "에이피알", 56.8, "섹터 대표주"], ["20260902", 8, "F&F", 66.3, "섹터 대표주"]]}, "통신서비스": {"l": [["SK텔레콤", 2], ["LG유플러스", 2], ["KT", 1]], "d": [["20260814", 8, "SK텔레콤", 80.0, "섹터 대표주"], ["20260818", 7, "KT", 63.7, "섹터 대표주"], ["20260821", 7, "SK텔레콤", 66.1, "섹터 대표주"], ["20260831", 12, "LG유플러스", 52.3, "섹터 대표주"], ["20260901", 8, "LG유플러스", 54.2, "섹터 대표주"]]}, "원전": {"l": [["한전기술", 3], ["우진", 1]], "d": [["20260825", 1, "한전기술", 87.3, "섹터 대표주"], ["20260826", 2, "우진", 88.0, "섹터 대표주"], ["20260907", 2, "한전기술", 87.8, "섹터 대표주"], ["20260908", 1, "한전기술", 92.5, "섹터 대표주"]]}, "제약·바이오": {"l": [["한올바이오파마", 2], ["SK바이오사이언스", 2]], "d": [["20260819", 14, "한올바이오파마", 72.2, "섹터 대표주"], ["20260820", 6, "SK바이오사이언스", 69.1, "섹터 대표주"], ["20260824", 6, "한올바이오파마", 79.2, "섹터 대표주"], ["20260828", 11, "SK바이오사이언스", 61.2, "섹터 대표주"]]}, "로봇·자동화": {"l": [["두산로보틱스", 4]], "d": [["20260827", 12, "두산로보틱스", 49.2, "섹터 대표주"], ["20260904", 12, "두산로보틱스", 50.7, "섹터 대표주"], ["20260907", 8, "두산로보틱스", 45.8, "섹터 대표주"], ["20260909", 8, "두산로보틱스", 67.3, "섹터 대표주"]]}, "증권·벤처금융": {"l": [["미래에셋증권", 3], ["다올투자증권", 1]], "d": [["20260813", 15, "미래에셋증권", 81.3, "섹터 대표주"], ["20260820", 9, "미래에셋증권", 53.0, "섹터 대표주"], ["20260901", 10, "다올투자증권", 42.0, "섹터 대표주"], ["20260908", 8, "미래에셋증권", 60.8, "섹터 대표주"]]}, "건자재·시멘트": {"l": [["영보화학", 2], ["대림바스", 1], ["한일시멘트", 1]], "d": [["20260818", 8, "영보화학", 55.7, "섹터 대표주"], ["20260827", 15, "대림바스", 46.8, "섹터 대표주"], ["20260831", 14, "한일시멘트", 66.3, "섹터 대표주"], ["20260903", 13, "영보화학", 57.5, "섹터 대표주"]]}, "가스·LNG·도시가스": {"l": [["한국가스공사", 4]], "d": [["20260818", 15, "한국가스공사", 56.4, "섹터 대표주"], ["20260831", 13, "한국가스공사", 58.9, "섹터 대표주"], ["20260901", 12, "한국가스공사", 56.6, "섹터 대표주"], ["20260910", 12, "한국가스공사", 68.9, "섹터 대표주"]]}, "리츠·부동산": {"l": [["SK디앤디", 3]], "d": [["20260901", 1, "SK디앤디", 87.1, "섹터 대표주"], ["20260902", 1, "SK디앤디", 84.1, "섹터 대표주"], ["20260910", 1, "SK디앤디", 88.1, "섹터 대표주"]]}, "플랜트·인프라": {"l": [["HD현대에너지솔루션", 2], ["삼성E&A", 1]], "d": [["20260819", 4, "HD현대에너지솔루션", 72.8, "섹터 대표주"], ["20260826", 6, "삼성E&A", 71.8, "섹터 대표주"], ["20260909", 11, "HD현대에너지솔루션", 78.1, "섹터 대표주"]]}, "유통": {"l": [["신세계", 2], ["한화갤러리아", 1]], "d": [["20260901", 13, "신세계", 68.9, "섹터 대표주"], ["20260904", 6, "한화갤러리아", 75.3, "섹터 대표주"], ["20260908", 4, "신세계", 63.2, "섹터 대표주"]]}, "통신장비·광네트워크": {"l": [["한화비전", 3]], "d": [["20260818", 4, "한화비전", 73.3, "섹터 대표주"], ["20260820", 8, "한화비전", 59.6, "섹터 대표주"], ["20260825", 14, "한화비전", 54.9, "섹터 대표주"]]}, "플라스틱·고무소재": {"l": [["진양화학", 2], ["테이팩스", 1]], "d": [["20260827", 5, "진양화학", 65.2, "섹터 대표주"], ["20260828", 14, "테이팩스", 66.5, "섹터 대표주"], ["20260902", 12, "진양화학", 59.4, "섹터 대표주"]]}, "농업·비료·사료": {"l": [["남해화학", 2], ["조비", 1]], "d": [["20260818", 6, "남해화학", 76.0, "섹터 대표주"], ["20260819", 6, "남해화학", 80.7, "섹터 대표주"], ["20260902", 9, "조비", 70.1, "섹터 대표주"]]}, "포장·제지": {"l": [["대영포장", 1], ["신풍", 1], ["한국수출포장", 1]], "d": [["20260818", 11, "대영포장", 64.8, "섹터 대표주"], ["20260831", 10, "신풍", 63.3, "섹터 대표주"], ["20260902", 6, "한국수출포장", 45.1, "섹터 대표주"]]}, "강관": {"l": [["세아제강지주", 1], ["KBI동양철관", 1], ["휴스틸", 1]], "d": [["20260903", 8, "세아제강지주", 68.2, "섹터 대표주"], ["20260908", 14, "KBI동양철관", 76.5, "섹터 대표주"], ["20260910", 15, "휴스틸", 79.0, "섹터 대표주"]]}, "결제·핀테크·신용정보": {"l": [["카카오페이", 2]], "d": [["20260820", 15, "카카오페이", 73.9, "섹터 대표주"], ["20260824", 12, "카카오페이", 78.3, "섹터 대표주"]]}, "물류": {"l": [["한익스프레스", 1], ["KB발해인프라", 1]], "d": [["20260821", 14, "한익스프레스", 41.8, "섹터 대표주"], ["20260902", 14, "KB발해인프라", 50.0, "섹터 대표주"]]}, "렌탈·구독서비스": {"l": [["코웨이", 1]], "d": [["20260821", 11, "코웨이", 59.8, "섹터 대표주"]]}, "생활·레저용품": {"l": [["시디즈", 1]], "d": [["20260821", 12, "시디즈", 53.5, "섹터 대표주"]]}, "식음료": {"l": [["KT&G", 1]], "d": [["20260818", 12, "KT&G", 52.0, "섹터 대표주"]]}, "여행·레저": {"l": [["파라다이스", 1]], "d": [["20260828", 12, "파라다이스", 74.8, "섹터 대표주"]]}, "게임": {"l": [["NC", 1]], "d": [["20260821", 13, "NC", 40.0, "섹터 대표주"]]}, "비철금속": {"l": [["고려아연", 1]], "d": [["20260825", 13, "고려아연", 87.4, "섹터 대표주"]]}, "전장·자율주행부품": {"l": [["아진전자부품", 1]], "d": [["20260901", 15, "아진전자부품", 24.2, "섹터 대표주"]]}}}, "KOSDAQ": {"days": [["8/13", [[1, "자동차·일반부품", "삼기"], [2, "전자부품·디스플레이", "PS일렉트로닉스"], [3, "제약·바이오", "페니트리움바이오"]]], ["8/14", [[1, "로봇·자동화", "로보티즈"], [2, "조선·해양", "현대힘스"], [3, "자동차·일반부품", "한라캐스트"]]], ["8/18", [[1, "여행·레저", "아난티"], [2, "정유·석유제품·LPG", "흥구석유"], [3, "물류", "대아티아이"]]], ["8/19", [[1, "해운", "팬스타엔터프라이즈"], [2, "물류", "대아티아이"], [3, "강관", "티피씨글로벌"]]], ["8/20", [[1, "건자재·시멘트", "서산"], [2, "반도체", "티에프이"], [3, "소프트웨어·IT서비스", "씨이랩"]]], ["8/21", [[1, "해운", "팬스타엔터프라이즈"], [2, "강관", "티피씨글로벌"], [3, "결제·핀테크·신용정보", "다날"]]], ["8/24", [[1, "2차전지", "에코프로"], [2, "결제·핀테크·신용정보", "NHN KCP"], [3, "증권·벤처금융", "DSC인베스트먼트"]]], ["8/25", [[1, "원전", "일진파워"], [2, "반도체", "에프에스티"], [3, "전력기기·전선·전력망", "지투파워"]]], ["8/26", [[1, "전력기기·전선·전력망", "지투파워"], [2, "원전", "오르비텍"], [3, "플랜트·인프라", "태웅"]]], ["8/27", [[1, "2차전지", "에코프로"], [2, "통신장비·광네트워크", "오이솔루션"], [3, "ESS·에너지저장", "서진시스템"]]], ["8/28", [[1, "결제·핀테크·신용정보", "글로벌텍스프리"], [2, "제약·바이오", "페니트리움바이오"], [3, "소프트웨어·IT서비스", "엑스게이트"]]], ["8/31", [[1, "건자재·시멘트", "강동씨앤엘"], [2, "2차전지", "SFA넥셀"], [3, "전장·자율주행부품", "신성델타테크"]]], ["9/1", [[1, "강관", "티피씨글로벌"], [2, "정유·석유제품·LPG", "흥구석유"], [3, "자동차·일반부품", "삼기에너지솔루션즈"]]], ["9/2", [[1, "정유·석유제품·LPG", "흥구석유"], [2, "해운", "팬스타엔터프라이즈"], [3, "정밀·첨단소재", "아스플로"]]], ["9/3", [[1, "건자재·시멘트", "서산"], [2, "은행·금융지주", "푸른저축은행"], [3, "해운", "팬스타엔터프라이즈"]]], ["9/4", [[1, "로봇·자동화", "로보티즈"], [2, "소프트웨어·IT서비스", "에프앤가이드"], [3, "기계·산업장비", "톱텍"]]], ["9/7", [[1, "ESS·에너지저장", "비나텍"], [2, "원전", "오르비텍"], [3, "가스·LNG·도시가스", "지에스이"]]], ["9/8", [[1, "원전", "우진엔텍"], [2, "전력기기·전선·전력망", "지투파워"], [3, "항공우주·위성", "스피어"]]], ["9/9", [[1, "수소·연료전지", "범한퓨얼셀"], [2, "방산", "우리기술"], [3, "기계·산업장비", "삼미금속"]]], ["9/10", [[1, "정유·석유제품·LPG", "흥구석유"], [2, "철강", "광진실업"], [3, "가스·LNG·도시가스", "지에스이"]]]], "frequency": [["반도체", 12, 7, 0], ["전력기기·전선·전력망", 11, 5, 1], ["가스·LNG·도시가스", 10, 5, 0], ["로봇·자동화", 10, 4, 2], ["건자재·시멘트", 10, 3, 3], ["여행·레저", 10, 2, 1]], "tree": [["반도체", 12, 7, 0, "20260910", 4, 5.8], ["전력기기·전선·전력망", 11, 5, 1, "20260910", 12, 6.8], ["가스·LNG·도시가스", 10, 5, 0, "20260910", 3, 7.4], ["로봇·자동화", 10, 4, 2, "20260910", 5, 6.4], ["건자재·시멘트", 10, 3, 3, "20260910", 13, 7.7], ["여행·레저", 10, 2, 1, "20260903", 7, 8.0], ["제약·바이오", 9, 4, 0, "20260907", 13, 7.9], ["해운", 8, 5, 2, "20260907", 9, 4.4], ["정유·석유제품·LPG", 8, 5, 2, "20260910", 1, 5.0], ["강관", 8, 5, 1, "20260910", 14, 6.5], ["원전", 8, 4, 2, "20260909", 8, 5.8], ["결제·핀테크·신용정보", 8, 3, 1, "20260904", 11, 7.8], ["소프트웨어·IT서비스", 8, 3, 0, "20260909", 14, 7.4], ["기계·산업장비", 8, 3, 0, "20260909", 3, 9.2], ["2차전지", 7, 4, 2, "20260909", 7, 6.1]], "history": {"반도체": {"l": [["티에프이", 4], ["에프에스티", 3], ["원익IPS", 3], ["제너셈", 1], ["두산테스나", 1]], "d": [["20260813", 5, "에프에스티", 86.9, "섹터 대표주"], ["20260818", 12, "티에프이", 78.1, "섹터 대표주"], ["20260820", 2, "티에프이", 79.7, "섹터 대표주"], ["20260825", 2, "에프에스티", 88.1, "섹터 대표주"], ["20260827", 7, "티에프이", 62.7, "섹터 대표주"], ["20260831", 10, "에프에스티", 79.0, "섹터 대표주"], ["20260902", 5, "티에프이", 73.1, "섹터 대표주"], ["20260904", 8, "원익IPS", 74.1, "섹터 대표주"], ["20260907", 4, "제너셈", 83.0, "섹터 대표주"], ["20260908", 6, "원익IPS", 59.9, "섹터 대표주"], ["20260909", 4, "원익IPS", 61.4, "섹터 대표주"], ["20260910", 4, "두산테스나", 87.6, "섹터 대표주"]]}, "전력기기·전선·전력망": {"l": [["지투파워", 5], ["티씨머티리얼즈", 2], ["지엔씨에너지", 2], ["보성파워텍", 1], ["웰킵스하이텍", 1]], "d": [["20260813", 4, "티씨머티리얼즈", 90.2, "섹터 대표주"], ["20260814", 9, "보성파워텍", 74.0, "섹터 대표주"], ["20260820", 5, "웰킵스하이텍", 65.1, "섹터 대표주"], ["20260824", 12, "티씨머티리얼즈", 79.7, "섹터 대표주"], ["20260825", 3, "지투파워", 85.6, "섹터 대표주"], ["20260826", 1, "지투파워", 78.0, "섹터 대표주"], ["20260903", 11, "지투파워", 70.6, "섹터 대표주"], ["20260907", 6, "지투파워", 72.4, "섹터 대표주"], ["20260908", 2, "지투파워", 82.4, "섹터 대표주"], ["20260909", 10, "지엔씨에너지", 77.6, "섹터 대표주"], ["20260910", 12, "지엔씨에너지", 67.5, "섹터 대표주"]]}, "가스·LNG·도시가스": {"l": [["지에스이", 10]], "d": [["20260818", 8, "지에스이", 47.4, "섹터 대표주"], ["20260824", 14, "지에스이", 34.7, "섹터 대표주"], ["20260826", 9, "지에스이", 45.8, "섹터 대표주"], ["20260827", 4, "지에스이", 44.6, "섹터 대표주"], ["20260901", 4, "지에스이", 50.8, "섹터 대표주"], ["20260903", 4, "지에스이", 46.4, "섹터 대표주"], ["20260904", 15, "지에스이", 37.2, "섹터 대표주"], ["20260907", 3, "지에스이", 51.1, "섹터 대표주"], ["20260908", 10, "지에스이", 41.2, "섹터 대표주"], ["20260910", 3, "지에스이", 60.3, "섹터 대표주"]]}, "로봇·자동화": {"l": [["져스텍", 3], ["로보티즈", 3], ["하이젠알앤엠", 2], ["레인보우로보틱스", 1], ["에스피지", 1]], "d": [["20260813", 7, "져스텍", 88.4, "섹터 대표주"], ["20260814", 1, "로보티즈", 89.1, "섹터 대표주"], ["20260819", 14, "져스텍", 80.0, "섹터 대표주"], ["20260825", 4, "져스텍", 71.6, "섹터 대표주"], ["20260827", 6, "레인보우로보틱스", 62.2, "섹터 대표주"], ["20260831", 6, "로보티즈", 65.2, "섹터 대표주"], ["20260904", 1, "로보티즈", 86.8, "섹터 대표주"], ["20260907", 11, "하이젠알앤엠", 82.0, "섹터 대표주"], ["20260908", 9, "하이젠알앤엠", 81.0, "섹터 대표주"], ["20260910", 5, "에스피지", 75.7, "섹터 대표주"]]}, "건자재·시멘트": {"l": [["서산", 6], ["강동씨앤엘", 4]], "d": [["20260820", 1, "서산", 86.1, "섹터 대표주"], ["20260827", 14, "서산", 47.8, "섹터 대표주"], ["20260828", 11, "서산", 80.7, "섹터 대표주"], ["20260831", 1, "강동씨앤엘", 87.6, "섹터 대표주"], ["20260901", 6, "강동씨앤엘", 82.5, "섹터 대표주"], ["20260902", 11, "서산", 81.5, "섹터 대표주"], ["20260903", 1, "서산", 87.1, "섹터 대표주"], ["20260908", 7, "서산", 81.2, "섹터 대표주"], ["20260909", 12, "강동씨앤엘", 80.0, "섹터 대표주"], ["20260910", 13, "강동씨앤엘", 64.1, "섹터 대표주"]]}, "여행·레저": {"l": [["아난티", 6], ["남화산업", 2], ["서부T&D", 2]], "d": [["20260818", 1, "아난티", 80.0, "섹터 대표주"], ["20260819", 8, "아난티", 77.9, "섹터 대표주"], ["20260820", 7, "남화산업", 77.8, "섹터 대표주"], ["20260821", 5, "아난티", 76.4, "섹터 대표주"], ["20260825", 15, "서부T&D", 63.9, "섹터 대표주"], ["20260826", 12, "서부T&D", 67.0, "섹터 대표주"], ["20260828", 8, "아난티", 57.7, "섹터 대표주"], ["20260901", 11, "아난티", 76.4, "섹터 대표주"], ["20260902", 6, "남화산업", 82.9, "섹터 대표주"], ["20260903", 7, "아난티", 59.8, "섹터 대표주"]]}, "제약·바이오": {"l": [["페니트리움바이오", 5], ["코오롱티슈진", 1], ["코오롱생명과학", 1], ["보로노이", 1], ["프로티나", 1]], "d": [["20260813", 3, "페니트리움바이오", 87.6, "섹터 대표주"], ["20260814", 10, "코오롱티슈진", 82.7, "섹터 대표주"], ["20260818", 15, "코오롱생명과학", 71.3, "섹터 대표주"], ["20260824", 5, "보로노이", 71.6, "섹터 대표주"], ["20260826", 5, "프로티나", 78.9, "섹터 대표주"], ["20260828", 2, "페니트리움바이오", 75.5, "섹터 대표주"], ["20260903", 8, "페니트리움바이오", 76.2, "섹터 대표주"], ["20260904", 10, "페니트리움바이오", 75.9, "섹터 대표주"], ["20260907", 13, "페니트리움바이오", 75.1, "섹터 대표주"]]}, "해운": {"l": [["팬스타엔터프라이즈", 8]], "d": [["20260814", 7, "팬스타엔터프라이즈", 51.3, "섹터 대표주"], ["20260818", 5, "팬스타엔터프라이즈", 67.0, "섹터 대표주"], ["20260819", 1, "팬스타엔터프라이즈", 65.5, "섹터 대표주"], ["20260821", 1, "팬스타엔터프라이즈", 64.9, "섹터 대표주"], ["20260824", 7, "팬스타엔터프라이즈", 54.1, "섹터 대표주"], ["20260902", 2, "팬스타엔터프라이즈", 62.4, "섹터 대표주"], ["20260903", 3, "팬스타엔터프라이즈", 48.8, "섹터 대표주"], ["20260907", 9, "팬스타엔터프라이즈", 46.5, "섹터 대표주"]]}, "정유·석유제품·LPG": {"l": [["흥구석유", 8]], "d": [["20260818", 2, "흥구석유", 70.1, "섹터 대표주"], ["20260828", 7, "흥구석유", 44.9, "섹터 대표주"], ["20260831", 5, "흥구석유", 44.3, "섹터 대표주"], ["20260901", 2, "흥구석유", 62.6, "섹터 대표주"], ["20260902", 1, "흥구석유", 81.5, "섹터 대표주"], ["20260907", 7, "흥구석유", 61.2, "섹터 대표주"], ["20260909", 15, "흥구석유", 72.1, "섹터 대표주"], ["20260910", 1, "흥구석유", 87.9, "섹터 대표주"]]}, "강관": {"l": [["티피씨글로벌", 8]], "d": [["20260818", 4, "티피씨글로벌", 63.4, "섹터 대표주"], ["20260819", 3, "티피씨글로벌", 53.6, "섹터 대표주"], ["20260821", 2, "티피씨글로벌", 48.9, "섹터 대표주"], ["20260826", 11, "티피씨글로벌", 40.7, "섹터 대표주"], ["20260901", 1, "티피씨글로벌", 55.1, "섹터 대표주"], ["20260903", 5, "티피씨글로벌", 45.6, "섹터 대표주"], ["20260904", 12, "티피씨글로벌", 40.5, "섹터 대표주"], ["20260910", 14, "티피씨글로벌", 30.9, "섹터 대표주"]]}, "원전": {"l": [["오르비텍", 4], ["일진파워", 2], ["우진엔텍", 2]], "d": [["20260813", 10, "일진파워", 89.7, "섹터 대표주"], ["20260825", 1, "일진파워", 56.5, "섹터 대표주"], ["20260826", 2, "오르비텍", 79.9, "섹터 대표주"], ["20260827", 10, "오르비텍", 42.6, "섹터 대표주"], ["20260828", 12, "오르비텍", 72.1, "섹터 대표주"], ["20260907", 2, "오르비텍", 60.7, "섹터 대표주"], ["20260908", 1, "우진엔텍", 92.2, "섹터 대표주"], ["20260909", 8, "우진엔텍", 73.9, "섹터 대표주"]]}, "결제·핀테크·신용정보": {"l": [["헥토파이낸셜", 3], ["NHN KCP", 2], ["다날", 2], ["글로벌텍스프리", 1]], "d": [["20260814", 8, "NHN KCP", 66.2, "섹터 대표주"], ["20260820", 14, "다날", 83.2, "섹터 대표주"], ["20260821", 3, "다날", 75.3, "섹터 대표주"], ["20260824", 2, "NHN KCP", 84.0, "섹터 대표주"], ["20260825", 11, "헥토파이낸셜", 82.4, "섹터 대표주"], ["20260828", 1, "글로벌텍스프리", 88.3, "섹터 대표주"], ["20260901", 12, "헥토파이낸셜", 76.7, "섹터 대표주"], ["20260904", 11, "헥토파이낸셜", 82.8, "섹터 대표주"]]}, "소프트웨어·IT서비스": {"l": [["엑스게이트", 3], ["씨이랩", 2], ["에프앤가이드", 2], ["아이크래프트", 1]], "d": [["20260813", 6, "씨이랩", 94.9, "섹터 대표주"], ["20260814", 6, "아이크래프트", 74.2, "섹터 대표주"], ["20260820", 3, "씨이랩", 68.9, "섹터 대표주"], ["20260827", 13, "엑스게이트", 50.1, "섹터 대표주"], ["20260828", 3, "엑스게이트", 74.0, "섹터 대표주"], ["20260904", 2, "에프앤가이드", 58.6, "섹터 대표주"], ["20260908", 12, "에프앤가이드", 55.9, "섹터 대표주"], ["20260909", 14, "엑스게이트", 82.9, "섹터 대표주"]]}, "기계·산업장비": {"l": [["삼미금속", 4], ["톱텍", 2], ["엔비알모션", 1], ["에너토크", 1]], "d": [["20260813", 14, "삼미금속", 70.1, "섹터 대표주"], ["20260814", 5, "엔비알모션", 86.1, "섹터 대표주"], ["20260825", 9, "삼미금속", 88.0, "섹터 대표주"], ["20260827", 15, "톱텍", 74.0, "섹터 대표주"], ["20260904", 3, "톱텍", 68.7, "섹터 대표주"], ["20260907", 14, "삼미금속", 82.8, "섹터 대표주"], ["20260908", 11, "에너토크", 65.0, "섹터 대표주"], ["20260909", 3, "삼미금속", 84.8, "섹터 대표주"]]}, "2차전지": {"l": [["SFA넥셀", 3], ["에코프로", 3], ["지에프아이", 1]], "d": [["20260813", 13, "SFA넥셀", 71.1, "섹터 대표주"], ["20260820", 4, "SFA넥셀", 55.3, "섹터 대표주"], ["20260824", 1, "에코프로", 76.1, "섹터 대표주"], ["20260827", 1, "에코프로", 75.1, "섹터 대표주"], ["20260831", 2, "SFA넥셀", 66.1, "섹터 대표주"], ["20260907", 15, "지에프아이", 78.0, "섹터 대표주"], ["20260909", 7, "에코프로", 71.3, "섹터 대표주"]]}, "물류": {"l": [["대아티아이", 6], ["삼일", 1]], "d": [["20260814", 13, "삼일", 48.8, "섹터 대표주"], ["20260818", 3, "대아티아이", 63.5, "섹터 대표주"], ["20260819", 2, "대아티아이", 79.2, "섹터 대표주"], ["20260821", 9, "대아티아이", 77.2, "섹터 대표주"], ["20260901", 5, "대아티아이", 84.3, "섹터 대표주"], ["20260902", 4, "대아티아이", 80.4, "섹터 대표주"], ["20260904", 14, "대아티아이", 50.7, "섹터 대표주"]]}, "플랜트·인프라": {"l": [["유니슨", 2], ["비에이치아이", 2], ["태웅", 2], ["한텍", 1]], "d": [["20260814", 12, "유니슨", 83.3, "섹터 대표주"], ["20260825", 5, "비에이치아이", 85.5, "섹터 대표주"], ["20260826", 3, "태웅", 86.9, "섹터 대표주"], ["20260828", 4, "유니슨", 82.0, "섹터 대표주"], ["20260907", 8, "비에이치아이", 83.8, "섹터 대표주"], ["20260908", 8, "태웅", 81.2, "섹터 대표주"], ["20260909", 9, "한텍", 78.7, "섹터 대표주"]]}, "항공우주·위성": {"l": [["이노스페이스", 2], ["스피어", 2], ["쎄트렉아이", 2], ["인텔리안테크", 1]], "d": [["20260813", 15, "이노스페이스", 87.6, "섹터 대표주"], ["20260814", 15, "이노스페이스", 70.6, "섹터 대표주"], ["20260825", 14, "스피어", 46.3, "섹터 대표주"], ["20260827", 5, "쎄트렉아이", 45.4, "섹터 대표주"], ["20260904", 7, "쎄트렉아이", 50.5, "섹터 대표주"], ["20260908", 3, "스피어", 63.7, "섹터 대표주"], ["20260909", 11, "인텔리안테크", 53.6, "섹터 대표주"]]}, "자동차·일반부품": {"l": [["한라캐스트", 4], ["삼기", 1], ["삼기에너지솔루션즈", 1]], "d": [["20260813", 1, "삼기", 89.4, "섹터 대표주"], ["20260814", 3, "한라캐스트", 83.7, "섹터 대표주"], ["20260831", 9, "한라캐스트", 55.2, "섹터 대표주"], ["20260901", 3, "삼기에너지솔루션즈", 61.3, "섹터 대표주"], ["20260904", 5, "한라캐스트", 68.2, "섹터 대표주"], ["20260910", 10, "한라캐스트", 46.8, "섹터 대표주"]]}, "방산": {"l": [["우리기술", 5], ["삼양컴텍", 1]], "d": [["20260820", 6, "우리기술", 65.2, "섹터 대표주"], ["20260825", 6, "우리기술", 64.8, "섹터 대표주"], ["20260904", 4, "삼양컴텍", 65.5, "섹터 대표주"], ["20260908", 5, "우리기술", 81.0, "섹터 대표주"], ["20260909", 2, "우리기술", 82.6, "섹터 대표주"], ["20260910", 8, "우리기술", 68.4, "섹터 대표주"]]}, "전자부품·디스플레이": {"l": [["제이앤티씨", 4], ["PS일렉트로닉스", 1], ["이노테크", 1]], "d": [["20260813", 2, "PS일렉트로닉스", 90.2, "섹터 대표주"], ["20260814", 4, "이노테크", 71.9, "섹터 대표주"], ["20260827", 8, "제이앤티씨", 63.7, "섹터 대표주"], ["20260831", 4, "제이앤티씨", 62.6, "섹터 대표주"], ["20260904", 9, "제이앤티씨", 55.6, "섹터 대표주"], ["20260909", 13, "제이앤티씨", 77.5, "섹터 대표주"]]}, "ESS·에너지저장": {"l": [["코칩", 2], ["서진시스템", 2], ["세보엠이씨", 1], ["비나텍", 1]], "d": [["20260819", 9, "코칩", 81.5, "섹터 대표주"], ["20260824", 10, "서진시스템", 68.9, "섹터 대표주"], ["20260825", 10, "코칩", 56.9, "섹터 대표주"], ["20260826", 14, "세보엠이씨", 60.0, "섹터 대표주"], ["20260827", 3, "서진시스템", 85.9, "섹터 대표주"], ["20260907", 1, "비나텍", 69.9, "섹터 대표주"]]}, "증권·벤처금융": {"l": [["SV인베스트먼트", 3], ["아주IB투자", 2], ["DSC인베스트먼트", 1]], "d": [["20260813", 9, "아주IB투자", 88.0, "섹터 대표주"], ["20260820", 9, "아주IB투자", 54.1, "섹터 대표주"], ["20260824", 3, "DSC인베스트먼트", 81.3, "섹터 대표주"], ["20260825", 12, "SV인베스트먼트", 55.7, "섹터 대표주"], ["20260827", 11, "SV인베스트먼트", 70.2, "섹터 대표주"], ["20260908", 4, "SV인베스트먼트", 84.6, "섹터 대표주"]]}, "통신장비·광네트워크": {"l": [["오이솔루션", 2], ["아이씨티케이", 1], ["RFHIC", 1], ["로스웰", 1], ["머큐리", 1]], "d": [["20260820", 8, "아이씨티케이", 72.9, "섹터 대표주"], ["20260827", 2, "오이솔루션", 63.4, "섹터 대표주"], ["20260904", 6, "RFHIC", 49.2, "섹터 대표주"], ["20260908", 14, "로스웰", 57.0, "섹터 대표주"], ["20260909", 6, "오이솔루션", 86.3, "섹터 대표주"], ["20260910", 7, "머큐리", 79.3, "섹터 대표주"]]}, "통신서비스": {"l": [["세종텔레콤", 6]], "d": [["20260820", 11, "세종텔레콤", 40.9, "섹터 대표주"], ["20260824", 11, "세종텔레콤", 53.7, "섹터 대표주"], ["20260827", 9, "세종텔레콤", 44.5, "섹터 대표주"], ["20260903", 9, "세종텔레콤", 48.0, "섹터 대표주"], ["20260908", 15, "세종텔레콤", 44.6, "섹터 대표주"], ["20260909", 5, "세종텔레콤", 63.2, "섹터 대표주"]]}, "수소·연료전지": {"l": [["범한퓨얼셀", 4], ["덕양에너젠", 1]], "d": [["20260826", 4, "범한퓨얼셀", 40.9, "섹터 대표주"], ["20260828", 10, "범한퓨얼셀", 84.2, "섹터 대표주"], ["20260902", 10, "덕양에너젠", 43.1, "섹터 대표주"], ["20260907", 5, "범한퓨얼셀", 87.3, "섹터 대표주"], ["20260909", 1, "범한퓨얼셀", 90.0, "섹터 대표주"]]}, "철강": {"l": [["광진실업", 3], ["대호특수강", 2]], "d": [["20260819", 10, "광진실업", 35.2, "섹터 대표주"], ["20260825", 8, "광진실업", 50.7, "섹터 대표주"], ["20260902", 9, "대호특수강", 40.8, "섹터 대표주"], ["20260907", 12, "대호특수강", 31.6, "섹터 대표주"], ["20260910", 2, "광진실업", 63.7, "섹터 대표주"]]}, "은행·금융지주": {"l": [["푸른저축은행", 5]], "d": [["20260821", 12, "푸른저축은행", 47.1, "섹터 대표주"], ["20260824", 9, "푸른저축은행", 35.8, "섹터 대표주"], ["20260827", 12, "푸른저축은행", 44.6, "섹터 대표주"], ["20260831", 8, "푸른저축은행", 43.1, "섹터 대표주"], ["20260903", 2, "푸른저축은행", 49.2, "섹터 대표주"]]}, "정밀·첨단소재": {"l": [["아스플로", 5]], "d": [["20260814", 14, "아스플로", 73.3, "섹터 대표주"], ["20260818", 13, "아스플로", 64.8, "섹터 대표주"], ["20260831", 12, "아스플로", 63.4, "섹터 대표주"], ["20260902", 3, "아스플로", 84.4, "섹터 대표주"], ["20260903", 14, "아스플로", 72.0, "섹터 대표주"]]}, "식음료": {"l": [["메지온", 3], ["한탑", 1], ["미래생명자원", 1]], "d": [["20260813", 12, "한탑", 83.7, "섹터 대표주"], ["20260819", 15, "메지온", 49.3, "섹터 대표주"], ["20260828", 5, "메지온", 64.9, "섹터 대표주"], ["20260831", 14, "메지온", 63.7, "섹터 대표주"], ["20260902", 12, "미래생명자원", 56.9, "섹터 대표주"]]}, "플라스틱·고무소재": {"l": [["S&K폴리텍", 4], ["에코플라스틱", 1]], "d": [["20260821", 7, "S&K폴리텍", 53.5, "섹터 대표주"], ["20260828", 15, "에코플라스틱", 48.4, "섹터 대표주"], ["20260901", 9, "S&K폴리텍", 64.7, "섹터 대표주"], ["20260902", 7, "S&K폴리텍", 55.7, "섹터 대표주"], ["20260907", 10, "S&K폴리텍", 60.9, "섹터 대표주"]]}, "게임": {"l": [["카카오게임즈", 3], ["미투온", 2]], "d": [["20260819", 6, "카카오게임즈", 58.3, "섹터 대표주"], ["20260820", 13, "미투온", 79.3, "섹터 대표주"], ["20260821", 13, "미투온", 59.0, "섹터 대표주"], ["20260831", 7, "카카오게임즈", 83.1, "섹터 대표주"], ["20260910", 11, "카카오게임즈", 67.3, "섹터 대표주"]]}, "콘텐츠·미디어·엔터": {"l": [["매드업", 3], ["KT나스미디어", 1], ["더핑크퐁컴퍼니", 1]], "d": [["20260819", 7, "매드업", 63.4, "섹터 대표주"], ["20260821", 10, "KT나스미디어", 56.8, "섹터 대표주"], ["20260901", 7, "매드업", 80.8, "섹터 대표주"], ["20260902", 15, "더핑크퐁컴퍼니", 74.0, "섹터 대표주"], ["20260910", 15, "매드업", 78.1, "섹터 대표주"]]}, "포장·제지": {"l": [["대림제지", 3], ["승일", 1], ["무림SP", 1]], "d": [["20260818", 9, "대림제지", 63.0, "섹터 대표주"], ["20260821", 11, "승일", 47.6, "섹터 대표주"], ["20260901", 14, "무림SP", 47.2, "섹터 대표주"], ["20260902", 8, "대림제지", 38.0, "섹터 대표주"], ["20260903", 12, "대림제지", 44.4, "섹터 대표주"]]}, "농업·비료·사료": {"l": [["효성오앤비", 2], ["한일사료", 2], ["오에스피", 1]], "d": [["20260818", 7, "효성오앤비", 63.0, "섹터 대표주"], ["20260819", 11, "효성오앤비", 58.4, "섹터 대표주"], ["20260821", 15, "오에스피", 44.7, "섹터 대표주"], ["20260828", 13, "한일사료", 53.6, "섹터 대표주"], ["20260902", 13, "한일사료", 57.3, "섹터 대표주"]]}, "유통": {"l": [["홈캐스트", 4], ["소노스퀘어", 1]], "d": [["20260819", 13, "소노스퀘어", 59.2, "섹터 대표주"], ["20260825", 13, "홈캐스트", 61.3, "섹터 대표주"], ["20260828", 14, "홈캐스트", 52.2, "섹터 대표주"], ["20260831", 13, "홈캐스트", 59.0, "섹터 대표주"], ["20260901", 13, "홈캐스트", 47.6, "섹터 대표주"]]}, "건설": {"l": [["국보디자인", 2], ["누리플랜", 1], ["베노티앤알", 1]], "d": [["20260818", 6, "누리플랜", 62.5, "섹터 대표주"], ["20260819", 4, "베노티앤알", 57.1, "섹터 대표주"], ["20260824", 6, "국보디자인", 43.7, "섹터 대표주"], ["20260901", 10, "국보디자인", 56.2, "섹터 대표주"]]}, "인터넷·플랫폼": {"l": [["탑코미디어", 3], ["코난테크놀로지", 1]], "d": [["20260820", 15, "탑코미디어", 62.3, "섹터 대표주"], ["20260821", 8, "탑코미디어", 57.4, "섹터 대표주"], ["20260824", 4, "코난테크놀로지", 86.5, "섹터 대표주"], ["20260901", 15, "탑코미디어", 77.0, "섹터 대표주"]]}, "시험·인증·리서치": {"l": [["파마리서치", 2], ["나이스정보통신", 1], ["사람인", 1]], "d": [["20260818", 11, "나이스정보통신", 62.0, "섹터 대표주"], ["20260821", 6, "사람인", 54.2, "섹터 대표주"], ["20260826", 15, "파마리서치", 73.6, "섹터 대표주"], ["20260828", 6, "파마리서치", 75.4, "섹터 대표주"]]}, "화장품·패션·생활소비재": {"l": [["에이유브랜즈", 1], ["태양", 1], ["내츄럴엔도텍", 1], ["에스제이그룹", 1]], "d": [["20260813", 11, "에이유브랜즈", 68.7, "섹터 대표주"], ["20260821", 14, "태양", 59.2, "섹터 대표주"], ["20260824", 15, "내츄럴엔도텍", 42.7, "섹터 대표주"], ["20260826", 6, "에스제이그룹", 66.7, "섹터 대표주"]]}, "환경·폐기물": {"l": [["자연과환경", 3], ["한성크린텍", 1]], "d": [["20260818", 10, "한성크린텍", 79.2, "섹터 대표주"], ["20260826", 13, "자연과환경", 64.7, "섹터 대표주"], ["20260828", 9, "자연과환경", 62.2, "섹터 대표주"], ["20260831", 15, "자연과환경", 49.4, "섹터 대표주"]]}, "조선·해양": {"l": [["현대힘스", 1], ["동방선기", 1], ["일승", 1]], "d": [["20260814", 2, "현대힘스", 67.7, "섹터 대표주"], ["20260826", 8, "동방선기", 55.6, "섹터 대표주"], ["20260903", 6, "일승", 71.2, "섹터 대표주"]]}, "전장·자율주행부품": {"l": [["신성델타테크", 2], ["한국피아이엠", 1]], "d": [["20260831", 3, "신성델타테크", 70.5, "섹터 대표주"], ["20260904", 13, "한국피아이엠", 64.3, "섹터 대표주"], ["20260910", 9, "신성델타테크", 63.6, "섹터 대표주"]]}, "교육": {"l": [["이퓨쳐", 1], ["아이스크림미디어", 1], ["아이스크림에듀", 1]], "d": [["20260819", 12, "이퓨쳐", 58.5, "섹터 대표주"], ["20260821", 4, "아이스크림미디어", 62.3, "섹터 대표주"], ["20260903", 15, "아이스크림에듀", 50.1, "섹터 대표주"]]}, "신재생": {"l": [["씨에스베어링", 2], ["씨엔플러스", 1]], "d": [["20260824", 13, "씨엔플러스", 58.1, "섹터 대표주"], ["20260826", 10, "씨에스베어링", 52.0, "섹터 대표주"], ["20260910", 6, "씨에스베어링", 48.8, "섹터 대표주"]]}, "생활·레저용품": {"l": [["새로닉스", 2], ["오로라", 1]], "d": [["20260820", 12, "오로라", 65.2, "섹터 대표주"], ["20260824", 8, "새로닉스", 62.9, "섹터 대표주"], ["20260831", 11, "새로닉스", 61.7, "섹터 대표주"]]}, "지주·종합상사": {"l": [["에스와이스틸텍", 2], ["스튜디오삼익", 1]], "d": [["20260826", 7, "에스와이스틸텍", 67.0, "섹터 대표주"], ["20260903", 13, "스튜디오삼익", 47.3, "섹터 대표주"], ["20260908", 13, "에스와이스틸텍", 57.3, "섹터 대표주"]]}, "의료기기·진단": {"l": [["리센스메디컬", 2], ["디알텍", 1]], "d": [["20260814", 11, "디알텍", 64.7, "섹터 대표주"], ["20260818", 14, "리센스메디컬", 76.6, "섹터 대표주"], ["20260820", 10, "리센스메디컬", 78.1, "섹터 대표주"]]}, "렌탈·구독서비스": {"l": [["이상네트웍스", 2]], "d": [["20260819", 5, "이상네트웍스", 41.5, "섹터 대표주"], ["20260903", 10, "이상네트웍스", 30.8, "섹터 대표주"]]}, "비철금속": {"l": [["이렘", 1], ["EG", 1]], "d": [["20260813", 8, "이렘", 65.2, "섹터 대표주"], ["20260901", 8, "EG", 41.6, "섹터 대표주"]]}, "전력·유틸리티": {"l": [["그리드위즈", 1], ["에이전트AI", 1]], "d": [["20260825", 7, "그리드위즈", 44.8, "섹터 대표주"], ["20260902", 14, "에이전트AI", 49.6, "섹터 대표주"]]}}}};
 for(const market of ['KOSPI','KOSDAQ']){
-  const update=LEADER_CUMULATIVE_20260909[market];
+  const update=LEADER_CUMULATIVE_20260910[market];
   LEADER_CUMULATIVE_DATA[market].days=update.days;
   LEADER_CUMULATIVE_DATA[market].frequency=update.frequency;
   LEADER_CUMULATIVE_DATA[market].tree=update.tree;
@@ -1805,805 +1751,459 @@ const DAILY_SECTOR_STOCKS = {
     {priority:4,leaderScore:'44.1',name:'민테크',market:'KOSDAQ',state:'후발 강세·거래 부족',kind:'',metric:'+2.44% · 0.7억 · RS +2.93%p · 0.34배 · 수급 0.0'},
     {priority:5,leaderScore:'33.3',name:'아이비젼웍스',market:'KOSDAQ',state:'확산 대기',kind:'',metric:'0.00% · 0.1억 · RS +0.49%p · 0.05배 · 수급 0.0'}]}
 };
-const DAILY_SECTOR_STOCKS_20260909 = {
-  "ksNuclear": {
-    "name": "수소·연료전지",
-    "score": "144.2 · KOSPI 1위 · 1종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "90.4",
-        "name": "두산퓨얼셀",
-        "market": "KOSPI",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+9.44% · 1,686.8억 · RS +8.05%p · 3.38배 · 수급점수 +24.60",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "ksUtility": {
-    "name": "전력·유틸리티",
-    "score": "61.9 · KOSPI 25위 · 4종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "67.5",
-        "name": "SGC에너지",
-        "market": "KOSPI",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+7.25% · 111.9억 · RS +5.85%p · 1.00배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "57.0",
-        "name": "한전산업",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "leader",
-        "metric": "+1.36% · 133.4억 · RS −0.04%p · 1.09배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "53.0",
-        "name": "한국전력",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−1.03% · 897.8억 · RS −2.42%p · 1.33배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "27.8",
-        "name": "지역난방공사",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−1.71% · 6.3억 · RS −3.10%p · 0.57배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "ksConstruction": {
+const DAILY_SECTOR_STOCKS_20260910 = {
+  "ksCenter": {
     "name": "건설",
-    "score": "73.3 · KOSPI 18위 · 8종목 · 9/9 장중 생성본",
+    "score": "시장별 비교순위 2위 · 8종목 · 9/10 14:49 장중",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "60.7",
-        "name": "현대건설",
-        "market": "KOSPI",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+1.67% · 1,191.4억 · RS +0.28%p · 1.22배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "58.0",
-        "name": "대우건설",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−2.60% · 2,986.3억 · RS −4.00%p · 2.05배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "52.8",
+        "leaderScore": "65.8",
         "name": "GS건설",
         "market": "KOSPI",
-        "state": "지수보다 약함",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+4.92% · 489.2억 · RS +4.82%p · 0.63배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "61.6",
+        "name": "동부건설",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+6.13% · 9.1억 · RS +6.02%p · 2.08배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "58.8",
+        "name": "대우건설",
+        "market": "KOSPI",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+0.85% · 592.6억 · RS −0.55%p · 0.73배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.65% · 1,289.5억 · RS +1.54%p · 0.83배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 4,
-        "leaderScore": "40.9",
-        "name": "동부건설",
+        "leaderScore": "49.2",
+        "name": "현대건설",
         "market": "KOSPI",
         "state": "지수보다 약함",
         "kind": "",
-        "metric": "+0.51% · 4.9억 · RS −0.88%p · 1.17배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "−0.82% · 587.3억 · RS −0.93%p · 0.59배 · 수급점수 +0.00",
+        "v2": "9/10 10/60GC-확정 S등급 · 품질필터 미통과 · 15:48 스캐너"
       },
       {
         "priority": 5,
-        "leaderScore": "36.5",
-        "name": "까뮤이앤씨",
+        "leaderScore": "46.2",
+        "name": "자이에스앤디",
         "market": "KOSPI",
-        "state": "지수 대비 강세",
+        "state": "지수 대비 강세·V2 통과",
         "kind": "",
-        "metric": "+1.78% · 2.1억 · RS +0.38%p · 0.14배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.80% · 105.9억 · RS +1.69%p · 0.65배 · 수급점수 +0.00",
+        "v2": "9/10 채널하단터치(R²=0.85) B+등급 · 품질필터 통과 · 15:48 스캐너"
       }
     ]
   },
-  "ksMachine": {
-    "name": "기계·산업장비",
-    "score": "91.8 · KOSPI 9위 · 4종목 · 9/9 장중 생성본",
+  "ksProperty": {
+    "name": "리츠·부동산",
+    "score": "시장별 비교순위 1위 · 2종목 · 9/10 14:49 장중",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "69.0",
-        "name": "두산에너빌리티",
+        "leaderScore": "88.1",
+        "name": "SK디앤디",
         "market": "KOSPI",
         "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+2.46% · 3,435.1억 · RS +1.06%p · 1.39배 · 수급점수 +0.00",
-        "v2": "9/9 가격BB40상단돌파·BB120아래 S등급 · 품질필터 미통과"
+        "metric": "+11.20% · 78.8억 · RS +11.09%p · 3.11배 · 수급점수 +3.50",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 2,
-        "leaderScore": "58.8",
-        "name": "대동",
+        "leaderScore": "46.7",
+        "name": "맵스리얼티",
         "market": "KOSPI",
         "state": "지수 대비 강세",
         "kind": "leader",
-        "metric": "+2.38% · 25.8억 · RS +0.98%p · 0.33배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+0.84% · 5.4억 · RS +0.73%p · 0.78배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      }
+    ]
+  },
+  "ksInsurance": {
+    "name": "보험",
+    "score": "시장별 비교순위 3위 · 9종목 · 9/10 14:49 장중",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "67.8",
+        "name": "한화손해보험",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+6.08% · 83.4억 · RS +5.98%p · 1.04배 · 수급점수 +8.20",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "66.6",
+        "name": "한화생명",
+        "market": "KOSPI",
+        "state": "지수 대비 강세",
+        "kind": "leader",
+        "metric": "+4.55% · 206.8억 · RS +4.45%p · 0.58배 · 수급점수 +0.00",
+        "v2": "9/10 근접(2.0%) C등급 · 품질필터 미통과 · 15:48 스캐너"
       },
       {
         "priority": 3,
-        "leaderScore": "56.3",
-        "name": "현대엘리베이터",
+        "leaderScore": "57.6",
+        "name": "삼성생명",
         "market": "KOSPI",
-        "state": "지수보다 약함",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+1.20% · 43.6억 · RS −0.19%p · 0.40배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.65% · 688.7억 · RS +1.54%p · 0.50배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 4,
         "leaderScore": "53.0",
-        "name": "한신기계",
+        "name": "현대해상",
+        "market": "KOSPI",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+2.45% · 125.6억 · RS +2.34%p · 0.42배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "47.0",
+        "name": "DB손해보험",
         "market": "KOSPI",
         "state": "지수보다 약함",
         "kind": "",
-        "metric": "+0.76% · 17.2억 · RS −0.64%p · 2.57배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "−0.27% · 253.5억 · RS −0.38%p · 0.57배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      }
+    ]
+  },
+  "ksOil": {
+    "name": "정유·석유제품·LPG",
+    "score": "시장별 비교순위 5위 · 7종목 · 9/10 14:49 장중",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "87.0",
+        "name": "한국석유",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+9.61% · 1,001.8억 · RS +9.50%p · 58.56배 · 수급점수 −6.60",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "82.9",
+        "name": "SK가스",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+3.92% · 73.0억 · RS +3.81%p · 2.71배 · 수급점수 +15.90",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "72.9",
+        "name": "SK이노베이션",
+        "market": "KOSPI",
+        "state": "지수보다 약함",
+        "kind": "",
+        "metric": "−0.52% · 4,054.1억 · RS −0.63%p · 2.78배 · 수급점수 +22.90",
+        "v2": "9/10 40/120GC S등급 · 품질필터 미통과 · 15:48 스캐너"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "61.4",
+        "name": "대성산업",
+        "market": "KOSPI",
+        "state": "가격·RS·거래 동반",
+        "kind": "",
+        "metric": "+3.20% · 39.0억 · RS +3.09%p · 10.90배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "55.1",
+        "name": "S-Oil",
+        "market": "KOSPI",
+        "state": "지수보다 약함",
+        "kind": "",
+        "metric": "−7.90% · 1,424.1억 · RS −8.00%p · 2.46배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       }
     ]
   },
   "ksDefense": {
     "name": "방산",
-    "score": "89.9 · KOSPI 10위 · 7종목 · 9/9 장중 생성본",
+    "score": "시장별 비교순위 4위 · 7종목 · 9/10 14:49 장중",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "74.7",
-        "name": "엠앤씨솔루션",
+        "leaderScore": "58.6",
+        "name": "한국항공우주",
         "market": "KOSPI",
-        "state": "가격·RS·거래 동반",
+        "state": "지수 대비 강세",
         "kind": "leader",
-        "metric": "+8.37% · 35.0억 · RS +6.97%p · 1.08배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+3.10% · 290.5억 · RS +2.99%p · 0.61배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 2,
-        "leaderScore": "50.9",
-        "name": "풍산",
+        "leaderScore": "54.6",
+        "name": "엠앤씨솔루션",
         "market": "KOSPI",
-        "state": "가격·RS·거래 동반",
+        "state": "지수 대비 강세",
         "kind": "leader",
-        "metric": "+1.91% · 159.3억 · RS +0.52%p · 1.37배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.10% · 25.4억 · RS +0.99%p · 0.76배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 3,
-        "leaderScore": "44.2",
-        "name": "한국항공우주",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+1.02% · 236.3억 · RS −0.38%p · 0.46배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "42.3",
-        "name": "한화시스템",
+        "leaderScore": "51.4",
+        "name": "LIG디펜스앤에어로스페이스",
         "market": "KOSPI",
         "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+2.01% · 139.9억 · RS +0.61%p · 0.57배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+2.24% · 482.3억 · RS +2.13%p · 0.63배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
-        "priority": 5,
-        "leaderScore": "42.0",
+        "priority": 4,
+        "leaderScore": "49.9",
         "name": "한화에어로스페이스",
         "market": "KOSPI",
         "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+1.95% · 1,029.6억 · RS +0.55%p · 0.56배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "ksAir": {
-    "name": "항공",
-    "score": "34.1 · KOSPI 45위 · 7종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "51.0",
-        "name": "대한항공",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−1.00% · 910.2억 · RS −2.39%p · 1.16배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "44.9",
-        "name": "한진칼",
-        "market": "KOSPI",
-        "state": "지수보다 약함·V2 통과",
-        "kind": "",
-        "metric": "−3.30% · 141.2억 · RS −4.70%p · 1.19배 · 수급점수 +0.00",
-        "v2": "9/9 근접(-13.2%) S등급 · 품질필터 통과"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "41.4",
-        "name": "제주항공",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−2.11% · 16.1억 · RS −3.51%p · 2.02배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "36.3",
-        "name": "진에어",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−5.38% · 13.1억 · RS −6.78%p · 2.06배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+2.01% · 997.0억 · RS +1.90%p · 0.56배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 5,
-        "leaderScore": "35.8",
-        "name": "아시아나항공",
+        "leaderScore": "49.9",
+        "name": "한화시스템",
         "market": "KOSPI",
-        "state": "지수보다 약함",
+        "state": "지수 대비 강세",
         "kind": "",
-        "metric": "−0.13% · 9.4억 · RS −1.52%p · 0.82배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.76% · 145.5억 · RS +1.65%p · 0.62배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       }
     ]
   },
-  "ksVenture": {
-    "name": "증권·벤처금융",
-    "score": "42.2 · KOSPI 38위 · 2종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "36.8",
-        "name": "미래에셋증권",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+0.00% · 199.3억 · RS −1.40%p · 0.44배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "32.3",
-        "name": "다올투자증권",
-        "market": "KOSPI",
-        "state": "지수보다 약함",
-        "kind": "leader",
-        "metric": "+0.13% · 1.1억 · RS −1.27%p · 0.51배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqNuclear": {
-    "name": "수소·연료전지",
-    "score": "117.5 · KOSDAQ 1위 · 4종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "90.0",
-        "name": "범한퓨얼셀",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+29.79% · 56.1억 · RS +27.52%p · 3.26배 · 수급점수 +18.70",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "70.1",
-        "name": "덕양에너젠",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+10.36% · 139.7억 · RS +8.08%p · 26.61배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "65.0",
-        "name": "에스프리즘",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "",
-        "metric": "+6.72% · 16.2억 · RS +4.44%p · 6.78배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "37.1",
-        "name": "제이엔케이글로벌",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+2.62% · 1.4억 · RS +0.34%p · 0.23배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqPower": {
-    "name": "전력기기·전선·전력망",
-    "score": "75.0 · KOSDAQ 10위 · 8종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "77.6",
-        "name": "지엔씨에너지",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반·V2 통과",
-        "kind": "leader",
-        "metric": "+7.81% · 727.8억 · RS +5.54%p · 2.10배 · 수급점수 +11.40",
-        "v2": "9/9 근접(1.5%) C등급 · 품질필터 통과"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "76.7",
-        "name": "보성파워텍",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+3.80% · 292.8억 · RS +1.52%p · 2.26배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "62.1",
-        "name": "서전기전",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−1.39% · 116.8억 · RS −3.67%p · 4.97배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "60.3",
-        "name": "티씨머티리얼즈",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+2.13% · 69.0억 · RS −0.15%p · 1.19배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "58.3",
-        "name": "지투파워",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+0.36% · 503.8억 · RS −1.92%p · 1.44배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqAerospace": {
-    "name": "항공우주·위성",
-    "score": "74.4 · KOSDAQ 11위 · 12종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "53.6",
-        "name": "인텔리안테크",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "leader",
-        "metric": "+3.70% · 32.8억 · RS +1.43%p · 0.76배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "52.1",
-        "name": "스피어",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "leader",
-        "metric": "+3.47% · 123.5억 · RS +1.19%p · 0.68배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "51.5",
-        "name": "비츠로넥스텍",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "",
-        "metric": "+5.56% · 14.6억 · RS +3.28%p · 1.45배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "48.1",
-        "name": "AP위성",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "",
-        "metric": "+2.96% · 6.8억 · RS +0.68%p · 1.68배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "38.9",
-        "name": "루미르",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+2.34% · 2.2억 · RS +0.07%p · 0.69배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqVenture": {
-    "name": "증권·벤처금융",
-    "score": "53.7 · KOSDAQ 21위 · 10종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "66.9",
-        "name": "SV인베스트먼트",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+4.98% · 99.5억 · RS +2.70%p · 1.48배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "65.3",
-        "name": "미래에셋벤처투자",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "leader",
-        "metric": "+7.72% · 119.1억 · RS +5.44%p · 0.66배 · 수급점수 +0.00",
-        "v2": "9/9 Pocket Pivot B등급 · 품질필터 미통과"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "43.1",
-        "name": "아주IB투자",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+3.12% · 41.5억 · RS +0.84%p · 0.27배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "35.4",
-        "name": "DSC인베스트먼트",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+1.48% · 7.5억 · RS −0.79%p · 0.59배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "27.4",
-        "name": "TS인베스트먼트",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−1.59% · 1.3억 · RS −3.86%p · 0.55배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqDefense": {
-    "name": "방산",
-    "score": "91.7 · KOSDAQ 2위 · 5종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "82.6",
-        "name": "우리기술",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+21.25% · 5,412.7억 · RS +18.98%p · 14.45배 · 수급점수 +8.20",
-        "v2": "9/9 가격BB40상단돌파·BB120아래 S등급 · 품질필터 미통과"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "64.4",
-        "name": "파이버프로",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+5.84% · 25.3억 · RS +3.56%p · 1.28배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "39.7",
-        "name": "삼양컴텍",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+2.39% · 9.6억 · RS +0.11%p · 0.86배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "36.2",
-        "name": "그린광학",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+2.66% · 4.5억 · RS +0.39%p · 0.81배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "34.0",
-        "name": "아이쓰리시스템",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+1.70% · 10.3억 · RS −0.58%p · 0.78배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqSemiconductor": {
+  "kqCenter": {
     "name": "반도체",
-    "score": "85.7 · KOSDAQ 4위 · 9종목 · 9/9 장중 생성본",
+    "score": "시장별 비교순위 4위 · 9종목 · 9/10 14:49 장중",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "61.4",
-        "name": "원익IPS",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "leader",
-        "metric": "+3.71% · 738.0억 · RS +1.44%p · 0.87배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "59.9",
+        "leaderScore": "87.6",
         "name": "두산테스나",
         "market": "KOSDAQ",
-        "state": "지수 대비 강세",
+        "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+3.46% · 169.9억 · RS +1.18%p · 0.80배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+7.88% · 705.4억 · RS +6.85%p · 3.30배 · 수급점수 +40.20",
+        "v2": "9/10 Pocket Pivot B등급 · 품질필터 미통과 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "86.6",
+        "name": "티에프이",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+10.49% · 202.9억 · RS +9.47%p · 3.63배 · 수급점수 +27.60",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 3,
-        "leaderScore": "56.4",
-        "name": "에이엘티",
+        "leaderScore": "86.5",
+        "name": "티씨케이",
         "market": "KOSDAQ",
         "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+8.38% · 6.3억 · RS +6.11%p · 1.21배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+8.35% · 638.0억 · RS +7.33%p · 3.73배 · 수급점수 +25.40",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 4,
-        "leaderScore": "55.2",
-        "name": "티에프이",
+        "leaderScore": "73.2",
+        "name": "원익IPS",
         "market": "KOSDAQ",
-        "state": "지수 대비 강세",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+3.09% · 26.3억 · RS +0.81%p · 0.48배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+1.04% · 2,619.8억 · RS +0.02%p · 3.22배 · 수급점수 +46.50",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 5,
-        "leaderScore": "51.7",
+        "leaderScore": "59.5",
         "name": "에프에스티",
         "market": "KOSDAQ",
         "state": "지수 대비 강세",
         "kind": "",
-        "metric": "+2.99% · 25.9억 · RS +0.72%p · 0.54배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      }
-    ]
-  },
-  "kqPlant": {
-    "name": "플랜트·인프라",
-    "score": "75.9 · KOSDAQ 9위 · 8종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "78.7",
-        "name": "한텍",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+6.34% · 50.7억 · RS +4.06%p · 2.43배 · 수급점수 −11.90",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "75.5",
-        "name": "한선엔지니어링",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+6.61% · 79.2억 · RS +4.33%p · 2.33배 · 수급점수 −7.40",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "64.5",
-        "name": "태웅",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "",
-        "metric": "+3.73% · 114.4억 · RS +1.45%p · 1.06배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "61.9",
-        "name": "원일티엔아이",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "",
-        "metric": "+6.72% · 2.9억 · RS +4.44%p · 3.36배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "59.1",
-        "name": "비에이치아이",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+1.37% · 332.0억 · RS −0.91%p · 1.17배 · 수급점수 +0.00",
-        "v2": "9/9 40/60GC S등급 · 품질필터 미통과"
-      }
-    ]
-  },
-  "kqCement": {
-    "name": "건자재·시멘트",
-    "score": "69.8 · KOSDAQ 12위 · 6종목 · 9/9 장중 생성본",
-    "stocks": [
-      {
-        "priority": 1,
-        "leaderScore": "80.0",
-        "name": "강동씨앤엘",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+8.48% · 197.5억 · RS +6.20%p · 2.03배 · 수급점수 +15.20",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "67.9",
-        "name": "서산",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "leader",
-        "metric": "+1.95% · 1,222.1억 · RS −0.32%p · 2.77배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 3,
-        "leaderScore": "35.1",
-        "name": "삼표시멘트",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "−0.70% · 26.2억 · RS −2.97%p · 0.94배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 4,
-        "leaderScore": "31.0",
-        "name": "동화기업",
-        "market": "KOSDAQ",
-        "state": "지수 대비 강세",
-        "kind": "",
-        "metric": "+4.02% · 6.2억 · RS +1.75%p · 0.48배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
-      },
-      {
-        "priority": 5,
-        "leaderScore": "29.0",
-        "name": "아세아텍",
-        "market": "KOSDAQ",
-        "state": "지수보다 약함",
-        "kind": "",
-        "metric": "+0.95% · 0.0억 · RS −1.33%p · 0.02배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+2.52% · 21.9억 · RS +1.50%p · 0.46배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       }
     ]
   },
   "kqRobot": {
     "name": "로봇·자동화",
-    "score": "62.9 · KOSDAQ 16위 · 11종목 · 9/9 장중 생성본",
+    "score": "시장별 비교순위 5위 · 11종목 · 9/10 14:49 장중",
     "stocks": [
       {
         "priority": 1,
-        "leaderScore": "82.0",
+        "leaderScore": "75.7",
+        "name": "에스피지",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+5.04% · 751.7억 · RS +4.02%p · 1.78배 · 수급점수 +21.20",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "74.5",
         "name": "로보티즈",
         "market": "KOSDAQ",
         "state": "가격·RS·거래 동반",
         "kind": "leader",
-        "metric": "+9.15% · 1,967.4억 · RS +6.88%p · 2.01배 · 수급점수 +39.30",
-        "v2": "9/9 10/60GC-초기 S등급 · 품질필터 미통과"
-      },
-      {
-        "priority": 2,
-        "leaderScore": "66.2",
-        "name": "TPC로보틱스",
-        "market": "KOSDAQ",
-        "state": "가격·RS·거래 동반",
-        "kind": "leader",
-        "metric": "+2.78% · 70.5억 · RS +0.50%p · 1.84배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+3.55% · 1,991.0억 · RS +2.53%p · 1.91배 · 수급점수 +36.00",
+        "v2": "9/10 가격BB40상단돌파·BB120아래 S등급 · 품질필터 미통과 · 15:48 스캐너"
       },
       {
         "priority": 3,
-        "leaderScore": "47.7",
-        "name": "레인보우로보틱스",
+        "leaderScore": "70.4",
+        "name": "TPC로보틱스",
         "market": "KOSDAQ",
         "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+2.89% · 465.8억 · RS +0.61%p · 1.15배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+2.48% · 227.1억 · RS +1.46%p · 5.45배 · 수급점수 −25.90",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 4,
-        "leaderScore": "41.6",
-        "name": "에스피지",
+        "leaderScore": "66.0",
+        "name": "씨메스로보틱스",
         "market": "KOSDAQ",
-        "state": "지수보다 약함",
+        "state": "가격·RS·거래 동반",
         "kind": "",
-        "metric": "+2.19% · 218.1억 · RS −0.09%p · 0.42배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "+12.09% · 191.5억 · RS +11.06%p · 31.81배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       },
       {
         "priority": 5,
-        "leaderScore": "41.0",
-        "name": "하이젠알앤엠",
+        "leaderScore": "52.5",
+        "name": "뉴로메카",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+2.58% · 58.6억 · RS +1.56%p · 0.71배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      }
+    ]
+  },
+  "kqOil": {
+    "name": "정유·석유제품·LPG",
+    "score": "시장별 비교순위 1위 · 1종목 · 9/10 14:49 장중",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "87.9",
+        "name": "흥구석유",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+18.28% · 3,087.9억 · RS +17.26%p · 13.63배 · 수급점수 +4.90",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      }
+    ]
+  },
+  "kqGas": {
+    "name": "가스·LNG·도시가스",
+    "score": "시장별 비교순위 3위 · 1종목 · 9/10 14:49 장중",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "60.3",
+        "name": "지에스이",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+4.87% · 83.4억 · RS +3.85%p · 42.08배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      }
+    ]
+  },
+  "kqMachine": {
+    "name": "기계·산업장비",
+    "score": "시장별 비교순위 19위 · 8종목 · 9/10 14:49 장중",
+    "stocks": [
+      {
+        "priority": 1,
+        "leaderScore": "51.4",
+        "name": "삼미금속",
         "market": "KOSDAQ",
         "state": "지수보다 약함",
         "kind": "",
-        "metric": "−5.29% · 62.9억 · RS −7.56%p · 1.28배 · 수급점수 +0.00",
-        "v2": "9/9 교차신호 없음"
+        "metric": "−5.53% · 706.6억 · RS −6.55%p · 2.43배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 2,
+        "leaderScore": "44.7",
+        "name": "코메론",
+        "market": "KOSDAQ",
+        "state": "가격·RS·거래 동반",
+        "kind": "leader",
+        "metric": "+2.43% · 8.0억 · RS +1.41%p · 1.26배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 3,
+        "leaderScore": "39.6",
+        "name": "엔비알모션",
+        "market": "KOSDAQ",
+        "state": "지수 대비 강세",
+        "kind": "",
+        "metric": "+3.39% · 7.0억 · RS +2.37%p · 0.39배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 4,
+        "leaderScore": "36.0",
+        "name": "에너토크",
+        "market": "KOSDAQ",
+        "state": "지수보다 약함",
+        "kind": "",
+        "metric": "+0.00% · 5.0억 · RS −1.02%p · 0.79배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
+      },
+      {
+        "priority": 5,
+        "leaderScore": "33.7",
+        "name": "코윈테크",
+        "market": "KOSDAQ",
+        "state": "지수보다 약함",
+        "kind": "",
+        "metric": "+0.20% · 1.5억 · RS −0.82%p · 0.28배 · 수급점수 +0.00",
+        "v2": "9/10 교차신호 없음 · 15:48 스캐너"
       }
     ]
   }
 };
-const DAILY_SECTOR_LINKS_20260909={"ksNuclear":["ksUtility","ksConstruction","ksMachine","ksDefense","ksAir"],"ksUtility":["ksNuclear"],"ksConstruction":["ksNuclear"],"ksMachine":["ksNuclear"],"ksDefense":["ksNuclear"],"ksAir":["ksNuclear"],"kqNuclear":["kqPower","kqAerospace","kqDefense","kqSemiconductor","kqPlant"],"kqPower":["kqNuclear"],"kqAerospace":["kqNuclear"],"kqDefense":["kqNuclear"],"kqSemiconductor":["kqNuclear"],"kqPlant":["kqNuclear"]};
+const DAILY_SECTOR_LINKS_20260910={"ksCenter": ["ksProperty", "ksInsurance", "ksOil", "ksDefense"], "ksProperty": ["ksCenter"], "ksInsurance": ["ksCenter"], "ksOil": ["ksCenter"], "ksDefense": ["ksCenter"], "kqCenter": ["kqRobot", "kqOil", "kqGas", "kqMachine"], "kqRobot": ["kqCenter"], "kqOil": ["kqCenter"], "kqGas": ["kqCenter"], "kqMachine": ["kqCenter"]};
 let dailyLeaderView='all';
 let dailySelectedSector='';
 let dailySelectedMarket='';
@@ -2611,7 +2211,7 @@ function renderDailySectorDetail(){
   const host=document.getElementById('dailySectorDetail');
   if(!host)return;
   if(!dailySelectedSector){host.innerHTML='<div class="daily-sector-detail-empty">산업군을 누르면 해당 종목이 여기에 표시됩니다.</div>';return;}
-  const sector=DAILY_SECTOR_STOCKS_20260909[dailySelectedSector];
+  const sector=DAILY_SECTOR_STOCKS_20260910[dailySelectedSector];
   const effectiveMarket=dailyLeaderView==='all'?dailySelectedMarket:dailyLeaderView;
   const stocks=sector.stocks.filter(s=>!effectiveMarket||s.market===effectiveMarket);
   host.innerHTML=`<div class="daily-sector-detail-head"><b>${escapeHtml(sector.name)} · 섹터 주도점수 우선순위</b><span>${escapeHtml(sector.score)} · ${effectiveMarket||'통합'} · V2는 보조근거</span></div>`+
@@ -2620,7 +2220,7 @@ function renderDailySectorDetail(){
 function selectDailySector(sectorKey,market){
   dailySelectedSector=sectorKey;
   dailySelectedMarket=market||'';
-  const related=new Set([sectorKey,...(DAILY_SECTOR_LINKS_20260909[sectorKey]||[])]);
+  const related=new Set([sectorKey,...(DAILY_SECTOR_LINKS_20260910[sectorKey]||[])]);
   document.querySelectorAll('[data-eco-sector]').forEach(node=>{
     const nodeMarket=node.dataset.nodeMarket||node.closest('[data-eco-market]')?.dataset.ecoMarket||'';
     const sameMarket=!market||nodeMarket===market;
@@ -2655,8 +2255,8 @@ function setDailyLeaderView(view){
   ['dailyLeaderConfirmed','dailyLeaderConfirmedNote','dailyLeaderEmerging','dailyLeaderEmergingNote','dailyLeaderWatch','dailyLeaderWatchNote'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=s[i];});
   const detail=document.getElementById('dailyLeaderDetail');
   if(detail) detail.textContent=`${view==='all'?'통합':view} 기준 · 종목을 누르면 시장 주도주 판정 근거가 표시됩니다.`;
-  if(view==='KOSPI')selectDailySector('ksNuclear','KOSPI');
-  else if(view==='KOSDAQ')selectDailySector('kqNuclear','KOSDAQ');
+  if(view==='KOSPI')selectDailySector('ksCenter','KOSPI');
+  else if(view==='KOSDAQ')selectDailySector('kqCenter','KOSDAQ');
   else{
     dailySelectedSector='';dailySelectedMarket='';
     document.querySelectorAll('[data-eco-sector],[data-eco-link]').forEach(el=>el.classList.remove('selected','active','eco-dim'));
