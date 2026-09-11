@@ -11,6 +11,7 @@ async function renderFuturesIndexContext(data) {
   const num = value => value == null || value === '' ? '확인 불가' : Number(value).toLocaleString('ko-KR', {maximumFractionDigits:2});
   const signed = value => value == null || value === '' ? '확인 불가' : (Number(value)>0?'+':'')+num(value);
   const provisional = data.data_status === 'PROVISIONAL_PRE_CLOSE';
+  const mixedTiming = data.data_status === 'CLOSE_PRICE_WITH_PRE_CLOSE_FLOW';
   const referenceLabel = provisional ? '마감 전 잠정 기준가' : '정규장 종가';
   const asset = file => {
     if (!/^[a-zA-Z0-9_.-]+$/.test(file)) throw new Error('선물 자료 파일명 오류');
@@ -22,7 +23,7 @@ async function renderFuturesIndexContext(data) {
   const sourceCharts = data.charts.filter(x=>x.kind!=='price');
   panel.innerHTML = `<div class="futures-review cash-review">
     <div class="section-title">선물옵션 매물대 · 선물 가격구조와 누적 포지션 중심</div>
-    <div id="supplyMeta" class="report-meta">기준일 ${esc(data.as_of)} · ${esc(data.futures_contract)} / ${esc(data.contract_code)} · ${referenceLabel} ${num(data.current_price)}${provisional ? ` · ${esc(data.capture_window)} 수집 · 종가 미확정` : ''} · ${data.session_references.overnight?.snapshot_price != null ? `야간 보관 화면 ${num(data.session_references.overnight.snapshot_price)} (${esc(data.session_references.overnight.snapshot_time)})` : '이후 야간 시세 미반영'} · 실시간 아님</div>
+    <div id="supplyMeta" class="report-meta">기준일 ${esc(data.as_of)} · ${esc(data.futures_contract)} / ${esc(data.contract_code)} · ${referenceLabel} ${num(data.current_price)}${provisional ? ` · ${esc(data.capture_window)} 수집 · 종가 미확정` : mixedTiming ? ' · 가격 확정 / 수급·OI는 마감 전 잠정' : ''} · ${data.session_references.overnight?.snapshot_price != null ? `야간 보관 화면 ${num(data.session_references.overnight.snapshot_price)} (${esc(data.session_references.overnight.snapshot_time)})` : '이후 야간 시세 미반영'} · 실시간 아님</div>
     <section class="chart-card cash-card" id="supplyOverallAssessment">${renderSupplyAssessment(data.overall_assessment, data.current_price, data.display_reference_basis)}</section>
     <div id="supplyPositionInference">${render0791PositionInference(data.hts_0791_position_inference)}</div>
     <section class="chart-card cash-card" id="futuresFlow"><h3>외국인·기관 선물 순매매 · 최신 → 3일 → 5일 → 누적</h3>
@@ -30,8 +31,8 @@ async function renderFuturesIndexContext(data) {
       <p class="cash-note">${esc(data.derivatives_evidence.scope_note)}</p>
       <h3>콜·풋 당일 순매매 · 계약수와 금액을 구분</h3><div class="cash-table-wrap"><table class="cash-table"><thead><tr><th>주체</th><th>상품</th><th>순매매 계약</th><th>순매매 금액(억원)</th></tr></thead><tbody>${data.derivatives_evidence.daily_options.map(x=>`<tr><th>${esc(x.investor)}</th><td>${esc(x.market)}</td><td>${signed(x.quantity)}</td><td>${signed(x.amount_100m_krw)}</td></tr>`).join('')}</tbody></table></div><p>${esc(data.options_interpretation)}</p>
     </section>
-    <section class="chart-card cash-card" id="futuresOi"><h3>거래량·미결제약정 · 월물별 분리</h3><div class="cash-table-wrap"><table class="cash-table"><thead><tr><th>월물 / 코드</th><th>${referenceLabel}</th><th>거래량</th><th>미결제약정</th><th>OI 전일 대비</th><th>대조 상태</th></tr></thead><tbody>${data.contract_observations.map(x=>`<tr><th>${esc(x.contract)}<small>${esc(x.code)}</small></th><td>${num(provisional ? x.snapshot_price : x.close)}</td><td>${num(x.volume)}</td><td>${num(x.oi)}</td><td>${signed(x.oi_change)}</td><td>${esc(x.status)}</td></tr>`).join('')}</tbody></table></div><p>${esc(data.oi_interpretation)}</p></section>
-    <section class="chart-card cash-card"><h3>선물 파동·매물대 해석</h3><p>${esc(data.futures_structure.daily)}</p><p>${esc(data.futures_structure.intraday)}</p><p>${esc(data.futures_structure.profile)}</p><p class="cash-note">${esc(data.futures_structure.wave_limit)}</p></section>
+    <section class="chart-card cash-card" id="futuresOi"><h3>거래량·미결제약정 · 월물별 분리</h3><div class="cash-table-wrap"><table class="cash-table"><thead><tr><th>월물 / 코드</th><th>관측가격 · 기준시각</th><th>거래량</th><th>미결제약정</th><th>OI 전일 대비</th><th>대조 상태</th></tr></thead><tbody>${data.contract_observations.map(x=>`<tr><th>${esc(x.contract)}<small>${esc(x.code)}</small></th><td>${num(x.is_final === false ? x.snapshot_price : x.close)}<small>${esc(x.captured_at || (x.is_final === false ? '잠정' : '정규장 종가'))}</small></td><td>${num(x.volume)}</td><td>${num(x.oi)}</td><td>${signed(x.oi_change)}</td><td>${esc(x.status)}</td></tr>`).join('')}</tbody></table></div><p>${esc(data.oi_interpretation)}</p></section>
+    <section class="chart-card cash-card" id="futuresStructure"><h3>선물 파동·매물대 해석</h3>${data.futures_structure.monthly ? `<p>${esc(data.futures_structure.monthly)}</p><p>${esc(data.futures_structure.weekly)}</p>` : ''}<p>${esc(data.futures_structure.daily)}</p><p>${esc(data.futures_structure.intraday)}</p><p>${esc(data.futures_structure.profile)}</p><p class="cash-note">${esc(data.futures_structure.wave_limit)}</p></section>
     ${data.charts.filter(x=>x.kind==='price').map(chart).join('')}
     <section class="chart-card cash-card"><h3>지수 보조 확인 · 선물 뷰를 대체하지 않음</h3><p>${esc(data.index_confirmation)}</p><p class="cash-note">코스피는 KOSPI200 선물의 숫자 환산표가 아닙니다. 해외 현물 지수와 해외 선물도 구분해요.</p></section>
     <details class="chart-card cash-card cash-details" id="supplyIndexContext"><summary>코스피·나스닥·필반·니케이·다우 · 월봉 / 주봉 / 일봉 / 10분봉 보조 분석 펼치기</summary><div id="supplyIndexContextBody"><p>보조 자료 확인 중…</p></div></details>

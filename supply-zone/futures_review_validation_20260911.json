@@ -1,6 +1,6 @@
 {
   "trade_date": "20260911",
-  "status": "REVIEWED_PROVISIONAL_PRE_CLOSE",
+  "status": "PASS_PRICE_WEEKLY_CONTEXT_WITH_PRE_CLOSE_FLOW",
   "ready_for_editorial_review": true,
   "user_authorized_provisional": true,
   "is_final": false,
@@ -42,8 +42,8 @@
   "missing_recent_20_sessions": [
     "2026-08-14"
   ],
-  "price_confirmed_days": 3,
-  "price_provisional_days": 1,
+  "price_confirmed_days": 666,
+  "price_provisional_days": 0,
   "capture_start": "2026-09-11 15:23:20",
   "capture_end": "2026-09-11 15:37:22",
   "source_generated_at": "2026-09-11 15:37:22",
@@ -98,74 +98,42 @@
     }
   ],
   "index_context": {
-    "status": "OLDER_DATES_EXCLUDED",
-    "can_use_for_current_decision": false,
-    "checks": [
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_context_runner\\market_context_run_summary_latest.json",
-        "sha256": "29e6ab844dc4440ca79bceb3c1c7fe79584669b96c0761d39eff95dfd17464b3",
-        "trade_date": "20260909",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_context_runner\\validation_latest.json",
-        "sha256": "cf2b05b314c9d7e1fc37b2f4baf65c649af1b8d10c128c1ca545ebebdcf35c01",
-        "trade_date": "20260909",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\latest.json",
-        "sha256": "1731511713a1e4396efcaefadfdc41090204ae740094a3789823f5105a6d7730",
-        "trade_date": "20260910",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\validation_latest.json",
-        "sha256": "fc95d27e61ca1a2c866ba926b04dc82be24425b72584233833e99fca0be8456c",
-        "trade_date": "20260910",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\latest.json",
-        "sha256": "740c69a4d1764eb1bf251a41dfc1b7cc4720776e68ac57470715cc162b54e024",
-        "trade_date": "20260910",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\validation_latest.json",
-        "sha256": "52542e881ca697583d6355cd8418b441de9bcee462fa87edc72412a94a3d57af",
-        "trade_date": "20260910",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      },
-      {
-        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_direction_model\\index_direction_research_latest.json",
-        "sha256": "d2f5c61258b1e5d8020eb13379c301a99e0a902854efbc7eaeb8a3ceb167a977",
-        "trade_date": "20260910",
-        "current_use": false,
-        "reason": "9/11 동시점 자료 아님. 오늘 방향 확인에서 제외; 과거 자료는 보존."
-      }
-    ]
+    "status": "VALIDATED_DATE_ALIGNED_CHART_CONTEXT",
+    "as_of": "2026-09-11",
+    "domestic_session": "2026-09-11",
+    "us_session": "2026-09-10",
+    "context_file": "cash_context_20260911.json"
   },
   "chart_sources": [
     {
-      "file": "futures_dec_structure_20260911.png",
-      "title": "12월물 고저·현재값 구조 지도 · 오늘은 잠정",
+      "file": "futures_dec_weekly_daily_20260911.png",
+      "title": "12월물 실제 주봉·일봉 · 9/11 완료",
+      "interpretation": "주봉: 박스 안 반등·중립입니다. 9/7~9/11 완료 주봉은 시가 1,093.60 / 고가 1,140.60 / 저가 1,071.35 / 종가 1,088.30입니다. 전주 종가 대비 +2.77%지만 시가보다 5.30 낮고 위꼬리가 47.00포인트여서 강한 상승 주봉은 아닙니다. 5주선 1,085.25·10주선 1,085.85는 근처에서 지지 후보, 20주선 1,192.64는 위에 있습니다. 이번 주 고점 1,140.60~8/18 고점 1,149.85를 주봉 종가로 돌파하고 되돌림에서도 지켜야 주봉 회복을 강화합니다. 다음 확인선은 당시 20주선입니다. 1,071.35 이탈은 이번 주 반등 약화, 1,009.80~1,011.60은 8/19·8/25·9/3 반복 저점대이며 주봉 마감 이탈·재저항이면 박스 반등 가설을 중단합니다. 과거 원월물 거래가 적어 구조상 중요도와 실제 체결 매물 강도는 구별합니다. 일봉: 큰 반등 안의 단기 조정입니다. 확정 종가 1,088.30은 전일 1,112.00보다 23.70포인트(-2.13%) 낮습니다. 고점은 9/8 1,140.60 → 9/9 1,130.20 → 9/10 1,120.85 → 9/11 1,098.65로 낮아졌고 5일선 1,106.10 아래입니다. 반면 10일선 1,080.03·20일선 1,078.06 위여서 중기 반등 전체가 무효는 아닙니다. 1,098.65~1,102.50을 일봉 마감으로 회복하고 재지지하면 조정 완화, 이후 1,106.10(동적 5일선)과 1,119~1,120.85를 순서대로 확인합니다. 단기 고점 하락만으로 주봉 하락 재개를 확정하지 않습니다.",
       "kind": "price",
-      "interpretation": "일봉: 큰 반등 안의 조정·중립-하방입니다. 12월물 고점이 9/8 1,140.60 → 9/9 1,130.20 → 9/10 1,120.85 → 9/11 수집 시점 1,098.65로 낮아졌습니다. 1,089.55는 전일 저점 1,090.20 바로 아래입니다. 반면 5605 일봉의 전환선9 1,075.30·기준선26 1,061.38 위라 큰 반등 가설 전체를 무효화하지 않습니다. 오늘 일봉은 미완료이며 1,098.65~1,102.50 회복 전에는 일봉 상승 재개로 올리지 않습니다. 1,061.38도 확정 종가 이탈·다음 반등 저항 전환 때 반등 가설을 추가 하향합니다.",
+      "source_note": "키움 OpenAPI opt50030 · 같은 A016C000 일봉 재표본화 / 과거 원월물 0거래량·비유동 구간 주의",
+      "sha256": "318da15def89675832c522504d77fe4b698a0aadf21361cbf8d30f562fd4c5ce"
+    },
+    {
+      "file": "futures_dec_monthly_20260911.png",
+      "title": "12월물 월봉 · 9월은 진행 중",
+      "interpretation": "월봉: 장기 상승 뒤 6월 고점에서 큰 조정을 받은 상태입니다. 7월 급락 이후 8월 반등과 9월 진행봉을 새 상승 5파 확정으로 보지 않습니다. 9월은 진행 중이므로 완료 월봉 판단은 8월까지입니다. 같은 F202612 일봉 666개로 직접 재표본화했고 9월물·연속선물은 섞지 않았습니다.",
+      "kind": "price",
+      "source_note": "키움 OpenAPI opt50030 · 같은 A016C000 일봉 재표본화 / 과거 원월물 0거래량·비유동 구간 주의",
+      "sha256": "6109a35fd39ffeb61d1ed14faffc0437983a39edbd29e489f3dfc62bb86cdb02"
+    },
+    {
+      "file": "futures_dec_structure_20260911.png",
+      "title": "마감 전 보존 화면 · 12월물 고저·현재값 구조 지도 · 오늘은 잠정",
+      "kind": "source",
+      "interpretation": "아래는 15시대 잠정 분석에 사용한 보존 자료입니다. 현재 완료 일봉·주봉 판단은 위 API 차트를 우선합니다. 일봉: 큰 반등 안의 조정·중립-하방입니다. 12월물 고점이 9/8 1,140.60 → 9/9 1,130.20 → 9/10 1,120.85 → 9/11 수집 시점 1,098.65로 낮아졌습니다. 1,089.55는 전일 저점 1,090.20 바로 아래입니다. 반면 5605 일봉의 전환선9 1,075.30·기준선26 1,061.38 위라 큰 반등 가설 전체를 무효화하지 않습니다. 오늘 일봉은 미완료이며 1,098.65~1,102.50 회복 전에는 일봉 상승 재개로 올리지 않습니다. 1,061.38도 확정 종가 이탈·다음 반등 저항 전환 때 반등 가설을 추가 하향합니다.",
       "source_note": "3일 확정 HLC + 1일 마감 전 관측. 시가·봉 몸통은 만들지 않음.",
       "sha256": "85b908d17c374b4bd55d20e36437b51d06791ad5c16cd912fed388c9e1ee53a7"
     },
     {
       "file": "futures_daily_20260911.png",
-      "title": "5605 일봉120 · 오늘 봉 미완료",
-      "kind": "price",
-      "interpretation": "일봉: 큰 반등 안의 조정·중립-하방입니다. 12월물 고점이 9/8 1,140.60 → 9/9 1,130.20 → 9/10 1,120.85 → 9/11 수집 시점 1,098.65로 낮아졌습니다. 1,089.55는 전일 저점 1,090.20 바로 아래입니다. 반면 5605 일봉의 전환선9 1,075.30·기준선26 1,061.38 위라 큰 반등 가설 전체를 무효화하지 않습니다. 오늘 일봉은 미완료이며 1,098.65~1,102.50 회복 전에는 일봉 상승 재개로 올리지 않습니다. 1,061.38도 확정 종가 이탈·다음 반등 저항 전환 때 반등 가설을 추가 하향합니다. 일봉 화면의 넓은 거래량 구간은 1,069.48~1,131.43, 표시 264,567·94.4%입니다. 120봉·10개 구간 설정에 따른 화면 집계이며 9/10의 261봉 집계와 설정이 달라 비율 증감을 자금 유입으로 비교하지 않습니다. 넓은 구간 양 끝을 정밀 강지지·강저항으로 쓰지 않습니다. 보완 0794는 금액·천원·누적·순매수 기준입니다. 외국인 콜 1,095 행사가 +354,705천원, 1,100 +245,550천원이 보이지만 이는 실제 잔고·감마벽·선물 1,095 지지의 증명이 아닙니다. 옵션 만기와 정확 델타가 화면에 없어 선물 12월물 잔고로 합산하지 않았습니다.",
+      "title": "마감 전 보존 화면 · 5605 일봉120 · 오늘 봉 미완료",
+      "kind": "source",
+      "interpretation": "아래는 15시대 잠정 분석에 사용한 보존 자료입니다. 현재 완료 일봉·주봉 판단은 위 API 차트를 우선합니다. 일봉: 큰 반등 안의 조정·중립-하방입니다. 12월물 고점이 9/8 1,140.60 → 9/9 1,130.20 → 9/10 1,120.85 → 9/11 수집 시점 1,098.65로 낮아졌습니다. 1,089.55는 전일 저점 1,090.20 바로 아래입니다. 반면 5605 일봉의 전환선9 1,075.30·기준선26 1,061.38 위라 큰 반등 가설 전체를 무효화하지 않습니다. 오늘 일봉은 미완료이며 1,098.65~1,102.50 회복 전에는 일봉 상승 재개로 올리지 않습니다. 1,061.38도 확정 종가 이탈·다음 반등 저항 전환 때 반등 가설을 추가 하향합니다. 일봉 화면의 넓은 거래량 구간은 1,069.48~1,131.43, 표시 264,567·94.4%입니다. 120봉·10개 구간 설정에 따른 화면 집계이며 9/10의 261봉 집계와 설정이 달라 비율 증감을 자금 유입으로 비교하지 않습니다. 넓은 구간 양 끝을 정밀 강지지·강저항으로 쓰지 않습니다. 보완 0794는 금액·천원·누적·순매수 기준입니다. 외국인 콜 1,095 행사가 +354,705천원, 1,100 +245,550천원이 보이지만 이는 실제 잔고·감마벽·선물 1,095 지지의 증명이 아닙니다. 옵션 만기와 정확 델타가 화면에 없어 선물 12월물 잔고로 합산하지 않았습니다.",
       "source_note": "2026-09-11 15:36:46 · 원본 이미지 변경 없음 · 확정 종가 자료 아님",
       "source_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260911\\5605_KOSPI200최근월_일봉_20260911.png",
       "sha256": "ceb55d4acbdbf7e1dcde1f98861323a8494f6093280881c7078b3feee6021ccf"
@@ -298,16 +266,248 @@
     }
   ],
   "limitations": [
-    "사용자 승인으로 마감 전 자료를 대용한 잠정 분석입니다. 수집 15:23:20~15:37:22, 정규장 종료 15:45 이전. 실제 종가·최종 수급과 차이는 검증하지 않았습니다.",
+    "가격 일봉·이번 주봉은 마감 후 17:27 API 수집으로 확정. 수급·OI·원본 분봉은 15:23~15:37 잠정 자료이고 전체 확정 EOD로 승격하지 않았습니다.",
     "원본 71장·검증 경고 0, 5605 일봉120/10분봉600. 2단계 OCR 생성 후 9월물 고정 가격 저장기가 12월물을 거부하여 자동 파이프라인 중단. 3~7단계 완료로 표시하지 않습니다.",
-    "가격 1,089.55·고가1,098.65·저가1,071.35·거래량101,195·OI129,110은 15:35:29 저장 0441 직접 판독값입니다. 화면 그래프의 15:30 표시는 차트 주기이며 수집 시각과 다릅니다.",
     "원시 0787 54행을 원본 6장과 대조, 기타법인 콜 금액 -4→-2 한 곳 정정. 원본 CSV·bridge와 과거 확정 장부는 수정하지 않았습니다. 금액은 화면 반올림값입니다.",
-    "12월물은 확정 HLC3일+오늘 잠정 관측1일. 오늘 close는 null, snapshot_price를 별도 저장합니다. 오늘 수급도 is_final=false로 확정 장부와 분리했습니다.",
     "전체 월물 59관측일 중 8/19 이후 연속18관측일(오늘 잠정 포함). 최근20거래일 누락 ['2026-08-14']. 미확보 기간을 보간하지 않았습니다.",
     "0794 사용자 보완은 행사가·금액/천원 표시를 확인했으나 촬영 시각과 옵션 만기는 화면에 없습니다. 0791·0794의 수량·금액·손익을 실제 잔고·평균단가와 혼동하지 않습니다.",
-    "월·주봉 확정 수치 원천, 전체 10분봉 OHLCV, ADX/DI·실제 세션 VWAP·정확 델타·당일 정확 IV/스큐가 없습니다. 해당 지표를 계산하거나 적중률을 향상시켰다고 말하지 않습니다.",
-    "국내/해외 다중 시간대·지수 연구 최신은9/10, 시장환경 통합층은9/9. 9/11 당일 확인으로 사용하지 않았습니다. 과거 ADX 탐색26/36과 독립검증30/66 실패를 포함한 연구는 운영 신호로 승격하지 않았습니다.",
-    "9월물 가격·누적을 새 12월물 포지션에 합산하지 않았습니다. 전체 월물 수급의 3일·5일 합계는 만기 혼합 활동임을 명시했습니다."
+    "9월물 가격·누적을 새 12월물 포지션에 합산하지 않았습니다. 전체 월물 수급의 3일·5일 합계는 만기 혼합 활동임을 명시했습니다.",
+    "개별 F202612 일봉 2023-12-15~2026-09-11 666개, 중복·거래일 누락 0. 전체 144주 중 초기 부분 주를 뺀 143주를 완료 구조로 사용. 9월 월봉은 진행 중입니다.",
+    "과거 원월물 일봉 394일이 거래량 0, 최근 120일 중 20일도 0입니다. 가격 구조는 확인하되 과거 봉의 매물 신뢰도와 롤오버 거래량 증가를 일반 활성 월물과 똑같이 해석하지 않습니다.",
+    "국내·일본 9/11, 미국 9/10 완료 세션을 한국 9/11 맥락으로 연결했습니다. 미국 이번 주봉은 아직 진행 중이라 9/4 완료 주봉까지만 확정 판단했습니다.",
+    "미국 지수·일본 분봉은 Yahoo 지연 보조 원천입니다. 니케이 일봉만 공식 Nikkei EOD와 독립 대조했습니다. 코스피는 ka20006·ka20005·별도 ka20001이 일치하며 기존 WISE 파일은 갱신하지 않았습니다.",
+    "시장환경 통합 연구 9/9와 지수 방향 연구 9/10은 현재 판단에서 제외했습니다. ADX 탐색26/36과 독립검증30/66 실패는 연구 전용이고 운영 승률이 아닙니다.",
+    "선물 전체 10분봉 OHLCV·실제 세션 VWAP·옵션 정확 델타/IV·실제 보유잔고는 이번 보완에서 확보하지 않았습니다. 지표 수 증가나 주봉 확보를 예측 정확도 향상 증명으로 보지 않습니다.",
+    "개별 12월물 원월물 시기의 거래 부족·0거래량 행을 삭제하지 않음. 과거 거래량 급증은 롤오버와 분리 불가.",
+    "초기 부분 주·월봉은 장기 패턴 해석에서 제외. 9월 월봉 진행 중, 9/11 주봉은 정규장 완료 일봉 5개 집계.",
+    "TR에 세션 라벨 없음. 9/8~9/10 저장 0441 고저종가·거래량 일치와 9/11 정규장 고저 일치, 18시 야간 이전 수집으로 정규장 일봉과 대응. 거래소 독립 가격 검증 아님."
   ],
-  "review_script_sha256": "708ee96a21c6d34f604a42f90ea6693a5b51c968394c37891f1d69570403f6bc"
+  "review_script_sha256": "a90aeb3ec4de8d31e7942d2084690a6924d58b5c6c276c494d9b1f51f458adb2",
+  "price_final": true,
+  "flow_final": false,
+  "oi_final": false,
+  "supplemental_recovery": {
+    "whole_eod_rerun": false,
+    "screen_control": false,
+    "weekly": {
+      "daily_rows": 666,
+      "first": "2023-12-15",
+      "last": "2026-09-11",
+      "weekly_rows": 144,
+      "completed_weekly_rows_excluding_initial_partial": 143,
+      "missing_exchange_days": 0,
+      "unexpected_dates": 0,
+      "zero_volume_days": 394,
+      "zero_volume_recent120": 20,
+      "weekly_ohlcv": {
+        "open": 1093.6,
+        "high": 1140.6,
+        "low": 1071.35,
+        "close": 1088.3,
+        "volume": 222158.0
+      },
+      "weekly_change_pct": 2.7716,
+      "body_change": -5.3,
+      "upper_wick": 47.0,
+      "weekly_ma": {
+        "5": 1085.25,
+        "10": 1085.845,
+        "20": 1192.6375
+      },
+      "daily_ma": {
+        "5": 1106.1,
+        "10": 1080.025,
+        "20": 1078.055,
+        "60": 1142.0425
+      },
+      "raw": "C:\\Users\\skylo\\Desktop\\restapi\\output\\weekly_context_recovery_20260911\\openapi_172717\\daily_raw.json",
+      "raw_sha256": "eb4ef527c7f5dc06c97ad92a355fbce270e71e6ef6a46b3ee22c53616f0a03a9",
+      "collected_at": "2026-09-11T17:27:28.029862",
+      "contract": "F202612",
+      "limitations": [
+        "개별 12월물 원월물 시기의 거래 부족·0거래량 행을 삭제하지 않음. 과거 거래량 급증은 롤오버와 분리 불가.",
+        "초기 부분 주·월봉은 장기 패턴 해석에서 제외. 9월 월봉 진행 중, 9/11 주봉은 정규장 완료 일봉 5개 집계.",
+        "TR에 세션 라벨 없음. 9/8~9/10 저장 0441 고저종가·거래량 일치와 9/11 정규장 고저 일치, 18시 야간 이전 수집으로 정규장 일봉과 대응. 거래소 독립 가격 검증 아님."
+      ]
+    },
+    "kospi_crosscheck": {
+      "status": "MATCH",
+      "trade_date": "20260911",
+      "ka20001": 6909.91,
+      "ka20006": 6909.91,
+      "ka20005": 6909.91,
+      "quote_path": "C:\\Users\\skylo\\Desktop\\restapi\\output\\weekly_context_recovery_20260911\\prepared\\kospi_ka20001.json",
+      "quote_sha256": "7c1bfb0943ac893c6225e190ab8e5ffda0524b2291256042dd295782d1ddacb8",
+      "note": "WISE 파일은 미갱신 상태를 보존. 별도 ka20001 마감 후 조회로 차트와 대조; 날짜 없는 응답은 수집일 및 날짜 있는 차트와 결합."
+    },
+    "nikkei_crosscheck": {
+      "source": "https://indexes.nikkei.co.jp/nkave/historical/nikkei_stock_average_daily_en.csv",
+      "source_tier": "official_eod",
+      "raw_file": "nikkei225_official_daily_20260911.csv",
+      "raw_sha256": "d443b2ad07e7aeccedc599a6baf99b15ad0e39eaad13632d4bf973867fbc49b1",
+      "latest_official_date": "2026-09-11",
+      "target_date": "2026-09-11",
+      "status": "MATCH",
+      "message": "Nikkei 공식/Yahoo OHLC 최대 차이 0.000002% (허용 0.02%)",
+      "maximum_difference_pct": 0.0,
+      "tolerance_pct": 0.02,
+      "differences_pct": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0
+      },
+      "official_ohlc": {
+        "open": 64276.82,
+        "high": 64312.02,
+        "low": 63208.63,
+        "close": 64011.34
+      },
+      "secondary_ohlc": {
+        "open": 64276.8203,
+        "high": 64312.0195,
+        "low": 63208.6289,
+        "close": 64011.3398
+      }
+    },
+    "evidence_sha256": "5e699267652717fc5edd41f03cf61167eb5a89a8c5d9f3e82dedba27e54977ec",
+    "script_sha256": "a90aeb3ec4de8d31e7942d2084690a6924d58b5c6c276c494d9b1f51f458adb2",
+    "prior_snapshot": 1089.55,
+    "confirmed_close": 1088.3,
+    "difference": -1.25
+  },
+  "supplemental_files": [
+    {
+      "file": "cash_context_20260911.json",
+      "sha256": "fc5d09625b1d4afac126be9942262e7c485cd7a254f633b04ecacbf9150aeab8"
+    },
+    {
+      "file": "cash_DOW_daily_20260911.csv",
+      "sha256": "9ea1ae532feeb10c66817525a676833cc9891b6ca4e1d077826181bdb9d80845"
+    },
+    {
+      "file": "cash_DOW_intraday_10m_20260911.csv",
+      "sha256": "40c7a354193916c68fd82e998e969c607bab9cfd27c76816c51d562ea8b56971"
+    },
+    {
+      "file": "cash_DOW_monthly_20260911.csv",
+      "sha256": "4fcf103add67b5d982a5510712ac112f1efcf841406a25b0f87a07be25342baa"
+    },
+    {
+      "file": "cash_DOW_mtf_20260911.png",
+      "sha256": "784fa5b566ed82a5dbba614b1d798e3813558d1cf9df03eec913a40ba341427b"
+    },
+    {
+      "file": "cash_DOW_weekly_20260911.csv",
+      "sha256": "820116c6f61ba3902840a28d69e12d80110997f348f8b16d0c26635f3c2cd47d"
+    },
+    {
+      "file": "cash_KOSPI_daily_20260911.csv",
+      "sha256": "169659b55b4ca4352f54883e09c5066edc022d2dd5d37e43992d1461d15f1fe5"
+    },
+    {
+      "file": "cash_KOSPI_intraday_10m_20260911.csv",
+      "sha256": "45b0a101b994d45e8194a4598938ab020226ad59400890d3c058938597182bc4"
+    },
+    {
+      "file": "cash_KOSPI_monthly_20260911.csv",
+      "sha256": "330cce0c3b9be29b0e6426a78a420ed7c15d9200cd0c94af446f1363efafad62"
+    },
+    {
+      "file": "cash_KOSPI_mtf_20260911.png",
+      "sha256": "971a24f6ab76e0be9dcb63816e8039d344b3d543e420f1e876906b80f678ce2e"
+    },
+    {
+      "file": "cash_KOSPI_structure_20260911.png",
+      "sha256": "f46343770c9b2d0045d5e053dad30ddb071fddefb50495a70e965cce86655f24"
+    },
+    {
+      "file": "cash_KOSPI_weekly_20260911.csv",
+      "sha256": "e52374a28dfc704adbc9271c2a6fda3daf71c2903a6d58ca72e25aeb0cd32688"
+    },
+    {
+      "file": "cash_NASDAQ_daily_20260911.csv",
+      "sha256": "0732fa392d3b90bf1976cc95fb6fe92b6877d1d7f22a3bc22de48d8f5f27accc"
+    },
+    {
+      "file": "cash_NASDAQ_intraday_10m_20260911.csv",
+      "sha256": "5ce1eb15c0e2bd58aa1ff6e1254ad90d2405e2676f81383467409814809d7adc"
+    },
+    {
+      "file": "cash_NASDAQ_monthly_20260911.csv",
+      "sha256": "a4a083b193fb5fec1ff1d3620b27f794dd637014f1d27e1f4927728d711cf16d"
+    },
+    {
+      "file": "cash_NASDAQ_mtf_20260911.png",
+      "sha256": "2993c1b29d54d5a5f87e17a15856d40a4d38726513f0b541404f230a5a5f7636"
+    },
+    {
+      "file": "cash_NASDAQ_weekly_20260911.csv",
+      "sha256": "961ed8e9dba885fdbfe5d7b63865d90cd2b42bf0ff8be60a99140352414580c1"
+    },
+    {
+      "file": "cash_NIKKEI_daily_20260911.csv",
+      "sha256": "f0f55d20421924923d596e7d70b3984c26bfaa90b4493bef5db1cb4425089ba2"
+    },
+    {
+      "file": "cash_NIKKEI_intraday_10m_20260911.csv",
+      "sha256": "1ec7dd8bc24865e48dc88ea71f04e938c1bbb5a6d5cf24c4a65a8f486aec3eae"
+    },
+    {
+      "file": "cash_NIKKEI_monthly_20260911.csv",
+      "sha256": "2f887a929d72ccd8b519f85fc8a710ebd29555a47ecbf85d569b3948c14cc89c"
+    },
+    {
+      "file": "cash_NIKKEI_mtf_20260911.png",
+      "sha256": "4c9b5a9834056b9d44fc02dd043506ec8d3b1f129da1e1985afafe705fcc23d4"
+    },
+    {
+      "file": "cash_NIKKEI_weekly_20260911.csv",
+      "sha256": "c1fa31d53aed1011e420f1135ccb6b8fa25d7110f9daaf6a2c0b9000091e2c82"
+    },
+    {
+      "file": "cash_SOX_daily_20260911.csv",
+      "sha256": "8cb68216b389b9eb8087d72f0b8bd084f0c2e3a7ea8209960fbf6cb285a05b38"
+    },
+    {
+      "file": "cash_SOX_intraday_10m_20260911.csv",
+      "sha256": "a4fb6fca63a044423ad0760286dca77a93944aac331c805df12e7c02deb4e89e"
+    },
+    {
+      "file": "cash_SOX_monthly_20260911.csv",
+      "sha256": "0609ccb9703c4b0f089c446ae83c8075dde5d9768ed0ba052282fddecec7bdf9"
+    },
+    {
+      "file": "cash_SOX_mtf_20260911.png",
+      "sha256": "880ed6c309875c8f647bac64905f8102bc2916ea5d4724e4cddb512833afcc68"
+    },
+    {
+      "file": "cash_SOX_weekly_20260911.csv",
+      "sha256": "3090922c12c43405fa3d7560b64cb5fcdbb4f9c19927ebbcf9cd33cfc5139b9d"
+    },
+    {
+      "file": "futures_dec_daily_20260911.csv",
+      "sha256": "91ef270dd7fa536c2453a182de3108bf9faeff0400f14be641911f087adfcd2f"
+    },
+    {
+      "file": "futures_dec_monthly_20260911.csv",
+      "sha256": "ff9eef9864cf4b170d5f305eb27a982b0212d6169e82ef6c7825b21905ae0d06"
+    },
+    {
+      "file": "futures_dec_monthly_20260911.png",
+      "sha256": "6109a35fd39ffeb61d1ed14faffc0437983a39edbd29e489f3dfc62bb86cdb02"
+    },
+    {
+      "file": "futures_dec_observations_20260911.csv",
+      "sha256": "d948cf0c2e94640208e2c40d592a09e05b91fd1fc534e761c7c7329c0ddcab26"
+    },
+    {
+      "file": "futures_dec_weekly_20260911.csv",
+      "sha256": "81338eacb8e005d3aee315a10e060d915eaa7e136d57eb6da772e74973497704"
+    },
+    {
+      "file": "futures_dec_weekly_daily_20260911.png",
+      "sha256": "318da15def89675832c522504d77fe4b698a0aadf21361cbf8d30f562fd4c5ce"
+    }
+  ]
 }
