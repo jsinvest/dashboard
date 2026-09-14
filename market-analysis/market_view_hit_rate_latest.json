@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T20:59:22+09:00",
-  "through_recommendation_date": "20260911",
-  "price_data_through": "20260911",
+  "generated_at": "2026-09-14T19:59:06+09:00",
+  "through_recommendation_date": "20260914",
+  "price_data_through": "20260914",
   "rule": {
     "population": "게시된 KOSPI·KOSDAQ market_views의 추천일별 마지막 게시본",
     "direction": "명확한 절대 방향만 UP/DOWN; 상대우위·충돌·박스는 NEUTRAL",
@@ -14,22 +14,22 @@
     "timing_guard": "장 시작 후 게시된 뷰는 진행 중인 장을 평가하지 않고 그다음 완전한 거래일을 사용"
   },
   "summary": {
-    "views": 50,
-    "directional_views": 29,
-    "evaluated": 28,
-    "pending": 1,
-    "wins": 15,
+    "views": 52,
+    "directional_views": 31,
+    "evaluated": 29,
+    "pending": 2,
+    "wins": 16,
     "losses": 13,
-    "accuracy_pct": 53.57,
+    "accuracy_pct": 55.17,
     "neutral_observations": 21,
     "unclassified": 0
   },
   "by_market": {
     "KOSPI": {
-      "views": 25,
-      "directional_views": 12,
+      "views": 26,
+      "directional_views": 13,
       "evaluated": 12,
-      "pending": 0,
+      "pending": 1,
       "wins": 6,
       "losses": 6,
       "accuracy_pct": 50.0,
@@ -37,13 +37,13 @@
       "unclassified": 0
     },
     "KOSDAQ": {
-      "views": 25,
-      "directional_views": 17,
-      "evaluated": 16,
+      "views": 26,
+      "directional_views": 18,
+      "evaluated": 17,
       "pending": 1,
-      "wins": 9,
+      "wins": 10,
       "losses": 7,
-      "accuracy_pct": 56.25,
+      "accuracy_pct": 58.82,
       "neutral_observations": 8,
       "unclassified": 0
     }
@@ -61,27 +61,39 @@
       "unclassified": 0
     },
     "DOWN": {
-      "views": 16,
-      "directional_views": 16,
-      "evaluated": 15,
-      "pending": 1,
-      "wins": 5,
+      "views": 18,
+      "directional_views": 18,
+      "evaluated": 16,
+      "pending": 2,
+      "wins": 6,
       "losses": 10,
-      "accuracy_pct": 33.33,
+      "accuracy_pct": 37.5,
       "neutral_observations": 0,
       "unclassified": 0
     }
   },
   "by_recommendation_date": [
     {
-      "recommendation_date": "20260911",
+      "recommendation_date": "20260914",
       "views": 2,
-      "directional_views": 1,
+      "directional_views": 2,
       "evaluated": 0,
-      "pending": 1,
+      "pending": 2,
       "wins": 0,
       "losses": 0,
       "accuracy_pct": null,
+      "neutral_observations": 0,
+      "unclassified": 0
+    },
+    {
+      "recommendation_date": "20260911",
+      "views": 2,
+      "directional_views": 1,
+      "evaluated": 1,
+      "pending": 0,
+      "wins": 1,
+      "losses": 0,
+      "accuracy_pct": 100.0,
       "neutral_observations": 1,
       "unclassified": 0
     },
@@ -375,47 +387,30 @@
     }
   ],
   "data_quality": {
-    "index_bundle": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260911",
+    "index_bundle": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260914",
     "index_validation_status": "OK",
     "index_can_use_for_decision": true,
     "index_files": {
-      "KOSPI": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260911\\data\\kospi_daily_20260911.csv",
-      "KOSDAQ": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260911\\data\\kosdaq_daily_20260911.csv"
+      "KOSPI": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260914\\data\\kospi_daily_20260914.csv",
+      "KOSDAQ": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260914\\data\\kosdaq_daily_20260914.csv"
     },
     "index_file_sha256": {
-      "KOSPI": "d7e75bf5ce3dcb70c3cedd499fac9e7018965673fec2dbbfb24ed95b2e927f7d",
-      "KOSDAQ": "5cf9eca220f23cc01dad483165bdc698fd25118b7f1aa190e32a72073d70b3ac"
+      "KOSPI": "c91cdfe28c555faac3c58a501bf09058743a39e9de863247581bfe7deac9e267",
+      "KOSDAQ": "b99023d66af41ae79a0fd5eff0344e68fc4c50ee2ae0fc4755d3ff3952a49353"
     },
-    "recommendation_dates": 25,
-    "records": 50,
+    "recommendation_dates": 26,
+    "records": 52,
     "duplicate_record_ids": 0
   },
   "records": [
     {
-      "id": "20260911:KOSPI",
-      "recommendation_date": "20260911",
-      "published_at": "2026-09-11T20:58:57+09:00",
+      "id": "20260914:KOSPI",
+      "recommendation_date": "20260914",
+      "published_at": "2026-09-14T19:51:47+09:00",
       "base_session": null,
-      "target_session": "20260914",
+      "target_session": "20260915",
       "market": "KOSPI",
-      "view": "중립-하방 · 박스·전환 속 반등 저항 시험",
-      "direction": "NEUTRAL",
-      "classification_rationale": "게시 JSON의 구조화 direction",
-      "classification_source": "published_structured_direction",
-      "base_close": null,
-      "target_close": null,
-      "next_session_return_pct": null,
-      "outcome": "PENDING",
-      "recommendation_source": "WORKTREE"
-    },
-    {
-      "id": "20260911:KOSDAQ",
-      "recommendation_date": "20260911",
-      "published_at": "2026-09-11T20:58:57+09:00",
-      "base_session": null,
-      "target_session": "20260914",
-      "market": "KOSDAQ",
-      "view": "단기 하방 우세 · 818~817 지지와 824~827 회복 확인",
+      "view": "단기 하방 우세 · 큰 박스 안 조정 연장, 반등은 저항 회복 확인",
       "direction": "DOWN",
       "classification_rationale": "게시 JSON의 구조화 direction",
       "classification_source": "published_structured_direction",
@@ -424,6 +419,57 @@
       "next_session_return_pct": null,
       "outcome": "PENDING",
       "recommendation_source": "WORKTREE"
+    },
+    {
+      "id": "20260914:KOSDAQ",
+      "recommendation_date": "20260914",
+      "published_at": "2026-09-14T19:51:47+09:00",
+      "base_session": null,
+      "target_session": "20260915",
+      "market": "KOSDAQ",
+      "view": "단기 하방 우세 · KOSPI보다 당일 덜 하락했지만 절대 상승 판단 아님",
+      "direction": "DOWN",
+      "classification_rationale": "게시 JSON의 구조화 direction",
+      "classification_source": "published_structured_direction",
+      "base_close": null,
+      "target_close": null,
+      "next_session_return_pct": null,
+      "outcome": "PENDING",
+      "recommendation_source": "WORKTREE"
+    },
+    {
+      "id": "20260911:KOSPI",
+      "recommendation_date": "20260911",
+      "published_at": "2026-09-11T20:58:57+09:00",
+      "base_session": "20260911",
+      "target_session": "20260914",
+      "market": "KOSPI",
+      "view": "중립-하방 · 박스·전환 속 반등 저항 시험",
+      "direction": "NEUTRAL",
+      "classification_rationale": "게시 JSON의 구조화 direction",
+      "classification_source": "published_structured_direction",
+      "base_close": 6909.91,
+      "target_close": 6684.37,
+      "next_session_return_pct": -3.264,
+      "outcome": "NEUTRAL_OBSERVATION",
+      "recommendation_source": "83488d985425"
+    },
+    {
+      "id": "20260911:KOSDAQ",
+      "recommendation_date": "20260911",
+      "published_at": "2026-09-11T20:58:57+09:00",
+      "base_session": "20260911",
+      "target_session": "20260914",
+      "market": "KOSDAQ",
+      "view": "단기 하방 우세 · 818~817 지지와 824~827 회복 확인",
+      "direction": "DOWN",
+      "classification_rationale": "게시 JSON의 구조화 direction",
+      "classification_source": "published_structured_direction",
+      "base_close": 820.64,
+      "target_close": 806.79,
+      "next_session_return_pct": -1.6877,
+      "outcome": "WIN",
+      "recommendation_source": "83488d985425"
     },
     {
       "id": "20260910:KOSPI",
