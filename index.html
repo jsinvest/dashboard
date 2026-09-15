@@ -476,6 +476,7 @@
 <link rel="stylesheet" href="supply-zone/cash-review.css?v=20260908b">
 <script src="scripts/cash-index-review.js?v=20260908b"></script>
 <script src="scripts/futures-index-context.js?v=20260908b"></script>
+<link rel="stylesheet" href="news/dashboard.css">
 </head>
 <body>
 <div id="dashboardLock" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
@@ -568,6 +569,7 @@
   <button class="tab-btn" data-tab="links">링크 모음</button>
   <button class="tab-btn" data-tab="cash">현금비중관리</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
+  <button class="tab-btn" data-tab="news">뉴스</button>
   <button class="tab-btn" data-tab="leaders">[당일 주도주]</button>
   <button class="tab-btn" data-tab="market">[시장분석자료]</button>
   <button class="tab-btn" data-tab="supply">[선물옵션매물대]</button>
@@ -991,6 +993,19 @@
     </div>
   </div>
 
+
+  <!-- 뉴스 보고서 -->
+  <div class="tab-panel" data-tab-panel="news">
+    <div class="section-title">뉴스 · MORNING & EVENING</div>
+    <section class="news-shell" aria-labelledby="newsHeading">
+      <h2 class="news-heading" id="newsHeading">아침과 저녁, 증시 뉴스 모아보기</h2>
+      <p class="news-note">매일 07:00·19:30 기준으로 작성하고 검증 후 게시해요. 전체 본문·이미지·원문 링크는 보고서를 열어 확인하세요.</p>
+      <div class="news-latest" id="newsLatest"></div>
+      <div class="news-controls"><h3>지난 보고서</h3><label for="newsEdition">분류</label><select id="newsEdition"><option value="all">전체</option><option value="morning">아침판</option><option value="evening">저녁판</option><option value="special">특별판</option></select></div>
+      <p class="news-status" id="newsStatus" role="status">뉴스 목록을 불러오는 중이에요.</p>
+      <ul class="news-list" id="newsList"></ul>
+    </section>
+  </div>
 
   <!-- 리포트 검색 -->
   <div class="tab-panel" data-tab-panel="report">
@@ -4224,5 +4239,6 @@ async function loadSupplyZone(){
 loadSupplyZone();
 
 </script>
+<script src="news/dashboard.js"></script>
 </body>
 </html>
