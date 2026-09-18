@@ -1,0 +1,287 @@
+{
+  "trade_date": "20260918",
+  "source_session_date": "2026-09-17",
+  "status": "OK",
+  "can_use_for_context": true,
+  "checks": {
+    "NASDAQ": {
+      "status": "OK",
+      "daily_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?period1=1410148800&period2=1789704000&interval=1d&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "23b97dae3636aa80f564e1cc0c6f4f04cd810624c2dcd98939d3474a5b0496d4",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 3025,
+        "latest": "2026-09-17T09:30:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "calendar_missing": 0,
+      "calendar_unexpected": 0,
+      "intraday_status": "OK",
+      "intraday_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?period1=1787025600&period2=1789704000&interval=5m&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "1f86c06c9ec7ab6c5aaf68c809ade24fda8bdff975159a20c0b292043b237103",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 1717,
+        "latest": "2026-09-17T16:00:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "intraday_source_gaps": [],
+      "close_crosscheck_gap_pct": 0.0,
+      "intraday_can_use": true
+    },
+    "SOX": {
+      "status": "OK",
+      "daily_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESOX?period1=1410148800&period2=1789704000&interval=1d&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "1a76736eb390e5d7c082f7f2a38b70b319c40a814e881f39d64cd549d7eb0bbe",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 3025,
+        "latest": "2026-09-17T09:30:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "calendar_missing": 0,
+      "calendar_unexpected": 0,
+      "intraday_status": "OK",
+      "intraday_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ESOX?period1=1787025600&period2=1789704000&interval=5m&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "7475f7f11f7d4681c715cd315166d779399c32620825f48a36454d2a1d2092c8",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 1717,
+        "latest": "2026-09-17T16:00:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "intraday_source_gaps": [],
+      "close_crosscheck_gap_pct": 0.0,
+      "intraday_can_use": true
+    },
+    "DOW": {
+      "status": "OK",
+      "daily_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?period1=1410148800&period2=1789704000&interval=1d&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "47dc3f26ed8e51a3703d7e1d8d41723a88e6b2d6194c5d9c6ea075f49a1c5b99",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 3025,
+        "latest": "2026-09-17T09:30:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "calendar_missing": 0,
+      "calendar_unexpected": 0,
+      "intraday_status": "OK",
+      "intraday_audit": {
+        "source": "Yahoo chart API delayed secondary",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI?period1=1787025600&period2=1789704000&interval=5m&events=history&includePrePost=false",
+        "timezone": "America/New_York",
+        "raw_sha256": "2ad312271cd297e81985f45236d61501c3d784ddbc34075d4ebe310b0b63c77c",
+        "identical_duplicates_removed": 0,
+        "empty_placeholder_rows_removed": 0,
+        "missing_volume_rows": 0,
+        "ohlc_missing": 0,
+        "invalid_ohlc": 0,
+        "rows": 1717,
+        "latest": "2026-09-17T16:00:00-04:00",
+        "independent_official_price_crosscheck": false
+      },
+      "intraday_source_gaps": [],
+      "close_crosscheck_gap_pct": 0.0001,
+      "intraday_can_use": true
+    },
+    "NIKKEI225": {
+      "status": "OK",
+      "source": "Validated same-date Nikkei Yahoo cache",
+      "input_hashes": {
+        "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260918\\data\\nikkei225_daily_20260918.csv": "c757b797d00eda6afa04ec577b676258752636c503b647313648705fd5d733a2",
+        "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20260918\\data\\nikkei225_5m_20260918.csv": "e17de088abc17e1747fc81848332585df5769fd59b55394ddf93554d25c50fd8"
+      },
+      "upstream_validation_sha256": "b7ca15d3e10f71b8d58ac25c8ce47106a0a9445e41fe242c8ee1144595c6614f",
+      "intraday_status": "OK",
+      "intraday_source_gaps": [],
+      "intraday_can_use": true,
+      "close_crosscheck_gap_pct": 0.0,
+      "latest_session_10m_bars": 33
+    }
+  },
+  "analysis_path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\analysis.json",
+  "analysis_sha256": "b16aa7b04021c0202e20526873120f6e1abb4d43054d197021bbf00b8145dfc8",
+  "script_sha256": "e6e58ca45db3e14d9563b492f242385c7d76efd51e30af3bc7d465708138bebd",
+  "shared_module_sha256": "be6dd063cf6adaaf8d1c54b13794a77a5f2f9a0a45c6bde3612e277c98796f8f",
+  "artifacts": [
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\analysis.json",
+      "sha256": "b16aa7b04021c0202e20526873120f6e1abb4d43054d197021bbf00b8145dfc8"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\analysis.md",
+      "sha256": "8cd91f9930503357568d22f2cc951c4283bdd4415cdbcfa2ac792871af6abb8d"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_5m.csv",
+      "sha256": "819366e30b56bf6f83a5a7985e9121260574a6cc74658e053f8e084439d4f7b5"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_daily.csv",
+      "sha256": "b4c82277ef0fe5c708b7aef61f5f03bcb56058200a545df0be724faa79d4fa18"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_intraday_10m.csv",
+      "sha256": "9b921c27955167455ab6ab6877843d69ebadb1161213707ed26596f1fa3b13f0"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_monthly.csv",
+      "sha256": "7aebf61849c508b6a8eeb464c1ce62db8ac0c2bacfc642cb77e6e0dfb864cb34"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_mtf.png",
+      "sha256": "699158a22caa46582b2b2588e7d064dc5cec5443a348757d147798ecc2bb6526"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_to_kosdaq_point_in_time.csv",
+      "sha256": "ccc9f986e925b05875bbd8d7289251fe155a8b8a59232dfcbe9e8c022f9f014a"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_to_kospi_point_in_time.csv",
+      "sha256": "44151e1b527c728a8f0fe24c94635ac73dec33936d83cfd0caa1b379596b0c2d"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\DOW_weekly.csv",
+      "sha256": "f09edc75cc79328db11d3daa074612c7568b3949c3c4c0872eb3f3a175cd4e38"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_5m.csv",
+      "sha256": "a05f98a6ff75c5fd26779eddf835be57fc77cb87c8903e81736200ed6905227c"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_daily.csv",
+      "sha256": "addae316a5329bafc2abbd1152c005eec118fefc3b1cd4903f3754c90eb9f7ba"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_intraday_10m.csv",
+      "sha256": "7051b36756149b1ea51df5493f2185108a1d244e01713c94bbd9444569f78fc4"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_monthly.csv",
+      "sha256": "9ce728936e3c9b5aa0ae5bf34c5b1cf8b3c06fd1aba208612a8aaedd216006a9"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_mtf.png",
+      "sha256": "753c0d7aede5bc430212f12aba0063c6cde65aa9e25d701aa8666a8ce5d88708"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_to_kosdaq_point_in_time.csv",
+      "sha256": "57f1d08331b9d6dad71df05a29cbe38dc2329fec5274235eceff6e553f70a304"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_to_kospi_point_in_time.csv",
+      "sha256": "156b16d3097077b94bb564225385f1c3c7319eb3bf78cb2c4222f17e2a8bd339"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NASDAQ_weekly.csv",
+      "sha256": "352c8bed803831c2c23987c9e01974c85c7595449bc5c189a7ab612c50f5cadc"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NIKKEI225_daily.csv",
+      "sha256": "3f50451a8fd774f499a67e356f88b14d60f6d154926509fef58523ddc4eed762"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NIKKEI225_intraday_10m.csv",
+      "sha256": "8f2950cfa66658db55fd54e592839dac00864e2f1c555177fb4bb79843f451f8"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NIKKEI225_monthly.csv",
+      "sha256": "8a5ca1eef62c3f595df12c496ccd8c5cd4c0f8909a59b667cd5addc889dd816b"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NIKKEI225_mtf.png",
+      "sha256": "a969312e2b212f66ca497606173a9cc97c750ca11995fb43aec23aaca7891638"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\NIKKEI225_weekly.csv",
+      "sha256": "639728f2876be3ecfd9bdc74dec1c0848d5422f54eebab14dfcbf1a207769098"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\DOW_5m.json",
+      "sha256": "2ad312271cd297e81985f45236d61501c3d784ddbc34075d4ebe310b0b63c77c"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\DOW_daily.json",
+      "sha256": "47dc3f26ed8e51a3703d7e1d8d41723a88e6b2d6194c5d9c6ea075f49a1c5b99"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\NASDAQ_5m.json",
+      "sha256": "1f86c06c9ec7ab6c5aaf68c809ade24fda8bdff975159a20c0b292043b237103"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\NASDAQ_daily.json",
+      "sha256": "23b97dae3636aa80f564e1cc0c6f4f04cd810624c2dcd98939d3474a5b0496d4"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\SOX_5m.json",
+      "sha256": "7475f7f11f7d4681c715cd315166d779399c32620825f48a36454d2a1d2092c8"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\raw\\SOX_daily.json",
+      "sha256": "1a76736eb390e5d7c082f7f2a38b70b319c40a814e881f39d64cd549d7eb0bbe"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_5m.csv",
+      "sha256": "ff5fe08f64ad70003af0ef4408b4e93868ef63ed56da051c0e73502d8e0ce603"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_daily.csv",
+      "sha256": "0c8a196a54502912da5d7adf03a2f70c4b3e34373576ee90dd0dab41a42daa76"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_intraday_10m.csv",
+      "sha256": "4be7560a718f9670a395307feef2485b21f1dbaaf1c7e9188e68f1139fd787f0"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_monthly.csv",
+      "sha256": "adbeec6d29170d99bac221c457ffbd213a2427a1f338cd724592df1e7a94f71e"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_mtf.png",
+      "sha256": "fda2837d705b25ab0b61a7df0f0663e00c6861e1040fe58ff60b77ee81203580"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_to_kosdaq_point_in_time.csv",
+      "sha256": "d8b076d633f8fb16e8180045ccf51c5adc87507f1b235bdec5a9cafd5a58378a"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_to_kospi_point_in_time.csv",
+      "sha256": "7ebfe8a424f389bc7cf65dfa627f931344cca957ee5f9d1a9615846cc0cb3625"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20260918\\202721\\SOX_weekly.csv",
+      "sha256": "bfac9bb9aaafb9617e58c51528793598ba678777aa9ea7e6f769b8b790822016"
+    }
+  ]
+}
