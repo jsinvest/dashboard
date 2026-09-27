@@ -5,6 +5,21 @@
   const list = document.getElementById('newsList');
   const status = document.getElementById('newsStatus');
   const filter = document.getElementById('newsEdition');
+  // Keep the calendar separate from dated morning/evening reports.
+  const calendar = document.createElement('article');
+  calendar.className = 'news-card';
+  calendar.id = 'newsCalendar';
+  const calendarTitle = document.createElement('h3');
+  calendarTitle.textContent = '날짜별 누적 뉴스 일정';
+  const calendarNote = document.createElement('p');
+  calendarNote.textContent = '9/27 누적자료 기준 · 168개 항목 · 날짜별 보기와 검색 · 미확인 일정 포함';
+  const calendarLink = document.createElement('a');
+  calendarLink.href = 'news/schedules/2026-09-27/';
+  calendarLink.target = '_blank';
+  calendarLink.rel = 'noopener noreferrer';
+  calendarLink.textContent = '날짜별 일정 열기 ↗';
+  calendar.append(calendarTitle, calendarNote, calendarLink);
+  latest.before(calendar);
   const labels = {morning:'아침판', evening:'저녁판', special:'특별판'};
   let reports = [];
   const node = (tag, text, cls) => {
