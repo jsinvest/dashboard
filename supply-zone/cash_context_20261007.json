@@ -1,0 +1,4470 @@
+{
+  "schema_version": "cash-index-review-v1",
+  "as_of": "2026-10-07",
+  "generated_at": "2026-10-07T20:42:02.322668+09:00",
+  "indices": [
+    {
+      "name": "코스피",
+      "source_session_date": "2026-10-07",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 88,
+          "ohlc": {
+            "open": 6784.29,
+            "high": 7171.52,
+            "low": 6439.49,
+            "close": 6838.04
+          },
+          "returns_pct": {
+            "1": 0.264,
+            "5": 3.624,
+            "20": 171.634,
+            "60": 122.823
+          },
+          "moving_averages": {
+            "sma3": 6751.17,
+            "sma6": 7300.835,
+            "sma12": 6047.852,
+            "sma24": 4404.128,
+            "sma60": 3308.878
+          },
+          "mid_ma_normalized_slope": 0.3854,
+          "rsi14": 64.247,
+          "macd": 1195.7985,
+          "macd_signal": 961.2455,
+          "macd_hist": 234.553,
+          "bollinger": {
+            "upper": 8674.559,
+            "middle": 4788.507,
+            "lower": 902.456,
+            "percent_b": 0.7637,
+            "width": 1.6231
+          },
+          "atr14": 933.1794,
+          "levels": {
+            "previous_20_high": 9385.59,
+            "previous_20_low": 2284.72,
+            "previous_60_high": 9385.59,
+            "previous_60_low": 2134.77
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 10,
+            "confirmed_pivot_lows": 10,
+            "latest_pivot_high": 9385.59,
+            "latest_pivot_low": 5262.77
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.385"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 64.25"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.76, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 80.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "weekly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 383,
+          "ohlc": {
+            "open": 7057.86,
+            "high": 7065.9,
+            "low": 6765.06,
+            "close": 7003.74
+          },
+          "returns_pct": {
+            "1": -1.09,
+            "5": 3.165,
+            "20": -6.532,
+            "60": 118.184
+          },
+          "moving_averages": {
+            "sma5": 6915.202,
+            "sma10": 6811.0,
+            "sma20": 7362.86,
+            "sma60": 5596.264,
+            "sma120": 4131.119
+          },
+          "mid_ma_normalized_slope": 0.0049,
+          "rsi14": 53.276,
+          "macd": 178.4026,
+          "macd_signal": 304.5357,
+          "macd_hist": -126.1332,
+          "bollinger": {
+            "upper": 8879.833,
+            "middle": 7362.86,
+            "lower": 5845.887,
+            "percent_b": 0.3816,
+            "width": 0.4121
+          },
+          "atr14": 652.4856,
+          "levels": {
+            "previous_20_high": 9385.59,
+            "previous_20_low": 5262.77,
+            "previous_60_high": 9385.59,
+            "previous_60_low": 3079.27
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 47,
+            "confirmed_pivot_lows": 48,
+            "latest_pivot_high": 7171.52,
+            "latest_pivot_low": 5262.77
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.005"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 53.28"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.38, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -35.0,
+          "state": "하락",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T00:00:00",
+          "bar_count": 1800,
+          "ohlc": {
+            "open": 6864.25,
+            "high": 6977.77,
+            "low": 6803.81,
+            "close": 6803.9
+          },
+          "returns_pct": {
+            "1": -1.98073,
+            "5": -0.97383,
+            "20": 1.74497,
+            "60": -6.112,
+            "3": -2.40197
+          },
+          "moving_averages": {
+            "sma5": 6911.684,
+            "sma10": 6942.552,
+            "sma20": 6900.507,
+            "sma60": 6739.235,
+            "sma120": 7187.93,
+            "sma240": 5957.81
+          },
+          "mid_ma_normalized_slope": -0.0711,
+          "rsi14": 47.735,
+          "macd": 30.6451,
+          "macd_signal": 34.3548,
+          "macd_hist": -3.7097,
+          "bollinger": {
+            "upper": 7157.822,
+            "middle": 6900.507,
+            "lower": 6643.192,
+            "percent_b": 0.3123,
+            "width": 0.0746
+          },
+          "atr14": 193.7902,
+          "levels": {
+            "previous_20_high": 7171.52,
+            "previous_20_low": 6582.2,
+            "previous_60_high": 7791.66,
+            "previous_60_low": 5262.77
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 225,
+            "confirmed_pivot_lows": 220,
+            "latest_pivot_high": 7171.44,
+            "latest_pivot_low": 6765.06
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.071"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 47.74"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.31, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -15.0,
+          "state": "중립-하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        },
+        "intraday_10m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T15:20:00+09:00",
+          "bar_count": 1326,
+          "ohlc": {
+            "open": 6816.34,
+            "high": 6816.34,
+            "low": 6803.81,
+            "close": 6803.9
+          },
+          "returns_pct": {
+            "1": -0.168,
+            "5": -0.455,
+            "20": -1.045,
+            "60": -1.985
+          },
+          "moving_averages": {
+            "ema5": 6818.297,
+            "ema10": 6830.187,
+            "ema20": 6847.007,
+            "ema60": 6887.02,
+            "ema120": 6907.398
+          },
+          "mid_ma_normalized_slope": -0.2207,
+          "rsi14": 28.958,
+          "macd": -21.0939,
+          "macd_signal": -17.9163,
+          "macd_hist": -3.1776,
+          "bollinger": {
+            "upper": 6898.602,
+            "middle": 6851.887,
+            "lower": 6805.173,
+            "percent_b": -0.0136,
+            "width": 0.0136
+          },
+          "atr14": 17.1527,
+          "levels": {
+            "previous_20_high": 6889.85,
+            "previous_20_low": 6805.59,
+            "previous_60_high": 6977.77,
+            "previous_60_low": 6805.59
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 178,
+            "confirmed_pivot_lows": 175,
+            "latest_pivot_high": 6857.64,
+            "latest_pivot_low": 6828.46
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.221"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 28.96"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": -1,
+              "weight": 5.0,
+              "reason": "%B -0.01, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -100.0,
+          "state": "하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        }
+      },
+      "chart": "cash_KOSPI_mtf_20261007.png",
+      "daily_csv": "C:\\Users\\skylo\\Documents\\New project\\output\\futures_review_20261007\\context_computed\\KOSPI_daily.csv",
+      "symbol": "001",
+      "latest_daily_ohlc": {
+        "open": 6864.25,
+        "high": 6977.77,
+        "low": 6803.81,
+        "close": 6803.9
+      },
+      "daily_source": {
+        "path": "C:\\Users\\skylo\\Documents\\New project\\output\\futures_review_20261007\\context_computed\\KOSPI_daily.csv",
+        "start": "2019-06-07 00:00:00",
+        "end": "2026-10-07 00:00:00",
+        "rows": 1800,
+        "sha256": "621459ddd18a70d4ec082dc31f3ea3ae0e68796b4779d6f395473806aa61e471"
+      },
+      "intraday_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_5m_20261007.csv",
+        "start": "2026-08-14 11:30:00+09:00",
+        "end": "2026-10-07 15:30:00+09:00",
+        "rows": 2700,
+        "sha256": "5be91b7a07f3988d11b84682b2975f992f55737334713fd1bed57381227b438f"
+      },
+      "key": "KOSPI",
+      "chart_sha256": "fc6f9e3d3ed4e0408308864c19d4a4b4e4c1597e16992f3c142f6555112bd8e8",
+      "review": {
+        "view": "완료 주봉 하락 / 일봉 중립-하락 / 분봉 하락",
+        "monthly": "완료봉 2026-09-30 구조 상승, RSI14 64.25. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "weekly": "완료봉 2026-10-02 구조 하락, RSI14 53.28. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "daily": "완료봉 2026-10-07 구조 중립-하락, RSI14 47.73. 당일 등락 -1.98%. 추세 상태와 당일 음양을 구분합니다. ",
+        "intraday_10m": "완료봉 2026-10-07 구조 하락, RSI14 28.96. 같은 세션5분→10분 집계. 분봉 방향만으로 주봉 전환 확정 금지.",
+        "hold": "일봉20일선 6,900.51 회복 여부와 주요 고저점 재시험을 구분. 이평 단독 강지지 아님.",
+        "failure": "완료 일봉 저점 이탈·재회복 실패시 회복 약화. 주봉 마감과 재저항은 별도 확인."
+      }
+    },
+    {
+      "name": "나스닥종합",
+      "source_session_date": "2026-10-06",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 145,
+          "ohlc": {
+            "open": 26031.67,
+            "high": 27288.789,
+            "low": 25802.961,
+            "close": 26861.061
+          },
+          "returns_pct": {
+            "1": 1.859,
+            "5": 7.909,
+            "20": 36.855,
+            "60": 85.908
+          },
+          "moving_averages": {
+            "sma3": 26201.934,
+            "sma6": 26114.075,
+            "sma12": 24561.479,
+            "sma24": 22054.322,
+            "sma60": 17175.173
+          },
+          "mid_ma_normalized_slope": 0.2605,
+          "rsi14": 70.561,
+          "macd": 2424.148,
+          "macd_signal": 2231.4123,
+          "macd_hist": 192.7357,
+          "bollinger": {
+            "upper": 28498.015,
+            "middle": 22652.609,
+            "lower": 16807.202,
+            "percent_b": 0.86,
+            "width": 0.5161
+          },
+          "atr14": 1732.1417,
+          "levels": {
+            "previous_20_high": 27190.211,
+            "previous_20_low": 14784.03,
+            "previous_60_high": 27190.211,
+            "previous_60_low": 10088.83
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 16,
+            "confirmed_pivot_lows": 17,
+            "latest_pivot_high": 27190.2109,
+            "latest_pivot_low": 24425.3398
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.260"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 70.56"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.86, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 85.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "weekly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 627,
+          "ohlc": {
+            "open": 26935.76,
+            "high": 27353.68,
+            "low": 26709.689,
+            "close": 27190.859
+          },
+          "returns_pct": {
+            "1": 0.451,
+            "5": 2.986,
+            "20": 3.682,
+            "60": 26.764
+          },
+          "moving_averages": {
+            "sma5": 26724.43,
+            "sma10": 26499.866,
+            "sma20": 26216.97,
+            "sma60": 24082.743,
+            "sma120": 21385.679
+          },
+          "mid_ma_normalized_slope": 0.077,
+          "rsi14": 63.056,
+          "macd": 721.0913,
+          "macd_signal": 728.5897,
+          "macd_hist": -7.4984,
+          "bollinger": {
+            "upper": 27413.974,
+            "middle": 26216.97,
+            "lower": 25019.967,
+            "percent_b": 0.9068,
+            "width": 0.0913
+          },
+          "atr14": 874.4785,
+          "levels": {
+            "previous_20_high": 27288.789,
+            "previous_20_low": 24425.34,
+            "previous_60_high": 27288.789,
+            "previous_60_low": 20690.25
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 68,
+            "confirmed_pivot_lows": 85,
+            "latest_pivot_high": 26875.5195,
+            "latest_pivot_low": 25802.9609
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.077"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 63.06"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.91, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 60.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T00:00:00",
+          "bar_count": 3023,
+          "ohlc": {
+            "open": 27641.17,
+            "high": 27722.75,
+            "low": 27592.561,
+            "close": 27599.789
+          },
+          "returns_pct": {
+            "1": 0.44574,
+            "5": 2.99375,
+            "20": 4.45994,
+            "60": 6.673,
+            "3": 2.70989
+          },
+          "moving_averages": {
+            "sma5": 27200.124,
+            "sma10": 27056.267,
+            "sma20": 26734.219,
+            "sma60": 26272.55,
+            "sma120": 26044.749,
+            "sma240": 24516.295
+          },
+          "mid_ma_normalized_slope": 0.0619,
+          "rsi14": 67.899,
+          "macd": 274.9818,
+          "macd_signal": 205.7896,
+          "macd_hist": 69.1922,
+          "bollinger": {
+            "upper": 27689.413,
+            "middle": 26734.219,
+            "lower": 25779.026,
+            "percent_b": 0.9531,
+            "width": 0.0715
+          },
+          "atr14": 320.1825,
+          "levels": {
+            "previous_20_high": 27544.061,
+            "previous_20_low": 25802.961,
+            "previous_60_high": 27544.061,
+            "previous_60_low": 24425.34
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 368,
+            "confirmed_pivot_lows": 406,
+            "latest_pivot_high": 27288.7891,
+            "latest_pivot_low": 26706.1406
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.062"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 67.90"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.95, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 100.0,
+          "state": "상승",
+          "display_bar_is_partial": false,
+          "can_use": true
+        },
+        "intraday_10m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T15:50:00-04:00",
+          "bar_count": 819,
+          "ohlc": {
+            "open": 27620.445,
+            "high": 27627.557,
+            "low": 27592.863,
+            "close": 27599.887
+          },
+          "returns_pct": {
+            "1": -0.12,
+            "5": -0.109,
+            "20": -0.21,
+            "60": 0.714
+          },
+          "moving_averages": {
+            "ema5": 27624.043,
+            "ema10": 27632.841,
+            "ema20": 27638.608,
+            "ema60": 27572.521,
+            "ema120": 27436.492
+          },
+          "mid_ma_normalized_slope": -0.0703,
+          "rsi14": 40.352,
+          "macd": -0.8888,
+          "macd_signal": 6.3006,
+          "macd_hist": -7.1895,
+          "bollinger": {
+            "upper": 27670.204,
+            "middle": 27641.023,
+            "lower": 27611.842,
+            "percent_b": -0.2049,
+            "width": 0.0021
+          },
+          "atr14": 21.0937,
+          "levels": {
+            "previous_20_high": 27668.652,
+            "previous_20_low": 27605.027,
+            "previous_60_high": 27721.955,
+            "previous_60_low": 27369.498
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 107,
+            "confirmed_pivot_lows": 106,
+            "latest_pivot_high": 27654.2891,
+            "latest_pivot_low": 27630.1309
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.070"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 40.35"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B -0.20, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -75.0,
+          "state": "하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        }
+      },
+      "chart": "cash_NASDAQ_mtf_20261007.png",
+      "daily_csv": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_daily.csv",
+      "symbol": "^IXIC",
+      "latest_daily_ohlc": {
+        "open": 27641.169921875,
+        "high": 27722.75,
+        "low": 27592.560546875,
+        "close": 27599.7890625
+      },
+      "daily_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_daily.csv",
+        "start": "2014-09-29 00:00:00",
+        "end": "2026-10-06 00:00:00",
+        "rows": 3023,
+        "sha256": "aefcbba21656884dbe66fc7519a865a49b24bfe9fab0a297ec510a82ce8ba68e"
+      },
+      "intraday_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_5m.csv",
+        "start": "2026-09-08 09:30:00-04:00",
+        "end": "2026-10-06 16:00:00-04:00",
+        "rows": 1639,
+        "sha256": "3532e800e116da4d72c47326fe9b0ef3618799e37f31b46e5428da25da20f173"
+      },
+      "key": "NASDAQ",
+      "chart_sha256": "3dc263ea7f55a3a3fe239ad96c6273174ad533b7e8f84c01b329b3704930e236",
+      "review": {
+        "view": "완료 주봉 상승 / 일봉 상승 / 분봉 하락",
+        "monthly": "완료봉 2026-09-30 구조 상승, RSI14 70.56. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "weekly": "완료봉 2026-10-02 구조 상승, RSI14 63.06. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "daily": "완료봉 2026-10-06 구조 상승, RSI14 67.90. 당일 등락 +0.45%. 추세 상태와 당일 음양을 구분합니다. ",
+        "intraday_10m": "완료봉 2026-10-06 구조 하락, RSI14 40.35. 같은 세션5분→10분 집계. 분봉 방향만으로 주봉 전환 확정 금지.",
+        "hold": "일봉20일선 26,734.22 회복 여부와 주요 고저점 재시험을 구분. 이평 단독 강지지 아님.",
+        "failure": "완료 일봉 저점 이탈·재회복 실패시 회복 약화. 주봉 마감과 재저항은 별도 확인."
+      }
+    },
+    {
+      "name": "필라델피아 반도체",
+      "source_session_date": "2026-10-06",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 145,
+          "ohlc": {
+            "open": 11296.63,
+            "high": 12773.89,
+            "low": 11056.38,
+            "close": 12628.62
+          },
+          "returns_pct": {
+            "1": 9.48,
+            "5": 20.23,
+            "20": 151.774,
+            "60": 287.608
+          },
+          "moving_averages": {
+            "sma3": 11824.917,
+            "sma6": 12175.798,
+            "sma12": 9839.731,
+            "sma24": 7465.184,
+            "sma60": 5184.139
+          },
+          "mid_ma_normalized_slope": 0.3951,
+          "rsi14": 70.999,
+          "macd": 2037.2042,
+          "macd_signal": 1549.2041,
+          "macd_hist": 488.0001,
+          "bollinger": {
+            "upper": 14046.856,
+            "middle": 7964.766,
+            "lower": 1882.676,
+            "percent_b": 0.8834,
+            "width": 1.5272
+          },
+          "atr14": 1459.5296,
+          "levels": {
+            "previous_20_high": 14655.29,
+            "previous_20_low": 3388.62,
+            "previous_60_high": 14655.29,
+            "previous_60_low": 2089.82
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 14,
+            "confirmed_pivot_lows": 14,
+            "latest_pivot_high": 14655.29,
+            "latest_pivot_low": 7084.1299
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.395"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 71.00"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.88, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 85.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "weekly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 627,
+          "ohlc": {
+            "open": 12595.14,
+            "high": 13269.33,
+            "low": 12277.41,
+            "close": 13136.67
+          },
+          "returns_pct": {
+            "1": 3.692,
+            "5": 14.534,
+            "20": 13.36,
+            "60": 131.36
+          },
+          "moving_averages": {
+            "sma5": 12257.31,
+            "sma10": 12058.15,
+            "sma20": 12391.857,
+            "sma60": 9192.663,
+            "sma120": 7108.425
+          },
+          "mid_ma_normalized_slope": 0.0742,
+          "rsi14": 63.582,
+          "macd": 687.9346,
+          "macd_signal": 809.0235,
+          "macd_hist": -121.0889,
+          "bollinger": {
+            "upper": 13872.257,
+            "middle": 12391.857,
+            "lower": 10911.458,
+            "percent_b": 0.7516,
+            "width": 0.2389
+          },
+          "atr14": 978.7773,
+          "levels": {
+            "previous_20_high": 14655.29,
+            "previous_20_low": 10445.44,
+            "previous_60_high": 14655.29,
+            "previous_60_low": 5474.51
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 77,
+            "confirmed_pivot_lows": 80,
+            "latest_pivot_high": 12770.71,
+            "latest_pivot_low": 11056.3799
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.074"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 63.58"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.75, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 40.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T00:00:00",
+          "bar_count": 3023,
+          "ohlc": {
+            "open": 13260.97,
+            "high": 13349.96,
+            "low": 13196.5,
+            "close": 13217.82
+          },
+          "returns_pct": {
+            "1": 0.34222,
+            "5": 4.66112,
+            "20": 11.18746,
+            "60": 7.046,
+            "3": 3.03079
+          },
+          "moving_averages": {
+            "sma5": 12996.97,
+            "sma10": 12777.5,
+            "sma20": 12267.08,
+            "sma60": 11977.71,
+            "sma120": 12075.154,
+            "sma240": 9831.763
+          },
+          "mid_ma_normalized_slope": 0.0186,
+          "rsi14": 67.433,
+          "macd": 347.1938,
+          "macd_signal": 233.4299,
+          "macd_hist": 113.7639,
+          "bollinger": {
+            "upper": 13564.102,
+            "middle": 12267.08,
+            "lower": 10970.058,
+            "percent_b": 0.8665,
+            "width": 0.2115
+          },
+          "atr14": 328.2196,
+          "levels": {
+            "previous_20_high": 13269.33,
+            "previous_20_low": 11110.11,
+            "previous_60_high": 13269.33,
+            "previous_60_low": 10445.44
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 375,
+            "confirmed_pivot_lows": 396,
+            "latest_pivot_high": 12708.3398,
+            "latest_pivot_low": 12258.3896
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.019"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 67.43"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.87, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 65.0,
+          "state": "상승",
+          "display_bar_is_partial": false,
+          "can_use": true
+        },
+        "intraday_10m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T15:50:00-04:00",
+          "bar_count": 819,
+          "ohlc": {
+            "open": 13198.059,
+            "high": 13224.932,
+            "low": 13197.745,
+            "close": 13217.823
+          },
+          "returns_pct": {
+            "1": 0.093,
+            "5": -0.248,
+            "20": -0.372,
+            "60": 0.845
+          },
+          "moving_averages": {
+            "ema5": 13225.125,
+            "ema10": 13239.708,
+            "ema20": 13251.727,
+            "ema60": 13225.757,
+            "ema120": 13140.065
+          },
+          "mid_ma_normalized_slope": -0.1396,
+          "rsi14": 41.52,
+          "macd": -9.1416,
+          "macd_signal": -0.0339,
+          "macd_hist": -9.1077,
+          "bollinger": {
+            "upper": 13310.284,
+            "middle": 13259.946,
+            "lower": 13209.609,
+            "percent_b": 0.0816,
+            "width": 0.0076
+          },
+          "atr14": 24.4575,
+          "levels": {
+            "previous_20_high": 13300.529,
+            "previous_20_low": 13196.714,
+            "previous_60_high": 13349.958,
+            "previous_60_low": 13101.807
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 113,
+            "confirmed_pivot_lows": 107,
+            "latest_pivot_high": 13280.8594,
+            "latest_pivot_low": 13249.8711
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.140"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 41.52"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": -1,
+              "weight": 5.0,
+              "reason": "%B 0.08, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -60.0,
+          "state": "하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        }
+      },
+      "chart": "cash_SOX_mtf_20261007.png",
+      "daily_csv": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_daily.csv",
+      "symbol": "^SOX",
+      "latest_daily_ohlc": {
+        "open": 13260.9697265625,
+        "high": 13349.9599609375,
+        "low": 13196.5,
+        "close": 13217.8203125
+      },
+      "daily_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_daily.csv",
+        "start": "2014-09-29 00:00:00",
+        "end": "2026-10-06 00:00:00",
+        "rows": 3023,
+        "sha256": "0a93d6c5212aea3e2b4b7de4288fe8b5a4a84134f0b28b08f883a0980329b19c"
+      },
+      "intraday_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_5m.csv",
+        "start": "2026-09-08 09:30:00-04:00",
+        "end": "2026-10-06 16:00:00-04:00",
+        "rows": 1639,
+        "sha256": "3b66b5e73b8a763ee7da2b7295e4c7d53fa1e9c8104e4e326bbfd524345444e0"
+      },
+      "key": "SOX",
+      "chart_sha256": "7a5c8b92349c12653d000fb6cdf4a6362276e2ae00593357182a1cdda063c32f",
+      "review": {
+        "view": "완료 주봉 상승 / 일봉 상승 / 분봉 하락",
+        "monthly": "완료봉 2026-09-30 구조 상승, RSI14 71.00. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "weekly": "완료봉 2026-10-02 구조 상승, RSI14 63.58. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "daily": "완료봉 2026-10-06 구조 상승, RSI14 67.43. 당일 등락 +0.34%. 추세 상태와 당일 음양을 구분합니다. ",
+        "intraday_10m": "완료봉 2026-10-06 구조 하락, RSI14 41.52. 같은 세션5분→10분 집계. 분봉 방향만으로 주봉 전환 확정 금지.",
+        "hold": "일봉20일선 12,267.08 회복 여부와 주요 고저점 재시험을 구분. 이평 단독 강지지 아님.",
+        "failure": "완료 일봉 저점 이탈·재회복 실패시 회복 약화. 주봉 마감과 재저항은 별도 확인."
+      }
+    },
+    {
+      "name": "다우 산업평균",
+      "source_session_date": "2026-10-06",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 145,
+          "ohlc": {
+            "open": 53083.578,
+            "high": 53746.5,
+            "low": 50906.051,
+            "close": 50906.051
+          },
+          "returns_pct": {
+            "1": -4.287,
+            "5": 2.525,
+            "20": 14.281,
+            "60": 50.414
+          },
+          "moving_averages": {
+            "sma3": 52192.327,
+            "sma6": 51596.797,
+            "sma12": 49761.272,
+            "sma24": 46660.37,
+            "sma60": 39828.523
+          },
+          "mid_ma_normalized_slope": 0.2513,
+          "rsi14": 63.693,
+          "macd": 3164.6579,
+          "macd_signal": 2987.1949,
+          "macd_hist": 177.463,
+          "bollinger": {
+            "upper": 54512.562,
+            "middle": 47304.294,
+            "lower": 40096.026,
+            "percent_b": 0.7498,
+            "width": 0.3048
+          },
+          "atr14": 2486.2007,
+          "levels": {
+            "previous_20_high": 54744.328,
+            "previous_20_low": 36611.781,
+            "previous_60_high": 54744.328,
+            "previous_60_low": 28660.939
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 15,
+            "confirmed_pivot_lows": 19,
+            "latest_pivot_high": 50512.7891,
+            "latest_pivot_low": 45057.2812
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.251"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 63.69"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.75, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 80.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "weekly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 627,
+          "ohlc": {
+            "open": 51648.48,
+            "high": 51780.5,
+            "low": 50546.539,
+            "close": 51176.961
+          },
+          "returns_pct": {
+            "1": -1.257,
+            "5": -4.449,
+            "20": 3.333,
+            "60": 15.849
+          },
+          "moving_averages": {
+            "sma5": 52135.152,
+            "sma10": 52776.713,
+            "sma20": 52225.995,
+            "sma60": 49149.827,
+            "sma120": 45708.683
+          },
+          "mid_ma_normalized_slope": 0.1083,
+          "rsi14": 48.749,
+          "macd": 782.4095,
+          "macd_signal": 1107.8896,
+          "macd_hist": -325.4802,
+          "bollinger": {
+            "upper": 54220.166,
+            "middle": 52225.995,
+            "lower": 50231.823,
+            "percent_b": 0.237,
+            "width": 0.0764
+          },
+          "atr14": 1233.4836,
+          "levels": {
+            "previous_20_high": 54744.328,
+            "previous_20_low": 49235.738,
+            "previous_60_high": 54744.328,
+            "previous_60_low": 43724.02
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 74,
+            "confirmed_pivot_lows": 89,
+            "latest_pivot_high": 54744.3281,
+            "latest_pivot_low": 51542.0586
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.108"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 48.75"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.24, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 5.0,
+          "state": "중립·박스",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T00:00:00",
+          "bar_count": 3023,
+          "ohlc": {
+            "open": 51444.102,
+            "high": 51672.25,
+            "low": 51422.898,
+            "close": 51521.281
+          },
+          "returns_pct": {
+            "1": 0.49423,
+            "5": 0.33371,
+            "20": -2.39607,
+            "60": -1.862,
+            "3": 1.1678
+          },
+          "moving_averages": {
+            "sma5": 51159.75,
+            "sma10": 51332.037,
+            "sma20": 51684.392,
+            "sma60": 52602.959,
+            "sma120": 51637.748,
+            "sma240": 49820.486
+          },
+          "mid_ma_normalized_slope": -0.048,
+          "rsi14": 44.623,
+          "macd": -420.7603,
+          "macd_signal": -421.9569,
+          "macd_hist": 1.1966,
+          "bollinger": {
+            "upper": 52612.345,
+            "middle": 51684.392,
+            "lower": 50756.438,
+            "percent_b": 0.4121,
+            "width": 0.0359
+          },
+          "atr14": 492.3997,
+          "levels": {
+            "previous_20_high": 53110.449,
+            "previous_20_low": 50546.539,
+            "previous_60_high": 54744.328,
+            "previous_60_low": 50546.539
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 397,
+            "confirmed_pivot_lows": 399,
+            "latest_pivot_high": 51874.9414,
+            "latest_pivot_low": 50546.5391
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.048"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 44.62"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.41, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -45.0,
+          "state": "하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        },
+        "intraday_10m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-06T15:50:00-04:00",
+          "bar_count": 819,
+          "ohlc": {
+            "open": 51524.449,
+            "high": 51540.41,
+            "low": 51505.77,
+            "close": 51521.281
+          },
+          "returns_pct": {
+            "1": -0.006,
+            "5": -0.055,
+            "20": -0.094,
+            "60": 0.599
+          },
+          "moving_averages": {
+            "ema5": 51528.183,
+            "ema10": 51530.582,
+            "ema20": 51531.28,
+            "ema60": 51453.648,
+            "ema120": 51353.626
+          },
+          "mid_ma_normalized_slope": -0.0132,
+          "rsi14": 49.155,
+          "macd": 5.3286,
+          "macd_signal": 10.3165,
+          "macd_hist": -4.9879,
+          "bollinger": {
+            "upper": 51558.557,
+            "middle": 51527.749,
+            "lower": 51496.941,
+            "percent_b": 0.395,
+            "width": 0.0012
+          },
+          "atr14": 34.7055,
+          "levels": {
+            "previous_20_high": 51595.539,
+            "previous_20_low": 51466.852,
+            "previous_60_high": 51672.25,
+            "previous_60_low": 51161.602
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 105,
+            "confirmed_pivot_lows": 108,
+            "latest_pivot_high": 51565.6797,
+            "latest_pivot_low": 51516.7891
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.013"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 49.16"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.40, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 5.0,
+          "state": "중립·박스",
+          "display_bar_is_partial": false,
+          "can_use": true
+        }
+      },
+      "chart": "cash_DOW_mtf_20261007.png",
+      "daily_csv": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_daily.csv",
+      "symbol": "^DJI",
+      "latest_daily_ohlc": {
+        "open": 51444.1015625,
+        "high": 51672.25,
+        "low": 51422.8984375,
+        "close": 51521.28125
+      },
+      "daily_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_daily.csv",
+        "start": "2014-09-29 00:00:00",
+        "end": "2026-10-06 00:00:00",
+        "rows": 3023,
+        "sha256": "bc5d12a37eab509f363551b009c21377fab004f3be3a3916a3354d398cd4b727"
+      },
+      "intraday_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_5m.csv",
+        "start": "2026-09-08 09:30:00-04:00",
+        "end": "2026-10-06 16:00:00-04:00",
+        "rows": 1639,
+        "sha256": "d81a3a719ff8e3fc5822f5ae5ff8060bd11a47aa985f9f79eda1650bdb51df76"
+      },
+      "key": "DOW",
+      "chart_sha256": "4bc2c8bd34135ae7804e01d11bd247a8312d1f444aa7044906c2a65805b9c10d",
+      "review": {
+        "view": "완료 주봉 중립·박스 / 일봉 하락 / 분봉 중립·박스",
+        "monthly": "완료봉 2026-09-30 구조 상승, RSI14 63.69. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "weekly": "완료봉 2026-10-02 구조 중립·박스, RSI14 48.75. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "daily": "완료봉 2026-10-06 구조 하락, RSI14 44.62. 당일 등락 +0.49%. 추세 상태와 당일 음양을 구분합니다. ",
+        "intraday_10m": "완료봉 2026-10-06 구조 중립·박스, RSI14 49.16. 같은 세션5분→10분 집계. 분봉 방향만으로 주봉 전환 확정 금지.",
+        "hold": "일봉20일선 51,684.39 회복 여부와 주요 고저점 재시험을 구분. 이평 단독 강지지 아님.",
+        "failure": "완료 일봉 저점 이탈·재회복 실패시 회복 약화. 주봉 마감과 재저항은 별도 확인."
+      }
+    },
+    {
+      "name": "니케이225",
+      "source_session_date": "2026-10-07",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 145,
+          "ohlc": {
+            "open": 65885.469,
+            "high": 67034.742,
+            "low": 62726.18,
+            "close": 66753.719
+          },
+          "returns_pct": {
+            "1": 0.666,
+            "5": 12.598,
+            "20": 68.687,
+            "60": 126.648
+          },
+          "moving_averages": {
+            "sma3": 65809.223,
+            "sma6": 65517.402,
+            "sma12": 59112.165,
+            "sma24": 49253.922,
+            "sma60": 38535.455
+          },
+          "mid_ma_normalized_slope": 0.3793,
+          "rsi14": 69.559,
+          "macd": 7871.3762,
+          "macd_signal": 6428.4569,
+          "macd_hist": 1442.9193,
+          "bollinger": {
+            "upper": 73775.244,
+            "middle": 51266.891,
+            "lower": 28758.539,
+            "percent_b": 0.844,
+            "width": 0.8781
+          },
+          "atr14": 5564.3313,
+          "levels": {
+            "previous_20_high": 72831.727,
+            "previous_20_low": 30792.74,
+            "previous_60_high": 72831.727,
+            "previous_60_low": 24681.74
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 16,
+            "confirmed_pivot_lows": 21,
+            "latest_pivot_high": 72831.7266,
+            "latest_pivot_low": 50558.9102
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.379"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 69.56"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.84, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 85.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "weekly": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 626,
+          "ohlc": {
+            "open": 66505.938,
+            "high": 68995.297,
+            "low": 64699.488,
+            "close": 68309.461
+          },
+          "returns_pct": {
+            "1": 2.931,
+            "5": 2.867,
+            "20": 11.236,
+            "60": 63.34
+          },
+          "moving_averages": {
+            "sma5": 65744.979,
+            "sma10": 65982.934,
+            "sma20": 66488.554,
+            "sma60": 56654.627,
+            "sma120": 47510.557
+          },
+          "mid_ma_normalized_slope": 0.0791,
+          "rsi14": 61.539,
+          "macd": 2101.2838,
+          "macd_signal": 2612.499,
+          "macd_hist": -511.2152,
+          "bollinger": {
+            "upper": 70714.046,
+            "middle": 66488.554,
+            "lower": 62263.063,
+            "percent_b": 0.7155,
+            "width": 0.1271
+          },
+          "atr14": 3402.3059,
+          "levels": {
+            "previous_20_high": 72831.727,
+            "previous_20_low": 59292.25,
+            "previous_60_high": 72831.727,
+            "previous_60_low": 39850.52
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 85,
+            "confirmed_pivot_lows": 92,
+            "latest_pivot_high": 69608.2422,
+            "latest_pivot_low": 62726.1797
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.079"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 61.54"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.72, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 40.0,
+          "state": "상승",
+          "display_bar_is_partial": true,
+          "can_use": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T00:00:00",
+          "bar_count": 2936,
+          "ohlc": {
+            "open": 70582.109,
+            "high": 70793.289,
+            "low": 70017.188,
+            "close": 70035.711
+          },
+          "returns_pct": {
+            "1": -0.91713,
+            "5": 4.91657,
+            "20": 7.71255,
+            "60": 4.814,
+            "3": 2.5271
+          },
+          "moving_averages": {
+            "sma5": 69586.545,
+            "sma10": 67792.352,
+            "sma20": 66203.653,
+            "sma60": 66012.715,
+            "sma120": 65264.456,
+            "sma240": 58808.596
+          },
+          "mid_ma_normalized_slope": 0.0122,
+          "rsi14": 65.457,
+          "macd": 1085.5685,
+          "macd_signal": 444.9784,
+          "macd_hist": 640.5901,
+          "bollinger": {
+            "upper": 70575.181,
+            "middle": 66203.653,
+            "lower": 61832.125,
+            "percent_b": 0.9383,
+            "width": 0.1321
+          },
+          "atr14": 1264.9142,
+          "levels": {
+            "previous_20_high": 70798.617,
+            "previous_20_low": 62726.18,
+            "previous_60_high": 70798.617,
+            "previous_60_low": 60448.898
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 412,
+            "confirmed_pivot_lows": 396,
+            "latest_pivot_high": 67034.7422,
+            "latest_pivot_low": 64699.4883
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.012"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 65.46"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.94, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 85.0,
+          "state": "상승",
+          "display_bar_is_partial": false,
+          "can_use": true
+        },
+        "intraday_10m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T15:20:00+09:00",
+          "bar_count": 660,
+          "ohlc": {
+            "open": 70204.156,
+            "high": 70217.328,
+            "low": 70035.711,
+            "close": 70035.711
+          },
+          "returns_pct": {
+            "1": -0.246,
+            "5": -0.381,
+            "20": -0.049,
+            "60": -0.195
+          },
+          "moving_averages": {
+            "ema5": 70180.07,
+            "ema10": 70211.653,
+            "ema20": 70242.093,
+            "ema60": 70199.368,
+            "ema120": 69733.371
+          },
+          "mid_ma_normalized_slope": -0.0412,
+          "rsi14": 36.012,
+          "macd": -41.0089,
+          "macd_signal": -40.4711,
+          "macd_hist": -0.5378,
+          "bollinger": {
+            "upper": 70364.847,
+            "middle": 70195.431,
+            "lower": 70026.016,
+            "percent_b": 0.0286,
+            "width": 0.0048
+          },
+          "atr14": 98.5446,
+          "levels": {
+            "previous_20_high": 70370.711,
+            "previous_20_low": 70017.188,
+            "previous_60_high": 70798.617,
+            "previous_60_low": 70017.188
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 86,
+            "confirmed_pivot_lows": 87,
+            "latest_pivot_high": 70370.7109,
+            "latest_pivot_low": 70072.5078
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.041"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 36.01"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.03, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -35.0,
+          "state": "하락",
+          "display_bar_is_partial": false,
+          "can_use": true
+        }
+      },
+      "chart": "cash_NIKKEI225_mtf_20261007.png",
+      "daily_csv": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_daily.csv",
+      "symbol": "^N225",
+      "latest_daily_ohlc": {
+        "open": 70582.109375,
+        "high": 70793.2890625,
+        "low": 70017.1875,
+        "close": 70035.7109375
+      },
+      "daily_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_daily.csv",
+        "start": "2014-09-29 00:00:00",
+        "end": "2026-10-07 00:00:00",
+        "rows": 2936,
+        "sha256": "3c023cc5370597aabbe07311abd0e4dc2cfb4ddee2af1b79464e920010983816"
+      },
+      "intraday_source": {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_5m_20261007.csv",
+        "start": "2026-09-07 09:00:00+09:00",
+        "end": "2026-10-07 15:30:00+09:00",
+        "rows": 1341,
+        "sha256": "2ef90c772a019d46fd5f6482038a30231fe9b8f442310b69d2b0f9ed32576883"
+      },
+      "key": "NIKKEI",
+      "chart_sha256": "e9c5bfb21a7e8273d22fa60886fb3965ed5ed4f825461bb673c652b79090410c",
+      "review": {
+        "view": "완료 주봉 상승 / 일봉 상승 / 분봉 하락",
+        "monthly": "완료봉 2026-09-30 구조 상승, RSI14 69.56. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "weekly": "완료봉 2026-10-02 구조 상승, RSI14 61.54. 표시된 진행 월/주봉은 확정 판단에서 제외. ",
+        "daily": "완료봉 2026-10-07 구조 상승, RSI14 65.46. 당일 등락 -0.92%. 추세 상태와 당일 음양을 구분합니다. ",
+        "intraday_10m": "완료봉 2026-10-07 구조 하락, RSI14 36.01. 같은 세션5분→10분 집계. 분봉 방향만으로 주봉 전환 확정 금지.",
+        "hold": "일봉20일선 66,203.65 회복 여부와 주요 고저점 재시험을 구분. 이평 단독 강지지 아님.",
+        "failure": "완료 일봉 저점 이탈·재회복 실패시 회복 약화. 주봉 마감과 재저항은 별도 확인."
+      }
+    }
+  ],
+  "derivatives_evidence": {
+    "trade_date": "20261007",
+    "original_eod_status": "FAILED_STAGE1_EXIT1",
+    "all_expiry_flow": {
+      "1": {
+        "start": "2026-10-07",
+        "end": "2026-10-07",
+        "expected_sessions": 1,
+        "observations": 1,
+        "missing_sessions": [],
+        "provisional_sessions": [],
+        "complete": true,
+        "foreign": -1053,
+        "institution": 650,
+        "observed_foreign_subtotal": -1053,
+        "observed_institution_subtotal": 650,
+        "includes_provisional": false,
+        "final_session_count": 1
+      },
+      "3": {
+        "start": "부분합만: 2026-10-02",
+        "end": "2026-10-07 (2/3일 관측·10/6 누락)",
+        "expected_sessions": 3,
+        "observations": 2,
+        "missing_sessions": [
+          "2026-10-06"
+        ],
+        "provisional_sessions": [],
+        "complete": false,
+        "foreign": 2018,
+        "institution": -2202,
+        "observed_foreign_subtotal": 2018,
+        "observed_institution_subtotal": -2202,
+        "includes_provisional": false,
+        "final_session_count": 2
+      },
+      "5": {
+        "start": "부분합만: 2026-09-30",
+        "end": "2026-10-07 (4/5일 관측·10/6 누락)",
+        "expected_sessions": 5,
+        "observations": 4,
+        "missing_sessions": [
+          "2026-10-06"
+        ],
+        "provisional_sessions": [],
+        "complete": false,
+        "foreign": -3210,
+        "institution": 1733,
+        "observed_foreign_subtotal": -3210,
+        "observed_institution_subtotal": 1733,
+        "includes_provisional": false,
+        "final_session_count": 4
+      },
+      "15": {
+        "start": "부분합만: 2026-09-14",
+        "end": "2026-10-07 (14/15일 관측·10/6 누락)",
+        "expected_sessions": 15,
+        "observations": 14,
+        "missing_sessions": [
+          "2026-10-06"
+        ],
+        "provisional_sessions": [],
+        "complete": false,
+        "foreign": 494,
+        "institution": -2731,
+        "observed_foreign_subtotal": 494,
+        "observed_institution_subtotal": -2731,
+        "includes_provisional": false,
+        "final_session_count": 14
+      },
+      "20": {
+        "start": "부분합만: 2026-09-07",
+        "end": "2026-10-07 (19/20일 관측·10/6 누락)",
+        "expected_sessions": 20,
+        "observations": 19,
+        "missing_sessions": [
+          "2026-10-06"
+        ],
+        "provisional_sessions": [
+          "2026-09-11"
+        ],
+        "complete": false,
+        "foreign": 4687,
+        "institution": -6989,
+        "observed_foreign_subtotal": 4687,
+        "observed_institution_subtotal": -6989,
+        "includes_provisional": true,
+        "final_session_count": 18
+      }
+    },
+    "daily_options": [
+      {
+        "investor": "외국인",
+        "market": "콜옵션",
+        "quantity": -2175,
+        "amount_100m_krw": -12
+      },
+      {
+        "investor": "외국인",
+        "market": "풋옵션",
+        "quantity": -1412,
+        "amount_100m_krw": 14
+      },
+      {
+        "investor": "기관계",
+        "market": "콜옵션",
+        "quantity": -2699,
+        "amount_100m_krw": 1
+      },
+      {
+        "investor": "기관계",
+        "market": "풋옵션",
+        "quantity": -315,
+        "amount_100m_krw": -7
+      }
+    ],
+    "scope_note": "아래 보조표는 누락을 제외한 관측 부분합이며 3·5·15거래일 완전 합계가 아닙니다. 완전 합계는 위 선물 본문에서 확인 불가로 표시합니다. 전체월물 거래흐름이지 실제 잔고가 아닙니다.",
+    "post_expiry_window_all_expiry_flow": {
+      "start": "2026-09-11",
+      "end": "2026-10-07",
+      "observations": 15,
+      "expected_sessions": 16,
+      "missing_sessions": [
+        "2026-10-06"
+      ],
+      "foreign_subtotal": -2658,
+      "institution_subtotal": 2513,
+      "is_expiry_specific_holdings": false,
+      "includes_provisional": true,
+      "complete": false,
+      "foreign": null,
+      "institution": null
+    },
+    "price_source": {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_api_sources\\20261007\\runs\\200126_126380\\daily.json",
+      "sha256": "f83dd211f67df05c721ec487defe7a4db2c3ea98504a06d1317f49eb5bf68d80"
+    },
+    "flow_source": {
+      "path": "C:\\Users\\skylo\\Documents\\New project\\output\\futures_review_20261007\\futures_flow_20261007.csv",
+      "sha256": "5bd436e6e24df8071689f9b26307e56242fb760e5fbfd2bf464a3f35b8d679c4"
+    },
+    "options_recent_3_5_days": {
+      "three_days": {
+        "status": "PARTIAL_OBSERVED_SUBTOTAL_NOT_COMPLETE_WINDOW",
+        "dates": [
+          "2026-10-02",
+          "2026-10-07"
+        ],
+        "missing": [
+          "2026-10-06"
+        ],
+        "rows": [
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "개인",
+            "net": 371
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": -5968
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": -6115
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": 73
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 1022
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": -137
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": 5671
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 68
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "투신",
+            "net": -1118
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 153
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": -2126
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": -2202
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": 31
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 377
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": -47
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": 2018
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 24
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "투신",
+            "net": -437
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "개인",
+            "net": 16
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": 15
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": 13
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": -10
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": -19
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "투신",
+            "net": -1
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 5822
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": -2757
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": -2887
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": -13
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": -2922
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 1
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "투신",
+            "net": -131
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "개인",
+            "net": -1
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": -25
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": -25
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": -9
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": 35
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "투신",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 3025
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": -1161
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": -1161
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": -42
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": -1822
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "투신",
+            "net": 0
+          }
+        ],
+        "start": "2026-10-02",
+        "end": "2026-10-07"
+      },
+      "five_days": {
+        "status": "PARTIAL_OBSERVED_SUBTOTAL_NOT_COMPLETE_WINDOW",
+        "dates": [
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-07"
+        ],
+        "missing": [
+          "2026-10-06"
+        ],
+        "rows": [
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "개인",
+            "net": 3238
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": 3090
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": 4563
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": 687
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 572
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": 483
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": -8487
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 171
+          },
+          {
+            "market": "선물",
+            "unit": "금액",
+            "investor": "투신",
+            "net": 225
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 1218
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": 1235
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": 1733
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": 259
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 216
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": 176
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": -3210
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 61
+          },
+          {
+            "market": "선물",
+            "unit": "수량",
+            "investor": "투신",
+            "net": 37
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "개인",
+            "net": 28
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": -70
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": -73
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": -17
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": 62
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "금액",
+            "investor": "투신",
+            "net": -2
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 6297
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": -1717
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": -1885
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": -99
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": -4313
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 1
+          },
+          {
+            "market": "콜옵션",
+            "unit": "수량",
+            "investor": "투신",
+            "net": -169
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "개인",
+            "net": -8
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "금융투자",
+            "net": -200
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "기관계",
+            "net": -200
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "기타법인",
+            "net": -10
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "외국인",
+            "net": 218
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "금액",
+            "investor": "투신",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "개인",
+            "net": 3744
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "금융투자",
+            "net": -2593
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "기관계",
+            "net": -2595
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "기타법인",
+            "net": -7
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "보험",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "연기금등",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "외국인",
+            "net": -1142
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "은행",
+            "net": 0
+          },
+          {
+            "market": "풋옵션",
+            "unit": "수량",
+            "investor": "투신",
+            "net": -2
+          }
+        ],
+        "start": "2026-09-30",
+        "end": "2026-10-07"
+      }
+    },
+    "oi_history_discrepancy": {
+      "current_overlap_revisions": [],
+      "current_day_change_verified": true,
+      "current_day_change": 1569
+    },
+    "manual_position_review": {
+      "source": "0790 current-range visual review",
+      "is_estimate": true,
+      "actual_holdings_verified": false
+    },
+    "fib_reference": {
+      "status": "NOT_USED",
+      "reason": "차수·하위파 미확정.미검증 확장 목표 제외."
+    }
+  },
+  "oi_note": "F202612 정규장 종가OI135,506,전일133,937 대비+1,569계약입니다. 08:45 최저134,574→15:25 최고136,185→종가135,506으로 고점에서679계약 감소했습니다. 같은 API 재조회 기준3거래일 변화+2,579·5거래일+3,323이며 과거 보관 분봉과 겹치는 가격·OI 수정은 없습니다. 가격 하락+OI 증가+외국인 순매도는 하방 압력 해석과 합의하지만 모든 미결제 계약에는 롱·숏 양쪽이 존재하므로 신규 숏만1,569 늘었다거나 외국인 숏잔고가 그만큼 증가했다고 단정할 수 없습니다. 금융투자 순매수는 반대 근거이고 기존 롱 청산·헤지·차익거래 구분도 불가합니다. 일봉 거래량96,350과 분봉합92,007은4,343계약(4.51%) 불일치하므로 완전VWAP·정밀 체결매물대는 제외했습니다.",
+  "downloads": [
+    {
+      "file": "futures_review_20261007.html",
+      "label": "AI 분석 전체 보고서"
+    },
+    {
+      "file": "futures_review_validation_20261007.json",
+      "label": "원래 오류·게시용 보완·누락 검증"
+    },
+    {
+      "file": "futures_flow_20261007.csv",
+      "label": "게시용 수급 부분 누적 · 자동장부와 분리"
+    },
+    {
+      "file": "futures_0787_20261007.csv",
+      "label": "0787 원본54값 수동대조"
+    },
+    {
+      "file": "futures_dec_daily_20261007.csv",
+      "label": "12월물 정규장 API 일봉"
+    },
+    {
+      "file": "futures_dec_10m_20261007.csv",
+      "label": "정규장10분·OI"
+    },
+    {
+      "file": "volatility_api_20261007.csv",
+      "label": "변동성 API 원자료"
+    }
+  ],
+  "recovery_note": "10/7 기존 같은 날짜 원천/해시 대조. 추가 수집 없음. 수급10/6 누락은 보완하지 않았습니다.",
+  "primary_chart": "cash_KOSPI_mtf_20261007.png",
+  "review": {
+    "headline": "국내·일본 당일 약세 / 미국 전일 상승과 괴리 / 코스피 박스 하단 재시험",
+    "summary": "한국10/7 코스피6,803.90(-1.981%)·코스닥898.43(-2.336%)·니케이70,035.71(-0.917%)는 당일 약세입니다. 한국 장 전에 완료된 미국10/6 나스닥+0.446%·SOX+0.342%·다우+0.494% 상승에도 국내는 하락했으므로 미국 상승을 국내 상방의 충분조건으로 보지 않습니다. 코스피 ADX·Squeeze 방향 연구는 게시 성적 원천 해시가 갱신되어 선언 해시와 불일치하므로 현재 방향 근거에서 제외했습니다. F202609 탐색26/36(72.22%)와 독립 KOSPI200 검증30/66(45.45%) 실패를 함께 표시하며 미래 확률·최종 방향·비중으로 승격하지 않습니다. 14단계는 필수 원천이 검증된 RESEARCH_ONLY이나 섹터순환·거시·파생국면·방향연구 보조층은 해당 manifest에서 제외됐습니다. 연구층 코스피 박스·하단 위치와 전체ADR20 73.53,20일선 상회종목40.13%는 반등 위치와 약한 확산이 충돌함을 보여줍니다. 미국 Yahoo 지연 보조원천은 공식 독립 가격검증과 다르고, 국내 종가/API·니케이 공식 EOD 대조는 별도 검증했습니다.",
+    "cross_market": "니케이·SOX는 보조 확인값입니다. 동일일 동조를 선행 예측력으로 바꾸거나 나스닥·SOX를 독립 표로 더하지 않습니다.",
+    "levels": [
+      {
+        "label": "코스피 상단",
+        "low": 7171.52,
+        "high": 7171.52,
+        "side": "resistance",
+        "strength": "일봉·주봉 고점",
+        "evidence": "9/8 실제 고가7,171.52 및9/22 고가7,171.44의 반복 접근",
+        "condition": "일봉 돌파·재지지 후 주봉 확인"
+      },
+      {
+        "label": "코스피 회복 가지 저점",
+        "low": 6582.2,
+        "high": 6582.2,
+        "side": "support",
+        "strength": "일봉 구조",
+        "evidence": "9/15 저점",
+        "condition": "이탈·재회복 실패시 해당 회복 가지 무효"
+      },
+      {
+        "label": "코스피 큰 하단",
+        "low": 6439.49,
+        "high": 6439.49,
+        "side": "support",
+        "strength": "주봉 구조 참고",
+        "evidence": "9/3 저점",
+        "condition": "주봉 이탈·재저항시 큰 하단 매수 전제 중단"
+      }
+    ],
+    "confirmation_rule": "주봉·일봉 우선, 분봉 대응 보조. 현물 고유 가격을 선물에 환산하지 않습니다.",
+    "elliott": {
+      "preferred": "큰 조정 후 박스·복합반등 안의 하단 재시험. 차수 미확정.",
+      "alternative": "9/15 저점 이후 상승 가지 약화·더 깊은 조정.",
+      "confirmation": "당일 시가6,864.25→고가6,977.77 회복은 단기 복구.7,171.52 일봉·주봉 돌파/재지지는 상단 제한 가설 전환.",
+      "invalidation": "당일 저가6,803.81은 근거리 경고이지 주봉 강지지 아님.6,582.20 이탈·재회복 실패시 회복 가지 무효;6,439.49 주봉 이탈·재저항시 큰 하단 가설 재검토.",
+      "rule_check": "충격5파·삼각형A~E의 하위파 미검증. 확정 카운트·확률 제시 안 함."
+    },
+    "flow_interpretation": "외국인 선물 당일 -1,053계약(-2,916억원),기관계 +650계약(+1,835억원),개인 +165·기타법인 +238계약입니다. 기관 안 금융투자 +1,144(+3,151억원)·보험 +408·연기금 +117과 투신 -1,019(-2,744억원)·은행 -7이 상충합니다. 금융투자는 기관의 하위 항목으로 중복 합산하지 않습니다. 10/6 수급이 없어 최근3일(10/2·6·7),5일(9/30~10/7),20일 완전 합계는 확인 불가입니다. 관측 부분합만 보면3일 중2일 외국인 +2,018·기관 -2,202,5일 중4일 -3,210·+1,733입니다. 금융투자/투신 부분합은 각각2일 -2,126/-437,4일 +1,235/+37입니다. 20일 중19관측 부분합 외국인 +4,687·기관 -6,989는9/11 잠정값1개를 포함합니다. 9/11~10/7 만기 전환 이후 전체월물15/16관측 부분합은 -2,658/+2,513이나 실제12월물 보유잔고·만기별 순포지션이 아닙니다. 자동장부는10/2까지만 있어 검증된 과거 게시표와 당일 원본54값을 별도 사본으로 연결했습니다. 아래 보조표는 명시된 관측일만의 부분합입니다.",
+    "limitations": [
+      "미국 Yahoo 지연 보조원천·공식 독립 가격검증 없음.",
+      "국내 종가/API·니케이 공식 EOD 대조, 진행 주봉·월봉은 확정 신호에서 제외.",
+      "10/6 수급 누락. 보조 수급표는 부분합으로 명시했고 완전 합계와 구별.",
+      "RESEARCH_ONLY 연구 신호는 자동 방향·현금비중에 반영하지 않음.14단계 제외 보조층은 사용하지 않음.",
+      "ADX·Squeeze 방향 연구는 원천 해시 불일치로 이번 방향 판단에서 제외. 기존 탐색/독립 검증 성적은 연구 한계 설명일 뿐 현재 신호 아님."
+    ],
+    "sources": [
+      {
+        "title": "Nikkei 공식 EOD",
+        "url": "https://indexes.nikkei.co.jp/nkave/historical/nikkei_stock_average_daily_en.csv"
+      }
+    ]
+  },
+  "data_validation": {
+    "trade_date": "20261007",
+    "ready_for_editorial_review": true,
+    "status": "VERIFIED_CONTEXT_ONLY",
+    "source_hashes": [
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_15m_20261007.csv",
+        "sha256": "2e2a235e315b6e4a5130fb81ff6cd20efaafddf3d693c20f7bbaa7446dd632de"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_5m_20261007.csv",
+        "sha256": "ee865dfd720d8f9466c57872ac7fdcdd1df682877bd753dafcf29057e9db7916"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_daily_20261007.csv",
+        "sha256": "18fac69f06fa984acd57a2539fa1649a14bae0a6a8c6def9008f14e0a4a98eac"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_monthly_20261007.csv",
+        "sha256": "b4e300b64f3eae6803fd718c7f729e3d23498d032ff65654c852b4d126fe5450"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_weekly_20261007.csv",
+        "sha256": "41e41ac021bd994edf90bf3ac2a3a008034892cf23ebac54f7cca3dac43a858a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_15m_20261007.csv",
+        "sha256": "7ee6ca254cadea15eb345c3116c4849ceaf2143894ba3b06fa86f8bd32411b08"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_5m_20261007.csv",
+        "sha256": "5be91b7a07f3988d11b84682b2975f992f55737334713fd1bed57381227b438f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_daily_20261007.csv",
+        "sha256": "ad94a22a31acd5375831a8382b7455240c787e7c617db88cf719c1de2a3ae1b2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_monthly_20261007.csv",
+        "sha256": "f016f61b00ed30c5b4482065df1a657643ef009f81a89623aab9822e76687130"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_weekly_20261007.csv",
+        "sha256": "85222549e29847b63bbc8f24749f1a81e549e47d443e56cfd0de5938abc6e3ea"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_15m_20261007.csv",
+        "sha256": "0c37726d72cb37110156daebe12692ac61848d9291b7de3b8ca5eabbec0900d6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_5m_20261007.csv",
+        "sha256": "2ef90c772a019d46fd5f6482038a30231fe9b8f442310b69d2b0f9ed32576883"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_daily_20261007.csv",
+        "sha256": "7fa78c37457c0e8dea3da3cc0c46338e0302a962d74f7c311f1e0940181c6520"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_monthly_20261007.csv",
+        "sha256": "c4fca58c116184b0f7d576b91f903d3f01a89bdf4945d5a8522635899eecb046"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_weekly_20261007.csv",
+        "sha256": "f97350e407d67947c04375e21e24b1a9d2bd1fe1ac314d63b9ed4cbf08d4fe01"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\index_mtf_analysis_20261007.json",
+        "sha256": "04acbdbf60ca4edd2379432c422715ac9fbcd7bcc2546f1a53bd33eb1aa19ab2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\kosdaq_mtf_20261007.png",
+        "sha256": "3eab513ea1ff683fc499750aefcb0b93ad79a401b9b8d116604281ecd68e2a1d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\kospi_kosdaq_nikkei_mtf_20261007.png",
+        "sha256": "cb40669ffa5a7208959d7031c80cac66efa3d88c40f2730835faefb319776db5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\kospi_mtf_20261007.png",
+        "sha256": "a2f26b44e87dfc24635b9651c490bc258f664747b479aaef3a0bd722b1474959"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\kospi_nikkei_mtf_20261007.png",
+        "sha256": "cb40669ffa5a7208959d7031c80cac66efa3d88c40f2730835faefb319776db5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\nikkei225_mtf_20261007.png",
+        "sha256": "86b0d601a049d2798de8a6f533f05078b94d7473c8c8d8a18a2df3a861584017"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\kosdaq_ka20005_5m_20261007.json",
+        "sha256": "cc7e8eea7d5189c606daccd666330f46e9a861ace51c3d8cb088d9d8b47bf370"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\kosdaq_ka20006_daily_20261007.json",
+        "sha256": "7716a53aaddbcbcb70e8990138e1640605515493c6bcf89b5a0ba0e25f4a96c8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\kosdaq_ka20009_daily_report_20261007.json",
+        "sha256": "bb7dae5981d5f80303429c6c13b4743eb17bb68601f986eef5cf6e68c44c3926"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\kospi_ka20005_5m_20261007.json",
+        "sha256": "331e20283e13e832d886b59428f4fcf0ba11399e3bb83bf857ce767615f4627f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\kospi_ka20006_daily_20261007.json",
+        "sha256": "add286aca0fc475bee8452dcddf1a3e39a0a0e6fdd9f137ce309792ab6fefcb2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\nikkei225_official_daily_20261007.csv",
+        "sha256": "769f2e2f9c2faf722f4fb135a34e783d87e58f04e1eacfe4f9e25fe64cd4e4a6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\nikkei225_yahoo_1d_20261007.json",
+        "sha256": "db7c487acbbd3cd1f73159ee98b90adcad94bf2acb132ef1de64729a8e6f3ee6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\raw\\nikkei225_yahoo_5m_20261007.json",
+        "sha256": "8d092a91dddc54304d75577599291c799815bbfefcbadebbd576d9738ce46c79"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\validation_20261007.json",
+        "sha256": "c1daa91df0d92fe04e38dfd970ac7f172ea854bbe8865d07eb2fa2245c688971"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\latest.json",
+        "sha256": "fccd1aa13f73d55e17a8b382293ac4dcdbe4a80424230f66c12424c6a50f30ec"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\analysis.json",
+        "sha256": "fccd1aa13f73d55e17a8b382293ac4dcdbe4a80424230f66c12424c6a50f30ec"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\analysis.md",
+        "sha256": "e240c137cbe6bcf93d82cc6a8981ba0514c88a254e56141bf72c7aed1f70e09d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_5m.csv",
+        "sha256": "d81a3a719ff8e3fc5822f5ae5ff8060bd11a47aa985f9f79eda1650bdb51df76"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_daily.csv",
+        "sha256": "bc5d12a37eab509f363551b009c21377fab004f3be3a3916a3354d398cd4b727"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_intraday_10m.csv",
+        "sha256": "9559ffa30072842f9fd143b34cdaaf55bcf3b26fde0c8b17db9c7a5fdb6c7e30"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_monthly.csv",
+        "sha256": "67835ee008bc3c85ec7f435f0756cfaf6d33e4b6efdce288d67a9b5e45d6fd65"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_mtf.png",
+        "sha256": "4bc2c8bd34135ae7804e01d11bd247a8312d1f444aa7044906c2a65805b9c10d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_to_kosdaq_point_in_time.csv",
+        "sha256": "c47ad3becc00aafeeb800a2c2d614bdc125e089e295e7d0fd077bcc3c8e2fe67"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_to_kospi_point_in_time.csv",
+        "sha256": "46292e7ddfcc3ba772b8c18687acb7a8965453acc7c5d52509fd937d90fbe386"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\DOW_weekly.csv",
+        "sha256": "ad9dffb1311eef7181774d97c7a07f77c9bbad8be625102935652b7afebc2cbd"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_5m.csv",
+        "sha256": "3532e800e116da4d72c47326fe9b0ef3618799e37f31b46e5428da25da20f173"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_daily.csv",
+        "sha256": "aefcbba21656884dbe66fc7519a865a49b24bfe9fab0a297ec510a82ce8ba68e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_intraday_10m.csv",
+        "sha256": "29566cf1df15ed327e7ac5e2c3bd36faf438a0cef4c7e57095c23d65c9d67391"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_monthly.csv",
+        "sha256": "5f05093d648bcb1e1592bfe0cba0fa22bbd61dec85b2491bb8e0ad39853da142"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_mtf.png",
+        "sha256": "3dc263ea7f55a3a3fe239ad96c6273174ad533b7e8f84c01b329b3704930e236"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_to_kosdaq_point_in_time.csv",
+        "sha256": "9fede8c7417b08f8fe43f89dffaa9e34370ab7c6cabc711549c02856341e918c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_to_kospi_point_in_time.csv",
+        "sha256": "a972d75e863eb2c47c3a0f8a3dfd788306db45e93384319bdefd617f39c0c5fc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NASDAQ_weekly.csv",
+        "sha256": "710c87d65532861951effdfe8e2c0a60f9ca55b78dbfc1fe9b183153d4cf82ca"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_daily.csv",
+        "sha256": "3c023cc5370597aabbe07311abd0e4dc2cfb4ddee2af1b79464e920010983816"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_intraday_10m.csv",
+        "sha256": "3c5a112f3fbfe6fc4ba41004c8a78981339f8e038bbe44404586f227c549ed95"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_monthly.csv",
+        "sha256": "5b90eed72265ed1a9130e8fa7b0530e079a58d5ae0aeb8c8bc2cd5978055aaf2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_mtf.png",
+        "sha256": "e9c5bfb21a7e8273d22fa60886fb3965ed5ed4f825461bb673c652b79090410c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\NIKKEI225_weekly.csv",
+        "sha256": "833e183dfee724db126e072649cb4d8d990fd0c58cdd6139b859d26421eecc51"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\DOW_5m.json",
+        "sha256": "ed5bea82b3991157dd85ab40f78f20ca839a0570e205853d4fc3961e216dd343"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\DOW_daily.json",
+        "sha256": "3e5de48bd2f1c7732e59ab0041b81bda915f1ab86e70c954f1086f7b0800db57"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\NASDAQ_5m.json",
+        "sha256": "6ce9ffeeac3e20d3a825df7ff772701df5d6d37b6a6dd2f4d4cffeebaace8fef"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\NASDAQ_daily.json",
+        "sha256": "625a6f6e21f51e218ba01efd56df026cbaa727e33cce33b8f068e5433d89365f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\SOX_5m.json",
+        "sha256": "8711ee0715826189a107eb606e0cd5dea29b85ce0ed511ba5b6f7829e8767304"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\raw\\SOX_daily.json",
+        "sha256": "46d92db8d566f7f6afebd9986af49fb8008c9b2cf47450ead8226dff0390cf0a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_5m.csv",
+        "sha256": "3b66b5e73b8a763ee7da2b7295e4c7d53fa1e9c8104e4e326bbfd524345444e0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_daily.csv",
+        "sha256": "0a93d6c5212aea3e2b4b7de4288fe8b5a4a84134f0b28b08f883a0980329b19c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_intraday_10m.csv",
+        "sha256": "e65a9a4be442493c12d6e86beb61a872032825e9afae930c4ef75a920d5784cd"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_monthly.csv",
+        "sha256": "918b8ba6f7f882452b3cf7da4737b2cc3b8e1226334c1a5550e5ca4f6765ad7a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_mtf.png",
+        "sha256": "7a5c8b92349c12653d000fb6cdf4a6362276e2ae00593357182a1cdda063c32f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_to_kosdaq_point_in_time.csv",
+        "sha256": "1009f3197b273c016aa4e13ff3c1ce4c7a7d7aa8c7913a8c18dd29514ade6f2f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_to_kospi_point_in_time.csv",
+        "sha256": "15d2db9dbcaef4ac17c0725ccfd407dfaa876131f5cdc641d9b325ba90f92214"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\us_index_multitimeframe\\20261007\\193555\\SOX_weekly.csv",
+        "sha256": "c4205da006f99e5df582eeb2cf1b253dea4f760f930bb2d243e5709c06887818"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\validation_20261007.json",
+        "sha256": "c1daa91df0d92fe04e38dfd970ac7f172ea854bbe8865d07eb2fa2245c688971"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kospi_daily_20261007.csv",
+        "sha256": "ad94a22a31acd5375831a8382b7455240c787e7c617db88cf719c1de2a3ae1b2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\kosdaq_daily_20261007.csv",
+        "sha256": "18fac69f06fa984acd57a2539fa1649a14bae0a6a8c6def9008f14e0a4a98eac"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261007\\data\\nikkei225_daily_20261007.csv",
+        "sha256": "7fa78c37457c0e8dea3da3cc0c46338e0302a962d74f7c311f1e0940181c6520"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\시장판정\\breadth_board_20261007.csv",
+        "sha256": "3efd95e87e03e71be3205942811961156ba925df074e5d9dfd42f8eca2069a41"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\ADR판정\\kospi_adr_compare_20261007.csv",
+        "sha256": "36c98a5e42d8a0abb601e814192f5c892ba10c30b7d4f32a2d4dd26882064417"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\ADR판정\\kosdaq_adr_compare_20261007.csv",
+        "sha256": "e42a62b3699cc46d7bd745f8051aaf44b38e31eb1f14e6fe580284b8b84da665"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260525\\market_summary.csv",
+        "sha256": "13ab292891399e98ab144f922884702c33d3d7b7657eeaabebedd9d43b76493a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260611\\market_summary.csv",
+        "sha256": "459dbc16bcff130d88334cf541a9cb9884f9cfe8c2046d8d80823d8373125cda"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260612\\market_summary.csv",
+        "sha256": "b7fbd29d7ab953f3326120e944d512d276e566a16d97a3ed56c66086ac641231"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260616\\market_summary.csv",
+        "sha256": "1804cb85c1960c3cf5cd077d280fb480c21d4703083d828733785cc863a3b0ad"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260617\\market_summary.csv",
+        "sha256": "1804cb85c1960c3cf5cd077d280fb480c21d4703083d828733785cc863a3b0ad"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260618\\market_summary.csv",
+        "sha256": "8646d4ddd6298eccb028210d17f3445d53c7853c1b291897f8607dc96612abcf"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260619\\market_summary.csv",
+        "sha256": "8a1d5d8529fedd7d33a42a93d4d162955a59372958ab2a4e063da465c67db76e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260623\\market_summary.csv",
+        "sha256": "4c6be2feaac79ef49d8f0716b50461f077487ad5620be5b0f670229b14a6aee7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260624\\market_summary.csv",
+        "sha256": "4ab8a36bb246679fc91eeb0da145f6620712b311b545ca7ba0660f9e4d24a83e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260626\\market_summary.csv",
+        "sha256": "6a591659adc64c309b8d319235f6f682dddfd84d39a66ad916a5f7c126f100db"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260629\\market_summary.csv",
+        "sha256": "d5e821a06ccf91e173b20e5e3e3d513497f2457d43a9c69eef315c7522be277f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260630\\market_summary.csv",
+        "sha256": "ee3b38c3af66c27c66d3da6ac12907318acfbd8e9dc49c2b9a56facf1717c4bf"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260701\\market_summary.csv",
+        "sha256": "300fe93d8e0af88c4b4a4baebe12d3bc8baf79e5ee377c043343fea8c3400676"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260702\\market_summary.csv",
+        "sha256": "f4eafc219442952a08f43edbb3931fb856ce8d87fa8e674b9bb040569b908ae5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260704\\market_summary.csv",
+        "sha256": "adc5e193ae020d4ae0c87c48d9349d4ffef966ed2c3dc79468464c5187a977c1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260706\\market_summary.csv",
+        "sha256": "f408d775b0074e82ef82b7033525c918b627156dddd0f10b6677009a3ffcd6ea"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260708\\market_summary.csv",
+        "sha256": "f4974990457494805a6060b8128a3cc38a5904fd5945cdad0b3c7d14eb9b10dc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260710\\market_summary.csv",
+        "sha256": "a28ec40f0b80cebcf48f81c4730e9eb11cd40b9e224086851a7ad274a012798f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260711\\market_summary.csv",
+        "sha256": "0f456efe594d39edc65f640f9b178767b959c5fef14140fd6eb172f40f3f1d0e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260714\\market_summary.csv",
+        "sha256": "502f5498b716939bc853a9d09592332301b8dc9f984f20bcb93350b599e04e17"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260715\\market_summary.csv",
+        "sha256": "acccdb05fa236a6787e138cd86bdc3e82a7cd1d39dfc98b1c7a2b9ad67721741"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260716\\market_summary.csv",
+        "sha256": "2fc82d830e89ea46afa522aeaccb82bf5bfe05afa2f785ea2545c7a0d2421c90"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260720\\market_summary.csv",
+        "sha256": "f3defd830a0509c65533d8bb38992d3e8edc3086ae4ae8ac7ea1d18c62db413a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260721\\market_summary.csv",
+        "sha256": "4483ca8ec7f63a14d00cedcfbfe53f7346df19acb8649cf82557bd88de52f1e5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260722\\market_summary.csv",
+        "sha256": "fbf1e6eebf3074c184e3e6ac16b24d56ec373e6cc28afd741b107f408db29e21"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260723\\market_summary.csv",
+        "sha256": "aa96b197b763c6456d8ff2d69f505d2dd54737f9faedadb7cd8e35e5c4e1283c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260726\\market_summary.csv",
+        "sha256": "332601d95a7a7ab25a3a547c72af38bd9ed474a4296bb3c8018c31f0e77882d4"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260728\\market_summary.csv",
+        "sha256": "17f2b9255d9cbfd34b7cb28f4afa353fbae76070dcb353af75e5e2590f4ecc6c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260803\\market_summary.csv",
+        "sha256": "a29c55541784b31260c8d92c60e6ad1ab194dabf9f0f1fd49e4c2e40cad72b4e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260804\\market_summary.csv",
+        "sha256": "90c836d32e639b5266ed8630cf9aa1a9b800cf7bcee8ba085b281ebff72b9e61"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260805\\market_summary.csv",
+        "sha256": "17295c3915381f54311abe28da9ef6147b903f042fba17769570ab324a19c8f7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260806\\market_summary.csv",
+        "sha256": "0d2ae66ff9ea29a0ea7645aa7d87cfa50ca739012a40401580384df45cc2bf06"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260807\\market_summary.csv",
+        "sha256": "33b1feb7af6e10589dbe5383346a9224b1792aafa101f4c061575caff861d3e6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260808\\market_summary.csv",
+        "sha256": "f5cefdd3d5a7e8ab7a1a9bfbfaa1f98f688d9bf0cdc7e4f28481b5d2b6abc67f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260810\\market_summary.csv",
+        "sha256": "ba3913eba68b2e96b45ee1612295ed10b0132645000de0cdfefb04bc9a2683ad"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260811\\market_summary.csv",
+        "sha256": "33ada357f4a9d6ef48d4e6a264ab1971ec5c8ff70f365f528d250d2552e0cff4"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260813\\market_summary.csv",
+        "sha256": "6a166edc6331de1ea5296ce0a5a7848c894db06b24dc37e911669dcb9826a456"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260814\\market_summary.csv",
+        "sha256": "f53547ef2de87f9d7854474b3d6ec13b355058cf863e5366bfd551462d17b4a2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260817\\market_summary.csv",
+        "sha256": "fab757ca2139e2615846f4c78119ad052a57cb72093f6d214868d013520b93b2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260818\\market_summary.csv",
+        "sha256": "8b38a074c0df027167b78b579651c005a61786817fdfba36e0d92b237e48a4a0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260819\\market_summary.csv",
+        "sha256": "b8d68cbf1226f3c47ac62353aa88efc356bd343ea7631463177e2d670d05a49e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260820\\market_summary.csv",
+        "sha256": "b0d1cb2021bbf35319734049f15c26ff043f4e5b129c8b358672def746399a4c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260821\\market_summary.csv",
+        "sha256": "87d0a814d1166cbace48dcd0a84a5a53c4c19b9bf8e0589465a35850fcaee7af"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260824\\market_summary.csv",
+        "sha256": "4b35599526aa2dbe9e34c3a407879cf059da6ce22a3b87faf5aa7a4322409106"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260825\\market_summary.csv",
+        "sha256": "0e8d06623f414870051dcf7985b833c12418a4fafd85c6715645d30af611624d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260826\\market_summary.csv",
+        "sha256": "3c45a42e64099b1ab9b8632a555c221e997d27d2dc0a6f4ea36f331ff901b28f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260827\\market_summary.csv",
+        "sha256": "d582716bf090527f1bbcaebc8e4b3827852ca3883888519c01189b011f5677e8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260828\\market_summary.csv",
+        "sha256": "c9fbded1b087ed16e00492ff1ec9ca538b035f9f0544a2b79cabe7c9bcb9f9e1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260831\\market_summary.csv",
+        "sha256": "4b85f9abe0cc4c6fc92287251741bdb490a8bf4f4d9808bfd04afc036befed8f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260901\\market_summary.csv",
+        "sha256": "c692482c5583563bb659f433b61111c0f2f76adf9b3329bb0904a55b5ffb6b75"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260902\\market_summary.csv",
+        "sha256": "a729c8a375a1c74225911fa3ba970af3e919b750b4176cc8b5f06c2b889f1aac"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260903\\market_summary.csv",
+        "sha256": "540dbae57497df1d2575a4dd470165ad7ed7ce50c70810938544c3fbc8a69047"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260904\\market_summary.csv",
+        "sha256": "c4e90b990211bb63691b28075edcb6c9d63efa17bcb386cb8a2bf1bf711e7d1d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260907\\market_summary.csv",
+        "sha256": "de293761f310b46fa892e5543c5c3d89cc8060db105046c007c4841245d4c4ee"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260908\\market_summary.csv",
+        "sha256": "1576ee01431a6173256e6deb8ea4b0e529f4776722538b0f28a20e591a45c2a0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260909\\market_summary.csv",
+        "sha256": "78316c806f5f805e3fc204c8e3dca4ed3d0c3f98211cd4e6ca2b75248ae7e228"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260910\\market_summary.csv",
+        "sha256": "d42f8d37d1a1020810618730973ce3e69e260ef95d1ae62db01100de33c1661a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260911\\market_summary.csv",
+        "sha256": "a5ad937ece0af163228a046cfabd2075087e6cb12c200fc6d99c75beccf19a2d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260914\\market_summary.csv",
+        "sha256": "b4515f8e1125776a15aa27a527cd94101f643378795f01b8a56af29cb504823d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260915\\market_summary.csv",
+        "sha256": "cd73955f4852b5f3e0a195ce0ee42a09a04eace38f4da0d26b09492f16bb7052"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260916\\market_summary.csv",
+        "sha256": "6bc46a47b460b76f7030acdc29660309db558e11c7db2a24b7b464ef5825f6a6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260917\\market_summary.csv",
+        "sha256": "42253cc0cea8638d8eed963188ecb61fbcf03e0b93121f3a39d344220abd76d7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260918\\market_summary.csv",
+        "sha256": "83315b9d21820f262ad3df78059019e954ae0d82687a242ac7bdaee2461ed8a8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260921\\market_summary.csv",
+        "sha256": "7f4e875fa51e8835c9eab14fd351dd852578e01e1183cbb941644d97687e249d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260922\\market_summary.csv",
+        "sha256": "2cd0f3c9f18dc317df0ff9b0e6837fb67884ea9648e0ca14c6c6b019ecb76352"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260923\\market_summary.csv",
+        "sha256": "a73ca2cea7bd42f9077da98a04eeb5fee57cecb886589242e4d6b03acd691bb8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260928\\market_summary.csv",
+        "sha256": "2114cdcf8530495a454b00fbbc49fd5c473a487a4cf897fd1c915ca98743c409"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260929\\market_summary.csv",
+        "sha256": "2e3287fbca9694bcffcf0832e5eae9c4599cd99ee5c5b6c0f319cc2bb7dcf687"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20260930\\market_summary.csv",
+        "sha256": "473120ed868796f2f2c87726310327caa050ffe61def7091b6496223be5c3f6f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20261001\\market_summary.csv",
+        "sha256": "67aa157ab902498027fabebd34dc2b63ec8db685cf412b82be8176afc57a6f46"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20261002\\market_summary.csv",
+        "sha256": "84ced424d8a9f967015974d3ad02f83a9425c3a2306389aaab55e17713eec194"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20261006\\market_summary.csv",
+        "sha256": "6a7ef0c485dcaf952a09f040d8418b3d31bd57327b3251e807377525cbc7a9dd"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\impulse_adr\\20261007\\market_summary.csv",
+        "sha256": "25d6881e784e9b3e07251dfbf6d1cdb12b1e0640f58a9d1163d88d7e49061e25"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\results\\20261007\\fear_greed\\fear_greed_6m_timeseries_20261007.csv",
+        "sha256": "8e9aec0099ea2f8fbde36d7f913bafea5a20377ecb5bcd1fd75fe769a9c0d7d2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\한국\\sector_history.csv",
+        "sha256": "214cf83000d0b32ba1d5c8132184283fb50e1707c86daaa2a0fa531be973a9cc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\한국\\sector_market_strength.csv",
+        "sha256": "ed878df1e346a60a24f29fe7a50ae50738e8a31f5948dc9e3c4b0834833e499f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260817_235122.csv",
+        "sha256": "16395d3bd5acc828949b4fe1542636a22b9a623e0fa345298b7665cfb8cf19a3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260818_170413.csv",
+        "sha256": "b079ecabaaac116f8fbad45b23f014827ba5d0e11de500cd31bf4b95a2e02613"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260819_183441.csv",
+        "sha256": "9473c2a1cf9bd2ef775798084e235c39edcffade94a54f59ed26663af990cef7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260820_173334.csv",
+        "sha256": "f6b3e9b2f1e53376390da83522e12acc9b7002a83c6221df199181cf3e65dc61"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260821_201443.csv",
+        "sha256": "b5d2757dd6e3e0ad57209cce3d0c293d7182188e0963fae0cdd25afca50dafad"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260824_185259.csv",
+        "sha256": "72b83083f4a4163b91399dad812d93da94267f6cbb96a97a584ff8e998149a7b"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260825_172625.csv",
+        "sha256": "a247741fbcf98e10d2d90c2012b44d6d4c274c1a2f75188273e855ba70dc6618"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260826_172531.csv",
+        "sha256": "4833cbb3cc50020730ee46e735d7dbdcf22cc3aba3d4ec1e62543c92507e119a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260827_164516.csv",
+        "sha256": "53e9b483288c8004a2da4f83c04801d572fc5b670c77a40603d8d63359c0155c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260828_171055.csv",
+        "sha256": "b8e72510dfa1284d6c2fab439ccad01d53ee2fe77eac4c54dc6e42ea9630918a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260831_180323.csv",
+        "sha256": "88628381aa50fa942bac1e8016b19812f386b4ef472cd81d3a92e7954561e9b3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260901_174814.csv",
+        "sha256": "0095f2ea54bd97425d63fa976594c5982366cd89f64909e72f111043299a5567"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260902_173327.csv",
+        "sha256": "9e200fb2b28c3636a1804a93722f696acec8225db0b396d24b9225bc408e4aff"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260903_152231.csv",
+        "sha256": "4f5c0b0dd3a2530c315f71a9a55812ed8effc43d0492e528053268701b69ccf1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260904_162144.csv",
+        "sha256": "5f6b1eef0395e769be71750f7e136e601e97cec6fc503f1a9a9bec008eb9beb4"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260907_182515.csv",
+        "sha256": "6f3634fa885c1ae2278cd0bd570b81e28152671f524e3341479a63477d394f71"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260908_153425.csv",
+        "sha256": "d2ef404a55773393bdd5f710dff393ef25c45f00a34fece6acc7c724b2262a55"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260909_144758.csv",
+        "sha256": "fdeb784f45284ef96a12719e88a3c4bc4e1e76c14cd256e23898cbf1a6300e8f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260910_154834.csv",
+        "sha256": "887129e71eab04ca689cdcbf8c31ed00fa07fe3abc28680fb4c0aecc9bdcbdc4"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260911_143516.csv",
+        "sha256": "c199001db15c58967b6183a464b67971dbdef8c319f47817be8ce203746f6012"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260914_143325.csv",
+        "sha256": "b5bfece933bae1b62edf7d894af1747dd9c5bfaa08d80c0cec7d0f6efae4d9f4"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260915_143916.csv",
+        "sha256": "f109b3f3920aeb2cbbd9f701bd27b3dd2d90e0d089eb024b0b28abfea483ebde"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260916_152931.csv",
+        "sha256": "ac7c39994fc309b21e85b335a0c16866c3fd737aeee32d5f460a04ba11dc67ae"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260917_154754.csv",
+        "sha256": "61c206b5d4bcb4665ea01c051b330aecacec5c397036b1ce2c7f48a09b1f6179"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260918_150323.csv",
+        "sha256": "c9bba97a87765db66f2d22bb5955001b1445ec169ccbb2fe66d9b3eb82a17605"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260921_155019.csv",
+        "sha256": "5872897f5c884519e0303cb54cd9a07610f2ade532a9e29a049010705412dd40"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260922_152639.csv",
+        "sha256": "a45f17610cc91155a656cb71ad9a17ae1d7a760f1126c9865207656d042fea7d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260923_144359.csv",
+        "sha256": "89e3938b874e8990526be9fea19b49b75d6985bcc94e7698aa5c8d511d59127e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260928_154208.csv",
+        "sha256": "bf917300ecd18a04af8067f04e4a39b77498de13f6d4c06aa56a7943b2d12850"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260929_160811.csv",
+        "sha256": "4ce7a0fd772f5b6ee202b9852ae85f376a57adb2aa40ac72c6fb65f322af75d6"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20260930_163435.csv",
+        "sha256": "9e8ff168cb58f695a44f78e3a35c9778a599b9f9adbd58c44c2b2236d0bcc3b8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20261001_143806.csv",
+        "sha256": "139ffbda8071cf2fa35287f772a3db84fefa83036cf9e744ec78ab9ebf995781"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20261002_151133.csv",
+        "sha256": "1d1a9db4a08a8e5f517a0487ce3978815c6fb1ee3f96ec167902b4e2d00046d3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20261006_193253.csv",
+        "sha256": "877b4a1ab52d7b4bc19c828eb6e38313c679e3c9a17b64c0ae975f34dea6a205"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\scan_signals_raw_20261007_144744.csv",
+        "sha256": "6a4474e42507165665b5cb9aa9badfc1c56d28decbc16f01a2db17c6df09a724"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_direction_model\\squeeze_signal_latest.json",
+        "sha256": "042898d44eaf8d992bf8e1d66496e44d1e84e7c5477b94b7a7e6a6c11ef109d1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_direction_model\\squeeze_signals_daily_latest.csv",
+        "sha256": "430aa036b4e9f2537b3fa3e6c3020c286e336fce9c1c6a6129501455142920ad"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_direction_model\\squeeze_forward_ledger.json",
+        "sha256": "2bd50381fa55cb35fd06349a7bcef0c099f18be39c98d5c32d65a1107f75926b"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\restapi\\output\\f202609_composite_research_20260828\\results.json",
+        "sha256": "b53cf3355562b6e3bc3bb1c42383e2e0c481ca3199a4da1c7dcab6ea964d3e22"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_context_runner\\market_context_run_summary_latest.json",
+        "sha256": "2a9bd9b5d0291098881c69e97d51972b22f25fb75e51cb38c8867c97dc61667f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\decision_manifest\\decision_manifest_latest.json",
+        "sha256": "ae3797d5ea9954278a0a83c6c1f0679cc701c075d0d8f801f85f80719067eeb0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_regime\\market_regime_latest.json",
+        "sha256": "f798bce96f849976d546d2d920689c3216482bc01fb41a95caec26d160a06ad7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\latest.json",
+        "sha256": "04acbdbf60ca4edd2379432c422715ac9fbcd7bcc2546f1a53bd33eb1aa19ab2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\validation_latest.json",
+        "sha256": "c1daa91df0d92fe04e38dfd970ac7f172ea854bbe8865d07eb2fa2245c688971"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\full_market_daily_cache\\full_market_latest.csv",
+        "sha256": "bec1a6dab22453cb23b61151778b24242a3a4670e875dfecef5262373ae8f54b"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\full_market_daily_cache\\validation_latest.json",
+        "sha256": "ea06e2d30f7716ac34346046607681ca1ce918dee25a321ba085d5a4918f836f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_internals\\market_internals_latest.json",
+        "sha256": "79efec5f1b186ec771b442c5d5a61b8a9d213c9b2bc4f027525719eb0fd67bcc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_internals\\validation_latest.json",
+        "sha256": "6300e3347d3744bfd4bc81b7618f748e71557d7705a91c970bfb9ddbb2ad7a21"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_regime\\market_regime_latest.json",
+        "sha256": "f798bce96f849976d546d2d920689c3216482bc01fb41a95caec26d160a06ad7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_regime\\validation_latest.json",
+        "sha256": "eb54287706f7041108554ecbcab1d8cc538faac965e13fd47b98091f129757d9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\latest.json",
+        "sha256": "04acbdbf60ca4edd2379432c422715ac9fbcd7bcc2546f1a53bd33eb1aa19ab2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\validation_latest.json",
+        "sha256": "c1daa91df0d92fe04e38dfd970ac7f172ea854bbe8865d07eb2fa2245c688971"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_internals\\market_internals_latest.json",
+        "sha256": "79efec5f1b186ec771b442c5d5a61b8a9d213c9b2bc4f027525719eb0fd67bcc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\market_internals\\validation_latest.json",
+        "sha256": "6300e3347d3744bfd4bc81b7618f748e71557d7705a91c970bfb9ddbb2ad7a21"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\cash_management\\wise_daily\\wise_final_latest.json",
+        "sha256": "098387a75800b0bb620051fb2e1ef198392d3d36497c3dfbfa21ffd30865316b"
+      }
+    ],
+    "ten_minute_audit": {
+      "excluded_incomplete_dates": [
+        {
+          "date": "2026-08-14",
+          "missing_5m": [
+            "2026-08-14 09:00:00+09:00",
+            "2026-08-14 09:05:00+09:00",
+            "2026-08-14 09:10:00+09:00",
+            "2026-08-14 09:15:00+09:00",
+            "2026-08-14 09:20:00+09:00",
+            "2026-08-14 09:25:00+09:00",
+            "2026-08-14 09:30:00+09:00",
+            "2026-08-14 09:35:00+09:00",
+            "2026-08-14 09:40:00+09:00",
+            "2026-08-14 09:45:00+09:00",
+            "2026-08-14 09:50:00+09:00",
+            "2026-08-14 09:55:00+09:00",
+            "2026-08-14 10:00:00+09:00",
+            "2026-08-14 10:05:00+09:00",
+            "2026-08-14 10:10:00+09:00",
+            "2026-08-14 10:15:00+09:00",
+            "2026-08-14 10:20:00+09:00",
+            "2026-08-14 10:25:00+09:00",
+            "2026-08-14 10:30:00+09:00",
+            "2026-08-14 10:35:00+09:00",
+            "2026-08-14 10:40:00+09:00",
+            "2026-08-14 10:45:00+09:00",
+            "2026-08-14 10:50:00+09:00",
+            "2026-08-14 10:55:00+09:00",
+            "2026-08-14 11:00:00+09:00",
+            "2026-08-14 11:05:00+09:00",
+            "2026-08-14 11:10:00+09:00",
+            "2026-08-14 11:15:00+09:00",
+            "2026-08-14 11:20:00+09:00",
+            "2026-08-14 11:25:00+09:00"
+          ]
+        }
+      ],
+      "terminal_prints_folded": [
+        {
+          "date": "2026-08-18",
+          "terminal": "2026-08-18 15:30:00+09:00",
+          "into": "2026-08-18 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-19",
+          "terminal": "2026-08-19 15:30:00+09:00",
+          "into": "2026-08-19 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-20",
+          "terminal": "2026-08-20 15:30:00+09:00",
+          "into": "2026-08-20 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-21",
+          "terminal": "2026-08-21 15:30:00+09:00",
+          "into": "2026-08-21 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-24",
+          "terminal": "2026-08-24 15:30:00+09:00",
+          "into": "2026-08-24 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-25",
+          "terminal": "2026-08-25 15:30:00+09:00",
+          "into": "2026-08-25 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-26",
+          "terminal": "2026-08-26 15:30:00+09:00",
+          "into": "2026-08-26 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-27",
+          "terminal": "2026-08-27 15:30:00+09:00",
+          "into": "2026-08-27 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-28",
+          "terminal": "2026-08-28 15:30:00+09:00",
+          "into": "2026-08-28 15:20:00+09:00"
+        },
+        {
+          "date": "2026-08-31",
+          "terminal": "2026-08-31 15:30:00+09:00",
+          "into": "2026-08-31 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-01",
+          "terminal": "2026-09-01 15:30:00+09:00",
+          "into": "2026-09-01 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-02",
+          "terminal": "2026-09-02 15:30:00+09:00",
+          "into": "2026-09-02 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-03",
+          "terminal": "2026-09-03 15:30:00+09:00",
+          "into": "2026-09-03 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-04",
+          "terminal": "2026-09-04 15:30:00+09:00",
+          "into": "2026-09-04 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-07",
+          "terminal": "2026-09-07 15:30:00+09:00",
+          "into": "2026-09-07 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-08",
+          "terminal": "2026-09-08 15:30:00+09:00",
+          "into": "2026-09-08 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-09",
+          "terminal": "2026-09-09 15:30:00+09:00",
+          "into": "2026-09-09 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-10",
+          "terminal": "2026-09-10 15:30:00+09:00",
+          "into": "2026-09-10 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-11",
+          "terminal": "2026-09-11 15:30:00+09:00",
+          "into": "2026-09-11 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-14",
+          "terminal": "2026-09-14 15:30:00+09:00",
+          "into": "2026-09-14 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-15",
+          "terminal": "2026-09-15 15:30:00+09:00",
+          "into": "2026-09-15 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-16",
+          "terminal": "2026-09-16 15:30:00+09:00",
+          "into": "2026-09-16 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-17",
+          "terminal": "2026-09-17 15:30:00+09:00",
+          "into": "2026-09-17 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-18",
+          "terminal": "2026-09-18 15:30:00+09:00",
+          "into": "2026-09-18 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-21",
+          "terminal": "2026-09-21 15:30:00+09:00",
+          "into": "2026-09-21 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-22",
+          "terminal": "2026-09-22 15:30:00+09:00",
+          "into": "2026-09-22 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-23",
+          "terminal": "2026-09-23 15:30:00+09:00",
+          "into": "2026-09-23 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-28",
+          "terminal": "2026-09-28 15:30:00+09:00",
+          "into": "2026-09-28 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-29",
+          "terminal": "2026-09-29 15:30:00+09:00",
+          "into": "2026-09-29 15:20:00+09:00"
+        },
+        {
+          "date": "2026-09-30",
+          "terminal": "2026-09-30 15:30:00+09:00",
+          "into": "2026-09-30 15:20:00+09:00"
+        },
+        {
+          "date": "2026-10-01",
+          "terminal": "2026-10-01 15:30:00+09:00",
+          "into": "2026-10-01 15:20:00+09:00"
+        },
+        {
+          "date": "2026-10-02",
+          "terminal": "2026-10-02 15:30:00+09:00",
+          "into": "2026-10-02 15:20:00+09:00"
+        },
+        {
+          "date": "2026-10-06",
+          "terminal": "2026-10-06 15:30:00+09:00",
+          "into": "2026-10-06 15:20:00+09:00"
+        },
+        {
+          "date": "2026-10-07",
+          "terminal": "2026-10-07 15:30:00+09:00",
+          "into": "2026-10-07 15:20:00+09:00"
+        }
+      ],
+      "latest_10m_bars": 39,
+      "latest_session_ohlcv_preserved": true,
+      "auction_note": "KOSPI 15:20/15:30 종가 단일가 자료는 마지막 15:20 봉에 합침; 15:25 가상 봉 생성 안 함"
+    },
+    "us_secondary_only": true,
+    "charts": [
+      {
+        "file": "cash_KOSPI_mtf_20261007.png",
+        "sha256": "fc6f9e3d3ed4e0408308864c19d4a4b4e4c1597e16992f3c142f6555112bd8e8"
+      },
+      {
+        "file": "cash_NASDAQ_mtf_20261007.png",
+        "sha256": "3dc263ea7f55a3a3fe239ad96c6273174ad533b7e8f84c01b329b3704930e236"
+      },
+      {
+        "file": "cash_SOX_mtf_20261007.png",
+        "sha256": "7a5c8b92349c12653d000fb6cdf4a6362276e2ae00593357182a1cdda063c32f"
+      },
+      {
+        "file": "cash_DOW_mtf_20261007.png",
+        "sha256": "4bc2c8bd34135ae7804e01d11bd247a8312d1f444aa7044906c2a65805b9c10d"
+      },
+      {
+        "file": "cash_NIKKEI225_mtf_20261007.png",
+        "sha256": "e9c5bfb21a7e8273d22fa60886fb3965ed5ed4f825461bb673c652b79090410c"
+      }
+    ],
+    "research_handoff": {
+      "status": "EXCLUDED_SOURCE_HASH_MISMATCH",
+      "errors": [
+        {
+          "path": "C:\\Users\\skylo\\Documents\\New project\\market-analysis\\market_view_hit_rate_latest.json",
+          "reason": "C:\\Users\\skylo\\Documents\\New project\\market-analysis\\market_view_hit_rate_latest.json",
+          "declared": "5760d1b7cf6df245891ab72507d8913c85ec74337ce3cde9bafeb794425d940e",
+          "actual": "fb9a2c34a334aed19ab78b60e19b67c093241d37b1d6e2956454a02ab9b8ead8"
+        }
+      ],
+      "current_signal_used": false
+    },
+    "kosdaq": {
+      "name": "KOSDAQ",
+      "symbol": "101",
+      "source_tier": "primary_broker",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-09-30T00:00:00",
+          "bar_count": 88,
+          "ohlc": {
+            "open": 831.96,
+            "high": 862.5,
+            "low": 782.87,
+            "close": 855.91
+          },
+          "returns_pct": {
+            "1": 2.591,
+            "5": -28.217,
+            "20": 17.523,
+            "60": -14.688
+          },
+          "moving_averages": {
+            "sma3": 803.32,
+            "sma6": 932.215,
+            "sma12": 977.205,
+            "sma24": 860.343,
+            "sma60": 846.813
+          },
+          "mid_ma_normalized_slope": 0.0539,
+          "rsi14": 48.296,
+          "macd": 25.5201,
+          "macd_signal": 43.4748,
+          "macd_hist": -17.9547,
+          "bollinger": {
+            "upper": 1206.999,
+            "middle": 891.025,
+            "lower": 575.051,
+            "percent_b": 0.4444,
+            "width": 0.7092
+          },
+          "atr14": 136.4576,
+          "levels": {
+            "previous_20_high": 1229.42,
+            "previous_20_low": 630.99,
+            "previous_60_high": 1229.42,
+            "previous_60_low": 627.01
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 11,
+            "confirmed_pivot_lows": 14,
+            "latest_pivot_high": 1229.42,
+            "latest_pivot_low": 630.99
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.054"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 48.30"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.44, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -15.0,
+          "state": "중립-하락",
+          "display_latest_bar": "2026-10-31T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "weekly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-10-02T00:00:00",
+          "bar_count": 383,
+          "ohlc": {
+            "open": 845.48,
+            "high": 903.88,
+            "low": 833.62,
+            "close": 893.29
+          },
+          "returns_pct": {
+            "1": 5.78,
+            "5": 6.546,
+            "20": -20.935,
+            "60": 10.382
+          },
+          "moving_averages": {
+            "sma5": 839.806,
+            "sma10": 822.26,
+            "sma20": 877.694,
+            "sma60": 951.789,
+            "sma120": 850.116
+          },
+          "mid_ma_normalized_slope": -0.2226,
+          "rsi14": 49.057,
+          "macd": -47.7154,
+          "macd_signal": -53.8746,
+          "macd_hist": 6.1591,
+          "bollinger": {
+            "upper": 1097.69,
+            "middle": 877.694,
+            "lower": 657.698,
+            "percent_b": 0.5354,
+            "width": 0.5013
+          },
+          "atr14": 76.5688,
+          "levels": {
+            "previous_20_high": 1225.29,
+            "previous_20_low": 630.99,
+            "previous_60_high": 1229.42,
+            "previous_60_low": 630.99
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 45,
+            "confirmed_pivot_lows": 48,
+            "latest_pivot_high": 879.29,
+            "latest_pivot_low": 781.89
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.223"
+            },
+            "rsi": {
+              "vote": 0,
+              "weight": 10.0,
+              "reason": "RSI14 49.06"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.54, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -5.0,
+          "state": "중립·박스",
+          "display_latest_bar": "2026-10-09T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T00:00:00",
+          "bar_count": 1800,
+          "ohlc": {
+            "open": 917.45,
+            "high": 921.73,
+            "low": 898.25,
+            "close": 898.43
+          },
+          "returns_pct": {
+            "1": -2.336,
+            "5": 5.723,
+            "20": 10.44,
+            "60": 14.45
+          },
+          "moving_averages": {
+            "sma5": 892.368,
+            "sma10": 867.335,
+            "sma20": 843.991,
+            "sma60": 812.165,
+            "sma120": 937.726,
+            "sma240": 969.128
+          },
+          "mid_ma_normalized_slope": 0.0384,
+          "rsi14": 64.886,
+          "macd": 20.2593,
+          "macd_signal": 11.7382,
+          "macd_hist": 8.5211,
+          "bollinger": {
+            "upper": 907.611,
+            "middle": 843.991,
+            "lower": 780.372,
+            "percent_b": 0.9278,
+            "width": 0.1508
+          },
+          "atr14": 22.8811,
+          "levels": {
+            "previous_20_high": 919.92,
+            "previous_20_low": 798.97,
+            "previous_60_high": 919.92,
+            "previous_60_low": 630.99
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 202,
+            "confirmed_pivot_lows": 221,
+            "latest_pivot_high": 839.05,
+            "latest_pivot_low": 833.62
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.038"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 64.89"
+            },
+            "macd": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 1,
+              "weight": 5.0,
+              "reason": "%B 0.93, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 60.0,
+          "state": "상승",
+          "display_latest_bar": "2026-10-07T00:00:00",
+          "display_bar_is_partial": false
+        },
+        "intraday_15m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-10-07T15:30:00+09:00",
+          "bar_count": 935,
+          "ohlc": {
+            "open": 899.36,
+            "high": 899.36,
+            "low": 898.43,
+            "close": 898.43
+          },
+          "returns_pct": {
+            "1": -0.103,
+            "5": -0.662,
+            "20": -1.396,
+            "60": 0.582
+          },
+          "moving_averages": {
+            "ema5": 899.923,
+            "ema10": 901.524,
+            "ema20": 903.918,
+            "ema60": 904.04,
+            "ema120": 894.114
+          },
+          "mid_ma_normalized_slope": -0.2273,
+          "rsi14": 34.634,
+          "macd": -2.7897,
+          "macd_signal": -2.2692,
+          "macd_hist": -0.5205,
+          "bollinger": {
+            "upper": 909.432,
+            "middle": 903.864,
+            "lower": 898.295,
+            "percent_b": 0.0121,
+            "width": 0.0123
+          },
+          "atr14": 2.356,
+          "levels": {
+            "previous_20_high": 912.01,
+            "previous_20_low": 898.25,
+            "previous_60_high": 921.73,
+            "previous_60_low": 889.22
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 119,
+            "confirmed_pivot_lows": 122,
+            "latest_pivot_high": 906.83,
+            "latest_pivot_low": 904.78
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.227"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 34.63"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": -1,
+              "weight": 5.0,
+              "reason": "%B 0.01, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -80.0,
+          "state": "하락",
+          "display_latest_bar": "2026-10-07T15:30:00+09:00",
+          "display_bar_is_partial": false
+        }
+      },
+      "confirmed_mtf": {
+        "score": 8.2,
+        "state": "중립·박스",
+        "valid_weight_pct": 100.0,
+        "timeframe_conflict": false,
+        "confidence_cap": 100,
+        "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+      }
+    }
+  }
+}
