@@ -1,6 +1,6 @@
 {
   "as_of": "20261012",
-  "generated_at": "2026-10-12T15:58:31+09:00",
+  "generated_at": "2026-10-12T21:14:30+09:00",
   "summaries": [
     {
       "market": "KOSPI",
@@ -28,76 +28,96 @@
   "charts": [
     {
       "title": "업종 상대강도",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "sector_rs.png"
     },
     {
       "title": "시장 폭·ADR·AD Line",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "market_breadth.png"
     },
     {
       "title": "업종 쏠림",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "sector_concentration.png"
     },
     {
       "title": "KOSPI ADR",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "kospi_adr.png"
     },
     {
       "title": "KOSDAQ ADR",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "kosdaq_adr.png"
     },
     {
       "title": "Impulse·ADR",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "impulse_adr.png"
     },
     {
       "title": "공포탐욕",
-      "description": "20261012 장중 원자료·저녁 확정검증 전",
+      "description": "20261012 장중 원자료·원수집 시각 유지·확정 EOD 전수 아님",
       "image": "fear_greed.png"
     },
     {
-      "title": "국내지수 일봉/5분 조회 스냅샷",
-      "description": "15:34 조회·추가 확정 교차검증 전·중요 가격 판단 보류",
-      "image": "index_snapshot_20261012.png"
+      "title": "KOSPI 다중 시간대",
+      "description": "국내 확정10/12·미국 완료10/9·월/주 진행봉 구분·니케이 휴장 제외",
+      "image": "kospi_mtf_20261012.png"
+    },
+    {
+      "title": "KOSDAQ 다중 시간대",
+      "description": "국내 확정10/12·미국 완료10/9·월/주 진행봉 구분·니케이 휴장 제외",
+      "image": "kosdaq_mtf_20261012.png"
+    },
+    {
+      "title": "NASDAQ 다중 시간대",
+      "description": "국내 확정10/12·미국 완료10/9·월/주 진행봉 구분·니케이 휴장 제외",
+      "image": "NASDAQ_mtf_20261012.png"
+    },
+    {
+      "title": "SOX 다중 시간대",
+      "description": "국내 확정10/12·미국 완료10/9·월/주 진행봉 구분·니케이 휴장 제외",
+      "image": "SOX_mtf_20261012.png"
+    },
+    {
+      "title": "DOW 다중 시간대",
+      "description": "국내 확정10/12·미국 완료10/9·월/주 진행봉 구분·니케이 휴장 제외",
+      "image": "DOW_mtf_20261012.png"
     }
   ],
   "index_multitimeframe": {
     "validation": {
-      "status": "PENDING_EVENING",
-      "can_use_for_decision": false,
-      "file": null
+      "status": "WARN",
+      "can_use_for_decision": true,
+      "file": "validation_20261012.json"
     },
     "assessment": {
-      "conclusion": "저녁 국내외 MTF·Squeeze/ADX·14단계 연구층의20261012 검증 결과 미완료로 제외. 해외10/8·방향연구10/8·시장환경10/7 latest를 오늘 신호로 재사용하지 않습니다. LS 월물 아카이브·파생 보조층은 이번1차 분석에서 미검증으로 제외합니다."
+      "conclusion": "니케이225: JPX 공식10/12 Sports Day 휴장으로 오늘 방향 확인에서 제외(사용자 승인). 원본 WARN/PARTIAL은 보존. 13단계는 전체 WARN을 차단한 실행 실패로 오늘 Squeeze/ADX 제외, 14단계는196490 수집오류로 선택 연구층 및 의존결과 제외. 과거10/8 방향연구·10/7 시장환경 latest 재사용 없음. LS 월물/파생 아카이브도 당일 검증 부족으로 제외."
     },
     "cross_market": {},
-    "analysis_file": null,
-    "validation_file": null
+    "analysis_file": "index_mtf_analysis_20261012.json",
+    "validation_file": "index_mtf_validation_20261012.json"
   },
   "data_bundle": {
     "file": "market_data_bundle_latest.zip",
     "as_of": "20261012",
-    "phase": "PROVISIONAL",
+    "phase": "FINAL",
     "file_count": 17,
-    "sha256": "05ac391d94771804606d3696ca19661aca934be49173f0971e06b5f383ecf94e",
+    "sha256": "38af77df8ebbe73c16e24c9c90363ed16b5b949607c52504858886341014a896",
     "notes": [
-      "1차·저녁 후처리 전. 시장폭14:13·ETF/55섹터 장중·V2 15:12 생성·종목/지수15:34前後·수급15:36前後를 구분합니다. 종목 일봉은 키움 브로커 스냅샷이며 거래소 독립 확정종가가 아닙니다. 배치 완료 문구/당일 산출물은 있으나 실행기 ExitCode=null로 전체 실제 종료코드는 확인 불가입니다. 실패를 성공으로 바꾸지 않고 확인한 자료만 후보연구로 게시합니다.",
-      "저녁 국내외 MTF·Squeeze/ADX·14단계 연구층의20261012 검증 결과 미완료로 제외. 해외10/8·방향연구10/8·시장환경10/7 latest를 오늘 신호로 재사용하지 않습니다. LS 월물 아카이브·파생 보조층은 이번1차 분석에서 미검증으로 제외합니다."
+      "최종 분석20261012. 국내 지수는19:35 생성된 확정 일봉/마지막 분봉 및 추가 종가 교차검증 통과. 시장폭14:13·ETF/55섹터 장중·V2 15:12 자료는 시간 한계 유지. 79종목 차트와12종목 수급은 저녁 키움 재조회이며 거래소 독립 확정종가 검증과 구분. 장중 실행기 실제 숫자 종료코드는 확인 불가, 저녁 배치 종료1(11·12 국내 통과/13·14 실패)을 그대로 보존.",
+      "니케이225: JPX 공식10/12 Sports Day 휴장으로 오늘 방향 확인에서 제외(사용자 승인). 원본 WARN/PARTIAL은 보존. 13단계는 전체 WARN을 차단한 실행 실패로 오늘 Squeeze/ADX 제외, 14단계는196490 수집오류로 선택 연구층 및 의존결과 제외. 과거10/8 방향연구·10/7 시장환경 latest 재사용 없음. LS 월물/파생 아카이브도 당일 검증 부족으로 제외."
     ]
   },
   "downloads": [
     {
-      "title": "1차 시장자료·검증한계 포함ZIP",
+      "title": "최종 시장자료·검증한계 포함ZIP",
       "file": "market_data_bundle_latest.zip"
     },
     {
-      "title": "80후보·79차트/12수급 비교ZIP",
+      "title": "저녁80후보·79차트/12수급 비교ZIP",
       "file": "candidate_chart_review_20261012.zip"
     },
     {
@@ -123,6 +143,22 @@
     {
       "title": "KOSDAQ 20일 ADR CSV",
       "file": "kosdaq_adr.csv"
+    },
+    {
+      "title": "index_mtf_analysis_20261012.json",
+      "file": "index_mtf_analysis_20261012.json"
+    },
+    {
+      "title": "index_mtf_validation_20261012.json",
+      "file": "index_mtf_validation_20261012.json"
+    },
+    {
+      "title": "us_index_analysis_20261012.json",
+      "file": "us_index_analysis_20261012.json"
+    },
+    {
+      "title": "us_index_validation_20261012.json",
+      "file": "us_index_validation_20261012.json"
     }
   ]
 }
