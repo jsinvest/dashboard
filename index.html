@@ -573,6 +573,8 @@
   <button class="tab-btn" data-tab="leaders">[당일 주도주]</button>
   <button class="tab-btn" data-tab="market">[시장분석자료]</button>
   <button class="tab-btn" data-tab="supply">[선물옵션매물대]</button>
+  <button class="tab-btn" data-tab="program-live">[프로그램 수급 🔒]</button>
+  <button class="tab-btn" data-tab="cvd-live">[선물 CVD 🔒]</button>
 </div>
 
 <div class="layout-manager" id="layoutManager">
@@ -1175,6 +1177,21 @@
     </div>
   </div>
 
+  <div class="tab-panel hidden" data-tab-panel="program-live" data-live-monitor="program">
+    <div class="section-title">프로그램 수급 · 실시간 보기 전용</div>
+    <p>비밀번호를 입력하면 PC에서 수집 중인 키움 프로그램 수급을 볼 수 있어요. 수집 조작은 PC에서 해주세요.</p>
+    <p id="programLiveStatus" role="status">메뉴를 열면 보호된 화면에 연결해요.</p>
+    <a id="programLiveOpen" target="_blank" rel="noopener noreferrer" hidden>별도 창으로 크게 보기 ↗</a>
+    <iframe id="programLiveFrame" title="비밀번호로 보호된 프로그램 수급" referrerpolicy="no-referrer" style="width:100%;height:900px;border:1px solid var(--border);border-radius:10px;margin-top:12px" hidden></iframe>
+  </div>
+  <div class="tab-panel hidden" data-tab-panel="cvd-live" data-live-monitor="cvd">
+    <div class="section-title">코스피200 선물 CVD · 실시간 보기 전용</div>
+    <p>비밀번호를 입력하면 PC에서 수집 중인 LS 선물 CVD·미결제약정·베이시스를 볼 수 있어요. 화면의 관측 시각과 거래일을 함께 확인해주세요.</p>
+    <p id="cvdLiveStatus" role="status">메뉴를 열면 보호된 화면에 연결해요.</p>
+    <a id="cvdLiveOpen" target="_blank" rel="noopener noreferrer" hidden>별도 창으로 크게 보기 ↗</a>
+    <iframe id="cvdLiveFrame" title="비밀번호로 보호된 선물 CVD" referrerpolicy="no-referrer" style="width:100%;height:1000px;border:1px solid var(--border);border-radius:10px;margin-top:12px" hidden></iframe>
+  </div>
+
   <!-- 추정 매물대: supply-zone/latest.json -->
   <div class="tab-panel" data-tab-panel="supply">
     <div class="section-title">선물옵션 가격구조 · KOSPI200 선물 가변폭 지지·저항 후보와 누적수급</div>
@@ -1241,12 +1258,13 @@ function applyDashboardMode(){
 // ── 상단 탭 ──
 function showDashboardTab(tab){
   document.querySelectorAll('[data-tab-panel]').forEach(panel=>{
-    panel.classList.toggle('hidden', tab !== 'all' && panel.dataset.tabPanel !== tab);
+    panel.classList.toggle('hidden', (tab !== 'all' && panel.dataset.tabPanel !== tab) || (tab === 'all' && !!panel.dataset.liveMonitor));
   });
   document.querySelectorAll('.tab-btn').forEach(btn=>{
     btn.classList.toggle('active', btn.dataset.tab === tab);
   });
   if(typeof refreshLayoutManager === 'function') refreshLayoutManager(tab);
+  if(typeof window.loadLiveMonitor === 'function') window.loadLiveMonitor(tab);
 }
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>showDashboardTab(btn.dataset.tab));
@@ -4220,5 +4238,6 @@ loadSupplyZone();
 
 </script>
 <script src="news/dashboard.js"></script>
+<script src="live-monitors/dashboard.js"></script>
 </body>
 </html>
