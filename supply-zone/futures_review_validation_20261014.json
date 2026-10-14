@@ -1,0 +1,768 @@
+{
+  "trade_date": "20261014",
+  "status": "PRICE_FLOW_POSITION_EDITORIAL_VERIFIED",
+  "ready_for_editorial_review": true,
+  "automated_pipeline_completed": false,
+  "editorial_recovery_completed": true,
+  "execution": {
+    "terminal": true,
+    "actual_start": "2026-10-14 18:51:36.89",
+    "actual_end": "2026-10-14 19:09:11.18",
+    "exit_code": 1,
+    "status": "PIPELINE_EXIT_1",
+    "source_review_ready": true,
+    "manifest_captures": 68,
+    "manifest_warnings": [],
+    "ocr_warnings": [
+      "API 경고: {\"date\": \"20261001\", \"type\": \"VOLUME_SCOPE_DIFFERENCE\", \"daily\": 103144.0, \"minute_sum\": 103143.0}",
+      "선물 기관계(-1983)와 표시 세부기관 합계(-2095) 차이 큼",
+      "콜옵션 기관계(621)와 표시 세부기관 합계(521) 차이 큼",
+      "직전 평일의 동일 월물 OI 없음: 전일 증감은 비움. 휴장일은 공식 달력 확인 필요"
+    ],
+    "ocr_corrections": [
+      {
+        "market": "선물",
+        "unit": "수량",
+        "investor": "보험",
+        "net_ocr": -632,
+        "net_reviewed": -532,
+        "source_png_reviewed": "0787_선물_수량_20261014.png",
+        "source_sha256": "9e6fc29cb484f4ba4444ea212f891abc3c438f8909b0ab0483d770792107b9d1"
+      },
+      {
+        "market": "콜옵션",
+        "unit": "수량",
+        "investor": "기관계",
+        "net_ocr": 621,
+        "net_reviewed": 521,
+        "source_png_reviewed": "0787_콜옵션_수량_20261014.png",
+        "source_sha256": "f48fa0a949f315f6eca6b4db97d755f2375fbc94165629997b6ce042bc017c71"
+      },
+      {
+        "market": "풋옵션",
+        "unit": "금액",
+        "investor": "기타법인",
+        "net_ocr": 4,
+        "net_reviewed": 2,
+        "source_png_reviewed": "0787_풋옵션_금액_20261014.png",
+        "source_sha256": "64bef51b30949e6ccfbafd20f4aa17798f58a4cf239dfb30a9805ed9c477ce74"
+      }
+    ],
+    "auto_ledger_option_delta_excluded": true,
+    "source_hashes": [
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\eod_admin_task\\on_demand_latest.log",
+        "sha256": "a4a5870148f30512ad3b25c26a6a10a59a626685376cd4512361a0aa9c498fcc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0471_KOSPI200_일별_60일_20261014.png",
+        "sha256": "db8f3e5def5153365436aff1ab2fe20b72004e2bedea20019f55c48ee3feb281"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0786_close_snapshot_20261014.png",
+        "sha256": "1d4b168d4327108b75fee393e4ac0a6eac822e44f06ac6864603d108d2ddebac"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_금액_20261014.png",
+        "sha256": "dcc137fddacd93a82fcbd0b33eb35ca89b36787d85deba67678b5dafe37b90a7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_수량_20261014.png",
+        "sha256": "9e6fc29cb484f4ba4444ea212f891abc3c438f8909b0ab0483d770792107b9d1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_금액_20261014.png",
+        "sha256": "4a160d610825076df4b0083e0fb971c0495250375da2272d8b695f241ed4a2de"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_수량_20261014.png",
+        "sha256": "f48fa0a949f315f6eca6b4db97d755f2375fbc94165629997b6ce042bc017c71"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_금액_20261014.png",
+        "sha256": "64bef51b30949e6ccfbafd20f4aa17798f58a4cf239dfb30a9805ed9c477ce74"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_수량_20261014.png",
+        "sha256": "63535b6ad6bb4cd006b3d5896df4a9e7ab7c91cb50b1342c42f2c629b67505c9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0790_누적_20261014.png",
+        "sha256": "7efafa6d1cab46d0ed890d55f3fc34b96499d3b2281cf882b5063c73954ea0c9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0790_일자_20261014.png",
+        "sha256": "de0c5f986be9928fe98253925a6305083defd83d896d13ea8ad861c0045a3f38"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1000_1100_20261014.png",
+        "sha256": "abdddde329dba52e074dbb947d36b8b83dd92b8988fe57e7195dab4847662467"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1100_1200_20261014.png",
+        "sha256": "811eabfec1ba67bc30ef7a0af6f2b37e7eb95f8fcedf999c52d1308a0251f2f9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1200_1300_20261014.png",
+        "sha256": "2c166ba5b0ce6b437f78e0b48717e1b3c79aa9b7edb1337d0b2e6d0dd9607539"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1300_1400_20261014.png",
+        "sha256": "882f4ccfad60db51fbc1dfd29070ab0edfb9549373394724f929f94c3fe9ae06"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1400_1500_20261014.png",
+        "sha256": "a6ae5c58d7aec738a62ae808472b02c0325b6ff4aeb6fc8dea800a8c37f8391e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_1500_1600_20261014.png",
+        "sha256": "4af9372598836bcfce426618ca8019f6511ebba86c9299f707920089fba892e2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_800_900_20261014.png",
+        "sha256": "86675b18087c37bf37bde77c523fd1eddd14b7201d8cb17261f2b63efaeba8eb"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_900_1000_20261014.png",
+        "sha256": "0cad78d2d0afafa91471928c4a7c99b4c0847aa79c3fcc9fa403cec8970d2ba8"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1000_1100_20261014.png",
+        "sha256": "bb824a8c1f5b70e060f8727ffa414b550090ed5e06005e2ec408821553e12825"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1100_1200_20261014.png",
+        "sha256": "1163af6c3c9c1bef37b36dd9261769a8109f3bd599c91718b5b7bb21000d24fc"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1200_1300_20261014.png",
+        "sha256": "9cc75eec03bd918ab251a815251fa75a7204161e72f87c3c21c4d36153c5d145"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1300_1400_20261014.png",
+        "sha256": "d13a865c6db0ef036a22eb343d9be65a1619ea95b67f050591c690a9d904017a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1400_1500_20261014.png",
+        "sha256": "34040a70e4345e3d5a3f75d8d10e7520501376e80e69d564e943f6cb14824a3b"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_1500_1600_20261014.png",
+        "sha256": "2966a7b808d34d36a9a67c59124fc5d2887ccb8d5c75f732e694bc4a9017278d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_800_900_20261014.png",
+        "sha256": "68d0e0d4e4ea432174d40f1a427f42a6a7a69deb67bcc0bc7b49a94baa3c8c8f"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_기타금융_누적_900_1000_20261014.png",
+        "sha256": "9ac5d06bdac1f9db220b27ae5524aa450498409914203cf0020cb15812be0b95"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1000_1100_20261014.png",
+        "sha256": "1d3432628f78c254f27d1fcf166092bb2ab48109ffa8abc719bf0ceadd302284"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1100_1200_20261014.png",
+        "sha256": "8e31416e3e1a7dfe44454458261d6ded75dc596bcae11ae722a6d0f3acd757ee"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1200_1300_20261014.png",
+        "sha256": "6c5e4108001084849777c8fa4fd6556a087a0f4bfcf784d9a3624e0e3b64bcc9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1300_1400_20261014.png",
+        "sha256": "b4a697a68237c5b8c1c07d01aa64aa231e22b55538e8e66927840f06ba66059d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1400_1500_20261014.png",
+        "sha256": "bfa74bfa0f2e52e4731bd1e7b4ab7b2986ea304b4bd09641793d417a1e4f5718"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_1500_1600_20261014.png",
+        "sha256": "7b4f47767b6cd97fa5488740062fa1ddab23815f5b81302ad1048d2a65695870"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_800_900_20261014.png",
+        "sha256": "b84ee574ecd99b18361068dd0a5d564c33fb2179df26ad05b6b0daafceec1bf3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_보험_누적_900_1000_20261014.png",
+        "sha256": "41a1016cd482368d860ba900cc47394d0f081bb2b6dd81f42cb6e0626d947da5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1000_1100_20261014.png",
+        "sha256": "0bb83c6e02e3ed7f56ee442e094a06de7baa3afff4c6c08de8e2dd53d752b352"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1100_1200_20261014.png",
+        "sha256": "86fac91cd06e3d698981977f378472c65dd4b96daf6f86f6c77b1e6bf7d003d5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1200_1300_20261014.png",
+        "sha256": "9705bbd2b75acab791018b49a909a8cd3b22a176d0e5b7b919c34c1c46fafa9e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1300_1400_20261014.png",
+        "sha256": "216596f5c659b4ff50e1d16c7cd23fbd504c9017d1ed551f51b9acba57ce7674"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1400_1500_20261014.png",
+        "sha256": "7f082a951a97eb50e1154d99ce552625de14f12b35f4e71e47bded2b3d84157d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_1500_1600_20261014.png",
+        "sha256": "3cc8fd664295b10913646ba3441cd8dd2e383affc8a663d8cd1ca6db300302f7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_800_900_20261014.png",
+        "sha256": "0233e96de3b92f5c4a07d7f7251db455f5b48e308bdead4b1332dafdc60b8bbb"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_연기금등_누적_900_1000_20261014.png",
+        "sha256": "8397ad91aac3e349028c0c956a6cebb84a9c24e2f031169883e71425446c0211"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1000_1100_20261014.png",
+        "sha256": "42518ccaab1edcd1979d056daf4555d8f75c9ead99d8c23870df12b6ab4cdac7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1100_1200_20261014.png",
+        "sha256": "0d946e1510204fb0e723658e10e0ca849b69729e9f6ff47450f5f37a10323afe"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1200_1300_20261014.png",
+        "sha256": "013425cb3a45b4abffc44b532ea1ab3478aba74f6ff63bc01c07f14ddb281e0d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1300_1400_20261014.png",
+        "sha256": "3a5b9a6d1aa9e96c1ac414cbd99d75e0d0dba9a9cd9a0773ec4cea7b913d57f3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1400_1500_20261014.png",
+        "sha256": "e0a84ab9b0598ee3a051974579b81fb4e824e169781e2464f93931ca42859dc3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_1500_1600_20261014.png",
+        "sha256": "b0d817a494d1cd5c3a24e5034695c1d6a3adb19e4c15271be784cda41bd99493"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_800_900_20261014.png",
+        "sha256": "18816688ba2aa4ce1c2a79e30b954f3221af3d833133ac25b1dac0466684b5f1"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_900_1000_20261014.png",
+        "sha256": "4860b219ce76763eccaeececc40a10b6e02baa1ace77a68690254e11d2bbc56d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1000_1100_20261014.png",
+        "sha256": "17ea0570073b02cde3fb5808958e922db4f9f6ce9b4c499fdc7f7d837bb7a936"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1100_1200_20261014.png",
+        "sha256": "33e56ef467d3d2ed0039b2d6d2b9daf0f38d2e14e975eaddc893032bbde0f9ab"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1200_1300_20261014.png",
+        "sha256": "fabf84e5162aa50b5a1732d9beeeaebced6403030a705f2e29ea0a3bc94f40f5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1300_1400_20261014.png",
+        "sha256": "ec07cdda1fe44f6c358fff156e3fe0b9e7c3b8ff059b481a5a4ebf3e88393da2"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1400_1500_20261014.png",
+        "sha256": "b58387ee77ce44dbe0451bad2ee4657ba6184f827c53ba3a57e4b30b29e6be04"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_1500_1600_20261014.png",
+        "sha256": "3908cf43c671befb4b0df202ab934d7f135e13922a5480d14f52eb70047840a7"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_800_900_20261014.png",
+        "sha256": "99ecb55b59a9887d05923b14978fee67fc89ce1d04b0c2e1f52eed1a1f01b1c5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_은행_누적_900_1000_20261014.png",
+        "sha256": "53c1dbc1281693da6cb27eb929dc4b35a00f814b0e8d0abe8686341eb1e73db9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1000_1100_20261014.png",
+        "sha256": "89992ce7277b785dde08221dceae34f67b6914583245bac35818fb6fad863faf"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1100_1200_20261014.png",
+        "sha256": "2e65f306d6b7e5a75150d93ec1cec6c34c95677e4d2d5971cfcf918be6cd609c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1200_1300_20261014.png",
+        "sha256": "ccce4838a6966aaa9d1ba231409194229a93db644ce00659ce6f3f45d6c27775"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1300_1400_20261014.png",
+        "sha256": "ee202f0facd4a9e7c5d827d99f114a31c7fbb1520ec48bddd75e20ac340fc4f9"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1400_1500_20261014.png",
+        "sha256": "a54a79f9f0fff33f0f58f70b1252faed17943ff44bcb7bb275c4fa559fd3b1c5"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_1500_1600_20261014.png",
+        "sha256": "12f8df674dbaf5095e651c2d31fc8aa7d0987cc4610dc7278b554af4a6c2cff0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_800_900_20261014.png",
+        "sha256": "f423cdb9bd464d4091871afd7fe8b6a9b25405a968d1ca973a2af7f103435032"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_900_1000_20261014.png",
+        "sha256": "86a42470b864965b8e2341e7af91421a2e541cf581164d26d03bd8205e6d8d29"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0794_누적_20261014.png",
+        "sha256": "f63f70ab99c3b34cf530ee777bd11231a5483b4730d4b17827510a86787635d3"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0794_일자_20261014.png",
+        "sha256": "4b3a242aa545300a7ed827ec77f7afde15477df9025da5cf40697408b0fed3bd"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\eod_0787_parsed_20261014.csv",
+        "sha256": "ac5ea8cbef2deaaf82bcde5230ffe527672a36c94ee9decb03a0b892bce8a28e"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\eod_manifest_20261014.json",
+        "sha256": "d0225627c123ab29bc0d051f9310ad3ddb909123dff01f76ecaaa5d251b72a85"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\eod_ocr_bridge_20261014.json",
+        "sha256": "61c13a282ebf781b9ddb417e7545827adca67968df866dc6df2eda9072a9562c"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\eod_validation_20261014.txt",
+        "sha256": "f464cae26697e3232a11b3a4bedaa3699363b9cc12bd02d9a38dd82feb66b4d0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\ls_cvd_status_20261014.json",
+        "sha256": "e328b0a6fa1aaee1e94fca0d927b10f8d037c3a850f9ffba943eff49370608ef"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\ls_cvd_status_20261014_185148_308819.json",
+        "sha256": "cbc70762126d58a701e1a4f54da90b5abf1c0a00a125946a7727133b45304704"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_bootstrap_20261014.log",
+        "sha256": "7e92d7feecd2e21e338487e1d77a802465d03e3579e851dd51cc6ba0662ded1d"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_ls_cvd_20261014.log",
+        "sha256": "e338a1d882adcc35b437f4e35af12984565e7da8e7561a5ad7f45e59a6b79f64"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage1_api_20261014.log",
+        "sha256": "3354c4d77ba694c79160a8eaa403a0ac324b7adb72af7b12bdf3420b80846912"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage1_collection_20261014.log",
+        "sha256": "b088f5f15bfdf90376c905e259b83859326dd1648cf717817fa2e48130adabf0"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage2_ocr_20261014.log",
+        "sha256": "8207942f8d8ba4c11b2335e1a9ccdf19e855e03dd931985c7291b18b4828d4ab"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage3_ledger_20261014.log",
+        "sha256": "6d8cb874948b745fdc1154b1da271270afceb4a97b7172f795b4a48793caa808"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage4_tracker_20261014.log",
+        "sha256": "9ee8ffdae8ed1660406a229ffa40b85177d5944c220a3fb1ed2b596e4f56220a"
+      },
+      {
+        "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod_logs\\20261014\\pipeline_stage5_visuals_20261014.log",
+        "sha256": "b20942a5212e25352f0634c4c5bf0005825ff36a6edac5893ad00a11bb0c2496"
+      }
+    ],
+    "note": "18:51:36 EOD 재실행→2026-10-14 19:09:11.18 종료코드1. 5단계 generate_eod_daily_supply_chart.py가 폐지된 키움5605 일봉 PNG를 요구해 실패. 6·7단계 미완료. 게시용 차트는 검증 LS 원본으로 별도 생성하며 전체 배치 성공으로 표시하지 않음. 수집68건·수집 경고0. OCR 원본과 화면 대조 후 게시용 사본만 정정: 3건. 원본 OCR/자동 장부는 보존하되 검증되지 않은 옵션 델타0.5 가정과 추정 잔고·평균가·손익은 게시에 사용하지 않음. CVD 보호장치 실패는 별도 제외."
+  },
+  "source_hashes": [
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\api_run_latest.json",
+      "sha256": "320d7db146b6b2186c5ada1d7b21bded88b30f03f75ff371c20aa94fe01f829e"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\daily.json",
+      "sha256": "f1962e0dbdc566af1eee046f03ec7fef5ed4a219546de1d55ce63a75756b7f48"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\minute.json",
+      "sha256": "059d4995309d82e7e1513dcb4571221fd085045e53ad295f076dff4e6f6f71ba"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\oi.json",
+      "sha256": "3055061b7294d61211ea9e1867b0ba0d2fe1dea586d800076ce664c39d2fbcea"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\collection.json",
+      "sha256": "677680a6d68d8fd94e150172a46addbd598c63ef784763dc6803c508ebc9cab0"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0001_t9943.json",
+      "sha256": "fed643d535e97cc6301d4f90623cdd26eb8b17546c075b48a8fb4addbdedc959"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0002_t8466.json",
+      "sha256": "83c9650bd0a6baa86dba25d5ab07c4ac5bba333368a15bd17beac12a2d466269"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0003_t8466.json",
+      "sha256": "1ae3b01bbda12d312f826d10e9e19ca20d586075240b21752a344eb46a6e41f3"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0004_t2214.json",
+      "sha256": "8caa4fe928477a4d4647a2a40fd03520f42c772a4d3d5c193d4fb81d475cfbf4"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0005_t2214.json",
+      "sha256": "b089370a87822c57e36948a681baa725296a4489e98dbb0d70725598d80539a4"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0006_t8465.json",
+      "sha256": "308cf1ed856dd71d724754fd296ba6f14b52db2a17387ed8dc9d285576cec104"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\_ls_api_sources\\20261014\\runs\\185137_608487\\raw\\0007_t8465.json",
+      "sha256": "20b0b5a119736adc8e08e5b51268ef77c49fe49ac07314087a58ac00cfde566e"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260907\\0787_선물_수량_20260907.png",
+      "sha256": "609d12ec9f975772e449fa7248fd95cb0d41fa5d2d1fe305ae65ac5e2bacf271"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260909\\0787_선물_수량_20260909.png",
+      "sha256": "433582478712e1f04f7e9a4d7775b53684570a0d4e0eeae5e266e73088178f9b"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260910\\0787_선물_수량_20260910.png",
+      "sha256": "c5e92cdead4c8d9f44e1152bfc1244514681b0eb1ee44edf9055ae0709aa5a03"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260918\\0787_선물_수량_20260918.png",
+      "sha256": "68017ce91e0f1b1f93e23f217c3cf0b3543798f52aaad76f3d606d3f596bc0ca"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260921\\0787_선물_수량_20260921.png",
+      "sha256": "ad42878db0b6d5ffd5a0dfe6ea12d1a03ea2483c4a3f2c107b86c79b4a709803"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260922\\0787_선물_수량_20260922.png",
+      "sha256": "2573eae6073bb1c086445a6824d922f43a2a1b27756bbe286f4259b339b1006f"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260923\\0787_선물_수량_20260923.png",
+      "sha256": "dbaa49bc00fbdcc9113c630be7dc35a3bf957176ed52f2e8797dfa4042d28091"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260928\\0787_선물_수량_20260928.png",
+      "sha256": "01cb45c419b73ec472af02279c4b19d6bdfc231ce3be2cdd1bb7ed253987b67a"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260929\\0787_선물_수량_20260929.png",
+      "sha256": "809678b7987e28a733c9a27f66c541edbe141106c11e9675d754602ccf0dd376"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20260930\\0787_선물_수량_20260930.png",
+      "sha256": "87eee84945a99d0a169ca6bb6cfa2cb7294ea2b91d41b32a38300a7e0311ca22"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261001\\0787_선물_수량_20261001.png",
+      "sha256": "2db83ad48243920df2ff7b3037c97a5c989dfe19574a4154c56501a41f11059a"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261002\\0787_선물_수량_20261002.png",
+      "sha256": "95a136803e87078fa48289b3b2f3c1c218629d244c8eae5800a94d1cc20c9d6b"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261007\\0787_선물_수량_20261007.png",
+      "sha256": "acd00306add72d7ebe51abb5b8b2125a4aa5541d23a925804dac93c589111f6e"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261008\\0787_선물_수량_20261008.png",
+      "sha256": "f52d5344f151d2d613fbe49df39fe30221cbb2bb468b0eaaa471e1a850465763"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261012\\0787_선물_수량_20261012.png",
+      "sha256": "cc5ff854c9727d3f179d43c52ae4eef9ba2f31e082782e1e20856639a9befb6d"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261013\\0787_선물_수량_20261013.png",
+      "sha256": "a045480ece88248fca75b0cbcb69b1ed30df43839130fceff5814cb15ae4de22"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_금액_20261014.png",
+      "sha256": "dcc137fddacd93a82fcbd0b33eb35ca89b36787d85deba67678b5dafe37b90a7"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_수량_20261014.png",
+      "sha256": "9e6fc29cb484f4ba4444ea212f891abc3c438f8909b0ab0483d770792107b9d1"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_금액_20261014.png",
+      "sha256": "4a160d610825076df4b0083e0fb971c0495250375da2272d8b695f241ed4a2de"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_수량_20261014.png",
+      "sha256": "f48fa0a949f315f6eca6b4db97d755f2375fbc94165629997b6ce042bc017c71"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_금액_20261014.png",
+      "sha256": "64bef51b30949e6ccfbafd20f4aa17798f58a4cf239dfb30a9805ed9c477ce74"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_수량_20261014.png",
+      "sha256": "63535b6ad6bb4cd006b3d5896df4a9e7ab7c91cb50b1342c42f2c629b67505c9"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Documents\\New project\\supply-zone\\futures_flow_20261013.csv",
+      "sha256": "1b13d76f26c691b4a3e0d30baa1ecdde6f961fe39b08c74337c81792a6e4791c"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_수량_20261014.png",
+      "sha256": "9e6fc29cb484f4ba4444ea212f891abc3c438f8909b0ab0483d770792107b9d1"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_선물_금액_20261014.png",
+      "sha256": "dcc137fddacd93a82fcbd0b33eb35ca89b36787d85deba67678b5dafe37b90a7"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_수량_20261014.png",
+      "sha256": "f48fa0a949f315f6eca6b4db97d755f2375fbc94165629997b6ce042bc017c71"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_콜옵션_금액_20261014.png",
+      "sha256": "4a160d610825076df4b0083e0fb971c0495250375da2272d8b695f241ed4a2de"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_수량_20261014.png",
+      "sha256": "63535b6ad6bb4cd006b3d5896df4a9e7ab7c91cb50b1342c42f2c629b67505c9"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0787_풋옵션_금액_20261014.png",
+      "sha256": "64bef51b30949e6ccfbafd20f4aa17798f58a4cf239dfb30a9805ed9c477ce74"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0790_일자_20261014.png",
+      "sha256": "de0c5f986be9928fe98253925a6305083defd83d896d13ea8ad861c0045a3f38"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0790_누적_20261014.png",
+      "sha256": "7efafa6d1cab46d0ed890d55f3fc34b96499d3b2281cf882b5063c73954ea0c9"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0794_일자_20261014.png",
+      "sha256": "4b3a242aa545300a7ed827ec77f7afde15477df9025da5cf40697408b0fed3bd"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0794_누적_20261014.png",
+      "sha256": "f63f70ab99c3b34cf530ee777bd11231a5483b4730d4b17827510a86787635d3"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_외국인_누적_900_1000_20261014.png",
+      "sha256": "4860b219ce76763eccaeececc40a10b6e02baa1ace77a68690254e11d2bbc56d"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_금융투자_누적_900_1000_20261014.png",
+      "sha256": "0cad78d2d0afafa91471928c4a7c99b4c0847aa79c3fcc9fa403cec8970d2ba8"
+    },
+    {
+      "path": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\futures_options_eod\\20261014\\0791_투신_누적_900_1000_20261014.png",
+      "sha256": "86a42470b864965b8e2341e7af91421a2e541cf581164d26d03bd8205e6d8d29"
+    }
+  ],
+  "futures": {
+    "provider": "LS",
+    "contract": {
+      "code": "A016C000",
+      "name": "F 202612",
+      "expiry": "202612"
+    },
+    "regular": {
+      "open": 950.8,
+      "high": 972.55,
+      "low": 930.75,
+      "close": 944.2,
+      "volume": 125050.0,
+      "open_interest": 147765.0,
+      "previous_oi": 148330.0,
+      "oi_change": -565.0
+    },
+    "daily_rows": 684,
+    "daily_span": [
+      "2023-12-15 00:00:00",
+      "2026-10-14 00:00:00"
+    ],
+    "minute_rows": 714,
+    "minute_span": [
+      "2026-09-16 08:55:00",
+      "2026-10-14 15:45:00"
+    ],
+    "excluded_daily_rows": [
+      {
+        "date": "20260902",
+        "reason": "OHLC_INVALID",
+        "original": {
+          "open": 1041.15,
+          "high": 1052.15,
+          "low": 1031.05,
+          "close": 1030.1,
+          "volume": 180,
+          "oi": 8778
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "date": "20261001",
+        "type": "VOLUME_SCOPE_DIFFERENCE",
+        "daily": 103144.0,
+        "minute_sum": 103143.0
+      }
+    ],
+    "daily_indicators": {
+      "timestamp": "2026-10-14 00:00:00",
+      "open": 950.8,
+      "high": 972.55,
+      "low": 930.75,
+      "close": 944.2,
+      "volume": 125050.0,
+      "open_interest": 147765.0,
+      "sma5": 1004.85,
+      "sma10": 1053.58,
+      "sma20": 1068.62,
+      "sma60": null,
+      "sma120": null,
+      "tenkan9": 1027.75,
+      "kijun26": 1036.4250000000002,
+      "span_a_forward26": 1032.0875,
+      "span_b_forward26": null,
+      "cloud_a_today": null,
+      "cloud_b_today": null,
+      "atr14": 37.057888881012715,
+      "di_plus14": 12.445163347583966,
+      "di_minus14": 35.61716977885248,
+      "adx14": null,
+      "rsi14": 39.52525342319424,
+      "macd": -17.87719402638254,
+      "macd_signal": 1.4311706035676512,
+      "bb_upper": 1169.8007313671924,
+      "bb_lower": 967.4392686328075
+    },
+    "minute_indicators": {
+      "timestamp": "2026-10-14 15:45:00",
+      "open": 944.2,
+      "high": 944.2,
+      "low": 944.2,
+      "close": 944.2,
+      "volume": 2534.0,
+      "open_interest": 147765.0,
+      "sma5": 941.3399999999999,
+      "sma10": 944.5899999999999,
+      "sma20": 950.9224999999999,
+      "sma60": 951.6966666666666,
+      "sma120": 971.1433333333333,
+      "tenkan9": 943.375,
+      "kijun26": 949.4,
+      "span_a_forward26": 946.3875,
+      "span_b_forward26": 951.65,
+      "cloud_a_today": 955.8375,
+      "cloud_b_today": 951.25,
+      "atr14": 5.729716164590773,
+      "di_plus14": 13.39685325030838,
+      "di_minus14": 28.214851903395278,
+      "adx14": 26.777729675249017,
+      "rsi14": 43.13098521086906,
+      "macd": -4.121858206616025,
+      "macd_signal": -3.041303332187398,
+      "bb_upper": 966.1298164956411,
+      "bb_lower": 935.7151835043587
+    },
+    "completed_week": {
+      "timestamp": "2026-10-09 00:00:00",
+      "open": 1121.5,
+      "high": 1125.55,
+      "low": 1047.85,
+      "close": 1048.25,
+      "volume": 287121.0
+    },
+    "progress_week": {
+      "timestamp": "2026-10-16 00:00:00",
+      "open": 1039.1,
+      "high": 1043.7,
+      "low": 929.95,
+      "close": 944.2,
+      "volume": 410746.0
+    },
+    "changes": {
+      "1": {
+        "price": -0.6,
+        "oi": -565,
+        "volume_sum": 125050
+      },
+      "3": {
+        "price": -104.05,
+        "oi": 10829,
+        "volume_sum": 410746
+      },
+      "5": {
+        "price": -158.8,
+        "oi": 13828,
+        "volume_sum": 617182
+      },
+      "20": {
+        "price": -167.8,
+        "oi": 20032,
+        "volume_sum": 1971064
+      }
+    },
+    "zero_volume_days": 446
+  },
+  "flow_checks": {
+    "('선물', '금액')": 0,
+    "('선물', '수량')": 0,
+    "('콜옵션', '금액')": 0,
+    "('콜옵션', '수량')": 0,
+    "('풋옵션', '금액')": 0,
+    "('풋옵션', '수량')": 0
+  },
+  "all_54_display_nets_visually_checked": true,
+  "manual_net_transcription": true,
+  "limitations": [
+    "18:51:36 EOD 재실행→2026-10-14 19:09:11.18 종료코드1. 5단계 generate_eod_daily_supply_chart.py가 폐지된 키움5605 일봉 PNG를 요구해 실패. 6·7단계 미완료. 게시용 차트는 검증 LS 원본으로 별도 생성하며 전체 배치 성공으로 표시하지 않음. 수집68건·수집 경고0. OCR 원본과 화면 대조 후 게시용 사본만 정정: 3건. 원본 OCR/자동 장부는 보존하되 검증되지 않은 옵션 델타0.5 가정과 추정 잔고·평균가·손익은 게시에 사용하지 않음. CVD 보호장치 실패는 별도 제외.",
+    "오늘 CVD 미확보: 야간 거래일 혼동 방지로 제외. 키움 차트 CVD 대용치 미사용.",
+    "가격은 LS 개별12월물 정규장만 사용; 야간 가격 제외. 최초/재조회 OI 차이와 사용자0441 제공값은 원본별 보존.",
+    "9/2 OHLC 오류1일 제외,446일 거래량0. 지표는9/3 이후26일만 사용. 진행 주·월봉 및 불완전9월은 확정 신호 아님.",
+    "수급은 전체월물 순매매,0791은 HTS 추정,OI는 개별12월물. 실제 투자자별 잔고·평단·델타는 판단 불가.",
+    "10/6 수급 누락·9/11 잠정으로20일/만기 전체 누적은 불완전. 결측0대체·기관/금융투자 중복 합산 없음.",
+    "10/1 분봉 거래량합103,143와 일봉103,144의1계약 차이 보존. 정밀VWAP·체결매물대·승률은 미제시.",
+    "현물·해외 보조자료 최신 기준일10/13으로 오늘 판단에서 제외. 오래된14단계 연구층도 제외."
+  ],
+  "ls_cvd": {
+    "provider": "LS",
+    "as_of": "20261014",
+    "status": "NOT_AVAILABLE_NIGHT_SESSION_DATE_AMBIGUITY",
+    "can_use_with_existing_price": false,
+    "daily_cvd": null,
+    "applied_to_direction": false,
+    "note": "오늘 LS CVD는 미확보입니다. 18:51 조회 단계가 NIGHT_SESSION_DATE_AMBIGUITY 보호장치로 API 호출 전 종료됐습니다. 과거 CVD나 가격 대용치를 오늘 값으로 쓰지 않고 방향 근거에서 제외합니다."
+  },
+  "analysis_hierarchy": [
+    "weekly",
+    "daily",
+    "intraday"
+  ],
+  "indicator_method": "SMA5/10/20; RSI/DI EWMA alpha1/14 adjustFalse min14; ADX same smoothing; daily since9/3 only",
+  "optional_index_context": {
+    "status": "STALE_EXCLUDED",
+    "last_trade_date": "20261013"
+  }
+}
