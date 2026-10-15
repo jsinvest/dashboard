@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "20261014",
-  "trade_date": "20261014",
+  "as_of": "20261015",
+  "trade_date": "20261015",
   "source_generated_at": {
-    "monthly": "2026-10-14T20:00:32+09:00",
-    "staged_weekly": "2026-10-14T20:00:39.946100+09:00"
+    "monthly": "2026-10-15T20:02:36+09:00",
+    "staged_weekly": "2026-10-15T20:02:43.214973+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 0% 유지",
     "state": "월간 재진입 상태 유지 · 위험자산 한도 100%",
-    "reason": "20261014 WISE 확정 기준 월간 원모델과 단계형 목표가 모두 현금 0%를 유지합니다. 주간 모델 요구현금도 0%이므로 최종 참고비중은 현금 0%, 위험자산 한도 100%입니다.",
+    "reason": "20261015 WISE 확정 기준 월간 원모델과 단계형 목표가 모두 현금 0%를 유지합니다. 주간 모델 요구현금도 0%이므로 최종 참고비중은 현금 0%, 위험자산 한도 100%입니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -58,11 +58,13 @@
     },
     "rv": {
       "watch": false,
-      "status": "DISARMED_WAITING_FOR_REARM",
+      "status": "DISARMED_RAW_TRUE",
+      "raw_entry_condition": true,
+      "rv20_annualized_pct": 40.78871800379551,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
-    "interpretation": "X3·RV 모두 새 경보 또는 재무장 신호가 없습니다. 위험이 없다는 뜻은 아니며 최종 현금비중을 자동 변경하지 않습니다."
+    "interpretation": "X3는 새 경보가 없습니다. RV 원조건은 충족됐지만 재무장되지 않은 상태라 새 경보가 아니며 최종 현금비중을 자동 변경하지 않습니다."
   },
   "next_check": {
     "condition": "새 확정 주간 위험축소 신호",
@@ -549,6 +551,19 @@
       "applied_risky_pct": 100.0,
       "action": "HOLD",
       "action_label": "현금 0% 유지"
+    },
+    {
+      "as_of": "2026-10-15",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% 유지"
     }
   ],
   "rule_steps": [
@@ -605,24 +620,24 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-10-14",
-    "workbook_rows": 2643,
+    "workbook_last_date": "2026-10-15",
+    "workbook_rows": 2644,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "0e3c9e3737500e364eb4f30048f9077c0b827d02d32f0fccb1f8f2861381a645",
+    "workbook_sha256": "45a60de3daaf6c5ef62629381e717d3bffd497a4897ff0df1159a42db092c2b0",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363",
     "monthly_runner_sha256": "7ddc5516166278d033583c541811d41f115366dd3f18d5b53a0b273eb1c629e2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "2e0234757a311715d59e753e4fd58f10d98d1179dd6fda5406e7fc19cb99b3ff",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "b32c6573530cef0c9b15f22ff68a7a2474b7fe771409bcc8e65ed8c8f05e5e47",
-    "staged_result_sha256": "d43b3168c87b30a8f09f9b000c16a3d6786d67e078ad5b9d3a7a677e85676d77",
-    "monthly_validation_sha256": "5cf26263c8d59c126ab5e91e6bb083d16d0446e6dc9fb25d97a1901fc86a4837",
-    "staged_validation_sha256": "19454aa39b15c7f744a463e220083d5e596e87879b37d30395f304a1258dfdd9"
+    "monthly_result_sha256": "cfe32f4945b125ca6cb60e862554034b83ca2b3de14194af27dc75fb25333502",
+    "staged_result_sha256": "9a172316da9985e866a3629136f0516b820d290f687976609c4ee95fdc76a989",
+    "monthly_validation_sha256": "4507dbe01cf3bdbc02301e0ef0213103f0aaa6361e474766a937c2465953e8e5",
+    "staged_validation_sha256": "22c05aba3759009274bd97270213943428a012448f0b50a49287f37df1ba10bf"
   },
   "source_files": [
     "cash_weight_signal_runner.py",
