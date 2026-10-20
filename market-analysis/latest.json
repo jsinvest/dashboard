@@ -1,241 +1,95 @@
 {
-  "as_of": "20261016",
-  "generated_at": "2026-10-16T20:10:04+09:00",
+  "as_of": "20261020",
+  "generated_at": "2026-10-20T15:02:24+09:00",
   "summaries": [
     {
       "market": "KOSPI",
-      "etf_adr_20d": 85.4,
-      "stocks_adr_20d": 67.1,
-      "advance_decline_1d": 703.6,
+      "etf_adr_20d": 88.1,
+      "stocks_adr_20d": 69.0,
+      "advance_decline_1d": 8.8,
       "impulse": "RED",
       "judgement": "방어 국면",
-      "fear_greed": 100.0,
-      "fear_stage": "EXTREME_GREED",
+      "fear_greed": 5.7,
+      "fear_stage": "EXTREME_FEAR",
       "kosdaq_entry_allowed": null
     },
     {
       "market": "KOSDAQ",
-      "etf_adr_20d": 101.2,
-      "stocks_adr_20d": 79.8,
-      "advance_decline_1d": 824.5,
+      "etf_adr_20d": 92.5,
+      "stocks_adr_20d": 78.0,
+      "advance_decline_1d": 18.8,
       "impulse": "RED",
       "judgement": "방어 국면",
-      "fear_greed": 100.0,
-      "fear_stage": "EXTREME_GREED",
+      "fear_greed": 3.7,
+      "fear_stage": "EXTREME_FEAR",
       "kosdaq_entry_allowed": null
     }
   ],
   "charts": [
     {
       "title": "업종 상대강도",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "sector_rs.png"
     },
     {
       "title": "시장 폭·ADR·AD Line",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "market_breadth.png"
     },
     {
       "title": "업종 쏠림",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "sector_concentration.png"
     },
     {
       "title": "KOSPI ADR",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "kospi_adr.png"
     },
     {
       "title": "KOSDAQ ADR",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "kosdaq_adr.png"
     },
     {
       "title": "Impulse·ADR",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "impulse_adr.png"
     },
     {
       "title": "공포탐욕",
-      "description": "20261016 장중 원자료·시장폭13:54·확정지수와시각구분",
+      "description": "20261020 장중·저녁 후처리 전",
       "image": "fear_greed.png"
-    },
-    {
-      "title": "KOSPI 월·주·일·15분",
-      "image": "kospi_mtf.png",
-      "description": "20261016검증월/주/일/15분·진행주월봉은표시만·니케이Yahoo지연보조"
-    },
-    {
-      "title": "KOSDAQ 월·주·일·15분",
-      "image": "kosdaq_mtf.png",
-      "description": "20261016검증월/주/일/15분·진행주월봉은표시만·니케이Yahoo지연보조"
-    },
-    {
-      "title": "니케이 월·주·일·15분",
-      "image": "nikkei225_mtf.png",
-      "description": "20261016검증월/주/일/15분·진행주월봉은표시만·니케이Yahoo지연보조"
     }
   ],
   "index_multitimeframe": {
     "validation": {
-      "status": "OK",
-      "can_use_for_decision": true,
-      "file": "index_mtf_validation_latest.json"
+      "status": "PENDING_EVENING",
+      "can_use_for_decision": false,
+      "file": null
     },
     "assessment": {
-      "conclusion": "KOSPI 하락 · KOSDAQ 중립·박스 · 니케이 확인 혼조·중립",
-      "higher_timeframe_context": {
-        "monthly": "상승",
-        "weekly": "하락"
-      },
-      "daily_state": "하락",
-      "intraday_state": "하락",
-      "markets": {
-        "KOSPI": {
-          "confirmed_mtf": {
-            "score": -53.0,
-            "state": "하락",
-            "valid_weight_pct": 100.0,
-            "timeframe_conflict": false,
-            "confidence_cap": 100,
-            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
-          },
-          "monthly": "상승",
-          "weekly": "하락",
-          "daily": "하락",
-          "intraday_15m": "하락"
-        },
-        "KOSDAQ": {
-          "confirmed_mtf": {
-            "score": -13.8,
-            "state": "중립·박스",
-            "valid_weight_pct": 100.0,
-            "timeframe_conflict": false,
-            "confidence_cap": 100,
-            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
-          },
-          "monthly": "중립-하락",
-          "weekly": "중립-하락",
-          "daily": "중립-하락",
-          "intraday_15m": "상승"
-        }
-      },
-      "nikkei_confirmation": "혼조·중립",
-      "objective_supports": [
-        5450.81,
-        5262.77
-      ],
-      "objective_resistances": [
-        7171.44,
-        7216.62
-      ],
-      "kosdaq_objective_supports": [
-        745.43,
-        630.99
-      ],
-      "kosdaq_objective_resistances": [
-        921.73,
-        921.73
-      ],
-      "invalidation_conditions": [
-        "세 지수 최신 거래일 불일치 시 상대비교는 마지막 공통 거래일까지 제한",
-        "60일 상관 0.3 미만 또는 공통 표본 부족 시 니케이 확인 가중치 비활성",
-        "시장 폭·ADR·수급·선물옵션과 충돌하면 니케이만으로 결론을 뒤집지 않음"
-      ],
-      "limitations": [
-        "Yahoo Finance 보조 원천 사용",
-        "미완성 주봉·월봉은 표시하되 확정 점수에서 제외",
-        "엘리어트 파동·눈대중 추세선은 자동 점수에서 제외"
-      ]
+      "conclusion": "1차·저녁 후처리 전.오늘 WISE·월간/단계형 현금·저녁 지수 MTF 미완료: 비중과 절대방향 판단 보류.검증 지수 가격·지지저항·엘리어트 차수 판단 불가.10/16 latest를 오늘 값으로 쓰지 않음."
     },
-    "cross_market": {
-      "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
-      "common_daily_observations": 1700,
-      "latest_common_daily_date": "2026-10-16",
-      "same_day": {
-        "20d": {
-          "observations": 20,
-          "correlation": 0.7035,
-          "same_direction_pct": 65.0
-        },
-        "60d": {
-          "observations": 60,
-          "correlation": 0.7811,
-          "same_direction_pct": 75.0
-        },
-        "120d": {
-          "observations": 120,
-          "correlation": 0.807,
-          "same_direction_pct": 75.83
-        }
-      },
-      "nikkei_tminus1_to_kospi": {
-        "20d": {
-          "observations": 20,
-          "correlation": 0.0737,
-          "same_direction_pct": 60.0
-        },
-        "60d": {
-          "observations": 60,
-          "correlation": -0.0012,
-          "same_direction_pct": 53.33
-        },
-        "120d": {
-          "observations": 120,
-          "correlation": -0.0736,
-          "same_direction_pct": 55.83
-        }
-      },
-      "relative_strength": {
-        "5d": {
-          "kospi_return_pct": -16.694,
-          "nikkei_return_pct": -6.727,
-          "kospi_minus_nikkei_pct_points": -9.967
-        },
-        "20d": {
-          "kospi_return_pct": -18.498,
-          "nikkei_return_pct": 0.084,
-          "kospi_minus_nikkei_pct_points": -18.583
-        },
-        "60d": {
-          "kospi_return_pct": -21.785,
-          "nikkei_return_pct": -2.237,
-          "kospi_minus_nikkei_pct_points": -19.548
-        }
-      },
-      "beta_adjusted_residual": {
-        "observations": 60,
-        "beta_60d": 1.9064,
-        "latest_residual_zscore": -0.124
-      },
-      "intraday_alignment": {
-        "common_15m_bars": 24,
-        "return_correlation": 0.7156,
-        "kospi_session_return_pct": 0.249,
-        "nikkei_session_return_pct": 0.615,
-        "kospi_minus_nikkei_pct_points": -0.366
-      },
-      "state": "혼조·중립",
-      "role": "confirmation_only",
-      "confirmation_active": true,
-      "modifier_points": 0,
-      "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
-    },
-    "analysis_file": "index_mtf_analysis_latest.json",
-    "validation_file": "index_mtf_validation_latest.json"
+    "cross_market": {},
+    "analysis_file": null,
+    "validation_file": null
   },
   "data_bundle": {
     "file": "market_data_bundle_latest.zip",
-    "as_of": "20261016",
-    "phase": "FINAL",
-    "sha256": "4b29a98f6f9668003fdb94507384fcaccdb39469a8d2d88dcdae7fde1dcec2d4",
+    "as_of": "20261020",
+    "phase": "PROVISIONAL",
+    "sha256": "2df77beff5ddc2ea87d8ce9033deb1a9269f8402cca43cd4b2cf3b3643a11e16",
     "notes": [
-      "14단계2763중2762수집·1건오류로 실패:전종목캐시·시장내부·통합국면 및 의존연구 제외.해외10분보조층 니케이SOURCE_GAP로PARTIAL/can_use_for_context=false라 전체보조판단 제외.별도 국내/니케이15분 검증층과 구분.과거latest대체없음.",
-      "1단계DONE·74고유스캔/111원신호는검증했으나 실제종료코드null 보존.시장폭13:54·ETF/55섹터13시대·스캔14:46 장중시각 유지.79종목20시대 브로커일봉·24수급 재조회는 거래소독립 확정종가검증과 구분.지수/WISE만 별도종가교차검증."
+      "10단계 DONE·68종목/87원신호·stderr0·배치/실행기 프로세스 종료 확인.실행기 BATCH_FAILED/exit_code=null 기록으로 실제 종료코드0은 확인 불가.실행 성공과 산출물 검증을 구분.시장폭13:48:53,차트14:58~15:01 장중 스냅샷,확정 EOD 아님.",
+      "1차·저녁 후처리 전.오늘 WISE·월간/단계형 현금·저녁 지수 MTF 미완료: 비중과 절대방향 판단 보류.검증 지수 가격·지지저항·엘리어트 차수 판단 불가.10/16 latest를 오늘 값으로 쓰지 않음."
     ]
   },
   "downloads": [
+    {
+      "title": "1차시장자료·검증한계ZIP",
+      "file": "market_data_bundle_latest.zip"
+    },
     {
       "title": "시장 폭 CSV",
       "file": "market_breadth.csv"
@@ -255,10 +109,6 @@
     {
       "title": "KOSDAQ 20일 ADR CSV",
       "file": "kosdaq_adr.csv"
-    },
-    {
-      "title": "10/16 최종자료·검증ZIP(연구14층·해외10분 제외)",
-      "file": "market_data_bundle_latest.zip"
     }
   ]
 }
