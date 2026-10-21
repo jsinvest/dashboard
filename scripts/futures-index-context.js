@@ -20,7 +20,10 @@ async function renderFuturesIndexContext(data) {
   const panel = document.querySelector('[data-tab-panel="supply"]');
   const flow = data.derivatives_evidence.all_expiry_flow;
   const chart = item => `<article class="chart-card cash-card"><div class="card-header"><h3>${esc(item.title)}</h3></div><p>${esc(item.interpretation)}</p><a href="${asset(item.file)}" target="_blank" rel="noopener"><img class="cash-chart" src="${asset(item.file)}" alt="${esc(item.title)}" /></a><p class="cash-note">${esc(item.source_note)}</p></article>`;
-  const sourceCharts = data.charts.filter(x=>x.kind!=='price');
+  const sourceCharts = data.charts.filter(x=>x.kind!=='price' && x.kind!=='gamma_research');
+  const gamma = data.gamma_research;
+  const gammaSection = gamma && gamma.status === 'RESEARCH_ONLY_PARTIAL_CHAIN' && Array.isArray(gamma.notes) ?
+    `<section class="chart-card cash-card" id="futuresGammaResearch"><h3>옵션 감마 · 연구 전용</h3><p><strong>${esc(gamma.headline)}</strong></p><p>옵션 자료 기준일 ${esc(gamma.option_as_of)} · ${esc(gamma.contract)} · 오늘 실시간 감마가 아닙니다.</p><p>${esc(gamma.method)}</p><p>제로감마 후보 ${num(gamma.flip)}pt · IV 민감도 ${num(gamma.iv_band[0])}~${num(gamma.iv_band[1])}pt · OI 반영률 ${num(gamma.coverage_pct)}%</p><ul>${gamma.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><details><summary>감마 계산 차트 펼치기</summary>${data.charts.filter(x=>x.kind==='gamma_research').map(chart).join('')}</details></section>` : '';
   panel.innerHTML = `<div class="futures-review cash-review">
     <div class="section-title">선물옵션 매물대 · 선물 가격구조와 누적 포지션 중심</div>
     <div id="supplyMeta" class="report-meta">기준일 ${esc(data.as_of)} · ${esc(data.futures_contract)} / ${esc(data.contract_code)} · ${referenceLabel} ${num(data.current_price)}${provisional ? ` · ${esc(data.capture_window)} 수집 · 종가 미확정` : mixedTiming ? ' · 가격 확정 / 수급·OI는 마감 전 잠정' : ''} · ${data.session_references.overnight?.snapshot_price != null ? `야간 보관 화면 ${num(data.session_references.overnight.snapshot_price)} (${esc(data.session_references.overnight.snapshot_time)})` : '이후 야간 시세 미반영'} · 실시간 아님</div>
@@ -34,6 +37,7 @@ async function renderFuturesIndexContext(data) {
     <section class="chart-card cash-card" id="futuresOi"><h3>거래량·미결제약정 · 월물별 분리</h3><div class="cash-table-wrap"><table class="cash-table"><thead><tr><th>월물 / 코드</th><th>관측가격 · 기준시각</th><th>거래량</th><th>미결제약정</th><th>OI 전일 대비</th><th>대조 상태</th></tr></thead><tbody>${data.contract_observations.map(x=>`<tr><th>${esc(x.contract)}<small>${esc(x.code)}</small></th><td>${num(x.is_final === false ? x.snapshot_price : x.close)}<small>${esc(x.captured_at || (x.is_final === false ? '잠정' : '정규장 종가'))}</small></td><td>${num(x.volume)}</td><td>${num(x.oi)}</td><td>${signed(x.oi_change)}</td><td>${esc(x.status)}</td></tr>`).join('')}</tbody></table></div><p>${esc(data.oi_interpretation)}</p></section>
     <section class="chart-card cash-card" id="futuresStructure"><h3>선물 파동·매물대 해석</h3>${data.futures_structure.monthly ? `<p>${esc(data.futures_structure.monthly)}</p><p>${esc(data.futures_structure.weekly)}</p>` : ''}<p>${esc(data.futures_structure.daily)}</p><p>${esc(data.futures_structure.intraday)}</p><p>${esc(data.futures_structure.profile)}</p><p class="cash-note">${esc(data.futures_structure.wave_limit)}</p></section>
     ${data.charts.filter(x=>x.kind==='price').map(chart).join('')}
+    ${gammaSection}
     <section class="chart-card cash-card"><h3>지수 보조 확인 · 선물 뷰를 대체하지 않음</h3><p>${esc(data.index_confirmation)}</p><p class="cash-note">코스피는 KOSPI200 선물의 숫자 환산표가 아닙니다. 해외 현물 지수와 해외 선물도 구분해요.</p></section>
     <details class="chart-card cash-card cash-details" id="supplyIndexContext"><summary>코스피·나스닥·필반·니케이·다우 · 월봉 / 주봉 / 일봉 / 10분봉 보조 분석 펼치기</summary><div id="supplyIndexContextBody"><p>보조 자료 확인 중…</p></div></details>
     <details class="chart-card cash-card cash-details" id="futuresSourceCharts"><summary>0790·0791 누적 / 0441 월물별 OI / 0471 원본 화면</summary>${sourceCharts.map(chart).join('')}</details>

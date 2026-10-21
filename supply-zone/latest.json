@@ -2,7 +2,7 @@
   "schema_version": "futures-options-review-v1",
   "analysis_basis": "FUTURES_OPTIONS_WITH_INDEX_CONTEXT",
   "as_of": "2026-10-21",
-  "generated_at": "2026-10-21T18:37:56.596405+09:00",
+  "generated_at": "2026-10-21T19:26:32.191805+09:00",
   "review_status": "KIWOOM_REQUERY_HTS_REVIEWED",
   "execution_ready": false,
   "primary_market": "KOSPI200_FUTURES",
@@ -596,6 +596,15 @@
       "source_note": "키움 원본·추정값과 실제잔고 구분",
       "source_path": "C:\\Users\\skylo\\AppData\\Local\\Temp\\codex-clipboard-48fd5b5f-47ec-42f4-8a81-ae39948fe0af.png",
       "sha256": "1cbc25877708d0b1161af3b6c07defd30d6920ef17f413801138b90138dc9066"
+    },
+    {
+      "kind": "gamma_research",
+      "file": "futures_gamma_research_20261020.png",
+      "source_path": "C:\\Users\\skylo\\Desktop\\restapi\\output\\gamma_research\\public_oi_gex_20261021_185659\\gex.png",
+      "sha256": "30f5730615e115cbabeeb07ad7cf8e0de7dcaa96ba1e99e7e357e351ef47a932",
+      "title": "12월 옵션 GEX · 10/20 기준 연구",
+      "interpretation": "빨강: 음감마 가정, 파랑: 양감마 가정. 가격 방향 신호가 아니며 오늘 마감 자료가 아닙니다.",
+      "source_note": "부분 체인·콜+/풋−·선물 좌표. 해외 서비스 비공개 모형의 복제본이 아닙니다."
     }
   ],
   "limitations": [
@@ -1297,8 +1306,34 @@
     {
       "file": "futures_price_series_20261021.json",
       "label": "futures_price_series_20261021.json"
+    },
+    {
+      "file": "futures_gamma_research_20261020.json",
+      "label": "10/20 감마 연구 계산·가정·전체 이력"
     }
   ],
   "data_status": "EOD_REVIEWED_WITH_EXCLUSIONS",
-  "capture_window": "가격18:30 이후再조회/정규장15:45,수급16:19~16:21 캡처"
+  "capture_window": "가격18:30 이후再조회/정규장15:45,수급16:19~16:21 캡처",
+  "gamma_research": {
+    "status": "RESEARCH_ONLY_PARTIAL_CHAIN",
+    "option_as_of": "2026-10-20",
+    "contract": "F202612 옵션 단일 만기",
+    "headline": "기본 OI 모형은 음감마 추정 · 실제 가속 예측력은 미검증",
+    "method": "콜 OI 양수·풋 OI 음수 가정. Black76 동일 만기 선물 좌표·금리 0·고정 행사가 IV. 실제 딜러 장부가 아님.",
+    "flip": 936.1624532075793,
+    "iv_band": [
+      928.972269024026,
+      943.8300732409507
+    ],
+    "coverage_pct": 58.10072074976397,
+    "source_hash": "dd8ce966e79d2b8a59d65a1f531dc0c1ee6a72f535a857feb0dfb0e835086054",
+    "notes": [
+      "936.16pt 아래/위의 음·양감마는 기본 가정 안의 분류이며 하락·상승 예측이 아닙니다.",
+      "929~944pt는 IV ±20%만 변경한 범위입니다. 보유 비중 가정도 바꾸면 후보가 약 781~1081pt로 벌어져 확정 경계로 사용할 수 없습니다.",
+      "10/20 옵션 OI의 58.1%만 포함했습니다. 누락 41.9%는 감마 영향도 비율이 아니며 부호·플립을 바꿀 수 있습니다.",
+      "전일 입력으로 비교한 20일: 음감마 가정 17일 실현변동성 중앙값 1.49%, 양감마 3일 1.64%. 가속 효과 확인 안 됨·소표본.",
+      "10/21 정규장 옵션 체인 전체 미확보. 오늘 893.05에 어제 감마를 현재 포지션처럼 적용하지 않습니다.",
+      "이후 EOD에 날짜별 원본·호가·IV·OI 저장 단계 연결. 첫 정규장 실전 수집 검증 전이며 실패 시 과거 감마를 재사용하지 않습니다."
+    ]
+  }
 }
