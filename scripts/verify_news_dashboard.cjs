@@ -34,6 +34,11 @@ for(const m of fs.readFileSync(path.join(root,'index.html'),'utf8').matchAll(/<s
    await page.waitForFunction(()=>document.querySelector('[data-tab-panel="news"]').dataset.newsLoaded==='true');
    assert(await page.locator('[data-tab-panel="news"]').isVisible(),'News deep link invisible');
    assert(await page.locator('#newsList li').count()===expected.length,'Archive count mismatch');
+   assert(await page.locator('#newsCalendar').count()===0,'Stale calendar pinned');
+   assert((await page.locator('#newsLatest').innerText()).includes('업로드'),'Publication time not displayed');
+   const rows=await page.locator('#newsList time').allTextContents();
+   assert(rows[0].includes((expected[0].published_at || '').slice(0,10)),'Latest upload not first');
+   assert((await page.locator('.news-note').innerText()).includes('19:00'),'Schedule note stale');
    for(const edition of ['morning','evening']){
     const r=expected.find(r=>r.edition===edition);
     assert(await page.locator(`#newsLatest a[href="${r.url}"]`).count()===1,'Latest report mismatch');
