@@ -569,6 +569,7 @@
   <button class="tab-btn" data-tab="links">링크 모음</button>
   <button class="tab-btn" data-tab="cash">현금비중관리</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
+  <button class="tab-btn" data-tab="daily-report">[당일 리포트]</button>
   <button class="tab-btn" data-tab="news">뉴스</button>
   <button class="tab-btn" data-tab="leaders">[당일 주도주]</button>
   <button class="tab-btn" data-tab="market">[시장분석자료]</button>
@@ -1010,6 +1011,22 @@
   </div>
 
   <!-- 리포트 검색 -->
+  <div class="tab-panel hidden" data-tab-panel="daily-report">
+    <div class="section-title">당일 리포트 · 목표주가 상향 / 하향</div>
+    <div class="card" style="padding:18px;min-width:0">
+      <p id="dailyReportMeta" role="status">자료 확인 중…</p>
+      <p>WiseReport 원문의 목표주가 방향 표시 기준이에요. 보유 목표가 대비 상승만 선별하는 카카오 알림과 범위가 달라요.</p>
+      <div class="report-search-row">
+        <label>리포트 날짜 <select id="dailyReportDate" aria-label="리포트 날짜"></select></label>
+        <input id="dailyReportSearch" aria-label="당일 리포트 검색" placeholder="종목명·코드·기관·제목 검색" />
+      </div>
+      <p id="dailyReportCounts"></p>
+      <div id="dailyReportResults" class="daily-report-grid"></div>
+      <p><a href="https://comp.wisereport.co.kr/wiseReport/summary/ReportSummary.aspx?cn=)&amp;fmt=1" target="_blank" rel="noopener noreferrer">WiseReport 원문 확인</a> · 수집 이후 게시분은 다음 수집 시 반영돼요.</p>
+    </div>
+  </div>
+  <link rel="stylesheet" href="daily-reports/style.css">
+  <script src="daily-reports/app.js" defer></script>
   <div class="tab-panel" data-tab-panel="report">
     <div class="section-title">리포트 검색 · TARGET PRICE & EARNINGS SIGNALS</div>
     <div class="report-card">
