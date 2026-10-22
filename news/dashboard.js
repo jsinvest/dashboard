@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const panel = document.querySelector('[data-tab-panel="news"]');
+  const panel = document.querySelector('[data-daily-pane="news"]');
   const latest = document.getElementById('newsLatest');
   const list = document.getElementById('newsList');
   const status = document.getElementById('newsStatus');

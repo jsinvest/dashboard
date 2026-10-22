@@ -569,8 +569,7 @@
   <button class="tab-btn" data-tab="links">링크 모음</button>
   <button class="tab-btn" data-tab="cash">현금비중관리</button>
   <button class="tab-btn" data-tab="report">리포트 검색</button>
-  <button class="tab-btn" data-tab="daily-report">[당일 리포트]</button>
-  <button class="tab-btn" data-tab="news">뉴스</button>
+  <button class="tab-btn" data-tab="daily-report">[당일 체크]</button>
   <button class="tab-btn" data-tab="leaders">[당일 주도주]</button>
   <button class="tab-btn" data-tab="market">[시장분석자료]</button>
   <button class="tab-btn" data-tab="supply">[선물옵션매물대]</button>
@@ -997,21 +996,14 @@
   </div>
 
 
-  <!-- 뉴스 보고서 -->
-  <div class="tab-panel" data-tab-panel="news">
-    <div class="section-title">뉴스 · MORNING & EVENING</div>
-    <section class="news-shell" aria-labelledby="newsHeading">
-      <h2 class="news-heading" id="newsHeading">아침과 저녁, 증시 뉴스 모아보기</h2>
-      <p class="news-note">매일 07:00·19:30 기준으로 작성하고 검증 후 게시해요. 전체 본문·이미지·원문 링크는 보고서를 열어 확인하세요.</p>
-      <div class="news-latest" id="newsLatest"></div>
-      <div class="news-controls"><h3>지난 보고서</h3><label for="newsEdition">분류</label><select id="newsEdition"><option value="all">전체</option><option value="morning">아침판</option><option value="evening">저녁판</option><option value="special">특별판</option></select></div>
-      <p class="news-status" id="newsStatus" role="status">뉴스 목록을 불러오는 중이에요.</p>
-      <ul class="news-list" id="newsList"></ul>
-    </section>
-  </div>
-
-  <!-- 리포트 검색 -->
+  <!-- 당일체크 -->
   <div class="tab-panel hidden" data-tab-panel="daily-report">
+    <div class="section-title">당일 체크</div>
+    <div class="market-subtabs" role="tablist" aria-label="당일 체크 하위 메뉴">
+      <button type="button" class="market-subtab-btn active" data-daily-tab="report" role="tab" aria-selected="true">당일 리포트</button>
+      <button type="button" class="market-subtab-btn" data-daily-tab="news" role="tab" aria-selected="false">당일 뉴스</button>
+    </div>
+  <div data-daily-pane="report">
     <div class="section-title">당일 리포트 · 목표주가 상향 / 하향</div>
     <div class="card" style="padding:18px;min-width:0">
       <p id="dailyReportMeta" role="status">자료 확인 중…</p>
@@ -1024,6 +1016,20 @@
       <div id="dailyReportResults" class="daily-report-grid"></div>
       <p><a href="https://comp.wisereport.co.kr/wiseReport/summary/ReportSummary.aspx?cn=)&amp;fmt=1" target="_blank" rel="noopener noreferrer">WiseReport 원문 확인</a> · 수집 이후 게시분은 다음 수집 시 반영돼요.</p>
     </div>
+  </div>
+  <!-- 뉴스 보고서 -->
+  <div class="hidden" data-daily-pane="news">
+    <div class="section-title">당일 뉴스 · 카카오 발송 뉴스</div>
+    <section class="news-shell" aria-labelledby="newsHeading">
+      <h2 class="news-heading" id="newsHeading">아침과 저녁, 증시 뉴스 모아보기</h2>
+      <p class="news-note">카카오로 보내는 뉴스 보고서예요. 실제 업로드일 최신순으로 전체 본문·이미지·원문 링크를 확인하세요.</p>
+      <div class="news-latest" id="newsLatest"></div>
+      <div class="news-controls"><h3>지난 보고서</h3><label for="newsEdition">분류</label><select id="newsEdition"><option value="all">전체</option><option value="morning">아침판</option><option value="evening">저녁판</option><option value="special">특별판</option></select></div>
+      <p class="news-status" id="newsStatus" role="status">뉴스 목록을 불러오는 중이에요.</p>
+      <ul class="news-list" id="newsList"></ul>
+    </section>
+  </div>
+
   </div>
   <link rel="stylesheet" href="daily-reports/style.css">
   <script src="daily-reports/app.js" defer></script>
@@ -1273,7 +1279,16 @@ function applyDashboardMode(){
 }
 
 // ── 상단 탭 ──
+function showDailyCheck(tab){
+  document.querySelectorAll('[data-daily-pane]').forEach(p=>p.classList.toggle('hidden',p.dataset.dailyPane!==tab));
+  document.querySelectorAll('[data-daily-tab]').forEach(b=>{
+    const active=b.dataset.dailyTab===tab;
+    b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));
+  });
+}
+document.querySelectorAll('[data-daily-tab]').forEach(b=>b.addEventListener('click',()=>showDailyCheck(b.dataset.dailyTab)));
 function showDashboardTab(tab){
+  if(tab==='news'){showDailyCheck('news');tab='daily-report';}
   document.querySelectorAll('[data-tab-panel]').forEach(panel=>{
     panel.classList.toggle('hidden', (tab !== 'all' && panel.dataset.tabPanel !== tab) || (tab === 'all' && !!panel.dataset.liveMonitor));
   });

@@ -26,13 +26,22 @@ for(const m of fs.readFileSync(path.join(root,'index.html'),'utf8').matchAll(/<s
    const page=await context.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    await page.goto(url+'?news_verify='+Date.now()+'#news',{waitUntil:'domcontentloaded'});
-   await page.waitForFunction(()=>document.querySelector('[data-tab-panel="news"]').dataset.newsLoaded==='true');
+   await page.waitForFunction(()=>document.querySelector('[data-daily-pane="news"]').dataset.newsLoaded==='true');
    assert(await page.locator('#dashboardLock').isVisible(),'Password lock was not preserved');
    // Exercise the existing remembered-session state in this disposable QA browser only.
    await page.evaluate(()=>sessionStorage.setItem('js-dashboard-unlocked-v1','1'));
    await page.reload({waitUntil:'domcontentloaded'});
-   await page.waitForFunction(()=>document.querySelector('[data-tab-panel="news"]').dataset.newsLoaded==='true');
-   assert(await page.locator('[data-tab-panel="news"]').isVisible(),'News deep link invisible');
+   await page.waitForFunction(()=>document.querySelector('[data-daily-pane="news"]').dataset.newsLoaded==='true');
+   assert(await page.locator('[data-daily-pane="news"]').isVisible(),'News deep link invisible');
+   assert(await page.locator('[data-tab="daily-report"]').innerText()==='[당일 체크]','Parent label mismatch');
+   assert(await page.locator('[data-tab="news"]').count()===0,'Old top-level news menu remains');
+   await page.locator('[data-daily-tab="report"]').click();
+   assert(await page.locator('[data-daily-pane="report"]').isVisible(),'Report subpane invisible');
+   await page.waitForFunction(()=>document.querySelector('#dailyReportResults article'));
+   const reportCount=await page.locator('#dailyReportResults article').count();
+   assert(reportCount>0,'Existing reports missing');
+   await page.locator('[data-daily-tab="news"]').click();
+   assert(await page.locator('[data-daily-pane="report"]').isHidden(),'Report pane did not hide');
    assert(await page.locator('#newsList li').count()===expected.length,'Archive count mismatch');
    assert(await page.locator('#newsCalendar').count()===0,'Stale calendar pinned');
    assert((await page.locator('#newsLatest').innerText()).includes('업로드'),'Publication time not displayed');
@@ -50,8 +59,9 @@ for(const m of fs.readFileSync(path.join(root,'index.html'),'utf8').matchAll(/<s
    assert(!overflow,'News panel overflow');
    await page.locator('[data-tab="report"]').click();
    assert(await page.locator('[data-tab-panel="report"]').isVisible(),'Existing report tab broken');
-   await page.locator('[data-tab="news"]').click();
-   assert(await page.locator('[data-tab-panel="news"]').isVisible(),'News tab switch failed');
+   await page.locator('[data-tab="daily-report"]').click();
+   await page.locator('[data-daily-tab="news"]').click();
+   assert(await page.locator('[data-daily-pane="news"]').isVisible(),'News tab switch failed');
    for(const r of expected){
     const response=await context.request.get(new URL(r.url,url).href);
     assert(response.ok()&&(await response.text()).includes('<title>'),'Report link unavailable');
