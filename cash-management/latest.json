@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "20261022",
-  "trade_date": "20261022",
+  "as_of": "20261023",
+  "trade_date": "20261023",
   "source_generated_at": {
-    "monthly": "2026-10-22T20:06:10+09:00",
-    "staged_weekly": "2026-10-22T20:06:17.579340+09:00"
+    "monthly": "2026-10-23T20:05:31+09:00",
+    "staged_weekly": "2026-10-23T20:05:37.25759+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 0% 유지",
     "state": "월간 재진입 상태 유지 · 위험자산 한도 100%",
-    "reason": "20261022 WISE 확정 기준 월간 원모델과 단계형 목표가 모두 현금 0%를 유지합니다. 주간 모델 요구현금도 0%이므로 최종 참고비중은 현금 0%, 위험자산 한도 100%입니다.",
+    "reason": "20261023 WISE 확정 기준 월간 원모델과 단계형 목표가 모두 현금 0%를 유지합니다. 주간 모델 요구현금도 0%이므로 최종 참고비중은 현금 0%, 위험자산 한도 100%입니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -60,7 +60,7 @@
       "watch": false,
       "status": "DISARMED_RAW_TRUE",
       "raw_entry_condition": true,
-      "rv20_annualized_pct": 44.43384298591951,
+      "rv20_annualized_pct": 42.65899915556192,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
@@ -616,6 +616,19 @@
       "applied_risky_pct": 100.0,
       "action": "HOLD",
       "action_label": "현금 0% 유지"
+    },
+    {
+      "as_of": "2026-10-23",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% 유지"
     }
   ],
   "rule_steps": [
@@ -672,24 +685,24 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-10-22",
-    "workbook_rows": 2648,
+    "workbook_last_date": "2026-10-23",
+    "workbook_rows": 2649,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "65edb483dd69587e9c8fbc72d91af1554808bf06e88574e1eef89b3715056871",
+    "workbook_sha256": "0b55cc70e1df296d4b8bbff5e52565e36e4ab424d6f86dd4edbe457d418b9b36",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363",
     "monthly_runner_sha256": "7ddc5516166278d033583c541811d41f115366dd3f18d5b53a0b273eb1c629e2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "2e0234757a311715d59e753e4fd58f10d98d1179dd6fda5406e7fc19cb99b3ff",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "e38081b4c6baa3b203bbde87e3ee4a2054f651357b22c6a96e67073776d40930",
-    "staged_result_sha256": "462f3ad8a5d21d9a96e409725df8ffa6369a4201889e55069a297baa3579f629",
-    "monthly_validation_sha256": "dc3a93a9071519ca96ae79a1239db34ebc0f5545d7ad79665f7f489bd1a2c7ef",
-    "staged_validation_sha256": "3111427c7ee474826b8e46923a56a0b1a6a36a701aa88a4a8a391ecdf95045dd"
+    "monthly_result_sha256": "978ae249d73b0db29110717e70b2d918177050fe76051a4a03b9ffb5ef569dd9",
+    "staged_result_sha256": "f01d87ba5d3d2de1d490f5e26ee73150f3bacc561e162247be6acc937d977bb5",
+    "monthly_validation_sha256": "92168ae711f6c29e95e590eb3870038209c8bdbbd1a7eefdd4c7eba5ca935308",
+    "staged_validation_sha256": "7064f42c7fb2809ab9aa14ec41fa5d163f2202ab1d20b29977a58adc8b4f7c21"
   },
   "source_files": [
     "cash_weight_signal_runner.py",
