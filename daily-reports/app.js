@@ -28,7 +28,7 @@
         }
         return `<li>${escape(x.date)} · ${escape(x.broker)} · ${x.price.toLocaleString('ko-KR')}원 → <b>${escape(status)}</b></li>`;
       }).join('');
-      return `<article data-history-code="${escape(code)}"><strong>${escape(r['종목명'])} (${escape(code)})</strong><p>최고목표주가 <b>${high.toLocaleString('ko-KR')}원</b> · ${escape(r['최고가날짜'])} · ${escape(r['기관(최고가기준)'])}</p><p>최근목표주가 ${Number(r['최근목표주가']).toLocaleString('ko-KR')}원 · ${escape(r['최근날짜'])} · 언급 ${escape(r['언급횟수'])}건</p>${comparisons?'<ul>'+comparisons+'</ul>':'<p>선택한 날짜에 일치하는 상향·하향 리포트가 없어요.</p>'}</article>`;
+      return `<article data-history-code="${escape(code)}"><strong>${escape(r['종목명'])} (${escape(code)})</strong><p>최고목표주가 <b>${high.toLocaleString('ko-KR')}원</b> · ${escape(r['최고가날짜'])} · ${escape(r['기관(최고가기준)'])}</p><p>최근목표주가 ${Number(r['최근목표주가']).toLocaleString('ko-KR')}원 · ${escape(r['최근날짜'])} · 언급 ${escape(r['언급횟수'])}건</p>${comparisons?'<ul>'+comparisons+'</ul>':'<p>최신 확보일에 일치하는 상향·하향 리포트가 없어요.</p>'}</article>`;
     }).join('')+missing.map(r=>`<p>${escape(r.name)} (${escape(r.code)}): 보유 DB 비교자료 없음</p>`).join('')+(!matches.length&&!missing.length?'<p>보유 DB 검색 결과가 없어요.</p>':'');
   }
   fetch('report_data.json?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(value=>{
@@ -36,7 +36,7 @@
     history=value.summary;historyState='ready';if(data)render();
   }).catch(()=>{historyState='error';if(data)render();});
   function render(){
-    const day=data.days[el('dailyReportDate').value];
+    const day=data.days[data.latest_date];
     const query=normalize(el('dailyReportSearch').value);
     const rows=day.reports.filter(r=>[r.name,r.code,r.broker,r.title,r.summary].some(v=>normalize(v).includes(query)));
     renderComparison(query,rows);
@@ -50,8 +50,6 @@
     data=value;
     const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date());
     el('dailyReportMeta').textContent=`최신 자료 ${data.latest_date} · 수집 ${data.collected_at.replace('T',' ').slice(0,19)} KST${data.latest_date!==today?' · 오늘 자료 미수집 (아래는 최신 확보일 자료)':''}`;
-    el('dailyReportDate').innerHTML=Object.keys(data.days).sort().reverse().map(d=>`<option value="${escape(d)}">${escape(d)}</option>`).join('');
-    el('dailyReportDate').addEventListener('change',render);
     el('dailyReportSearch').addEventListener('input',render);
     render();
   }).catch(()=>{el('dailyReportMeta').textContent='당일 리포트 자료를 불러오지 못했어요. 새로고침 후 다시 확인해 주세요.';});

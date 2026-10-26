@@ -44,16 +44,13 @@ fs.mkdirSync(output,{recursive:true});
    await page.locator('#dashboardUnlockButton').click();
    await page.waitForFunction(()=>document.getElementById('dashboardLock').hidden);
    await page.locator('[data-tab="daily-report"]').click();
-   await page.waitForFunction(()=>document.getElementById('dailyReportDate').options.length>0);
+   await page.waitForFunction(()=>document.querySelector('#dailyReportResults section'));
+   assert(await page.locator('#dailyReportDate').count()===0,'Date selector removed');
    const loaded=await page.evaluate(async()=>await(await fetch('daily-reports/latest.json?v='+Date.now())).json());
    assert(hash(loaded)===hash(daily),'Published daily data mismatch');
-   for(const date of Object.keys(daily.days)){
-    await page.locator('#dailyReportDate').selectOption(date);
-    const d=daily.days[date];
-    assert(await page.locator('#dailyReportResults .up article').count()===d.up,'Up count');
-    assert(await page.locator('#dailyReportResults .down article').count()===d.down,'Down count');
-   }
-   await page.locator('#dailyReportDate').selectOption(daily.latest_date);
+   const d=daily.days[daily.latest_date];
+   assert(await page.locator('#dailyReportResults .up article').count()===d.up,'Latest up count');
+   assert(await page.locator('#dailyReportResults .down article').count()===d.down,'Latest down count');
    const first=daily.days[daily.latest_date].reports[0];
    assert(first,'Need real report for interaction QA');
    await page.locator('#dailyReportSearch').fill(first.code);
@@ -82,7 +79,7 @@ fs.mkdirSync(output,{recursive:true});
    assert(!errors.length,JSON.stringify(errors));
    assert(!httpErrors.some(x=>/daily-reports/.test(x.url)),JSON.stringify(httpErrors));
    await page.screenshot({path:path.join(output,name+'.png'),fullPage:false});
-   results.push({name,width,latest:daily.latest_date,up:daily.days[daily.latest_date].up,down:daily.days[daily.latest_date].down,search:true,dates:true,expand:true,collapse:true,errors});
+   results.push({name,width,latest:daily.latest_date,up:daily.days[daily.latest_date].up,down:daily.days[daily.latest_date].down,search:true,latestOnly:true,dateSelectorRemoved:true,expand:true,collapse:true,errors});
    await context.close();
   }
   fs.writeFileSync(path.join(output,'validation.json'),JSON.stringify({status:'PASS',results},null,2));
