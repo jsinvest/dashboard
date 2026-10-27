@@ -1,243 +1,97 @@
 {
-  "as_of": "20261026",
-  "generated_at": "2026-10-26T20:08:09+09:00",
+  "as_of": "20261027",
+  "generated_at": "2026-10-27T15:05:21+09:00",
   "summaries": [
     {
       "market": "KOSPI",
-      "etf_adr_20d": 70.1,
-      "stocks_adr_20d": 59.2,
-      "advance_decline_1d": 17.5,
+      "etf_adr_20d": 73.3,
+      "stocks_adr_20d": 63.6,
+      "advance_decline_1d": 204.2,
       "impulse": "BLUE",
-      "judgement": "방어 국면",
-      "fear_greed": 36.1,
-      "fear_stage": "FEAR",
+      "judgement": "1차·회복 시도（장중 잠정）",
+      "fear_greed": 96.8,
+      "fear_stage": "EXTREME_GREED",
       "kosdaq_entry_allowed": null
     },
     {
       "market": "KOSDAQ",
-      "etf_adr_20d": 72.1,
-      "stocks_adr_20d": 68.1,
-      "advance_decline_1d": 30.6,
-      "impulse": "RED",
-      "judgement": "방어 국면",
-      "fear_greed": 17.6,
-      "fear_stage": "EXTREME_FEAR",
-      "kosdaq_entry_allowed": null
+      "etf_adr_20d": 72.4,
+      "stocks_adr_20d": 70.5,
+      "advance_decline_1d": 168.0,
+      "impulse": "BLUE",
+      "judgement": "1차·회복 시도（장중 잠정）",
+      "fear_greed": 82.6,
+      "fear_stage": "EXTREME_GREED",
+      "kosdaq_entry_allowed": false
     }
   ],
   "charts": [
     {
       "title": "업종 상대강도",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "sector_rs.png"
     },
     {
       "title": "시장 폭·ADR·AD Line",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "market_breadth.png"
     },
     {
       "title": "업종 쏠림",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "sector_concentration.png"
     },
     {
       "title": "KOSPI ADR",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "kospi_adr.png"
     },
     {
       "title": "KOSDAQ ADR",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "kosdaq_adr.png"
     },
     {
       "title": "Impulse·ADR",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "impulse_adr.png"
     },
     {
       "title": "공포탐욕",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분",
+      "description": "20261027 1차·13시대 장중 원자료·확정종가 아님",
       "image": "fear_greed.png"
     },
     {
-      "title": "KOSPI 월·주·일·15분",
-      "image": "kospi_mtf.png",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분"
+      "title": "KOSPI 1차 장중일봉",
+      "image": "kospi_intraday.png",
+      "description": "20261027 14:49 조회·당일 미완성봉·저녁MTF아님"
     },
     {
-      "title": "KOSDAQ 월·주·일·15분",
-      "image": "kosdaq_mtf.png",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분"
-    },
-    {
-      "title": "니케이 월·주·일·15분",
-      "image": "nikkei225_mtf.png",
-      "description": "20261026 장중 원자료·13시대 생성;저녁확정지수와시각구분"
+      "title": "KOSDAQ 1차 장중일봉",
+      "image": "kosdaq_intraday.png",
+      "description": "20261027 14:49 조회·당일 미완성봉·저녁MTF아님"
     }
   ],
   "index_multitimeframe": {
     "validation": {
-      "status": "OK",
-      "can_use_for_decision": true,
-      "file": "index_mtf_validation_latest.json"
+      "status": "UNAVAILABLE_TODAY",
+      "can_use_for_decision": false
     },
-    "assessment": {
-      "conclusion": "KOSPI 하락 · KOSDAQ 하락 · 니케이 확인 동조 하락 확인",
-      "higher_timeframe_context": {
-        "monthly": "상승",
-        "weekly": "하락"
-      },
-      "daily_state": "하락",
-      "intraday_state": "하락",
-      "markets": {
-        "KOSPI": {
-          "confirmed_mtf": {
-            "score": -54.2,
-            "state": "하락",
-            "valid_weight_pct": 100.0,
-            "timeframe_conflict": false,
-            "confidence_cap": 100,
-            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
-          },
-          "monthly": "상승",
-          "weekly": "하락",
-          "daily": "하락",
-          "intraday_15m": "하락"
-        },
-        "KOSDAQ": {
-          "confirmed_mtf": {
-            "score": -55.2,
-            "state": "하락",
-            "valid_weight_pct": 100.0,
-            "timeframe_conflict": false,
-            "confidence_cap": 100,
-            "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
-          },
-          "monthly": "중립-하락",
-          "weekly": "하락",
-          "daily": "하락",
-          "intraday_15m": "하락"
-        }
-      },
-      "nikkei_confirmation": "동조 하락 확인",
-      "objective_supports": [
-        5305.98,
-        5262.77
-      ],
-      "objective_resistances": [
-        7171.44,
-        7216.62
-      ],
-      "kosdaq_objective_supports": [
-        732.87,
-        630.99
-      ],
-      "kosdaq_objective_resistances": [
-        921.73,
-        921.73
-      ],
-      "invalidation_conditions": [
-        "세 지수 최신 거래일 불일치 시 상대비교는 마지막 공통 거래일까지 제한",
-        "60일 상관 0.3 미만 또는 공통 표본 부족 시 니케이 확인 가중치 비활성",
-        "시장 폭·ADR·수급·선물옵션과 충돌하면 니케이만으로 결론을 뒤집지 않음"
-      ],
-      "limitations": [
-        "Yahoo Finance 보조 원천 사용",
-        "미완성 주봉·월봉은 표시하되 확정 점수에서 제외",
-        "엘리어트 파동·눈대중 추세선은 자동 점수에서 제외"
-      ]
-    },
-    "cross_market": {
-      "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
-      "common_daily_observations": 1700,
-      "latest_common_daily_date": "2026-10-26",
-      "same_day": {
-        "20d": {
-          "observations": 20,
-          "correlation": 0.6962,
-          "same_direction_pct": 65.0
-        },
-        "60d": {
-          "observations": 60,
-          "correlation": 0.7671,
-          "same_direction_pct": 71.67
-        },
-        "120d": {
-          "observations": 120,
-          "correlation": 0.804,
-          "same_direction_pct": 74.17
-        }
-      },
-      "nikkei_tminus1_to_kospi": {
-        "20d": {
-          "observations": 20,
-          "correlation": 0.0213,
-          "same_direction_pct": 60.0
-        },
-        "60d": {
-          "observations": 60,
-          "correlation": 0.025,
-          "same_direction_pct": 55.0
-        },
-        "120d": {
-          "observations": 120,
-          "correlation": -0.0627,
-          "same_direction_pct": 56.67
-        }
-      },
-      "relative_strength": {
-        "5d": {
-          "kospi_return_pct": -5.176,
-          "nikkei_return_pct": -4.201,
-          "kospi_minus_nikkei_pct_points": -0.975
-        },
-        "20d": {
-          "kospi_return_pct": -18.584,
-          "nikkei_return_pct": -2.712,
-          "kospi_minus_nikkei_pct_points": -15.873
-        },
-        "60d": {
-          "kospi_return_pct": -19.81,
-          "nikkei_return_pct": -6.951,
-          "kospi_minus_nikkei_pct_points": -12.858
-        }
-      },
-      "beta_adjusted_residual": {
-        "observations": 60,
-        "beta_60d": 1.8022,
-        "latest_residual_zscore": 0.034
-      },
-      "intraday_alignment": {
-        "common_15m_bars": 24,
-        "return_correlation": 0.7268,
-        "kospi_session_return_pct": -0.538,
-        "nikkei_session_return_pct": -0.417,
-        "kospi_minus_nikkei_pct_points": -0.121
-      },
-      "state": "동조 하락 확인",
-      "role": "confirmation_only",
-      "confirmation_active": true,
-      "modifier_points": 0,
-      "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
-    },
-    "analysis_file": "index_mtf_analysis_latest.json",
-    "validation_file": "index_mtf_validation_latest.json"
+    "notes": "오늘 저녁 다중시간대 미완료·이전latest제외"
   },
   "data_bundle": {
     "file": "market_data_bundle_latest.zip",
-    "as_of": "20261026",
-    "phase": "FINAL",
-    "sha256": "ff267f1ed671064e87fe95d9aa2e8b84bd04010bc35888cdef0cf9d37d18c6c1",
+    "as_of": "20261027",
+    "phase": "PROVISIONAL",
+    "sha256": "662561027ef3c6a2c3099847ff7f7f654db54809cca3b259f1ceff22664da58b",
     "notes": [
-      "기준일20261026. 장중1단계와 저녁2단계 실제 종료코드 모두0; 저녁19:53:17 END. 지수는19:31 생성본의 확정일봉·15:30 완료분봉. 90종목 일봉/24종목 수급은20시대 브로커 재조회, 개별종목 거래소 독립 확정종가 검증은 아님. ETF·55섹터·ADR·Impulse·공포탐욕 원자료는13시대 장중 산출물이며 종가로 위장하지 않음. 주·월 진행봉은10/26 잠정, 판단용 완료주봉10/23·완료월봉9/30을 분리. 해외 통합보조는 PARTIAL·can_use_for_context=false로 현재 판단에서 제외. 미국NASDAQ/SOX/DOW 자체 검사는10/23 완료 세션 OK이나 통합 사용불가를 임의 승격하지 않음. 니케이10분 SOURCE_GAP(10/15 점심후5분 원천2개 공백)과 의존결과 제외. 별도 국내/니케이 일봉·15분봉은10/26 검증 통과·니케이 공식EOD MATCH. 14단계 선택 섹터분리수급 수집실패(121850 유효행 없음/커버리지 부족),55섹터 순환 전부 판단불가 및 당일 파생연구 미확보 제외. 선택 경고를 정상 신호로 바꾸지 않음. 신규 추천0개·1순위 없음. 추천 X · 관심종목은 확인조건 전 관찰이며 candidate_stocks/final_picks·추천 성적 분모에서 제외. TP/SL 선정조건·미확인일정 가점·이전종목 자동유지 금지.",
-      "선정0개;개별종목거래소독립확정검증아님"
+      "1차·저녁 후처리 전·장중잠정",
+      "오늘 WISE·현금·저녁지수 검증 전: 현금/종목 비중과 최종 방향 보류. 이전 날짜 비중을 오늘 값으로 재사용하지 않음."
     ]
   },
   "downloads": [
     {
-      "title": "최종시장자료·검증한계ZIP",
+      "title": "1차 장중자료·검증한계 ZIP",
       "file": "market_data_bundle_latest.zip"
     },
     {

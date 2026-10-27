@@ -3438,7 +3438,7 @@ function analysisList(items){
 function renderStockCandidates(data){
   const asOf=String(data.as_of||'');
   const asOfLabel=/^\d{8}$/.test(asOf)
-    ? `${Number(asOf.slice(4,6))}월 ${Number(asOf.slice(6,8))}일 종가 기준`
+    ? `${Number(asOf.slice(4,6))}월 ${Number(asOf.slice(6,8))}일 ${data.data_validation?.phase==='PROVISIONAL'?'1차 장중 기준 · 종가 미확정':'종가 기준'}`
     : '최신 종가 기준';
   const targetLabel=data.target_session ? ` · 대상 ${escapeHtml(data.target_session)}` : '';
   const finalRows = (data.final_picks||[]).map(x=>`<tr>
