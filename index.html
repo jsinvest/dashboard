@@ -6,6 +6,7 @@
 <title>J's Trading Dashboard</title>
 <script>document.documentElement.classList.add('dashboard-locked');</script>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="etf-weights/view.css">
 <style>
   :root{--bg:#0a0c10;--bg2:#111318;--bg3:#181c24;--border:#1e2330;--accent:#00e5ff;--up:#2ed573;--down:#ff4757;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -565,6 +566,7 @@
   <button class="tab-btn" data-tab="global">해외</button>
   <button class="tab-btn" data-tab="indicator">환율 및 지표</button>
   <button class="tab-btn" data-tab="etf">대표ETF</button>
+  <button class="tab-btn" data-tab="etf-weights">ETF비중</button>
   <button class="tab-btn" data-tab="schedule">일정</button>
   <button class="tab-btn" data-tab="links">링크 모음</button>
   <button class="tab-btn" data-tab="cash">현금비중관리</button>
@@ -953,6 +955,8 @@
   </div>
 
   <!-- 일정 -->
+  <section class="tab-panel hidden" data-tab-panel="etf-weights" id="etfWeightsPanel" aria-label="ETF비중"><h2>ETF비중</h2><p>주간 구성비중 비교자료를 불러오고 있어요.</p></section>
+
   <div class="tab-panel" data-tab-panel="schedule">
     <div class="section-title">일정 · SCHEDULE</div>
     <div class="schedule-card">
@@ -4200,5 +4204,6 @@ loadSupplyZone();
 </script>
 <script src="news/dashboard.js"></script>
 <script src="live-monitors/dashboard.js"></script>
+<script src="etf-weights/view.js"></script>
 </body>
 </html>
