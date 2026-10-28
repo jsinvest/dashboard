@@ -28,4 +28,15 @@
 #etfWeightsPanel .ew-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
 #etfWeightsPanel button{background:#20394a;border:1px solid #49778b;color:#e1f5ff;border-radius:6px;padding:8px 14px;cursor:pointer;font-size:13px}
 #etfWeightsPanel .ew-empty{padding:30px;text-align:center;color:#a4b1c6}
+#etfWeightsPanel [hidden]{display:none!important}
+#etfWeightsPanel .ew-subnav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 24px;border-bottom:1px solid #293347;padding-bottom:12px}
+#etfWeightsPanel .ew-subnav button{font-size:15px;padding:10px 22px;background:#151e2b;color:#bdcadd;border:1px solid #33445b}
+#etfWeightsPanel .ew-subnav button.active{background:#174350;color:#9bf1ff;border-color:#59c9df;font-weight:700}
+#etfWeightsPanel .ew-subnav button:focus-visible{outline:2px solid #b5f2ff;outline-offset:3px}
+#etfWeightsPanel .ew-change-cards{grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px;margin:14px 0}
+#etfWeightsPanel .ew-portfolio-cards{grid-template-columns:repeat(3,minmax(0,1fr));margin:14px 0}
+#etfWeightsPanel .ew-portfolio-cards strong{font-size:23px}
+#etfWeightsPanel .ew-weight-track{display:block;width:90px;height:3px;background:#273448;margin-top:5px;margin-left:auto}
+#etfWeightsPanel .ew-weight-track span{display:block;height:3px;background:#61d9ec}
 @media(max-width:680px){#etfWeightsPanel{padding:15px 8px}#etfWeightsPanel h2{font-size:22px}#etfWeightsPanel .ew-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#etfWeightsPanel .ew-card:last-child{grid-column:1/-1}#etfWeightsPanel .ew-card{padding:11px}#etfWeightsPanel .ew-card strong{font-size:25px}#etfWeightsPanel .ew-box{padding:12px}#etfWeightsPanel .ew-controls label{width:100%}#etfWeightsPanel .ew-controls select{width:100%}}
+@media(max-width:680px){#etfWeightsPanel .ew-change-cards .ew-card:last-child{grid-column:auto}#etfWeightsPanel .ew-subnav{gap:6px}#etfWeightsPanel .ew-subnav button{flex:1;padding:10px 8px;font-size:13px;white-space:nowrap}}
