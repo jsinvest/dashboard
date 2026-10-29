@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "20261027",
-  "trade_date": "20261027",
+  "as_of": "20261029",
+  "trade_date": "20261029",
   "source_generated_at": {
-    "monthly": "2026-10-27T19:59:58+09:00",
-    "staged_weekly": "2026-10-27T20:00:01.857265+09:00"
+    "monthly": "2026-10-29T20:05:08+09:00",
+    "staged_weekly": "2026-10-29T20:05:11.756784+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
     "target_risky_pct": 100.0,
     "action": "HOLD",
     "action_label": "현금 0% 유지",
-    "state": "월간 재진입 상태 유지 · 위험자산 한도 100%",
-    "reason": "20261027 WISE 확정 기준 월간 원모델과 단계형 목표가 모두 현금 0%를 유지합니다. 주간 모델 요구현금도 0%이므로 최종 참고비중은 현금 0%, 위험자산 한도 100%입니다.",
+    "state": "현금 0% 유지 · 위험자산 한도 100%",
+    "reason": "20261029 WISE 확정 종가 기준 월간 MA10 단계형과 주간 단계형 목표가 모두 현금 0%입니다. 최종 적용 참고값은 현금 0%, 위험자산 한도 100%입니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -60,11 +60,11 @@
       "watch": false,
       "status": "DISARMED_RAW_TRUE",
       "raw_entry_condition": true,
-      "rv20_annualized_pct": 43.973582800863284,
+      "rv20_annualized_pct": 50.96043268112807,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
-    "interpretation": "X3는 새 경보가 없습니다. RV 원조건은 충족됐지만 재무장되지 않은 상태라 새 경보가 아니며 최종 현금비중을 자동 변경하지 않습니다."
+    "interpretation": "X3·RV는 신규 경보가 없으며 수동 검토용입니다. 최종 현금비중을 자동 변경하지 않습니다."
   },
   "next_check": {
     "condition": "새 확정 주간 위험축소 신호",
@@ -85,7 +85,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "RAISE_CASH",
-      "action_label": "현금 10% 확보"
+      "action_label": "현금 10% 확보",
+      "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION"
     },
     {
       "as_of": "2026-08-19",
@@ -96,7 +97,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION"
     },
     {
       "as_of": "2026-08-20",
@@ -107,7 +109,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION"
     },
     {
       "as_of": "2026-08-21",
@@ -118,7 +121,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "STARTER_WAITING_NEXT_WEEK_CONFIRMATION"
     },
     {
       "as_of": "2026-08-24",
@@ -129,7 +133,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-08-25",
@@ -140,7 +145,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-08-26",
@@ -151,7 +157,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-08-27",
@@ -162,7 +169,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-08-28",
@@ -173,7 +181,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-08-31",
@@ -186,7 +195,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-01",
@@ -199,7 +209,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-02",
@@ -212,7 +223,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-03",
@@ -225,7 +237,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-04",
@@ -238,7 +251,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-07",
@@ -251,7 +265,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-08",
@@ -264,7 +279,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-09",
@@ -277,7 +293,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-10",
@@ -290,7 +307,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-11",
@@ -303,7 +321,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-14",
@@ -316,7 +335,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-15",
@@ -329,7 +349,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-16",
@@ -342,7 +363,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-17",
@@ -355,7 +377,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-18",
@@ -368,7 +391,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-21",
@@ -381,7 +405,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-22",
@@ -394,7 +419,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-23",
@@ -407,7 +433,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-28",
@@ -420,7 +447,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-29",
@@ -433,7 +461,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-09-30",
@@ -446,7 +475,8 @@
       "applied_cash_pct": 10.0,
       "applied_risky_pct": 90.0,
       "action": "HOLD",
-      "action_label": "현금 10% 유지"
+      "action_label": "현금 10% 유지",
+      "state": "DEFENSE_HOLD_WAITING_MONTHLY_REENTRY"
     },
     {
       "as_of": "2026-10-01",
@@ -459,7 +489,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "REDUCE_CASH",
-      "action_label": "현금 0%로 축소"
+      "action_label": "현금 0%로 축소",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-02",
@@ -472,7 +503,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-06",
@@ -485,7 +517,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-07",
@@ -498,7 +531,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-08",
@@ -511,7 +545,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-12",
@@ -524,7 +559,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-13",
@@ -537,7 +573,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-14",
@@ -550,7 +587,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-15",
@@ -563,7 +601,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-16",
@@ -576,7 +615,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-20",
@@ -589,7 +629,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-21",
@@ -602,7 +643,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-22",
@@ -615,7 +657,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-23",
@@ -628,7 +671,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-26",
@@ -641,7 +685,8 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     },
     {
       "as_of": "2026-10-27",
@@ -654,7 +699,22 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
+    },
+    {
+      "as_of": "2026-10-29",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     }
   ],
   "rule_steps": [
@@ -711,24 +771,24 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-10-27",
-    "workbook_rows": 2651,
+    "workbook_last_date": "2026-10-29",
+    "workbook_rows": 2653,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "5b0066cfc1e360b509d1e18ac0b5c72c8a00523b14c832a79345859749363c3c",
+    "workbook_sha256": "7f0aa247b88e47082ada085880438edfecb801a009a769760cbbb1929ff6d39e",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363",
     "monthly_runner_sha256": "7ddc5516166278d033583c541811d41f115366dd3f18d5b53a0b273eb1c629e2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "2e0234757a311715d59e753e4fd58f10d98d1179dd6fda5406e7fc19cb99b3ff",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "9650e346932876907fdeaa8066c8f489e8496b51346ab90e5f0ac43856393495",
-    "staged_result_sha256": "824447e80a2942b6e1b5f2f6f0c36ec342775042729dd27521bf2fab1b21044b",
-    "monthly_validation_sha256": "4cf89e3690fae431613dda74d56f7ec8e81ae66042185d5b176ce9abd82235d6",
-    "staged_validation_sha256": "09387bdcfd3eb37eb60fcc17ea46bc723834aa17fbee16af3e9fd54e990cc7e3"
+    "monthly_result_sha256": "c85f7f92d54c76866873788cecd6423354bf256bb5d4e1660815f3b432fc87a9",
+    "staged_result_sha256": "15eec06fa900cd8b5457f6b65db6f29ebc3b7f16e68b3a5abb232b5be5be0d61",
+    "monthly_validation_sha256": "592855f904cd2cc8c40b1aedc23866083c3903ccac4f56dfa843980a85a67512",
+    "staged_validation_sha256": "63b9eea496726d8313ba02f4b7ad35bb12783a57de419e66bb8a54bb212f83e4"
   },
   "source_files": [
     "cash_weight_signal_runner.py",
