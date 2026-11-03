@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-11-02",
-  "trade_date": "20261102",
+  "as_of": "2026-11-03",
+  "trade_date": "20261103",
   "source_generated_at": {
-    "monthly": "2026-11-03T05:21:12+09:00",
-    "staged_weekly": "2026-11-03T05:21:15.706017+09:00"
+    "monthly": "2026-11-03T20:05:11+09:00",
+    "staged_weekly": "2026-11-03T20:05:13.953462+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 0% 유지",
     "state": "월간 재진입 상태 유지 · 위험자산 한도 100%",
-    "reason": "11월 2일 WISE 확정 26업종·날짜 대조 코스피와 누락된 10월 30일 행을 보완해 재계산했습니다. 월간·단계형 목표 모두 현금 0%. 기존 모형 참고값이며 전액 매수 권유나 시장·종목 최종 재분석 완료를 뜻하지 않습니다.",
+    "reason": "11월 3일 WISE 확정 26업종과 KOSPI를 반영해 재계산했습니다. 월간·단계형 목표 모두 현금 0%입니다. 기존 모형 참고값이며 전액 매수 권유나 시장·종목 최종 재분석 완료를 뜻하지 않습니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -60,7 +60,7 @@
       "watch": false,
       "status": "DISARMED_RAW_TRUE",
       "raw_entry_condition": true,
-      "rv20_annualized_pct": 53.02189624990296,
+      "rv20_annualized_pct": 52.973488428725005,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
@@ -727,7 +727,22 @@
       "applied_cash_pct": 0.0,
       "applied_risky_pct": 100.0,
       "action": "HOLD",
-      "action_label": "현금 0% 유지"
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
+    },
+    {
+      "as_of": "2026-11-03",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_MONTHLY_REENTRY",
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     }
   ],
   "rule_steps": [
@@ -784,25 +799,25 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-11-02",
-    "workbook_rows": 2655,
+    "workbook_last_date": "2026-11-03",
+    "workbook_rows": 2656,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "96c847b55d17fbd58aff0cd98c55a58ba34ee40793f9c47285c888a85c80bc31",
+    "workbook_sha256": "50a21c11cec1d34f87b049bbd0fc95b1aaf425e72ecf10969aed54d68af9dc47",
     "monthly_policy_version": "cash-weight-reference-v1.1.0-ma10-staged",
     "monthly_ma10_policy_sha256": "656026d9710c5e29f9887bc4cbd481f0bfaec75d8c458354cb975b8ac62ae363",
     "monthly_runner_sha256": "7ddc5516166278d033583c541811d41f115366dd3f18d5b53a0b273eb1c629e2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "2e0234757a311715d59e753e4fd58f10d98d1179dd6fda5406e7fc19cb99b3ff",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "486bdedbf66b768237c0fab16ac255c019bf23e29df5db08bb0d5814de83b314",
-    "staged_result_sha256": "b9d5ed64e9b0b03d9733d2bf1d7c8ac69a6d559df6acaad83070c2b79d617d77",
-    "monthly_validation_sha256": "0b7da0d630cbfd14642ddbaa8bf5c9ec24128570e122f71a3a51b3781944d88b",
-    "staged_validation_sha256": "91faaa661c0927406b3ce2e508492304609db1a30cd13ef38ab633fd0be31a6e",
-    "wise_result_sha256": "3a86d1c2be5617c2be4567221d55db230fd2a8fab1a561619f8434ccddde9e5d",
+    "monthly_result_sha256": "4ffbd11f401d5b286aabd913769794f4bb21c7acdd141dc35f56d48c7c146b7a",
+    "staged_result_sha256": "e1932c3747c864a0d1365f3f9a8e100e8633932b9d522238cad8ececea9afc0e",
+    "monthly_validation_sha256": "22952fee29c1b9e68a85fe640c1846a7016ab045681669515ba0fa1ff3bb22ec",
+    "staged_validation_sha256": "cae7b6ad5cfb332becced3400fdab8ff476b885a11a430fb05ba8c280aa0611e",
+    "wise_result_sha256": "5c423097bee24cdc343ec3a30f3678ef6018645ed2dbfb2791ef28d0f4b91282",
     "publication_scope": "WISE_CASH_ONLY",
     "full_evening_analysis_completed": false
   },
