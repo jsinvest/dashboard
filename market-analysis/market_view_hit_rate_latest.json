@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-04T20:50:44+09:00",
-  "through_recommendation_date": "20261104",
-  "price_data_through": "20261104",
+  "generated_at": "2026-11-05T20:47:49+09:00",
+  "through_recommendation_date": "20261105",
+  "price_data_through": "20261105",
   "rule": {
     "population": "게시된 KOSPI·KOSDAQ market_views의 추천일별 마지막 게시본",
     "direction": "명확한 절대 방향만 UP/DOWN; 상대우위·충돌·박스는 NEUTRAL",
@@ -14,10 +14,10 @@
     "timing_guard": "장 시작 후 게시된 뷰는 진행 중인 장을 평가하지 않고 그다음 완전한 거래일을 사용"
   },
   "summary": {
-    "views": 104,
-    "directional_views": 52,
+    "views": 106,
+    "directional_views": 54,
     "evaluated": 52,
-    "pending": 0,
+    "pending": 2,
     "wins": 27,
     "losses": 25,
     "accuracy_pct": 51.92,
@@ -26,10 +26,10 @@
   },
   "by_market": {
     "KOSPI": {
-      "views": 52,
-      "directional_views": 27,
+      "views": 53,
+      "directional_views": 28,
       "evaluated": 27,
-      "pending": 0,
+      "pending": 1,
       "wins": 14,
       "losses": 13,
       "accuracy_pct": 51.85,
@@ -37,10 +37,10 @@
       "unclassified": 0
     },
     "KOSDAQ": {
-      "views": 52,
-      "directional_views": 25,
+      "views": 53,
+      "directional_views": 26,
       "evaluated": 25,
-      "pending": 0,
+      "pending": 1,
       "wins": 13,
       "losses": 12,
       "accuracy_pct": 52.0,
@@ -61,10 +61,10 @@
       "unclassified": 0
     },
     "DOWN": {
-      "views": 37,
-      "directional_views": 37,
+      "views": 39,
+      "directional_views": 39,
       "evaluated": 37,
-      "pending": 0,
+      "pending": 2,
       "wins": 16,
       "losses": 21,
       "accuracy_pct": 43.24,
@@ -73,6 +73,18 @@
     }
   },
   "by_recommendation_date": [
+    {
+      "recommendation_date": "20261105",
+      "views": 2,
+      "directional_views": 2,
+      "evaluated": 0,
+      "pending": 2,
+      "wins": 0,
+      "losses": 0,
+      "accuracy_pct": null,
+      "neutral_observations": 0,
+      "unclassified": 0
+    },
     {
       "recommendation_date": "20261104",
       "views": 2,
@@ -699,55 +711,89 @@
     }
   ],
   "data_quality": {
-    "index_bundle": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261104",
+    "index_bundle": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261105",
     "index_validation_status": "OK",
     "index_can_use_for_decision": true,
     "index_files": {
-      "KOSPI": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261104\\data\\kospi_daily_20261104.csv",
-      "KOSDAQ": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261104\\data\\kosdaq_daily_20261104.csv"
+      "KOSPI": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261105\\data\\kospi_daily_20261105.csv",
+      "KOSDAQ": "C:\\Users\\skylo\\Desktop\\trading_strength\\output\\index_multitimeframe\\20261105\\data\\kosdaq_daily_20261105.csv"
     },
     "index_file_sha256": {
-      "KOSPI": "1b551b3f077c6c6ff2de849ee0d1a091d228c20557b90e23017ad0c73d4f5015",
-      "KOSDAQ": "c4e2cb9d5616adc75667772e330450d0b3259ee4a6f99049b46a34e10611e0e6"
+      "KOSPI": "733d599bd7fd7a22e9c8f6f3259bccc19f1cfa6460c6f6ac0d31bbde71119ace",
+      "KOSDAQ": "2c250e81f41d96c42f2974f2597bb200b537427aecb54edea7c5d21cce547b2d"
     },
-    "recommendation_dates": 52,
-    "records": 104,
+    "recommendation_dates": 53,
+    "records": 106,
     "duplicate_record_ids": 0
   },
   "records": [
     {
+      "id": "20261105:KOSPI",
+      "recommendation_date": "20261105",
+      "published_at": "2026-11-05T20:44:19+09:00",
+      "base_session": null,
+      "target_session": "20261106",
+      "market": "KOSPI",
+      "view": "반격 실패·단기/상위 약세로 방어적",
+      "direction": "DOWN",
+      "classification_rationale": "게시 JSON의 구조화 direction",
+      "classification_source": "published_structured_direction",
+      "base_close": null,
+      "target_close": null,
+      "next_session_return_pct": null,
+      "outcome": "PENDING",
+      "recommendation_source": "WORKTREE"
+    },
+    {
+      "id": "20261105:KOSDAQ",
+      "recommendation_date": "20261105",
+      "published_at": "2026-11-05T20:44:19+09:00",
+      "base_session": null,
+      "target_session": "20261106",
+      "market": "KOSDAQ",
+      "view": "반격 실패·단기/상위 약세로 방어적",
+      "direction": "DOWN",
+      "classification_rationale": "게시 JSON의 구조화 direction",
+      "classification_source": "published_structured_direction",
+      "base_close": null,
+      "target_close": null,
+      "next_session_return_pct": null,
+      "outcome": "PENDING",
+      "recommendation_source": "WORKTREE"
+    },
+    {
       "id": "20261104:KOSPI",
       "recommendation_date": "20261104",
       "published_at": "2026-11-04T20:48:05+09:00",
-      "base_session": null,
+      "base_session": "20261104",
       "target_session": "20261105",
       "market": "KOSPI",
       "view": "하락추세 속 저점 반격·절대방향 중립",
       "direction": "NEUTRAL",
       "classification_rationale": "게시 JSON의 구조화 direction",
       "classification_source": "published_structured_direction",
-      "base_close": null,
-      "target_close": null,
-      "next_session_return_pct": null,
-      "outcome": "PENDING",
-      "recommendation_source": "WORKTREE"
+      "base_close": 5683.8,
+      "target_close": 5383.8,
+      "next_session_return_pct": -5.2782,
+      "outcome": "NEUTRAL_OBSERVATION",
+      "recommendation_source": "b8d912681490"
     },
     {
       "id": "20261104:KOSDAQ",
       "recommendation_date": "20261104",
       "published_at": "2026-11-04T20:48:05+09:00",
-      "base_session": null,
+      "base_session": "20261104",
       "target_session": "20261105",
       "market": "KOSDAQ",
       "view": "하락추세 속 저점 반격·절대방향 중립",
       "direction": "NEUTRAL",
       "classification_rationale": "게시 JSON의 구조화 direction",
       "classification_source": "published_structured_direction",
-      "base_close": null,
-      "target_close": null,
-      "next_session_return_pct": null,
-      "outcome": "PENDING",
-      "recommendation_source": "WORKTREE"
+      "base_close": 714.95,
+      "target_close": 678.41,
+      "next_session_return_pct": -5.1108,
+      "outcome": "NEUTRAL_OBSERVATION",
+      "recommendation_source": "b8d912681490"
     },
     {
       "id": "20261029:KOSPI",
