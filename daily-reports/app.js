@@ -40,7 +40,7 @@
     const query=normalize(el('dailyReportSearch').value);
     const rows=day.reports.filter(r=>[r.name,r.code,r.broker,r.title,r.summary].some(v=>normalize(v).includes(query)));
     renderComparison(query,rows);
-    el('dailyReportCounts').textContent=`원문 전체 ${day.source_count}건 · 상향 ${day.up}건 · 하향 ${day.down}건 · 중복 제외 ${new Set(day.reports.map(r=>r.code)).size}종목 · 검색 결과 ${rows.length}건`;
+    el('dailyReportCounts').textContent=`${day.source_scope||'원문 전체'} ${day.source_count}건 · 상향 ${day.up}건 · 하향 ${day.down}건 · 중복 제외 ${new Set(day.reports.map(r=>r.code)).size}종목 · 확인 보류 ${(day.held_reports||[]).length}건 · 검색 결과 ${rows.length}건`;
     el('dailyReportResults').innerHTML=[['up','목표주가 상향'],['down','목표주가 하향']].map(([cls,status])=>{
       const list=rows.filter(r=>r.status===status);
       return `<section class="${cls}" aria-label="${status}"><h3>${status} · ${list.length}건</h3>${list.map(r=>`<article><strong>${escape(r.name)} (${escape(r.code)})</strong><p>${escape(r.broker)} · ${escape(r.date)}<br>목표주가 <b>${Number(r.price).toLocaleString('ko-KR')}원</b></p><p>${escape(r.title)}</p><details><summary>리포트 요약 펼쳐보기</summary><p>${escape(r.summary)}</p></details></article>`).join('')||'<p>해당 조건의 리포트가 없어요.</p>'}</section>`;
