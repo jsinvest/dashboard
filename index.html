@@ -1039,6 +1039,7 @@
   <div class="tab-panel" data-tab-panel="report">
     <div class="section-title">리포트 검색 · TARGET PRICE & EARNINGS SIGNALS</div>
     <div class="report-card">
+      <div class="report-period-controls"><label for="reportPeriodSelect">실적 분기</label><select id="reportPeriodSelect" onchange="changeReportPeriod()"><option>자료 확인 중</option></select><span id="reportPeriodResultCount"></span></div><div class="report-period-note" id="reportPeriodNote">분기 근거 확인 중</div>
       <div class="report-section-tabs">
         <button class="report-section-btn active" id="reportSectionSearchBtn" onclick="setReportSection('search')">리포트검색</button>
         <button class="report-section-btn report-up-btn" id="reportSectionUpBtn" onclick="setReportSection('up')">목표주가 상향</button>
@@ -1051,12 +1052,12 @@
         <div class="report-result-box"><div id="reportResults" class="report-empty">검색어를 입력하세요.</div></div>
       </div>
       <div class="report-section-pane" id="reportSectionUp">
-        <div class="signal-headline"><div><b>상향 시그널</b><span>6월 18일 이후 · 목표주가 상향 + 어닝서프라이즈 + 컨센서스/이익추정 상향</span></div><div id="reportUpCount" class="signal-count"></div></div>
+        <div class="signal-headline"><div><b>상향 시그널</b><span>선택한 실적 분기 · 목표주가 상향 + 어닝서프라이즈 + 컨센서스/이익추정 상향</span></div><div id="reportUpCount" class="signal-count"></div></div>
         <div class="signal-filter-row"><input id="reportUpSearch" type="text" placeholder="상향 시그널 검색" oninput="renderSignalList('up')"/><select id="reportUpCategory" onchange="renderSignalList('up')"></select></div>
         <div class="signal-stat-grid" id="reportUpStats"></div><div class="report-result-box"><div id="reportUpResults" class="report-empty">상향 시그널 로딩중...</div></div>
       </div>
       <div class="report-section-pane" id="reportSectionDown">
-        <div class="signal-headline down"><div><b>하향 시그널</b><span>6월 18일 이후 · 목표주가 하향 + 어닝쇼크 + 컨센서스/이익추정 하향</span></div><div id="reportDownCount" class="signal-count"></div></div>
+        <div class="signal-headline down"><div><b>하향 시그널</b><span>선택한 실적 분기 · 목표주가 하향 + 어닝쇼크 + 컨센서스/이익추정 하향</span></div><div id="reportDownCount" class="signal-count"></div></div>
         <div class="signal-note" id="reportDownNote"></div>
         <div class="signal-filter-row"><input id="reportDownSearch" type="text" placeholder="하향 시그널 검색" oninput="renderSignalList('down')"/><select id="reportDownCategory" onchange="renderSignalList('down')"></select></div>
         <div class="signal-stat-grid" id="reportDownStats"></div><div class="report-result-box"><div id="reportDownResults" class="report-empty">하향 시그널 로딩중...</div></div>
@@ -4215,5 +4216,6 @@ loadSupplyZone();
 <script src="news/dashboard.js"></script>
 <script src="live-monitors/dashboard.js"></script>
 <script src="etf-weights/view.js?v=20261107-futures"></script>
+<link rel="stylesheet" href="report-periods/style.css"><script src="report-periods/app.js" defer></script>
 </body>
 </html>
