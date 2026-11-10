@@ -61,6 +61,61 @@ def read_object(root, ref, path):
     return git(root, "show", f"{ref}:{path}")
 
 
+def evidence_json(body, member=None):
+    if member:
+        with zipfile.ZipFile(io.BytesIO(body)) as archive:
+            if len(archive.namelist()) != len(set(archive.namelist())) or archive.testzip():
+                raise ValueError("시장 자료 ZIP 중복/CRC 오류")
+            body = archive.read(member)
+    return json.loads(body)
+
+
+def publication_evidence(read, key, legacy_path):
+    """Follow the published manifest's hashed bundle, retaining legacy fallback.
+
+    Only two known evidence members are supported. Never select by mtime or
+    turn a stale standalone file into a current research signal.
+    """
+    members = {"index-mtf": "index_multitimeframe_validation_latest.json",
+               "research": "validation/mandatory_audit.json"}
+    if key not in members:
+        return legacy_path, None, read(legacy_path), {}
+    manifest_path = "market-analysis/latest.json"
+    manifest_body = read(manifest_path)
+    manifest = json.loads(manifest_body)
+    descriptor = manifest.get("data_bundle", {})
+    name, declared_hash = descriptor.get("file"), descriptor.get("sha256")
+    if not name or not declared_hash:
+        return legacy_path, None, read(legacy_path), {}
+    if PurePosixPath(name).name != name or "\\" in name or name in (".", ".."):
+        raise ValueError("시장 자료 ZIP 참조 경로 오류")
+    path = "market-analysis/" + name
+    body = read(path)
+    if sha(body) != declared_hash:
+        raise ValueError("시장 자료 ZIP 선언 해시 불일치")
+    if day(descriptor["as_of"]) != day(manifest["as_of"]):
+        raise ValueError("시장 본문과 ZIP 기준일 불일치")
+    with zipfile.ZipFile(io.BytesIO(body)) as archive:
+        if members[key] not in archive.namelist():
+            return legacy_path, None, read(legacy_path), {}
+    d = evidence_json(body, members[key])
+    if day(d["trade_date"]) != day(manifest["as_of"]) or d.get("status") != "OK":
+        raise ValueError("시장 ZIP 검증자료 기준일/상태 불일치")
+    metadata = {"evidence_manifest": manifest_path, "manifest_sha256": sha(manifest_body),
+                "declared_bundle_sha256": declared_hash, "legacy_path": legacy_path}
+    if key == "research":
+        handoff = d.get("research_handoff", {})
+        if day(handoff.get("trade_date")) != day(manifest["as_of"]) or handoff.get("status") != "RESEARCH_ONLY":
+            raise ValueError("시장 ZIP 연구 인계자료 기준일/상태 불일치")
+        hashes = [x.get("sha256", "") for x in d.get("sources", [])
+                  if str(x.get("path", "")).replace("\\", "/").endswith("/index_direction_research_latest.json")]
+        if len(hashes) != 1 or len(hashes[0]) != 64 or any(c not in "0123456789abcdef" for c in hashes[0]):
+            raise ValueError("시장 ZIP 연구 원천 해시 누락/중복")
+        metadata.update(research_status=handoff["status"], source_research_sha256=hashes[0],
+                        research_automatic_effect=handoff.get("automatic_effect"))
+    return path, members[key], body, metadata
+
+
 def calendar_evidence(path, now):
     d = json.loads(path.read_text(encoding="utf-8-sig"))
     if (d.get("status") != "VERIFIED" or day(d.get("trade_date")) != now.date()
@@ -267,8 +322,9 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
         expected = expected_day(cadence, hour, now, holidays)
         row = dict(id=key, label=label, path=path, cadence=cadence, expected_date=expected.isoformat() if expected else None, issues=[])
         try:
-            body = read_object(root, commit, path)
-            d = json.loads(body)
+            path, member, body, metadata = publication_evidence(lambda p: read_object(root, commit, p), key, path)
+            row.update(path=path, zip_member=member, **metadata)
+            d = evidence_json(body, member)
             actual = observed_day(key, d)
             row.update(remote_date=actual.isoformat(), git_sha256=sha(body), validation_status=d.get("status") or d.get("research_status"))
             if expected and actual < expected:
@@ -278,10 +334,16 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
             row["issues"].extend(json_issues(key, d, now))
             local = workspace / path
             if local.is_file():
-                local_body = local.read_bytes()
-                row.update(local_date=observed_day(key, json.loads(local_body)).isoformat(), primary_checkout_matches_remote=canonical(local_body) == canonical(body))
+                try:
+                    local_body = local.read_bytes()
+                    local_d = evidence_json(local_body, member)
+                    row.update(local_date=observed_day(key, local_d).isoformat(), primary_checkout_matches_remote=sha(local_body) == sha(body))
+                except (ValueError, KeyError, zipfile.BadZipFile) as e:
+                    row.update(local_evidence_status="UNAVAILABLE:" + type(e).__name__, primary_checkout_matches_remote=False)
             published = fetch(base, path, stamp)
-            row.update(public_sha256=sha(published), public_date=observed_day(key, json.loads(published)).isoformat(), pages_matches_commit=canonical(published) == canonical(body))
+            public_d = evidence_json(published, member)
+            matches = sha(published) == sha(body) if member else canonical(published) == canonical(body)
+            row.update(public_sha256=sha(published), public_date=observed_day(key, public_d).isoformat(), pages_matches_commit=matches)
             if not row["pages_matches_commit"]:
                 row["issues"].append("PAGES_DIFFERS_FROM_PINNED_COMMIT")
             if key in ("reports", "report-signals", "daily-report"):

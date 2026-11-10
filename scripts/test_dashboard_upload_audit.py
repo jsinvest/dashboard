@@ -1,9 +1,11 @@
 """Publication decisions: schedules, provisional editions, and public-only ZIPs."""
 import json
+import io
 from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+import zipfile
 
 import dashboard_upload_audit as a
 
@@ -63,6 +65,50 @@ class PublicationDecisions(unittest.TestCase):
     def test_zip_path_traversal_rejected(self):
         with self.assertRaises(ValueError):
             a.public_files({"downloads": [{"file": "../private.csv"}]})
+
+    def market_publication(self, research_date="20261110"):
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, "w") as archive:
+            archive.writestr("index_multitimeframe_validation_latest.json", json.dumps({"status": "OK", "trade_date": "20261110", "can_use_for_decision": True}))
+            archive.writestr("validation/mandatory_audit.json", json.dumps({
+                "status": "OK", "trade_date": "20261110",
+                "sources": [{"path": "C:/source/index_direction_research_latest.json", "sha256": "a" * 64}],
+                "research_handoff": {"status": "RESEARCH_ONLY", "trade_date": research_date,
+                                     "automatic_effect": {"final_market_view": "NONE"}}}))
+        bundle = output.getvalue()
+        return {
+            "market-analysis/latest.json": json.dumps({"as_of": "20261110", "data_bundle": {
+                "file": "market_data_bundle_latest.zip", "as_of": "20261110", "sha256": a.sha(bundle)}}).encode(),
+            "market-analysis/market_data_bundle_latest.zip": bundle,
+            "legacy.json": json.dumps({"trade_date": "20261109"}).encode()}
+
+    def test_current_linked_bundle_wins_over_retained_legacy_file(self):
+        files = self.market_publication()
+        for key in ("index-mtf", "research"):
+            path, member, body, metadata = a.publication_evidence(files.__getitem__, key, "legacy.json")
+            self.assertEqual(path, "market-analysis/market_data_bundle_latest.zip")
+            self.assertEqual(a.observed_day(key, a.evidence_json(body, member)), a.date(2026, 11, 10))
+            self.assertEqual(metadata["legacy_path"], "legacy.json")
+        self.assertEqual(metadata["research_status"], "RESEARCH_ONLY")
+        self.assertEqual(metadata["source_research_sha256"], "a" * 64)
+
+    def test_bad_bundle_hash_cannot_fall_back_to_a_good_looking_date(self):
+        files = self.market_publication()
+        files["market-analysis/market_data_bundle_latest.zip"] += b"tampered"
+        with self.assertRaisesRegex(ValueError, "해시 불일치"):
+            a.publication_evidence(files.__getitem__, "research", "legacy.json")
+
+    def test_same_day_bundle_does_not_make_old_research_current(self):
+        files = self.market_publication(research_date="20261109")
+        with self.assertRaisesRegex(ValueError, "연구 인계자료 기준일/상태 불일치"):
+            a.publication_evidence(files.__getitem__, "research", "legacy.json")
+
+    def test_legacy_publication_remains_supported(self):
+        files = self.market_publication()
+        files["market-analysis/latest.json"] = b'{"as_of":"20261109"}'
+        path, member, body, metadata = a.publication_evidence(files.__getitem__, "index-mtf", "legacy.json")
+        self.assertEqual((path, member, metadata), ("legacy.json", None, {}))
+        self.assertEqual(a.evidence_json(body)["trade_date"], "20261109")
 
 
 if __name__ == "__main__":
