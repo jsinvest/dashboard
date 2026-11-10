@@ -42,8 +42,14 @@ def main(run,messages,apply=False):
     db['meta'].update(detail_count=len(db['details']),summary_count=len(db['summary']),generated_at=v['collected_at'],
                       last_merge_source='한경 컨센서스',last_source_checked_through=max(v['days']))
     if added['reports']: db['meta']['last_merge_added']=added['reports']
+    db['meta']['last_merge_through']=max(r['날짜'] for r in db['details'])
     sig['meta'].update(generated_at=v['collected_at'],up_signal_count=len(sig['up']),down_signal_count=len(sig['down']))
     for direction in ['up','down']: sig['meta'][direction+'_category_counts']=dict(Counter(r['구분'] for r in sig[direction]))
+    sig['meta'].setdefault('legacy_source_metadata',{k:sig['meta'].get(k) for k in ['source','source_url','source_period','note','target_price_source_note']})
+    sig['meta'].update(source='기존 DAJU 자료 + 한경 컨센서스',explicit_target_cut_count=sum(r['구분']=='목표주가 하향' for r in sig['down']),
+        note='한경 컨센서스의 명시적 목표주가 하향과 기존 DAJU 실적·컨센서스 하향 자료를 함께 보존합니다. 목표가 0원·방향 충돌은 보류합니다.',
+        target_price_source_checked_through=max(v['days']),target_price_latest_list_date=max(r['날짜'] for r in sig['up']+sig['down'] if r['구분'] in ['목표주가 상향','목표주가 하향']),
+        target_price_source_note='한경 목록 표시 날짜·목표가 기준이며 증권사 원문 독립 대조 미완료입니다. 기존 DAJU 자료의 출처는 개별 행에 보존합니다.')
     for n,key in [('report_data.json','details'),('report_signal_data.json','up'),('report_signal_data.json','down')]:
         current=db if key=='details' else sig
         assert not (Counter(map(canon,original[n][key]))-Counter(map(canon,current[key])))
@@ -91,7 +97,7 @@ def main(run,messages,apply=False):
                 d.setdefault('held_reports',[]).append(r);held_known.add(canon(r))
         d.update(up=sum(r['status']=='목표주가 상향' for r in d['reports']),down=sum(r['status']=='목표주가 하향' for r in d['reports']),
                  source_count=len(d['reports'])+len(d['held_reports']),source_scope='확보 원문 합산 · 한경 및 기존 자료',duplicate_count=0)
-    daily.update(latest_date=max(k for k,d in daily['days'].items() if d['reports']),collected_at=v['collected_at'])
+    daily.update(latest_date=max(k for k,d in daily['days'].items() if d['reports']),collected_at=max(v['collected_at'],current_daily.get('collected_at','')))
     for old in [daily_original,current_daily]:
         for day,d in old['days'].items():
             for field in ['reports','held_reports']:
