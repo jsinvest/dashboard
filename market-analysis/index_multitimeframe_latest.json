@@ -1,0 +1,1554 @@
+{
+  "schema_version": "1.0",
+  "generated_at_kst": "2026-11-10T20:38:34+09:00",
+  "as_of": {
+    "trade_date": "20261110",
+    "session": "CLOSED"
+  },
+  "validation": {
+    "status": "OK",
+    "can_use_for_decision": true,
+    "file": "validation_20261110.json"
+  },
+  "design_note": {
+    "user_research_context": {
+      "description": "사용자 제공 비교표에서 니케이225가 국장과 높은 유사도를 보였다는 연구 가설",
+      "nikkei225_since_2025_01_01": {
+        "rate_pct": 72.97,
+        "hits": 270,
+        "observations": 370
+      },
+      "nikkei225_since_2026_06_23": {
+        "rate_pct": 86.11,
+        "hits": 31,
+        "observations": 36
+      },
+      "verification": "사용자 제공값이며 산식·동일일/선행 시차 정의는 독립 검증하지 않음",
+      "scoring_policy": "해당 수치를 자동 방향점수에 하드코딩하지 않음"
+    },
+    "statistical_caution": "동일 거래일 방향 일치율은 거래시간이 겹치는 동조성일 수 있어 선행 예측력으로 해석하지 않음"
+  },
+  "instruments": {
+    "KOSPI": {
+      "name": "KOSPI",
+      "symbol": "001",
+      "source_tier": "primary_broker",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-10-31T00:00:00",
+          "bar_count": 88,
+          "ohlc": {
+            "open": 6814.49,
+            "high": 7044.67,
+            "low": 5305.98,
+            "close": 5730.74
+          },
+          "returns_pct": {
+            "1": -16.193,
+            "5": -32.39,
+            "20": 126.263,
+            "60": 92.91
+          },
+          "moving_averages": {
+            "sma3": 6462.933,
+            "sma6": 7156.147,
+            "sma12": 6183.122,
+            "sma24": 4536.403,
+            "sma60": 3354.879
+          },
+          "mid_ma_normalized_slope": 0.2931,
+          "rsi14": 55.424,
+          "macd": 1077.1257,
+          "macd_signal": 984.5757,
+          "macd_hist": 92.5501,
+          "bollinger": {
+            "upper": 8711.254,
+            "middle": 4948.405,
+            "lower": 1185.557,
+            "percent_b": 0.604,
+            "width": 1.5208
+          },
+          "atr14": 990.7291,
+          "levels": {
+            "previous_20_high": 9385.59,
+            "previous_20_low": 2284.72,
+            "previous_60_high": 9385.59,
+            "previous_60_low": 2134.77
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 10,
+            "confirmed_pivot_lows": 9,
+            "latest_pivot_high": 9385.59,
+            "latest_pivot_low": 5262.77
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.293"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 55.42"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.60, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 50.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-30T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "weekly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-11-06T00:00:00",
+          "bar_count": 383,
+          "ohlc": {
+            "open": 5637.77,
+            "high": 5910.83,
+            "low": 4911.28,
+            "close": 5059.69
+          },
+          "returns_pct": {
+            "1": -11.71,
+            "5": -27.757,
+            "20": -44.107,
+            "60": 49.01
+          },
+          "moving_averages": {
+            "sma5": 5726.942,
+            "sma10": 6321.072,
+            "sma20": 6711.571,
+            "sma60": 5803.825,
+            "sma120": 4252.268
+          },
+          "mid_ma_normalized_slope": -0.19,
+          "rsi14": 33.815,
+          "macd": -228.9068,
+          "macd_signal": 38.3074,
+          "macd_hist": -267.2142,
+          "bollinger": {
+            "upper": 8270.255,
+            "middle": 6711.571,
+            "lower": 5152.887,
+            "percent_b": -0.0299,
+            "width": 0.4645
+          },
+          "atr14": 685.5079,
+          "levels": {
+            "previous_20_high": 9385.59,
+            "previous_20_low": 5262.77,
+            "previous_60_high": 9385.59,
+            "previous_60_low": 3206.34
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 46,
+            "confirmed_pivot_lows": 47,
+            "latest_pivot_high": 7171.52,
+            "latest_pivot_low": 5262.77
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.190"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 33.81"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": -1,
+              "weight": 5.0,
+              "reason": "%B -0.03, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -80.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-13T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T00:00:00",
+          "bar_count": 1800,
+          "ohlc": {
+            "open": 5247.22,
+            "high": 5300.92,
+            "low": 5174.55,
+            "close": 5239.13
+          },
+          "returns_pct": {
+            "1": 4.389,
+            "5": -7.252,
+            "20": -13.193,
+            "60": -17.436
+          },
+          "moving_averages": {
+            "sma5": 5277.054,
+            "sma10": 5557.398,
+            "sma20": 5602.667,
+            "sma60": 6400.337,
+            "sma120": 6986.523,
+            "sma240": 6122.251
+          },
+          "mid_ma_normalized_slope": -0.0636,
+          "rsi14": 36.846,
+          "macd": -308.4746,
+          "macd_signal": -277.3023,
+          "macd_hist": -31.1723,
+          "bollinger": {
+            "upper": 6137.89,
+            "middle": 5602.667,
+            "lower": 5067.445,
+            "percent_b": 0.1604,
+            "width": 0.1911
+          },
+          "atr14": 283.5263,
+          "levels": {
+            "previous_20_high": 6198.46,
+            "previous_20_low": 4911.28,
+            "previous_60_high": 7216.62,
+            "previous_60_low": 4911.28
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 226,
+            "confirmed_pivot_lows": 221,
+            "latest_pivot_high": 6100.11,
+            "latest_pivot_low": 4911.28
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.064"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 36.85"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.16, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -75.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-10T00:00:00",
+          "display_bar_is_partial": false
+        },
+        "intraday_15m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T15:30:00+09:00",
+          "bar_count": 937,
+          "ohlc": {
+            "open": 5237.78,
+            "high": 5243.38,
+            "low": 5237.78,
+            "close": 5239.13
+          },
+          "returns_pct": {
+            "1": 0.026,
+            "5": 0.175,
+            "20": 0.205,
+            "60": 2.746
+          },
+          "moving_averages": {
+            "ema5": 5238.939,
+            "ema10": 5233.541,
+            "ema20": 5220.269,
+            "ema60": 5200.836,
+            "ema120": 5271.515
+          },
+          "mid_ma_normalized_slope": 0.1112,
+          "rsi14": 56.224,
+          "macd": 19.2067,
+          "macd_signal": 20.4781,
+          "macd_hist": -1.2715,
+          "bollinger": {
+            "upper": 5266.91,
+            "middle": 5226.359,
+            "lower": 5185.808,
+            "percent_b": 0.6575,
+            "width": 0.0155
+          },
+          "atr14": 28.7167,
+          "levels": {
+            "previous_20_high": 5269.76,
+            "previous_20_low": 5174.55,
+            "previous_60_high": 5300.92,
+            "previous_60_low": 4990.66
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 114,
+            "confirmed_pivot_lows": 116,
+            "latest_pivot_high": 5269.76,
+            "latest_pivot_low": 5174.55
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.111"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 56.22"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.66, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 45.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-10T15:30:00+09:00",
+          "display_bar_is_partial": false
+        }
+      },
+      "confirmed_mtf": {
+        "score": -39.8,
+        "state": "하락",
+        "valid_weight_pct": 100.0,
+        "timeframe_conflict": false,
+        "confidence_cap": 100,
+        "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+      }
+    },
+    "KOSDAQ": {
+      "name": "KOSDAQ",
+      "symbol": "101",
+      "source_tier": "primary_broker",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-10-31T00:00:00",
+          "bar_count": 88,
+          "ohlc": {
+            "open": 853.96,
+            "high": 921.73,
+            "low": 717.27,
+            "close": 724.38
+          },
+          "returns_pct": {
+            "1": -15.367,
+            "5": -32.603,
+            "20": -2.632,
+            "60": -27.002
+          },
+          "moving_averages": {
+            "sma3": 804.86,
+            "sma6": 854.22,
+            "sma12": 962.535,
+            "sma24": 859.565,
+            "sma60": 842.347
+          },
+          "mid_ma_normalized_slope": -0.0089,
+          "rsi14": 42.818,
+          "macd": 8.3575,
+          "macd_signal": 36.539,
+          "macd_hist": -28.1815,
+          "bollinger": {
+            "upper": 1207.952,
+            "middle": 890.046,
+            "lower": 572.14,
+            "percent_b": 0.2394,
+            "width": 0.7144
+          },
+          "atr14": 141.3548,
+          "levels": {
+            "previous_20_high": 1229.42,
+            "previous_20_low": 630.99,
+            "previous_60_high": 1229.42,
+            "previous_60_low": 627.01
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 11,
+            "confirmed_pivot_lows": 13,
+            "latest_pivot_high": 1229.42,
+            "latest_pivot_low": 630.99
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.009"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 42.82"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.24, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -40.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-30T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "weekly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-11-06T00:00:00",
+          "bar_count": 383,
+          "ohlc": {
+            "open": 716.44,
+            "high": 738.01,
+            "low": 629.17,
+            "close": 644.27
+          },
+          "returns_pct": {
+            "1": -11.059,
+            "5": -27.877,
+            "20": -33.346,
+            "60": -23.942
+          },
+          "moving_averages": {
+            "sma5": 761.478,
+            "sma10": 800.642,
+            "sma20": 806.363,
+            "sma60": 947.693,
+            "sma120": 846.68
+          },
+          "mid_ma_normalized_slope": -0.1796,
+          "rsi14": 31.003,
+          "macd": -62.8088,
+          "macd_signal": -52.5698,
+          "macd_hist": -10.239,
+          "bollinger": {
+            "upper": 929.348,
+            "middle": 806.363,
+            "lower": 683.378,
+            "percent_b": -0.159,
+            "width": 0.305
+          },
+          "atr14": 79.4426,
+          "levels": {
+            "previous_20_high": 1054.32,
+            "previous_20_low": 630.99,
+            "previous_60_high": 1229.42,
+            "previous_60_low": 630.99
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 46,
+            "confirmed_pivot_lows": 48,
+            "latest_pivot_high": 921.73,
+            "latest_pivot_low": 781.89
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.180"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 31.00"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B -0.16, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -55.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-13T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T00:00:00",
+          "bar_count": 1800,
+          "ohlc": {
+            "open": 661.73,
+            "high": 671.91,
+            "low": 655.09,
+            "close": 667.61
+          },
+          "returns_pct": {
+            "1": 4.482,
+            "5": -5.222,
+            "20": -20.241,
+            "60": -22.175
+          },
+          "moving_averages": {
+            "sma5": 668.842,
+            "sma10": 703.185,
+            "sma20": 739.089,
+            "sma60": 805.553,
+            "sma120": 856.113,
+            "sma240": 956.111
+          },
+          "mid_ma_normalized_slope": -0.0788,
+          "rsi14": 35.231,
+          "macd": -43.0429,
+          "macd_signal": -33.6656,
+          "macd_hist": -9.3773,
+          "bollinger": {
+            "upper": 841.432,
+            "middle": 739.089,
+            "lower": 636.746,
+            "percent_b": 0.1508,
+            "width": 0.2769
+          },
+          "atr14": 32.4763,
+          "levels": {
+            "previous_20_high": 846.95,
+            "previous_20_low": 629.17,
+            "previous_60_high": 921.73,
+            "previous_60_low": 629.17
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 203,
+            "confirmed_pivot_lows": 221,
+            "latest_pivot_high": 773.28,
+            "latest_pivot_low": 629.17
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.079"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 35.23"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.15, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -95.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-10T00:00:00",
+          "display_bar_is_partial": false
+        },
+        "intraday_15m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T15:30:00+09:00",
+          "bar_count": 936,
+          "ohlc": {
+            "open": 666.85,
+            "high": 667.61,
+            "low": 666.85,
+            "close": 667.61
+          },
+          "returns_pct": {
+            "1": 0.114,
+            "5": 0.568,
+            "20": -0.024,
+            "60": 2.465
+          },
+          "moving_averages": {
+            "ema5": 666.701,
+            "ema10": 665.243,
+            "ema20": 662.995,
+            "ema60": 659.992,
+            "ema120": 668.313
+          },
+          "mid_ma_normalized_slope": 0.1775,
+          "rsi14": 59.545,
+          "macd": 2.8962,
+          "macd_signal": 2.5892,
+          "macd_hist": 0.3071,
+          "bollinger": {
+            "upper": 670.687,
+            "middle": 663.221,
+            "lower": 655.755,
+            "percent_b": 0.7939,
+            "width": 0.0225
+          },
+          "atr14": 3.3805,
+          "levels": {
+            "previous_20_high": 670.67,
+            "previous_20_low": 655.1,
+            "previous_60_high": 671.91,
+            "previous_60_low": 632.7
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 112,
+            "confirmed_pivot_lows": 122,
+            "latest_pivot_high": 670.67,
+            "latest_pivot_low": 655.1
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.178"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 59.54"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.79, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 80.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-10T15:30:00+09:00",
+          "display_bar_is_partial": false
+        }
+      },
+      "confirmed_mtf": {
+        "score": -48.5,
+        "state": "하락",
+        "valid_weight_pct": 100.0,
+        "timeframe_conflict": false,
+        "confidence_cap": 100,
+        "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+      }
+    },
+    "NIKKEI225": {
+      "name": "Nikkei 225",
+      "symbol": "^N225",
+      "source_tier": "secondary_delayed_with_official_eod_crosscheck",
+      "timeframes": {
+        "monthly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-10-31T00:00:00",
+          "bar_count": 144,
+          "ohlc": {
+            "open": 67106.523,
+            "high": 70798.617,
+            "low": 61462.609,
+            "close": 63290.109
+          },
+          "returns_pct": {
+            "1": -5.189,
+            "5": -4.582,
+            "20": 70.338,
+            "60": 119.052
+          },
+          "moving_averages": {
+            "sma3": 65451.919,
+            "sma6": 66184.933,
+            "sma12": 60018.729,
+            "sma24": 50262.625,
+            "sma60": 39108.745
+          },
+          "mid_ma_normalized_slope": 0.3119,
+          "rsi14": 64.014,
+          "macd": 7598.2334,
+          "macd_signal": 6662.3874,
+          "macd_hist": 935.846,
+          "bollinger": {
+            "upper": 74684.276,
+            "middle": 52573.622,
+            "lower": 30462.967,
+            "percent_b": 0.7423,
+            "width": 0.8411
+          },
+          "atr14": 5833.7454,
+          "levels": {
+            "previous_20_high": 72831.727,
+            "previous_20_low": 30792.74,
+            "previous_60_high": 72831.727,
+            "previous_60_low": 24681.74
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 16,
+            "confirmed_pivot_lows": 21,
+            "latest_pivot_high": 72831.7266,
+            "latest_pivot_low": 50558.9102
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "SMA3/12/24 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.312"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 64.01"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.74, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 80.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-30T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "weekly": {
+          "bar_status": "partial",
+          "latest_bar": "2026-11-06T00:00:00",
+          "bar_count": 626,
+          "ohlc": {
+            "open": 62972.02,
+            "high": 63615.32,
+            "low": 56745.809,
+            "close": 57434.77
+          },
+          "returns_pct": {
+            "1": -9.252,
+            "5": -15.92,
+            "20": -19.39,
+            "60": 28.294
+          },
+          "moving_averages": {
+            "sma5": 63554.65,
+            "sma10": 64649.814,
+            "sma20": 65700.877,
+            "sma60": 58342.232,
+            "sma120": 48489.115
+          },
+          "mid_ma_normalized_slope": -0.0427,
+          "rsi14": 37.891,
+          "macd": 483.5927,
+          "macd_signal": 1716.4822,
+          "macd_hist": -1232.8895,
+          "bollinger": {
+            "upper": 71330.166,
+            "middle": 65700.877,
+            "lower": 60071.588,
+            "percent_b": -0.2342,
+            "width": 0.1714
+          },
+          "atr14": 3686.8838,
+          "levels": {
+            "previous_20_high": 72831.727,
+            "previous_20_low": 60448.898,
+            "previous_60_high": 72831.727,
+            "previous_60_low": 43343.578
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 85,
+            "confirmed_pivot_lows": 91,
+            "latest_pivot_high": 70798.6172,
+            "latest_pivot_low": 62726.1797
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "SMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.043"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 37.89"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": -1,
+              "weight": 5.0,
+              "reason": "%B -0.23, 밴드폭 확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -40.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-13T00:00:00",
+          "display_bar_is_partial": true
+        },
+        "daily": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T00:00:00",
+          "bar_count": 2934,
+          "ohlc": {
+            "open": 59372.281,
+            "high": 60743.969,
+            "low": 59268.43,
+            "close": 60459.578
+          },
+          "returns_pct": {
+            "1": 2.865,
+            "5": -4.157,
+            "20": -12.417,
+            "60": -9.722
+          },
+          "moving_averages": {
+            "sma5": 59987.275,
+            "sma10": 61819.037,
+            "sma20": 63243.322,
+            "sma60": 65367.868,
+            "sma120": 65944.407,
+            "sma240": 60088.832
+          },
+          "mid_ma_normalized_slope": -0.0545,
+          "rsi14": 39.787,
+          "macd": -1678.5482,
+          "macd_signal": -1207.4397,
+          "macd_hist": -471.1086,
+          "bollinger": {
+            "upper": 68208.289,
+            "middle": 63243.322,
+            "lower": 58278.355,
+            "percent_b": 0.2197,
+            "width": 0.157
+          },
+          "atr14": 1748.0709,
+          "levels": {
+            "previous_20_high": 69143.453,
+            "previous_20_low": 56745.809,
+            "previous_60_high": 70798.617,
+            "previous_60_low": 56745.809
+          },
+          "pivot_structure": {
+            "state": "LH/LL",
+            "confirmed_pivot_highs": 413,
+            "confirmed_pivot_lows": 396,
+            "latest_pivot_high": 64831.2891,
+            "latest_pivot_low": 56745.8086
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "SMA20/60/120 정렬"
+            },
+            "price_position": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 -0.055"
+            },
+            "rsi": {
+              "vote": -1,
+              "weight": 10.0,
+              "reason": "RSI14 39.79"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": -1,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.22, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -95.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-10T00:00:00",
+          "display_bar_is_partial": false
+        },
+        "intraday_15m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-10T15:30:00+09:00",
+          "bar_count": 461,
+          "ohlc": {
+            "open": 60459.578,
+            "high": 60459.578,
+            "low": 60459.578,
+            "close": 60459.578
+          },
+          "returns_pct": {
+            "1": 0.059,
+            "5": -0.002,
+            "20": 0.327,
+            "60": 4.424
+          },
+          "moving_averages": {
+            "ema5": 60467.911,
+            "ema10": 60423.065,
+            "ema20": 60261.368,
+            "ema60": 59865.411,
+            "ema120": 60295.623
+          },
+          "mid_ma_normalized_slope": 0.1607,
+          "rsi14": 58.943,
+          "macd": 249.2752,
+          "macd_signal": 284.4103,
+          "macd_hist": -35.1351,
+          "bollinger": {
+            "upper": 60743.52,
+            "middle": 60363.425,
+            "lower": 59983.33,
+            "percent_b": 0.6265,
+            "width": 0.0126
+          },
+          "atr14": 210.8516,
+          "levels": {
+            "previous_20_high": 60743.969,
+            "previous_20_low": 59851.641,
+            "previous_60_high": 60743.969,
+            "previous_60_low": 57098.531
+          },
+          "pivot_structure": {
+            "state": "혼조",
+            "confirmed_pivot_highs": 55,
+            "confirmed_pivot_lows": 52,
+            "latest_pivot_high": 60743.9688,
+            "latest_pivot_low": 59851.6406
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.161"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 58.94"
+            },
+            "macd": {
+              "vote": -1,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.63, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": 45.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-10T15:30:00+09:00",
+          "display_bar_is_partial": false
+        }
+      },
+      "confirmed_mtf": {
+        "score": -31.2,
+        "state": "중립-하락",
+        "valid_weight_pct": 100.0,
+        "timeframe_conflict": false,
+        "confidence_cap": 100,
+        "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+      }
+    }
+  },
+  "cross_market": {
+    "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
+    "common_daily_observations": 1699,
+    "latest_common_daily_date": "2026-11-10",
+    "same_day": {
+      "20d": {
+        "observations": 20,
+        "correlation": 0.7772,
+        "same_direction_pct": 75.0
+      },
+      "60d": {
+        "observations": 60,
+        "correlation": 0.7369,
+        "same_direction_pct": 70.0
+      },
+      "120d": {
+        "observations": 120,
+        "correlation": 0.8003,
+        "same_direction_pct": 74.17
+      }
+    },
+    "nikkei_tminus1_to_kospi": {
+      "20d": {
+        "observations": 20,
+        "correlation": 0.0964,
+        "same_direction_pct": 60.0
+      },
+      "60d": {
+        "observations": 60,
+        "correlation": 0.1076,
+        "same_direction_pct": 58.33
+      },
+      "120d": {
+        "observations": 120,
+        "correlation": -0.0343,
+        "same_direction_pct": 55.0
+      }
+    },
+    "relative_strength": {
+      "5d": {
+        "kospi_return_pct": -10.581,
+        "nikkei_return_pct": -4.157,
+        "kospi_minus_nikkei_pct_points": -6.424
+      },
+      "20d": {
+        "kospi_return_pct": -20.93,
+        "nikkei_return_pct": -12.431,
+        "kospi_minus_nikkei_pct_points": -8.499
+      },
+      "60d": {
+        "kospi_return_pct": -16.274,
+        "nikkei_return_pct": -5.169,
+        "kospi_minus_nikkei_pct_points": -11.105
+      }
+    },
+    "beta_adjusted_residual": {
+      "observations": 60,
+      "beta_60d": 1.2727,
+      "latest_residual_zscore": 0.422
+    },
+    "intraday_alignment": {
+      "common_15m_bars": 24,
+      "return_correlation": 0.8543,
+      "kospi_session_return_pct": -0.154,
+      "nikkei_session_return_pct": 1.831,
+      "kospi_minus_nikkei_pct_points": -1.985
+    },
+    "state": "동조 하락 확인",
+    "role": "confirmation_only",
+    "confirmation_active": true,
+    "modifier_points": 0,
+    "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
+  },
+  "market_comparisons": {
+    "KOSPI_NIKKEI225": {
+      "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
+      "common_daily_observations": 1699,
+      "latest_common_daily_date": "2026-11-10",
+      "same_day": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.7772,
+          "same_direction_pct": 75.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.7369,
+          "same_direction_pct": 70.0
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": 0.8003,
+          "same_direction_pct": 74.17
+        }
+      },
+      "nikkei_tminus1_to_kospi": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.0964,
+          "same_direction_pct": 60.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.1076,
+          "same_direction_pct": 58.33
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": -0.0343,
+          "same_direction_pct": 55.0
+        }
+      },
+      "relative_strength": {
+        "5d": {
+          "kospi_return_pct": -10.581,
+          "nikkei_return_pct": -4.157,
+          "kospi_minus_nikkei_pct_points": -6.424
+        },
+        "20d": {
+          "kospi_return_pct": -20.93,
+          "nikkei_return_pct": -12.431,
+          "kospi_minus_nikkei_pct_points": -8.499
+        },
+        "60d": {
+          "kospi_return_pct": -16.274,
+          "nikkei_return_pct": -5.169,
+          "kospi_minus_nikkei_pct_points": -11.105
+        }
+      },
+      "beta_adjusted_residual": {
+        "observations": 60,
+        "beta_60d": 1.2727,
+        "latest_residual_zscore": 0.422
+      },
+      "intraday_alignment": {
+        "common_15m_bars": 24,
+        "return_correlation": 0.8543,
+        "kospi_session_return_pct": -0.154,
+        "nikkei_session_return_pct": 1.831,
+        "kospi_minus_nikkei_pct_points": -1.985
+      },
+      "state": "동조 하락 확인",
+      "role": "confirmation_only",
+      "confirmation_active": true,
+      "modifier_points": 0,
+      "rule": "니케이는 KOSPI 방향을 단독으로 뒤집지 않으며 기존 시장 폭·ADR·수급·선물옵션 판단을 대체하지 않음"
+    },
+    "KOSDAQ_NIKKEI225": {
+      "pair": [
+        "KOSDAQ",
+        "NIKKEI225"
+      ],
+      "common_daily_observations": 1699,
+      "latest_common_daily_date": "2026-11-10",
+      "same_day": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.7937,
+          "same_direction_pct": 80.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.7414,
+          "same_direction_pct": 81.67
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": 0.6558,
+          "same_direction_pct": 77.5
+        }
+      },
+      "nikkei225_tminus1_to_kosdaq": {
+        "20d": {
+          "observations": 20,
+          "correlation": -0.0059,
+          "same_direction_pct": 65.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.0304,
+          "same_direction_pct": 53.33
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": -0.0413,
+          "same_direction_pct": 51.67
+        }
+      },
+      "relative_strength": {
+        "5d": {
+          "kosdaq_return_pct": -9.09,
+          "nikkei225_return_pct": -4.157,
+          "first_minus_second_pct_points": -4.933
+        },
+        "20d": {
+          "kosdaq_return_pct": -25.178,
+          "nikkei225_return_pct": -12.431,
+          "first_minus_second_pct_points": -12.748
+        },
+        "60d": {
+          "kosdaq_return_pct": -9.458,
+          "nikkei225_return_pct": -5.169,
+          "first_minus_second_pct_points": -4.289
+        }
+      },
+      "intraday_alignment": {
+        "common_15m_bars": 24,
+        "return_correlation": 0.7611,
+        "kosdaq_session_return_pct": 0.889,
+        "nikkei225_session_return_pct": 1.831
+      },
+      "state": "동조 하락",
+      "role": "cross_market_confirmation_only",
+      "rule": "동조·괴리 확인값이며 단독으로 국내시장 방향을 뒤집지 않음"
+    },
+    "KOSPI_KOSDAQ": {
+      "pair": [
+        "KOSPI",
+        "KOSDAQ"
+      ],
+      "common_daily_observations": 1800,
+      "latest_common_daily_date": "2026-11-10",
+      "same_day": {
+        "20d": {
+          "observations": 20,
+          "correlation": 0.9466,
+          "same_direction_pct": 95.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.7369,
+          "same_direction_pct": 71.67
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": 0.7334,
+          "same_direction_pct": 72.5
+        }
+      },
+      "kosdaq_tminus1_to_kospi": {
+        "20d": {
+          "observations": 20,
+          "correlation": -0.0776,
+          "same_direction_pct": 40.0
+        },
+        "60d": {
+          "observations": 60,
+          "correlation": 0.1749,
+          "same_direction_pct": 51.67
+        },
+        "120d": {
+          "observations": 120,
+          "correlation": -0.1189,
+          "same_direction_pct": 49.17
+        }
+      },
+      "relative_strength": {
+        "5d": {
+          "kospi_return_pct": -7.252,
+          "kosdaq_return_pct": -5.222,
+          "first_minus_second_pct_points": -2.031
+        },
+        "20d": {
+          "kospi_return_pct": -13.193,
+          "kosdaq_return_pct": -20.241,
+          "first_minus_second_pct_points": 7.048
+        },
+        "60d": {
+          "kospi_return_pct": -17.436,
+          "kosdaq_return_pct": -22.175,
+          "first_minus_second_pct_points": 4.74
+        }
+      },
+      "intraday_alignment": {
+        "common_15m_bars": 27,
+        "return_correlation": 0.7825,
+        "kospi_session_return_pct": -0.154,
+        "kosdaq_session_return_pct": 0.889
+      },
+      "state": "동조 하락",
+      "role": "domestic_relative_strength",
+      "rule": "동조·괴리 확인값이며 단독으로 국내시장 방향을 뒤집지 않음"
+    }
+  },
+  "assessment": {
+    "conclusion": "KOSPI 하락 · KOSDAQ 하락 · 니케이 확인 동조 하락 확인",
+    "higher_timeframe_context": {
+      "monthly": "상승",
+      "weekly": "하락"
+    },
+    "daily_state": "하락",
+    "intraday_state": "상승",
+    "markets": {
+      "KOSPI": {
+        "confirmed_mtf": {
+          "score": -39.8,
+          "state": "하락",
+          "valid_weight_pct": 100.0,
+          "timeframe_conflict": false,
+          "confidence_cap": 100,
+          "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+        },
+        "monthly": "상승",
+        "weekly": "하락",
+        "daily": "하락",
+        "intraday_15m": "상승"
+      },
+      "KOSDAQ": {
+        "confirmed_mtf": {
+          "score": -48.5,
+          "state": "하락",
+          "valid_weight_pct": 100.0,
+          "timeframe_conflict": false,
+          "confidence_cap": 100,
+          "formula": "monthly 15% + weekly 30% + daily 40% + intraday_15m 15% (유효 시간대 재정규화)"
+        },
+        "monthly": "하락",
+        "weekly": "하락",
+        "daily": "하락",
+        "intraday_15m": "상승"
+      }
+    },
+    "nikkei_confirmation": "동조 하락 확인",
+    "objective_supports": [
+      4911.28,
+      4911.28
+    ],
+    "objective_resistances": [
+      6198.46,
+      7216.62
+    ],
+    "kosdaq_objective_supports": [
+      629.17,
+      629.17
+    ],
+    "kosdaq_objective_resistances": [
+      846.95,
+      921.73
+    ],
+    "invalidation_conditions": [
+      "세 지수 최신 거래일 불일치 시 상대비교는 마지막 공통 거래일까지 제한",
+      "60일 상관 0.3 미만 또는 공통 표본 부족 시 니케이 확인 가중치 비활성",
+      "시장 폭·ADR·수급·선물옵션과 충돌하면 니케이만으로 결론을 뒤집지 않음"
+    ],
+    "limitations": [
+      "Yahoo Finance 보조 원천 사용",
+      "미완성 주봉·월봉은 표시하되 확정 점수에서 제외",
+      "엘리어트 파동·눈대중 추세선은 자동 점수에서 제외"
+    ]
+  },
+  "files": {
+    "composite": "kospi_kosdaq_nikkei_mtf_20261110.png",
+    "legacy_composite": "kospi_nikkei_mtf_20261110.png",
+    "kospi": "kospi_mtf_20261110.png",
+    "kosdaq": "kosdaq_mtf_20261110.png",
+    "nikkei225": "nikkei225_mtf_20261110.png"
+  }
+}
