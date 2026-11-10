@@ -6,6 +6,9 @@ const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi))if(!/\bsrc=|application\/json|application\/ld\+json/i.test(m[1])&&m[2].trim())new vm.Script(m[2]);
 for(const file of ['scripts/dashboard-freshness.js','scripts/futures-index-context.js'])new vm.Script(fs.readFileSync(path.join(root,file),'utf8'));
 const expected=JSON.parse(fs.readFileSync(path.join(root,'dashboard-health/latest.json'),'utf8'));
+const ai=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/analysis_latest.json'),'utf8'));
+const candidateSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/candidate_hit_rate_latest.json'),'utf8')).summary;
+const marketSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/market_view_hit_rate_latest.json'),'utf8')).summary;
 (async()=>{
  let server,browser;
  try{
@@ -37,18 +40,19 @@ const expected=JSON.parse(fs.readFileSync(path.join(root,'dashboard-health/lates
    await page.locator('#dashboardFreshness summary').click();
    await page.screenshot({path:path.join(output,`health-${width}.png`)});
    await page.locator('[data-tab="market"]').click();
-   await page.waitForFunction(()=>document.querySelector('#marketAIMeta').textContent.includes('20261109'));
-   assert((await page.locator('#marketAIContent').innerText()).includes('종목 재선정 미실시'));
-   assert((await page.locator('#marketAIContent').innerText()).includes('5,018.85'));
-   assert((await page.locator('#marketAIContent').innerText()).includes('638.97'));
-   const archive=page.locator('#marketAIContent > details');
-   await archive.locator('summary').click();
-   await page.waitForFunction(()=>document.querySelector('#marketAIContent > details')?.dataset.loaded==='1');
-   assert((await archive.locator('summary').innerText()).includes('20261105'));
-   await archive.locator('summary').click();
+   await page.waitForFunction(asOf=>document.querySelector('#marketAIMeta').textContent.includes(asOf),ai.as_of);
+   assert((await page.locator('#marketAIContent').innerText()).includes(ai.headline));
+   if(ai.publication_kind==='DATA_REFRESH'){
+    assert((await page.locator('#marketAIContent').innerText()).includes('종목 재선정 미실시'));
+    const archive=page.locator('#marketAIContent > details');
+    await archive.locator('summary').click();
+    await page.waitForFunction(()=>document.querySelector('#marketAIContent > details')?.dataset.loaded==='1');
+    assert((await archive.locator('summary').innerText()).includes('현재 추천으로 사용 불가'));
+    await archive.locator('summary').click();
+   }
    await page.screenshot({path:path.join(output,`market-${width}.png`)});
    await page.locator('[data-market-subtab="hit-rate"]').click();
-   await page.waitForFunction(()=>document.querySelector('#candidateHitRateStats')?.textContent.includes('2,116')&&document.querySelector('#marketViewHitRateStats')?.textContent.includes('54'));
+   await page.waitForFunction(([signals,evaluated])=>document.querySelector('#candidateHitRateStats')?.textContent.includes(signals)&&document.querySelector('#marketViewHitRateStats')?.textContent.includes(evaluated),[Number(candidateSummary.signals).toLocaleString('en-US'),String(marketSummary.evaluated)]);
    const hitText=await page.locator('[data-tab-panel="market"]').innerText();
    assert(!hitText.includes('누적승률 자료를 불러오지 못'));
    await page.locator('[data-tab="leaders"]').click();
