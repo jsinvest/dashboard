@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-10T16:11:52+09:00",
+  "as_of": "2026-11-10",
+  "threshold_calendar_days": 5,
+  "definition": "KST 달력 날짜 차이 5일 이상; 생성시각과 자료 기준일 구분",
+  "items": [
+    {
+      "id": "market-raw",
+      "label": "시장 원본·차트",
+      "tab": "market",
+      "path": "market-analysis/latest.json",
+      "sha256": "cad737a3414a3eecb160a473f16ec3a5cf2dfbd59cea49916fa46bed15d5bb97",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-10T16:09:35+09:00",
+      "reported_status": null,
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "market-ai",
+      "label": "시장 검증 요약",
+      "tab": "market",
+      "path": "market-analysis/analysis_latest.json",
+      "sha256": "7515eca4ad61af1d802f8a6a35ab1125a48dae160dedc81b00ca4acd296baf7d",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-10T16:09:35+09:00",
+      "reported_status": null,
+      "note": "검증자료 갱신본. 신규 예측·종목선정 미실시; 기존 예측 이력 보존",
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "index-mtf",
+      "label": "국내·니케이 다중 시간대",
+      "tab": "market",
+      "path": "market-analysis/index_mtf_validation_latest.json",
+      "sha256": "a0c6836a5ce9a019df33ef52e5ebcc6bc890c65ef8d0b5389516df6e58bd18cb",
+      "data_date": "2026-11-09",
+      "generated_at": null,
+      "reported_status": "OK",
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "candidate-hit",
+      "label": "후보 누적승률 재계산",
+      "tab": "market",
+      "path": "market-analysis/candidate_hit_rate_latest.json",
+      "sha256": "12a81eb04f9a0a7fd8c07b1f3a40c5820ea62d43d085c8a4124dc4a654c29169",
+      "data_date": "2026-11-10",
+      "generated_at": "2026-11-10T16:11:43+09:00",
+      "reported_status": null,
+      "note": "갱신일은 성적 계산일. 마지막 실제 후보 추천일 20261021",
+      "evaluation_summary": {
+        "signals": 2116,
+        "evaluated": 2116,
+        "pending": 0,
+        "unavailable": 0,
+        "wins": 1603,
+        "draws": 396,
+        "losses": 117,
+        "win_rate_pct": 75.76,
+        "non_loss_rate_pct": 94.47,
+        "average_max_return_pct": 3.5971,
+        "median_max_return_pct": 2.4329
+      },
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "market-hit",
+      "label": "시장뷰 누적승률 재계산",
+      "tab": "market",
+      "path": "market-analysis/market_view_hit_rate_latest.json",
+      "sha256": "e932bcc4ab174c60e15b3ab71958b455bf66b8d2742d8252cba6312cf6997399",
+      "data_date": "2026-11-10",
+      "generated_at": "2026-11-10T16:11:52+09:00",
+      "reported_status": null,
+      "evaluation_summary": {
+        "views": 106,
+        "directional_views": 54,
+        "evaluated": 54,
+        "pending": 0,
+        "wins": 29,
+        "losses": 25,
+        "accuracy_pct": 53.7,
+        "neutral_observations": 52,
+        "unclassified": 0
+      },
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "us-index",
+      "label": "미국·니케이 10분 통합 보조",
+      "tab": "market",
+      "path": "market-analysis/us_index_mtf_analysis.json",
+      "sha256": "ff57615bd592db82849af71452b93ebdced907d1c2b8bcd168096387ceaee722",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-09T20:37:44.891879+09:00",
+      "reported_status": "PARTIAL",
+      "availability": "EXCLUDED",
+      "note": "원천 누락·검증 실패. 과거 정상값으로 대체하지 않음",
+      "age_calendar_days": 1,
+      "freshness": "FRESH"
+    },
+    {
+      "id": "research",
+      "label": "지수 방향 연구",
+      "tab": "market",
+      "path": "market-analysis/index_direction_research_latest.json",
+      "sha256": "9c592e57d47cfa7da5f307a52f7a45d5b8e14ceec52dbe6ac36fa999e58dff3d",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-09T20:38:12+09:00",
+      "reported_status": "RESEARCH_ONLY",
+      "availability": "EXCLUDED",
+      "note": "연구 전용. 정정·중복 및 현재 원천 해시 불일치 때문에 방향 결정에 사용하지 않음",
+      "age_calendar_days": 1,
+      "freshness": "FRESH"
+    },
+    {
+      "id": "cash",
+      "label": "현금비중",
+      "tab": "cash",
+      "path": "cash-management/latest.json",
+      "sha256": "aad15387c4085f8b4596c5ed46f2c6a90bae7f7eb536e6bbb7b7936c966cd8ff",
+      "data_date": "2026-11-09",
+      "generated_at": null,
+      "reported_status": "OK",
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "reports",
+      "label": "리포트 검색",
+      "tab": "report",
+      "path": "report_data.json",
+      "sha256": "5f8d1b0891ee5c8908dd3eee59b2e205d40ef0397c0252bfb18a7e837b7b1395",
+      "data_date": "2026-11-10",
+      "generated_at": null,
+      "reported_status": null,
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "report-signals",
+      "label": "목표주가 상향·하향",
+      "tab": "report",
+      "path": "report_signal_data.json",
+      "sha256": "b9c31f1eaadc46a3bbe9a4b43a7e1fc60d1512b25b08440e25c645da55183c80",
+      "data_date": "2026-11-10",
+      "generated_at": null,
+      "reported_status": null,
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "daily-report",
+      "label": "당일 리포트",
+      "tab": "daily-report",
+      "path": "daily-reports/latest.json",
+      "sha256": "a0594b539ee76b8fc641a67ece58c75db058e01a7e23edfe4de5007bee724ba4",
+      "data_date": "2026-11-10",
+      "generated_at": "2026-11-10T15:34:58.487266+09:00",
+      "reported_status": null,
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "news",
+      "label": "당일 뉴스",
+      "tab": "daily-report",
+      "path": "news/index.json",
+      "sha256": "53fc48c0158d1940dbfbe1b6414d0be5f36294e334173857a85a66d7048ade59",
+      "data_date": "2026-11-10",
+      "generated_at": null,
+      "reported_status": null,
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "leaders",
+      "label": "주도주 맵핑",
+      "tab": "leaders",
+      "path": "leader-mapping/validation_latest.json",
+      "note": "장중 자료. 신고가 보조층의 자료 불일치는 별도 유지",
+      "sha256": "269a7db9e8b133d0fb43916412497ca6554035df1259ae251b2eb29a8870fc18",
+      "data_date": "2026-11-09",
+      "generated_at": null,
+      "reported_status": "INTRADAY_CONTENT_VALIDATED",
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "etf-weights",
+      "label": "ETF비중 주간 비교",
+      "tab": "etf-weights",
+      "path": "etf-weights/latest.json",
+      "sha256": "a1348d898aae106f24ec25e11767d95ff41dcf9faa8c663f637e432e3c43983c",
+      "data_date": "2026-11-06",
+      "generated_at": "2026-11-07T17:08:15.611282+09:00",
+      "reported_status": "COMPARED",
+      "note": "주간 비교 종료일 기준; 운용사 응답 기준일 미확인 등 원문 한계 유지",
+      "age_calendar_days": 4,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "futures",
+      "label": "선물옵션 검토 본문",
+      "tab": "supply",
+      "path": "supply-zone/latest.json",
+      "sha256": "e4411230a0905f75897710cbfe9da26cbe033ae92433c06d6cf64563062855c7",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-09T17:09:21.251772+09:00",
+      "reported_status": null,
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "futures-zip",
+      "label": "선물옵션 공개 검토 ZIP",
+      "tab": "supply",
+      "path": "supply-zone/data_bundle_latest.json",
+      "sha256": "f6d8e48af4f73c18e7e6b2c832d12bf68d98a4d869ca1d43f8eb3f37c044a94a",
+      "data_date": "2026-11-09",
+      "generated_at": "2026-11-10T16:09:35+09:00",
+      "reported_status": null,
+      "age_calendar_days": 1,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
+    },
+    {
+      "id": "sector-cap",
+      "label": "시장 섹터 시총 지도",
+      "tab": "leaders",
+      "path": "index.html",
+      "data_date": "2026-08-28",
+      "availability": "HISTORICAL_ONLY",
+      "note": "최신 WICS 구성·보통주 시총 원천 미확보. 과거 참고자료로 접어 보존; 현재 비중 사용 금지",
+      "age_calendar_days": 74,
+      "freshness": "STALE"
+    },
+    {
+      "id": "charts",
+      "label": "국내·해외·환율 지표·대표ETF 차트",
+      "tab": "all",
+      "path": "index.html",
+      "data_date": null,
+      "availability": "LIVE_CHECK_REQUIRED",
+      "note": "외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음",
+      "age_calendar_days": null,
+      "freshness": "UNKNOWN"
+    },
+    {
+      "id": "schedule",
+      "label": "일정",
+      "tab": "schedule",
+      "path": "index.html",
+      "data_date": null,
+      "availability": "LIVE_CHECK_REQUIRED",
+      "note": "외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음",
+      "age_calendar_days": null,
+      "freshness": "UNKNOWN"
+    },
+    {
+      "id": "links",
+      "label": "링크 모음",
+      "tab": "links",
+      "path": "index.html",
+      "data_date": null,
+      "availability": "LIVE_CHECK_REQUIRED",
+      "note": "외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음",
+      "age_calendar_days": null,
+      "freshness": "UNKNOWN"
+    },
+    {
+      "id": "program-live",
+      "label": "프로그램 수급",
+      "tab": "program-live",
+      "path": "live-monitors/connection.json",
+      "data_date": null,
+      "availability": "LIVE_CHECK_REQUIRED",
+      "note": "외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음",
+      "age_calendar_days": null,
+      "freshness": "UNKNOWN"
+    },
+    {
+      "id": "cvd-live",
+      "label": "선물 CVD",
+      "tab": "cvd-live",
+      "path": "live-monitors/connection.json",
+      "data_date": null,
+      "availability": "LIVE_CHECK_REQUIRED",
+      "note": "외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음",
+      "age_calendar_days": null,
+      "freshness": "UNKNOWN"
+    }
+  ],
+  "external_checks": {
+    "checked_at": "2026-11-10T16:07:18.867594+09:00",
+    "checks": [
+      {
+        "label": "chart ^KS11",
+        "status": "OK",
+        "last_observed": "2026-11-10T09:00:00+09:00",
+        "rows": 5
+      },
+      {
+        "label": "chart ^KQ11",
+        "status": "OK",
+        "last_observed": "2026-11-10T09:00:00+09:00",
+        "rows": 5
+      },
+      {
+        "label": "chart ^KS200",
+        "status": "OK",
+        "last_observed": "2026-11-10T09:00:00+09:00",
+        "rows": 5
+      },
+      {
+        "label": "chart ^SOX",
+        "status": "OK",
+        "last_observed": "2026-11-09T09:00:00+09:00",
+        "rows": 5
+      },
+      {
+        "label": "chart ^TNX",
+        "status": "OK",
+        "last_observed": "2026-11-09T09:00:00+09:00",
+        "rows": 5
+      },
+      {
+        "label": "ETF 091160",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 305720",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 491820",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 441800",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 091170",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 463050",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 441540",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 449450",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "ETF 445290",
+        "status": "OK",
+        "last_observed": "20261110",
+        "rows": 7
+      },
+      {
+        "label": "schedules-links",
+        "status": "OK",
+        "schedule_count": 26,
+        "link_count": 12,
+        "last_updated": null,
+        "note": "API 응답과 항목 수 확인. 수정일 필드가 없어 최근 갱신일은 판단 불가."
+      },
+      {
+        "label": "program",
+        "status": "OK",
+        "data_date": "20261110",
+        "last_observed": "2026-11-10T15:29:59+09:00",
+        "state": "15:30 자동 정지 · 수집 기록은 보존돼요"
+      },
+      {
+        "label": "cvd",
+        "status": "OK",
+        "last_observed": "2026-11-10T15:29:59.985+09:00",
+        "connected": false,
+        "state": "연결 끊김"
+      }
+    ]
+  },
+  "summary": {
+    "items": 22,
+    "stale": 1,
+    "excluded": 2,
+    "unknown_live_checks": 5
+  }
+}

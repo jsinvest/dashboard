@@ -125,6 +125,8 @@ def is_candidate_list(value: Any) -> bool:
 
 
 def snapshot_from_payload(payload: dict[str, Any], source_ref: str) -> dict[str, Any] | None:
+    if payload.get("publication_kind") == "DATA_REFRESH":
+        return None
     as_of = normalize_ymd(payload.get("as_of"))
     candidates = payload.get("candidate_stocks")
     if not as_of or not is_candidate_list(candidates):

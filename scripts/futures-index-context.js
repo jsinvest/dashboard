@@ -46,6 +46,18 @@ async function renderFuturesIndexContext(data) {
     <details class="chart-card cash-card cash-details" id="futuresSourceCharts"><summary>0790·0791 누적 / 0441 월물별 OI / 0471 원본 화면</summary>${sourceCharts.map(chart).join('')}</details>
     <details class="chart-card cash-card cash-details" id="futuresValidation"><summary>자료 검증·판단 범위·다운로드</summary><p>${esc(data.recovery_note || '기준일별 원본 검토 결과와 실행 상태는 아래 검증 파일에 기록했습니다.')}</p><ul>${data.limitations.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="cash-downloads">${data.downloads.map(x=>`<a href="${asset(x.file)}" download>${esc(x.label)}</a>`).join('')}</div><p>추정 포지션과 미결제약정의 의미: <a href="https://download.kiwoom.com/hero4_help_new/0791.htm" target="_blank" rel="noopener">키움 0791 설명</a> · <a href="https://download.kiwoom.com/hero4_help_new/0441.htm" target="_blank" rel="noopener">키움 0441 설명</a></p><p class="cash-note">${esc(data.generated_at)} 작성 · 자동 주문 신호가 아닌 조건부 분석 · 도달·수익·승률 보장 없음</p></details>
   </div>`;
+  // Only expose a ZIP whose evidence date matches this separately reviewed edition.
+  try {
+    const response = await fetch('supply-zone/data_bundle_latest.json?v='+Date.now(), {cache:'no-store'});
+    if(response.ok){
+      const bundle = await response.json();
+      if(String(bundle.as_of).replaceAll('-','')===String(data.as_of).replaceAll('-','') && bundle.file==='futures_options_data_bundle_latest.zip'){
+        const link=document.createElement('a');link.href=asset(bundle.file);link.download=bundle.file;
+        link.textContent=bundle.title||'선물옵션 공개 검토 자료 ZIP';
+        document.querySelector('#futuresValidation .cash-downloads')?.prepend(link);
+      }
+    }
+  } catch(error) { console.warn('Optional futures ZIP unavailable', error); }
   // A missing optional index appendix must not replace valid futures analysis.
   const body = document.getElementById('supplyIndexContextBody');
   try {

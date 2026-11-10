@@ -140,6 +140,8 @@ def parse_published_at(value: Any) -> datetime | None:
 
 
 def extract_snapshot(payload: dict[str, Any], source_ref: str) -> dict[str, Any] | None:
+    if payload.get("publication_kind") == "DATA_REFRESH":
+        return None
     as_of = normalize_ymd(payload.get("as_of"))
     views = payload.get("market_views")
     if not as_of or not isinstance(views, list):

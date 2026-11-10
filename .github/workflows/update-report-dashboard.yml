@@ -1,33 +1,37 @@
-name: Update report dashboard
+name: Check dashboard data freshness
 
 on:
   push:
     branches: [main]
     paths:
-      - report_update_20260821.json
+      - 'market-analysis/**'
+      - 'supply-zone/**'
+      - 'cash-management/**'
+      - 'daily-reports/latest.json'
+      - 'report_data.json'
+      - 'report_signal_data.json'
+      - 'etf-weights/latest.json'
+      - 'leader-mapping/validation_latest.json'
+      - 'news/index.json'
+      - 'scripts/audit_dashboard_freshness.py'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  update:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Merge report DB and patch dashboard
-        run: python scripts/update_report_dashboard.py
-      - name: Commit generated dashboard files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add report_data.json report_signal_data.json index.html
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "Update report dashboard through 2026-08-21"
-            git push
-          fi
+      # The legacy fixed-date merger could overwrite newer report history.
+      # Inspect only; never replace source dates or mutate published datasets.
+      - name: Inspect dates without modifying source data
+        run: python scripts/audit_dashboard_freshness.py --output /tmp/dashboard-freshness.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-freshness
+          path: /tmp/dashboard-freshness.json

@@ -993,9 +993,9 @@
           <button type="button" class="leader-mode-btn" data-leader-mode="cumulative">누적</button>
         </div>
       </div>
-      <details class="sector-weight-panel" data-sector-weight-date="2026-08-28" data-sector-weight-view="all" open>
+      <details class="sector-weight-panel" data-sector-weight-date="2026-08-28" data-sector-weight-view="all" data-historical="true">
         <summary>
-          <span class="sector-weight-heading"><b>시장 섹터 시총 지도</b><span>2026-08-28 · 보통주 시가총액 기준 · ETF/ETN/우선주 제외</span></span>
+          <span class="sector-weight-heading"><b>시장 섹터 시총 지도 · 과거 참고자료</b><span>2026-08-28 · 현재 비중으로 사용 불가 · 최신 WICS 구성·시총 원천 재검증 필요</span></span>
         </summary>
         <div class="sector-weight-body">
           <div class="sector-weight-highlights" aria-label="주요 관심 섹터 시가총액 비중">
@@ -3413,7 +3413,7 @@ function renderStockCandidates(data){
     return `<div class="chart-card" style="padding:12px 14px"><strong style="color:var(--accent)">${m} 1차 후보 ${marketRows.length}</strong><ul style="margin:8px 0 0 18px;line-height:1.65">${rows}</ul></div>`;
   }).join('');
   if(!finalRows && !candidateGroups)return '';
-  return `<div style="margin-top:18px"><strong>오늘의 종목 후보 · ${asOfLabel}${targetLabel}</strong>
+  return `<div style="margin-top:18px"><strong>${data.publication_kind==='DATA_REFRESH'?'종목 재선정 미실시':'오늘의 종목 후보'} · ${asOfLabel}${targetLabel}</strong>
     <div class="grid-2" style="margin-top:10px">${candidateGroups}</div>
     <div style="overflow-x:auto;margin-top:12px"><table><thead><tr><th>시장</th><th>섹터</th><th>종목</th><th>우선순위</th><th>선정 이유</th><th>진입 확인</th></tr></thead><tbody>${finalRows}</tbody></table></div>
     <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">${escapeHtml(data.trading_rule||'')}</div>
@@ -3456,8 +3456,23 @@ async function loadMarketAIAnalysis(){
     if(!res.ok) res = await fetch(MARKET_RAW_BASE+'analysis_latest.json?v='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
     const data = await res.json();
-    if(meta) meta.textContent = `AI 분석 · 기준일 ${data.as_of} · 생성 ${data.generated_at}`;
+    if(meta) meta.textContent = `${data.publication_kind==='DATA_REFRESH'?'검증자료 갱신 · 신규 방향 예측 미실시':'AI 분석'} · 기준일 ${data.as_of} · 생성 ${data.generated_at}`;
     if(content) content.innerHTML = renderMarketAI(data);
+    if(content && data.publication_kind==='DATA_REFRESH'){
+      const archive=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('div');
+      label.textContent='최근 실제 AI 분석 원문 · 과거 기준일 자료 · 현재 추천으로 사용 불가';
+      archive.append(label,body);content.append(archive);
+      archive.addEventListener('toggle',async()=>{
+        if(!archive.open||archive.dataset.loaded==='1')return;
+        try{
+          const response=await fetch(MARKET_LOCAL_BASE+'analysis_previous_forecast.json?v='+Date.now(),{cache:'no-store'});
+          if(!response.ok)throw Error('HTTP '+response.status);
+          const previous=await response.json();
+          label.textContent=`최근 실제 AI 분석 원문 · ${previous.as_of} · 현재 추천으로 사용 불가`;
+          body.innerHTML=renderMarketAI(previous);archive.dataset.loaded='1';
+        }catch(error){body.textContent='과거 분석 원문 확인 불가: '+error.message;}
+      });
+    }
   }catch(e){
     console.error('AI market analysis load failed', e);
     if(meta) meta.textContent = 'AI 분석은 아직 준비되지 않았습니다. 아래 원본 자료는 정상적으로 볼 수 있습니다.';
@@ -4131,6 +4146,7 @@ loadSupplyZone();
 
 </script>
 <script src="news/dashboard.js"></script>
+<script src="scripts/dashboard-freshness.js"></script>
 <script src="live-monitors/dashboard.js"></script>
 <script src="etf-weights/view.js?v=20261107-futures"></script>
 <link rel="stylesheet" href="report-periods/style.css"><script src="report-periods/app.js" defer></script>
