@@ -31,7 +31,9 @@ def audit(root, as_of):
         row = dict(id=key, label=label, tab=tab, path=path, **extra)
         try:
             data = json.loads(p.read_text(encoding="utf-8-sig"))
-            row["sha256"] = hashlib.sha256(p.read_bytes()).hexdigest()
+            # An audit can run on Windows or Linux checkouts with different EOLs.
+            canonical = json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+            row["canonical_json_sha256"] = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
             row["data_date"] = date_value(get_date(data))
             row["generated_at"] = data.get("generated_at") or data.get("collected_at")
             row["reported_status"] = data.get("status") or data.get("research_status")
