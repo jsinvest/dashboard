@@ -42,6 +42,9 @@ def audit(root, as_of):
             if key == "research":
                 invalid = data.get("publication_validation", {}).get("source_hashes_match") is False
                 row.update(availability="EXCLUDED" if invalid else "RESEARCH_ONLY", note="연구 전용. 정정·중복 및 현재 원천 해시 불일치 때문에 방향 결정에 사용하지 않음" if invalid else "연구 전용; 자동 방향·비중 결정 사용 금지")
+                if not invalid and data.get("publication_validation", {}).get("optional_source_warnings"):
+                    row["note"] = "고정 입력 해시 검증 완료 · 연구 전용 · 부가 Squeeze 대조 불가로 제외"
+                    row["optional_source_warnings"] = data["publication_validation"]["optional_source_warnings"]
             if key == "market-ai" and data.get("publication_kind") == "DATA_REFRESH":
                 row["note"] = "검증자료 갱신본. 신규 예측·종목선정 미실시; 기존 예측 이력 보존"
             if key == "candidate-hit":
@@ -69,7 +72,9 @@ def audit(root, as_of):
     add("index-mtf", "국내·니케이 다중 시간대", "market", "market-analysis/index_mtf_validation_latest.json", lambda d:d["trade_date"])
     add("candidate-hit", "후보 누적승률 재계산", "market", "market-analysis/candidate_hit_rate_latest.json", lambda d:d["generated_at"])
     add("market-hit", "시장뷰 누적승률 재계산", "market", "market-analysis/market_view_hit_rate_latest.json", lambda d:d["generated_at"])
-    add("us-index", "미국·니케이 10분 통합 보조", "market", "market-analysis/us_index_mtf_analysis.json", lambda d:d["trade_date"])
+    us_public = "market-analysis/us_context_public.json"
+    us_path = us_public if (root / us_public).is_file() else "market-analysis/us_index_mtf_analysis.json"
+    add("us-index", "미국·니케이 10분 통합 보조", "market", us_path, lambda d:d["trade_date"], note="니케이 10분은 누락 이후의 완전 연속 구간만 계산. 과거 누락 기록은 별도 보존")
     add("research", "지수 방향 연구", "market", "market-analysis/index_direction_research_latest.json", lambda d:d["trade_date"])
     add("cash", "현금비중", "cash", "cash-management/latest.json", lambda d:d["trade_date"])
     add("reports", "리포트 검색", "report", "report_data.json", lambda d:d["meta"].get("last_source_checked_through") or d["meta"].get("last_merge_through"))

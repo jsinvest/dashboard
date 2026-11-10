@@ -53,6 +53,17 @@ const futuresZip=JSON.parse(fs.readFileSync(path.join(root,'supply-zone/data_bun
     await archive.locator('summary').click();
    }
    await page.screenshot({path:path.join(output,`market-${width}.png`)});
+   if(fs.existsSync(path.join(root,'market-analysis/us_context_public.json'))){
+    await page.waitForFunction(()=>window.usContextReady===true);
+    await page.locator('#marketSourceDetails > summary').click();
+    await page.locator('#usContextDetails > summary').click();
+    assert((await page.locator('#usContextDetails').innerText()).includes('2026-10-16'));
+    assert((await page.locator('#usContextDetails').innerText()).includes('561'));
+    await page.locator('#usContextDetails details').first().locator('summary').click();
+    await page.waitForFunction(()=>{const i=document.querySelector('#usContextDetails img');return i?.complete&&i.naturalWidth>0});
+    await page.screenshot({path:path.join(output,`us-context-${width}.png`)});
+    await page.locator('#marketSourceDetails > summary').click();
+   }
    await page.locator('[data-market-subtab="hit-rate"]').click();
    await page.waitForFunction(([signals,evaluated])=>document.querySelector('#candidateHitRateStats')?.textContent.includes(signals)&&document.querySelector('#marketViewHitRateStats')?.textContent.includes(evaluated),[Number(candidateSummary.signals).toLocaleString('en-US'),String(marketSummary.evaluated)]);
    const hitText=await page.locator('[data-tab-panel="market"]').innerText();

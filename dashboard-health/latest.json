@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-10T20:18:29+09:00",
+  "checked_at": "2026-11-10T20:33:52+09:00",
   "as_of": "2026-11-10",
   "threshold_calendar_days": 5,
   "definition": "KST 달력 날짜 차이 5일 이상; 생성시각과 자료 기준일 구분",
@@ -99,27 +99,35 @@
       "id": "us-index",
       "label": "미국·니케이 10분 통합 보조",
       "tab": "market",
-      "path": "market-analysis/us_index_mtf_analysis.json",
-      "canonical_json_sha256": "7f390f1508f62b6daae9ca2392ab36a1f90135932d636c946019abd8f4bade80",
-      "data_date": "2026-11-09",
-      "generated_at": "2026-11-09T20:37:44.891879+09:00",
-      "reported_status": "PARTIAL",
-      "availability": "EXCLUDED",
-      "note": "원천 누락·검증 실패. 과거 정상값으로 대체하지 않음",
-      "age_calendar_days": 1,
-      "freshness": "FRESH"
+      "path": "market-analysis/us_context_public.json",
+      "note": "니케이 10분은 누락 이후의 완전 연속 구간만 계산. 과거 누락 기록은 별도 보존",
+      "canonical_json_sha256": "4fed4512dfece65776cc7a1767faaa73c45ba7177a1c7607adce0f1685a8db36",
+      "data_date": "2026-11-10",
+      "generated_at": "2026-11-10T20:31:11.906476+09:00",
+      "reported_status": "OK",
+      "age_calendar_days": 0,
+      "freshness": "FRESH",
+      "availability": "AVAILABLE"
     },
     {
       "id": "research",
       "label": "지수 방향 연구",
       "tab": "market",
       "path": "market-analysis/index_direction_research_latest.json",
-      "canonical_json_sha256": "69fbb4c2a4e2eeb17bc31d760a844a0ac867f2fa886b4c5e606869f9f350a207",
+      "canonical_json_sha256": "5726527ffb737fb59b2dd1e6793269c605c444fd04c6b524bca2421bd03682c8",
       "data_date": "2026-11-09",
-      "generated_at": "2026-11-09T20:38:12+09:00",
+      "generated_at": "2026-11-10T20:29:55+09:00",
       "reported_status": "RESEARCH_ONLY",
-      "availability": "EXCLUDED",
-      "note": "연구 전용. 정정·중복 및 현재 원천 해시 불일치 때문에 방향 결정에 사용하지 않음",
+      "availability": "RESEARCH_ONLY",
+      "note": "고정 입력 해시 검증 완료 · 연구 전용 · 부가 Squeeze 대조 불가로 제외",
+      "optional_source_warnings": [
+        {
+          "source": "Squeeze",
+          "status": "DISABLED",
+          "reason": "Squeeze 원천 검증 실패: ['KOSPI 1m/5m overlap', 'KOSDAQ 1m/5m overlap']",
+          "excluded": true
+        }
+      ],
       "age_calendar_days": 1,
       "freshness": "FRESH"
     },
@@ -424,7 +432,7 @@
   "summary": {
     "items": 22,
     "stale": 0,
-    "excluded": 2,
+    "excluded": 0,
     "unknown_live_checks": 5
   }
 }
