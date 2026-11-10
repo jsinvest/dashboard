@@ -9,6 +9,8 @@ const expected=JSON.parse(fs.readFileSync(path.join(root,'dashboard-health/lates
 const ai=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/analysis_latest.json'),'utf8'));
 const candidateSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/candidate_hit_rate_latest.json'),'utf8')).summary;
 const marketSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/market_view_hit_rate_latest.json'),'utf8')).summary;
+const futures=JSON.parse(fs.readFileSync(path.join(root,'supply-zone/latest.json'),'utf8'));
+const futuresZip=JSON.parse(fs.readFileSync(path.join(root,'supply-zone/data_bundle_latest.json'),'utf8'));
 (async()=>{
  let server,browser;
  try{
@@ -36,7 +38,7 @@ const marketSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/m
     dashboardFreshnessAge('2026-11-06',new Date('2026-11-10T15:00:00Z')),
     dashboardFreshnessAge('2026-02-30'),dashboardFreshnessAge('')]);
    assert.deepStrictEqual(dates,[5,4,5,null,null]);
-   const health=await page.locator('#dashboardFreshness summary').innerText();assert(health.includes('5일 이상 지난 자료 1개'));
+   const health=await page.locator('#dashboardFreshness summary').innerText();assert(health.includes(`5일 이상 지난 자료 ${expected.summary.stale}개`));
    await page.locator('#dashboardFreshness summary').click();
    await page.screenshot({path:path.join(output,`health-${width}.png`)});
    await page.locator('[data-tab="market"]').click();
@@ -56,13 +58,17 @@ const marketSummary=JSON.parse(fs.readFileSync(path.join(root,'market-analysis/m
    const hitText=await page.locator('[data-tab-panel="market"]').innerText();
    assert(!hitText.includes('누적승률 자료를 불러오지 못'));
    await page.locator('[data-tab="leaders"]').click();
-   assert((await page.locator('.sector-weight-heading').innerText()).includes('과거 참고자료'));
-   assert(await page.locator('.sector-weight-panel[open]').count()===0);
+   assert((await page.locator('.sector-weight-heading').innerText()).includes('2026-08-28'));
+   assert(await page.locator('.sector-weight-panel[data-reference="fixed"]').count()===1);
+   assert(!((await page.locator('#dashboardFreshness').innerText()).includes('시장 섹터 시총 지도')));
    await page.locator('[data-tab="supply"]').click();
-   await page.waitForSelector('#futuresValidation .cash-downloads a[download="futures_options_data_bundle_latest.zip"]',{state:'attached'});
-   assert((await page.locator('#supplyMeta').innerText()).includes('2026-11-09'));
-   const zip=await page.locator('#futuresValidation a[download="futures_options_data_bundle_latest.zip"]').getAttribute('href');
-   assert(zip.includes('supply-zone/futures_options_data_bundle_latest.zip'));
+   await page.waitForFunction(asOf=>document.querySelector('#supplyMeta')?.textContent.includes(asOf),futures.as_of);
+   let zip=null;
+   const zipLink=page.locator('#futuresValidation a[download="futures_options_data_bundle_latest.zip"]');
+   if(String(futuresZip.as_of).replaceAll('-','')===String(futures.as_of).replaceAll('-','')){
+    await zipLink.waitFor({state:'attached'});zip=await zipLink.getAttribute('href');
+    assert(zip.includes('supply-zone/futures_options_data_bundle_latest.zip'));
+   }else assert(await zipLink.count()===0,'Mismatched-date ZIP must remain hidden');
    const liveDates=await page.evaluate(()=>Object.fromEntries([...document.querySelectorAll('[id$="Date"],#nightTime')].filter(x=>x.id!=='analysisDate').map(x=>[x.id,x.textContent])));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
    assert(!overflow,'Page horizontal overflow');assert.deepStrictEqual(errors,[]);

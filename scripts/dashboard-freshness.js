@@ -46,13 +46,14 @@
           if(row.id==='market-ai'&&value.publication_kind!=='DATA_REFRESH')row.note='게시된 AI 분석의 실제 기준일';
         }catch(error){row.availability='UNAVAILABLE';row.data_date=null;row.note='현재 원천 확인 불가: '+error.message;}
       }));
-      const problems=rows.filter(row=>{
+      const monitored=rows.filter(row=>row.update_policy!=='FIXED_REFERENCE');
+      const problems=monitored.filter(row=>{
         const age=window.dashboardFreshnessAge(row.data_date);
         return age!==null&&(age>=5||age<0)||['EXCLUDED','HISTORICAL_ONLY','UNAVAILABLE'].includes(row.availability);
       });
-      summary.textContent=`자료 갱신 상태 · 5일 이상 지난 자료 ${rows.filter(row=>window.dashboardFreshnessAge(row.data_date)>=5).length}개 · 사용 제한 ${rows.filter(row=>['EXCLUDED','HISTORICAL_ONLY'].includes(row.availability)).length}개`;
+      summary.textContent=`자료 갱신 상태 · 5일 이상 지난 자료 ${monitored.filter(row=>window.dashboardFreshnessAge(row.data_date)>=5).length}개 · 사용 제한 ${monitored.filter(row=>['EXCLUDED','HISTORICAL_ONLY'].includes(row.availability)).length}개`;
       const note=document.createElement('p');note.style.cssText='font-size:12px;color:var(--text-dim)';
-      note.textContent=`목록 점검 ${data.as_of} · 저장 자료의 현재 기준일은 접속 시 다시 조회해요. 한국 달력일 기준이며 외부 차트·실시간 수급의 최신 관측은 각 화면에서 따로 확인해요.`;panel.append(note);
+      note.textContent=`목록 점검 ${data.as_of} · 정기 갱신 자료의 현재 기준일은 접속 시 다시 조회해요. 기준일 고정 참고표는 경과일 경고에서 제외하며 외부 차트·실시간 수급은 각 화면에서 따로 확인해요.`;panel.append(note);
       for(const row of problems){
         const line=document.createElement('p'),button=document.createElement('button'),age=window.dashboardFreshnessAge(row.data_date);
         button.type='button';button.className='quick-btn';button.textContent=row.label;

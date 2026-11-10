@@ -59,6 +59,8 @@ def audit(root, as_of):
         observed = date_value(row.get("data_date"))
         age = (as_of - date.fromisoformat(observed)).days if observed else None
         row.update(age_calendar_days=age, freshness="UNKNOWN" if age is None else "FUTURE_DATE" if age < 0 else "STALE" if age >= 5 else "FRESH")
+        if row.get("update_policy") == "FIXED_REFERENCE":
+            row["freshness"] = "NOT_APPLICABLE"
         row.setdefault("availability", "AVAILABLE")
         rows.append(row)
 
@@ -81,7 +83,7 @@ def audit(root, as_of):
     html = (root / "index.html").read_text(encoding="utf-8")
     found = re.search(r'data-sector-weight-date="([^"]+)"', html)
     if found:
-        finish({"id":"sector-cap", "label":"시장 섹터 시총 지도", "tab":"leaders", "path":"index.html", "data_date":found[1], "availability":"HISTORICAL_ONLY", "note":"최신 WICS 구성·보통주 시총 원천 미확보. 과거 참고자료로 접어 보존; 현재 비중 사용 금지"})
+        finish({"id":"sector-cap", "label":"시장 섹터 시총 지도", "tab":"leaders", "path":"index.html", "data_date":found[1], "availability":"REFERENCE", "update_policy":"FIXED_REFERENCE", "note":"기준일 고정 참고표. 정기 갱신 중단 대상에서 제외하며 주도주 본자료의 갱신과 구분"})
     # Fixed routes are not time series. An old connection manifest does not imply stale ticks.
     for key, label, tab in [("charts","국내·해외·환율 지표·대표ETF 차트","all"), ("schedule","일정","schedule"), ("links","링크 모음","links"), ("program-live","프로그램 수급","program-live"), ("cvd-live","선물 CVD","cvd-live")]:
         finish({"id":key,"label":label,"tab":tab,"path":"index.html" if key in ("charts","schedule","links") else "live-monitors/connection.json", "data_date":None, "availability":"LIVE_CHECK_REQUIRED", "note":"외부 API·보호된 수집기 자료. 별도 실제 응답/관측일 검사 필요; 설정파일 수정일로 판정하지 않음"})

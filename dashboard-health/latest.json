@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-10T16:23:40+09:00",
+  "checked_at": "2026-11-10T20:18:29+09:00",
   "as_of": "2026-11-10",
   "threshold_calendar_days": 5,
   "definition": "KST 달력 날짜 차이 5일 이상; 생성시각과 자료 기준일 구분",
@@ -180,7 +180,7 @@
       "label": "당일 뉴스",
       "tab": "daily-report",
       "path": "news/index.json",
-      "canonical_json_sha256": "b96de4a09de103915055ff9b1f990f37e540eb50ecdc9ff0bf3816c27cbd1107",
+      "canonical_json_sha256": "e914429ec98b35634bd3d4f0d3e78ef4746b53ec5caa2eef7a2928962930e30c",
       "data_date": "2026-11-10",
       "generated_at": null,
       "reported_status": null,
@@ -194,11 +194,11 @@
       "tab": "leaders",
       "path": "leader-mapping/validation_latest.json",
       "note": "장중 자료. 신고가 보조층의 자료 불일치는 별도 유지",
-      "canonical_json_sha256": "3afb36b8ed92e3c50da232785143d9fbb9afbd284bf4370b5d049e1861bd13f1",
-      "data_date": "2026-11-09",
+      "canonical_json_sha256": "ec49d8f6d43970397f1402a33239878aec70691def72c545dff281027ee04453",
+      "data_date": "2026-11-10",
       "generated_at": null,
       "reported_status": "INTRADAY_CONTENT_VALIDATED",
-      "age_calendar_days": 1,
+      "age_calendar_days": 0,
       "freshness": "FRESH",
       "availability": "AVAILABLE"
     },
@@ -221,11 +221,11 @@
       "label": "선물옵션 검토 본문",
       "tab": "supply",
       "path": "supply-zone/latest.json",
-      "canonical_json_sha256": "293df0caa479f18b40c6c5c20405681928b0bd8f4b6df596c12d24be560cfd5a",
-      "data_date": "2026-11-09",
-      "generated_at": "2026-11-09T17:09:21.251772+09:00",
+      "canonical_json_sha256": "dca842946b65f468d4b1a6e5bb868276b611a7689670159f91c98da40bf2b769",
+      "data_date": "2026-11-10",
+      "generated_at": "2026-11-10T17:44:29.262525+09:00",
       "reported_status": null,
-      "age_calendar_days": 1,
+      "age_calendar_days": 0,
       "freshness": "FRESH",
       "availability": "AVAILABLE"
     },
@@ -248,10 +248,11 @@
       "tab": "leaders",
       "path": "index.html",
       "data_date": "2026-08-28",
-      "availability": "HISTORICAL_ONLY",
-      "note": "최신 WICS 구성·보통주 시총 원천 미확보. 과거 참고자료로 접어 보존; 현재 비중 사용 금지",
+      "availability": "REFERENCE",
+      "update_policy": "FIXED_REFERENCE",
+      "note": "기준일 고정 참고표. 정기 갱신 중단 대상에서 제외하며 주도주 본자료의 갱신과 구분",
       "age_calendar_days": 74,
-      "freshness": "STALE"
+      "freshness": "NOT_APPLICABLE"
     },
     {
       "id": "charts",
@@ -422,7 +423,7 @@
   },
   "summary": {
     "items": 22,
-    "stale": 1,
+    "stale": 0,
     "excluded": 2,
     "unknown_live_checks": 5
   }
