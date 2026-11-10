@@ -29,7 +29,8 @@ fs.mkdirSync(output,{recursive:true});
    await new Promise(r=>server.listen(0,'127.0.0.1',r));url=`http://127.0.0.1:${server.address().port}/`;
   }
   const password=process.env.JS_DASHBOARD_QA_PASSWORD;
-  assert(password&&crypto.createHash('sha256').update(password).digest('hex')===html.match(/const passwordHash='([^']+)'/)[1],'Valid user-provided QA password required');
+  const lockHash=html.match(/const passwordHash='([^']+)'/);
+  if(lockHash)assert(password&&crypto.createHash('sha256').update(password).digest('hex')===lockHash[1],'Valid user-provided QA password required');
   browser=await chromium.launch({headless:true,channel:'chrome'});
   const results=[];
   for(const [name,width,height] of [['desktop',1440,1000],['mobile',390,844]]){
@@ -39,9 +40,11 @@ fs.mkdirSync(output,{recursive:true});
    page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
    page.on('response',r=>{if(r.status()>=400)httpErrors.push({status:r.status(),url:r.url()})});
    await page.goto(url+'?report_verify='+Date.now(),{waitUntil:'domcontentloaded',timeout:45000});
+   if(lockHash){
    await page.locator('#dashboardPassword').fill(password);
    await page.locator('#dashboardUnlockButton').click();
    await page.waitForFunction(()=>document.getElementById('dashboardLock').hidden);
+   }else{assert(await page.locator('#dashboardPassword').count()===0,'Unexpected public authentication gate');}
    await page.locator('[data-tab="report"]').click();
    await page.waitForFunction(()=>reportData.details.length>0&&reportSignalData.up.length>0);
    await page.waitForFunction(()=>window.reportPeriodsReady===true);
