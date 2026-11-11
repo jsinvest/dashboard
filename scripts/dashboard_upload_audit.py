@@ -73,9 +73,21 @@ def evidence_json(body, member=None):
 def publication_evidence(read, key, legacy_path):
     """Follow the published manifest's hashed bundle, retaining legacy fallback.
 
-    Only two known evidence members are supported. Never select by mtime or
-    turn a stale standalone file into a current research signal.
+    Follow only known evidence members or the explicitly linked dated review.
+    Never select by mtime or turn a stale file into a current research signal.
     """
+    if key == "futures-zip":
+        manifest_path = "supply-zone/latest.json"
+        manifest_body = read(manifest_path)
+        futures = json.loads(manifest_body)
+        name = "futures_public_review_" + day(futures["as_of"]).strftime("%Y%m%d") + ".zip"
+        if name in public_files(futures):
+            path = "supply-zone/" + name
+            body = read(path)
+            verify_review_bundle(body, manifest_body, name, lambda n: read("supply-zone/" + n))
+            return path, "latest.json", body, {
+                "evidence_manifest": manifest_path, "manifest_sha256": sha(manifest_body),
+                "legacy_path": legacy_path, "bundle_format": "dated_public_review"}
     members = {"index-mtf": "index_multitimeframe_validation_latest.json",
                "research": "validation/mandatory_audit.json"}
     if key not in members:
@@ -219,6 +231,34 @@ def public_files(d):
     return result
 
 
+def verify_review_bundle(body, futures_body, bundle_name, read_public):
+    """Validate the dated ZIP explicitly linked by the public review body."""
+    futures = json.loads(futures_body)
+    manifest_name = "review_manifest_" + day(futures["as_of"]).strftime("%Y%m%d") + ".json"
+    expected = set(public_files(futures)) - {bundle_name}
+    if bundle_name not in public_files(futures):
+        raise ValueError("공개 본문에 연결되지 않은 검토 ZIP")
+    with zipfile.ZipFile(io.BytesIO(body)) as z:
+        names = z.namelist()
+        if len(names) != len(set(names)) or z.testzip():
+            raise ValueError("검토 ZIP 중복/CRC 오류")
+        if set(names) != expected | {manifest_name}:
+            raise ValueError("검토 ZIP 공개 파일 목록 불일치")
+        if z.read("latest.json") != futures_body:
+            raise ValueError("검토 ZIP과 공개 본문 불일치")
+        manifest = json.loads(z.read(manifest_name))
+        if day(manifest["as_of"]) != day(futures["as_of"]) or manifest.get("contract") != futures.get("futures_contract"):
+            raise ValueError("검토 ZIP 기준일/계약 불일치")
+        records = manifest["files"]
+        if len(records) != len(expected) or {x["file"] for x in records} != expected:
+            raise ValueError("검토 ZIP 검증 목록 불일치")
+        for record in records:
+            name = record["file"]
+            content = z.read(name)
+            if sha(content) != record["sha256"] or content != read_public(name):
+                raise ValueError("검토 ZIP 공개 파일 해시 불일치: " + name)
+
+
 def verify_bundle(descriptor, body, futures, read_public):
     if sha(body) != descriptor["sha256"] or len(body) != descriptor["bytes"]:
         raise ValueError("ZIP 해시/크기 불일치")
@@ -350,7 +390,11 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
                 row["source_publication_check"] = "REQUIRED_IF_NO_NEW_ROWS; data age alone is not a failure"
             if key == "futures-zip":
                 futures = json.loads(read_object(root, commit, "supply-zone/latest.json"))
-                if day(d["as_of"]) != day(futures["as_of"]):
+                if member:
+                    verify_review_bundle(published, read_object(root, commit, "supply-zone/latest.json"), PurePosixPath(path).name,
+                                         lambda n: read_object(root, commit, "supply-zone/" + n))
+                    row["public_zip_contents_verified"] = True
+                elif day(d["as_of"]) != day(futures["as_of"]):
                     row["issues"].append("BUNDLE_REVIEW_DATE_MISMATCH")
                 else:
                     archive = fetch(base, "supply-zone/" + d["file"], stamp)
@@ -388,7 +432,7 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
         sources.append(record)
     return {"checked_at": now.isoformat(), "pinned_commit": commit, "calendar": calendar, "items": items,
             "state_evidence": state_note, "source_snapshots": sources, "summary": {"items": len(items), "items_with_findings": sum(bool(x["issues"]) for x in items)},
-            "public_dom_verified": False, "public_dom_note": "Separate credentialed DOM QA is required; no authentication state is bypassed.",
+            "public_dom_verified": False, "public_dom_note": "Separate rendered DOM QA is required. Check the actual authentication gate; never bypass one.",
             "scope": "Schedule/date/JSON/schema/Pages and reviewed ZIP verification. Not full source/OCR or independent market-data validation. Fixed reference maps excluded; live API/links need separate response checks."}
 
 

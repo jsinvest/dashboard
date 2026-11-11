@@ -11,6 +11,41 @@ import dashboard_upload_audit as a
 
 
 class PublicationDecisions(unittest.TestCase):
+    def review_publication(self, manifest_date="20261111", tamper=False):
+        name = "futures_public_review_20261111.zip"
+        futures = {"as_of": "20261111", "futures_contract": "F202612",
+                   "charts": [{"file": "chart.png"}], "downloads": [{"file": name}]}
+        public = {"latest.json": json.dumps(futures).encode(), "chart.png": b"reviewed chart"}
+        records = [{"file": n, "sha256": a.sha(b)} for n, b in public.items()]
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, "w") as z:
+            for n, b in public.items():
+                z.writestr(n, b"tampered" if tamper and n == "chart.png" else b)
+            z.writestr("review_manifest_20261111.json", json.dumps({
+                "as_of": manifest_date, "contract": "F202612", "files": records}))
+        return {**{"supply-zone/" + n: b for n, b in public.items()},
+                "supply-zone/" + name: output.getvalue(),
+                "legacy.json": b'{"as_of":"20261110"}'}
+
+    def test_explicit_current_review_zip_wins_over_hidden_legacy_descriptor(self):
+        files = self.review_publication()
+        path, member, body, metadata = a.publication_evidence(files.__getitem__, "futures-zip", "legacy.json")
+        self.assertEqual(path, "supply-zone/futures_public_review_20261111.zip")
+        self.assertEqual(a.observed_day("futures-zip", a.evidence_json(body, member)), a.date(2026, 11, 11))
+        self.assertEqual(metadata["bundle_format"], "dated_public_review")
+
+    def test_invalid_current_review_zip_never_falls_back_to_legacy(self):
+        for files in [self.review_publication(manifest_date="20261110"), self.review_publication(tamper=True)]:
+            with self.assertRaises(ValueError):
+                a.publication_evidence(files.__getitem__, "futures-zip", "legacy.json")
+
+    def test_unlinked_review_zip_does_not_override_legacy(self):
+        files = self.review_publication()
+        d = json.loads(files["supply-zone/latest.json"])
+        d["downloads"] = []
+        files["supply-zone/latest.json"] = json.dumps(d).encode()
+        self.assertEqual(a.publication_evidence(files.__getitem__, "futures-zip", "legacy.json")[:2], ("legacy.json", None))
+
     def test_daily_deadline_and_holiday(self):
         holidays = {a.date(2026, 10, 9)}
         self.assertEqual(a.expected_day("trade", 21, a.datetime(2026, 10, 12, 20, tzinfo=a.KST), holidays), a.date(2026, 10, 8))

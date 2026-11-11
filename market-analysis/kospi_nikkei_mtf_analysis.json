@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "generated_at_kst": "2026-11-09T20:37:43+09:00",
+  "generated_at_kst": "2026-11-11T20:31:25+09:00",
   "as_of": {
-    "trade_date": "20261109",
+    "trade_date": "20261111",
     "session": "CLOSED"
   },
   "validation": {
     "status": "OK",
     "can_use_for_decision": true,
-    "file": "validation_20261109.json"
+    "file": "validation_20261111.json"
   },
   "design_note": {
     "user_research_context": {
@@ -222,53 +222,53 @@
         },
         "daily": {
           "bar_status": "complete",
-          "latest_bar": "2026-11-09T00:00:00",
+          "latest_bar": "2026-11-11T00:00:00",
           "bar_count": 1800,
           "ohlc": {
-            "open": 5034.2,
-            "high": 5172.94,
-            "low": 4990.66,
-            "close": 5018.85
+            "open": 5209.71,
+            "high": 5377.99,
+            "low": 5207.44,
+            "close": 5375.36
           },
           "returns_pct": {
-            "1": -0.807,
-            "5": -14.341,
-            "20": -21.387,
-            "60": -20.331
+            "1": 2.6,
+            "5": -5.427,
+            "20": -10.542,
+            "60": -18.296
           },
           "moving_averages": {
-            "sma5": 5358.986,
-            "sma10": 5597.319,
-            "sma20": 5642.479,
-            "sma60": 6418.777,
-            "sma120": 7009.375,
-            "sma240": 6117.136
+            "sma5": 5215.366,
+            "sma10": 5493.69,
+            "sma20": 5570.995,
+            "sma60": 6380.276,
+            "sma120": 6968.874,
+            "sma240": 6127.61
           },
-          "mid_ma_normalized_slope": -0.059,
-          "rsi14": 30.325,
-          "macd": -307.8815,
-          "macd_signal": -269.5092,
-          "macd_hist": -38.3723,
+          "mid_ma_normalized_slope": -0.069,
+          "rsi14": 40.552,
+          "macd": -294.5565,
+          "macd_signal": -280.7531,
+          "macd_hist": -13.8034,
           "bollinger": {
-            "upper": 6182.048,
-            "middle": 5642.479,
-            "lower": 5102.909,
-            "percent_b": -0.0779,
-            "width": 0.1913
+            "upper": 6080.695,
+            "middle": 5570.995,
+            "lower": 5061.295,
+            "percent_b": 0.3081,
+            "width": 0.183
           },
-          "atr14": 283.6384,
+          "atr14": 275.4566,
           "levels": {
-            "previous_20_high": 6589.69,
+            "previous_20_high": 6190.65,
             "previous_20_low": 4911.28,
             "previous_60_high": 7216.62,
             "previous_60_low": 4911.28
           },
           "pivot_structure": {
-            "state": "HH/HL",
+            "state": "혼조",
             "confirmed_pivot_highs": 226,
-            "confirmed_pivot_lows": 220,
+            "confirmed_pivot_lows": 221,
             "latest_pivot_high": 6100.11,
-            "latest_pivot_low": 5599.42
+            "latest_pivot_low": 4911.28
           },
           "votes": {
             "ma_alignment": {
@@ -284,12 +284,105 @@
             "mid_ma_slope": {
               "vote": -1,
               "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.059"
+              "reason": "5봉 ATR 정규화 기울기 -0.069"
             },
             "rsi": {
               "vote": -1,
               "weight": 10.0,
-              "reason": "RSI14 30.33"
+              "reason": "RSI14 40.55"
+            },
+            "macd": {
+              "vote": 0,
+              "weight": 15.0,
+              "reason": "MACD 히스토그램 부호와 3봉 변화"
+            },
+            "price_structure": {
+              "vote": 0,
+              "weight": 20.0,
+              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
+            },
+            "bollinger": {
+              "vote": 0,
+              "weight": 5.0,
+              "reason": "%B 0.31, 밴드폭 비확대"
+            }
+          },
+          "valid_weight_pct": 100.0,
+          "missing_weight_pct": 0.0,
+          "score": -60.0,
+          "state": "하락",
+          "display_latest_bar": "2026-11-11T00:00:00",
+          "display_bar_is_partial": false
+        },
+        "intraday_15m": {
+          "bar_status": "complete",
+          "latest_bar": "2026-11-11T15:30:00+09:00",
+          "bar_count": 937,
+          "ohlc": {
+            "open": 5365.75,
+            "high": 5375.36,
+            "low": 5365.75,
+            "close": 5375.36
+          },
+          "returns_pct": {
+            "1": 0.179,
+            "5": 0.288,
+            "20": 1.343,
+            "60": 6.4
+          },
+          "moving_averages": {
+            "ema5": 5367.801,
+            "ema10": 5359.383,
+            "ema20": 5337.341,
+            "ema60": 5276.131,
+            "ema120": 5289.871
+          },
+          "mid_ma_normalized_slope": 0.1653,
+          "rsi14": 65.381,
+          "macd": 30.9428,
+          "macd_signal": 32.0801,
+          "macd_hist": -1.1373,
+          "bollinger": {
+            "upper": 5400.364,
+            "middle": 5338.653,
+            "lower": 5276.941,
+            "percent_b": 0.7974,
+            "width": 0.0231
+          },
+          "atr14": 25.0201,
+          "levels": {
+            "previous_20_high": 5377.99,
+            "previous_20_low": 5267.3,
+            "previous_60_high": 5377.99,
+            "previous_60_low": 5009.16
+          },
+          "pivot_structure": {
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 115,
+            "confirmed_pivot_lows": 115,
+            "latest_pivot_high": 5377.99,
+            "latest_pivot_low": 5351.16
+          },
+          "votes": {
+            "ma_alignment": {
+              "vote": 1,
+              "weight": 20.0,
+              "reason": "EMA5/20/60 정렬"
+            },
+            "price_position": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "종가와 중기 이평의 ATR 거리"
+            },
+            "mid_ma_slope": {
+              "vote": 1,
+              "weight": 15.0,
+              "reason": "5봉 ATR 정규화 기울기 +0.165"
+            },
+            "rsi": {
+              "vote": 1,
+              "weight": 10.0,
+              "reason": "RSI14 65.38"
             },
             "macd": {
               "vote": -1,
@@ -304,113 +397,20 @@
             "bollinger": {
               "vote": 0,
               "weight": 5.0,
-              "reason": "%B -0.08, 밴드폭 비확대"
+              "reason": "%B 0.80, 밴드폭 비확대"
             }
           },
           "valid_weight_pct": 100.0,
           "missing_weight_pct": 0.0,
-          "score": -55.0,
-          "state": "하락",
-          "display_latest_bar": "2026-11-09T00:00:00",
-          "display_bar_is_partial": false
-        },
-        "intraday_15m": {
-          "bar_status": "complete",
-          "latest_bar": "2026-11-09T15:30:00+09:00",
-          "bar_count": 937,
-          "ohlc": {
-            "open": 5012.84,
-            "high": 5021.97,
-            "low": 5012.84,
-            "close": 5018.85
-          },
-          "returns_pct": {
-            "1": 0.12,
-            "5": -1.185,
-            "20": -2.008,
-            "60": -7.162
-          },
-          "moving_averages": {
-            "ema5": 5031.119,
-            "ema10": 5052.225,
-            "ema20": 5074.576,
-            "ema60": 5157.887,
-            "ema120": 5294.728
-          },
-          "mid_ma_normalized_slope": -0.1767,
-          "rsi14": 37.86,
-          "macd": -25.6757,
-          "macd_signal": -16.4022,
-          "macd_hist": -9.2736,
-          "bollinger": {
-            "upper": 5193.754,
-            "middle": 5097.455,
-            "lower": 5001.156,
-            "percent_b": 0.0919,
-            "width": 0.0378
-          },
-          "atr14": 35.5831,
-          "levels": {
-            "previous_20_high": 5172.94,
-            "previous_20_low": 5009.16,
-            "previous_60_high": 5449.95,
-            "previous_60_low": 4911.28
-          },
-          "pivot_structure": {
-            "state": "LH/LL",
-            "confirmed_pivot_highs": 114,
-            "confirmed_pivot_lows": 115,
-            "latest_pivot_high": 5117.52,
-            "latest_pivot_low": 5042.8
-          },
-          "votes": {
-            "ma_alignment": {
-              "vote": -1,
-              "weight": 20.0,
-              "reason": "EMA5/20/60 정렬"
-            },
-            "price_position": {
-              "vote": -1,
-              "weight": 15.0,
-              "reason": "종가와 중기 이평의 ATR 거리"
-            },
-            "mid_ma_slope": {
-              "vote": -1,
-              "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.177"
-            },
-            "rsi": {
-              "vote": -1,
-              "weight": 10.0,
-              "reason": "RSI14 37.86"
-            },
-            "macd": {
-              "vote": -1,
-              "weight": 15.0,
-              "reason": "MACD 히스토그램 부호와 3봉 변화"
-            },
-            "price_structure": {
-              "vote": -1,
-              "weight": 20.0,
-              "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
-            },
-            "bollinger": {
-              "vote": -1,
-              "weight": 5.0,
-              "reason": "%B 0.09, 밴드폭 확대"
-            }
-          },
-          "valid_weight_pct": 100.0,
-          "missing_weight_pct": 0.0,
-          "score": -100.0,
-          "state": "하락",
-          "display_latest_bar": "2026-11-09T15:30:00+09:00",
+          "score": 65.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-11T15:30:00+09:00",
           "display_bar_is_partial": false
         }
       },
       "confirmed_mtf": {
-        "score": -53.5,
-        "state": "하락",
+        "score": -30.8,
+        "state": "중립-하락",
         "valid_weight_pct": 100.0,
         "timeframe_conflict": false,
         "confidence_cap": 100,
@@ -610,53 +610,53 @@
         },
         "daily": {
           "bar_status": "complete",
-          "latest_bar": "2026-11-09T00:00:00",
+          "latest_bar": "2026-11-11T00:00:00",
           "bar_count": 1800,
           "ohlc": {
-            "open": 638.82,
-            "high": 658.66,
-            "low": 632.7,
-            "close": 638.97
+            "open": 668.48,
+            "high": 705.1,
+            "low": 668.48,
+            "close": 705.1
           },
           "returns_pct": {
-            "1": -0.823,
-            "5": -12.99,
-            "20": -24.755,
-            "60": -25.22
+            "1": 5.616,
+            "5": -1.378,
+            "20": -14.417,
+            "60": -17.908
           },
           "moving_averages": {
-            "sma5": 676.198,
-            "sma10": 710.807,
-            "sma20": 747.56,
-            "sma60": 808.723,
-            "sma120": 860.475,
-            "sma240": 957.07
+            "sma5": 666.872,
+            "sma10": 696.567,
+            "sma20": 733.15,
+            "sma60": 802.989,
+            "sma120": 852.574,
+            "sma240": 955.287
           },
-          "mid_ma_normalized_slope": -0.0672,
-          "rsi14": 28.296,
-          "macd": -42.8123,
-          "macd_signal": -31.3212,
-          "macd_hist": -11.4911,
+          "mid_ma_normalized_slope": -0.085,
+          "rsi14": 43.003,
+          "macd": -39.7424,
+          "macd_signal": -34.8809,
+          "macd_hist": -4.8615,
           "bollinger": {
-            "upper": 852.839,
-            "middle": 747.56,
-            "lower": 642.281,
-            "percent_b": -0.0157,
-            "width": 0.2817
+            "upper": 828.68,
+            "middle": 733.15,
+            "lower": 637.62,
+            "percent_b": 0.3532,
+            "width": 0.2606
           },
-          "atr14": 32.4406,
+          "atr14": 32.8344,
           "levels": {
-            "previous_20_high": 891.79,
+            "previous_20_high": 846.95,
             "previous_20_low": 629.17,
             "previous_60_high": 921.73,
             "previous_60_low": 629.17
           },
           "pivot_structure": {
             "state": "LH/LL",
-            "confirmed_pivot_highs": 203,
-            "confirmed_pivot_lows": 220,
+            "confirmed_pivot_highs": 202,
+            "confirmed_pivot_lows": 221,
             "latest_pivot_high": 773.28,
-            "latest_pivot_low": 727.2
+            "latest_pivot_low": 629.17
           },
           "votes": {
             "ma_alignment": {
@@ -672,15 +672,15 @@
             "mid_ma_slope": {
               "vote": -1,
               "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.067"
+              "reason": "5봉 ATR 정규화 기울기 -0.085"
             },
             "rsi": {
               "vote": -1,
               "weight": 10.0,
-              "reason": "RSI14 28.30"
+              "reason": "RSI14 43.00"
             },
             "macd": {
-              "vote": -1,
+              "vote": 0,
               "weight": 15.0,
               "reason": "MACD 히스토그램 부호와 3봉 변화"
             },
@@ -692,112 +692,112 @@
             "bollinger": {
               "vote": 0,
               "weight": 5.0,
-              "reason": "%B -0.02, 밴드폭 비확대"
+              "reason": "%B 0.35, 밴드폭 비확대"
             }
           },
           "valid_weight_pct": 100.0,
           "missing_weight_pct": 0.0,
-          "score": -95.0,
+          "score": -80.0,
           "state": "하락",
-          "display_latest_bar": "2026-11-09T00:00:00",
+          "display_latest_bar": "2026-11-11T00:00:00",
           "display_bar_is_partial": false
         },
         "intraday_15m": {
           "bar_status": "complete",
-          "latest_bar": "2026-11-09T15:30:00+09:00",
+          "latest_bar": "2026-11-11T15:30:00+09:00",
           "bar_count": 936,
           "ohlc": {
-            "open": 639.43,
-            "high": 639.44,
-            "low": 638.96,
-            "close": 638.97
+            "open": 704.41,
+            "high": 705.1,
+            "low": 704.41,
+            "close": 705.1
           },
           "returns_pct": {
-            "1": -0.072,
-            "5": -1.433,
-            "20": -0.511,
-            "60": -6.155
+            "1": 0.098,
+            "5": 0.437,
+            "20": 1.358,
+            "60": 9.571
           },
           "moving_averages": {
-            "ema5": 641.241,
-            "ema10": 644.11,
-            "ema20": 646.505,
-            "ema60": 654.824,
-            "ema120": 671.089
+            "ema5": 703.819,
+            "ema10": 702.307,
+            "ema20": 698.207,
+            "ema60": 682.99,
+            "ema120": 679.121
           },
-          "mid_ma_normalized_slope": -0.1741,
-          "rsi14": 39.169,
-          "macd": -2.5173,
-          "macd_signal": -1.0945,
-          "macd_hist": -1.4228,
+          "mid_ma_normalized_slope": 0.2781,
+          "rsi14": 73.921,
+          "macd": 6.2788,
+          "macd_signal": 7.025,
+          "macd_hist": -0.7462,
           "bollinger": {
-            "upper": 662.376,
-            "middle": 649.868,
-            "lower": 637.359,
-            "percent_b": 0.0644,
-            "width": 0.0385
+            "upper": 705.923,
+            "middle": 700.071,
+            "lower": 694.219,
+            "percent_b": 0.9297,
+            "width": 0.0167
           },
-          "atr14": 4.4369,
+          "atr14": 2.6746,
           "levels": {
-            "previous_20_high": 658.66,
-            "previous_20_low": 632.91,
-            "previous_60_high": 682.85,
-            "previous_60_low": 629.17
+            "previous_20_high": 704.49,
+            "previous_20_low": 694.52,
+            "previous_60_high": 704.49,
+            "previous_60_low": 638.96
           },
           "pivot_structure": {
-            "state": "혼조",
-            "confirmed_pivot_highs": 112,
-            "confirmed_pivot_lows": 121,
-            "latest_pivot_high": 658.66,
-            "latest_pivot_low": 642.34
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 111,
+            "confirmed_pivot_lows": 122,
+            "latest_pivot_high": 703.1,
+            "latest_pivot_low": 699.93
           },
           "votes": {
             "ma_alignment": {
-              "vote": -1,
+              "vote": 1,
               "weight": 20.0,
               "reason": "EMA5/20/60 정렬"
             },
             "price_position": {
-              "vote": -1,
+              "vote": 1,
               "weight": 15.0,
               "reason": "종가와 중기 이평의 ATR 거리"
             },
             "mid_ma_slope": {
-              "vote": -1,
+              "vote": 1,
               "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.174"
+              "reason": "5봉 ATR 정규화 기울기 +0.278"
             },
             "rsi": {
-              "vote": -1,
+              "vote": 1,
               "weight": 10.0,
-              "reason": "RSI14 39.17"
+              "reason": "RSI14 73.92"
             },
             "macd": {
-              "vote": -1,
+              "vote": 0,
               "weight": 15.0,
               "reason": "MACD 히스토그램 부호와 3봉 변화"
             },
             "price_structure": {
-              "vote": 0,
+              "vote": 1,
               "weight": 20.0,
               "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
             },
             "bollinger": {
               "vote": 0,
               "weight": 5.0,
-              "reason": "%B 0.06, 밴드폭 비확대"
+              "reason": "%B 0.93, 밴드폭 비확대"
             }
           },
           "valid_weight_pct": 100.0,
           "missing_weight_pct": 0.0,
-          "score": -75.0,
-          "state": "하락",
-          "display_latest_bar": "2026-11-09T15:30:00+09:00",
+          "score": 80.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-11T15:30:00+09:00",
           "display_bar_is_partial": false
         }
       },
       "confirmed_mtf": {
-        "score": -71.8,
+        "score": -42.5,
         "state": "하락",
         "valid_weight_pct": 100.0,
         "timeframe_conflict": false,
@@ -813,7 +813,7 @@
         "monthly": {
           "bar_status": "partial",
           "latest_bar": "2026-10-31T00:00:00",
-          "bar_count": 145,
+          "bar_count": 144,
           "ohlc": {
             "open": 67106.523,
             "high": 70798.617,
@@ -835,9 +835,9 @@
           },
           "mid_ma_normalized_slope": 0.3119,
           "rsi14": 64.014,
-          "macd": 7598.2495,
-          "macd_signal": 6662.4111,
-          "macd_hist": 935.8384,
+          "macd": 7598.2334,
+          "macd_signal": 6662.3874,
+          "macd_hist": 935.846,
           "bollinger": {
             "upper": 74684.276,
             "middle": 52573.622,
@@ -845,7 +845,7 @@
             "percent_b": 0.7423,
             "width": 0.8411
           },
-          "atr14": 5833.7439,
+          "atr14": 5833.7454,
           "levels": {
             "previous_20_high": 72831.727,
             "previous_20_low": 30792.74,
@@ -906,7 +906,7 @@
         "weekly": {
           "bar_status": "partial",
           "latest_bar": "2026-11-06T00:00:00",
-          "bar_count": 627,
+          "bar_count": 626,
           "ohlc": {
             "open": 62972.02,
             "high": 63615.32,
@@ -947,7 +947,7 @@
           },
           "pivot_structure": {
             "state": "HH/HL",
-            "confirmed_pivot_highs": 86,
+            "confirmed_pivot_highs": 85,
             "confirmed_pivot_lows": 91,
             "latest_pivot_high": 70798.6172,
             "latest_pivot_low": 62726.1797
@@ -998,43 +998,43 @@
         },
         "daily": {
           "bar_status": "complete",
-          "latest_bar": "2026-11-09T00:00:00",
-          "bar_count": 2934,
+          "latest_bar": "2026-11-11T00:00:00",
+          "bar_count": 2935,
           "ohlc": {
-            "open": 57960.699,
-            "high": 59440.18,
-            "low": 57775.16,
-            "close": 58775.5
+            "open": 60525.301,
+            "high": 61390.789,
+            "low": 60318.078,
+            "close": 61248.59
           },
           "returns_pct": {
-            "1": 2.334,
-            "5": -7.133,
-            "20": -14.87,
-            "60": -10.412
+            "1": 1.305,
+            "5": -1.512,
+            "20": -9.633,
+            "60": -9.294
           },
           "moving_averages": {
-            "sma5": 60511.731,
-            "sma10": 61992.045,
-            "sma20": 63671.889,
-            "sma60": 65476.379,
-            "sma120": 65952.321,
-            "sma240": 60049.68
+            "sma5": 59799.267,
+            "sma10": 61617.059,
+            "sma20": 62916.875,
+            "sma60": 65263.277,
+            "sma120": 65948.012,
+            "sma240": 60130.36
           },
-          "mid_ma_normalized_slope": -0.0438,
-          "rsi14": 32.533,
-          "macd": -1688.9749,
-          "macd_signal": -1089.6625,
-          "macd_hist": -599.3123,
+          "mid_ma_normalized_slope": -0.0649,
+          "rsi14": 42.886,
+          "macd": -1588.3093,
+          "macd_signal": -1283.6136,
+          "macd_hist": -304.6957,
           "bollinger": {
-            "upper": 69063.144,
-            "middle": 63671.889,
-            "lower": 58280.633,
-            "percent_b": 0.0459,
-            "width": 0.1693
+            "upper": 67489.47,
+            "middle": 62916.875,
+            "lower": 58344.28,
+            "percent_b": 0.3176,
+            "width": 0.1454
           },
-          "atr14": 1731.1172,
+          "atr14": 1699.8309,
           "levels": {
-            "previous_20_high": 69918.203,
+            "previous_20_high": 68710.992,
             "previous_20_low": 56745.809,
             "previous_60_high": 70798.617,
             "previous_60_low": 56745.809
@@ -1042,9 +1042,9 @@
           "pivot_structure": {
             "state": "LH/LL",
             "confirmed_pivot_highs": 413,
-            "confirmed_pivot_lows": 395,
+            "confirmed_pivot_lows": 396,
             "latest_pivot_high": 64831.2891,
-            "latest_pivot_low": 61462.6094
+            "latest_pivot_low": 56745.8086
           },
           "votes": {
             "ma_alignment": {
@@ -1060,15 +1060,15 @@
             "mid_ma_slope": {
               "vote": -1,
               "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.044"
+              "reason": "5봉 ATR 정규화 기울기 -0.065"
             },
             "rsi": {
               "vote": -1,
               "weight": 10.0,
-              "reason": "RSI14 32.53"
+              "reason": "RSI14 42.89"
             },
             "macd": {
-              "vote": -1,
+              "vote": 0,
               "weight": 15.0,
               "reason": "MACD 히스토그램 부호와 3봉 변화"
             },
@@ -1078,87 +1078,87 @@
               "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
             },
             "bollinger": {
-              "vote": -1,
+              "vote": 0,
               "weight": 5.0,
-              "reason": "%B 0.05, 밴드폭 확대"
+              "reason": "%B 0.32, 밴드폭 비확대"
             }
           },
           "valid_weight_pct": 100.0,
           "missing_weight_pct": 0.0,
-          "score": -100.0,
+          "score": -80.0,
           "state": "하락",
-          "display_latest_bar": "2026-11-09T00:00:00",
+          "display_latest_bar": "2026-11-11T00:00:00",
           "display_bar_is_partial": false
         },
         "intraday_15m": {
           "bar_status": "complete",
-          "latest_bar": "2026-11-09T15:30:00+09:00",
-          "bar_count": 461,
+          "latest_bar": "2026-11-11T15:30:00+09:00",
+          "bar_count": 484,
           "ohlc": {
-            "open": 58775.5,
-            "high": 58775.5,
-            "low": 58775.5,
-            "close": 58775.5
+            "open": 61248.59,
+            "high": 61248.59,
+            "low": 61248.59,
+            "close": 61248.59
           },
           "returns_pct": {
-            "1": 0.043,
-            "5": -0.418,
-            "20": -0.075,
-            "60": -5.132
+            "1": -0.06,
+            "5": -0.103,
+            "20": 0.683,
+            "60": 3.071
           },
           "moving_averages": {
-            "ema5": 58809.771,
-            "ema10": 58889.551,
-            "ema20": 58865.096,
-            "ema60": 59223.423,
-            "ema120": 60233.748
+            "ema5": 61269.284,
+            "ema10": 61239.87,
+            "ema20": 61101.403,
+            "ema60": 60540.674,
+            "ema120": 60553.426
           },
-          "mid_ma_normalized_slope": -0.049,
-          "rsi14": 48.163,
-          "macd": 53.994,
-          "macd_signal": 120.0902,
-          "macd_hist": -66.0962,
+          "mid_ma_normalized_slope": 0.1474,
+          "rsi14": 62.076,
+          "macd": 218.2363,
+          "macd_signal": 252.0142,
+          "macd_hist": -33.7778,
           "bollinger": {
-            "upper": 59567.041,
-            "middle": 59085.801,
-            "lower": 58604.561,
-            "percent_b": 0.1776,
-            "width": 0.0163
+            "upper": 61481.781,
+            "middle": 61153.401,
+            "lower": 60825.021,
+            "percent_b": 0.6449,
+            "width": 0.0107
           },
-          "atr14": 238.5557,
+          "atr14": 158.3691,
           "levels": {
-            "previous_20_high": 59440.18,
-            "previous_20_low": 58231.941,
-            "previous_60_high": 62097.172,
-            "previous_60_low": 56745.809
+            "previous_20_high": 61390.789,
+            "previous_20_low": 60560.699,
+            "previous_60_high": 61390.789,
+            "previous_60_low": 58613.449
           },
           "pivot_structure": {
-            "state": "혼조",
-            "confirmed_pivot_highs": 55,
-            "confirmed_pivot_lows": 51,
-            "latest_pivot_high": 59316.8984,
-            "latest_pivot_low": 59138.0703
+            "state": "HH/HL",
+            "confirmed_pivot_highs": 59,
+            "confirmed_pivot_lows": 54,
+            "latest_pivot_high": 61390.7891,
+            "latest_pivot_low": 60791.9688
           },
           "votes": {
             "ma_alignment": {
-              "vote": -1,
+              "vote": 1,
               "weight": 20.0,
               "reason": "EMA5/20/60 정렬"
             },
             "price_position": {
-              "vote": -1,
+              "vote": 1,
               "weight": 15.0,
               "reason": "종가와 중기 이평의 ATR 거리"
             },
             "mid_ma_slope": {
-              "vote": -1,
+              "vote": 1,
               "weight": 15.0,
-              "reason": "5봉 ATR 정규화 기울기 -0.049"
+              "reason": "5봉 ATR 정규화 기울기 +0.147"
             },
             "rsi": {
-              "vote": 0,
+              "vote": 1,
               "weight": 10.0,
-              "reason": "RSI14 48.16"
+              "reason": "RSI14 62.08"
             },
             "macd": {
               "vote": -1,
@@ -1166,27 +1166,27 @@
               "reason": "MACD 히스토그램 부호와 3봉 변화"
             },
             "price_structure": {
-              "vote": 0,
+              "vote": 1,
               "weight": 20.0,
               "reason": "직전 20봉 돌파/이탈 및 확정 피벗 구조"
             },
             "bollinger": {
               "vote": 0,
               "weight": 5.0,
-              "reason": "%B 0.18, 밴드폭 비확대"
+              "reason": "%B 0.64, 밴드폭 비확대"
             }
           },
           "valid_weight_pct": 100.0,
           "missing_weight_pct": 0.0,
-          "score": -65.0,
-          "state": "하락",
-          "display_latest_bar": "2026-11-09T15:30:00+09:00",
+          "score": 65.0,
+          "state": "상승",
+          "display_latest_bar": "2026-11-11T15:30:00+09:00",
           "display_bar_is_partial": false
         }
       },
       "confirmed_mtf": {
-        "score": -49.8,
-        "state": "하락",
+        "score": -22.2,
+        "state": "중립-하락",
         "valid_weight_pct": 100.0,
         "timeframe_conflict": false,
         "confidence_cap": 100,
@@ -1197,69 +1197,69 @@
   "cross_market": {
     "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
     "common_daily_observations": 1699,
-    "latest_common_daily_date": "2026-11-09",
+    "latest_common_daily_date": "2026-11-11",
     "same_day": {
       "20d": {
         "observations": 20,
-        "correlation": 0.751,
+        "correlation": 0.8189,
         "same_direction_pct": 75.0
       },
       "60d": {
         "observations": 60,
-        "correlation": 0.7223,
+        "correlation": 0.7401,
         "same_direction_pct": 70.0
       },
       "120d": {
         "observations": 120,
-        "correlation": 0.7969,
-        "same_direction_pct": 73.33
+        "correlation": 0.8015,
+        "same_direction_pct": 74.17
       }
     },
     "nikkei_tminus1_to_kospi": {
       "20d": {
         "observations": 20,
-        "correlation": -0.0175,
+        "correlation": 0.1406,
         "same_direction_pct": 60.0
       },
       "60d": {
         "observations": 60,
-        "correlation": 0.0133,
-        "same_direction_pct": 56.67
+        "correlation": 0.134,
+        "same_direction_pct": 60.0
       },
       "120d": {
         "observations": 120,
-        "correlation": -0.0442,
+        "correlation": -0.0271,
         "same_direction_pct": 55.0
       }
     },
     "relative_strength": {
       "5d": {
-        "kospi_return_pct": -12.422,
-        "nikkei_return_pct": -7.133,
-        "kospi_minus_nikkei_pct_points": -5.289
+        "kospi_return_pct": -5.427,
+        "nikkei_return_pct": -1.512,
+        "kospi_minus_nikkei_pct_points": -3.915
       },
       "20d": {
-        "kospi_return_pct": -26.236,
-        "nikkei_return_pct": -16.078,
-        "kospi_minus_nikkei_pct_points": -10.158
+        "kospi_return_pct": -10.935,
+        "nikkei_return_pct": -9.633,
+        "kospi_minus_nikkei_pct_points": -1.303
       },
       "60d": {
-        "kospi_return_pct": -23.904,
-        "nikkei_return_pct": -8.68,
-        "kospi_minus_nikkei_pct_points": -15.225
+        "kospi_return_pct": -15.468,
+        "nikkei_return_pct": -4.236,
+        "kospi_minus_nikkei_pct_points": -11.232
       }
     },
     "beta_adjusted_residual": {
       "observations": 60,
-      "beta_60d": 1.2745,
-      "latest_residual_zscore": -1.633
+      "beta_60d": 1.2776,
+      "latest_residual_zscore": 0.515
     },
     "intraday_alignment": {
       "common_15m_bars": 24,
-      "return_correlation": 0.8619,
-      "kospi_session_return_pct": -0.305,
-      "nikkei_session_return_pct": 1.406,
-      "kospi_minus_nikkei_pct_points": -1.711
+      "return_correlation": 0.6059,
+      "kospi_session_return_pct": 3.18,
+      "nikkei_session_return_pct": 1.195,
+      "kospi_minus_nikkei_pct_points": 1.985
     },
     "state": "동조 하락 확인",
     "role": "confirmation_only",
@@ -1271,69 +1271,69 @@
     "KOSPI_NIKKEI225": {
       "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
       "common_daily_observations": 1699,
-      "latest_common_daily_date": "2026-11-09",
+      "latest_common_daily_date": "2026-11-11",
       "same_day": {
         "20d": {
           "observations": 20,
-          "correlation": 0.751,
+          "correlation": 0.8189,
           "same_direction_pct": 75.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.7223,
+          "correlation": 0.7401,
           "same_direction_pct": 70.0
         },
         "120d": {
           "observations": 120,
-          "correlation": 0.7969,
-          "same_direction_pct": 73.33
+          "correlation": 0.8015,
+          "same_direction_pct": 74.17
         }
       },
       "nikkei_tminus1_to_kospi": {
         "20d": {
           "observations": 20,
-          "correlation": -0.0175,
+          "correlation": 0.1406,
           "same_direction_pct": 60.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.0133,
-          "same_direction_pct": 56.67
+          "correlation": 0.134,
+          "same_direction_pct": 60.0
         },
         "120d": {
           "observations": 120,
-          "correlation": -0.0442,
+          "correlation": -0.0271,
           "same_direction_pct": 55.0
         }
       },
       "relative_strength": {
         "5d": {
-          "kospi_return_pct": -12.422,
-          "nikkei_return_pct": -7.133,
-          "kospi_minus_nikkei_pct_points": -5.289
+          "kospi_return_pct": -5.427,
+          "nikkei_return_pct": -1.512,
+          "kospi_minus_nikkei_pct_points": -3.915
         },
         "20d": {
-          "kospi_return_pct": -26.236,
-          "nikkei_return_pct": -16.078,
-          "kospi_minus_nikkei_pct_points": -10.158
+          "kospi_return_pct": -10.935,
+          "nikkei_return_pct": -9.633,
+          "kospi_minus_nikkei_pct_points": -1.303
         },
         "60d": {
-          "kospi_return_pct": -23.904,
-          "nikkei_return_pct": -8.68,
-          "kospi_minus_nikkei_pct_points": -15.225
+          "kospi_return_pct": -15.468,
+          "nikkei_return_pct": -4.236,
+          "kospi_minus_nikkei_pct_points": -11.232
         }
       },
       "beta_adjusted_residual": {
         "observations": 60,
-        "beta_60d": 1.2745,
-        "latest_residual_zscore": -1.633
+        "beta_60d": 1.2776,
+        "latest_residual_zscore": 0.515
       },
       "intraday_alignment": {
         "common_15m_bars": 24,
-        "return_correlation": 0.8619,
-        "kospi_session_return_pct": -0.305,
-        "nikkei_session_return_pct": 1.406,
-        "kospi_minus_nikkei_pct_points": -1.711
+        "return_correlation": 0.6059,
+        "kospi_session_return_pct": 3.18,
+        "nikkei_session_return_pct": 1.195,
+        "kospi_minus_nikkei_pct_points": 1.985
       },
       "state": "동조 하락 확인",
       "role": "confirmation_only",
@@ -1347,63 +1347,63 @@
         "NIKKEI225"
       ],
       "common_daily_observations": 1699,
-      "latest_common_daily_date": "2026-11-09",
+      "latest_common_daily_date": "2026-11-11",
       "same_day": {
         "20d": {
           "observations": 20,
-          "correlation": 0.7525,
+          "correlation": 0.7948,
           "same_direction_pct": 80.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.7159,
-          "same_direction_pct": 80.0
+          "correlation": 0.7583,
+          "same_direction_pct": 81.67
         },
         "120d": {
           "observations": 120,
-          "correlation": 0.6497,
+          "correlation": 0.6552,
           "same_direction_pct": 77.5
         }
       },
       "nikkei225_tminus1_to_kosdaq": {
         "20d": {
           "observations": 20,
-          "correlation": -0.1653,
+          "correlation": 0.1252,
           "same_direction_pct": 65.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.028,
-          "same_direction_pct": 53.33
+          "correlation": 0.1007,
+          "same_direction_pct": 55.0
         },
         "120d": {
           "observations": 120,
-          "correlation": -0.0566,
-          "same_direction_pct": 50.83
+          "correlation": -0.0222,
+          "same_direction_pct": 51.67
         }
       },
       "relative_strength": {
         "5d": {
-          "kosdaq_return_pct": -11.791,
-          "nikkei225_return_pct": -7.133,
-          "first_minus_second_pct_points": -4.658
+          "kosdaq_return_pct": -1.378,
+          "nikkei225_return_pct": -1.512,
+          "first_minus_second_pct_points": 0.134
         },
         "20d": {
-          "kosdaq_return_pct": -28.879,
-          "nikkei225_return_pct": -16.078,
-          "first_minus_second_pct_points": -12.801
+          "kosdaq_return_pct": -15.762,
+          "nikkei225_return_pct": -9.633,
+          "first_minus_second_pct_points": -6.129
         },
         "60d": {
-          "kosdaq_return_pct": -11.225,
-          "nikkei225_return_pct": -8.68,
-          "first_minus_second_pct_points": -2.545
+          "kosdaq_return_pct": -9.686,
+          "nikkei225_return_pct": -4.236,
+          "first_minus_second_pct_points": -5.45
         }
       },
       "intraday_alignment": {
         "common_15m_bars": 24,
-        "return_correlation": 0.7821,
-        "kosdaq_session_return_pct": 0.023,
-        "nikkei225_session_return_pct": 1.406
+        "return_correlation": 0.3022,
+        "kosdaq_session_return_pct": 5.478,
+        "nikkei225_session_return_pct": 1.195
       },
       "state": "동조 하락",
       "role": "cross_market_confirmation_only",
@@ -1415,63 +1415,63 @@
         "KOSDAQ"
       ],
       "common_daily_observations": 1800,
-      "latest_common_daily_date": "2026-11-09",
+      "latest_common_daily_date": "2026-11-11",
       "same_day": {
         "20d": {
           "observations": 20,
-          "correlation": 0.9061,
+          "correlation": 0.9307,
           "same_direction_pct": 95.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.7242,
+          "correlation": 0.7435,
           "same_direction_pct": 71.67
         },
         "120d": {
           "observations": 120,
-          "correlation": 0.7306,
+          "correlation": 0.7286,
           "same_direction_pct": 72.5
         }
       },
       "kosdaq_tminus1_to_kospi": {
         "20d": {
           "observations": 20,
-          "correlation": -0.025,
-          "same_direction_pct": 45.0
+          "correlation": 0.0005,
+          "same_direction_pct": 40.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.1876,
-          "same_direction_pct": 53.33
+          "correlation": 0.1951,
+          "same_direction_pct": 51.67
         },
         "120d": {
           "observations": 120,
-          "correlation": -0.1182,
-          "same_direction_pct": 49.17
+          "correlation": -0.1053,
+          "same_direction_pct": 50.0
         }
       },
       "relative_strength": {
         "5d": {
-          "kospi_return_pct": -14.341,
-          "kosdaq_return_pct": -12.99,
-          "first_minus_second_pct_points": -1.351
+          "kospi_return_pct": -5.427,
+          "kosdaq_return_pct": -1.378,
+          "first_minus_second_pct_points": -4.049
         },
         "20d": {
-          "kospi_return_pct": -21.387,
-          "kosdaq_return_pct": -24.755,
-          "first_minus_second_pct_points": 3.368
+          "kospi_return_pct": -10.542,
+          "kosdaq_return_pct": -14.417,
+          "first_minus_second_pct_points": 3.875
         },
         "60d": {
-          "kospi_return_pct": -20.331,
-          "kosdaq_return_pct": -25.22,
-          "first_minus_second_pct_points": 4.889
+          "kospi_return_pct": -18.296,
+          "kosdaq_return_pct": -17.908,
+          "first_minus_second_pct_points": -0.388
         }
       },
       "intraday_alignment": {
         "common_15m_bars": 27,
-        "return_correlation": 0.9254,
-        "kospi_session_return_pct": -0.305,
-        "kosdaq_session_return_pct": 0.023
+        "return_correlation": 0.5435,
+        "kospi_session_return_pct": 3.18,
+        "kosdaq_session_return_pct": 5.478
       },
       "state": "동조 하락",
       "role": "domestic_relative_strength",
@@ -1479,18 +1479,18 @@
     }
   },
   "assessment": {
-    "conclusion": "KOSPI 하락 · KOSDAQ 하락 · 니케이 확인 동조 하락 확인",
+    "conclusion": "KOSPI 중립-하락 · KOSDAQ 하락 · 니케이 확인 동조 하락 확인",
     "higher_timeframe_context": {
       "monthly": "상승",
       "weekly": "하락"
     },
     "daily_state": "하락",
-    "intraday_state": "하락",
+    "intraday_state": "상승",
     "markets": {
       "KOSPI": {
         "confirmed_mtf": {
-          "score": -53.5,
-          "state": "하락",
+          "score": -30.8,
+          "state": "중립-하락",
           "valid_weight_pct": 100.0,
           "timeframe_conflict": false,
           "confidence_cap": 100,
@@ -1499,11 +1499,11 @@
         "monthly": "상승",
         "weekly": "하락",
         "daily": "하락",
-        "intraday_15m": "하락"
+        "intraday_15m": "상승"
       },
       "KOSDAQ": {
         "confirmed_mtf": {
-          "score": -71.8,
+          "score": -42.5,
           "state": "하락",
           "valid_weight_pct": 100.0,
           "timeframe_conflict": false,
@@ -1513,7 +1513,7 @@
         "monthly": "하락",
         "weekly": "하락",
         "daily": "하락",
-        "intraday_15m": "하락"
+        "intraday_15m": "상승"
       }
     },
     "nikkei_confirmation": "동조 하락 확인",
@@ -1522,7 +1522,7 @@
       4911.28
     ],
     "objective_resistances": [
-      6589.69,
+      6190.65,
       7216.62
     ],
     "kosdaq_objective_supports": [
@@ -1530,7 +1530,7 @@
       629.17
     ],
     "kosdaq_objective_resistances": [
-      891.79,
+      846.95,
       921.73
     ],
     "invalidation_conditions": [
@@ -1545,10 +1545,10 @@
     ]
   },
   "files": {
-    "composite": "kospi_kosdaq_nikkei_mtf_20261109.png",
-    "legacy_composite": "kospi_nikkei_mtf_20261109.png",
-    "kospi": "kospi_mtf_20261109.png",
-    "kosdaq": "kosdaq_mtf_20261109.png",
-    "nikkei225": "nikkei225_mtf_20261109.png"
+    "composite": "kospi_kosdaq_nikkei_mtf_20261111.png",
+    "legacy_composite": "kospi_nikkei_mtf_20261111.png",
+    "kospi": "kospi_mtf_20261111.png",
+    "kosdaq": "kosdaq_mtf_20261111.png",
+    "nikkei225": "nikkei225_mtf_20261111.png"
   }
 }
