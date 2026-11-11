@@ -15,7 +15,7 @@ class PublicationDecisions(unittest.TestCase):
         name = "futures_public_review_20261111.zip"
         futures = {"as_of": "20261111", "futures_contract": "F202612",
                    "charts": [{"file": "chart.png"}], "downloads": [{"file": name}]}
-        public = {"latest.json": json.dumps(futures).encode(), "chart.png": b"reviewed chart"}
+        public = {"latest.json": json.dumps(futures, indent=2).encode(), "chart.png": b"reviewed chart"}
         records = [{"file": n, "sha256": a.sha(b)} for n, b in public.items()]
         output = io.BytesIO()
         with zipfile.ZipFile(output, "w") as z:
@@ -45,6 +45,18 @@ class PublicationDecisions(unittest.TestCase):
         d["downloads"] = []
         files["supply-zone/latest.json"] = json.dumps(d).encode()
         self.assertEqual(a.publication_evidence(files.__getitem__, "futures-zip", "legacy.json")[:2], ("legacy.json", None))
+
+    def test_git_eol_conversion_is_reported_without_changing_archive_hash_checks(self):
+        files = self.review_publication()
+        files["supply-zone/latest.json"] = files["supply-zone/latest.json"].replace(b"\n", b"\r\n")
+        path, member, body, metadata = a.publication_evidence(files.__getitem__, "futures-zip", "legacy.json")
+        self.assertEqual(metadata["eol_normalized_members"], ["latest.json"])
+        # Semantic JSON equivalence alone is insufficient: changed whitespace
+        # other than line endings, values, or binary image bytes still fail.
+        for name, replacement in [("latest.json", b"{}"), ("chart.png", b"reviewed chart\r\n")]:
+            changed = dict(files, **{"supply-zone/" + name: replacement})
+            with self.assertRaises((ValueError, KeyError)):
+                a.verify_review_bundle(body, files["supply-zone/latest.json"], path.split("/")[-1], lambda n: changed["supply-zone/" + n])
 
     def test_daily_deadline_and_holiday(self):
         holidays = {a.date(2026, 10, 9)}

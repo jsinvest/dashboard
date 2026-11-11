@@ -84,10 +84,10 @@ def publication_evidence(read, key, legacy_path):
         if name in public_files(futures):
             path = "supply-zone/" + name
             body = read(path)
-            verify_review_bundle(body, manifest_body, name, lambda n: read("supply-zone/" + n))
+            verification = verify_review_bundle(body, manifest_body, name, lambda n: read("supply-zone/" + n))
             return path, "latest.json", body, {
                 "evidence_manifest": manifest_path, "manifest_sha256": sha(manifest_body),
-                "legacy_path": legacy_path, "bundle_format": "dated_public_review"}
+                "legacy_path": legacy_path, "bundle_format": "dated_public_review", **verification}
     members = {"index-mtf": "index_multitimeframe_validation_latest.json",
                "research": "validation/mandatory_audit.json"}
     if key not in members:
@@ -238,13 +238,28 @@ def verify_review_bundle(body, futures_body, bundle_name, read_public):
     expected = set(public_files(futures)) - {bundle_name}
     if bundle_name not in public_files(futures):
         raise ValueError("공개 본문에 연결되지 않은 검토 ZIP")
+    eol_members = []
+    def same_content(name, archived, published):
+        if archived == published:
+            return True
+        if PurePosixPath(name).suffix.lower() not in {".json", ".csv", ".html", ".txt", ".md"}:
+            return False
+        # Git's Windows checkout conversion is not a data correction. Permit
+        # only UTF-8 text CRLF/LF differences, retaining the actual ZIP hashes.
+        try:
+            equal = archived.decode("utf-8").replace("\r\n", "\n") == published.decode("utf-8").replace("\r\n", "\n")
+        except UnicodeDecodeError:
+            return False
+        if equal and name not in eol_members:
+            eol_members.append(name)
+        return equal
     with zipfile.ZipFile(io.BytesIO(body)) as z:
         names = z.namelist()
         if len(names) != len(set(names)) or z.testzip():
             raise ValueError("검토 ZIP 중복/CRC 오류")
         if set(names) != expected | {manifest_name}:
             raise ValueError("검토 ZIP 공개 파일 목록 불일치")
-        if z.read("latest.json") != futures_body:
+        if not same_content("latest.json", z.read("latest.json"), futures_body):
             raise ValueError("검토 ZIP과 공개 본문 불일치")
         manifest = json.loads(z.read(manifest_name))
         if day(manifest["as_of"]) != day(futures["as_of"]) or manifest.get("contract") != futures.get("futures_contract"):
@@ -255,8 +270,10 @@ def verify_review_bundle(body, futures_body, bundle_name, read_public):
         for record in records:
             name = record["file"]
             content = z.read(name)
-            if sha(content) != record["sha256"] or content != read_public(name):
+            if sha(content) != record["sha256"] or not same_content(name, content, read_public(name)):
                 raise ValueError("검토 ZIP 공개 파일 해시 불일치: " + name)
+    return {"eol_normalized_members": sorted(eol_members),
+            "archive_hash_policy": "Manifest hashes checked on original ZIP bytes; public UTF-8 text permits CRLF/LF conversion only."}
 
 
 def verify_bundle(descriptor, body, futures, read_public):
@@ -391,8 +408,9 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
             if key == "futures-zip":
                 futures = json.loads(read_object(root, commit, "supply-zone/latest.json"))
                 if member:
-                    verify_review_bundle(published, read_object(root, commit, "supply-zone/latest.json"), PurePosixPath(path).name,
-                                         lambda n: read_object(root, commit, "supply-zone/" + n))
+                    row["public_zip_verification"] = verify_review_bundle(
+                        published, read_object(root, commit, "supply-zone/latest.json"), PurePosixPath(path).name,
+                        lambda n: read_object(root, commit, "supply-zone/" + n))
                     row["public_zip_contents_verified"] = True
                 elif day(d["as_of"]) != day(futures["as_of"]):
                     row["issues"].append("BUNDLE_REVIEW_DATE_MISMATCH")
