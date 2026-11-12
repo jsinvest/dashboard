@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-11-11",
-  "trade_date": "20261111",
+  "as_of": "2026-11-12",
+  "trade_date": "20261112",
   "source_generated_at": {
-    "monthly": "2026-11-11T20:59:17+09:00",
-    "staged_weekly": "2026-11-11T20:59:20.817329+09:00"
+    "monthly": "2026-11-12T21:02:42+09:00",
+    "staged_weekly": "2026-11-12T21:02:45.868402+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 0% 유지",
     "state": "월간·주간 현금 0% · 위험자산 한도 100%",
-    "reason": "11월 11일 WISE 공식 종가 26개와 28열 누적 엑셀을 검증해 재계산했습니다. 월간·주간 목표는 현금 0%이며, MA3 상태는 '재진입 대기 없음'입니다. MA3 규칙은 기존 현금을 줄여 위험자산 100%로 재진입할 때만 적용되고 현금확보 신호를 새로 만들지는 않습니다. 자동주문 신호가 아닌 참고 비중입니다.",
+    "reason": "11월 12일 WISE 공식 종가 26개와 28열 누적 엑셀을 검증해 재계산했습니다. 월간·주간 목표는 현금 0%이며, MA3 상태는 '재진입 대기 없음'입니다. MA3 규칙은 기존 현금을 줄여 위험자산 100%로 재진입할 때만 적용되고 현금확보 신호를 새로 만들지는 않습니다. 자동주문 신호가 아닌 참고 비중입니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -73,7 +73,7 @@
       "watch": false,
       "status": "DISARMED_RAW_TRUE",
       "raw_entry_condition": true,
-      "rv20_annualized_pct": 58.98195454686365,
+      "rv20_annualized_pct": 58.98225271810268,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
@@ -847,6 +847,22 @@
       "action": "HOLD",
       "action_label": "현금 0% 유지",
       "state": "RISK_ON"
+    },
+    {
+      "as_of": "2026-11-12",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_ALREADY_RISK_ON",
+      "monthly_ma3_reentry_pending": false,
+      "monthly_ma3_reentry_event": false,
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% 유지",
+      "state": "RISK_ON"
     }
   ],
   "rule_steps": [
@@ -903,25 +919,25 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-11-11",
-    "workbook_rows": 2662,
+    "workbook_last_date": "2026-11-12",
+    "workbook_rows": 2663,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "20d2df748fd1bd0b45606e6aa17ae035534eaf2bc9599e83fe8dc2c82de00661",
+    "workbook_sha256": "10d7e2cfdf73601e40ab1234c36e14d5668081c0373b3728ce83c32197434f4e",
     "monthly_policy_version": "cash-weight-reference-v1.2.0-ma10-ma3-reentry",
     "monthly_ma10_policy_sha256": "dc7d2b5fa1d995c80d6a7873a31dd45e3853202959347d62b96210b80ad9f448",
     "monthly_runner_sha256": "4a39064a6cec7ee66086f232166bf69bb93a01ded19076c04b84f52cea3526b2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "f07967e5804c6c40fc3cb6a71f35ffa9e8963aa37d53d5d0a24c174fbedf4369",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "3a3ed37df141ff6ace0cf2e26147d5c7f59166b2e585ab2b7fb0221de2a54edb",
-    "staged_result_sha256": "a4bbb4afefe1fc45e81031c45099653eeadc062de7b299ea1883310154901ce9",
-    "monthly_validation_sha256": "b1eeee5380ea292571e3afe48fcdc4ec0634cf61c8190582939842f9e734e4c9",
-    "staged_validation_sha256": "377ce7b4219b3f3b5b4bddbc06e7754aa0eab467e73fba15891a31b23e7d169a",
-    "wise_result_sha256": "c947c5947f77d1660cc3f80e2b0b89e9f6288f4144eff75d251e08c9f0a0f28b",
+    "monthly_result_sha256": "88658d4929dafe3898a13a5c6d4b9e22006db5653a791ffb7e0495ec07fc5973",
+    "staged_result_sha256": "bc3b77f1b080d213c1a12ec36da22cdccb1077437e150e54653952c730a133e2",
+    "monthly_validation_sha256": "e56f32047bb648115603ecfa948abe143b548c25636193af40e7cfa1f22c6c2e",
+    "staged_validation_sha256": "f45e5ee74ad93ac41361a79e5211b12f97633c685fa947c876890a2b9908b95b",
+    "wise_result_sha256": "02dd5ade5603437527ea21b7c4dfc29961417531ad1607e5ac7a3370695c5030",
     "publication_scope": "WISE_CASH_SEQUENTIAL_HANDOFF",
     "full_evening_analysis_completed": false,
     "ma3_reentry_gate_validated": true
