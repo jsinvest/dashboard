@@ -1,6 +1,6 @@
 // Read-only cash-menu QA in fresh isolated headless browser contexts.
 const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert');
-const {chromium}=require('C:/Users/skylo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(require('path').join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
 const root=path.resolve(__dirname,'..'),out=process.argv[3];
 if(!out)throw Error('Usage: node scripts/verify_dashboard_cash.cjs local|https://... output-directory');
 const expected=JSON.parse(fs.readFileSync(path.join(root,'cash-management/latest.json'),'utf8'));

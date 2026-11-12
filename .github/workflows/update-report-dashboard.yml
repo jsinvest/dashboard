@@ -14,6 +14,7 @@ on:
       - 'leader-mapping/validation_latest.json'
       - 'news/index.json'
       - 'scripts/audit_dashboard_freshness.py'
+      - 'scripts/publication_privacy.py'
   workflow_dispatch:
 
 permissions:
@@ -27,6 +28,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check published files and ZIP members for local home paths
+        run: python scripts/publication_privacy.py --check
       # The legacy fixed-date merger could overwrite newer report history.
       # Inspect only; never replace source dates or mutate published datasets.
       - name: Inspect dates without modifying source data

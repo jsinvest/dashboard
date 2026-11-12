@@ -2398,6 +2398,9 @@ refreshLayoutManager('all');
 const DASHBOARD_API = "https://j-dashboard-proxy.love98321.workers.dev/api/dashboard";
 const ADMIN_KEY = new URLSearchParams(window.location.search).get('key') || '';
 let dashboardData = { schedules: [], links: [], memos: [] };
+function publicBookmarkLinks(items){
+  return (Array.isArray(items) ? items : []).filter(item=>String(item?.name || '').replace(/\s/g,'')!=='제이의투자노트');
+}
 
 async function fetchDashboardData(){
   try{
@@ -2406,7 +2409,7 @@ async function fetchDashboardData(){
     const data = await res.json();
     dashboardData = {
       schedules: Array.isArray(data.schedules) ? data.schedules.map(normalizeScheduleItem) : [],
-      links: Array.isArray(data.links) ? data.links : [],
+      links: publicBookmarkLinks(data.links),
       memos: Array.isArray(data.memos) ? data.memos : []
     };
     sortSchedules();
@@ -2423,6 +2426,7 @@ async function saveDashboardData(){
     return;
   }
   sortSchedules();
+  dashboardData.links = publicBookmarkLinks(dashboardData.links);
   const res = await fetch(DASHBOARD_API, {
     method:'POST',
     headers:{

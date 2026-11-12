@@ -1,6 +1,6 @@
 // Verify the actual report UI against local expected JSON, without changing the page code.
 const fs=require('fs'),path=require('path'),http=require('http'),crypto=require('crypto'),vm=require('vm');
-const {chromium}=require('C:/Users/skylo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(require('path').join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
 const root=path.resolve(__dirname,'..');
 const daily=JSON.parse(fs.readFileSync(path.join(root,'daily-reports/latest.json'),'utf8'));
 const report=JSON.parse(fs.readFileSync(path.join(root,'report_data.json'),'utf8'));

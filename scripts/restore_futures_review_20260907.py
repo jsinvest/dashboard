@@ -13,8 +13,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-REST = Path(r"C:\Users\skylo\Desktop\restapi")
-SOURCE = Path(r"C:\Users\skylo\Desktop\trading_strength")
+REST = Path.home() / 'Desktop/restapi'
+SOURCE = Path.home() / 'Desktop/trading_strength'
 DAY = SOURCE / "output/futures_options_eod/20260907"
 RECOVERY = SOURCE / "output/eod_recovery_20260907_210454"
 OUT = ROOT / "supply-zone"
@@ -109,7 +109,7 @@ def main():
         ("0441_F202609_user_verified.png","futures_0441_sep_20260907.png","0441 9월물 · 사용자 제공 정정 원본"),
     ]:
         source_image(DAY / original, target, title)
-    source_image(Path(r"C:\Users\skylo\AppData\Local\Temp\codex-clipboard-76dd4be2-b789-4dfc-bfcd-f308f87478ec.png"),
+    source_image(Path.home() / 'AppData/Local/Temp/codex-clipboard-76dd4be2-b789-4dfc-bfcd-f308f87478ec.png',
         "futures_0441_dec_20260907.png", "0441 12월물 · 사용자 제공값 / 거래량과 OI 증감의 범위 차이 주의")
 
     def level(label, low, high, side, strength, reason, invalidation):

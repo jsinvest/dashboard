@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path'),http=require('http'),vm=require('vm'),assert=require('assert');
-const {chromium}=require('C:/Users/skylo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(require('path').join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
 const root=path.resolve(__dirname,'..'),output=path.resolve(process.argv[3]);
 fs.mkdirSync(output,{recursive:true});
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');

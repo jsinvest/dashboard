@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REST = Path(r'C:\Users\skylo\Desktop\restapi')
-TS = Path(r'C:\Users\skylo\Desktop\trading_strength')
+REST = Path.home() / 'Desktop/restapi'
+TS = Path.home() / 'Desktop/trading_strength'
 DAY = TS / 'output/futures_options_eod/20260908'
 WORK = REST / 'output/eod_repair_20260908_2019'
 

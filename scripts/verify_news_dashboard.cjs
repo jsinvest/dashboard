@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path'),http=require('http'),vm=require('vm');
-const {chromium}=require('C:/Users/skylo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(require('path').join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
 const root=path.resolve(__dirname,'..');
 const expected=JSON.parse(fs.readFileSync(path.join(root,'news/index.json'),'utf8')).reports;
 const assert=(x,m)=>{if(!x)throw Error(m)};

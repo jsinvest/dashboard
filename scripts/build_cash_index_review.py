@@ -19,8 +19,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-SOURCE = Path(r"C:\Users\skylo\Desktop\trading_strength")
-REST = Path(r"C:\Users\skylo\Desktop\restapi")
+SOURCE = Path.home() / 'Desktop/trading_strength'
+REST = Path.home() / 'Desktop/restapi'
 sys.path.insert(0, str(SOURCE))
 import kospi_nikkei_mtf_daily as mtf
 
@@ -130,7 +130,7 @@ def recover_eod(recovery, output, day):
     stage = recovery / day
     bridge_path = stage / f"eod_ocr_bridge_{day}.json"
     bridge = read_json(bridge_path)
-    manual = Path(r"C:\Users\skylo\AppData\Local\Temp\codex-clipboard-0b82403e-93ac-4bdd-a330-e2fea6a2e47c.png")
+    manual = Path.home() / 'AppData/Local/Temp/codex-clipboard-0b82403e-93ac-4bdd-a330-e2fea6a2e47c.png'
     assert mtf.sha256_file(manual).lower() == "c9114faa169b493ce94044dc87e528837e126bd621ec698b006faeb4e9db928c"
     shutil.copy2(manual, output / "0441_F202609_user_verified.png")
     corrected = copy.deepcopy(bridge)

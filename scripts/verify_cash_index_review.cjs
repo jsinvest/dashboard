@@ -4,7 +4,7 @@ const path = require('path');
 const http = require('http');
 const crypto = require('crypto');
 const vm = require('vm');
-const {chromium} = require('C:/Users/skylo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium} = require(require('path').join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
 const root = path.resolve(__dirname, '..');
 const output = process.argv[3];
 if (!output) throw new Error('Usage: node verify_cash_index_review.cjs local|https://... output-directory');
