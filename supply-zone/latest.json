@@ -1,29 +1,29 @@
 {
   "schema_version": "futures-options-review-v1",
   "analysis_basis": "FUTURES_OPTIONS_WITH_INDEX_CONTEXT",
-  "as_of": "2026-11-12",
-  "generated_at": "2026-11-12T17:30:56.117498+09:00",
+  "as_of": "2026-11-13",
+  "generated_at": "2026-11-13T17:22:47.270512+09:00",
   "review_status": "KIWOOM_LS_HTS_REVIEWED_WITH_EXCLUSIONS",
   "execution_ready": false,
   "primary_market": "KOSPI200_FUTURES",
   "futures_contract": "F202612",
   "contract_code": "A016C000",
-  "current_price": 827.5,
-  "display_reference_basis": "2026-11-12 정규장 15:45·키움 종가 / 실시간 아님",
+  "current_price": 822.35,
+  "display_reference_basis": "2026-11-13 정규장 15:45·키움 종가 / 실시간 아님",
   "session_references": {
     "regular": {
-      "open": 839.55,
-      "high": 852.75,
-      "low": 825.05,
-      "close": 827.5,
-      "volume": 122002.0,
-      "open_interest": 153774.0,
-      "previous_oi": 158324.0,
-      "oi_change": -4550.0,
-      "trade_date": "20261112",
+      "open": 846.15,
+      "high": 859.65,
+      "low": 818.1,
+      "close": 822.35,
+      "volume": 114342.0,
+      "open_interest": 154294.0,
+      "previous_oi": 154035.0,
+      "oi_change": 259.0,
+      "trade_date": "20261113",
       "is_final": true,
       "source": "Kiwoom OpenAPI opt50030/50029/50062",
-      "received_at": "2026-11-12T16:08:11+09:00"
+      "received_at": null
     },
     "overnight": {
       "snapshot_price": null,
@@ -33,38 +33,62 @@
     }
   },
   "overall_assessment": {
-    "dashboard_conclusion": "단기 반등 약화 · 824.65~824.95 경계",
-    "dashboard_conclusion_detail": "12월물 선물 827.50(-1.08%): 어제의 단기 반등 우세는 약화됐어요. 832.50 지지를 잃었고 장중 852.75까지 올랐어도 838.20 위 일봉 종가·재지지 확인은 실패했습니다. 824.65~824.95가 남아 있어 큰 회복 가설까지 폐기할 단계는 아니지만, 832.50~832.65 회복 전에는 분봉 약세를 우선합니다. 오늘은 11월 옵션 만기이며, 12월 선물 만기와는 다릅니다.",
-    "headline": "12월물 선물 827.50(-1.08%): 어제의 단기 반등 우세는 약화됐어요. 832.50 지지를 잃었고 장중 852.75까지 올랐어도 838.20 위 일봉 종가·재지지 확인은 실패했습니다. 824.65~824.95가 남아 있어 큰 회복 가설까지 폐기할 단계는 아니지만, 832.50~832.65 회복 전에는 분봉 약세를 우선합니다. 오늘은 11월 옵션 만기이며, 12월 선물 만기와는 다릅니다.",
-    "stance": "상위 조정·주간 반등 진행 / 일봉 회복 약화 / 분봉 약세",
-    "confidence": "조건부 해석; 만기·원천 차이·소표본 때문에 수치 확률 산정 불가",
+    "dashboard_conclusion": "기존 지지 이탈 · 824.65~826.10 회복 전 단기 약세",
+    "dashboard_conclusion_detail": "12월물 선물 822.35(-0.62%): 주간 반등은 남았지만 일봉·분봉은 약세예요. 어제의 824.65~824.95 지지 조건은 오늘 종가 이탈로 실패했습니다. 장중 859.65까지 올랐어도 838.20 위 일봉 종가·재지지는 충족하지 못했습니다. 824.65~826.10을 회복하기 전에는 반등보다 재저항 위험을 우선합니다. 818.10은 오늘 한 번 만든 저점일 뿐 강한 지지가 아니며, 10분봉 이탈 후 반등 실패 시 803.20~802.95를 다음 구조로 확인합니다. 오늘은 11월 옵션 만기 다음 거래일이고 12월물은 별개입니다.",
+    "headline": "12월물 선물 822.35(-0.62%): 주간 반등은 남았지만 일봉·분봉은 약세예요. 어제의 824.65~824.95 지지 조건은 오늘 종가 이탈로 실패했습니다. 장중 859.65까지 올랐어도 838.20 위 일봉 종가·재지지는 충족하지 못했습니다. 824.65~826.10을 회복하기 전에는 반등보다 재저항 위험을 우선합니다. 818.10은 오늘 한 번 만든 저점일 뿐 강한 지지가 아니며, 10분봉 이탈 후 반등 실패 시 803.20~802.95를 다음 구조로 확인합니다. 오늘은 11월 옵션 만기 다음 거래일이고 12월물은 별개입니다.",
+    "stance": "월봉 조정·완료 주 반등 / 일봉·분봉 약세",
+    "confidence": "조건부 해석; 다음 거래일 수치 확률 산정 불가",
     "levels": [
       {
-        "label": "1차 회복선",
-        "low": 832.5,
-        "high": 832.65,
-        "range": "832.50~832.65",
+        "label": "실패한 지지·첫 회복",
+        "low": 824.65,
+        "high": 826.1,
+        "range": "824.65~826.10",
         "side": "resistance",
         "level_type": "price_structure",
         "structure_strength": "중간",
         "strength": "중간",
-        "reason": "11/11 후반 반복 저점; 오늘 종가 이탈",
-        "invalidation": "832.65 위 10분봉 종가 후 눌림 재지지",
-        "map_reason": "11/11 후반 반복 저점; 오늘 종가 이탈",
-        "map_rule": "832.65 위 10분봉 종가 후 눌림 재지지",
+        "reason": "10월 저가 824.65·11/10 고가 824.95 이탈; 오늘 14:35 반등 고가 826.10",
+        "invalidation": "826.10 위 10분봉 종가와 눌림 재지지",
+        "map_reason": "10월 저가 824.65·11/10 고가 824.95 이탈; 오늘 14:35 반등 고가 826.10",
+        "map_rule": "826.10 위 10분봉 종가와 눌림 재지지",
         "color": "#b35c45",
         "importance_label": "중간",
-        "must_hold_for": "회복 실패 시 단기 약세 유지",
+        "must_hold_for": "실패하면 단기 약세 유지",
         "evidence_points": [
-          "11/11 후반 반복 저점; 오늘 종가 이탈"
+          "10월 저가 824.65·11/10 고가 824.95 이탈; 오늘 14:35 반등 고가 826.10"
         ],
-        "wave_context": "같은 F202612 가격 구조; 차수 미확정",
-        "failure_action": "회복 실패 시 단기 약세 유지",
-        "evidence_limit": "반복 가격 반응 근거; 실제 체결매물대·보유 원가 아님",
-        "timeframe": "10분봉 확인 후 일봉 종가·다음 눌림/반등 재확인"
+        "wave_context": "F202612 개별 계약·파동 차수 미확정",
+        "failure_action": "실패하면 단기 약세 유지",
+        "evidence_limit": "실제 가격 구조; 체결 매물대·보유 원가 아님",
+        "timeframe": "각 조건의 10분봉 또는 일봉 종가와 다음 재지지/재저항"
       },
       {
-        "label": "돌파 재확인",
+        "label": "장중 반복 저항",
+        "low": 829.3,
+        "high": 829.55,
+        "range": "829.30~829.55",
+        "side": "resistance",
+        "level_type": "price_structure",
+        "structure_strength": "중간",
+        "strength": "중간",
+        "reason": "오늘 13:25/13:35/13:45 고가 829.30/829.55/829.50",
+        "invalidation": "829.55 위 10분봉 마감·재지지",
+        "map_reason": "오늘 13:25/13:35/13:45 고가 829.30/829.55/829.50",
+        "map_rule": "829.55 위 10분봉 마감·재지지",
+        "color": "#b35c45",
+        "importance_label": "중간",
+        "must_hold_for": "832.65 이어 837.95~838.20 확인",
+        "evidence_points": [
+          "오늘 13:25/13:35/13:45 고가 829.30/829.55/829.50"
+        ],
+        "wave_context": "F202612 개별 계약·파동 차수 미확정",
+        "failure_action": "832.65 이어 837.95~838.20 확인",
+        "evidence_limit": "실제 가격 구조; 체결 매물대·보유 원가 아님",
+        "timeframe": "각 조건의 10분봉 또는 일봉 종가와 다음 재지지/재저항"
+      },
+      {
+        "label": "일봉 회복 조건",
         "low": 837.95,
         "high": 838.2,
         "range": "837.95~838.20",
@@ -72,47 +96,47 @@
         "level_type": "price_structure",
         "structure_strength": "중간",
         "strength": "중간",
-        "reason": "오늘 15:15 고가 837.95와 전일 고가 838.20",
-        "invalidation": "838.20 위 일봉 종가 후 다음 눌림 유지",
-        "map_reason": "오늘 15:15 고가 837.95와 전일 고가 838.20",
-        "map_rule": "838.20 위 일봉 종가 후 다음 눌림 유지",
+        "reason": "11/12 후반 고가 837.95·11/11 고가 838.20; 장중 돌파 후 종가 유지 실패",
+        "invalidation": "838.20 위 일봉 마감과 다음 눌림 유지",
+        "map_reason": "11/12 후반 고가 837.95·11/11 고가 838.20; 장중 돌파 후 종가 유지 실패",
+        "map_rule": "838.20 위 일봉 마감과 다음 눌림 유지",
         "color": "#b35c45",
         "importance_label": "중간",
-        "must_hold_for": "확인되면 846.85와 852.75 순서",
+        "must_hold_for": "852.75·859.65 확인 전제",
         "evidence_points": [
-          "오늘 15:15 고가 837.95와 전일 고가 838.20"
+          "11/12 후반 고가 837.95·11/11 고가 838.20; 장중 돌파 후 종가 유지 실패"
         ],
-        "wave_context": "같은 F202612 가격 구조; 차수 미확정",
-        "failure_action": "확인되면 846.85와 852.75 순서",
-        "evidence_limit": "반복 가격 반응 근거; 실제 체결매물대·보유 원가 아님",
-        "timeframe": "10분봉 확인 후 일봉 종가·다음 눌림/반등 재확인"
+        "wave_context": "F202612 개별 계약·파동 차수 미확정",
+        "failure_action": "852.75·859.65 확인 전제",
+        "evidence_limit": "실제 가격 구조; 체결 매물대·보유 원가 아님",
+        "timeframe": "각 조건의 10분봉 또는 일봉 종가와 다음 재지지/재저항"
       },
       {
-        "label": "회복 구조 경계",
-        "low": 824.65,
-        "high": 824.95,
-        "range": "824.65~824.95",
+        "label": "당일 단일 저점",
+        "low": 818.1,
+        "high": 818.1,
+        "range": "818.10",
         "side": "support",
         "level_type": "price_structure",
-        "structure_strength": "강함",
-        "strength": "강함",
-        "reason": "10월 저가 824.65와 11/10 고가 824.95; 오늘 저가 825.05 근접",
-        "invalidation": "824.65 아래 일봉 마감 후 반등 재저항",
-        "map_reason": "10월 저가 824.65와 11/10 고가 824.95; 오늘 저가 825.05 근접",
-        "map_rule": "824.65 아래 일봉 마감 후 반등 재저항",
+        "structure_strength": "약함",
+        "strength": "약함",
+        "reason": "오늘 14:25 저가 한 번 관측; 반복 지지 확인 전",
+        "invalidation": "818.10 아래 10분봉 종가와 반등 재저항",
+        "map_reason": "오늘 14:25 저가 한 번 관측; 반복 지지 확인 전",
+        "map_rule": "818.10 아래 10분봉 종가와 반등 재저항",
         "color": "#467da5",
-        "importance_label": "강함",
-        "must_hold_for": "최근 회복 가설 약화, 803.20~802.95 재확인",
+        "importance_label": "약함",
+        "must_hold_for": "803.20~802.95 다음 가격 구조 확인",
         "evidence_points": [
-          "10월 저가 824.65와 11/10 고가 824.95; 오늘 저가 825.05 근접"
+          "오늘 14:25 저가 한 번 관측; 반복 지지 확인 전"
         ],
-        "wave_context": "같은 F202612 가격 구조; 차수 미확정",
-        "failure_action": "최근 회복 가설 약화, 803.20~802.95 재확인",
-        "evidence_limit": "반복 가격 반응 근거; 실제 체결매물대·보유 원가 아님",
-        "timeframe": "10분봉 확인 후 일봉 종가·다음 눌림/반등 재확인"
+        "wave_context": "F202612 개별 계약·파동 차수 미확정",
+        "failure_action": "803.20~802.95 다음 가격 구조 확인",
+        "evidence_limit": "실제 가격 구조; 체결 매물대·보유 원가 아님",
+        "timeframe": "각 조건의 10분봉 또는 일봉 종가와 다음 재지지/재저항"
       },
       {
-        "label": "다음 구조 확인",
+        "label": "하위 회복 구조",
         "low": 802.95,
         "high": 803.2,
         "range": "802.95~803.20",
@@ -120,44 +144,20 @@
         "level_type": "price_structure",
         "structure_strength": "중간",
         "strength": "중간",
-        "reason": "11/10 저가 802.95와 11/11 시가·저가 803.20",
-        "invalidation": "상단 경계 실패 후에만 접근 여부 확인",
-        "map_reason": "11/10 저가 802.95와 11/11 시가·저가 803.20",
-        "map_rule": "상단 경계 실패 후에만 접근 여부 확인",
+        "reason": "11/10 저가 802.95·11/11 시가/저가 803.20",
+        "invalidation": "802.95 아래 일봉 마감이면 해당 회복 구조 약화",
+        "map_reason": "11/10 저가 802.95·11/11 시가/저가 803.20",
+        "map_rule": "802.95 아래 일봉 마감이면 해당 회복 구조 약화",
         "color": "#467da5",
         "importance_label": "중간",
-        "must_hold_for": "기계적 목표 아님; 771.55와 760.10은 별도 하위 구조",
+        "must_hold_for": "771.55와 큰 가설 경계 760.10 별도 확인",
         "evidence_points": [
-          "11/10 저가 802.95와 11/11 시가·저가 803.20"
+          "11/10 저가 802.95·11/11 시가/저가 803.20"
         ],
-        "wave_context": "같은 F202612 가격 구조; 차수 미확정",
-        "failure_action": "기계적 목표 아님; 771.55와 760.10은 별도 하위 구조",
-        "evidence_limit": "반복 가격 반응 근거; 실제 체결매물대·보유 원가 아님",
-        "timeframe": "10분봉 확인 후 일봉 종가·다음 눌림/반등 재확인"
-      },
-      {
-        "label": "회복 후 저항",
-        "low": 846.85,
-        "high": 852.75,
-        "range": "846.85~852.75",
-        "side": "resistance",
-        "level_type": "price_structure",
-        "structure_strength": "중간",
-        "strength": "중간",
-        "reason": "11/4 저가 846.85와 오늘 고가 852.75",
-        "invalidation": "838.20 종가 회복·재지지가 선행",
-        "map_reason": "11/4 저가 846.85와 오늘 고가 852.75",
-        "map_rule": "838.20 종가 회복·재지지가 선행",
-        "color": "#b35c45",
-        "importance_label": "중간",
-        "must_hold_for": "일봉 돌파 확인 전 추격 근거 아님",
-        "evidence_points": [
-          "11/4 저가 846.85와 오늘 고가 852.75"
-        ],
-        "wave_context": "같은 F202612 가격 구조; 차수 미확정",
-        "failure_action": "일봉 돌파 확인 전 추격 근거 아님",
-        "evidence_limit": "반복 가격 반응 근거; 실제 체결매물대·보유 원가 아님",
-        "timeframe": "10분봉 확인 후 일봉 종가·다음 눌림/반등 재확인"
+        "wave_context": "F202612 개별 계약·파동 차수 미확정",
+        "failure_action": "771.55와 큰 가설 경계 760.10 별도 확인",
+        "evidence_limit": "실제 가격 구조; 체결 매물대·보유 원가 아님",
+        "timeframe": "각 조건의 10분봉 또는 일봉 종가와 다음 재지지/재저항"
       }
     ],
     "acceleration_title": "종가와 재지지로 확인할 다음 조건",
@@ -168,16 +168,16 @@
         "kind": "up",
         "structure_strength": "중간",
         "classification": "조건부",
-        "condition": "832.65 회복 후 838.20 위 일봉 마감·재지지",
-        "target": "846.85 / 852.75",
+        "condition": "826.10·829.55 10분봉 회복 후 838.20 일봉 마감·재지지",
+        "target": "852.75 / 859.65",
         "tone": "positive"
       },
       {
-        "label": "약화",
+        "label": "재약화",
         "kind": "down",
-        "structure_strength": "강함",
+        "structure_strength": "약함",
         "classification": "조건부",
-        "condition": "824.65 아래 일봉 마감과 반등 재저항",
+        "condition": "818.10 아래 10분봉 마감과 반등 재저항",
         "target": "803.20~802.95; 큰 가설 경계 760.10",
         "tone": "negative"
       }
@@ -185,42 +185,42 @@
     "support_break_policy": {
       "strong": "일봉 종가와 반등 재저항 확인",
       "medium": "10분봉 마감·재지지/재저항",
-      "weak": "단일 터치로 확정하지 않음",
-      "confirmation": "가격·현물·프로그램·OI를 같은 시점과 상품으로 확인"
+      "weak": "단일 저점을 확정 지지로 사용하지 않음",
+      "confirmation": "가격·현물·프로그램·OI의 시간과 범위 일치 확인"
     },
     "scenarios": [
       {
-        "tone": "neutral",
-        "condition": "824.65 유지하되 832.65 회복 실패",
-        "target": "회복 가설은 남지만 단기 반등 약화"
+        "tone": "negative",
+        "condition": "826.10 회복 실패",
+        "target": "단기 약세 우선·818.10 재시험 위험"
       },
       {
         "tone": "positive",
-        "condition": "838.20 일봉 회복·재지지",
-        "target": "846.85→852.75 확인"
+        "condition": "826.10·829.55 회복·재지지",
+        "target": "832.65→838.20 일봉 회복 여부"
       },
       {
         "tone": "negative",
-        "condition": "824.65 종가 이탈·재저항",
+        "condition": "818.10 종가 이탈·재저항",
         "target": "803.20~802.95 다음 구조"
       }
     ],
-    "caution": "2026-11-12는 KOSPI200 11월물 옵션 만기일이고 12월 선물·옵션 만기는 12/10입니다. 만기 옵션 15:20 종료, 현물 15:30, 비만기 선물 15:45라는 서로 다른 종료 시점을 구분했습니다. 11월 830/835/840 콜·풋의 마감 후 OI가 모두 0으로 표시되므로 이를 오늘 장중 신규·청산 수량으로 해석하지 않습니다. 만기 옵션 IV 바닥값 역시 변동성 위험 소멸의 증거가 아닙니다. 만기 전 15:00→15:20 LS 시간대 누적 외국인 콜 수량은 275→3,963, 풋은 4,399→5,905계약으로 양쪽 순매수가 늘었습니다. 이는 전체 만기 합산이며 11월 특정 행사가의 신규 콜 매수 확인은 아닙니다. 내일 11/13에는 소멸한 11월물을 분석에서 분리하고, 12월 동일 계약의 가격·OI 변화가 지속되는지, 12월 선물 832.50~838.20 회복과 현물·프로그램 수급이 함께 유지되는지 확인해야 합니다. 만기 이벤트 때문에 오늘 신호를 무조건 무효화하지도, 바로 다음 날 추세로 연장하지도 않습니다."
+    "caution": "공식 계약명세의 둘째 목요일 규칙을 기준으로 11/12는 11월 옵션 만기였고 오늘 11/13은 그 다음 정규 거래일입니다. 12월 선물·옵션 만기는 12/10으로 구분합니다. 소멸한 11월 옵션 누적을 12월 잔고로 이어붙이지 않았습니다. 오늘 12월물은 장 초반 회복했지만 종가가 전일보다 낮고 기존 지지 아래에 있어 만기 후 상승 지속을 확인하지 못했습니다. 그렇다고 만기 효과만으로 하락 원인을 확정하지 않습니다. 12월과 1월 옵션 체인을 실제 조회했지만 얇은 거래와 호가 문제로 고정 델타 기간구조는 사용하지 않았습니다. 다음 거래일에는 824.65~826.10 회복과 현물·프로그램 매도 완화가 함께 나오는지, 818.10 재이탈 뒤 반등이 막히는지 확인합니다."
   },
   "hts_0791_position_inference": {
-    "as_of": "2026-11-12",
+    "as_of": "2026-11-13",
     "mode": "원본 일자/누적 추정손익 비교",
     "scope": "0790/0794 원본·0791 상세 잔고 미확보",
-    "reference_range": "0790 원본 표시 구간만; 선물 가격 기준과 혼합 금지",
+    "reference_range": "0790 현물축 814.78~834.78; 선물 가격과 혼합 금지",
     "institution_label": "기관 세부 주체 분리",
-    "recent_flow_alignment": "오늘 전체 만기 지수선물 순매매는 외국인 +468계약, 금융투자 +1,214계약인 반면 투신 -1,343계약, 연기금 -452계약, 기관 합계 -647계약입니다. 외국인·금융투자가 반대편 매도를 일부 받아낸 형태지만, 순매수 주체가 있다고 가격 방어가 성공한 것은 아닙니다. 전일 투신 +1,731계약에서 오늘 매도로 돌아섰고 종가도 하락해 매수 합의가 약해졌습니다. 최근 3일(11/10~12) 외국인 -3,482·투신 +4,998계약과 최근 5일(11/6~12) 외국인 +7,879·투신 +2,957계약은 서로 다른 시간축입니다. 20일(10/16~11/12) 외국인 +15,775계약도 오늘 상승을 보장하지 않았습니다. 기관 합계와 금융투자·투신·연기금을 중복 합산하지 않으며 순매매를 실제 보유 잔고로 부르지 않습니다.",
-    "flow_proxy_comparison": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
-    "limitation": "전체 만기 투자자 순매매와 특정 만기·행사가 OI는 범위가 다릅니다. 실제 잔존량·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 판단 불가입니다. 감마 원천 표본은 전체를 대표하지 않아 사용하지 않았습니다.",
-    "display_note": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+    "recent_flow_alignment": "전체 만기 지수선물은 외국인 +2,729계약, 투신 -2,206, 금융투자 -411, 연기금 +130, 기관 합계 -2,483입니다. 외국인이 기관 매도의 반대편을 상당 부분 받아냈지만 가격 방어는 실패했습니다. 외국인 선물 매수 하나를 상방 확정 근거로 삼기 어려운 날입니다. 최근 3일(11/11~13)은 외국인 -608·투신 -1,818계약인 반면 5일(11/9~13)은 외국인 +3,437·투신 +4,391계약입니다. 주초 누적 매수와 최근 변화가 충돌하며 특히 투신은 최근 매도로 바뀌었습니다. 20일(10/19~11/13) 외국인 +22,704·투신 -2,162계약도 구분합니다. 기관 합계와 세부 주체를 더하지 않고, 순매매를 보유량으로 부르지 않습니다.",
+    "flow_proxy_comparison": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
+    "limitation": "전체 만기 수급은 특정 만기·행사가 OI와 범위가 다릅니다. 실제 잔고·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 만들지 않습니다. 감마 표본이 전체를 대표하지 않아 제외합니다.",
+    "display_note": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
     "foreign": {
       "direction": "UNKNOWN",
       "visible_range_direction": "당일 위쪽 개선·누적 표시구간 음수",
-      "curve_basis": "0790 원본·실제 보유 증명 아님"
+      "curve_basis": "0790 합성손익·실제 잔고 증명 아님"
     },
     "institution": {
       "direction": "UNKNOWN",
@@ -231,77 +231,76 @@
       {
         "name": "외국인",
         "direction": "실제 잔고 판단 불가",
-        "detail": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+        "detail": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
         "tone": "neutral"
       },
       {
         "name": "기관 세부",
-        "direction": "투신 매도 전환·금융투자 현선물 상충",
-        "detail": "오늘 전체 만기 지수선물 순매매는 외국인 +468계약, 금융투자 +1,214계약인 반면 투신 -1,343계약, 연기금 -452계약, 기관 합계 -647계약입니다. 외국인·금융투자가 반대편 매도를 일부 받아낸 형태지만, 순매수 주체가 있다고 가격 방어가 성공한 것은 아닙니다. 전일 투신 +1,731계약에서 오늘 매도로 돌아섰고 종가도 하락해 매수 합의가 약해졌습니다. 최근 3일(11/10~12) 외국인 -3,482·투신 +4,998계약과 최근 5일(11/6~12) 외국인 +7,879·투신 +2,957계약은 서로 다른 시간축입니다. 20일(10/16~11/12) 외국인 +15,775계약도 오늘 상승을 보장하지 않았습니다. 기관 합계와 금융투자·투신·연기금을 중복 합산하지 않으며 순매매를 실제 보유 잔고로 부르지 않습니다.",
+        "direction": "투신 현선물 매도·연기금 방어",
+        "detail": "전체 만기 지수선물은 외국인 +2,729계약, 투신 -2,206, 금융투자 -411, 연기금 +130, 기관 합계 -2,483입니다. 외국인이 기관 매도의 반대편을 상당 부분 받아냈지만 가격 방어는 실패했습니다. 외국인 선물 매수 하나를 상방 확정 근거로 삼기 어려운 날입니다. 최근 3일(11/11~13)은 외국인 -608·투신 -1,818계약인 반면 5일(11/9~13)은 외국인 +3,437·투신 +4,391계약입니다. 주초 누적 매수와 최근 변화가 충돌하며 특히 투신은 최근 매도로 바뀌었습니다. 20일(10/19~11/13) 외국인 +22,704·투신 -2,162계약도 구분합니다. 기관 합계와 세부 주체를 더하지 않고, 순매매를 보유량으로 부르지 않습니다.",
         "tone": "warning"
       }
     ]
   },
   "derivatives_evidence": {
-    "trade_date": "20261112",
-    "original_eod_status": "EXIT_CODE_0_16:35:43",
+    "trade_date": "20261113",
+    "original_eod_status": "EXIT_CODE_0_16:36:09",
     "all_expiry_flow": {
       "1": {
-        "start": "20261112",
-        "end": "20261112",
+        "start": "20261113",
+        "end": "20261113",
         "dates": [
-          "20261112"
+          "20261113"
         ],
         "observations": 1,
         "complete": true,
-        "foreign": 468,
-        "institution": -647,
-        "financial": 1214,
-        "individual": 42,
-        "trust": -1343,
-        "pension": -452
+        "foreign": 2729,
+        "institution": -2483,
+        "financial": -411,
+        "individual": 2,
+        "trust": -2206,
+        "pension": 130
       },
       "3": {
-        "start": "20261110",
-        "end": "20261112",
+        "start": "20261111",
+        "end": "20261113",
         "dates": [
-          "20261110",
           "20261111",
-          "20261112"
+          "20261112",
+          "20261113"
         ],
         "observations": 3,
         "complete": true,
-        "foreign": -3482,
-        "institution": 3161,
-        "financial": -944,
-        "individual": 66,
-        "trust": 4998,
-        "pension": -228
+        "foreign": -608,
+        "institution": -138,
+        "financial": 2277,
+        "individual": 678,
+        "trust": -1818,
+        "pension": -325
       },
       "5": {
-        "start": "20261106",
-        "end": "20261112",
+        "start": "20261109",
+        "end": "20261113",
         "dates": [
-          "20261106",
           "20261109",
           "20261110",
           "20261111",
-          "20261112"
+          "20261112",
+          "20261113"
         ],
         "observations": 5,
         "complete": true,
-        "foreign": 7879,
-        "institution": -5323,
-        "financial": -7466,
-        "individual": -2326,
-        "trust": 2957,
-        "pension": 21
+        "foreign": 3437,
+        "institution": -3017,
+        "financial": -6875,
+        "individual": -444,
+        "trust": 4391,
+        "pension": 46
       },
       "15": {
-        "start": "20261023",
-        "end": "20261112",
+        "start": "20261026",
+        "end": "20261113",
         "dates": [
-          "20261023",
           "20261026",
           "20261027",
           "20261028",
@@ -315,22 +314,22 @@
           "20261109",
           "20261110",
           "20261111",
-          "20261112"
+          "20261112",
+          "20261113"
         ],
         "observations": 15,
         "complete": true,
-        "foreign": 23944,
-        "institution": -22276,
-        "financial": -22681,
-        "individual": -1681,
-        "trust": 1845,
-        "pension": 769
+        "foreign": 24496,
+        "institution": -25112,
+        "financial": -22318,
+        "individual": 602,
+        "trust": -1629,
+        "pension": 759
       },
       "20": {
-        "start": "20261016",
-        "end": "20261112",
+        "start": "20261019",
+        "end": "20261113",
         "dates": [
-          "20261016",
           "20261019",
           "20261020",
           "20261021",
@@ -349,66 +348,67 @@
           "20261109",
           "20261110",
           "20261111",
-          "20261112"
+          "20261112",
+          "20261113"
         ],
         "observations": 20,
         "complete": true,
-        "foreign": 15775,
-        "institution": -14789,
-        "financial": -16928,
-        "individual": -1437,
-        "trust": 3427,
-        "pension": 556
+        "foreign": 22704,
+        "institution": -22349,
+        "financial": -18829,
+        "individual": -336,
+        "trust": -2162,
+        "pension": 570
       }
     },
     "daily_options": [
       {
         "investor": "외국인",
         "market": "콜옵션",
-        "quantity": 6452,
-        "amount_100m_krw": 61,
+        "quantity": -3626,
+        "amount_100m_krw": -45,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "외국인",
         "market": "풋옵션",
-        "quantity": 5426,
-        "amount_100m_krw": 97,
+        "quantity": 636,
+        "amount_100m_krw": -24,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "금융투자",
         "market": "콜옵션",
-        "quantity": -22355,
-        "amount_100m_krw": 10,
+        "quantity": 2477,
+        "amount_100m_krw": 34,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "금융투자",
         "market": "풋옵션",
-        "quantity": -12733,
-        "amount_100m_krw": -96,
+        "quantity": 423,
+        "amount_100m_krw": 51,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "투신",
         "market": "콜옵션",
-        "quantity": -1495,
-        "amount_100m_krw": -47,
+        "quantity": -469,
+        "amount_100m_krw": -25,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "투신",
         "market": "풋옵션",
-        "quantity": 9,
-        "amount_100m_krw": 0,
+        "quantity": -31,
+        "amount_100m_krw": -4,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
         "investor": "연기금등",
         "market": "콜옵션",
         "quantity": 0,
-        "amount_100m_krw": 1,
+        "amount_100m_krw": 0,
         "amount_unit_status": "0787 원본 억원 확인"
       },
       {
@@ -421,1061 +421,1056 @@
       {
         "investor": "개인",
         "market": "콜옵션",
-        "quantity": 15911,
+        "quantity": 1622,
+        "amount_100m_krw": 31,
+        "amount_unit_status": "0787 원본 억원 확인"
+      },
+      {
+        "investor": "개인",
+        "market": "풋옵션",
+        "quantity": -517,
         "amount_100m_krw": -22,
-        "amount_unit_status": "0787 원본 억원 확인"
-      },
-      {
-        "investor": "개인",
-        "market": "풋옵션",
-        "quantity": 6563,
-        "amount_100m_krw": 1,
         "amount_unit_status": "0787 원본 억원 확인"
       }
     ],
-    "scope_note": "같은 12월물 일봉은 유효 거래량이 있는 8/3~11/12 69거래일을 사용했습니다. 3거래일 가격 변화 +51.65, 5거래일 -9.75, 20거래일 -33.80은 단기 회복과 더 긴 조정의 충돌을 보여줍니다. 월봉은 8월 첫 부분월과 진행 11월, 주봉은 진행 11/9~12를 구분했습니다. 9/11~11/12 41거래일 LS 단일 원천의 전체 만기 선물 순매매는 외국인 +24,232·기관 -23,113·투신 -3,759·연기금 +740계약입니다. 이 기간은 9월 만기 이후 관찰 구간일 뿐 실제 12월물 보유 잔고·평단이 아닙니다. 보존 장부와 9/21·9/23 수급이 다르므로 두 원천을 섞지 않고 차이와 결측을 공개했습니다. 오늘 11월 옵션 만기 누적은 종료 구간으로 보존하며 12월 계약과 이어붙이지 않습니다.",
+    "scope_note": "동일 12월물 일봉은 유효 거래량이 있는 8/3~11/13 70거래일, 분봉·OI는 10/16~11/13을 사용했습니다. 3일(11/11~13) 가격 +10.25, 5일(11/9~13) +39.40, 20일(10/19~11/13) -58.70으로 짧은 반등과 긴 조정이 충돌합니다. 주봉은 이번 주 완료, 11월 월봉은 진행 중이며 8월 첫 부분월을 구분했습니다. 9/11~11/13 42거래일 LS 단일 원천의 전체 만기 선물 순매매는 외국인 +26,961·기관 -25,596·투신 -5,965·연기금 +870계약입니다. 이는 9월 만기 이후 관찰 구간이지 실제 12월 계약 보유량·평단이 아닙니다. 보존 장부의 9/21·9/23 값과 차이를 공개하고 혼합하지 않았습니다. 옵션 최근 3·5·20일 전체 만기 순매매는 거래 활동 참고만 가능하며 11월 만기를 가로지르는 연속 포지션으로 합산하지 않습니다.",
     "post_expiry_window_all_expiry_flow": {
-      "start": "2026-09-11",
-      "end": "2026-11-12",
-      "observations": 41,
+      "start": "20260911",
+      "end": "20261113",
+      "observations": 42,
       "calendar_complete": true,
-      "foreign": 24232,
-      "institution": -23113,
-      "financial": -15839,
-      "individual": -915,
-      "trust": -3759,
-      "pension": 740,
-      "scope": "LS-only complete all-expiry flow observed after Sep11, NOT actual expiry-specific holdings",
-      "legacy_ledger_partial": {
-        "start": "2026-09-14",
-        "observations": 29,
-        "foreign": 25361,
-        "institution": -24021,
-        "missing_dates": [
-          "20260911",
-          "20260917",
-          "20260918",
-          "20260929",
-          "20260930",
-          "20261001",
-          "20261006",
-          "20261007",
-          "20261008",
-          "20261012",
-          "20261013",
-          "20261019"
-        ]
-      },
-      "overlap_differences": [
+      "foreign": 26961,
+      "institution": -25596,
+      "financial": -16250,
+      "individual": -913,
+      "trust": -5965,
+      "pension": 870,
+      "scope": "All-expiry LS flow during active December observation window, NOT actual December holdings",
+      "legacy_differences": [
         {
           "date": "20260921",
           "field": "foreign_net",
-          "preserved_ledger": 4127,
-          "ls_current": 4251
+          "legacy": 4127,
+          "ls": 4251
         },
         {
           "date": "20260921",
           "field": "institution_net",
-          "preserved_ledger": -3748,
-          "ls_current": -3963
+          "legacy": -3748,
+          "ls": -3963
         },
         {
           "date": "20260923",
           "field": "foreign_net",
-          "preserved_ledger": 62,
-          "ls_current": 1356
+          "legacy": 62,
+          "ls": 1356
         },
         {
           "date": "20260923",
           "field": "institution_net",
-          "preserved_ledger": -1209,
-          "ls_current": -1402
+          "legacy": -1209,
+          "ls": -1402
         }
-      ],
-      "preservation": "Raw LS and original ledger preserved separately; no splice or overwrite"
+      ]
     },
     "options_recent_3_5_days": {
       "foreign_ls": {
         "cash": {
-          "1": 3748,
-          "3": 14917,
-          "5": -17237,
-          "15": -106921,
-          "20": -101120
+          "1": -5522,
+          "3": 5328,
+          "5": 4506,
+          "15": -102280,
+          "20": -109474
         },
         "futures": {
-          "1": 468,
-          "3": -3482,
-          "5": 7879,
-          "15": 23944,
-          "20": 15775
+          "1": 2729,
+          "3": -608,
+          "5": 3437,
+          "15": 24496,
+          "20": 22704
         },
         "stock_futures": {
-          "1": 39115,
-          "3": 8005,
-          "5": 113182,
-          "15": 254467,
-          "20": 335147
+          "1": -214448,
+          "3": -182811,
+          "5": -122031,
+          "15": -94352,
+          "20": -17758
         },
         "call": {
-          "1": 6452,
-          "3": 5756,
-          "5": 7082,
-          "15": 325,
-          "20": -3888
+          "1": -3626,
+          "3": 940,
+          "5": 6061,
+          "15": 597,
+          "20": -5311
         },
         "put": {
-          "1": 5426,
-          "3": 6065,
-          "5": 6398,
-          "15": 14712,
-          "20": 16025
+          "1": 636,
+          "3": 3590,
+          "5": 6423,
+          "15": 14955,
+          "20": 16622
         }
-      }
+      },
+      "scope": "All-expiry trading activity only; November expiry reset not December positions"
     },
-    "manual_position_review": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+    "manual_position_review": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
     "ls_cvd": {
       "status": "CLOSE_ENDPOINT_ONLY_PATH_GAPS",
-      "daily_cvd": 460,
+      "daily_cvd": 338,
       "three_day_cvd": null,
-      "note": "일봉 거래량 122,002와 분봉·LS 119,875 차이 및 원천 간격 때문에 정확한 체결 VWAP·매물대·매수강도·전 구간 CVD를 만들지 않았습니다. LS 종가 CVD +460은 미분류 2,837 및 74개 경로 공백과 함께만 사용합니다."
+      "note": "일봉 거래량 114,342와 분봉·LS 112,089 차이, 장중 경로 공백으로 정확한 VWAP·체결 매물대는 제외. LS CVD +338은 미분류 2,805와 45개 공백을 함께 표시합니다."
     },
     "cross_market_foreign": {
       "cash": {
-        "1": 3748,
-        "3": 14917,
-        "5": -17237,
-        "15": -106921,
-        "20": -101120
+        "1": -5522,
+        "3": 5328,
+        "5": 4506,
+        "15": -102280,
+        "20": -109474
       },
       "futures": {
-        "1": 468,
-        "3": -3482,
-        "5": 7879,
-        "15": 23944,
-        "20": 15775
+        "1": 2729,
+        "3": -608,
+        "5": 3437,
+        "15": 24496,
+        "20": 22704
       },
       "stock_futures": {
-        "1": 39115,
-        "3": 8005,
-        "5": 113182,
-        "15": 254467,
-        "20": 335147
+        "1": -214448,
+        "3": -182811,
+        "5": -122031,
+        "15": -94352,
+        "20": -17758
       },
       "call": {
-        "1": 6452,
-        "3": 5756,
-        "5": 7082,
-        "15": 325,
-        "20": -3888
+        "1": -3626,
+        "3": 940,
+        "5": 6061,
+        "15": 597,
+        "20": -5311
       },
       "put": {
-        "1": 5426,
-        "3": 6065,
-        "5": 6398,
-        "15": 14712,
-        "20": 16025
+        "1": 636,
+        "3": 3590,
+        "5": 6423,
+        "15": 14955,
+        "20": 16622
       }
     },
     "selected_option_contracts": [
       {
         "expiry": "202612",
         "side": "call",
-        "strike": 840.0,
-        "code": "B016C840",
-        "price": 41.1,
-        "open": 45.05,
-        "volume": 94,
-        "oi": 1005,
-        "oi_change": 38,
-        "iv": 46.16,
-        "delta": 0.507,
-        "bid": 1.12,
-        "ask": 43.25,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
-        "flags": [],
-        "previous_price": 42.6,
-        "previous_oi": 967,
-        "previous_volume": 111,
-        "oi_difference": 38,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 0.0,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
-      },
-      {
-        "expiry": "202612",
-        "side": "call",
-        "strike": 835.0,
-        "code": "B016C835",
-        "price": 41.5,
-        "open": 47.95,
-        "volume": 230,
-        "oi": 270,
-        "oi_change": 201,
-        "iv": 44.09,
-        "delta": 0.5264,
-        "bid": 1.07,
-        "ask": 128.85,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
-        "flags": [],
-        "quote_crosscheck": {
-          "oi_match": true,
-          "price_match": true,
-          "iv_match": true
-        },
-        "expiry_date": "20261210",
-        "greeks_time": "16:30",
-        "greeks_status": "당일확정",
-        "gamma_per_contract": 0.0039,
-        "vega_per_contract": 0.9399,
-        "theta_per_contract": -0.746,
-        "greeks_note": "Provider convention; not dealer-position gamma",
-        "previous_price": 45.2,
-        "previous_oi": 69,
-        "previous_volume": 70,
-        "oi_difference": 201,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 3.32,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
-      },
-      {
-        "expiry": "202612",
-        "side": "call",
         "strike": 830.0,
         "code": "B016C830",
-        "price": 42.5,
-        "open": 56.95,
-        "volume": 21,
-        "oi": 34,
-        "oi_change": 8,
-        "iv": 42.56,
-        "delta": 0.5459,
-        "bid": 40.85,
-        "ask": 128.7,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
-        "flags": [],
-        "previous_price": 42.5,
-        "previous_oi": 26,
-        "previous_volume": 25,
-        "oi_difference": 8,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 8.32,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
-      },
-      {
-        "expiry": "202612",
-        "side": "put",
-        "strike": 840.0,
-        "code": "C016C840",
-        "price": 50.5,
-        "open": 46.8,
-        "volume": 41,
-        "oi": 436,
-        "oi_change": 21,
-        "iv": 51.34,
-        "delta": -0.4879,
-        "bid": 35.0,
-        "ask": 66.0,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
-        "flags": [],
-        "previous_price": 47.6,
-        "previous_oi": 415,
-        "previous_volume": 59,
-        "oi_difference": 21,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 1.68,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
-      },
-      {
-        "expiry": "202612",
-        "side": "put",
-        "strike": 835.0,
-        "code": "C016C835",
-        "price": 44.95,
-        "open": 47.7,
-        "volume": 99,
-        "oi": 569,
-        "oi_change": 91,
-        "iv": 48.26,
-        "delta": -0.471,
-        "bid": 0.33,
-        "ask": 121.75,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
-        "flags": [],
-        "quote_crosscheck": {
-          "oi_match": true,
-          "price_match": true,
-          "iv_match": true
-        },
+        "price": 39.15,
+        "oi": 101,
+        "oi_change_display": 67,
+        "volume": 102,
+        "iv": 44.77,
+        "delta": 0.5104,
+        "bid": 36.7,
+        "ask": 40.8,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
+        "flags": [
+          "RELATIVE_SPREAD_OVER_10_PERCENT"
+        ],
+        "previous_snapshot_iv": 42.56,
+        "iv_change_pp": 2.210000000000001,
+        "previous_snapshot_price": 42.5,
+        "previous_snapshot_oi": 34,
+        "previous_snapshot_volume": 21,
+        "daily_price": 39.15,
+        "daily_oi": 101,
+        "previous_daily_price": 42.5,
+        "previous_daily_oi": 34,
+        "previous_daily_volume": 21,
+        "recomputed_daily_oi_change": 67,
         "expiry_date": "20261210",
         "greeks_time": "16:30",
-        "greeks_status": "당일확정",
-        "gamma_per_contract": 0.0035,
-        "vega_per_contract": 0.9395,
-        "theta_per_contract": -0.7541,
-        "greeks_note": "Provider convention; not dealer-position gamma",
-        "previous_price": 44.55,
-        "previous_oi": 478,
-        "previous_volume": 59,
-        "oi_difference": 91,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 0.0,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
+        "greeks_confirm": "당일확정",
+        "quote_oi": 101,
+        "quote_price": 39.15,
+        "quote_iv": 44.77,
+        "previous_price": 42.5,
+        "previous_oi": 34
+      },
+      {
+        "expiry": "202612",
+        "side": "call",
+        "strike": 825.0,
+        "code": "B016C825",
+        "price": 41.0,
+        "oi": 125,
+        "oi_change_display": 1,
+        "volume": 6,
+        "iv": 44.22,
+        "delta": 0.5307,
+        "bid": 38.6,
+        "ask": 46.45,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
+        "flags": [
+          "RELATIVE_SPREAD_OVER_10_PERCENT",
+          "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+        ],
+        "previous_snapshot_iv": 45.77,
+        "iv_change_pp": -1.5500000000000043,
+        "previous_snapshot_price": 48.0,
+        "previous_snapshot_oi": 124,
+        "previous_snapshot_volume": 0,
+        "daily_price": 41.0,
+        "daily_oi": 125,
+        "previous_daily_price": 48.0,
+        "previous_daily_oi": 124,
+        "previous_daily_volume": 0,
+        "recomputed_daily_oi_change": 1,
+        "expiry_date": "20261210",
+        "greeks_time": "16:30",
+        "greeks_confirm": "당일확정",
+        "quote_oi": 125,
+        "quote_price": 41.0,
+        "quote_iv": 44.22,
+        "previous_price": 48.0,
+        "previous_oi": 124
+      },
+      {
+        "expiry": "202612",
+        "side": "call",
+        "strike": 820.0,
+        "code": "B016C820",
+        "price": 43.65,
+        "oi": 250,
+        "oi_change_display": 7,
+        "volume": 13,
+        "iv": 44.44,
+        "delta": 0.5503,
+        "bid": 41.1,
+        "ask": 46.05,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
+        "flags": [
+          "RELATIVE_SPREAD_OVER_10_PERCENT"
+        ],
+        "previous_snapshot_iv": 47.29,
+        "iv_change_pp": -2.8500000000000014,
+        "previous_snapshot_price": 52.0,
+        "previous_snapshot_oi": 243,
+        "previous_snapshot_volume": 29,
+        "daily_price": 43.65,
+        "daily_oi": 250,
+        "previous_daily_price": 52.0,
+        "previous_daily_oi": 243,
+        "previous_daily_volume": 29,
+        "recomputed_daily_oi_change": 7,
+        "expiry_date": "20261210",
+        "greeks_time": "16:30",
+        "greeks_confirm": "당일확정",
+        "quote_oi": 250,
+        "quote_price": 43.65,
+        "quote_iv": 44.44,
+        "previous_price": 52.0,
+        "previous_oi": 243
       },
       {
         "expiry": "202612",
         "side": "put",
         "strike": 830.0,
         "code": "C016C830",
-        "price": 43.0,
-        "open": 41.25,
-        "volume": 30,
-        "oi": 134,
-        "oi_change": 5,
-        "iv": 48.93,
-        "delta": -0.4536,
-        "bid": 43.0,
-        "ask": 119.65,
-        "retrieved_at": "2026-11-12T17:06:42.898997+09:00",
-        "trade_time_verified": false,
+        "price": 45.4,
+        "oi": 444,
+        "oi_change_display": 310,
+        "volume": 95,
+        "iv": 47.86,
+        "delta": -0.4858,
+        "bid": 44.5,
+        "ask": 57.8,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
+        "flags": [
+          "OI_CHANGE_EXCEEDS_VOLUME_SCOPE_UNRESOLVED",
+          "RELATIVE_SPREAD_OVER_10_PERCENT"
+        ],
+        "previous_snapshot_iv": 48.93,
+        "iv_change_pp": -1.0700000000000003,
+        "previous_snapshot_price": 43.0,
+        "previous_snapshot_oi": 134,
+        "previous_snapshot_volume": 30,
+        "daily_price": 45.4,
+        "daily_oi": 444,
+        "previous_daily_price": 43.0,
+        "previous_daily_oi": 134,
+        "previous_daily_volume": 30,
+        "recomputed_daily_oi_change": 310,
+        "expiry_date": "20261210",
+        "greeks_time": "16:30",
+        "greeks_confirm": "당일확정",
+        "quote_oi": 444,
+        "quote_price": 45.4,
+        "quote_iv": 47.86,
+        "previous_price": 43.0,
+        "previous_oi": 134
+      },
+      {
+        "expiry": "202612",
+        "side": "put",
+        "strike": 825.0,
+        "code": "C016C825",
+        "price": 43.4,
+        "oi": 181,
+        "oi_change_display": -1,
+        "volume": 22,
+        "iv": 48.57,
+        "delta": -0.4679,
+        "bid": 2.31,
+        "ask": 0.0,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
+        "flags": [
+          "INVALID_OR_ABSENT_TWO_SIDED_QUOTE",
+          "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+        ],
+        "previous_snapshot_iv": 48.38,
+        "iv_change_pp": 0.18999999999999773,
+        "previous_snapshot_price": 40.0,
+        "previous_snapshot_oi": 182,
+        "previous_snapshot_volume": 0,
+        "daily_price": 43.4,
+        "daily_oi": 181,
+        "previous_daily_price": 40.0,
+        "previous_daily_oi": 182,
+        "previous_daily_volume": 0,
+        "recomputed_daily_oi_change": -1,
+        "expiry_date": "20261210",
+        "greeks_time": "16:30",
+        "greeks_confirm": "당일확정",
+        "quote_oi": 181,
+        "quote_price": 43.4,
+        "quote_iv": 48.57,
+        "previous_price": 40.0,
+        "previous_oi": 182
+      },
+      {
+        "expiry": "202612",
+        "side": "put",
+        "strike": 820.0,
+        "code": "C016C820",
+        "price": 40.65,
+        "oi": 491,
+        "oi_change_display": 6,
+        "volume": 110,
+        "iv": 48.35,
+        "delta": -0.4496,
+        "bid": 40.35,
+        "ask": 41.75,
+        "received_at": "2026-11-13T17:04:29.562375+09:00",
         "flags": [],
-        "previous_price": 42.6,
-        "previous_oi": 129,
-        "previous_volume": 21,
-        "oi_difference": 5,
-        "iv_change_pp": null,
-        "daily_ohlc_valid": true,
-        "raw_previous_snapshot_iv": 0.0,
-        "previous_iv": null,
-        "iv_comparison_eligible": false,
-        "iv_limit": "Previous December snapshots have zero or very low IV; current postclose bid/ask spreads are wide and timestamps are not executable synchronized quotes. IV change and fixed-delta skew excluded."
+        "previous_snapshot_iv": 50.34,
+        "iv_change_pp": -1.990000000000002,
+        "previous_snapshot_price": 39.4,
+        "previous_snapshot_oi": 485,
+        "previous_snapshot_volume": 18,
+        "daily_price": 40.65,
+        "daily_oi": 491,
+        "previous_daily_price": 39.4,
+        "previous_daily_oi": 485,
+        "previous_daily_volume": 18,
+        "recomputed_daily_oi_change": 6,
+        "expiry_date": "20261210",
+        "greeks_time": "16:30",
+        "greeks_confirm": "당일확정",
+        "quote_oi": 491,
+        "quote_price": 40.65,
+        "quote_iv": 48.35,
+        "previous_price": 39.4,
+        "previous_oi": 485
       }
     ]
   },
-  "flow_interpretation": "오늘 전체 만기 지수선물 순매매는 외국인 +468계약, 금융투자 +1,214계약인 반면 투신 -1,343계약, 연기금 -452계약, 기관 합계 -647계약입니다. 외국인·금융투자가 반대편 매도를 일부 받아낸 형태지만, 순매수 주체가 있다고 가격 방어가 성공한 것은 아닙니다. 전일 투신 +1,731계약에서 오늘 매도로 돌아섰고 종가도 하락해 매수 합의가 약해졌습니다. 최근 3일(11/10~12) 외국인 -3,482·투신 +4,998계약과 최근 5일(11/6~12) 외국인 +7,879·투신 +2,957계약은 서로 다른 시간축입니다. 20일(10/16~11/12) 외국인 +15,775계약도 오늘 상승을 보장하지 않았습니다. 기관 합계와 금융투자·투신·연기금을 중복 합산하지 않으며 순매매를 실제 보유 잔고로 부르지 않습니다. 현물은 외국인·투신 순매수, 금융투자 순매도였지만 KOSPI는 하락했습니다. 금융투자는 현물을 팔고 지수선물을 샀으며, 투신은 현물을 사고 선물을 팔아 상품별 신호가 엇갈렸습니다. 주식선물 외국인 순매수 +39,115계약은 지수선물 +468계약과 별도 상품이며 계약 수를 합칠 수 없습니다. 프로그램 순매수는 당일·3일 플러스지만 5일·20일은 마이너스입니다. 현물·프로그램 금액은 LS 명세에서 고정 환산 단위를 독립 확인하지 못해 원시 단위 수치를 억원으로 바꾸지 않았습니다. 12월 선물 827.50과 KOSPI200 833.57의 종가 차이 -6.07은 LS 시장 베이시스 표시와 일치합니다. 이론 베이시스 +1.87과의 차이는 있지만 15:45 선물과 15:30 현물의 비동시 값이라 즉시 실행 가능한 차익이나 적정가격으로 단정하지 않습니다. 주도주 반응도 삼성전자 +0.73%, SK하이닉스 -1.72%로 엇갈려 반도체 전체 또는 시장 전체의 매수 확산으로 묶지 않습니다. 두 종목을 제외한 시장 전체의 투자자 수급은 미확보입니다. 완료 주 11/2~6까지의 20거래일로 이번 주 해석 배율을 고정했습니다. 현물 외국인 1.194·투신 1.205, 선물 외국인 1.002·투신 1.150·연기금 1.144입니다. 현물 외국인·투신의 최근 동행을 더 주의 깊게 본다는 뜻이지 시장을 움직인 인과 비중이나 미래 확률이 아닙니다. 11/9~12 진행 주는 배율 갱신에서 제외했고 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/12의 검증 입력에서 외국인·투신 동반 매수와 당일 상승 뒤 다음 날 상승은 현물 3/7, 선물 1/3이고, 동반 매도·하락 뒤 다음 날 하락은 현물 4/10, 선물 0/2입니다. 표본이 작고 만기일 전용 검증도 아니어서 반대 방향 확률이나 오늘의 미래 확률로 바꾸지 않습니다. 오늘은 현물 동반 매수에도 지수가 하락했고 선물 외국인·투신 방향도 달라 해당 동반 신호가 성립하지 않았습니다.",
-  "options_interpretation": "오늘 0787 원본에서 외국인은 콜 +6,452계약·+61억원, 풋 +5,426계약·+97억원으로 양쪽 모두 순매수했습니다. 콜 금액만 보고 상방 단독 베팅이라고 할 수 없습니다. 그렇다고 이 정보를 무시하지도 않습니다. 다음 만기 12월 835콜은 가격 45.20→41.50, OI 69→270(+201), 거래량 230계약이고, 835풋은 44.55→44.95, OI 478→569(+91), 거래량 99계약입니다. 양쪽 OI 증가 가운데 콜 가격은 내리고 풋 가격은 올랐으므로 '콜 신규 매수 증가가 상승을 확인했다'는 해석보다 양방향 포지션 증가 속 하방 압력이 남았다는 설명이 더 적합합니다. 각 계약에는 신규 매수와 신규 매도 양쪽이 생기며 외국인별 신규·청산 연결자료는 없습니다. 12월 835콜/풋 현재 IV 44.09%/48.26%, 델타 +0.5264/-0.4710은 제공업체 마감 후 값입니다. 전일 12월 IV에 0·비정상적으로 낮은 값이 있고 현재 호가도 넓어 IV 급증·고정 델타 스큐·기간구조를 수치 신호로 쓰지 않았습니다. 이는 거래 가능한 호가의 방향 증거가 아닙니다. 2026-11-12는 KOSPI200 11월물 옵션 만기일이고 12월 선물·옵션 만기는 12/10입니다. 만기 옵션 15:20 종료, 현물 15:30, 비만기 선물 15:45라는 서로 다른 종료 시점을 구분했습니다. 11월 830/835/840 콜·풋의 마감 후 OI가 모두 0으로 표시되므로 이를 오늘 장중 신규·청산 수량으로 해석하지 않습니다. 만기 옵션 IV 바닥값 역시 변동성 위험 소멸의 증거가 아닙니다. 만기 전 15:00→15:20 LS 시간대 누적 외국인 콜 수량은 275→3,963, 풋은 4,399→5,905계약으로 양쪽 순매수가 늘었습니다. 이는 전체 만기 합산이며 11월 특정 행사가의 신규 콜 매수 확인은 아닙니다. 내일 11/13에는 소멸한 11월물을 분석에서 분리하고, 12월 동일 계약의 가격·OI 변화가 지속되는지, 12월 선물 832.50~838.20 회복과 현물·프로그램 수급이 함께 유지되는지 확인해야 합니다. 만기 이벤트 때문에 오늘 신호를 무조건 무효화하지도, 바로 다음 날 추세로 연장하지도 않습니다.",
-  "oi_interpretation": "키움 12월물 마감 OI는 153,774계약입니다. 오늘 다시 받은 전일 OI 158,324 대비 -4,550계약이며, 어제 보존된 최초 전일값 159,641과의 차이 1,317계약은 원천 정정 원인 미확인 상태로 보존했습니다. 최초값을 조용히 바꾼 것이 아닙니다. 오늘 LS OI 154,035와도 261계약 차이가 있어 두 출처를 섞지 않았습니다. 키움 일봉 거래량 122,002와 분봉 합계·LS 119,875 역시 범위 차이가 남습니다. 3월물은 별도 조회에서 거래량 51·OI 5,690(+18)이며 유동성이 작습니다. 일별 저가 820.00과 종가 819.15가 모순됐고 시세 재조회 저가는 819.15였습니다. 두 원본을 보존하고 3월물 가격 차트를 합성하거나 이 수치만으로 롤오버 규모를 확정하지 않았습니다. LS CVD는 오늘 종가 집계 +460까지만 검증됐고 미분류 2,837계약과 장중 74개 공백이 있어 완전한 매수 우위 경로로 사용하지 않습니다. 08:45→12:05 선물은 840.70→846.10으로 +5.40, OI는 157,818→154,402로 -3,416계약이었습니다. 신규 매수 확대보다는 기존 포지션 축소를 동반한 반등 설명이 더 잘 맞지만 숏 청산만으로 확정할 수는 없습니다. 12:05→15:25는 가격 -15.60과 OI -789가 함께 나타나 반등 이후에도 포지션 축소가 이어졌습니다. 14:35 OI 저점 152,639 이후에는 다시 증가했고, 15:25→15:45에는 830.50→827.50 하락과 OI +161계약이 겹쳤습니다. 이 막판 구간은 하루 전체 OI 감소와 구분해야 하는 약세 확인값입니다. 다만 전체 만기 수급과 개별 12월물 OI의 범위가 달라 특정 주체의 신규 숏이라고 확정하지 않습니다. LS 시간대별 수급에는 15:45 이후에도 외국인 선물 -92→최종 +468, 콜·풋 금액의 큰 집계 변화가 있습니다. 이를 모두 정규장 마지막 체결 시각의 주문으로 돌려 해석하지 않고 지연 집계·정정 가능성을 남겼습니다.",
+  "flow_interpretation": "전체 만기 지수선물은 외국인 +2,729계약, 투신 -2,206, 금융투자 -411, 연기금 +130, 기관 합계 -2,483입니다. 외국인이 기관 매도의 반대편을 상당 부분 받아냈지만 가격 방어는 실패했습니다. 외국인 선물 매수 하나를 상방 확정 근거로 삼기 어려운 날입니다. 최근 3일(11/11~13)은 외국인 -608·투신 -1,818계약인 반면 5일(11/9~13)은 외국인 +3,437·투신 +4,391계약입니다. 주초 누적 매수와 최근 변화가 충돌하며 특히 투신은 최근 매도로 바뀌었습니다. 20일(10/19~11/13) 외국인 +22,704·투신 -2,162계약도 구분합니다. 기관 합계와 세부 주체를 더하지 않고, 순매매를 보유량으로 부르지 않습니다. 현물 외국인·투신은 어제 순매수에서 오늘 순매도로 바뀌었고 금융투자도 순매도였습니다. 연기금은 현물 순매수였지만 매수 확산보다는 일부 방어로 해석합니다. 외국인 주식선물 -214,448계약은 지수선물 +2,729계약과 반대이며 계약 수와 명목가치를 합산하지 않습니다. 프로그램은 오늘 차익·비차익 모두 순매도, 3·5일 합계는 순매수, 20일은 순매도입니다. 최근 회복 누적과 오늘 후퇴를 함께 봅니다. 현물·프로그램 금액은 LS 원시 단위의 고정 원화 환산을 독립 확인하지 못해 임의로 억원 표시하지 않았습니다. 선물 822.35−KOSPI200 824.78 = 시장 베이시스 -2.43, 제공업체 이론 베이시스 +1.77 대비 -4.20입니다. 다만 선물 15:45와 현물 15:30의 비동시 종가이므로 즉시 체결 가능한 차익이나 적정가격으로 단정하지 않습니다. 오늘 11/9~13 주가 완료돼 새 해석 배율을 계산했습니다. 현물 투신 1.197·외국인 1.183, 선물 투신 1.154·외국인 0.931입니다. 다음 주 해석용 갱신값이며 이번 주 당시 예측에 사용한 것처럼 소급하지 않습니다. 최근 20일 수급과 당일 등락의 방향 일치는 현물 투신 16/20·외국인 13/20, 선물 투신 15/20·외국인 9/20이었습니다. 현물 외국인·투신과 선물 투신을 상대적으로 더 살펴볼 이유는 있지만 인과적 시장 영향 비중은 아닙니다. 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/13 입력의 완료 사건에서 외국인·투신 동반 매수·당일 상승 뒤 다음 날 상승은 현물 3/7(42.9%)·선물 1/3(33.3%), 동반 매도·하락 뒤 하락은 현물 4/10(40%)·선물 0/2입니다. 오늘 현물 동반 매도·하락 사건은 다음 거래일 미도래로 대기이며 분모에서 제외했습니다. 작은 표본의 관측 비율을 다음 날 예측 확률이나 역방향 승률로 바꾸지 않습니다.",
+  "options_interpretation": "0787 원본에서 외국인은 콜 -3,626계약·-45억원, 풋 +636계약·-24억원입니다. 어제 양쪽 금액 순매수에서 오늘 양쪽 금액 순매도로 달라졌지만 풋 수량·금액이 엇갈려 델타 방향을 단순화할 수 없습니다. 12월 830콜은 가격 42.50→39.15, OI 34→101(+67), IV 42.56→44.77%(+2.21%p), 델타 +0.5104입니다. 가격 하락·OI 증가·IV 상승은 관측됐지만 외국인의 신규 콜 매수나 상방 베팅을 증명하지는 않습니다. 해당 계약 거래량은 102, 호가 36.70/40.80으로 넓습니다. 820풋은 가격 39.40→40.65, OI 485→491(+6), IV 50.34→48.35%, 델타 -0.4496으로 가격과 IV가 반대로 움직였습니다. 830풋 OI +310은 거래량 95보다 커 신규 포지션 수량 해석에서 제외하고, 825풋은 유효 양방향 호가가 없으며 825콜·풋 전일 거래량이 0이라 전일 가격 비교 신뢰도를 낮춥니다. 820/825/830 콜·풋 모두 코드·만기·가격·OI·IV를 따로 보존했습니다. 일부 유효 계약의 변화는 설명에 반영하되 전체 스큐·기간구조·딜러 감마로 확대하지 않습니다. 공식 계약명세의 둘째 목요일 규칙을 기준으로 11/12는 11월 옵션 만기였고 오늘 11/13은 그 다음 정규 거래일입니다. 12월 선물·옵션 만기는 12/10으로 구분합니다. 소멸한 11월 옵션 누적을 12월 잔고로 이어붙이지 않았습니다. 오늘 12월물은 장 초반 회복했지만 종가가 전일보다 낮고 기존 지지 아래에 있어 만기 후 상승 지속을 확인하지 못했습니다. 그렇다고 만기 효과만으로 하락 원인을 확정하지 않습니다. 12월과 1월 옵션 체인을 실제 조회했지만 얇은 거래와 호가 문제로 고정 델타 기간구조는 사용하지 않았습니다. 다음 거래일에는 824.65~826.10 회복과 현물·프로그램 매도 완화가 함께 나오는지, 818.10 재이탈 뒤 반등이 막히는지 확인합니다.",
+  "oi_interpretation": "키움 12월물 마감 OI는 154,294계약입니다. 오늘 재조회한 전일 154,035 대비 +259이며, 어제 최초 저장 153,774와 비교한 +520은 기준이 다릅니다. 전일 정정 차이 261계약의 원인은 미확인으로 보존했습니다. 오늘 LS는 154,085(+50)로 키움과 209계약 차이가 있어 혼합하지 않았습니다. 동일한 오늘 키움 시계열에서 3일 가격 +10.25/OI -7,379, 5일 가격 +39.40/OI -8,199, 20일 가격 -58.70/OI +5,879입니다. 주간 반등 전체는 OI 축소와 겹치지만 오늘 오후는 반대였다는 점이 중요합니다. 3월물은 별도 조회에서 종가 815.65, 거래량 46, OI 6,293(+603)입니다. OI 증가가 표시 거래량을 넘는 집계 범위 문제가 있어 롤오버 규모를 확정하지 않습니다. LS CVD는 마감 집계 +338까지만 검증됐고 미분류 2,805계약·장중 45개 공백이 있어 완전한 매수 경로로 쓰지 않습니다. 09:05 표시 봉에서 가격 고가 859.65와 OI 154,944가 나온 뒤 밀렸습니다. 고정 구간 08:45→12:05는 가격 845.50→837.05(-8.45), OI 154,792→153,861(-931)로 포지션 축소를 동반했습니다. 이어 12:05→15:25는 가격 837.05→822.65(-14.40), OI 153,861→154,298(+437)여서 오후에는 가격 하락과 참여 증가가 겹쳤습니다. 이는 단기 약세 확인값이지만 특정 투자자의 신규 숏 증명은 아닙니다. 15:25→15:45 종가 단일가는 가격 -0.30, OI -4로 막판 OI 급증은 없었습니다. LS 시간대 외국인 선물 누적은 15:00 +371→15:25 +1,094→15:45 +1,077→최종 +2,729계약입니다. 마감 후 집계 변화가 커 최종 매수를 모두 마지막 체결 주문으로 돌리지 않습니다. 투신 현물도 15:30 표시 +663에서 15:45 -639로 바뀌어 실제 주문 시각과 집계 갱신 시각을 구분했습니다.",
   "contract_observations": [
     {
       "contract": "F202612",
       "code": "A016C000",
-      "close": 827.5,
+      "close": 822.35,
       "snapshot_price": null,
-      "high": 852.75,
-      "low": 825.05,
-      "volume": 122002,
-      "oi": 153774,
-      "oi_change": -4550,
+      "high": 859.65,
+      "low": 818.1,
+      "volume": 114342,
+      "oi": 154294,
+      "oi_change": 259,
       "is_final": true,
-      "captured_at": "11/12 정규장 15:45·키움",
-      "status": "가격 대조 일치·OI/거래량 차이 공개"
+      "captured_at": "11/13 정규장 15:45·키움",
+      "status": "가격 대조 일치·OI/거래량 원천 차이 공개"
     },
     {
       "contract": "F202703",
       "code": "A0173000",
       "close": null,
-      "snapshot_price": 819.15,
-      "high": 837.05,
-      "low": null,
-      "volume": 51,
-      "oi": 5690,
-      "oi_change": 18,
+      "snapshot_price": 815.65,
+      "high": 850.5,
+      "low": 810.55,
+      "volume": 46,
+      "oi": 6293,
+      "oi_change": 603,
       "is_final": false,
-      "captured_at": "11/12 LS 마감 후 재조회",
-      "status": "일별 저가/종가 모순·시세 저가 별도 보존; 가격 확정본 합성 금지"
+      "captured_at": "11/13 LS 마감 후 재조회",
+      "status": "OI 증가 > 표시 거래량·범위 미해결; 롤오버 수량 확정 금지"
     }
   ],
   "futures_structure": {
-    "monthly": "10월 종가 899.45 아래, 11월 진행 종가 827.50. 큰 하락 종료 확인 전입니다. 완료 월봉과 760.10 이후 회복 구조를 분리합니다. 8/3 시작 4개 월 표본; 8월 부분월·11월 진행월. 장기 월봉 신호 미확정.",
-    "weekly": "11/6 완료 주 종가 782.95보다 높지만 진행 주입니다. 단기 반등과 상위 조정을 구분합니다. 이번 주 완료 전 추세 전환을 확정하지 않으며 760.10 저점 보존 여부를 확인합니다. 같은 계약 일봉 재표본화; 11/13 라벨은 11/9~12 네 거래일만 포함.",
-    "daily": "827.50(-1.08%). 832.50 지지 이탈, 838.20 위 종가 조건 미충족입니다. 824.65~824.95 경계; 838.20 일봉 회복·재지지 뒤 846.85/852.75 확인. SMA5 806.99 / 10 846.53 / 20 866.36; RSI14 39.82, ADX14 29.73, -DI가 +DI보다 큼. 동일 가격 신호 중복 가산 안함.",
-    "intraday": "오전 가격 반등/OI 감소 후 오후 약세. 15:25→15:45 가격 -3.00·OI +161입니다. 832.50~832.65 위 10분봉 마감·눌림 유지, 이어 837.95~838.20 회복을 확인합니다. 15:45 종가 단일가 별도. 825.05는 기존 경계 근접이며 정확한 824.95 재지지 아님.",
-    "profile": "가격 구조만 사용·체결매물대 아님",
-    "wave_limit": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다."
+    "monthly": "진행 11월 822.35는 완료 10월 종가 899.45 아래입니다. 760.10 이후 회복 구조와 월봉 완료를 따로 확인합니다. 8/3 시작 4개 월 표본. 8월 부분월·11월 진행월; 장기 월봉 신호 미확정.",
+    "weekly": "11/9~13 완료 주 +5.03%, 고가 859.65에서 822.35로 후퇴했습니다. 주간 반등과 일봉 약세가 충돌합니다. 760.10 큰 가설 경계 유지. 동일 계약 일봉 재표본화. 이번 주 5거래일 완료; 진행 주로 표시하지 않음.",
+    "daily": "822.35(-0.62%). 전일 824.65~824.95 지지 조건 실패입니다. 824.65~826.10부터 회복, 838.20 일봉 종가·재지지가 다음 조건입니다. SMA5 814.87 / 10 838.82 / 20 863.43. RSI14 39.24, ADX14 29.28, -DI > +DI. 같은 가격 지표 중복 투표 금지.",
+    "intraday": "12:05→15:25 가격 -14.40·OI +437, 15:25→15:45 가격 -0.30·OI -4입니다. 818.10 이탈·재저항이면 803.20~802.95 확인. 회복은 826.10→829.55 순서. 15:45 종가 단일가 별도. 818.10 단일 저점을 강한 지지로 승격하지 않음.",
+    "profile": "가격 구조만 사용·체결 매물대 아님",
+    "wave_limit": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다."
   },
-  "index_confirmation": "보조 확인값 KOSPI 5,342.73(-0.61%), KOSPI200 833.57(-0.57%)는 같은 날짜 키움·LS 조회와 대조했습니다. KOSPI 상승 271종목 대 하락 595종목으로 상승·하락 중 상승 비율은 31.3%입니다. 외국인 현물 순매수만으로 광범위한 매수 확산이라고 보기 어려운 결과입니다. 다만 어떤 한 주체의 매도가 하락을 일으켰다는 인과까지 증명한 것은 아닙니다. 국내·해외 다중 시간대 보조 파일은 11/11, 14단계 연구는 11/10 기준이라 오늘 자료로 재사용하지 않았습니다. 오늘 선물 자체의 월·주·일·10분봉과 같은 날짜 현물 종가·폭을 핵심으로 사용합니다.",
+  "index_confirmation": "KOSPI 5,290.53(-0.98%), KOSPI200 824.78(-1.05%)를 같은 날짜 키움·LS 가격과 대조했습니다. KOSPI 상승 451·하락 420·보합 41종목이며 상한 3은 별도 필드로 중복 가산하지 않습니다. 상승·하락 중 상승 비율 51.8%로 지수 하락을 시장 전 종목 동반 붕괴로 부르기는 어렵습니다. 반면 KOSPI200은 상승 90·하락 105로 약했고 삼성전자 -0.48%, SK하이닉스 -2.47%였습니다. 대형주·지수의 약세와 나머지 종목의 상대적 방어가 공존했다는 해석입니다. 정확한 지수 기여도와 두 주도주를 제외한 시장 전체 투자자 수급은 계산하지 못했습니다. 국내·해외 다중 시간대 보조 파일은 11/12, 14단계 연구는 11/10이라 오늘 근거에서 제외했습니다. 선물 자체의 동일 만기 월·주·일·10분봉이 중심입니다.",
   "index_context_file": null,
   "index_context_status": "EXCLUDED_STALE_OPTIONAL_CONTEXT",
   "charts": [
     {
-      "file": "futures_wave_monthly_20261112.png",
-      "title": "월봉: 큰 조정 중·진행 11월",
-      "interpretation": "10월 종가 899.45 아래, 11월 진행 종가 827.50. 큰 하락 종료 확인 전입니다.",
+      "file": "futures_wave_monthly_20261113.png",
+      "title": "월봉: 큰 조정·11월 진행 중",
+      "interpretation": "진행 11월 822.35는 완료 10월 종가 899.45 아래입니다.",
       "kind": "price",
-      "source_note": "키움 API 정규장 원천·해시검증; 계산/해석 별도",
-      "sha256": "7f5670653445090e7a3082c1140117460901013628022a97a30cebfad975f252",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "255ab0bb7261292bf118804ef46f6300a22aacc16ed0d5048b135c1cc9f83d8f",
       "brief": {
-        "title": "월봉: 큰 조정 중·진행 11월",
-        "result": "10월 종가 899.45 아래, 11월 진행 종가 827.50. 큰 하락 종료 확인 전입니다.",
-        "check": "완료 월봉과 760.10 이후 회복 구조를 분리합니다.",
-        "note": "8/3 시작 4개 월 표본; 8월 부분월·11월 진행월. 장기 월봉 신호 미확정."
+        "title": "월봉: 큰 조정·11월 진행 중",
+        "result": "진행 11월 822.35는 완료 10월 종가 899.45 아래입니다.",
+        "check": "760.10 이후 회복 구조와 월봉 완료를 따로 확인합니다.",
+        "note": "8/3 시작 4개 월 표본. 8월 부분월·11월 진행월; 장기 월봉 신호 미확정."
       }
     },
     {
-      "file": "futures_wave_weekly_20261112.png",
-      "title": "주봉: 전주 급락 뒤 반등 진행",
-      "interpretation": "11/6 완료 주 종가 782.95보다 높지만 진행 주입니다. 단기 반등과 상위 조정을 구분합니다.",
+      "file": "futures_wave_weekly_20261113.png",
+      "title": "주봉: 반등한 완료 주·긴 윗꼬리",
+      "interpretation": "11/9~13 완료 주 +5.03%, 고가 859.65에서 822.35로 후퇴했습니다.",
       "kind": "price",
-      "source_note": "키움 API 정규장 원천·해시검증; 계산/해석 별도",
-      "sha256": "2020a12af06ff0663118e36011eeae551c768687b83622f7901a299593c6b52f",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "ca24d71e9b746d6ecb47f462947505b8a22d90871e168350c943d9f45bb4152e",
       "brief": {
-        "title": "주봉: 전주 급락 뒤 반등 진행",
-        "result": "11/6 완료 주 종가 782.95보다 높지만 진행 주입니다. 단기 반등과 상위 조정을 구분합니다.",
-        "check": "이번 주 완료 전 추세 전환을 확정하지 않으며 760.10 저점 보존 여부를 확인합니다.",
-        "note": "같은 계약 일봉 재표본화; 11/13 라벨은 11/9~12 네 거래일만 포함."
+        "title": "주봉: 반등한 완료 주·긴 윗꼬리",
+        "result": "11/9~13 완료 주 +5.03%, 고가 859.65에서 822.35로 후퇴했습니다.",
+        "check": "주간 반등과 일봉 약세가 충돌합니다. 760.10 큰 가설 경계 유지.",
+        "note": "동일 계약 일봉 재표본화. 이번 주 5거래일 완료; 진행 주로 표시하지 않음."
       }
     },
     {
-      "file": "futures_wave_daily_20261112.png",
-      "title": "일봉: 반등 약화·돌파 유지 실패",
-      "interpretation": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+      "file": "futures_wave_daily_20261113.png",
+      "title": "일봉: 기존 지지 이탈·회복 가설 약화",
+      "interpretation": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
       "kind": "price",
-      "source_note": "키움 API 정규장 원천·해시검증; 계산/해석 별도",
-      "sha256": "dcdc8b3a6c551c3546d3e2ee822e53a626e6e0dd1d3c92823554d2c69e2c84f8",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "103aaa85f5cfa4b103f0a18fe32a5fb3d87bd474ccec24dd669dde743d2c1018",
       "brief": {
-        "title": "일봉: 반등 약화·돌파 유지 실패",
-        "result": "827.50(-1.08%). 832.50 지지 이탈, 838.20 위 종가 조건 미충족입니다.",
-        "check": "824.65~824.95 경계; 838.20 일봉 회복·재지지 뒤 846.85/852.75 확인.",
-        "note": "SMA5 806.99 / 10 846.53 / 20 866.36; RSI14 39.82, ADX14 29.73, -DI가 +DI보다 큼. 동일 가격 신호 중복 가산 안함."
+        "title": "일봉: 기존 지지 이탈·회복 가설 약화",
+        "result": "822.35(-0.62%). 전일 824.65~824.95 지지 조건 실패입니다.",
+        "check": "824.65~826.10부터 회복, 838.20 일봉 종가·재지지가 다음 조건입니다.",
+        "note": "SMA5 814.87 / 10 838.82 / 20 863.43. RSI14 39.24, ADX14 29.28, -DI > +DI. 같은 가격 지표 중복 투표 금지."
       }
     },
     {
-      "file": "futures_intraday_oi_20261112.png",
-      "title": "10분봉: 막판 하락·OI 재증가",
-      "interpretation": "08:45→12:05 선물은 840.70→846.10으로 +5.40, OI는 157,818→154,402로 -3,416계약이었습니다. 신규 매수 확대보다는 기존 포지션 축소를 동반한 반등 설명이 더 잘 맞지만 숏 청산만으로 확정할 수는 없습니다. 12:05→15:25는 가격 -15.60과 OI -789가 함께 나타나 반등 이후에도 포지션 축소가 이어졌습니다. 14:35 OI 저점 152,639 이후에는 다시 증가했고, 15:25→15:45에는 830.50→827.50 하락과 OI +161계약이 겹쳤습니다. 이 막판 구간은 하루 전체 OI 감소와 구분해야 하는 약세 확인값입니다. 다만 전체 만기 수급과 개별 12월물 OI의 범위가 달라 특정 주체의 신규 숏이라고 확정하지 않습니다. LS 시간대별 수급에는 15:45 이후에도 외국인 선물 -92→최종 +468, 콜·풋 금액의 큰 집계 변화가 있습니다. 이를 모두 정규장 마지막 체결 시각의 주문으로 돌려 해석하지 않고 지연 집계·정정 가능성을 남겼습니다.",
+      "file": "futures_intraday_oi_20261113.png",
+      "title": "10분봉: 오후 하락·OI 증가, 단일가는 축소",
+      "interpretation": "09:05 표시 봉에서 가격 고가 859.65와 OI 154,944가 나온 뒤 밀렸습니다. 고정 구간 08:45→12:05는 가격 845.50→837.05(-8.45), OI 154,792→153,861(-931)로 포지션 축소를 동반했습니다. 이어 12:05→15:25는 가격 837.05→822.65(-14.40), OI 153,861→154,298(+437)여서 오후에는 가격 하락과 참여 증가가 겹쳤습니다. 이는 단기 약세 확인값이지만 특정 투자자의 신규 숏 증명은 아닙니다. 15:25→15:45 종가 단일가는 가격 -0.30, OI -4로 막판 OI 급증은 없었습니다. LS 시간대 외국인 선물 누적은 15:00 +371→15:25 +1,094→15:45 +1,077→최종 +2,729계약입니다. 마감 후 집계 변화가 커 최종 매수를 모두 마지막 체결 주문으로 돌리지 않습니다. 투신 현물도 15:30 표시 +663에서 15:45 -639로 바뀌어 실제 주문 시각과 집계 갱신 시각을 구분했습니다.",
       "kind": "price",
-      "source_note": "키움 API 정규장 원천·해시검증; 계산/해석 별도",
-      "sha256": "20b9171bb1817b48f7944bb5e6c6412378712b7647dda81f8c8a4af88803ef8a",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "d726a1332f1c3bca764552b78e86128729fce74a42decc165df421058c91d4a0",
       "brief": {
-        "title": "10분봉: 막판 하락·OI 재증가",
-        "result": "오전 가격 반등/OI 감소 후 오후 약세. 15:25→15:45 가격 -3.00·OI +161입니다.",
-        "check": "832.50~832.65 위 10분봉 마감·눌림 유지, 이어 837.95~838.20 회복을 확인합니다.",
-        "note": "15:45 종가 단일가 별도. 825.05는 기존 경계 근접이며 정확한 824.95 재지지 아님."
+        "title": "10분봉: 오후 하락·OI 증가, 단일가는 축소",
+        "result": "12:05→15:25 가격 -14.40·OI +437, 15:25→15:45 가격 -0.30·OI -4입니다.",
+        "check": "818.10 이탈·재저항이면 803.20~802.95 확인. 회복은 826.10→829.55 순서.",
+        "note": "15:45 종가 단일가 별도. 818.10 단일 저점을 강한 지지로 승격하지 않음."
       }
     },
     {
-      "file": "futures_flow_windows_20261112.png",
-      "title": "지수선물: 당일과 누적을 분리 · 2026-11-12",
-      "interpretation": "오늘 전체 만기 지수선물 순매매는 외국인 +468계약, 금융투자 +1,214계약인 반면 투신 -1,343계약, 연기금 -452계약, 기관 합계 -647계약입니다. 외국인·금융투자가 반대편 매도를 일부 받아낸 형태지만, 순매수 주체가 있다고 가격 방어가 성공한 것은 아닙니다. 전일 투신 +1,731계약에서 오늘 매도로 돌아섰고 종가도 하락해 매수 합의가 약해졌습니다. 최근 3일(11/10~12) 외국인 -3,482·투신 +4,998계약과 최근 5일(11/6~12) 외국인 +7,879·투신 +2,957계약은 서로 다른 시간축입니다. 20일(10/16~11/12) 외국인 +15,775계약도 오늘 상승을 보장하지 않았습니다. 기관 합계와 금융투자·투신·연기금을 중복 합산하지 않으며 순매매를 실제 보유 잔고로 부르지 않습니다.",
+      "file": "futures_flow_windows_20261113.png",
+      "title": "지수선물: 주초 누적과 최근 매도 전환 · 2026-11-13",
+      "interpretation": "전체 만기 지수선물은 외국인 +2,729계약, 투신 -2,206, 금융투자 -411, 연기금 +130, 기관 합계 -2,483입니다. 외국인이 기관 매도의 반대편을 상당 부분 받아냈지만 가격 방어는 실패했습니다. 외국인 선물 매수 하나를 상방 확정 근거로 삼기 어려운 날입니다. 최근 3일(11/11~13)은 외국인 -608·투신 -1,818계약인 반면 5일(11/9~13)은 외국인 +3,437·투신 +4,391계약입니다. 주초 누적 매수와 최근 변화가 충돌하며 특히 투신은 최근 매도로 바뀌었습니다. 20일(10/19~11/13) 외국인 +22,704·투신 -2,162계약도 구분합니다. 기관 합계와 세부 주체를 더하지 않고, 순매매를 보유량으로 부르지 않습니다.",
       "kind": "flow",
-      "source_note": "검증된 동일 날짜 LS·HTS 원천; 범위/단위/제외는 본문과 원천 요약 참고",
-      "sha256": "e02220651f4aa91d81c69068c605a57b376cecda8f614bc1d22f49c9ee5265ec"
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "bb06ae2aae657ab3f260a849549f5459946570f3a7d6509da5b89fb4f47dea65"
     },
     {
-      "file": "futures_weekly_weights_20261112.png",
-      "title": "완료 주 해석 배율 | 11/6 기준 · 11/12 적용",
-      "interpretation": "완료 주 11/2~6까지의 20거래일로 이번 주 해석 배율을 고정했습니다. 현물 외국인 1.194·투신 1.205, 선물 외국인 1.002·투신 1.150·연기금 1.144입니다. 현물 외국인·투신의 최근 동행을 더 주의 깊게 본다는 뜻이지 시장을 움직인 인과 비중이나 미래 확률이 아닙니다. 11/9~12 진행 주는 배율 갱신에서 제외했고 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/12의 검증 입력에서 외국인·투신 동반 매수와 당일 상승 뒤 다음 날 상승은 현물 3/7, 선물 1/3이고, 동반 매도·하락 뒤 다음 날 하락은 현물 4/10, 선물 0/2입니다. 표본이 작고 만기일 전용 검증도 아니어서 반대 방향 확률이나 오늘의 미래 확률로 바꾸지 않습니다. 오늘은 현물 동반 매수에도 지수가 하락했고 선물 외국인·투신 방향도 달라 해당 동반 신호가 성립하지 않았습니다.",
+      "file": "futures_weekly_weights_20261113.png",
+      "title": "완료 주 해석 배율 | 11/13 계산 · 다음 주용",
+      "interpretation": "오늘 11/9~13 주가 완료돼 새 해석 배율을 계산했습니다. 현물 투신 1.197·외국인 1.183, 선물 투신 1.154·외국인 0.931입니다. 다음 주 해석용 갱신값이며 이번 주 당시 예측에 사용한 것처럼 소급하지 않습니다. 최근 20일 수급과 당일 등락의 방향 일치는 현물 투신 16/20·외국인 13/20, 선물 투신 15/20·외국인 9/20이었습니다. 현물 외국인·투신과 선물 투신을 상대적으로 더 살펴볼 이유는 있지만 인과적 시장 영향 비중은 아닙니다. 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/13 입력의 완료 사건에서 외국인·투신 동반 매수·당일 상승 뒤 다음 날 상승은 현물 3/7(42.9%)·선물 1/3(33.3%), 동반 매도·하락 뒤 하락은 현물 4/10(40%)·선물 0/2입니다. 오늘 현물 동반 매도·하락 사건은 다음 거래일 미도래로 대기이며 분모에서 제외했습니다. 작은 표본의 관측 비율을 다음 날 예측 확률이나 역방향 승률로 바꾸지 않습니다.",
       "kind": "flow",
-      "source_note": "검증된 동일 날짜 LS·HTS 원천; 범위/단위/제외는 본문과 원천 요약 참고",
-      "sha256": "340360756fa19652025b2749bccd740e4a2f0412fa618ebc5c2668cc489539a9"
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "e1c6842f1674c09b7dc75ea770118f5aed83d3fca06ef7b184332d34666e7d4a"
     },
     {
-      "file": "options_contract_review_20261112.png",
-      "title": "12월 옵션: 같은 계약 대조 | 11월 만기 후와 구분",
-      "interpretation": "오늘 0787 원본에서 외국인은 콜 +6,452계약·+61억원, 풋 +5,426계약·+97억원으로 양쪽 모두 순매수했습니다. 콜 금액만 보고 상방 단독 베팅이라고 할 수 없습니다. 그렇다고 이 정보를 무시하지도 않습니다. 다음 만기 12월 835콜은 가격 45.20→41.50, OI 69→270(+201), 거래량 230계약이고, 835풋은 44.55→44.95, OI 478→569(+91), 거래량 99계약입니다. 양쪽 OI 증가 가운데 콜 가격은 내리고 풋 가격은 올랐으므로 '콜 신규 매수 증가가 상승을 확인했다'는 해석보다 양방향 포지션 증가 속 하방 압력이 남았다는 설명이 더 적합합니다. 각 계약에는 신규 매수와 신규 매도 양쪽이 생기며 외국인별 신규·청산 연결자료는 없습니다. 12월 835콜/풋 현재 IV 44.09%/48.26%, 델타 +0.5264/-0.4710은 제공업체 마감 후 값입니다. 전일 12월 IV에 0·비정상적으로 낮은 값이 있고 현재 호가도 넓어 IV 급증·고정 델타 스큐·기간구조를 수치 신호로 쓰지 않았습니다. 이는 거래 가능한 호가의 방향 증거가 아닙니다. 2026-11-12는 KOSPI200 11월물 옵션 만기일이고 12월 선물·옵션 만기는 12/10입니다. 만기 옵션 15:20 종료, 현물 15:30, 비만기 선물 15:45라는 서로 다른 종료 시점을 구분했습니다. 11월 830/835/840 콜·풋의 마감 후 OI가 모두 0으로 표시되므로 이를 오늘 장중 신규·청산 수량으로 해석하지 않습니다. 만기 옵션 IV 바닥값 역시 변동성 위험 소멸의 증거가 아닙니다. 만기 전 15:00→15:20 LS 시간대 누적 외국인 콜 수량은 275→3,963, 풋은 4,399→5,905계약으로 양쪽 순매수가 늘었습니다. 이는 전체 만기 합산이며 11월 특정 행사가의 신규 콜 매수 확인은 아닙니다. 내일 11/13에는 소멸한 11월물을 분석에서 분리하고, 12월 동일 계약의 가격·OI 변화가 지속되는지, 12월 선물 832.50~838.20 회복과 현물·프로그램 수급이 함께 유지되는지 확인해야 합니다. 만기 이벤트 때문에 오늘 신호를 무조건 무효화하지도, 바로 다음 날 추세로 연장하지도 않습니다.",
+      "file": "options_contract_review_20261113.png",
+      "title": "12월 옵션: 같은 계약 대조 | 11월 만기 이후",
+      "interpretation": "0787 원본에서 외국인은 콜 -3,626계약·-45억원, 풋 +636계약·-24억원입니다. 어제 양쪽 금액 순매수에서 오늘 양쪽 금액 순매도로 달라졌지만 풋 수량·금액이 엇갈려 델타 방향을 단순화할 수 없습니다. 12월 830콜은 가격 42.50→39.15, OI 34→101(+67), IV 42.56→44.77%(+2.21%p), 델타 +0.5104입니다. 가격 하락·OI 증가·IV 상승은 관측됐지만 외국인의 신규 콜 매수나 상방 베팅을 증명하지는 않습니다. 해당 계약 거래량은 102, 호가 36.70/40.80으로 넓습니다. 820풋은 가격 39.40→40.65, OI 485→491(+6), IV 50.34→48.35%, 델타 -0.4496으로 가격과 IV가 반대로 움직였습니다. 830풋 OI +310은 거래량 95보다 커 신규 포지션 수량 해석에서 제외하고, 825풋은 유효 양방향 호가가 없으며 825콜·풋 전일 거래량이 0이라 전일 가격 비교 신뢰도를 낮춥니다. 820/825/830 콜·풋 모두 코드·만기·가격·OI·IV를 따로 보존했습니다. 일부 유효 계약의 변화는 설명에 반영하되 전체 스큐·기간구조·딜러 감마로 확대하지 않습니다.",
       "kind": "options",
-      "source_note": "검증된 동일 날짜 LS·HTS 원천; 범위/단위/제외는 본문과 원천 요약 참고",
-      "sha256": "a48b5f3e27e91c274e7929893f92fb6cd2eab2de4777a4f82706d5e5db418973"
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "5bc5486aaabad2421386543e535c406d41306b122d4978e242d7668ee668bb56"
     },
     {
-      "file": "hts_0790_daily_20261112.png",
+      "file": "hts_0790_daily_20261113.png",
       "title": "0790 당일 합성손익 원본",
-      "interpretation": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+      "interpretation": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
       "kind": "source",
-      "source_note": "11/12 EOD 원본·일자/누적 모드와 날짜·단위 시각 확인·해시 보존",
-      "sha256": "fb412c4d99dcfb3bead0ee575f188c9553dda5022bf91103ef031407da99b7c5"
+      "source_note": "11/13 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "e154325f361cc3649f1bed6c60403e8dfbef858b97bd917e0d4107aab91500ef"
     },
     {
-      "file": "hts_0790_cumulative_20261112.png",
+      "file": "hts_0790_cumulative_20261113.png",
       "title": "0790 누적 합성손익 원본",
-      "interpretation": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+      "interpretation": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
       "kind": "source",
-      "source_note": "11/12 EOD 원본·일자/누적 모드와 날짜·단위 시각 확인·해시 보존",
-      "sha256": "35523dd5ddf96dce5e62ee631b70f454389452e522df75ca314b9cdd338c0eb6"
+      "source_note": "11/13 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "b40e422b568166aa9217e01d3506a1151b739aabdd59720ab6995193497a66bb"
     },
     {
-      "file": "hts_0794_daily_20261112.png",
+      "file": "hts_0794_daily_20261113.png",
       "title": "0794 당일 금액 순매매 원본",
-      "interpretation": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+      "interpretation": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
       "kind": "source",
-      "source_note": "11/12 EOD 원본·일자/누적 모드와 날짜·단위 시각 확인·해시 보존",
-      "sha256": "06de882986e8ae510780c856128e18135ef500a308160c342ea1db622e3d272b"
+      "source_note": "11/13 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "6547664acc34438d179101c151981c414acedbb4e8a874a40a5fd68f3ede3aea"
     },
     {
-      "file": "hts_0794_cumulative_20261112.png",
+      "file": "hts_0794_cumulative_20261113.png",
       "title": "0794 누적 금액 순매매 원본",
-      "interpretation": "0790 일자/누적과 0794 일자/누적 원본은 날짜·모드·서로 다른 이미지 해시를 대조했습니다. 0790 외국인은 당일 위쪽에서 개선되는 합성손익 곡선이나 누적 곡선은 표시 구간에서 음수이며, 금융투자·투신·연기금도 일자와 누적 방향이 일치하지 않습니다. 이는 추정 손익 구조이지 실제 잔존 포지션이 아닙니다. 0791 상세 보유 증거는 없으므로 외국인 실제 순롱·순숏, 평균단가와 기관 통합 손익을 만들지 않습니다. 0794 순매매를 옵션 잔고나 신규·청산 내역으로 바꾸지 않았습니다.",
+      "interpretation": "0790 일자·누적과 0794 일자·누적은 원본 날짜·선택 모드·이미지 해시를 확인했습니다. 0790 외국인 당일 곡선은 위쪽에서 개선되지만 누적 곡선은 화면 표시 구간에서 음수입니다. 화면 가로축 814.78~834.78은 현물 기준으로 선물 지지선과 혼합하지 않습니다. 0794 일자·누적 숫자가 같은 만기 직후 화면을 실제 보존했지만 만기·잔존량 증거로 확대하지 않았습니다. 0791 상세 잔고가 없어 실제 순롱·순숏, 평균단가와 신규·청산 주체는 판단 불가입니다.",
       "kind": "source",
-      "source_note": "11/12 EOD 원본·일자/누적 모드와 날짜·단위 시각 확인·해시 보존",
-      "sha256": "b4a2574d0682f61c047f44e9e6fad07f320e6fba15a3ddedbdfe0251e5a140e1"
+      "source_note": "11/13 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "38812bddf5cdc3ba7ee18c7d5f3e4828c456f96b43cecbdc79f232db8c688a72"
     },
     {
-      "file": "hts_volatility_20261112.png",
+      "file": "hts_volatility_20261113.png",
       "title": "0471 대표 변동성 원본",
-      "interpretation": "대표 IV 45.97은 동일 행사가 IV 또는 고정 델타 스큐가 아닙니다. 만기 영향을 분리합니다.",
+      "interpretation": "대표 변동성 화면은 동일 행사가 IV·고정 델타 스큐와 별개입니다. 분석 수치는 개별 계약 API를 사용합니다.",
       "kind": "source",
-      "source_note": "11/12 EOD 원본·일자/누적 모드와 날짜·단위 시각 확인·해시 보존",
-      "sha256": "ac0ec8d682d234297255b5ea512eff8b4cee924e87ac496efcc735f3c911058e"
+      "source_note": "11/13 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "7d37ace3b3edddcd8a1583052e5f0c9ae4b9a6eeb8ea1b37b31f2e38ba7765ea"
     }
   ],
   "limitations": [
-    "키움 전일 OI 최초 159,641과 재조회 158,324의 정정 원인 미확인. 오늘 키움 153,774와 LS 154,035의 차이 261계약 보존. 동일 출처 재조회 기준 변화만 계산했습니다.",
-    "일봉 거래량 122,002와 분봉·LS 119,875 차이 및 원천 간격 때문에 정확한 체결 VWAP·매물대·매수강도·전 구간 CVD를 만들지 않았습니다. LS 종가 CVD +460은 미분류 2,837 및 74개 경로 공백과 함께만 사용합니다.",
-    "만기 후 11월 옵션 OI 0과 IV 바닥값은 장중 신규·청산이나 변동성 소멸의 증명이 아닙니다. 12월 IV 전일 비교, 고정 델타 스큐·기간구조는 유효 호가와 시점 정합성이 부족해 제외했습니다.",
-    "전체 만기 투자자 순매매와 특정 만기·행사가 OI는 범위가 다릅니다. 실제 잔존량·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 판단 불가입니다. 감마 원천 표본은 전체를 대표하지 않아 사용하지 않았습니다.",
-    "LS 현물·프로그램 금액 고정 환산 단위는 확인 불가여서 방향과 원시 단위를 보존했습니다. 오늘 0787 옵션 금액의 억원 단위는 원본 화면에서 확인했습니다. LS 시간대 값은 마감 이후에도 집계가 변해 모두 막판 실제 주문으로 간주하지 않았습니다.",
-    "3월물 t2214 저가 820.00이 종가 819.15보다 높은 원천 모순. t2111 재조회 저가 819.15를 별도로 제시하고 원본 일봉을 수정하거나 12월물에 접합하지 않았습니다.",
-    "주간 배율은 완료 주의 동행 통계이며 인과·미래 확률이 아닙니다. 진행 주와 소표본을 분리했습니다. 이번 만기일에 특화된 외표본 지속 확률은 산정 불가입니다.",
-    "국내·해외 보조 다중 시간대 11/11, 선택 연구층 11/10은 현재 근거에서 제외했습니다. 주도주 제외 시장 전체 수급, 세부 파동 차수, 0791 실제 상세 포지션은 미확보입니다.",
-    "최초 KOSPI200 보완 조회에서 101(KOSDAQ)을 요청한 파일은 오분류로 제외했습니다. 공식 명세의 201로 다시 조회해 KOSPI200 833.57을 LS와 대조했으며 원본을 모두 보존했습니다.",
-    "분석은 11/12 정규장과 17시대 공개 시장자료 조회에 한정합니다. 이후 야간 및 다음 거래일 결과는 포함하지 않았으며 조건부 해설이지 주문·비중 지시가 아닙니다."
+    "키움 전일 최초 OI 153,774·재조회 154,035 차이 261, 당일 키움 154,294·LS 154,085 차이 209의 원인 미확인. 원본을 보존하고 혼합하지 않았습니다.",
+    "일봉 거래량 114,342와 분봉·LS 112,089 차이, 장중 경로 공백으로 정확한 VWAP·체결 매물대는 제외. LS CVD +338은 미분류 2,805와 45개 공백을 함께 표시합니다.",
+    "12월 830풋 OI 변화가 거래량을 넘고 825풋 유효 양방향 호가가 없으며 일부 전일 무거래·넓은 호가가 있습니다. 체결 가능한 IV 신호, 전체 스큐·기간구조는 미확정입니다.",
+    "전체 만기 수급은 특정 만기·행사가 OI와 범위가 다릅니다. 실제 잔고·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 만들지 않습니다. 감마 표본이 전체를 대표하지 않아 제외합니다.",
+    "LS 현물·프로그램 금액 환산 단위는 독립 확인 불가로 원시 단위 보존. 0787 옵션 금액의 억원 단위는 원본 확인. 마감 후 수급 집계 변화를 막판 실제 주문으로 돌리지 않습니다.",
+    "3월물 OI +603이 표시 거래량 46보다 큰 범위 차이로 롤오버 규모는 미확정. 12월물과 계약·가격·OI를 합치지 않았습니다.",
+    "완료 주 배율은 같은 날 동행의 제한적 해석 배율이며 새 값은 다음 주용입니다. 소표본·중복 사건·시장 국면 편중 때문에 만기 직후 다음 날 확률 산정 불가입니다.",
+    "국내·해외 보조 다중 시간대 11/12, 선택 14단계 11/10 제외. 주도주 제외 전체 수급·세부 파동 차수·0791 상세 잔고는 미확보입니다.",
+    "최초 지수 코드 101은 KOSDAQ으로 KOSPI200 대조에서 제외하고 201로 재조회해 824.78을 확인했습니다. 콜 일별 수급 3번째 페이지 조회가 시간 초과됐으나 확보한 2페이지에 필요한 최근 20거래일은 모두 포함돼 있습니다.",
+    "분석은 11/13 정규장 및 17:03~17:09 보완 조회 기준입니다. 이후 야간·다음 거래일 결과는 미반영이며 조건부 해설이지 주문·비중 지시가 아닙니다."
   ],
   "data_validation": {
-    "trade_date": "20261112",
+    "trade_date": "20261113",
     "status": "CORE_VERIFIED_WITH_DISCLOSED_LIMITS",
     "ready_for_editorial_review": true,
     "capture_count": 12,
     "all_54_display_nets_visually_checked": true,
     "source_hashes": [
       {
-        "file": "analysis.json",
+        "file": "20261012_101230_021224/analysis.json",
         "sha256": "4aedecdf2ad1450bb0828196a9e76aca33352be8630fc3285a1ada05f00be731"
       },
       {
-        "file": "analysis.json",
+        "file": "20261012_101529_137835/analysis.json",
         "sha256": "d36f10921c2c52c6c0fc45064a7b160c53b63894669cb231530726f88465c65c"
       },
       {
-        "file": "analysis.json",
+        "file": "20261012_104055_192868/analysis.json",
         "sha256": "e0714e3956a2df54cf066654731803634551b0c2f10d7e326566d5928b5d8e6b"
       },
       {
-        "file": "analysis.json",
+        "file": "20261012_160501_146930/analysis.json",
         "sha256": "55439ec987921da22da059402504a60f7e3edb6a399ca19bbab3608f7a204d9b"
       },
       {
-        "file": "analysis.json",
+        "file": "20261013_160629_055061/analysis.json",
         "sha256": "5e89cc93e3c8228b97fb334c949a9386f4491ca03fe10c16c3771a2e3a19e9d2"
       },
       {
-        "file": "analysis.json",
+        "file": "20261015_172943_592733/analysis.json",
         "sha256": "b75cce9363a6e70fd5526ef1236d0634b61e214d46e1f8d2221a6d3e3c6c81d9"
       },
       {
-        "file": "analysis.json",
+        "file": "20261020_160513_739561/analysis.json",
         "sha256": "305f14b685b5f6b10d7c47e9bd3eb58b3b9046ed9b039c4d2620ffe423f251ee"
       },
       {
-        "file": "analysis.json",
+        "file": "20261021_160223_559583/analysis.json",
         "sha256": "ca92f08da8ba7b66628aeb53e2a72e5a55b15a91af072f5a629c8093452eb586"
       },
       {
-        "file": "analysis.json",
+        "file": "20261022_160849_395235/analysis.json",
         "sha256": "edfb595082847883c9c1482526ea5991cc918ffef9510fdfdd89d1efe60953e7"
       },
       {
-        "file": "analysis.json",
+        "file": "20261023_160102_476144/analysis.json",
         "sha256": "c11d76cb25668c6370198f2357572a29df48ba127ab7c6e2034ccc54452addea"
       },
       {
-        "file": "analysis.json",
+        "file": "20261026_160415_274191/analysis.json",
         "sha256": "6ead76924001794975321d2f5cf83158e867e284a7246038a793ef06ac537950"
       },
       {
-        "file": "analysis.json",
+        "file": "20261027_160112_640637/analysis.json",
         "sha256": "02496dfe620d04eb4db4422c0415693df3964efcf4f132b5951f525a0ae0978c"
       },
       {
-        "file": "analysis.json",
+        "file": "20261028_160607_460988/analysis.json",
         "sha256": "b29ed4bdebe77fe978eea8ca3301ab12bb3d86c63896149f78701280218b6e7d"
       },
       {
-        "file": "analysis.json",
+        "file": "20261029_174647_653404/analysis.json",
         "sha256": "58860e4efa0f03e2f8b1951028491895b56b4ed3a378fd46580d7d7340b99768"
       },
       {
-        "file": "analysis.json",
+        "file": "20261030_160114_776046/analysis.json",
         "sha256": "ae46cade12c1086143f4668af7b49d9870d2f19c8e789c060f46504267a933e9"
       },
       {
-        "file": "analysis.json",
+        "file": "20261102_162944_634447/analysis.json",
         "sha256": "2a9b1019a62113b9a876b7f4317e031434e1db4f1055228ac2ef1ea260ca1318"
       },
       {
-        "file": "analysis.json",
+        "file": "20261103_160059_406594/analysis.json",
         "sha256": "8062139327d947aaae21c8d640fa60918d98fac68af0146db9d4f70edbb8ce65"
       },
       {
-        "file": "analysis.json",
+        "file": "20261104_160529_020493/analysis.json",
         "sha256": "1c57ae0fb4e0e5f368f5f599c19459dfc680512fa78665ddacb3ae74d0b40432"
       },
       {
-        "file": "analysis.json",
+        "file": "20261105_160117_739453/analysis.json",
         "sha256": "3cbe3cdd6c77ced047289434a96b6405d441f7efa22e118302e7ea048724a4f0"
       },
       {
-        "file": "analysis.json",
+        "file": "20261106_160444_430972/analysis.json",
         "sha256": "e286235d3c5b59971d8b43f65123550d344aa284cdc6debc1d9952a957869d5f"
       },
       {
-        "file": "analysis.json",
+        "file": "20261109_160553_127137/analysis.json",
         "sha256": "7ab07893fc40d896fbb9ca54a57e9002315c0a4aac173ec7dbf28450be0ed90e"
       },
       {
-        "file": "analysis.json",
+        "file": "20261110_162424_656256/analysis.json",
         "sha256": "eace92d33228497084a26917e56ca10bbef352d36fd0880ad12beabc579ffde5"
       },
       {
-        "file": "analysis.json",
+        "file": "20261111_160748_360883/analysis.json",
         "sha256": "40395fa68e05614a7b900d51df9713bb94bdb6519d2c74fc69c1bfbd64fa5c32"
       },
       {
-        "file": "analysis.json",
+        "file": "20261112_160845_290385/analysis.json",
         "sha256": "d0c735b8d2208ffdb9dd9d325e0f8f6e0678aad048a9e597f911625cabd4602a"
       },
       {
-        "file": "k200_futures_investor_net_daily.csv",
-        "sha256": "85b04896bb5236bdab51421eb12531c68f862c113d0d8ab8d6bb10b5663e68e2"
+        "file": "20261113_160808_912749/analysis.json",
+        "sha256": "7b66ee2a9a72640d0828581b8db0491eb82376f2bd3c944817456e65624a455a"
       },
       {
-        "file": "krx_calendar_20261112_170521644.json",
+        "file": "20261113/execution_completion_163825.json",
+        "sha256": "7e8febfb833496cde66e688a410a27282d4bd826f6da54320f6149d709372254"
+      },
+      {
+        "file": "20261113/krx_calendar_20261113_170111929.json",
         "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
       },
       {
-        "file": "pipeline_completion_audit_163610.json",
-        "sha256": "dd1ed0bba57142e9445e703fc7e21983ce714c951315b33d5ec7dccf917c24fa"
+        "file": "20261113/0471_KOSPI200_일별_60일_20261113.png",
+        "sha256": "7d37ace3b3edddcd8a1583052e5f0c9ae4b9a6eeb8ea1b37b31f2e38ba7765ea"
       },
       {
-        "file": "0471_KOSPI200_일별_60일_20261112.png",
-        "sha256": "ac0ec8d682d234297255b5ea512eff8b4cee924e87ac496efcc735f3c911058e"
+        "file": "20261113/0786_close_snapshot_20261113.png",
+        "sha256": "9ec4e29bd5b2c60d056b345cf5c05f0e024cc6509bebd3520a42975613fd1dd3"
       },
       {
-        "file": "0786_close_snapshot_20261112.png",
-        "sha256": "ae62aaeb5f3816f09edcf85429293342376692c9a864def3abe6b79ccc422c25"
+        "file": "20261113/0787_선물_금액_20261113.png",
+        "sha256": "ab9472bfb1b8f62096d9c610d4d745e6dae7b2432e2d2d3a8410054531b75cd2"
       },
       {
-        "file": "0787_선물_금액_20261112.png",
-        "sha256": "2a45699a2b9c4fcebdfbcee88da54566dfb447c3c99cbc626f6ec810dc509792"
+        "file": "20261113/0787_선물_수량_20261113.png",
+        "sha256": "442adfba0cc61f649ec02915ed8fd9445f0afe4cad2a495e2b512afd46490c0d"
       },
       {
-        "file": "0787_선물_수량_20261112.png",
-        "sha256": "f07f0a8c37d66bbb0a06f07f2310d504430efd7f08496acb990fa0de1433f696"
+        "file": "20261113/0787_콜옵션_금액_20261113.png",
+        "sha256": "8e0e30361232d1245cec5ba688c5d538132ccf8bd832bc1b45a1a0816a225ca3"
       },
       {
-        "file": "0787_콜옵션_금액_20261112.png",
-        "sha256": "aeb38e6cfd9bacf21328bf467594c74d71c204c8e5c95a698cc6659158eb2e39"
+        "file": "20261113/0787_콜옵션_수량_20261113.png",
+        "sha256": "fe79b03d032222ae711638d8cab7cfa7b362b04a69993238c927330ef4788bc4"
       },
       {
-        "file": "0787_콜옵션_수량_20261112.png",
-        "sha256": "39e8f8ed7fb72428574195f3b4250141f5bdc313edd7b98f4367a1d2ec8d28b3"
+        "file": "20261113/0787_풋옵션_금액_20261113.png",
+        "sha256": "63fb207665f26414b363f424398c94c0b6cbb0afe8e20ca67cc8d119011a8196"
       },
       {
-        "file": "0787_풋옵션_금액_20261112.png",
-        "sha256": "4bae1c5ce3ea60367ef1ba90e932e2e7cb6242d0143e4e36ef90536cb11b3734"
+        "file": "20261113/0787_풋옵션_수량_20261113.png",
+        "sha256": "6a9b6d88b9f916ee0d0008100aa80786e9c6944dca465ba47807b70eaa4b2d82"
       },
       {
-        "file": "0787_풋옵션_수량_20261112.png",
-        "sha256": "b57eb4168a08253b5f6984bb222930980f26a4948ad08c5e7a73a3684f5896bc"
+        "file": "20261113/0790_누적_20261113.png",
+        "sha256": "b40e422b568166aa9217e01d3506a1151b739aabdd59720ab6995193497a66bb"
       },
       {
-        "file": "0790_누적_20261112.png",
-        "sha256": "35523dd5ddf96dce5e62ee631b70f454389452e522df75ca314b9cdd338c0eb6"
+        "file": "20261113/0790_일자_20261113.png",
+        "sha256": "e154325f361cc3649f1bed6c60403e8dfbef858b97bd917e0d4107aab91500ef"
       },
       {
-        "file": "0790_일자_20261112.png",
-        "sha256": "fb412c4d99dcfb3bead0ee575f188c9553dda5022bf91103ef031407da99b7c5"
+        "file": "20261113/0794_누적_20261113.png",
+        "sha256": "38812bddf5cdc3ba7ee18c7d5f3e4828c456f96b43cecbdc79f232db8c688a72"
       },
       {
-        "file": "0794_누적_20261112.png",
-        "sha256": "b4a2574d0682f61c047f44e9e6fad07f320e6fba15a3ddedbdfe0251e5a140e1"
+        "file": "20261113/0794_일자_20261113.png",
+        "sha256": "6547664acc34438d179101c151981c414acedbb4e8a874a40a5fd68f3ede3aea"
       },
       {
-        "file": "0794_일자_20261112.png",
-        "sha256": "06de882986e8ae510780c856128e18135ef500a308160c342ea1db622e3d272b"
+        "file": "20261113/eod_0787_parsed_20261113.csv",
+        "sha256": "e03f896573db4c252b74bc43de0913f4b84e6aebe2155037c167b06970a580f7"
       },
       {
-        "file": "eod_0787_parsed_20261112.csv",
-        "sha256": "868b9a01aa1e321e586f8fca9ba0a5c39f4818d0040d1c0035367935c5d256e3"
+        "file": "20261113/eod_manifest_20261113.json",
+        "sha256": "5ce71bc4aff13feb5427a63e76a92ef4251925c8a50780dce49af07583e4e8c4"
       },
       {
-        "file": "eod_manifest_20261112.json",
-        "sha256": "b5b56f0ffb9f10b9d308fedd035955a5116f7b8776a92005fe3b499808323b45"
+        "file": "20261113/eod_ocr_bridge_20261113.json",
+        "sha256": "a71e0f334b5b4dc6f41a1582b8e7d6d19fe1022eaa08bdf2f4903d76b86971fb"
       },
       {
-        "file": "eod_ocr_bridge_20261112.json",
-        "sha256": "b247ceca89e8b0ee20be4ee672f573d5052fe46887e5346cd31f753a847f8915"
-      },
-      {
-        "file": "oi.json",
-        "sha256": "e4e1877b181492965ae931bcf16919ea537c09a81350ee83d8d26b8b16a1e7f5"
-      },
-      {
-        "file": "api_run_latest.json",
+        "file": "20261112/api_run_latest.json",
         "sha256": "eee471d7d73d3a48935dcc73c8d47e8995d2c96134e7d78a92918fb7f6f56428"
       },
       {
-        "file": "daily.json",
-        "sha256": "9abec6efafd8d58bf9ea6704e5345f9aeab6235dbf3b2f6532743acf7bb0332d"
-      },
-      {
-        "file": "minute.json",
-        "sha256": "866123589c025756f7a7b20b32ba78885f4398b3e1b2cd1dc2a1b44ab7c732b4"
-      },
-      {
-        "file": "oi.json",
+        "file": "160749_193132/oi.json",
         "sha256": "c46933c113a86775ecab6715abab04e2ddae86af7ec7a0171dcfd8e2e93a289b"
       },
       {
-        "file": "volatility.json",
-        "sha256": "018a05870afcb54bd44212b9b8669a8cd4ccd092321ece8400d3115b0f72b889"
+        "file": "20261113/api_run_latest.json",
+        "sha256": "98d3e5efd2fc003756d9b72ebfc6f9a9639e59800a123b317ef7224a247913f4"
       },
       {
-        "file": "pipeline_bootstrap_latest.log",
-        "sha256": "9236c2b43b41dbbf19b3ee20c4bc1969f55841e5b4443c6889a321758fe33f46"
+        "file": "160712_564861/daily.json",
+        "sha256": "2f5d3d9a2d0f71e846a5b58c7c792ab5b384b58ae043f3348d2c48b395906ff5"
       },
       {
-        "file": "A0173000_daily.json",
-        "sha256": "885b5e873950fa58a197b9b89a5a343761ba3b0e2cc7684278d07e803e1e1b8a"
+        "file": "160712_564861/minute.json",
+        "sha256": "b81484604472fc504e936445004c923cf4e51a0c329d9070c89e38671e72ab34"
       },
       {
-        "file": "B016B830_daily.json",
-        "sha256": "702c6137d07eff4f569b3c70fd5c05691db3ed0c7c2528453ac2d6aea362d4b4"
+        "file": "160712_564861/oi.json",
+        "sha256": "80c48185ffa406fb9c8a02d84066e1f43c9471b6075d3c1c81669325a8e9b050"
       },
       {
-        "file": "B016B835_daily.json",
-        "sha256": "37738679afa3c25a8e07cc28e90833b080a70d8cf93acbc20ff489fa3d5ba58c"
+        "file": "160712_564861/volatility.json",
+        "sha256": "f31dbb47d785d8b3f90e27d9fb100f0a31dc331b1c09ae9a5803ce9d4f64dc13"
       },
       {
-        "file": "B016B840_daily.json",
-        "sha256": "6e9980613a1e02c7f4c452179865b0752a5cb666510edff3f98ccc5b9c4c7234"
-      },
-      {
-        "file": "C016B830_daily.json",
-        "sha256": "fcb6fa5d1ed09f90c021f1170813c748c707e75d776833c890a889b0fa017612"
-      },
-      {
-        "file": "C016B835_daily.json",
-        "sha256": "3bb6aa57e9e4025660c2c89e5079c20f7e695cd7c1f48397de19f936c77e65a7"
-      },
-      {
-        "file": "C016B840_daily.json",
-        "sha256": "8aab27b486747d81e3a5db7a558df0ca9c21cdccdd3adc6bfd82ae07968a9a18"
-      },
-      {
-        "file": "kospi_kiwoom_daily.json",
-        "sha256": "e55c7836d4c95a0c12285514dfb514fc07f3626aecf22a8138956d80c7e561f2"
-      },
-      {
-        "file": "manifest.json",
-        "sha256": "6a0a25f7b6b49a4a27431478b76a0e0c90f2835f42df9e4334dce27319d24ab6"
-      },
-      {
-        "file": "B016B835_quote.json",
-        "sha256": "f16ad067721c083402deb41aa0fd457cabfcf2f55925b6609be72889db6baa7d"
-      },
-      {
-        "file": "B016C835_quote.json",
-        "sha256": "e26cb4e064c15b4614ecd5eb6a3572abe23285a5ab3c2cefb62e353fdc58d2af"
-      },
-      {
-        "file": "C016B835_quote.json",
-        "sha256": "ed9740f95dbc5e7d938dcbc1a893d3b7a44b6aeb9acddc6f87896de1fa76828d"
-      },
-      {
-        "file": "C016C835_quote.json",
-        "sha256": "c1bf61ef70bba7d27040f11f38f48726476e0381a28beac7b40bfeb23fe3e363"
-      },
-      {
-        "file": "current_future_daily.json",
-        "sha256": "8c79f70f77f1b9da6fc0c500940a504fc1aaf6129a986a8925c995d55b0586d8"
-      },
-      {
-        "file": "manifest.json",
-        "sha256": "fef536af91ac178018d16e93079632a872c5d13101ae14ee6d4c2857b8df7f07"
-      },
-      {
-        "file": "program_daily.json",
-        "sha256": "63e7e0173372a48530a88629ce319045e4585adf69c48ed3db773aa964c094a9"
-      },
-      {
-        "file": "program_intraday.json",
-        "sha256": "58b08d0c6e4098356e15b1e764d61e47b0a47418e27ff31797123fad889f15f0"
-      },
-      {
-        "file": "program_leaders.json",
-        "sha256": "81a389f92ecbef09179dc262caa81d25d3b417754f4456110eedfdf26a3d3d1f"
-      },
-      {
-        "file": "call_detail.json",
-        "sha256": "49777847a2033de84cf8a219558b113b2f6be736dd808b4d93f19725aca66c7c"
-      },
-      {
-        "file": "call_t1617_1.json",
-        "sha256": "f144d4331a60aaeb2d0e1632a3726d44d13dd8ccb0f3f2743abc2366e0454ff4"
-      },
-      {
-        "file": "call_t1617_2.json",
-        "sha256": "6945dda9acc8270438e31050b31a9b4b6b0301020f7b1a980a9edc3fe27cc247"
-      },
-      {
-        "file": "cash_detail.json",
-        "sha256": "dbdeb58bbb7a930e6b1c9438e47ca878857cd457b3fe2753136753d682c6bbda"
-      },
-      {
-        "file": "cash_t1617_1.json",
-        "sha256": "40d9ec4ff8b0eb3d1534e52bf0416e61593443cc701c4d6518d1d013f7ca8e78"
-      },
-      {
-        "file": "cash_t1617_2.json",
-        "sha256": "b9b9c30ec7b4bd90755bc44f830c763662633a79c50c620e0222582967b811aa"
-      },
-      {
-        "file": "cash_t1617_3.json",
-        "sha256": "d5f75da8005b9087f5af52858b437ecb588960064ea5a21509f8e8e79208a4eb"
-      },
-      {
-        "file": "future_catalog.json",
-        "sha256": "0603a594609c6dec314cd617348a8c0227b26c72f30e24398f254aa480a6c0cf"
-      },
-      {
-        "file": "future_quote.json",
-        "sha256": "d7cbf3f620d6b3b578400761261f2335147d2f316da7c1cafac2678ce4aa15ee"
-      },
-      {
-        "file": "futures_detail.json",
-        "sha256": "63d5696cdc12fc9214a040c614c11c495aef3610f8ed566508f4d00767512b41"
-      },
-      {
-        "file": "futures_t1617_1.json",
-        "sha256": "2933cf85ff23f6973e6fa953c5a14f5c20d28844e2dc0403b29b583a6cdeb126"
-      },
-      {
-        "file": "futures_t1617_2.json",
-        "sha256": "dca9364f1a55a607b1dcbdbc177391609213b25fa8cddffcf1de72d261399c92"
-      },
-      {
-        "file": "futures_t1617_3.json",
-        "sha256": "622c51311ffd60ce38a3b8806a47a793364e194f6479195735127f7931c8ed75"
-      },
-      {
-        "file": "kospi200_daily.json",
-        "sha256": "0a1b000254149e5c55645e03ee6eedbb77f9915713fc9fb7582ab0f26b8efe30"
-      },
-      {
-        "file": "kospi_daily.json",
-        "sha256": "b544f17b17b5dc3f4774037ccb04a723daf12bf56af4e95e48cd1783c191225d"
-      },
-      {
-        "file": "manifest.json",
-        "sha256": "9521b1bf21f71e78ef9a75ffd270a2df7e269d8d427283f57c895da1c6affaae"
-      },
-      {
-        "file": "next_future_daily.json",
-        "sha256": "38201129e6db5bedd2d2f0450d99e2659c3f8a91cba3317b675a9fa0c145063c"
-      },
-      {
-        "file": "options_202611.json",
-        "sha256": "4f2cdd5f57860e7898be9f51ca5132c24261fb702116d64a72e16064ffe55aeb"
-      },
-      {
-        "file": "options_202612.json",
+        "file": "raw_20261112_170554/options_202612.json",
         "sha256": "e6e8c14fe96be643df142709bf4aaf8c5aa7eb14b6c292d0317601cf96cc052a"
       },
       {
-        "file": "put_detail.json",
-        "sha256": "de9439e030a7283e11711c38aa6fc42f6301f139180f4e0ae1436b68d093d066"
+        "file": "futures_review_20261113/bootstrap_review_snapshot.log",
+        "sha256": "47d208ea6580eee40d4584a5e2fa445b4a34e3d65e33eb6696a14293540a589f"
       },
       {
-        "file": "put_t1617_1.json",
-        "sha256": "2d8acd6db7a51590fb057c4fa4042a3e424dda5d7792b371b6a397332d4e6910"
+        "file": "futures_review_20261113/legacy_ledger_preserved.csv",
+        "sha256": "e4abdc4ca3c03d5406959fb2b69e207b95e0d153542f992b4ce8c9a6f8e7b17d"
       },
       {
-        "file": "put_t1617_2.json",
-        "sha256": "453d438298839552a9a43d860f3c499a2beaff21df6a164adb15ba7685e01702"
+        "file": "raw_20261113_170343/A016C000_daily.json",
+        "sha256": "c63dced15dfb7c5cb48bc96f8df57dbc0f85457bc4d9042be7cbc990e2608ece"
       },
       {
-        "file": "stock_futures_t1617_1.json",
-        "sha256": "2ab4946fed803273d71b7e610f4bdc994a6b26111c81483bca4ff699a6f72ca4"
+        "file": "raw_20261113_170343/A016C000_quote.json",
+        "sha256": "2872aea654f3fb3214e92eea6c281be5d2e822fb896b17ae4b56605d08ed7236"
       },
       {
-        "file": "stock_futures_t1617_2.json",
-        "sha256": "50a6bf07c42f6096520388b3e2e5f5160683426732a95815631184f4b7ecc443"
+        "file": "raw_20261113_170343/A0173000_daily.json",
+        "sha256": "6f21b68785250bbdf7555f981e0475001c61f9899d321c4bca679f06d56eec34"
       },
       {
-        "file": "manifest.json",
-        "sha256": "85a20971554d9b84dc20ea60c3102696151ca37a11464d882b2c595acdd1ca45"
+        "file": "raw_20261113_170343/A0173000_quote.json",
+        "sha256": "661fa22edc18c5418af0d936fdbf33ab5177ce7543b3f05ccf6b0449b05cea40"
       },
       {
-        "file": "options_202611.json",
-        "sha256": "ca2a3f3e8098fea7edf0bd7b62890c58b04e3e55ba68f4dc9446f0972ba48319"
+        "file": "raw_20261113_170343/B016C820_daily.json",
+        "sha256": "4b45428470c9287eed52c4797b22a00099214f8504ad06c1ff82f9e396dde236"
       },
       {
-        "file": "manifest.json",
-        "sha256": "fef536af91ac178018d16e93079632a872c5d13101ae14ee6d4c2857b8df7f07"
+        "file": "raw_20261113_170343/B016C820_quote.json",
+        "sha256": "6791be9cef9ce2d61a1442437144ec564f6cbab60dad6c6a62f13f590a22a650"
       },
       {
-        "file": "program_daily.json",
-        "sha256": "63e7e0173372a48530a88629ce319045e4585adf69c48ed3db773aa964c094a9"
+        "file": "raw_20261113_170343/B016C825_daily.json",
+        "sha256": "01ab189435ce4c7b0d1905a0625bc6fb5b8a8d11df6213cb50d946c9458d23b0"
       },
       {
-        "file": "program_intraday.json",
-        "sha256": "58b08d0c6e4098356e15b1e764d61e47b0a47418e27ff31797123fad889f15f0"
+        "file": "raw_20261113_170343/B016C825_quote.json",
+        "sha256": "997451dd7151f10613efc53d9f985e912908ae944f7e5c7430fcece793bdd109"
       },
       {
-        "file": "program_leaders.json",
-        "sha256": "81a389f92ecbef09179dc262caa81d25d3b417754f4456110eedfdf26a3d3d1f"
+        "file": "raw_20261113_170343/B016C830_daily.json",
+        "sha256": "1621fb4c85ce2c75f01e9195a104c5210d6bfd8abb9c27de74b9bbe189cb2591"
       },
       {
-        "file": "B016B835_quote.json",
-        "sha256": "f16ad067721c083402deb41aa0fd457cabfcf2f55925b6609be72889db6baa7d"
+        "file": "raw_20261113_170343/B016C830_quote.json",
+        "sha256": "63eafee5998b025fd239a210ea33dd573adbd0908fa724427fc3c0ee9ecdae7f"
       },
       {
-        "file": "C016B835_quote.json",
-        "sha256": "ed9740f95dbc5e7d938dcbc1a893d3b7a44b6aeb9acddc6f87896de1fa76828d"
+        "file": "raw_20261113_170343/C016C820_daily.json",
+        "sha256": "b1d4142c45490f087704230d1e21f664bcd6ecc879e03e60dd6920d7827654af"
       },
       {
-        "file": "B016C835_quote.json",
-        "sha256": "e26cb4e064c15b4614ecd5eb6a3572abe23285a5ab3c2cefb62e353fdc58d2af"
+        "file": "raw_20261113_170343/C016C820_quote.json",
+        "sha256": "814dd978eed602550113897784bc287c932c6c84b5bd489b689d704b24ca9009"
       },
       {
-        "file": "C016C835_quote.json",
-        "sha256": "c1bf61ef70bba7d27040f11f38f48726476e0381a28beac7b40bfeb23fe3e363"
+        "file": "raw_20261113_170343/C016C825_daily.json",
+        "sha256": "73ea4d5a9b649acdedf43ad143802684aeda6befed3ea640ad5bba6105232018"
       },
       {
-        "file": "official_derivatives_spec_20261112.html",
+        "file": "raw_20261113_170343/C016C825_quote.json",
+        "sha256": "00f734d9fbb77a48ecf831f0c6de12b0d84dac59b22c5dff44edb6022c3edb98"
+      },
+      {
+        "file": "raw_20261113_170343/C016C830_daily.json",
+        "sha256": "257e148eebf6281c325dca577828d4a83213f6226ec924330266517f2ce753b2"
+      },
+      {
+        "file": "raw_20261113_170343/C016C830_quote.json",
+        "sha256": "915d446a5e4bec0eff859e3e7e04ec19f39bacde0e1fa3e0660c21706edd614d"
+      },
+      {
+        "file": "raw_20261113_170343/call_amount_intraday.json",
+        "sha256": "b617d1b6eb0866a6edc424d290f3bf0b2854ae84fda23b89ab9fac6a177bab37"
+      },
+      {
+        "file": "raw_20261113_170343/call_detail.json",
+        "sha256": "e9f34b0a0863a6d0c9722c2c07667f0e39de52dfc47b9c69837b4749b78968ac"
+      },
+      {
+        "file": "raw_20261113_170343/call_qty_intraday.json",
+        "sha256": "41ecf4ba19dc4f6fee771f4349ccadafb459e6bf7aa2ad85032ddf4dd0b214ff"
+      },
+      {
+        "file": "raw_20261113_170343/call_t1617_1.json",
+        "sha256": "c225a9669632530cb834cfc5365433dfb5abbef3995c768f9af41de10be1184f"
+      },
+      {
+        "file": "raw_20261113_170343/call_t1617_2.json",
+        "sha256": "30de5ccb216fa21b8f4edd35f0c1d36ff55c4d28b81bfa5d582e7866d2f13464"
+      },
+      {
+        "file": "raw_20261113_170343/call_t1617_3.json",
+        "sha256": "ae95da5f5383c18fd73c44058f5ddc09869fd2fc780f73d2ac068a9b8ef41e46"
+      },
+      {
+        "file": "raw_20261113_170343/cash_detail.json",
+        "sha256": "5a2e3f5ba53bcb446af7a772cafbe0b1b1a58b844787cffe689c8ee4cd27d23b"
+      },
+      {
+        "file": "raw_20261113_170343/cash_intraday.json",
+        "sha256": "f0167186d4c5920b571082bd31e0dece506082a62e00bb80ca5b054f4087042a"
+      },
+      {
+        "file": "raw_20261113_170343/cash_t1617_1.json",
+        "sha256": "5f1efab0be7e8c6dcc60b4d13175a02773d0045debe11f21bdb026a07949ba7e"
+      },
+      {
+        "file": "raw_20261113_170343/cash_t1617_2.json",
+        "sha256": "294e4d89f46ab06413629927b1dbfc9c30283aa3509c81a531bac1c68ef04998"
+      },
+      {
+        "file": "raw_20261113_170343/cash_t1617_3.json",
+        "sha256": "2ed1847fe4130d31dc8a5a0f8f5a505e181cd85a6b7a74c2ebe8dc00302c9ca4"
+      },
+      {
+        "file": "raw_20261113_170343/future_catalog.json",
+        "sha256": "ae6b497f2531f96b8e142c7e3b079361c7a5a63558f7007c1b42952965a2656f"
+      },
+      {
+        "file": "raw_20261113_170343/futures_detail.json",
+        "sha256": "827dd15f0cf2d3a2d02907cc3e2be35f00ea2602c39b4c31c7e97882e238f915"
+      },
+      {
+        "file": "raw_20261113_170343/futures_intraday.json",
+        "sha256": "55e6163b0d19a60fce140a453cb2e6cc962b7f79ace86c54ef1ddfe5e88d071b"
+      },
+      {
+        "file": "raw_20261113_170343/futures_t1617_1.json",
+        "sha256": "86a31b40a8a64e0485a1f340cd3791e79fb69e92940acc1e1133c227fb12e638"
+      },
+      {
+        "file": "raw_20261113_170343/futures_t1617_2.json",
+        "sha256": "a80761f916614c06d881c43cef3a950f69f88fc9b1e2dba27e9a4885c4b50dbe"
+      },
+      {
+        "file": "raw_20261113_170343/futures_t1617_3.json",
+        "sha256": "cd0f043a6d5be3b4a6e2aef6f07c8c00d2626e7aaefa507bd13ff60f64e2552f"
+      },
+      {
+        "file": "raw_20261113_170343/kospi200_daily.json",
+        "sha256": "ac143db9c0da44d00900f391536216a4beac17212522cde073e3fc07e77e1cba"
+      },
+      {
+        "file": "raw_20261113_170343/kospi200_quote.json",
+        "sha256": "b8ae6f245646fa07b64d2b08de9f8b1b917911bb542d7c4ed1ff0e79a365fb19"
+      },
+      {
+        "file": "raw_20261113_170343/kospi_daily.json",
+        "sha256": "1e5a6c1bb2822985a655d7ce87ca6be580ecc5e7a44059fda7cdc226f45f8dc9"
+      },
+      {
+        "file": "raw_20261113_170343/kospi_kiwoom_daily.json",
+        "sha256": "d14e7efb9c23a984ca1fecbda231a215bf227a95e0e2828a2790909f60d57d46"
+      },
+      {
+        "file": "raw_20261113_170343/kospi_quote.json",
+        "sha256": "2e22167a69c6addedafaceb33e6c1bd762e0d3ac4454f476074f8c106b3e05f1"
+      },
+      {
+        "file": "raw_20261113_170343/manifest.json",
+        "sha256": "0fa0ea5fb8ca047190df946dffc63bc427ebd934dbc21a83d7bc585c13fc157e"
+      },
+      {
+        "file": "raw_20261113_170343/official_derivatives_spec.html",
         "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef"
       },
       {
-        "file": "kospi_quote_20261112.json",
-        "sha256": "aa8b123ff465ef8b80176d62a4f9c88865c43e3cf73a5958298f244e74eef36a"
+        "file": "raw_20261113_170343/options_202612.json",
+        "sha256": "8a852b30df1dd955f5d1ff5806b0719d84efc999979dc95edab461e804517ed8"
       },
       {
-        "file": "cash.json",
-        "sha256": "12d4719a914070efed173552d290ee10e904f8c631f22796a5996b20c3a9b14c"
+        "file": "raw_20261113_170343/options_202701.json",
+        "sha256": "a676b88b67d9bd9d6bdc1b2422e5893260412c3c0730df6e9ad44515568bf630"
       },
       {
-        "file": "futures.json",
-        "sha256": "f2deafb926c3f36b42688a000a636c68bc9ae09286c27c6d972c32255ef3877f"
+        "file": "raw_20261113_170343/program_daily.json",
+        "sha256": "a12193439fb63c25e908b73c24184c8038267a5e30ee3448cd2ab1485f92df56"
       },
       {
-        "file": "call_qty.json",
-        "sha256": "6592c47542ef03764e2904db965a54937765d93960879a90d5abd0fac096ed76"
+        "file": "raw_20261113_170343/program_intraday.json",
+        "sha256": "c99d895c622360cd097b93a1610b1379efdc5eb3a0de5034f7527d643fcf641d"
       },
       {
-        "file": "call_amount.json",
-        "sha256": "9a22b6a0209b5993ba5684c7222cc27d02238c22da6a7071b6922b24d4a6678b"
+        "file": "raw_20261113_170343/program_leaders.json",
+        "sha256": "d4edfd93782eae1719086874dea2b762f87df8d1d5025bf378de33a5f796ab54"
       },
       {
-        "file": "put_qty.json",
-        "sha256": "6173265113fc29597199fed321f4d80c6d7d403edba96d19ba2c55e2f2548388"
+        "file": "raw_20261113_170343/put_amount_intraday.json",
+        "sha256": "87c305d8b47631a18277fc08de2bb61c651eddfa3aba80777f84114be5981999"
       },
       {
-        "file": "put_amount.json",
-        "sha256": "dc7f6f4a7f77e36b3c1be2719a402962cbd3fac83b7dd88475bd2e756d0e5f60"
+        "file": "raw_20261113_170343/put_detail.json",
+        "sha256": "c37e0664bc61a8986fa91e0c1a691e8cf49a835c119fad5103833c90f8149279"
       },
       {
-        "file": "B016C840_daily.json",
-        "sha256": "fbf62f0cda3ca2e863e27043abc8dd96a75cd8ae5b6bd418b1c547e87c427de3"
+        "file": "raw_20261113_170343/put_qty_intraday.json",
+        "sha256": "ad6d2bfc584441641eb41514ff8fc6448fbdece89837c2a30918ef390bff3f41"
       },
       {
-        "file": "B016C835_daily.json",
-        "sha256": "38840e23c129e9dcf6e10c3bd3ce8332db0a6fc854c8dea187e36c86425929e2"
+        "file": "raw_20261113_170343/put_t1617_1.json",
+        "sha256": "3a30fbccbec86e62f903a28110f92f4867d1c8d6afb759312e1da1c49c108e84"
       },
       {
-        "file": "B016C830_daily.json",
-        "sha256": "b6115ca8a73e5bc4a5ead5289e324896a14923a389a6d680de77e0f460a74e6f"
+        "file": "raw_20261113_170343/put_t1617_2.json",
+        "sha256": "cd84d59a2a8d338bb5b20d60a8dc7528d04899d2f05e27811ee2964ad8db8ae7"
       },
       {
-        "file": "C016C840_daily.json",
-        "sha256": "c6aa9cb45163a45e059b675d099d0b7a6e913a95396b11f2599d6e153fdcbb2b"
+        "file": "raw_20261113_170343/put_t1617_3.json",
+        "sha256": "4ac2b12d4ad4c0676b2c6585e50cc28fc484711f56bc0aaefbe1b24b7c3788fe"
       },
       {
-        "file": "C016C835_daily.json",
-        "sha256": "0d6517892f29c9e52496559e7c4bcdddcfdabb2d31b83b26e2bcf52765137991"
+        "file": "raw_20261113_170343/stock_futures_t1617_1.json",
+        "sha256": "305f8a35edebd19b4249533b7ef03d473762de03f1af68b37e49bcc85f042b3c"
       },
       {
-        "file": "C016C830_daily.json",
-        "sha256": "9f097103d3e34973010076e20127db7e3d8c81038c1e1f5963b9d8ed9f77af72"
+        "file": "raw_20261113_170343/stock_futures_t1617_2.json",
+        "sha256": "a94839a327ffe611f29f1c157b52c9f481b023918c3bdc9d7f3717adcaad761f"
       },
       {
-        "file": "next_future_quote.json",
-        "sha256": "f9abf4bcbfbf33ea8cd1b2302fd78990e06d9b39a292be187986be1f1c3c2e33"
+        "file": "raw_20261113_170343/stock_futures_t1617_3.json",
+        "sha256": "4dfd2043a59718004aa0db851872359ef187e63f4734959debb534e02d251db9"
       },
       {
-        "file": "kospi200_quote.json",
-        "sha256": "bd2f06e1d89423493a28d8b4ce20a61627c85c746c7a2b76df4c6b3eb52c71f4"
+        "file": "raw_20261112_170554/manifest.json",
+        "sha256": "9521b1bf21f71e78ef9a75ffd270a2df7e269d8d427283f57c895da1c6affaae"
       },
       {
-        "file": "cash.json",
-        "sha256": "898dd419fb06d63a44f1dc358c9ca70835084546f182b7ca54fd5aeadf825c41"
+        "file": "raw_20261112_170554/options_202612.json",
+        "sha256": "e6e8c14fe96be643df142709bf4aaf8c5aa7eb14b6c292d0317601cf96cc052a"
       },
       {
-        "file": "futures.json",
-        "sha256": "fee9ac2b31fe942d00cda1e5f9cd420b4573700c889d768d80e13db6a7c3e900"
+        "file": "closing_20261113_170905/call_amount.json",
+        "sha256": "ef45b60cb10fe41ebb44e60e4bcc14fd6e1e37c0de2ff9e5a714080635432468"
       },
       {
-        "file": "call_qty.json",
-        "sha256": "4a60e4d6183278f0076719ce129b2df0bf62a19d7ff0cb6bc6fa9a637e6d2133"
+        "file": "closing_20261113_170905/call_qty.json",
+        "sha256": "b4348062392d34c57c1b2f077e845d63af63ad80f22c51b2a008e81f2c96bd2f"
       },
       {
-        "file": "call_amount.json",
-        "sha256": "73e643fe09bae70eb819e4df097e45f3a6139e46d71f09979be78ec02c2eca34"
+        "file": "closing_20261113_170905/cash.json",
+        "sha256": "2bc7982e619f419b3bd35bf4760e98846310cf044b359bd2b057f20227a986d6"
       },
       {
-        "file": "put_qty.json",
-        "sha256": "f29389a8e9e69b1f4835482be028146716b23c2c10b6ca1dd97252f7d2b90268"
+        "file": "closing_20261113_170905/futures.json",
+        "sha256": "84efd9d249a38eee7b03e38115fa43c19011863fb9bdd6e6fc1165d7ab7201c2"
       },
       {
-        "file": "put_amount.json",
-        "sha256": "26dfca205e78d4493afaab201cf1917bc9bb1dcf535130865d363e2f1e627af5"
+        "file": "closing_20261113_170905/kospi200_201_quote.json",
+        "sha256": "8696de0380bfd7c06dbf9fec8382a45580a2d754af71e50e1a0f0fd9670a60dc"
       },
       {
-        "file": "kospi200_201_quote.json",
-        "sha256": "ee93b86e955bb20da4ac03fd52bf2cf8a5c9c36a4cf62562a57973575e8825fe"
+        "file": "closing_20261113_170905/manifest.json",
+        "sha256": "5eafe6d2f172bce6a8610fddf3a4e398093d028c26b667ae624d2f71f0c8f93d"
       },
       {
-        "file": "options_202612.json",
-        "sha256": "9792a17b0f9a90681749d58407f50b274ac3ae8a800541602407833ec2ea89e3"
+        "file": "closing_20261113_170905/put_amount.json",
+        "sha256": "87087719d0c5e62c9eeb8d2b3ce6828f10817947b51419a6c35ba0bce839314a"
+      },
+      {
+        "file": "closing_20261113_170905/put_qty.json",
+        "sha256": "b87cf3ba955a29c40a74f36f30563bfc31b3c1d88179ca2b91d4b513e5c5f793"
+      },
+      {
+        "file": "raw_20261113_170343/call_amount_intraday.json",
+        "sha256": "b617d1b6eb0866a6edc424d290f3bf0b2854ae84fda23b89ab9fac6a177bab37"
+      },
+      {
+        "file": "raw_20261113_170343/call_qty_intraday.json",
+        "sha256": "41ecf4ba19dc4f6fee771f4349ccadafb459e6bf7aa2ad85032ddf4dd0b214ff"
+      },
+      {
+        "file": "raw_20261113_170343/cash_intraday.json",
+        "sha256": "f0167186d4c5920b571082bd31e0dece506082a62e00bb80ca5b054f4087042a"
+      },
+      {
+        "file": "raw_20261113_170343/futures_intraday.json",
+        "sha256": "55e6163b0d19a60fce140a453cb2e6cc962b7f79ace86c54ef1ddfe5e88d071b"
+      },
+      {
+        "file": "raw_20261113_170343/put_amount_intraday.json",
+        "sha256": "87c305d8b47631a18277fc08de2bb61c651eddfa3aba80777f84114be5981999"
+      },
+      {
+        "file": "raw_20261113_170343/put_qty_intraday.json",
+        "sha256": "ad6d2bfc584441641eb41514ff8fc6448fbdece89837c2a30918ef390bff3f41"
       },
       {
         "file": "evidence.json",
-        "sha256": "fc8bcf4bb0818c10cfd25dde0d6939ca2a67a3aac58961e9dd799b223a12511a"
-      },
-      {
-        "file": "supplemental_review.json",
-        "sha256": "c592780a9167fa1ae7e89ff83f852865da3711eca40e7c70ab49c5875d541420"
+        "sha256": "dae2f6af26b12e101faff765be3943f452eed28e7c055a1c0d4e01152d8c107c"
       },
       {
         "file": "extra_review.json",
-        "sha256": "5788ccc16c91099d8006b85a84843e952d1ae8517ebe6642e06c6366f06a9495"
+        "sha256": "2bba22a6baab64b0084e88e6aa5bb850c2a4a0f8b2fbdb565174189df74f2434"
       },
       {
         "file": "editorial.json",
-        "sha256": "0701b0cca8b096f4761235e6a2954cbba6d578c2ef970a873e977acb7a66c29b"
+        "sha256": "4c5ae7a75aff2f49b1aa1a488eea24210f0bd3af60298155b86154cfa2ab4f99"
       },
       {
         "file": "weekly_flow_context.json",
-        "sha256": "607d1b141b6d1085d36cb0ae24b95de4e774558526662c16ca2be3c52fc3dd8a"
+        "sha256": "e6c54a4977aa3cfc79a820bb0fd681eac64e340da58a679258bae51a5ba5b323"
       }
     ],
     "flow_rows": [
@@ -1765,128 +1760,103 @@
         "institution": -647,
         "financial": 1214,
         "trust": -1343
+      },
+      {
+        "date": "2026-11-13",
+        "foreign": 2729,
+        "institution": -2483,
+        "financial": -411,
+        "trust": -2206
       }
     ],
     "oi_revision": {
-      "previous_original": 159641,
-      "previous_requeried": 158324,
-      "close": 153774,
-      "change_consistent_series": -4550,
-      "change_original_bridge": -5867,
-      "original_unchanged": true,
-      "cause_of_revision": "Not established",
-      "ls_daily_comparison": [
-        {
-          "date": "20261111",
-          "ls_oi": 158324,
-          "kiwoom_oi": 158324,
-          "match": true
-        },
-        {
-          "date": "20261112",
-          "ls_oi": 154035,
-          "kiwoom_oi": 153774,
-          "match": false
-        }
-      ]
+      "current": 154294,
+      "previous_requeried": 154035,
+      "previous_original_snapshot": 153774,
+      "change_same_current_series": 259,
+      "change_against_original_snapshot": 520,
+      "ls_current": 154085,
+      "ls_previous": 154035,
+      "ls_change": 50,
+      "revision_cause": "UNRESOLVED_NO_SPLICE"
     },
     "futures": {
-      "daily_all_rows": 706,
-      "daily_analysis_start": "2026-08-03 00:00:00",
-      "daily_analysis_rows": 69,
-      "zero_volume_in_analysis": 0,
+      "daily_raw_rows": 707,
+      "active_start": "2026-08-03",
+      "active_rows": 70,
+      "zero_volume_active": 0,
       "last_daily": {
-        "timestamp": "2026-11-12 00:00:00",
-        "open": 839.55,
-        "high": 852.75,
-        "low": 825.05,
-        "close": 827.5,
-        "volume": 122002.0,
-        "sma5": 806.99,
-        "sma10": 846.5300000000001,
-        "sma20": 866.3625,
-        "sma60": 1000.5625,
+        "timestamp": "2026-11-13 00:00:00",
+        "open": 846.15,
+        "high": 859.65,
+        "low": 818.1,
+        "close": 822.35,
+        "volume": 114342.0,
+        "sma5": 814.8700000000001,
+        "sma10": 838.8199999999999,
+        "sma20": 863.4275,
+        "sma60": 995.8383333333334,
         "sma120": null,
-        "tenkan9": 845.05,
-        "kijun26": 935.375,
-        "span_a_forward26": 890.2125,
+        "tenkan9": 838.725,
+        "kijun26": 923.325,
+        "span_a_forward26": 881.0250000000001,
         "span_b_forward26": 951.5,
         "cloud_a_today": 1092.225,
         "cloud_b_today": null,
-        "atr14": 46.12483823230534,
-        "di_plus14": 19.255934135487816,
-        "di_minus14": 29.941935698137414,
-        "adx14": 29.728133615402154,
-        "rsi14": 39.82171287803048,
-        "macd": -47.15152192963478,
-        "macd_signal": -46.33111131491366,
-        "bb_upper": 955.1303932666547,
-        "bb_lower": 777.5946067333452
+        "atr14": 45.79806407285496,
+        "di_plus14": 18.008089650719146,
+        "di_minus14": 29.085556037035623,
+        "adx14": 29.284853380059847,
+        "rsi14": 39.236910285933924,
+        "macd": -45.745870413941475,
+        "macd_signal": -46.214063134719225,
+        "bb_upper": 953.9236738141465,
+        "bb_lower": 772.9313261858535
       },
       "last_intraday": {
-        "timestamp": "2026-11-12 15:45:00",
-        "open": 827.5,
-        "high": 827.5,
-        "low": 827.5,
-        "close": 827.5,
-        "volume": 2595.0,
-        "open_interest": 153774.0,
-        "sma5": 831.5,
-        "sma10": 829.96,
-        "sma20": 833.6049999999999,
-        "sma60": 837.5116666666668,
-        "sma120": 826.2658333333333,
-        "tenkan9": 831.5,
-        "kijun26": 838.9,
-        "span_a_forward26": 835.2,
-        "span_b_forward26": 838.9,
-        "cloud_a_today": 840.85,
-        "cloud_b_today": 828.6500000000001,
-        "atr14": 4.256997711934644,
-        "di_plus14": 21.059933100711817,
-        "di_minus14": 30.803691551961368,
-        "adx14": 20.216956968947603,
-        "rsi14": 39.00702407761061,
-        "macd": -2.612088096290222,
-        "macd_signal": -2.4015377658830626,
-        "bb_upper": 842.9680603970726,
-        "bb_lower": 824.2419396029272
+        "timestamp": "2026-11-13 15:45:00",
+        "open": 822.35,
+        "high": 822.35,
+        "low": 822.35,
+        "close": 822.35,
+        "volume": 2626.0,
+        "open_interest": 154294.0,
+        "sma5": 822.71,
+        "sma10": 822.7,
+        "sma20": 825.0925000000001,
+        "sma60": 835.8608333333334,
+        "sma120": 835.2320833333332,
+        "tenkan9": 822.1,
+        "kijun26": 833.0,
+        "span_a_forward26": 827.55,
+        "span_b_forward26": 838.875,
+        "cloud_a_today": 846.0,
+        "cloud_b_today": 842.3499999999999,
+        "atr14": 4.040736863109728,
+        "di_plus14": 13.855970357931838,
+        "di_minus14": 23.87867301334848,
+        "adx14": 29.897069295053363,
+        "rsi14": 38.2051051280673,
+        "macd": -4.204223120122947,
+        "macd_signal": -4.556200236658627,
+        "bb_upper": 831.1617071145471,
+        "bb_lower": 819.0232928854531
       },
       "week_completed": {
+        "timestamp": "2026-11-13 00:00:00",
+        "open": 784.0,
+        "high": 859.65,
+        "low": 771.55,
+        "close": 822.35,
+        "volume": 612321.0
+      },
+      "previous_week": {
         "timestamp": "2026-11-06 00:00:00",
         "open": 880.8,
         "high": 930.0,
         "low": 760.1,
         "close": 782.95,
-        "volume": 762084.0,
-        "sma5": 895.0,
-        "sma10": 995.5649999999999,
-        "sma20": null,
-        "sma60": null,
-        "sma120": null,
-        "tenkan9": 951.5,
-        "kijun26": null,
-        "span_a_forward26": null,
-        "span_b_forward26": null,
-        "cloud_a_today": null,
-        "cloud_b_today": null,
-        "atr14": 102.85311769297331,
-        "di_plus14": 10.768471923145912,
-        "di_minus14": 22.75381592665879,
-        "adx14": null,
-        "rsi14": null,
-        "macd": -28.18305249869354,
-        "macd_signal": 2.2331126995991033,
-        "bb_upper": null,
-        "bb_lower": null
-      },
-      "week_partial": {
-        "timestamp": "2026-11-13 00:00:00",
-        "open": 784.0,
-        "high": 852.75,
-        "low": 771.55,
-        "close": 827.5,
-        "volume": 497979.0
+        "volume": 762084.0
       },
       "month_completed": {
         "timestamp": "2026-10-31 00:00:00",
@@ -1901,18 +1871,10 @@
         "open": 880.8,
         "high": 930.0,
         "low": 760.1,
-        "close": 827.5,
-        "volume": 1260063.0
+        "close": 822.35,
+        "volume": 1374405.0
       },
       "recent_daily": [
-        {
-          "timestamp": "2026-09-28 00:00:00",
-          "open": 1122.1,
-          "high": 1124.7,
-          "low": 1088.9,
-          "close": 1088.9,
-          "volume": 108968
-        },
         {
           "timestamp": "2026-09-29 00:00:00",
           "open": 1088.9,
@@ -2160,293 +2122,554 @@
           "low": 825.05,
           "close": 827.5,
           "volume": 122002
+        },
+        {
+          "timestamp": "2026-11-13 00:00:00",
+          "open": 846.15,
+          "high": 859.65,
+          "low": 818.1,
+          "close": 822.35,
+          "volume": 114342
         }
       ],
       "oi": {
-        "previous_original": 159641,
-        "previous_requeried": 158324,
-        "close": 153774,
-        "change_consistent_series": -4550,
-        "change_original_bridge": -5867,
-        "original_unchanged": true,
-        "cause_of_revision": "Not established",
-        "ls_daily_comparison": [
-          {
-            "date": "20261111",
-            "ls_oi": 158324,
-            "kiwoom_oi": 158324,
-            "match": true
-          },
-          {
-            "date": "20261112",
-            "ls_oi": 154035,
-            "kiwoom_oi": 153774,
-            "match": false
-          }
-        ]
+        "current": 154294,
+        "previous_requeried": 154035,
+        "previous_original_snapshot": 153774,
+        "change_same_current_series": 259,
+        "change_against_original_snapshot": 520,
+        "ls_current": 154085,
+        "ls_previous": 154035,
+        "ls_change": 50,
+        "revision_cause": "UNRESOLVED_NO_SPLICE"
       },
       "changes": {
         "1": {
-          "from_previous_close_date": "2026-11-11",
-          "to": "2026-11-12",
-          "price_change": -9.049999999999955,
-          "oi_change": -4550
+          "from_previous_close_date": "2026-11-12",
+          "to": "2026-11-13",
+          "price_change": -5.149999999999977,
+          "oi_change": 259
         },
         "3": {
-          "from_previous_close_date": "2026-11-09",
-          "to": "2026-11-12",
-          "price_change": 51.64999999999998,
-          "oi_change": -9446
+          "from_previous_close_date": "2026-11-10",
+          "to": "2026-11-13",
+          "price_change": 10.25,
+          "oi_change": -7379
         },
         "5": {
-          "from_previous_close_date": "2026-11-05",
-          "to": "2026-11-12",
-          "price_change": -9.75,
-          "oi_change": -4265
+          "from_previous_close_date": "2026-11-06",
+          "to": "2026-11-13",
+          "price_change": 39.39999999999998,
+          "oi_change": -8199
         },
         "20": {
-          "from_previous_close_date": "2026-10-15",
-          "to": "2026-11-12",
-          "price_change": -33.799999999999955,
-          "oi_change": -645
+          "from_previous_close_date": "2026-10-16",
+          "to": "2026-11-13",
+          "price_change": -58.69999999999993,
+          "oi_change": 5879
         }
       },
       "intraday_points": [
         {
-          "timestamp": "2026-11-12 08:45:00",
-          "open": 839.55,
-          "high": 841.45,
-          "low": 836.55,
-          "close": 840.7,
-          "volume": 2998.0,
-          "open_interest": 157818.0
+          "timestamp": "2026-11-13 08:45:00",
+          "open": 846.15,
+          "high": 847.0,
+          "low": 843.85,
+          "close": 845.5,
+          "volume": 2006.0,
+          "open_interest": 154792.0
         },
         {
-          "timestamp": "2026-11-12 09:05:00",
-          "open": 842.8,
-          "high": 844.25,
-          "low": 830.25,
-          "close": 835.4,
-          "volume": 6924.0,
-          "open_interest": 157173.0
-        },
-        {
-          "timestamp": "2026-11-12 10:05:00",
-          "open": 837.95,
-          "high": 839.6,
-          "low": 834.55,
-          "close": 839.35,
-          "volume": 3608.0,
-          "open_interest": 155880.0
-        },
-        {
-          "timestamp": "2026-11-12 11:05:00",
-          "open": 845.0,
-          "high": 848.5,
-          "low": 844.45,
-          "close": 847.05,
-          "volume": 2416.0,
-          "open_interest": 154888.0
-        },
-        {
-          "timestamp": "2026-11-12 12:05:00",
-          "open": 848.15,
-          "high": 848.85,
+          "timestamp": "2026-11-13 08:55:00",
+          "open": 845.7,
+          "high": 856.5,
           "low": 845.6,
-          "close": 846.1,
-          "volume": 1372.0,
-          "open_interest": 154402.0
+          "close": 856.35,
+          "volume": 5089.0,
+          "open_interest": 154794.0
         },
         {
-          "timestamp": "2026-11-12 13:05:00",
-          "open": 840.65,
-          "high": 841.75,
-          "low": 839.75,
-          "close": 841.45,
-          "volume": 1238.0,
-          "open_interest": 153189.0
+          "timestamp": "2026-11-13 09:05:00",
+          "open": 856.15,
+          "high": 859.65,
+          "low": 854.35,
+          "close": 858.15,
+          "volume": 4883.0,
+          "open_interest": 154944.0
         },
         {
-          "timestamp": "2026-11-12 14:05:00",
-          "open": 831.0,
-          "high": 832.9,
-          "low": 826.55,
-          "close": 827.75,
-          "volume": 3967.0,
-          "open_interest": 152837.0
+          "timestamp": "2026-11-13 09:15:00",
+          "open": 858.15,
+          "high": 859.5,
+          "low": 853.3,
+          "close": 853.35,
+          "volume": 3314.0,
+          "open_interest": 154860.0
         },
         {
-          "timestamp": "2026-11-12 15:05:00",
-          "open": 829.55,
-          "high": 835.25,
-          "low": 828.9,
-          "close": 834.75,
-          "volume": 4106.0,
-          "open_interest": 153139.0
+          "timestamp": "2026-11-13 09:25:00",
+          "open": 853.4,
+          "high": 853.65,
+          "low": 850.6,
+          "close": 851.35,
+          "volume": 3040.0,
+          "open_interest": 154852.0
         },
         {
-          "timestamp": "2026-11-12 15:15:00",
-          "open": 834.7,
-          "high": 837.95,
-          "low": 834.25,
-          "close": 835.25,
-          "volume": 5122.0,
-          "open_interest": 153690.0
+          "timestamp": "2026-11-13 09:35:00",
+          "open": 851.3,
+          "high": 852.35,
+          "low": 847.95,
+          "close": 851.05,
+          "volume": 3147.0,
+          "open_interest": 154609.0
         },
         {
-          "timestamp": "2026-11-12 15:25:00",
-          "open": 835.2,
-          "high": 836.1,
-          "low": 830.25,
-          "close": 830.5,
-          "volume": 6108.0,
-          "open_interest": 153613.0
+          "timestamp": "2026-11-13 09:45:00",
+          "open": 851.1,
+          "high": 853.9,
+          "low": 851.1,
+          "close": 853.55,
+          "volume": 2570.0,
+          "open_interest": 154476.0
         },
         {
-          "timestamp": "2026-11-12 15:45:00",
-          "open": 827.5,
-          "high": 827.5,
-          "low": 827.5,
-          "close": 827.5,
-          "volume": 2595.0,
-          "open_interest": 153774.0
+          "timestamp": "2026-11-13 09:55:00",
+          "open": 853.5,
+          "high": 854.45,
+          "low": 847.95,
+          "close": 849.35,
+          "volume": 2853.0,
+          "open_interest": 154550.0
+        },
+        {
+          "timestamp": "2026-11-13 10:05:00",
+          "open": 849.3,
+          "high": 853.55,
+          "low": 848.05,
+          "close": 851.4,
+          "volume": 2616.0,
+          "open_interest": 154421.0
+        },
+        {
+          "timestamp": "2026-11-13 10:15:00",
+          "open": 851.6,
+          "high": 856.2,
+          "low": 850.5,
+          "close": 855.15,
+          "volume": 3046.0,
+          "open_interest": 154368.0
+        },
+        {
+          "timestamp": "2026-11-13 10:25:00",
+          "open": 855.2,
+          "high": 855.35,
+          "low": 849.75,
+          "close": 850.6,
+          "volume": 2924.0,
+          "open_interest": 154385.0
+        },
+        {
+          "timestamp": "2026-11-13 10:35:00",
+          "open": 850.6,
+          "high": 852.45,
+          "low": 848.45,
+          "close": 849.15,
+          "volume": 2310.0,
+          "open_interest": 154413.0
+        },
+        {
+          "timestamp": "2026-11-13 10:45:00",
+          "open": 849.05,
+          "high": 851.3,
+          "low": 847.9,
+          "close": 850.05,
+          "volume": 1632.0,
+          "open_interest": 154274.0
+        },
+        {
+          "timestamp": "2026-11-13 10:55:00",
+          "open": 850.15,
+          "high": 852.65,
+          "low": 848.95,
+          "close": 851.75,
+          "volume": 1441.0,
+          "open_interest": 154298.0
+        },
+        {
+          "timestamp": "2026-11-13 11:05:00",
+          "open": 851.5,
+          "high": 851.6,
+          "low": 844.65,
+          "close": 844.9,
+          "volume": 2264.0,
+          "open_interest": 154275.0
+        },
+        {
+          "timestamp": "2026-11-13 11:15:00",
+          "open": 844.85,
+          "high": 846.25,
+          "low": 843.1,
+          "close": 844.2,
+          "volume": 2264.0,
+          "open_interest": 154255.0
+        },
+        {
+          "timestamp": "2026-11-13 11:25:00",
+          "open": 844.05,
+          "high": 847.5,
+          "low": 842.35,
+          "close": 846.3,
+          "volume": 2401.0,
+          "open_interest": 154315.0
+        },
+        {
+          "timestamp": "2026-11-13 11:35:00",
+          "open": 846.2,
+          "high": 847.9,
+          "low": 842.4,
+          "close": 842.6,
+          "volume": 1418.0,
+          "open_interest": 154239.0
+        },
+        {
+          "timestamp": "2026-11-13 11:45:00",
+          "open": 842.5,
+          "high": 843.9,
+          "low": 837.85,
+          "close": 838.6,
+          "volume": 2299.0,
+          "open_interest": 154220.0
+        },
+        {
+          "timestamp": "2026-11-13 11:55:00",
+          "open": 838.5,
+          "high": 842.55,
+          "low": 838.1,
+          "close": 842.45,
+          "volume": 1913.0,
+          "open_interest": 154052.0
+        },
+        {
+          "timestamp": "2026-11-13 12:05:00",
+          "open": 842.6,
+          "high": 843.0,
+          "low": 836.1,
+          "close": 837.05,
+          "volume": 2296.0,
+          "open_interest": 153861.0
+        },
+        {
+          "timestamp": "2026-11-13 12:15:00",
+          "open": 837.05,
+          "high": 837.55,
+          "low": 832.7,
+          "close": 833.8,
+          "volume": 2561.0,
+          "open_interest": 154009.0
+        },
+        {
+          "timestamp": "2026-11-13 12:25:00",
+          "open": 833.7,
+          "high": 835.45,
+          "low": 830.2,
+          "close": 831.65,
+          "volume": 2669.0,
+          "open_interest": 153996.0
+        },
+        {
+          "timestamp": "2026-11-13 12:35:00",
+          "open": 831.7,
+          "high": 833.45,
+          "low": 828.85,
+          "close": 829.7,
+          "volume": 2211.0,
+          "open_interest": 153954.0
+        },
+        {
+          "timestamp": "2026-11-13 12:45:00",
+          "open": 829.75,
+          "high": 831.05,
+          "low": 826.1,
+          "close": 827.0,
+          "volume": 2164.0,
+          "open_interest": 154013.0
+        },
+        {
+          "timestamp": "2026-11-13 12:55:00",
+          "open": 826.8,
+          "high": 828.0,
+          "low": 823.4,
+          "close": 826.3,
+          "volume": 3083.0,
+          "open_interest": 154169.0
+        },
+        {
+          "timestamp": "2026-11-13 13:05:00",
+          "open": 826.35,
+          "high": 829.2,
+          "low": 824.75,
+          "close": 826.0,
+          "volume": 2643.0,
+          "open_interest": 154178.0
+        },
+        {
+          "timestamp": "2026-11-13 13:15:00",
+          "open": 825.95,
+          "high": 827.65,
+          "low": 824.75,
+          "close": 825.4,
+          "volume": 2277.0,
+          "open_interest": 154255.0
+        },
+        {
+          "timestamp": "2026-11-13 13:25:00",
+          "open": 825.3,
+          "high": 829.3,
+          "low": 824.1,
+          "close": 827.95,
+          "volume": 3514.0,
+          "open_interest": 154383.0
+        },
+        {
+          "timestamp": "2026-11-13 13:35:00",
+          "open": 827.9,
+          "high": 829.55,
+          "low": 823.55,
+          "close": 826.7,
+          "volume": 2957.0,
+          "open_interest": 154320.0
+        },
+        {
+          "timestamp": "2026-11-13 13:45:00",
+          "open": 826.7,
+          "high": 829.5,
+          "low": 825.55,
+          "close": 828.2,
+          "volume": 2014.0,
+          "open_interest": 154205.0
+        },
+        {
+          "timestamp": "2026-11-13 13:55:00",
+          "open": 828.1,
+          "high": 828.45,
+          "low": 823.1,
+          "close": 825.95,
+          "volume": 2104.0,
+          "open_interest": 154251.0
+        },
+        {
+          "timestamp": "2026-11-13 14:05:00",
+          "open": 826.0,
+          "high": 828.0,
+          "low": 824.45,
+          "close": 825.55,
+          "volume": 1918.0,
+          "open_interest": 154206.0
+        },
+        {
+          "timestamp": "2026-11-13 14:15:00",
+          "open": 825.5,
+          "high": 825.85,
+          "low": 820.1,
+          "close": 821.0,
+          "volume": 2837.0,
+          "open_interest": 154154.0
+        },
+        {
+          "timestamp": "2026-11-13 14:25:00",
+          "open": 820.85,
+          "high": 822.5,
+          "low": 818.1,
+          "close": 818.4,
+          "volume": 2628.0,
+          "open_interest": 154265.0
+        },
+        {
+          "timestamp": "2026-11-13 14:35:00",
+          "open": 818.55,
+          "high": 826.1,
+          "low": 818.55,
+          "close": 824.7,
+          "volume": 3141.0,
+          "open_interest": 154368.0
+        },
+        {
+          "timestamp": "2026-11-13 14:45:00",
+          "open": 824.65,
+          "high": 825.55,
+          "low": 822.75,
+          "close": 823.8,
+          "volume": 2580.0,
+          "open_interest": 154387.0
+        },
+        {
+          "timestamp": "2026-11-13 14:55:00",
+          "open": 823.8,
+          "high": 824.3,
+          "low": 821.25,
+          "close": 822.45,
+          "volume": 3123.0,
+          "open_interest": 154598.0
+        },
+        {
+          "timestamp": "2026-11-13 15:05:00",
+          "open": 822.5,
+          "high": 823.35,
+          "low": 821.6,
+          "close": 822.6,
+          "volume": 2286.0,
+          "open_interest": 154595.0
+        },
+        {
+          "timestamp": "2026-11-13 15:15:00",
+          "open": 822.6,
+          "high": 825.15,
+          "low": 822.25,
+          "close": 823.5,
+          "volume": 3001.0,
+          "open_interest": 154521.0
+        },
+        {
+          "timestamp": "2026-11-13 15:25:00",
+          "open": 823.55,
+          "high": 824.65,
+          "low": 822.0,
+          "close": 822.65,
+          "volume": 4026.0,
+          "open_interest": 154298.0
+        },
+        {
+          "timestamp": "2026-11-13 15:45:00",
+          "open": 822.35,
+          "high": 822.35,
+          "low": 822.35,
+          "close": 822.35,
+          "volume": 2626.0,
+          "open_interest": 154294.0
         }
       ],
       "oi_windows": [
         {
-          "start": "2026-11-12 08:45:00",
-          "end": "2026-11-12 12:05:00",
-          "price_start": 840.7,
-          "price_end": 846.1,
-          "price_change": 5.399999999999977,
-          "oi_start": 157818.0,
-          "oi_end": 154402.0,
-          "oi_change": -3416.0
+          "start": "2026-11-13 08:45:00",
+          "end": "2026-11-13 12:05:00",
+          "start_price": 845.5,
+          "end_price": 837.05,
+          "price_change": -8.450000000000045,
+          "start_oi": 154792.0,
+          "end_oi": 153861.0,
+          "oi_change": -931.0
         },
         {
-          "start": "2026-11-12 12:05:00",
-          "end": "2026-11-12 15:25:00",
-          "price_start": 846.1,
-          "price_end": 830.5,
-          "price_change": -15.600000000000023,
-          "oi_start": 154402.0,
-          "oi_end": 153613.0,
-          "oi_change": -789.0
+          "start": "2026-11-13 12:05:00",
+          "end": "2026-11-13 15:25:00",
+          "start_price": 837.05,
+          "end_price": 822.65,
+          "price_change": -14.399999999999977,
+          "start_oi": 153861.0,
+          "end_oi": 154298.0,
+          "oi_change": 437.0
         },
         {
-          "start": "2026-11-12 14:05:00",
-          "end": "2026-11-12 15:25:00",
-          "price_start": 827.75,
-          "price_end": 830.5,
-          "price_change": 2.75,
-          "oi_start": 152837.0,
-          "oi_end": 153613.0,
-          "oi_change": 776.0
+          "start": "2026-11-13 14:05:00",
+          "end": "2026-11-13 15:25:00",
+          "start_price": 825.55,
+          "end_price": 822.65,
+          "price_change": -2.8999999999999773,
+          "start_oi": 154206.0,
+          "end_oi": 154298.0,
+          "oi_change": 92.0
         },
         {
-          "start": "2026-11-12 15:25:00",
-          "end": "2026-11-12 15:45:00",
-          "price_start": 830.5,
-          "price_end": 827.5,
-          "price_change": -3.0,
-          "oi_start": 153613.0,
-          "oi_end": 153774.0,
-          "oi_change": 161.0
+          "start": "2026-11-13 15:25:00",
+          "end": "2026-11-13 15:45:00",
+          "start_price": 822.65,
+          "end_price": 822.35,
+          "price_change": -0.2999999999999545,
+          "start_oi": 154298.0,
+          "end_oi": 154294.0,
+          "oi_change": -4.0
         }
       ],
-      "today_high_time": "2026-11-12 11:25:00",
-      "today_low_time": "2026-11-12 14:15:00",
-      "oi_peak_time": "2026-11-12 08:45:00",
-      "oi_peak": 157818,
-      "oi_min": 152639,
-      "minute_volume": 119875,
-      "daily_volume": 122002,
+      "today_high_time": "2026-11-13 09:05:00",
+      "today_low_time": "2026-11-13 14:25:00",
+      "oi_peak_time": "2026-11-13 09:05:00",
+      "oi_peak": 154944,
+      "minute_volume": 112089,
+      "daily_volume": 114342,
+      "ls_daily_volume": 112089,
       "vwap_profile_eligible": false
     },
     "limitations": [
-      "키움 전일 OI 최초 159,641과 재조회 158,324의 정정 원인 미확인. 오늘 키움 153,774와 LS 154,035의 차이 261계약 보존. 동일 출처 재조회 기준 변화만 계산했습니다.",
-      "일봉 거래량 122,002와 분봉·LS 119,875 차이 및 원천 간격 때문에 정확한 체결 VWAP·매물대·매수강도·전 구간 CVD를 만들지 않았습니다. LS 종가 CVD +460은 미분류 2,837 및 74개 경로 공백과 함께만 사용합니다.",
-      "만기 후 11월 옵션 OI 0과 IV 바닥값은 장중 신규·청산이나 변동성 소멸의 증명이 아닙니다. 12월 IV 전일 비교, 고정 델타 스큐·기간구조는 유효 호가와 시점 정합성이 부족해 제외했습니다.",
-      "전체 만기 투자자 순매매와 특정 만기·행사가 OI는 범위가 다릅니다. 실제 잔존량·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 판단 불가입니다. 감마 원천 표본은 전체를 대표하지 않아 사용하지 않았습니다.",
-      "LS 현물·프로그램 금액 고정 환산 단위는 확인 불가여서 방향과 원시 단위를 보존했습니다. 오늘 0787 옵션 금액의 억원 단위는 원본 화면에서 확인했습니다. LS 시간대 값은 마감 이후에도 집계가 변해 모두 막판 실제 주문으로 간주하지 않았습니다.",
-      "3월물 t2214 저가 820.00이 종가 819.15보다 높은 원천 모순. t2111 재조회 저가 819.15를 별도로 제시하고 원본 일봉을 수정하거나 12월물에 접합하지 않았습니다.",
-      "주간 배율은 완료 주의 동행 통계이며 인과·미래 확률이 아닙니다. 진행 주와 소표본을 분리했습니다. 이번 만기일에 특화된 외표본 지속 확률은 산정 불가입니다.",
-      "국내·해외 보조 다중 시간대 11/11, 선택 연구층 11/10은 현재 근거에서 제외했습니다. 주도주 제외 시장 전체 수급, 세부 파동 차수, 0791 실제 상세 포지션은 미확보입니다.",
-      "최초 KOSPI200 보완 조회에서 101(KOSDAQ)을 요청한 파일은 오분류로 제외했습니다. 공식 명세의 201로 다시 조회해 KOSPI200 833.57을 LS와 대조했으며 원본을 모두 보존했습니다.",
-      "분석은 11/12 정규장과 17시대 공개 시장자료 조회에 한정합니다. 이후 야간 및 다음 거래일 결과는 포함하지 않았으며 조건부 해설이지 주문·비중 지시가 아닙니다."
+      "키움 전일 최초 OI 153,774·재조회 154,035 차이 261, 당일 키움 154,294·LS 154,085 차이 209의 원인 미확인. 원본을 보존하고 혼합하지 않았습니다.",
+      "일봉 거래량 114,342와 분봉·LS 112,089 차이, 장중 경로 공백으로 정확한 VWAP·체결 매물대는 제외. LS CVD +338은 미분류 2,805와 45개 공백을 함께 표시합니다.",
+      "12월 830풋 OI 변화가 거래량을 넘고 825풋 유효 양방향 호가가 없으며 일부 전일 무거래·넓은 호가가 있습니다. 체결 가능한 IV 신호, 전체 스큐·기간구조는 미확정입니다.",
+      "전체 만기 수급은 특정 만기·행사가 OI와 범위가 다릅니다. 실제 잔고·평단·외국인 신규 콜 매수·딜러 감마·최대고통은 만들지 않습니다. 감마 표본이 전체를 대표하지 않아 제외합니다.",
+      "LS 현물·프로그램 금액 환산 단위는 독립 확인 불가로 원시 단위 보존. 0787 옵션 금액의 억원 단위는 원본 확인. 마감 후 수급 집계 변화를 막판 실제 주문으로 돌리지 않습니다.",
+      "3월물 OI +603이 표시 거래량 46보다 큰 범위 차이로 롤오버 규모는 미확정. 12월물과 계약·가격·OI를 합치지 않았습니다.",
+      "완료 주 배율은 같은 날 동행의 제한적 해석 배율이며 새 값은 다음 주용입니다. 소표본·중복 사건·시장 국면 편중 때문에 만기 직후 다음 날 확률 산정 불가입니다.",
+      "국내·해외 보조 다중 시간대 11/12, 선택 14단계 11/10 제외. 주도주 제외 전체 수급·세부 파동 차수·0791 상세 잔고는 미확보입니다.",
+      "최초 지수 코드 101은 KOSDAQ으로 KOSPI200 대조에서 제외하고 201로 재조회해 824.78을 확인했습니다. 콜 일별 수급 3번째 페이지 조회가 시간 초과됐으나 확보한 2페이지에 필요한 최근 20거래일은 모두 포함돼 있습니다.",
+      "분석은 11/13 정규장 및 17:03~17:09 보완 조회 기준입니다. 이후 야간·다음 거래일 결과는 미반영이며 조건부 해설이지 주문·비중 지시가 아닙니다."
     ],
     "intraday_oi": {
       "windows": [
         {
-          "start": "2026-11-12 08:45:00",
-          "end": "2026-11-12 12:05:00",
-          "start_price": 840.7,
-          "end_price": 846.1,
-          "price_change": 5.4,
-          "start_oi": 157818.0,
-          "end_oi": 154402.0,
-          "oi_change": -3416.0
+          "start": "2026-11-13 08:45:00",
+          "end": "2026-11-13 12:05:00",
+          "start_price": 845.5,
+          "end_price": 837.05,
+          "price_change": -8.450000000000045,
+          "start_oi": 154792.0,
+          "end_oi": 153861.0,
+          "oi_change": -931.0
         },
         {
-          "start": "2026-11-12 12:05:00",
-          "end": "2026-11-12 15:25:00",
-          "start_price": 846.1,
-          "end_price": 830.5,
-          "price_change": -15.6,
-          "start_oi": 154402.0,
-          "end_oi": 153613.0,
-          "oi_change": -789.0
+          "start": "2026-11-13 12:05:00",
+          "end": "2026-11-13 15:25:00",
+          "start_price": 837.05,
+          "end_price": 822.65,
+          "price_change": -14.399999999999977,
+          "start_oi": 153861.0,
+          "end_oi": 154298.0,
+          "oi_change": 437.0
         },
         {
-          "start": "2026-11-12 14:05:00",
-          "end": "2026-11-12 15:25:00",
-          "start_price": 827.75,
-          "end_price": 830.5,
-          "price_change": 2.75,
-          "start_oi": 152837.0,
-          "end_oi": 153613.0,
-          "oi_change": 776.0
+          "start": "2026-11-13 14:05:00",
+          "end": "2026-11-13 15:25:00",
+          "start_price": 825.55,
+          "end_price": 822.65,
+          "price_change": -2.8999999999999773,
+          "start_oi": 154206.0,
+          "end_oi": 154298.0,
+          "oi_change": 92.0
         },
         {
-          "start": "2026-11-12 15:25:00",
-          "end": "2026-11-12 15:45:00",
-          "start_price": 830.5,
-          "end_price": 827.5,
-          "price_change": -3.0,
-          "start_oi": 153613.0,
-          "end_oi": 153774.0,
-          "oi_change": 161.0
+          "start": "2026-11-13 15:25:00",
+          "end": "2026-11-13 15:45:00",
+          "start_price": 822.65,
+          "end_price": 822.35,
+          "price_change": -0.2999999999999545,
+          "start_oi": 154298.0,
+          "end_oi": 154294.0,
+          "oi_change": -4.0
         }
       ],
       "note": "원천 10분봉 표시시각·15:45 단일가 별도",
-      "interpretation": "08:45→12:05 선물은 840.70→846.10으로 +5.40, OI는 157,818→154,402로 -3,416계약이었습니다. 신규 매수 확대보다는 기존 포지션 축소를 동반한 반등 설명이 더 잘 맞지만 숏 청산만으로 확정할 수는 없습니다. 12:05→15:25는 가격 -15.60과 OI -789가 함께 나타나 반등 이후에도 포지션 축소가 이어졌습니다. 14:35 OI 저점 152,639 이후에는 다시 증가했고, 15:25→15:45에는 830.50→827.50 하락과 OI +161계약이 겹쳤습니다. 이 막판 구간은 하루 전체 OI 감소와 구분해야 하는 약세 확인값입니다. 다만 전체 만기 수급과 개별 12월물 OI의 범위가 달라 특정 주체의 신규 숏이라고 확정하지 않습니다. LS 시간대별 수급에는 15:45 이후에도 외국인 선물 -92→최종 +468, 콜·풋 금액의 큰 집계 변화가 있습니다. 이를 모두 정규장 마지막 체결 시각의 주문으로 돌려 해석하지 않고 지연 집계·정정 가능성을 남겼습니다."
+      "interpretation": "09:05 표시 봉에서 가격 고가 859.65와 OI 154,944가 나온 뒤 밀렸습니다. 고정 구간 08:45→12:05는 가격 845.50→837.05(-8.45), OI 154,792→153,861(-931)로 포지션 축소를 동반했습니다. 이어 12:05→15:25는 가격 837.05→822.65(-14.40), OI 153,861→154,298(+437)여서 오후에는 가격 하락과 참여 증가가 겹쳤습니다. 이는 단기 약세 확인값이지만 특정 투자자의 신규 숏 증명은 아닙니다. 15:25→15:45 종가 단일가는 가격 -0.30, OI -4로 막판 OI 급증은 없었습니다. LS 시간대 외국인 선물 누적은 15:00 +371→15:25 +1,094→15:45 +1,077→최종 +2,729계약입니다. 마감 후 집계 변화가 커 최종 매수를 모두 마지막 체결 주문으로 돌리지 않습니다. 투신 현물도 15:30 표시 +663에서 15:45 -639로 바뀌어 실제 주문 시각과 집계 갱신 시각을 구분했습니다."
     },
-    "original_summary_sha256": "6db71f50945dffafe1a7239f012e37909ae1349b9b2fc47b99588444a51326db",
+    "original_summary_sha256": "6a31a11ff20697404b2bb91c741bb8d39877c4236821381289ec89f2f1d7622d",
     "public_dom_verified": false,
-    "price_crosscheck_cells": 192,
-    "weekly_calibration_cutoff": "20261106",
+    "price_crosscheck_cells": 200,
+    "weekly_calibration_cutoff": "20261113",
     "expiry_reference": {
       "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
-      "retrieved_at": "2026-11-12T17:09:43.933150+09:00",
-      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef",
-      "reviewed_rule": "KOSPI200 monthly options expire on the second Thursday; quarterly futures March/June/September/December. November 12 and December 10 dates also confirmed by LS contract metadata.",
-      "special_trading_hours": "Not asserted"
+      "rule": "monthly final trade second Thursday; quarterly future March June September December",
+      "november_options_expiry": "2026-11-12",
+      "december_futures_options_expiry": "2026-12-10",
+      "as_of_status": "FIRST_REGULAR_SESSION_AFTER_NOVEMBER_EXPIRY"
     },
     "cash_provider_differences": [
-      {
-        "market": "cash",
-        "date": "20261112",
-        "actor": "foreign",
-        "t1617": 3748,
-        "t1664": 3746
-      },
-      {
-        "market": "cash",
-        "date": "20261112",
-        "actor": "individual",
-        "t1617": -2183,
-        "t1664": -2182
-      },
       {
         "market": "cash",
         "date": "20261111",
@@ -2782,611 +3005,1061 @@
         "actor": "institution",
         "t1617": -12183,
         "t1664": -12184
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "foreign",
+        "t1617": -26216,
+        "t1664": -26217
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "institution",
+        "t1617": 5743,
+        "t1664": 5744
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "individual",
+        "t1617": 3801,
+        "t1664": 3802
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "foreign",
+        "t1617": -4349,
+        "t1664": -4348
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "individual",
+        "t1617": -22878,
+        "t1664": -22879
+      },
+      {
+        "market": "cash",
+        "date": "20260908",
+        "actor": "institution",
+        "t1617": 6426,
+        "t1664": 6427
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "foreign",
+        "t1617": 25531,
+        "t1664": 25532
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "institution",
+        "t1617": 26490,
+        "t1664": 26491
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "individual",
+        "t1617": -68373,
+        "t1664": -68374
+      },
+      {
+        "market": "cash",
+        "date": "20260903",
+        "actor": "individual",
+        "t1617": -9551,
+        "t1664": -9552
+      },
+      {
+        "market": "cash",
+        "date": "20260902",
+        "actor": "individual",
+        "t1617": 23028,
+        "t1664": 23029
+      },
+      {
+        "market": "cash",
+        "date": "20260901",
+        "actor": "foreign",
+        "t1617": -4969,
+        "t1664": -4968
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "institution",
+        "t1617": -11875,
+        "t1664": -11876
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "individual",
+        "t1617": 4193,
+        "t1664": 4194
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "foreign",
+        "t1617": 1332,
+        "t1664": 1333
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "individual",
+        "t1617": -19115,
+        "t1664": -19116
+      },
+      {
+        "market": "cash",
+        "date": "20260826",
+        "actor": "individual",
+        "t1617": -22460,
+        "t1664": -22461
+      },
+      {
+        "market": "cash",
+        "date": "20260825",
+        "actor": "institution",
+        "t1617": 11710,
+        "t1664": 11711
+      },
+      {
+        "market": "cash",
+        "date": "20260821",
+        "actor": "institution",
+        "t1617": 2480,
+        "t1664": 2481
+      },
+      {
+        "market": "cash",
+        "date": "20260819",
+        "actor": "institution",
+        "t1617": -13389,
+        "t1664": -13390
+      },
+      {
+        "market": "cash",
+        "date": "20260819",
+        "actor": "individual",
+        "t1617": 46356,
+        "t1664": 46357
+      },
+      {
+        "market": "cash",
+        "date": "20260818",
+        "actor": "individual",
+        "t1617": 7419,
+        "t1664": 7420
       }
     ],
     "program_windows_native_units": {
       "1": {
-        "start": "20261112",
-        "end": "20261112",
-        "observations": 1,
-        "tot3": 337233,
-        "cha3": 63896,
-        "bcha3": 273337
+        "start": "20261113",
+        "end": "20261113",
+        "tot3": -182899,
+        "cha3": -35880,
+        "bcha3": -147019
       },
       "3": {
-        "start": "20261110",
-        "end": "20261112",
-        "observations": 3,
-        "tot3": 1116873,
-        "cha3": -168195,
-        "bcha3": 1285069
+        "start": "20261111",
+        "end": "20261113",
+        "tot3": 453262,
+        "cha3": -87192,
+        "bcha3": 540454
       },
       "5": {
-        "start": "20261106",
-        "end": "20261112",
-        "observations": 5,
-        "tot3": -338546,
-        "cha3": 36290,
-        "bcha3": -374836
+        "start": "20261109",
+        "end": "20261113",
+        "tot3": 1005470,
+        "cha3": -91068,
+        "bcha3": 1096539
       },
       "20": {
-        "start": "20261016",
-        "end": "20261112",
-        "observations": 20,
-        "tot3": -2603026,
-        "cha3": 458091,
-        "bcha3": -3061116
+        "start": "20261019",
+        "end": "20261113",
+        "tot3": -3171757,
+        "cha3": 610628,
+        "bcha3": -3782384
       }
     },
     "closing_flow_snapshots": {
       "cash": {
-        "start": "13520000",
-        "end": "17113000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13450000",
+        "end": "17043000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": 1767,
-            "sv_18": -6825,
-            "sv_01": -12408,
-            "sv_03": 1660,
-            "sv_06": 1886
+            "time": "15000000",
+            "sv_08": 235,
+            "sv_17": -4986,
+            "sv_18": -427,
+            "sv_01": -2123,
+            "sv_03": 556,
+            "sv_04": 13,
+            "sv_02": -132,
+            "sv_05": 127,
+            "sv_06": 1740,
+            "sv_07": 5178,
+            "sv_11": 0,
+            "sv_00": -609
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": 2438,
-            "sv_18": -5895,
-            "sv_01": -11874,
-            "sv_03": 1432,
-            "sv_06": 2637
+            "time": "15200000",
+            "sv_08": 86,
+            "sv_17": -5646,
+            "sv_18": 307,
+            "sv_01": -1991,
+            "sv_03": 663,
+            "sv_04": 12,
+            "sv_02": -119,
+            "sv_05": 134,
+            "sv_06": 1932,
+            "sv_07": 5253,
+            "sv_11": 0,
+            "sv_00": -326
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": 2439,
-            "sv_18": -5862,
-            "sv_01": -11846,
-            "sv_03": 1432,
-            "sv_06": 2647
+            "time": "15250000",
+            "sv_08": 36,
+            "sv_17": -5640,
+            "sv_18": 313,
+            "sv_01": -2001,
+            "sv_03": 663,
+            "sv_04": 12,
+            "sv_02": -119,
+            "sv_05": 134,
+            "sv_06": 1948,
+            "sv_07": 5291,
+            "sv_11": 0,
+            "sv_00": -326
           },
           {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": 2439,
-            "sv_18": -5862,
-            "sv_01": -11846,
-            "sv_03": 1432,
-            "sv_06": 2647
+            "time": "15300000",
+            "sv_08": 36,
+            "sv_17": -5640,
+            "sv_18": 313,
+            "sv_01": -2001,
+            "sv_03": 663,
+            "sv_04": 12,
+            "sv_02": -119,
+            "sv_05": 134,
+            "sv_06": 1948,
+            "sv_07": 5291,
+            "sv_11": 0,
+            "sv_00": -326
           },
           {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": 3704,
-            "sv_18": -6903,
-            "sv_01": -9743,
-            "sv_03": 725,
-            "sv_06": -27
+            "time": "15450000",
+            "sv_08": 172,
+            "sv_17": -5505,
+            "sv_18": 23,
+            "sv_01": -1142,
+            "sv_03": -639,
+            "sv_04": 12,
+            "sv_02": -127,
+            "sv_05": 134,
+            "sv_06": 2109,
+            "sv_07": 5310,
+            "sv_11": 0,
+            "sv_00": -325
           },
           {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": 3680,
-            "sv_18": -6879,
-            "sv_01": -9720,
-            "sv_03": 725,
-            "sv_06": -27
+            "time": "16060000",
+            "sv_08": 177,
+            "sv_17": -5511,
+            "sv_18": 20,
+            "sv_01": -1145,
+            "sv_03": -639,
+            "sv_04": 12,
+            "sv_02": -127,
+            "sv_05": 134,
+            "sv_06": 2109,
+            "sv_07": 5315,
+            "sv_11": 0,
+            "sv_00": -325
+          },
+          {
+            "time": "17043000",
+            "sv_08": 188,
+            "sv_17": -5522,
+            "sv_18": 23,
+            "sv_01": -1142,
+            "sv_03": -639,
+            "sv_04": 12,
+            "sv_02": -127,
+            "sv_05": 134,
+            "sv_06": 2109,
+            "sv_07": 5311,
+            "sv_11": 0,
+            "sv_00": -325
           }
         ],
-        "unit": "LS native monetary units; no independent scaling assumed",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       },
       "futures": {
-        "start": "13520000",
-        "end": "17113000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13453000",
+        "end": "17050000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": -1411,
-            "sv_18": 1705,
-            "sv_01": 2078,
-            "sv_03": -187,
-            "sv_06": -270
+            "time": "15000000",
+            "sv_08": -360,
+            "sv_17": 371,
+            "sv_18": -56,
+            "sv_01": 245,
+            "sv_03": -520,
+            "sv_04": -18,
+            "sv_02": -12,
+            "sv_05": 0,
+            "sv_06": 249,
+            "sv_07": 45,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": -575,
-            "sv_18": 765,
-            "sv_01": 1386,
-            "sv_03": -293,
-            "sv_06": -409
+            "time": "15200000",
+            "sv_08": -375,
+            "sv_17": 1047,
+            "sv_18": -712,
+            "sv_01": -320,
+            "sv_03": -529,
+            "sv_04": -18,
+            "sv_02": 5,
+            "sv_05": 0,
+            "sv_06": 150,
+            "sv_07": 40,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": -493,
-            "sv_18": 671,
-            "sv_01": 1302,
-            "sv_03": -302,
-            "sv_06": -409
+            "time": "15250000",
+            "sv_08": -381,
+            "sv_17": 1094,
+            "sv_18": -769,
+            "sv_01": -383,
+            "sv_03": -527,
+            "sv_04": -18,
+            "sv_02": 9,
+            "sv_05": 0,
+            "sv_06": 150,
+            "sv_07": 56,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": -487,
-            "sv_18": 680,
-            "sv_01": 1296,
-            "sv_03": -308,
-            "sv_06": -409
+            "time": "15300000",
+            "sv_08": -363,
+            "sv_17": 1191,
+            "sv_18": -825,
+            "sv_01": -439,
+            "sv_03": -529,
+            "sv_04": -18,
+            "sv_02": 11,
+            "sv_05": 0,
+            "sv_06": 150,
+            "sv_07": -3,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": -92,
-            "sv_18": 0,
-            "sv_01": 706,
-            "sv_03": -343,
-            "sv_06": -464
+            "time": "15450000",
+            "sv_08": -266,
+            "sv_17": 1077,
+            "sv_18": -697,
+            "sv_01": -282,
+            "sv_03": -544,
+            "sv_04": -18,
+            "sv_02": 17,
+            "sv_05": 0,
+            "sv_06": 130,
+            "sv_07": -114,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": 456,
-            "sv_18": -752,
-            "sv_01": 997,
-            "sv_03": -1222,
-            "sv_06": -452
+            "time": "16060000",
+            "sv_08": -92,
+            "sv_17": 1788,
+            "sv_18": -1503,
+            "sv_01": 576,
+            "sv_03": -2213,
+            "sv_04": -18,
+            "sv_02": 22,
+            "sv_05": 0,
+            "sv_06": 130,
+            "sv_07": -193,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17050000",
+            "sv_08": 2,
+            "sv_17": 2729,
+            "sv_18": -2483,
+            "sv_01": -411,
+            "sv_03": -2206,
+            "sv_04": -18,
+            "sv_02": 22,
+            "sv_05": 0,
+            "sv_06": 130,
+            "sv_07": -248,
+            "sv_11": 0,
+            "sv_00": 0
           }
         ],
-        "unit": "contracts",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       },
       "call_qty": {
-        "start": "13520000",
-        "end": "17113000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13453000",
+        "end": "17050000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": 275,
-            "sv_18": -22681,
-            "sv_01": -22134,
-            "sv_03": -562,
-            "sv_06": 40
+            "time": "15000000",
+            "sv_08": 1534,
+            "sv_17": -3674,
+            "sv_18": 2066,
+            "sv_01": 2402,
+            "sv_03": -337,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 74,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": 3963,
-            "sv_18": -24455,
-            "sv_01": -23566,
-            "sv_03": -757,
-            "sv_06": 0
+            "time": "15200000",
+            "sv_08": 1490,
+            "sv_17": -3528,
+            "sv_18": 2037,
+            "sv_01": 2422,
+            "sv_03": -386,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": 3862,
-            "sv_18": -23955,
-            "sv_01": -23051,
-            "sv_03": -767,
-            "sv_06": 0
+            "time": "15250000",
+            "sv_08": 1513,
+            "sv_17": -3525,
+            "sv_18": 2026,
+            "sv_01": 2422,
+            "sv_03": -397,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -14,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": 3679,
-            "sv_18": -23955,
-            "sv_01": -23051,
-            "sv_03": -767,
-            "sv_06": 0
+            "time": "15300000",
+            "sv_08": 1515,
+            "sv_17": -3504,
+            "sv_18": 2012,
+            "sv_01": 2420,
+            "sv_03": -409,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -23,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": 4226,
-            "sv_18": -24600,
-            "sv_01": -23673,
-            "sv_03": -790,
-            "sv_06": 0
+            "time": "15450000",
+            "sv_08": 1564,
+            "sv_17": -3538,
+            "sv_18": 1999,
+            "sv_01": 2419,
+            "sv_03": -421,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -25,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": 4188,
-            "sv_18": -24591,
-            "sv_01": -23662,
-            "sv_03": -792,
-            "sv_06": 0
+            "time": "16060000",
+            "sv_08": 1540,
+            "sv_17": -3520,
+            "sv_18": 2008,
+            "sv_01": 2428,
+            "sv_03": -421,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -28,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17050000",
+            "sv_08": 1622,
+            "sv_17": -3626,
+            "sv_18": 2009,
+            "sv_01": 2477,
+            "sv_03": -469,
+            "sv_04": 1,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -5,
+            "sv_11": 0,
+            "sv_00": 0
           }
         ],
-        "unit": "contracts",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       },
       "call_amount": {
-        "start": "13523000",
-        "end": "17120000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13453000",
+        "end": "17050000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": -5,
-            "sv_18": -14,
-            "sv_01": 2,
-            "sv_03": -16,
-            "sv_06": 1
+            "time": "15000000",
+            "sv_08": 29,
+            "sv_17": -26,
+            "sv_18": -7,
+            "sv_01": 14,
+            "sv_03": -20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": 13,
-            "sv_18": -24,
-            "sv_01": 3,
-            "sv_03": -24,
-            "sv_06": 1
+            "time": "15200000",
+            "sv_08": 31,
+            "sv_17": -28,
+            "sv_18": -7,
+            "sv_01": 14,
+            "sv_03": -21,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": 15,
-            "sv_18": -25,
-            "sv_01": 3,
+            "time": "15250000",
+            "sv_08": 32,
+            "sv_17": -28,
+            "sv_18": -8,
+            "sv_01": 14,
+            "sv_03": -21,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": 31,
+            "sv_17": -27,
+            "sv_18": -8,
+            "sv_01": 14,
+            "sv_03": -21,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": 31,
+            "sv_17": -27,
+            "sv_18": -8,
+            "sv_01": 14,
+            "sv_03": -22,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": 31,
+            "sv_17": -27,
+            "sv_18": -8,
+            "sv_01": 14,
+            "sv_03": -22,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17050000",
+            "sv_08": 31,
+            "sv_17": -45,
+            "sv_18": 9,
+            "sv_01": 34,
             "sv_03": -25,
-            "sv_06": 1
-          },
-          {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": 15,
-            "sv_18": -25,
-            "sv_01": 3,
-            "sv_03": -25,
-            "sv_06": 1
-          },
-          {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": 36,
-            "sv_18": -46,
-            "sv_01": -17,
-            "sv_03": -27,
-            "sv_06": 1
-          },
-          {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": 35,
-            "sv_18": -46,
-            "sv_01": -16,
-            "sv_03": -27,
-            "sv_06": 1
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 4,
+            "sv_11": 0,
+            "sv_00": 0
           }
         ],
-        "unit": "LS native monetary units; no independent scaling assumed",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       },
       "put_qty": {
-        "start": "13523000",
-        "end": "17120000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13453000",
+        "end": "17050000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": 4399,
-            "sv_18": -9995,
-            "sv_01": -9965,
-            "sv_03": 9,
-            "sv_06": -40
+            "time": "15000000",
+            "sv_08": -842,
+            "sv_17": 825,
+            "sv_18": 536,
+            "sv_01": 571,
+            "sv_03": -35,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -519,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": 5905,
-            "sv_18": -11945,
-            "sv_01": -11955,
-            "sv_03": 9,
-            "sv_06": 0
+            "time": "15200000",
+            "sv_08": -806,
+            "sv_17": 889,
+            "sv_18": 483,
+            "sv_01": 519,
+            "sv_03": -36,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -566,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": 5761,
-            "sv_18": -11900,
-            "sv_01": -11910,
-            "sv_03": 9,
-            "sv_06": 0
+            "time": "15250000",
+            "sv_08": -846,
+            "sv_17": 927,
+            "sv_18": 487,
+            "sv_01": 523,
+            "sv_03": -36,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -568,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": 5738,
-            "sv_18": -11894,
-            "sv_01": -11904,
-            "sv_03": 9,
-            "sv_06": 0
+            "time": "15300000",
+            "sv_08": -865,
+            "sv_17": 949,
+            "sv_18": 487,
+            "sv_01": 523,
+            "sv_03": -36,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -571,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": 5753,
-            "sv_18": -11900,
-            "sv_01": -11910,
-            "sv_03": 9,
-            "sv_06": 0
+            "time": "15450000",
+            "sv_08": -794,
+            "sv_17": 867,
+            "sv_18": 487,
+            "sv_01": 523,
+            "sv_03": -36,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -560,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": 5774,
-            "sv_18": -11902,
-            "sv_01": -11912,
-            "sv_03": 9,
-            "sv_06": 0
+            "time": "16060000",
+            "sv_08": -866,
+            "sv_17": 933,
+            "sv_18": 492,
+            "sv_01": 523,
+            "sv_03": -31,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -559,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17050000",
+            "sv_08": -517,
+            "sv_17": 636,
+            "sv_18": 392,
+            "sv_01": 423,
+            "sv_03": -31,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -511,
+            "sv_11": 0,
+            "sv_00": 0
           }
         ],
-        "unit": "contracts",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       },
       "put_amount": {
-        "start": "13523000",
-        "end": "17120000",
-        "observations": 400,
-        "conflicting_overlap": [],
+        "records": 400,
+        "start": "13453000",
+        "end": "17050000",
         "snapshots": [
           {
-            "requested_time": "15000000",
-            "actual_time": "15000000",
-            "sv_17": 0,
-            "sv_18": 5,
-            "sv_01": 5,
-            "sv_03": 0,
-            "sv_06": -1
+            "time": "15000000",
+            "sv_08": -20,
+            "sv_17": 26,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15200000",
-            "actual_time": "15200000",
-            "sv_17": -16,
-            "sv_18": 8,
-            "sv_01": 8,
-            "sv_03": 0,
-            "sv_06": 0
+            "time": "15200000",
+            "sv_08": -19,
+            "sv_17": 25,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15250000",
-            "actual_time": "15250000",
-            "sv_17": -15,
-            "sv_18": 8,
-            "sv_01": 8,
-            "sv_03": 0,
-            "sv_06": 0
+            "time": "15250000",
+            "sv_08": -19,
+            "sv_17": 25,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15300000",
-            "actual_time": "15300000",
-            "sv_17": -15,
-            "sv_18": 8,
-            "sv_01": 8,
-            "sv_03": 0,
-            "sv_06": 0
+            "time": "15300000",
+            "sv_08": -19,
+            "sv_17": 25,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "15450000",
-            "actual_time": "15450000",
-            "sv_17": -13,
-            "sv_18": 7,
-            "sv_01": 7,
-            "sv_03": 0,
-            "sv_06": 0
+            "time": "15450000",
+            "sv_08": -19,
+            "sv_17": 25,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
           },
           {
-            "requested_time": "16060000",
-            "actual_time": "16060000",
-            "sv_17": -13,
-            "sv_18": 7,
-            "sv_01": 7,
-            "sv_03": 0,
-            "sv_06": 0
+            "time": "16060000",
+            "sv_08": -19,
+            "sv_17": 25,
+            "sv_18": -6,
+            "sv_01": -2,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17050000",
+            "sv_08": -22,
+            "sv_17": -24,
+            "sv_18": 48,
+            "sv_01": 51,
+            "sv_03": -4,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -1,
+            "sv_11": 0,
+            "sv_00": 0
           }
         ],
-        "unit": "LS native monetary units; no independent scaling assumed",
-        "scope": "all listed expiries, provider time label; revisions and delayed aggregation possible, not trade-by-trade identification"
+        "date": "20261113",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
       }
     },
     "basis_crosscheck": {
-      "future": 827.5,
-      "kospi200": 833.57,
-      "difference": -6.07,
-      "provider_sbasis": -6.07,
-      "provider_theoretical_basis": 1.87,
-      "note": "15:45 futures versus 15:30 cash close, not synchronized executable arbitrage. Previous generic basis field 0 is not market basis."
+      "future_close": 822.35,
+      "kospi200_close": 824.78,
+      "market_basis": -2.43,
+      "provider_theory_basis": 1.77,
+      "market_minus_theory": -4.2,
+      "scope": "15:45 future and 15:30 cash are nonsynchronous closing references, not executable arbitrage"
     }
   },
-  "recovery_note": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+  "recovery_note": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
   "downloads": [
     {
-      "file": "futures_review_20261112.html",
+      "file": "futures_review_20261113.html",
       "label": "전체 설명형 분석"
     },
     {
-      "file": "futures_source_summary_20261112.json",
+      "file": "futures_source_summary_20261113.json",
       "label": "원천·검증·제외 내역"
     },
     {
-      "file": "futures_weekly_context_20261112.html",
+      "file": "futures_weekly_context_20261113.html",
       "label": "주간 동행과 다음 날 지속 통계"
     },
     {
-      "file": "futures_weekly_context_20261112.json",
+      "file": "futures_weekly_context_20261113.json",
       "label": "주간 계산 원자료"
     },
     {
-      "file": "futures_dec_daily_20261112.csv",
+      "file": "futures_dec_daily_20261113.csv",
       "label": "12월물 일봉"
     },
     {
-      "file": "futures_dec_10m_20261112.csv",
+      "file": "futures_dec_10m_20261113.csv",
       "label": "12월물 분봉·OI"
     },
     {
-      "file": "futures_0787_20261112.csv",
+      "file": "futures_0787_20261113.csv",
       "label": "54개 원본 순매매 대조"
     },
     {
-      "file": "ls_expiry_window_complete_20261112.csv",
-      "label": "LS 단일 원천 41일 관찰 누적"
+      "file": "ls_expiry_window_complete_20261113.csv",
+      "label": "LS 단일 원천 42일 관찰 누적"
     },
     {
-      "file": "futures_public_review_20261112.zip",
+      "file": "futures_public_review_20261113.zip",
       "label": "같은 기준일 공개 검토 ZIP"
     }
   ],
   "data_status": "EOD_REVIEWED_WITH_EXCLUSIONS",
-  "capture_window": "11/12 API 16:08·EOD 완료 16:35 / LS·REST 보완 17:05~17:20, 야간 전",
+  "capture_window": "11/13 원래 EOD 16:07~16:36 / LS·REST 보완 17:03~17:09, 이후 야간 미반영",
   "gamma_research": null,
   "structure_briefs": {
     "monthly": {
-      "title": "월봉: 큰 조정 중·진행 11월",
-      "result": "10월 종가 899.45 아래, 11월 진행 종가 827.50. 큰 하락 종료 확인 전입니다.",
-      "check": "완료 월봉과 760.10 이후 회복 구조를 분리합니다.",
-      "note": "8/3 시작 4개 월 표본; 8월 부분월·11월 진행월. 장기 월봉 신호 미확정."
+      "title": "월봉: 큰 조정·11월 진행 중",
+      "result": "진행 11월 822.35는 완료 10월 종가 899.45 아래입니다.",
+      "check": "760.10 이후 회복 구조와 월봉 완료를 따로 확인합니다.",
+      "note": "8/3 시작 4개 월 표본. 8월 부분월·11월 진행월; 장기 월봉 신호 미확정."
     },
     "weekly": {
-      "title": "주봉: 전주 급락 뒤 반등 진행",
-      "result": "11/6 완료 주 종가 782.95보다 높지만 진행 주입니다. 단기 반등과 상위 조정을 구분합니다.",
-      "check": "이번 주 완료 전 추세 전환을 확정하지 않으며 760.10 저점 보존 여부를 확인합니다.",
-      "note": "같은 계약 일봉 재표본화; 11/13 라벨은 11/9~12 네 거래일만 포함."
+      "title": "주봉: 반등한 완료 주·긴 윗꼬리",
+      "result": "11/9~13 완료 주 +5.03%, 고가 859.65에서 822.35로 후퇴했습니다.",
+      "check": "주간 반등과 일봉 약세가 충돌합니다. 760.10 큰 가설 경계 유지.",
+      "note": "동일 계약 일봉 재표본화. 이번 주 5거래일 완료; 진행 주로 표시하지 않음."
     },
     "daily": {
-      "title": "일봉: 반등 약화·돌파 유지 실패",
-      "result": "827.50(-1.08%). 832.50 지지 이탈, 838.20 위 종가 조건 미충족입니다.",
-      "check": "824.65~824.95 경계; 838.20 일봉 회복·재지지 뒤 846.85/852.75 확인.",
-      "note": "SMA5 806.99 / 10 846.53 / 20 866.36; RSI14 39.82, ADX14 29.73, -DI가 +DI보다 큼. 동일 가격 신호 중복 가산 안함."
+      "title": "일봉: 기존 지지 이탈·회복 가설 약화",
+      "result": "822.35(-0.62%). 전일 824.65~824.95 지지 조건 실패입니다.",
+      "check": "824.65~826.10부터 회복, 838.20 일봉 종가·재지지가 다음 조건입니다.",
+      "note": "SMA5 814.87 / 10 838.82 / 20 863.43. RSI14 39.24, ADX14 29.28, -DI > +DI. 같은 가격 지표 중복 투표 금지."
     },
     "minute": {
-      "title": "10분봉: 막판 하락·OI 재증가",
-      "result": "오전 가격 반등/OI 감소 후 오후 약세. 15:25→15:45 가격 -3.00·OI +161입니다.",
-      "check": "832.50~832.65 위 10분봉 마감·눌림 유지, 이어 837.95~838.20 회복을 확인합니다.",
-      "note": "15:45 종가 단일가 별도. 825.05는 기존 경계 근접이며 정확한 824.95 재지지 아님."
+      "title": "10분봉: 오후 하락·OI 증가, 단일가는 축소",
+      "result": "12:05→15:25 가격 -14.40·OI +437, 15:25→15:45 가격 -0.30·OI -4입니다.",
+      "check": "818.10 이탈·재저항이면 803.20~802.95 확인. 회복은 826.10→829.55 순서.",
+      "note": "15:45 종가 단일가 별도. 818.10 단일 저점을 강한 지지로 승격하지 않음."
     }
   },
   "wave_annotations": {
     "monthly": {
-      "preferred": "10월 종가 899.45 아래, 11월 진행 종가 827.50. 큰 하락 종료 확인 전입니다.",
-      "alternative": "큰 조정 중 반등 소진 대안·세부 차수 미확정",
-      "invalid": "완료 월봉과 760.10 이후 회복 구조를 분리합니다.",
-      "rule_check": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+      "preferred": "진행 11월 822.35는 완료 10월 종가 899.45 아래입니다.",
+      "alternative": "818.10 유지·826.10 회복 후 재상승 대안; 세부 차수 미확정",
+      "invalid": "760.10 이후 회복 구조와 월봉 완료를 따로 확인합니다.",
+      "rule_check": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
       "points": []
     },
     "weekly": {
-      "preferred": "11/6 완료 주 종가 782.95보다 높지만 진행 주입니다. 단기 반등과 상위 조정을 구분합니다.",
-      "alternative": "큰 조정 중 반등 소진 대안·세부 차수 미확정",
-      "invalid": "이번 주 완료 전 추세 전환을 확정하지 않으며 760.10 저점 보존 여부를 확인합니다.",
-      "rule_check": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+      "preferred": "11/9~13 완료 주 +5.03%, 고가 859.65에서 822.35로 후퇴했습니다.",
+      "alternative": "818.10 유지·826.10 회복 후 재상승 대안; 세부 차수 미확정",
+      "invalid": "주간 반등과 일봉 약세가 충돌합니다. 760.10 큰 가설 경계 유지.",
+      "rule_check": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
       "points": []
     },
     "daily": {
-      "preferred": "827.50(-1.08%). 832.50 지지 이탈, 838.20 위 종가 조건 미충족입니다.",
-      "alternative": "큰 조정 중 반등 소진 대안·세부 차수 미확정",
-      "invalid": "824.65~824.95 경계; 838.20 일봉 회복·재지지 뒤 846.85/852.75 확인.",
-      "rule_check": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+      "preferred": "822.35(-0.62%). 전일 824.65~824.95 지지 조건 실패입니다.",
+      "alternative": "818.10 유지·826.10 회복 후 재상승 대안; 세부 차수 미확정",
+      "invalid": "824.65~826.10부터 회복, 838.20 일봉 종가·재지지가 다음 조건입니다.",
+      "rule_check": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
       "points": []
     },
     "minute": {
-      "preferred": "오전 가격 반등/OI 감소 후 오후 약세. 15:25→15:45 가격 -3.00·OI +161입니다.",
-      "alternative": "큰 조정 중 반등 소진 대안·세부 차수 미확정",
-      "invalid": "832.50~832.65 위 10분봉 마감·눌림 유지, 이어 837.95~838.20 회복을 확인합니다.",
-      "rule_check": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다.",
+      "preferred": "12:05→15:25 가격 -14.40·OI +437, 15:25→15:45 가격 -0.30·OI -4입니다.",
+      "alternative": "818.10 유지·826.10 회복 후 재상승 대안; 세부 차수 미확정",
+      "invalid": "818.10 이탈·재저항이면 803.20~802.95 확인. 회복은 826.10→829.55 순서.",
+      "rule_check": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다.",
       "points": []
     }
   },
   "intraday_oi_review": {
     "windows": [
       {
-        "start": "2026-11-12 08:45:00",
-        "end": "2026-11-12 12:05:00",
-        "start_price": 840.7,
-        "end_price": 846.1,
-        "price_change": 5.4,
-        "start_oi": 157818.0,
-        "end_oi": 154402.0,
-        "oi_change": -3416.0
+        "start": "2026-11-13 08:45:00",
+        "end": "2026-11-13 12:05:00",
+        "start_price": 845.5,
+        "end_price": 837.05,
+        "price_change": -8.450000000000045,
+        "start_oi": 154792.0,
+        "end_oi": 153861.0,
+        "oi_change": -931.0
       },
       {
-        "start": "2026-11-12 12:05:00",
-        "end": "2026-11-12 15:25:00",
-        "start_price": 846.1,
-        "end_price": 830.5,
-        "price_change": -15.6,
-        "start_oi": 154402.0,
-        "end_oi": 153613.0,
-        "oi_change": -789.0
+        "start": "2026-11-13 12:05:00",
+        "end": "2026-11-13 15:25:00",
+        "start_price": 837.05,
+        "end_price": 822.65,
+        "price_change": -14.399999999999977,
+        "start_oi": 153861.0,
+        "end_oi": 154298.0,
+        "oi_change": 437.0
       },
       {
-        "start": "2026-11-12 14:05:00",
-        "end": "2026-11-12 15:25:00",
-        "start_price": 827.75,
-        "end_price": 830.5,
-        "price_change": 2.75,
-        "start_oi": 152837.0,
-        "end_oi": 153613.0,
-        "oi_change": 776.0
+        "start": "2026-11-13 14:05:00",
+        "end": "2026-11-13 15:25:00",
+        "start_price": 825.55,
+        "end_price": 822.65,
+        "price_change": -2.8999999999999773,
+        "start_oi": 154206.0,
+        "end_oi": 154298.0,
+        "oi_change": 92.0
       },
       {
-        "start": "2026-11-12 15:25:00",
-        "end": "2026-11-12 15:45:00",
-        "start_price": 830.5,
-        "end_price": 827.5,
-        "price_change": -3.0,
-        "start_oi": 153613.0,
-        "end_oi": 153774.0,
-        "oi_change": 161.0
+        "start": "2026-11-13 15:25:00",
+        "end": "2026-11-13 15:45:00",
+        "start_price": 822.65,
+        "end_price": 822.35,
+        "price_change": -0.2999999999999545,
+        "start_oi": 154298.0,
+        "end_oi": 154294.0,
+        "oi_change": -4.0
       }
     ],
     "note": "원천 10분봉 표시시각·15:45 단일가 별도",
-    "interpretation": "08:45→12:05 선물은 840.70→846.10으로 +5.40, OI는 157,818→154,402로 -3,416계약이었습니다. 신규 매수 확대보다는 기존 포지션 축소를 동반한 반등 설명이 더 잘 맞지만 숏 청산만으로 확정할 수는 없습니다. 12:05→15:25는 가격 -15.60과 OI -789가 함께 나타나 반등 이후에도 포지션 축소가 이어졌습니다. 14:35 OI 저점 152,639 이후에는 다시 증가했고, 15:25→15:45에는 830.50→827.50 하락과 OI +161계약이 겹쳤습니다. 이 막판 구간은 하루 전체 OI 감소와 구분해야 하는 약세 확인값입니다. 다만 전체 만기 수급과 개별 12월물 OI의 범위가 달라 특정 주체의 신규 숏이라고 확정하지 않습니다. LS 시간대별 수급에는 15:45 이후에도 외국인 선물 -92→최종 +468, 콜·풋 금액의 큰 집계 변화가 있습니다. 이를 모두 정규장 마지막 체결 시각의 주문으로 돌려 해석하지 않고 지연 집계·정정 가능성을 남겼습니다."
+    "interpretation": "09:05 표시 봉에서 가격 고가 859.65와 OI 154,944가 나온 뒤 밀렸습니다. 고정 구간 08:45→12:05는 가격 845.50→837.05(-8.45), OI 154,792→153,861(-931)로 포지션 축소를 동반했습니다. 이어 12:05→15:25는 가격 837.05→822.65(-14.40), OI 153,861→154,298(+437)여서 오후에는 가격 하락과 참여 증가가 겹쳤습니다. 이는 단기 약세 확인값이지만 특정 투자자의 신규 숏 증명은 아닙니다. 15:25→15:45 종가 단일가는 가격 -0.30, OI -4로 막판 OI 급증은 없었습니다. LS 시간대 외국인 선물 누적은 15:00 +371→15:25 +1,094→15:45 +1,077→최종 +2,729계약입니다. 마감 후 집계 변화가 커 최종 매수를 모두 마지막 체결 주문으로 돌리지 않습니다. 투신 현물도 15:30 표시 +663에서 15:45 -639로 바뀌어 실제 주문 시각과 집계 갱신 시각을 구분했습니다."
   },
   "selective_flow_review": [
     {
-      "category": "가격 가설 갱신",
+      "category": "기존 가설 실패와 갱신",
       "status": "확인·충돌·누락 분리",
-      "detail": "전일 11/11의 '단기 반등 우세 강화'를 그대로 유지하지 않습니다. 전일 후반 반복 저점 832.50~832.65를 오늘 종가가 밑돌았으므로 이 선은 지지가 아니라 회복 확인선으로 바뀌었습니다. 838.20은 장중 돌파했지만 일봉 종가 기준 확인은 안 됐습니다. 11/6 저점 760.10 이후 반등이 이어지는 선호 가설과, 큰 하락 중 반등이 오늘 852.75에서 소진됐다는 대안이 경쟁합니다. 세부 5파·3파 구분과 차수는 미확정이며, 760.10 이후 회복 가설의 핵심 경계를 새로운 낮은 지지선으로 바꿔 덮지 않습니다. 당일 825.05 저점은 기존 824.65(10월 저가)~824.95(11/10 고가)에 근접했을 뿐 그 가격에 정확히 재지지한 것은 아닙니다. 10분봉 832.65 위 마감 후 눌림 재지지, 이어 837.95~838.20 회복이 단기 개선 순서입니다. 838.20 위 일봉 마감과 다음 눌림 지지가 나오면 846.85(11/4 저가)와 852.75(오늘 고가)를 확인합니다. 반대로 824.65 아래 일봉 마감 후 반등 재저항이면 최근 회복 구조가 약해지고 803.20~802.95가 다음 구조 확인 구간입니다. 큰 회복 가설의 최종 경계는 760.10이며, 중간 지지와 혼동하지 않습니다."
+      "detail": "11/12에 남겨 둔 '824.65~824.95 유지' 가설을 철회합니다. 10월 저가 824.65·11/10 고가 824.95 아래에 일봉 종가가 형성됐기 때문입니다. 새로운 818.10 저점을 제시해 기존 실패를 덮지 않습니다. 월봉은 진행 11월 종가가 완료 10월 종가 899.45보다 낮아 큰 조정 국면입니다. 완료 주 11/9~13은 782.95→822.35로 +5.03% 반등했지만 고가 859.65에서 크게 밀렸습니다. 일봉은 5일선 814.87 위, 10일선 838.82·20일선 863.43 아래이고 RSI14 39.24, ADX14 29.28, +DI 18.01 < -DI 29.09입니다. 선호 가설은 큰 조정 중 주간 반등의 약화, 대안은 818.10을 보존한 재상승입니다. 하위 파동의 5파·3파와 차수는 미확정입니다. 824.65~826.10 위 10분봉 종가 후 눌림 재지지가 첫 회복, 829.30~829.55가 다음 장중 반복 저항, 837.95~838.20 위 일봉 종가와 다음 눌림 유지가 일봉 개선 조건입니다. 이후에만 852.75·859.65를 확인합니다. 818.10 아래 10분봉 종가와 반등 재저항이면 803.20~802.95가 다음 확인 구간이며 기계적 목표가 아닙니다. 그 아래 일봉 마감이면 11/10~11 회복 구조가 더 약해집니다. 771.55와 760.10은 더 큰 저점 구조이며 760.10은 11/6 이후 회복 가설의 최종 경계로 보존합니다."
     },
     {
       "category": "장중 OI 전환",
       "status": "확인·충돌·누락 분리",
-      "detail": "08:45→12:05 선물은 840.70→846.10으로 +5.40, OI는 157,818→154,402로 -3,416계약이었습니다. 신규 매수 확대보다는 기존 포지션 축소를 동반한 반등 설명이 더 잘 맞지만 숏 청산만으로 확정할 수는 없습니다. 12:05→15:25는 가격 -15.60과 OI -789가 함께 나타나 반등 이후에도 포지션 축소가 이어졌습니다. 14:35 OI 저점 152,639 이후에는 다시 증가했고, 15:25→15:45에는 830.50→827.50 하락과 OI +161계약이 겹쳤습니다. 이 막판 구간은 하루 전체 OI 감소와 구분해야 하는 약세 확인값입니다. 다만 전체 만기 수급과 개별 12월물 OI의 범위가 달라 특정 주체의 신규 숏이라고 확정하지 않습니다. LS 시간대별 수급에는 15:45 이후에도 외국인 선물 -92→최종 +468, 콜·풋 금액의 큰 집계 변화가 있습니다. 이를 모두 정규장 마지막 체결 시각의 주문으로 돌려 해석하지 않고 지연 집계·정정 가능성을 남겼습니다."
+      "detail": "09:05 표시 봉에서 가격 고가 859.65와 OI 154,944가 나온 뒤 밀렸습니다. 고정 구간 08:45→12:05는 가격 845.50→837.05(-8.45), OI 154,792→153,861(-931)로 포지션 축소를 동반했습니다. 이어 12:05→15:25는 가격 837.05→822.65(-14.40), OI 153,861→154,298(+437)여서 오후에는 가격 하락과 참여 증가가 겹쳤습니다. 이는 단기 약세 확인값이지만 특정 투자자의 신규 숏 증명은 아닙니다. 15:25→15:45 종가 단일가는 가격 -0.30, OI -4로 막판 OI 급증은 없었습니다. LS 시간대 외국인 선물 누적은 15:00 +371→15:25 +1,094→15:45 +1,077→최종 +2,729계약입니다. 마감 후 집계 변화가 커 최종 매수를 모두 마지막 체결 주문으로 돌리지 않습니다. 투신 현물도 15:30 표시 +663에서 15:45 -639로 바뀌어 실제 주문 시각과 집계 갱신 시각을 구분했습니다."
     },
     {
       "category": "주체와 상품 분리",
       "status": "확인·충돌·누락 분리",
-      "detail": "현물은 외국인·투신 순매수, 금융투자 순매도였지만 KOSPI는 하락했습니다. 금융투자는 현물을 팔고 지수선물을 샀으며, 투신은 현물을 사고 선물을 팔아 상품별 신호가 엇갈렸습니다. 주식선물 외국인 순매수 +39,115계약은 지수선물 +468계약과 별도 상품이며 계약 수를 합칠 수 없습니다. 프로그램 순매수는 당일·3일 플러스지만 5일·20일은 마이너스입니다. 현물·프로그램 금액은 LS 명세에서 고정 환산 단위를 독립 확인하지 못해 원시 단위 수치를 억원으로 바꾸지 않았습니다. 12월 선물 827.50과 KOSPI200 833.57의 종가 차이 -6.07은 LS 시장 베이시스 표시와 일치합니다. 이론 베이시스 +1.87과의 차이는 있지만 15:45 선물과 15:30 현물의 비동시 값이라 즉시 실행 가능한 차익이나 적정가격으로 단정하지 않습니다. 주도주 반응도 삼성전자 +0.73%, SK하이닉스 -1.72%로 엇갈려 반도체 전체 또는 시장 전체의 매수 확산으로 묶지 않습니다. 두 종목을 제외한 시장 전체의 투자자 수급은 미확보입니다."
+      "detail": "현물 외국인·투신은 어제 순매수에서 오늘 순매도로 바뀌었고 금융투자도 순매도였습니다. 연기금은 현물 순매수였지만 매수 확산보다는 일부 방어로 해석합니다. 외국인 주식선물 -214,448계약은 지수선물 +2,729계약과 반대이며 계약 수와 명목가치를 합산하지 않습니다. 프로그램은 오늘 차익·비차익 모두 순매도, 3·5일 합계는 순매수, 20일은 순매도입니다. 최근 회복 누적과 오늘 후퇴를 함께 봅니다. 현물·프로그램 금액은 LS 원시 단위의 고정 원화 환산을 독립 확인하지 못해 임의로 억원 표시하지 않았습니다. 선물 822.35−KOSPI200 824.78 = 시장 베이시스 -2.43, 제공업체 이론 베이시스 +1.77 대비 -4.20입니다. 다만 선물 15:45와 현물 15:30의 비동시 종가이므로 즉시 체결 가능한 차익이나 적정가격으로 단정하지 않습니다."
     },
     {
-      "category": "완료 주 해석 배율",
+      "category": "완료 주 다음 주용 배율",
       "status": "확인·충돌·누락 분리",
-      "detail": "완료 주 11/2~6까지의 20거래일로 이번 주 해석 배율을 고정했습니다. 현물 외국인 1.194·투신 1.205, 선물 외국인 1.002·투신 1.150·연기금 1.144입니다. 현물 외국인·투신의 최근 동행을 더 주의 깊게 본다는 뜻이지 시장을 움직인 인과 비중이나 미래 확률이 아닙니다. 11/9~12 진행 주는 배율 갱신에서 제외했고 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/12의 검증 입력에서 외국인·투신 동반 매수와 당일 상승 뒤 다음 날 상승은 현물 3/7, 선물 1/3이고, 동반 매도·하락 뒤 다음 날 하락은 현물 4/10, 선물 0/2입니다. 표본이 작고 만기일 전용 검증도 아니어서 반대 방향 확률이나 오늘의 미래 확률로 바꾸지 않습니다. 오늘은 현물 동반 매수에도 지수가 하락했고 선물 외국인·투신 방향도 달라 해당 동반 신호가 성립하지 않았습니다."
+      "detail": "오늘 11/9~13 주가 완료돼 새 해석 배율을 계산했습니다. 현물 투신 1.197·외국인 1.183, 선물 투신 1.154·외국인 0.931입니다. 다음 주 해석용 갱신값이며 이번 주 당시 예측에 사용한 것처럼 소급하지 않습니다. 최근 20일 수급과 당일 등락의 방향 일치는 현물 투신 16/20·외국인 13/20, 선물 투신 15/20·외국인 9/20이었습니다. 현물 외국인·투신과 선물 투신을 상대적으로 더 살펴볼 이유는 있지만 인과적 시장 영향 비중은 아닙니다. 모든 다음 날 예측 배율은 1.000입니다. 10/12~11/13 입력의 완료 사건에서 외국인·투신 동반 매수·당일 상승 뒤 다음 날 상승은 현물 3/7(42.9%)·선물 1/3(33.3%), 동반 매도·하락 뒤 하락은 현물 4/10(40%)·선물 0/2입니다. 오늘 현물 동반 매도·하락 사건은 다음 거래일 미도래로 대기이며 분모에서 제외했습니다. 작은 표본의 관측 비율을 다음 날 예측 확률이나 역방향 승률로 바꾸지 않습니다."
     },
     {
-      "category": "만기 전후",
+      "category": "옵션 만기 이후",
       "status": "확인·충돌·누락 분리",
-      "detail": "2026-11-12는 KOSPI200 11월물 옵션 만기일이고 12월 선물·옵션 만기는 12/10입니다. 만기 옵션 15:20 종료, 현물 15:30, 비만기 선물 15:45라는 서로 다른 종료 시점을 구분했습니다. 11월 830/835/840 콜·풋의 마감 후 OI가 모두 0으로 표시되므로 이를 오늘 장중 신규·청산 수량으로 해석하지 않습니다. 만기 옵션 IV 바닥값 역시 변동성 위험 소멸의 증거가 아닙니다. 만기 전 15:00→15:20 LS 시간대 누적 외국인 콜 수량은 275→3,963, 풋은 4,399→5,905계약으로 양쪽 순매수가 늘었습니다. 이는 전체 만기 합산이며 11월 특정 행사가의 신규 콜 매수 확인은 아닙니다. 내일 11/13에는 소멸한 11월물을 분석에서 분리하고, 12월 동일 계약의 가격·OI 변화가 지속되는지, 12월 선물 832.50~838.20 회복과 현물·프로그램 수급이 함께 유지되는지 확인해야 합니다. 만기 이벤트 때문에 오늘 신호를 무조건 무효화하지도, 바로 다음 날 추세로 연장하지도 않습니다."
+      "detail": "공식 계약명세의 둘째 목요일 규칙을 기준으로 11/12는 11월 옵션 만기였고 오늘 11/13은 그 다음 정규 거래일입니다. 12월 선물·옵션 만기는 12/10으로 구분합니다. 소멸한 11월 옵션 누적을 12월 잔고로 이어붙이지 않았습니다. 오늘 12월물은 장 초반 회복했지만 종가가 전일보다 낮고 기존 지지 아래에 있어 만기 후 상승 지속을 확인하지 못했습니다. 그렇다고 만기 효과만으로 하락 원인을 확정하지 않습니다. 12월과 1월 옵션 체인을 실제 조회했지만 얇은 거래와 호가 문제로 고정 델타 기간구조는 사용하지 않았습니다. 다음 거래일에는 824.65~826.10 회복과 현물·프로그램 매도 완화가 함께 나오는지, 818.10 재이탈 뒤 반등이 막히는지 확인합니다."
     },
     {
       "category": "누적 구간",
       "status": "확인·충돌·누락 분리",
-      "detail": "같은 12월물 일봉은 유효 거래량이 있는 8/3~11/12 69거래일을 사용했습니다. 3거래일 가격 변화 +51.65, 5거래일 -9.75, 20거래일 -33.80은 단기 회복과 더 긴 조정의 충돌을 보여줍니다. 월봉은 8월 첫 부분월과 진행 11월, 주봉은 진행 11/9~12를 구분했습니다. 9/11~11/12 41거래일 LS 단일 원천의 전체 만기 선물 순매매는 외국인 +24,232·기관 -23,113·투신 -3,759·연기금 +740계약입니다. 이 기간은 9월 만기 이후 관찰 구간일 뿐 실제 12월물 보유 잔고·평단이 아닙니다. 보존 장부와 9/21·9/23 수급이 다르므로 두 원천을 섞지 않고 차이와 결측을 공개했습니다. 오늘 11월 옵션 만기 누적은 종료 구간으로 보존하며 12월 계약과 이어붙이지 않습니다."
+      "detail": "동일 12월물 일봉은 유효 거래량이 있는 8/3~11/13 70거래일, 분봉·OI는 10/16~11/13을 사용했습니다. 3일(11/11~13) 가격 +10.25, 5일(11/9~13) +39.40, 20일(10/19~11/13) -58.70으로 짧은 반등과 긴 조정이 충돌합니다. 주봉은 이번 주 완료, 11월 월봉은 진행 중이며 8월 첫 부분월을 구분했습니다. 9/11~11/13 42거래일 LS 단일 원천의 전체 만기 선물 순매매는 외국인 +26,961·기관 -25,596·투신 -5,965·연기금 +870계약입니다. 이는 9월 만기 이후 관찰 구간이지 실제 12월 계약 보유량·평단이 아닙니다. 보존 장부의 9/21·9/23 값과 차이를 공개하고 혼합하지 않았습니다. 옵션 최근 3·5·20일 전체 만기 순매매는 거래 활동 참고만 가능하며 11월 만기를 가로지르는 연속 포지션으로 합산하지 않습니다."
     }
   ]
 }
