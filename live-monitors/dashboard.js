@@ -1,10 +1,10 @@
 'use strict';
 (()=>{
   let manifestPromise;
-  const known={'program-live':'program','cvd-live':'cvd'};
+  const known={'program-live':'program','cvd-live':'cvd','investor-live':'investor'};
   window.loadLiveMonitor=async tab=>{
     const kind=known[tab];if(!kind)return;
-    const prefix=kind==='program'?'programLive':'cvdLive';
+    const prefix=kind==='program'?'programLive':kind==='investor'?'investorLive':'cvdLive';
     const frame=document.getElementById(prefix+'Frame'),status=document.getElementById(prefix+'Status'),link=document.getElementById(prefix+'Open');
     if(frame.dataset.loaded==='1')return;
     status.textContent='보호된 실시간 화면 연결 중…';
