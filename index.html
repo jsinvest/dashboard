@@ -1051,7 +1051,7 @@
       <div class="leader-cumulative daily-leader-hidden" id="leaderCumulativePane">
         <div class="daily-v2-audit"><b>누적 기준: 11/13까지 62거래일</b> · 확보한 날짜별 TOP15 등장횟수, TOP5·1위 횟수 별도 · 장중 생성본 포함 · 실제 확보 기간만 집계</div><div class="leader-cumulative-top"><div class="leader-cumulative-market"><b>KOSPI · 누적 TOP5</b><div class="leader-cumulative-items"><span>은행·금융지주 <strong>40회</strong><small>카카오뱅크 8회 · iM금융지주 6회 · BNK금융지주 6회</small></span><span>범용화학 <strong>37회</strong><small>SKC 12회 · SK케미칼 7회 · OCI홀딩스 6회</small></span><span>2차전지 <strong>36회</strong><small>삼성SDI 10회 · 후성 8회 · 포스코퓨처엠 7회</small></span><span>지주·종합상사 <strong>36회</strong><small>SK스퀘어 14회 · GS 9회 · 삼성물산 8회</small></span><span>반도체 <strong>35회</strong><small>유니퀘스트 20회 · SK하이닉스 10회 · 미래산업 5회</small></span></div></div><div class="leader-cumulative-market"><b>KOSDAQ · 누적 TOP5</b><div class="leader-cumulative-items"><span>반도체 <strong>37회</strong><small>티에프이 15회 · 원익IPS 6회 · 에프에스티 5회</small></span><span>항공우주·위성 <strong>31회</strong><small>스피어 6회 · 쎄트렉아이 5회 · 이노스페이스 4회</small></span><span>통신장비·광네트워크 <strong>29회</strong><small>RFHIC 7회 · 오이솔루션 5회 · 아이씨티케이 4회</small></span><span>로봇·자동화 <strong>29회</strong><small>로보티즈 7회 · 하이젠알앤엠 5회 · 뉴로메카 5회</small></span><span>ESS·에너지저장 <strong>29회</strong><small>비나텍 14회 · 서진시스템 7회 · 코칩 5회</small></span></div></div></div><div class="leader-cumulative-controls">
           <div class="leader-cumulative-control"><span>시장</span><button type="button" class="leader-cumulative-btn active" data-cumulative-market="KOSPI">KOSPI</button><button type="button" class="leader-cumulative-btn" data-cumulative-market="KOSDAQ">KOSDAQ</button></div>
-          <div class="leader-cumulative-control"><span>기간</span><button type="button" class="leader-cumulative-btn active" data-cumulative-period="daily">일별 60일 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="monthly">월간 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="quarterly">분기 누적</button></div>
+          <div class="leader-cumulative-control"><span>기간</span><button type="button" class="leader-cumulative-btn active" data-cumulative-period="daily">일별 60일 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="weekly">주간 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="monthly">월간 누적</button><button type="button" class="leader-cumulative-btn" data-cumulative-period="quarterly">분기 누적</button></div>
         </div>
         <div class="leader-cumulative-body" id="leaderCumulativeBody"></div>
       </div>
@@ -1423,13 +1423,26 @@ function leaderTreeDateLabel(value){
 function leaderTreeDateKey(day){
   return `2026${day[0].split('/').map(part=>String(Number(part)).padStart(2,'0')).join('')}`;
 }
+function leaderWeekRange(dateKey){
+  if(!/^\d{8}$/.test(dateKey))return null;
+  const date=new Date(Date.UTC(Number(dateKey.slice(0,4)),Number(dateKey.slice(4,6))-1,Number(dateKey.slice(6,8))));
+  const key=value=>value.toISOString().slice(0,10).replaceAll('-','');
+  if(key(date)!==dateKey)return null;
+  date.setUTCDate(date.getUTCDate()-(date.getUTCDay()+6)%7);
+  const start=key(date);
+  date.setUTCDate(date.getUTCDate()+4);
+  return {start,end:key(date)};
+}
 function leaderPeriodData(base){
   const fullHistory=LEADER_CUMULATIVE_HISTORY_ACTIVE[leaderCumulativeMarket]||{};
   const latestKey=base.days.length?leaderTreeDateKey(base.days[base.days.length-1]):'';
   if(leaderCumulativePeriod==='daily')return {...base,history:fullHistory,periodTitle:'최근 60거래일 누적 트리',periodNote:`현재 ${base.days.length}/60거래일`,periodFoot:'원 크기와 가지 굵기는 TOP15 등장 횟수입니다. 20거래일 연속 미등장 시 회색 탈락으로 전환됩니다.'};
   const latestYear=latestKey.slice(0,4),latestMonth=Number(latestKey.slice(4,6));
   const quarterStart=Math.floor((latestMonth-1)/3)*3+1;
-  const predicate=leaderCumulativePeriod==='monthly'?(date=>date.startsWith(`${latestYear}${String(latestMonth).padStart(2,'0')}`)):(date=>Number(date.slice(4,6))>=quarterStart&&Number(date.slice(4,6))<quarterStart+3);
+  const weekly=leaderCumulativePeriod==='weekly';
+  const latestWeekKey=weekly?Object.values(fullHistory).flatMap(item=>item.d||[]).map(day=>String(day[0])).sort().at(-1)||latestKey:latestKey;
+  const week=weekly?leaderWeekRange(latestWeekKey):null;
+  const predicate=weekly?(date=>Boolean(week)&&date>=week.start&&date<=week.end):leaderCumulativePeriod==='monthly'?(date=>date.startsWith(`${latestYear}${String(latestMonth).padStart(2,'0')}`)):(date=>Number(date.slice(4,6))>=quarterStart&&Number(date.slice(4,6))<quarterStart+3);
   const history={};
   const rows=[];
   Object.entries(fullHistory).forEach(([sector,item])=>{
@@ -1444,8 +1457,10 @@ function leaderPeriodData(base){
     rows.push([sector,occurrences.length,ranks.filter(rank=>rank<=5).length,ranks.filter(rank=>rank===1).length,String(last[0]),Number(last[1]),ranks.reduce((sum,rank)=>sum+rank,0)/ranks.length]);
   });
   rows.sort((a,b)=>b[1]-a[1]||b[2]-a[2]||b[3]-a[3]||a[6]-b[6]);
-  const days=base.days.filter(day=>predicate(leaderTreeDateKey(day)));
+  const weekDates=new Set(Object.values(history).flatMap(item=>item.d).map(day=>leaderTreeDateLabel(day[0])));
+  const days=base.days.filter(day=>weekly?weekDates.has(day[0]):predicate(leaderTreeDateKey(day)));
   const frequency=rows.slice(0,6).map(row=>row.slice(0,4));
+  if(weekly)return {days,frequency,tree:rows.slice(0,15),history,periodTitle:week?`${week.start.slice(0,4)}년 ${leaderTreeDateLabel(week.start)}~${leaderTreeDateLabel(week.end)} 주간 누적 트리`:'주간 누적 트리',periodNote:week?`최신 자료 ${leaderTreeDateLabel(latestWeekKey)}까지 · 확보 ${days.length}거래일`:'확보된 주간 자료 없음',periodFoot:'월요일~금요일 기준으로 최신 자료가 속한 주의 TOP15 등장 일수·TOP5·1위 횟수와 대표 종목을 집계합니다. 확보하지 못한 날짜는 0으로 채우지 않습니다.'};
   if(leaderCumulativePeriod==='monthly')return {days,frequency,tree:rows.slice(0,15),history,periodTitle:`${latestYear}년 ${latestMonth}월 누적 트리`,periodNote:`${latestMonth}월 현재 ${days.length}거래일`,periodFoot:'월간 트리는 해당 월의 TOP15 등장 일수·TOP5·1위 횟수만 다시 계산합니다.'};
   const monthCounts=[];
   for(let month=quarterStart;month<quarterStart+3;month++){
@@ -1475,7 +1490,7 @@ function selectLeaderTreeSector(sector){
 }
 function renderLeaderTree(host,data){
   const tree=data.tree;
-  if(!tree.length)return;
+  if(!tree.length){host.innerHTML=`<div class="leader-cumulative-head"><b>${escapeHtml(data.periodTitle||'누적 트리')}</b></div><div class="leader-tree-empty">선택한 기간에 확보된 주도주 기록이 없습니다.</div>`;return;}
   if(!tree.some(row=>row[0]===leaderCumulativeSelection[leaderCumulativeMarket]))leaderCumulativeSelection[leaderCumulativeMarket]=tree[0][0];
   const selected=leaderCumulativeSelection[leaderCumulativeMarket];
   const periodTitle=data.periodTitle;
@@ -1508,7 +1523,7 @@ function renderLeaderTree(host,data){
   const leaderRanks=history?.l?.length?history.l.map((leader,index)=>`<span class="leader-tree-leader">${index===0?'대장 ':''}${escapeHtml(leader[0])} ${leader[1]}회</span>`).join(''):'<span class="leader-tree-empty">대장주 기록 없음</span>';
   const leaves=hits.length?hits.map(hit=>`<span class="leader-tree-leaf"><b>${escapeHtml(hit.date)} · 섹터 ${hit.rank}위</b>${escapeHtml(hit.stock)}<small>종목 주도점수 ${Number(hit.leaderScore).toFixed(1)} · ${escapeHtml(hit.role)}</small></span>`).join(''):'<span class="leader-tree-empty">날짜별 대표 종목 기록이 없습니다.</span>';
   const foot=data.periodFoot;
-  host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · ${periodTitle}</b><span>${periodNote}</span></div><div class="leader-tree" role="tree" aria-label="${leaderCumulativeMarket} 주도 섹터 누적 트리"><div class="leader-tree-root"><b>${leaderCumulativeMarket}</b><span>${leaderCumulativePeriod==='daily'?'60일 누적':leaderCumulativePeriod==='monthly'?'월간 누적':'분기 누적'}</span></div><div class="leader-tree-trunk"></div><div class="leader-tree-families">${familyHtml}</div><div class="leader-tree-legend"><span><i class="active"></i>현재 활성</span><span><i class="pullback"></i>눌림</span><span><i class="dropped"></i>20일 미등장·탈락</span></div></div><div class="leader-tree-detail" id="leaderTreeDetail" aria-live="polite"><div class="leader-tree-detail-head"><b>${escapeHtml(sector)}</b><span>${escapeHtml(status.label)} · 최근 ${leaderTreeDateLabel(lastDate)} · 당시 ${lastRank}위</span></div><div class="leader-tree-detail-metrics"><span>TOP15 <strong>${appearances}회</strong></span><span>TOP5 <strong>${top5}회</strong></span><span>1위 <strong>${rank1}회</strong></span><span>평균 순위 <strong>${Number(avgRank).toFixed(1)}위</strong></span><span>연결축 <strong>${escapeHtml(family.name)}</strong></span>${peers.length?`<span>연결 섹터 <strong>${escapeHtml(peers.join(' · '))}</strong></span>`:''}</div><div class="leader-tree-leaders"><strong>누적 대장주</strong>${leaderRanks}</div><div class="leader-tree-leaves">${leaves}</div></div><div class="leader-tree-note">${foot} 섹터를 누르면 TOP15에 등장한 모든 날짜의 대표 종목과 종목별 대장 횟수가 표시됩니다.</div>`;
+  host.innerHTML=`<div class="leader-cumulative-head"><b>${leaderCumulativeMarket} · ${periodTitle}</b><span>${periodNote}</span></div><div class="leader-tree" role="tree" aria-label="${leaderCumulativeMarket} 주도 섹터 누적 트리"><div class="leader-tree-root"><b>${leaderCumulativeMarket}</b><span>${leaderCumulativePeriod==='daily'?'60일 누적':leaderCumulativePeriod==='weekly'?'주간 누적':leaderCumulativePeriod==='monthly'?'월간 누적':'분기 누적'}</span></div><div class="leader-tree-trunk"></div><div class="leader-tree-families">${familyHtml}</div><div class="leader-tree-legend"><span><i class="active"></i>현재 활성</span><span><i class="pullback"></i>눌림</span><span><i class="dropped"></i>20일 미등장·탈락</span></div></div><div class="leader-tree-detail" id="leaderTreeDetail" aria-live="polite"><div class="leader-tree-detail-head"><b>${escapeHtml(sector)}</b><span>${escapeHtml(status.label)} · 최근 ${leaderTreeDateLabel(lastDate)} · 당시 ${lastRank}위</span></div><div class="leader-tree-detail-metrics"><span>TOP15 <strong>${appearances}회</strong></span><span>TOP5 <strong>${top5}회</strong></span><span>1위 <strong>${rank1}회</strong></span><span>평균 순위 <strong>${Number(avgRank).toFixed(1)}위</strong></span><span>연결축 <strong>${escapeHtml(family.name)}</strong></span>${peers.length?`<span>연결 섹터 <strong>${escapeHtml(peers.join(' · '))}</strong></span>`:''}</div><div class="leader-tree-leaders"><strong>누적 대장주</strong>${leaderRanks}</div><div class="leader-tree-leaves">${leaves}</div></div><div class="leader-tree-note">${foot} 섹터를 누르면 TOP15에 등장한 모든 날짜의 대표 종목과 종목별 대장 횟수가 표시됩니다.</div>`;
   host.querySelectorAll('[data-leader-tree-sector]').forEach(button=>button.addEventListener('click',()=>selectLeaderTreeSector(button.dataset.leaderTreeSector)));
 }
 function renderLeaderCumulative(){
