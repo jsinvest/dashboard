@@ -1,0 +1,5098 @@
+{
+  "as_of": "2026-11-16",
+  "generated_at": "2026-11-16T17:19:09.802708+09:00",
+  "contract": "F202612",
+  "code": "A016C000",
+  "review_status": "CORE_VERIFIED_WITH_DISCLOSED_LIMITS",
+  "sources": [
+    {
+      "file": "20261012_101230_021224/analysis.json",
+      "sha256": "4aedecdf2ad1450bb0828196a9e76aca33352be8630fc3285a1ada05f00be731"
+    },
+    {
+      "file": "20261012_101529_137835/analysis.json",
+      "sha256": "d36f10921c2c52c6c0fc45064a7b160c53b63894669cb231530726f88465c65c"
+    },
+    {
+      "file": "20261012_104055_192868/analysis.json",
+      "sha256": "e0714e3956a2df54cf066654731803634551b0c2f10d7e326566d5928b5d8e6b"
+    },
+    {
+      "file": "20261012_160501_146930/analysis.json",
+      "sha256": "55439ec987921da22da059402504a60f7e3edb6a399ca19bbab3608f7a204d9b"
+    },
+    {
+      "file": "20261013_160629_055061/analysis.json",
+      "sha256": "5e89cc93e3c8228b97fb334c949a9386f4491ca03fe10c16c3771a2e3a19e9d2"
+    },
+    {
+      "file": "20261015_172943_592733/analysis.json",
+      "sha256": "b75cce9363a6e70fd5526ef1236d0634b61e214d46e1f8d2221a6d3e3c6c81d9"
+    },
+    {
+      "file": "20261020_160513_739561/analysis.json",
+      "sha256": "305f14b685b5f6b10d7c47e9bd3eb58b3b9046ed9b039c4d2620ffe423f251ee"
+    },
+    {
+      "file": "20261021_160223_559583/analysis.json",
+      "sha256": "ca92f08da8ba7b66628aeb53e2a72e5a55b15a91af072f5a629c8093452eb586"
+    },
+    {
+      "file": "20261022_160849_395235/analysis.json",
+      "sha256": "edfb595082847883c9c1482526ea5991cc918ffef9510fdfdd89d1efe60953e7"
+    },
+    {
+      "file": "20261023_160102_476144/analysis.json",
+      "sha256": "c11d76cb25668c6370198f2357572a29df48ba127ab7c6e2034ccc54452addea"
+    },
+    {
+      "file": "20261026_160415_274191/analysis.json",
+      "sha256": "6ead76924001794975321d2f5cf83158e867e284a7246038a793ef06ac537950"
+    },
+    {
+      "file": "20261027_160112_640637/analysis.json",
+      "sha256": "02496dfe620d04eb4db4422c0415693df3964efcf4f132b5951f525a0ae0978c"
+    },
+    {
+      "file": "20261028_160607_460988/analysis.json",
+      "sha256": "b29ed4bdebe77fe978eea8ca3301ab12bb3d86c63896149f78701280218b6e7d"
+    },
+    {
+      "file": "20261029_174647_653404/analysis.json",
+      "sha256": "58860e4efa0f03e2f8b1951028491895b56b4ed3a378fd46580d7d7340b99768"
+    },
+    {
+      "file": "20261030_160114_776046/analysis.json",
+      "sha256": "ae46cade12c1086143f4668af7b49d9870d2f19c8e789c060f46504267a933e9"
+    },
+    {
+      "file": "20261102_162944_634447/analysis.json",
+      "sha256": "2a9b1019a62113b9a876b7f4317e031434e1db4f1055228ac2ef1ea260ca1318"
+    },
+    {
+      "file": "20261103_160059_406594/analysis.json",
+      "sha256": "8062139327d947aaae21c8d640fa60918d98fac68af0146db9d4f70edbb8ce65"
+    },
+    {
+      "file": "20261104_160529_020493/analysis.json",
+      "sha256": "1c57ae0fb4e0e5f368f5f599c19459dfc680512fa78665ddacb3ae74d0b40432"
+    },
+    {
+      "file": "20261105_160117_739453/analysis.json",
+      "sha256": "3cbe3cdd6c77ced047289434a96b6405d441f7efa22e118302e7ea048724a4f0"
+    },
+    {
+      "file": "20261106_160444_430972/analysis.json",
+      "sha256": "e286235d3c5b59971d8b43f65123550d344aa284cdc6debc1d9952a957869d5f"
+    },
+    {
+      "file": "20261109_160553_127137/analysis.json",
+      "sha256": "7ab07893fc40d896fbb9ca54a57e9002315c0a4aac173ec7dbf28450be0ed90e"
+    },
+    {
+      "file": "20261110_162424_656256/analysis.json",
+      "sha256": "eace92d33228497084a26917e56ca10bbef352d36fd0880ad12beabc579ffde5"
+    },
+    {
+      "file": "20261111_160748_360883/analysis.json",
+      "sha256": "40395fa68e05614a7b900d51df9713bb94bdb6519d2c74fc69c1bfbd64fa5c32"
+    },
+    {
+      "file": "20261112_160845_290385/analysis.json",
+      "sha256": "d0c735b8d2208ffdb9dd9d325e0f8f6e0678aad048a9e597f911625cabd4602a"
+    },
+    {
+      "file": "20261113_160808_912749/analysis.json",
+      "sha256": "7b66ee2a9a72640d0828581b8db0491eb82376f2bd3c944817456e65624a455a"
+    },
+    {
+      "file": "20261116_160625_287334/analysis.json",
+      "sha256": "75853de11a3135bddbebe6402bde40cb02371fe815477d399c968ca5ff1ef81e"
+    },
+    {
+      "file": "20261116/krx_calendar_20261116_170244880.json",
+      "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+    },
+    {
+      "file": "20261116/0471_KOSPI200_일별_60일_20261116.png",
+      "sha256": "126f2cfc73cb73504017fd9b08ba1f9b4bbe9cd8115bd88ef42bfa38ea971b9d"
+    },
+    {
+      "file": "20261116/0786_close_snapshot_20261116.png",
+      "sha256": "e9e94eb194c28d152ddb17b590b31acf2bd30b38a4ee6bf5ffd0d1d38b21ed13"
+    },
+    {
+      "file": "20261116/0787_선물_금액_20261116.png",
+      "sha256": "7d0ae79301506bc2d6ef5c6eb00c05ef4518e8cc07199c6687b81aee28ae2bf1"
+    },
+    {
+      "file": "20261116/0787_선물_수량_20261116.png",
+      "sha256": "c6a7f93760de458a781ec6f174da9b0f90ec998b95a880e9f372f74bb013b68b"
+    },
+    {
+      "file": "20261116/0787_콜옵션_금액_20261116.png",
+      "sha256": "e86bf86c03c19ef40c9c47e3ac12cf6a854a310f82bbdcfc388b74afe3c5f0f7"
+    },
+    {
+      "file": "20261116/0787_콜옵션_수량_20261116.png",
+      "sha256": "9c5c7b21ecc599ab820e4727dc42b58cd7f20e90c923eb0b1040bb409da19edc"
+    },
+    {
+      "file": "20261116/0787_풋옵션_금액_20261116.png",
+      "sha256": "54f4d6863e2877ed70d25e3c73c4a8718d620b9610513f03d6c89850b8f73bcd"
+    },
+    {
+      "file": "20261116/0787_풋옵션_수량_20261116.png",
+      "sha256": "ab9e511cb682d5c37c46e4734a6282f3f00c21ada5c55e936b0143d0454561d6"
+    },
+    {
+      "file": "20261116/0790_누적_20261116.png",
+      "sha256": "7e02605edf479a0ab9e94e17045bfb527c85ebed42c3337303741320b0982aa7"
+    },
+    {
+      "file": "20261116/0790_일자_20261116.png",
+      "sha256": "ac7f8c8d405637b5b1303aa4ea0b71a528f8ab152aedf2141e32a2409224e596"
+    },
+    {
+      "file": "20261116/0794_누적_20261116.png",
+      "sha256": "99c474f0c828cc7a71d68057e359af40170154f132806d07a88a0c9d824fad36"
+    },
+    {
+      "file": "20261116/0794_일자_20261116.png",
+      "sha256": "52eaad3539c9500140741a180a300427826de57141f0f1118ee720dac8331adb"
+    },
+    {
+      "file": "20261116/eod_0787_parsed_20261116.csv",
+      "sha256": "4985b5326c7436f3a4c07ee3e4d5251a554e3b25f202b82d9e88143286dc707f"
+    },
+    {
+      "file": "20261116/eod_manifest_20261116.json",
+      "sha256": "87c1ef818784676f4f108c0664a0f773f898c775db2643ed265b0a4886fc743f"
+    },
+    {
+      "file": "20261116/eod_ocr_bridge_20261116.json",
+      "sha256": "2e9f5f1c9000cb533e2d244d8775076708b28d1de4a231757dccdd56f1558d95"
+    },
+    {
+      "file": "20261113/api_run_latest.json",
+      "sha256": "98d3e5efd2fc003756d9b72ebfc6f9a9639e59800a123b317ef7224a247913f4"
+    },
+    {
+      "file": "160712_564861/oi.json",
+      "sha256": "80c48185ffa406fb9c8a02d84066e1f43c9471b6075d3c1c81669325a8e9b050"
+    },
+    {
+      "file": "20261116/api_run_latest.json",
+      "sha256": "8046c3b133055348d152c94eee5e8bef6257b7e82db3d19109f3b2bbbd18e6d0"
+    },
+    {
+      "file": "160602_206373/daily.json",
+      "sha256": "fa6dc58dc59da3bab81fe118ad05a615bbe2beed7b0910b43fc1735bd237aaa6"
+    },
+    {
+      "file": "160602_206373/minute.json",
+      "sha256": "433b21a4d38c30ee7491a83d3372dc6046d89e5520660c8f7912a82ecd315317"
+    },
+    {
+      "file": "160602_206373/oi.json",
+      "sha256": "6d2edc1e7f5eb97a18a363081246d0d4bf5e585969a722a4dd0bd6727f3ae02c"
+    },
+    {
+      "file": "160602_206373/volatility.json",
+      "sha256": "6c2bcdd34aa5380690405a458ca4fea1412a2232d64d05f1100d02f9b3dfff08"
+    },
+    {
+      "file": "raw_20261113_170343/options_202612.json",
+      "sha256": "8a852b30df1dd955f5d1ff5806b0719d84efc999979dc95edab461e804517ed8"
+    },
+    {
+      "file": "futures_review_20261116/bootstrap_review_snapshot.log",
+      "sha256": "1975c89597f3d2211765c2b9f5652329297a0a2830ecca3fdea0ea8575de7adf"
+    },
+    {
+      "file": "futures_review_20261116/execution_state_snapshot.json",
+      "sha256": "880e3e13ea668675d5c6dea9adb75b83f6c7e8d4d8cfcf06b6c36c3c96c55e00"
+    },
+    {
+      "file": "futures_review_20261116/legacy_ledger_preserved.csv",
+      "sha256": "a2641a8fe1a329924df26e98610c3d22741d202d9eb0bb4c4e112497f7beed17"
+    },
+    {
+      "file": "raw_20261116_170343/A016C000_daily.json",
+      "sha256": "f9ef01d686bb6ae608969f7fe6718dfb7b4e12d3928632ed446c605f9c362070"
+    },
+    {
+      "file": "raw_20261116_170343/A016C000_quote.json",
+      "sha256": "de59677361f4183fe21ec0ae3b2d4e473eb0df791d2b1761287bfbeaa847081e"
+    },
+    {
+      "file": "raw_20261116_170343/A0173000_daily.json",
+      "sha256": "dcba830d7fc8fa643fdbbef3955900a19b0b78aba2fb713fce2c1e830603cee9"
+    },
+    {
+      "file": "raw_20261116_170343/A0173000_quote.json",
+      "sha256": "a2dfacad24155beefc1939060bc97607280184c445df6f3b966b3e9ead200e03"
+    },
+    {
+      "file": "raw_20261116_170343/B016C785_daily.json",
+      "sha256": "9f3c87b770bf9acf7b4255946038246790cdc02c34eb81de4d32bfd27987701b"
+    },
+    {
+      "file": "raw_20261116_170343/B016C785_quote.json",
+      "sha256": "9e65f564fdf159b77e3e8fc91f8033683d70a55e35c3142df10b7987f7216560"
+    },
+    {
+      "file": "raw_20261116_170343/B016C790_daily.json",
+      "sha256": "890e4cd8766e7acf01bf0a3622bf595200057b794731ca228863ffc8466e7e94"
+    },
+    {
+      "file": "raw_20261116_170343/B016C790_quote.json",
+      "sha256": "2405f169d4b01590b04e3f46288f5ddfe2798e5a89602b16dc3a8ab6ad4388b1"
+    },
+    {
+      "file": "raw_20261116_170343/B016C795_daily.json",
+      "sha256": "a80722e8f29acc6c00f60cef661001e66b68bcdb6142b8c0db72599130005e96"
+    },
+    {
+      "file": "raw_20261116_170343/B016C795_quote.json",
+      "sha256": "ff6e9cfc906de609d41c65bb487a365da6f0dcf8b2b7a5852fbee1c4a9a0a87a"
+    },
+    {
+      "file": "raw_20261116_170343/C016C785_daily.json",
+      "sha256": "b697e4eebf194b580e5dd67c072da5712472daec0f7840b231391724f64de8fb"
+    },
+    {
+      "file": "raw_20261116_170343/C016C785_quote.json",
+      "sha256": "fa04e115e75beb8c9c7c67347df8f89c7b0342559527947871a7b94e2a52bab7"
+    },
+    {
+      "file": "raw_20261116_170343/C016C790_daily.json",
+      "sha256": "5c2c2e119b4937b3319a24f3242f4cb876cb4c0e660f824c6728042a56ba5f21"
+    },
+    {
+      "file": "raw_20261116_170343/C016C790_quote.json",
+      "sha256": "644a129b6218936b36dbf6e22d376db8084a3443cb87f195517ff38b84e3075d"
+    },
+    {
+      "file": "raw_20261116_170343/C016C795_daily.json",
+      "sha256": "0424169a8a8ce977f0869a3e116d40ec41b84f0af511f1ccfbfd137227b51dc6"
+    },
+    {
+      "file": "raw_20261116_170343/C016C795_quote.json",
+      "sha256": "c418f427c89f6fffab352c98501b10172e380bb9993b87b937ee3e1b37253af7"
+    },
+    {
+      "file": "raw_20261116_170343/call_amount_intraday.json",
+      "sha256": "856d7ee3732f8fc65763a73765eea9dbf5c5b8733e49acd1a77450c014f73774"
+    },
+    {
+      "file": "raw_20261116_170343/call_detail.json",
+      "sha256": "f89399ebad0157bbd900060844d6db3a35ec88396bc02c047aff08800e1e23b9"
+    },
+    {
+      "file": "raw_20261116_170343/call_qty_intraday.json",
+      "sha256": "e6f1c006801b1da54a95876a021bcefe58ebd233caaf2611ef47ce7e8955ae68"
+    },
+    {
+      "file": "raw_20261116_170343/call_t1617_1.json",
+      "sha256": "eb7f713ae01be8ccd7d7925264a940e732d5cc14645e00777fb5b9106e539760"
+    },
+    {
+      "file": "raw_20261116_170343/call_t1617_2.json",
+      "sha256": "7049ce7e3efeefea58833867f9f587ad652c6a20f7b0e5518a00fe6fc2d8a5b3"
+    },
+    {
+      "file": "raw_20261116_170343/call_t1617_3.json",
+      "sha256": "07368c0bf11e443a693c51ff45ac9067912fa2a588ce970d9025b1516937490a"
+    },
+    {
+      "file": "raw_20261116_170343/cash_detail.json",
+      "sha256": "6a014c0bcd8238feb7ae9fb72b4d8f0bae876d139c4406fe045f2bb10ceb105b"
+    },
+    {
+      "file": "raw_20261116_170343/cash_intraday.json",
+      "sha256": "db2bd029f12298c558324142bb422158aeb8b2c9a9db95fc716c1f3b88c3c9d2"
+    },
+    {
+      "file": "raw_20261116_170343/cash_t1617_1.json",
+      "sha256": "243fc7d684e010bf4e1b8c5bc7f74f13d9e4490668462da5c44283f7a76da0fb"
+    },
+    {
+      "file": "raw_20261116_170343/cash_t1617_2.json",
+      "sha256": "d99011d6946ddfde1495ff0041459011ab6aa9b2702e0019d10dea63377d1682"
+    },
+    {
+      "file": "raw_20261116_170343/cash_t1617_3.json",
+      "sha256": "6c0d4fe0b661d79ef8d7b5bdfd675b0a1c2b02f7ece718192bdf5d4973d41c3c"
+    },
+    {
+      "file": "raw_20261116_170343/future_catalog.json",
+      "sha256": "a3493ab4cede1f58e2e4b1ece47042940374edf80e6f9656bb8280fffa7e03cc"
+    },
+    {
+      "file": "raw_20261116_170343/futures_detail.json",
+      "sha256": "acb536faffaade96658213c23efdfea1167cae2d8699d8f6f29e7896c7984446"
+    },
+    {
+      "file": "raw_20261116_170343/futures_intraday.json",
+      "sha256": "0cf0318d67f9fc6de416586121aa6c606004f514dd494afaa9d2221524307c31"
+    },
+    {
+      "file": "raw_20261116_170343/futures_t1617_1.json",
+      "sha256": "fa26e54d12bf36921a66f1db48bf5beaea484e70b98df0e9140d154cef515fa5"
+    },
+    {
+      "file": "raw_20261116_170343/futures_t1617_2.json",
+      "sha256": "94d22cf1694ca2d96d3edccd8227f7aac08612a0770d158377a2a96b1dbbd675"
+    },
+    {
+      "file": "raw_20261116_170343/futures_t1617_3.json",
+      "sha256": "ed5031fe0ee01567fe52205b17373ae064fd394a944551620a4a52a1c2334d78"
+    },
+    {
+      "file": "raw_20261116_170343/kospi200_daily.json",
+      "sha256": "17fc68f8c87c5a3c44d041c1c4cc7e166acec3457b5966b4a567927ea17e7582"
+    },
+    {
+      "file": "raw_20261116_170343/kospi200_quote.json",
+      "sha256": "23f47b12426ad607eaa84a9250bf92bbe153ad3d7b272ed1f142c7adcc110dd5"
+    },
+    {
+      "file": "raw_20261116_170343/kospi_daily.json",
+      "sha256": "b841c3858ccdf8bb0e261c6bb1fadf99a8ee479129ee9e3775747213756387ae"
+    },
+    {
+      "file": "raw_20261116_170343/kospi_kiwoom_daily.json",
+      "sha256": "2bca83a37c08eac900cc2541a04a76ec9baa769f4e2d495b57251f556ddf9f7d"
+    },
+    {
+      "file": "raw_20261116_170343/kospi_quote.json",
+      "sha256": "9bacc3c4f8597f38de8d40d3f3eb69a3aa93c93fbb46f557132c8f212acd0db0"
+    },
+    {
+      "file": "raw_20261116_170343/manifest.json",
+      "sha256": "cd93e127643dba32dd7bbe9d89b86e41fc8d27dbf3a32c6abbb01386a68d33f6"
+    },
+    {
+      "file": "raw_20261116_170343/official_derivatives_spec.html",
+      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef"
+    },
+    {
+      "file": "raw_20261116_170343/options_202612.json",
+      "sha256": "9f5f73006d895ad8b50d7038a72ee1a6728be7b3bd481c4410e3d9af5e2a0a2e"
+    },
+    {
+      "file": "raw_20261116_170343/options_202701.json",
+      "sha256": "bd979c327e33066762ec0cfa75a851141e0909b9e16309cbc52c4fd7ae28e848"
+    },
+    {
+      "file": "raw_20261116_170343/program_daily.json",
+      "sha256": "2e30d066a9209191a9c404058913832d15ff2671fe700f8a52378b789ba25d95"
+    },
+    {
+      "file": "raw_20261116_170343/program_intraday.json",
+      "sha256": "e751c0e65292d61fdea014e7b2d6e39f41829e57e9168300af52b7bdc44c68cd"
+    },
+    {
+      "file": "raw_20261116_170343/program_leaders.json",
+      "sha256": "f858006700703d11b2cfc570d0acd7f8927cd3eedc8a498965970ac4bcc6b8c6"
+    },
+    {
+      "file": "raw_20261116_170343/put_amount_intraday.json",
+      "sha256": "f202f39e02efaa6a7ba4da1621cc267d110de7acc8082453481b876904c799aa"
+    },
+    {
+      "file": "raw_20261116_170343/put_detail.json",
+      "sha256": "78adf99ea268534310f294add1b529e48071e312c78e405682d9586c00ca7a0e"
+    },
+    {
+      "file": "raw_20261116_170343/put_qty_intraday.json",
+      "sha256": "6751d4fcc50fc8e8839bc3437c671a9add17194d6a1f997b43a3d98a6a857c29"
+    },
+    {
+      "file": "raw_20261116_170343/put_t1617_1.json",
+      "sha256": "7aa99ec4668ed7b1bb9cabd3566cd25aaa16cbdd0d24f5f974613f51d80d5db5"
+    },
+    {
+      "file": "raw_20261116_170343/put_t1617_2.json",
+      "sha256": "aff2601a4e96e492896025870e816f2c9ddf3cedef2c157c756c40629b4b3fc7"
+    },
+    {
+      "file": "raw_20261116_170343/put_t1617_3.json",
+      "sha256": "cb7c45561bae924ac50ac4082accb1295a09143808b3f7202d9a552a5cdba2f2"
+    },
+    {
+      "file": "raw_20261116_170343/stock_futures_t1617_1.json",
+      "sha256": "d04f5cede08132d19f00c3a269e9442f0bf9835b0c77827ba6be3cfdbf3c0e8f"
+    },
+    {
+      "file": "raw_20261116_170343/stock_futures_t1617_2.json",
+      "sha256": "08e312dd17e59a7f8c47fd8cb96b19e2f412c39e66b754ffe21978598035368e"
+    },
+    {
+      "file": "raw_20261116_170343/stock_futures_t1617_3.json",
+      "sha256": "cd9f31e93aa2f21e86f907b8a5d1904d14f2c416d129b74c4dcf4979e002594b"
+    },
+    {
+      "file": "raw_20261113_170343/manifest.json",
+      "sha256": "0fa0ea5fb8ca047190df946dffc63bc427ebd934dbc21a83d7bc585c13fc157e"
+    },
+    {
+      "file": "raw_20261113_170343/options_202612.json",
+      "sha256": "8a852b30df1dd955f5d1ff5806b0719d84efc999979dc95edab461e804517ed8"
+    },
+    {
+      "file": "closing_20261116_170946/call_amount.json",
+      "sha256": "5dd29d8231b373318e5089b380502171e75100e27e5813c2a77de25000fa5f38"
+    },
+    {
+      "file": "closing_20261116_170946/call_qty.json",
+      "sha256": "9890d998232b90804f498e355436fcb01347c8eb7290713bb0192fa76559b62d"
+    },
+    {
+      "file": "closing_20261116_170946/cash.json",
+      "sha256": "9b786953a43a21ffeb4f24c738bc852b26ccb7f5a2d8a05d65bfd86f055af17d"
+    },
+    {
+      "file": "closing_20261116_170946/futures.json",
+      "sha256": "bc394a230a35de138424b332c9818c0fdea4e6a77c3c81e8fa5ee632c3d8a182"
+    },
+    {
+      "file": "closing_20261116_170946/manifest.json",
+      "sha256": "3e0c3857e2fb440ee558fee333709699118f522b338eba91e348cfe017568e61"
+    },
+    {
+      "file": "closing_20261116_170946/put_amount.json",
+      "sha256": "d799e8ecd528767f2b686539b89626cecc443e8f8eb976e6561fdbae720bbe4d"
+    },
+    {
+      "file": "closing_20261116_170946/put_qty.json",
+      "sha256": "30488ce3c8384bf4e6accb34c81602a2d333df88946b6837f83a5f35741e26e5"
+    },
+    {
+      "file": "earlier_20261116_171351/cash_3.json",
+      "sha256": "e0fa5a0d4e236cd634029b77a4c47017f46e749a7a8398d2d9a378ab915ebcd9"
+    },
+    {
+      "file": "earlier_20261116_171351/cash_4.json",
+      "sha256": "b337a00a463e5d49df5bc9fd5157b9b84790924bd57e315bb6d9e984ef64bfeb"
+    },
+    {
+      "file": "earlier_20261116_171351/cash_5.json",
+      "sha256": "00f1d6f676a42ac47b97ac4368b119805c8e4b3ba6a97350b72b70ebaf0f9070"
+    },
+    {
+      "file": "earlier_20261116_171351/futures_3.json",
+      "sha256": "c695e42618fd551ef0c259507401cba9849b5a45ef0bbaf17f6cb0e8f89a0f55"
+    },
+    {
+      "file": "earlier_20261116_171351/futures_4.json",
+      "sha256": "8c7d3db77697782b319045ceb6434f1b82d9e3782d8c5ffe719cc56eb20a06e9"
+    },
+    {
+      "file": "earlier_20261116_171351/futures_5.json",
+      "sha256": "bda72f9898c44badccafdffde00283cfcf5c9022294d256f4c968ddaee670535"
+    },
+    {
+      "file": "earlier_20261116_171351/manifest.json",
+      "sha256": "9531bf72bbb53814c79d4116bcb0c1867605397af7fa3dd2c57f903712fb3f4d"
+    },
+    {
+      "file": "raw_20261116_170343/call_amount_intraday.json",
+      "sha256": "856d7ee3732f8fc65763a73765eea9dbf5c5b8733e49acd1a77450c014f73774"
+    },
+    {
+      "file": "raw_20261116_170343/call_qty_intraday.json",
+      "sha256": "e6f1c006801b1da54a95876a021bcefe58ebd233caaf2611ef47ce7e8955ae68"
+    },
+    {
+      "file": "raw_20261116_170343/cash_intraday.json",
+      "sha256": "db2bd029f12298c558324142bb422158aeb8b2c9a9db95fc716c1f3b88c3c9d2"
+    },
+    {
+      "file": "raw_20261116_170343/futures_intraday.json",
+      "sha256": "0cf0318d67f9fc6de416586121aa6c606004f514dd494afaa9d2221524307c31"
+    },
+    {
+      "file": "raw_20261116_170343/kospi200_quote.json",
+      "sha256": "23f47b12426ad607eaa84a9250bf92bbe153ad3d7b272ed1f142c7adcc110dd5"
+    },
+    {
+      "file": "raw_20261116_170343/put_amount_intraday.json",
+      "sha256": "f202f39e02efaa6a7ba4da1621cc267d110de7acc8082453481b876904c799aa"
+    },
+    {
+      "file": "raw_20261116_170343/put_qty_intraday.json",
+      "sha256": "6751d4fcc50fc8e8839bc3437c671a9add17194d6a1f997b43a3d98a6a857c29"
+    },
+    {
+      "file": "evidence.json",
+      "sha256": "55ed9663e3ae656365040144df1a139724cf85ba3915af7b9631f0980d88445d"
+    },
+    {
+      "file": "extra_review.json",
+      "sha256": "c7d0126288a5caccc690fe94689037c32d7f4821543d1ab70143f7af68078470"
+    },
+    {
+      "file": "editorial.json",
+      "sha256": "818de1895a0a1849912517a9c9232aaa53aabf2bf709834eb376a042dcbec0c2"
+    },
+    {
+      "file": "weekly_flow_context.json",
+      "sha256": "6691e33bdf8466a0259a4fd58a6fa3cca4dd2eaecea11fe00345348063ffae18"
+    }
+  ],
+  "checks": {
+    "trade_date": "20261116",
+    "status": "CORE_VERIFIED_WITH_DISCLOSED_LIMITS",
+    "ready_for_editorial_review": true,
+    "capture_count": 12,
+    "all_54_display_nets_visually_checked": true,
+    "source_hashes": [
+      {
+        "file": "20261012_101230_021224/analysis.json",
+        "sha256": "4aedecdf2ad1450bb0828196a9e76aca33352be8630fc3285a1ada05f00be731"
+      },
+      {
+        "file": "20261012_101529_137835/analysis.json",
+        "sha256": "d36f10921c2c52c6c0fc45064a7b160c53b63894669cb231530726f88465c65c"
+      },
+      {
+        "file": "20261012_104055_192868/analysis.json",
+        "sha256": "e0714e3956a2df54cf066654731803634551b0c2f10d7e326566d5928b5d8e6b"
+      },
+      {
+        "file": "20261012_160501_146930/analysis.json",
+        "sha256": "55439ec987921da22da059402504a60f7e3edb6a399ca19bbab3608f7a204d9b"
+      },
+      {
+        "file": "20261013_160629_055061/analysis.json",
+        "sha256": "5e89cc93e3c8228b97fb334c949a9386f4491ca03fe10c16c3771a2e3a19e9d2"
+      },
+      {
+        "file": "20261015_172943_592733/analysis.json",
+        "sha256": "b75cce9363a6e70fd5526ef1236d0634b61e214d46e1f8d2221a6d3e3c6c81d9"
+      },
+      {
+        "file": "20261020_160513_739561/analysis.json",
+        "sha256": "305f14b685b5f6b10d7c47e9bd3eb58b3b9046ed9b039c4d2620ffe423f251ee"
+      },
+      {
+        "file": "20261021_160223_559583/analysis.json",
+        "sha256": "ca92f08da8ba7b66628aeb53e2a72e5a55b15a91af072f5a629c8093452eb586"
+      },
+      {
+        "file": "20261022_160849_395235/analysis.json",
+        "sha256": "edfb595082847883c9c1482526ea5991cc918ffef9510fdfdd89d1efe60953e7"
+      },
+      {
+        "file": "20261023_160102_476144/analysis.json",
+        "sha256": "c11d76cb25668c6370198f2357572a29df48ba127ab7c6e2034ccc54452addea"
+      },
+      {
+        "file": "20261026_160415_274191/analysis.json",
+        "sha256": "6ead76924001794975321d2f5cf83158e867e284a7246038a793ef06ac537950"
+      },
+      {
+        "file": "20261027_160112_640637/analysis.json",
+        "sha256": "02496dfe620d04eb4db4422c0415693df3964efcf4f132b5951f525a0ae0978c"
+      },
+      {
+        "file": "20261028_160607_460988/analysis.json",
+        "sha256": "b29ed4bdebe77fe978eea8ca3301ab12bb3d86c63896149f78701280218b6e7d"
+      },
+      {
+        "file": "20261029_174647_653404/analysis.json",
+        "sha256": "58860e4efa0f03e2f8b1951028491895b56b4ed3a378fd46580d7d7340b99768"
+      },
+      {
+        "file": "20261030_160114_776046/analysis.json",
+        "sha256": "ae46cade12c1086143f4668af7b49d9870d2f19c8e789c060f46504267a933e9"
+      },
+      {
+        "file": "20261102_162944_634447/analysis.json",
+        "sha256": "2a9b1019a62113b9a876b7f4317e031434e1db4f1055228ac2ef1ea260ca1318"
+      },
+      {
+        "file": "20261103_160059_406594/analysis.json",
+        "sha256": "8062139327d947aaae21c8d640fa60918d98fac68af0146db9d4f70edbb8ce65"
+      },
+      {
+        "file": "20261104_160529_020493/analysis.json",
+        "sha256": "1c57ae0fb4e0e5f368f5f599c19459dfc680512fa78665ddacb3ae74d0b40432"
+      },
+      {
+        "file": "20261105_160117_739453/analysis.json",
+        "sha256": "3cbe3cdd6c77ced047289434a96b6405d441f7efa22e118302e7ea048724a4f0"
+      },
+      {
+        "file": "20261106_160444_430972/analysis.json",
+        "sha256": "e286235d3c5b59971d8b43f65123550d344aa284cdc6debc1d9952a957869d5f"
+      },
+      {
+        "file": "20261109_160553_127137/analysis.json",
+        "sha256": "7ab07893fc40d896fbb9ca54a57e9002315c0a4aac173ec7dbf28450be0ed90e"
+      },
+      {
+        "file": "20261110_162424_656256/analysis.json",
+        "sha256": "eace92d33228497084a26917e56ca10bbef352d36fd0880ad12beabc579ffde5"
+      },
+      {
+        "file": "20261111_160748_360883/analysis.json",
+        "sha256": "40395fa68e05614a7b900d51df9713bb94bdb6519d2c74fc69c1bfbd64fa5c32"
+      },
+      {
+        "file": "20261112_160845_290385/analysis.json",
+        "sha256": "d0c735b8d2208ffdb9dd9d325e0f8f6e0678aad048a9e597f911625cabd4602a"
+      },
+      {
+        "file": "20261113_160808_912749/analysis.json",
+        "sha256": "7b66ee2a9a72640d0828581b8db0491eb82376f2bd3c944817456e65624a455a"
+      },
+      {
+        "file": "20261116_160625_287334/analysis.json",
+        "sha256": "75853de11a3135bddbebe6402bde40cb02371fe815477d399c968ca5ff1ef81e"
+      },
+      {
+        "file": "20261116/krx_calendar_20261116_170244880.json",
+        "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+      },
+      {
+        "file": "20261116/0471_KOSPI200_일별_60일_20261116.png",
+        "sha256": "126f2cfc73cb73504017fd9b08ba1f9b4bbe9cd8115bd88ef42bfa38ea971b9d"
+      },
+      {
+        "file": "20261116/0786_close_snapshot_20261116.png",
+        "sha256": "e9e94eb194c28d152ddb17b590b31acf2bd30b38a4ee6bf5ffd0d1d38b21ed13"
+      },
+      {
+        "file": "20261116/0787_선물_금액_20261116.png",
+        "sha256": "7d0ae79301506bc2d6ef5c6eb00c05ef4518e8cc07199c6687b81aee28ae2bf1"
+      },
+      {
+        "file": "20261116/0787_선물_수량_20261116.png",
+        "sha256": "c6a7f93760de458a781ec6f174da9b0f90ec998b95a880e9f372f74bb013b68b"
+      },
+      {
+        "file": "20261116/0787_콜옵션_금액_20261116.png",
+        "sha256": "e86bf86c03c19ef40c9c47e3ac12cf6a854a310f82bbdcfc388b74afe3c5f0f7"
+      },
+      {
+        "file": "20261116/0787_콜옵션_수량_20261116.png",
+        "sha256": "9c5c7b21ecc599ab820e4727dc42b58cd7f20e90c923eb0b1040bb409da19edc"
+      },
+      {
+        "file": "20261116/0787_풋옵션_금액_20261116.png",
+        "sha256": "54f4d6863e2877ed70d25e3c73c4a8718d620b9610513f03d6c89850b8f73bcd"
+      },
+      {
+        "file": "20261116/0787_풋옵션_수량_20261116.png",
+        "sha256": "ab9e511cb682d5c37c46e4734a6282f3f00c21ada5c55e936b0143d0454561d6"
+      },
+      {
+        "file": "20261116/0790_누적_20261116.png",
+        "sha256": "7e02605edf479a0ab9e94e17045bfb527c85ebed42c3337303741320b0982aa7"
+      },
+      {
+        "file": "20261116/0790_일자_20261116.png",
+        "sha256": "ac7f8c8d405637b5b1303aa4ea0b71a528f8ab152aedf2141e32a2409224e596"
+      },
+      {
+        "file": "20261116/0794_누적_20261116.png",
+        "sha256": "99c474f0c828cc7a71d68057e359af40170154f132806d07a88a0c9d824fad36"
+      },
+      {
+        "file": "20261116/0794_일자_20261116.png",
+        "sha256": "52eaad3539c9500140741a180a300427826de57141f0f1118ee720dac8331adb"
+      },
+      {
+        "file": "20261116/eod_0787_parsed_20261116.csv",
+        "sha256": "4985b5326c7436f3a4c07ee3e4d5251a554e3b25f202b82d9e88143286dc707f"
+      },
+      {
+        "file": "20261116/eod_manifest_20261116.json",
+        "sha256": "87c1ef818784676f4f108c0664a0f773f898c775db2643ed265b0a4886fc743f"
+      },
+      {
+        "file": "20261116/eod_ocr_bridge_20261116.json",
+        "sha256": "2e9f5f1c9000cb533e2d244d8775076708b28d1de4a231757dccdd56f1558d95"
+      },
+      {
+        "file": "20261113/api_run_latest.json",
+        "sha256": "98d3e5efd2fc003756d9b72ebfc6f9a9639e59800a123b317ef7224a247913f4"
+      },
+      {
+        "file": "160712_564861/oi.json",
+        "sha256": "80c48185ffa406fb9c8a02d84066e1f43c9471b6075d3c1c81669325a8e9b050"
+      },
+      {
+        "file": "20261116/api_run_latest.json",
+        "sha256": "8046c3b133055348d152c94eee5e8bef6257b7e82db3d19109f3b2bbbd18e6d0"
+      },
+      {
+        "file": "160602_206373/daily.json",
+        "sha256": "fa6dc58dc59da3bab81fe118ad05a615bbe2beed7b0910b43fc1735bd237aaa6"
+      },
+      {
+        "file": "160602_206373/minute.json",
+        "sha256": "433b21a4d38c30ee7491a83d3372dc6046d89e5520660c8f7912a82ecd315317"
+      },
+      {
+        "file": "160602_206373/oi.json",
+        "sha256": "6d2edc1e7f5eb97a18a363081246d0d4bf5e585969a722a4dd0bd6727f3ae02c"
+      },
+      {
+        "file": "160602_206373/volatility.json",
+        "sha256": "6c2bcdd34aa5380690405a458ca4fea1412a2232d64d05f1100d02f9b3dfff08"
+      },
+      {
+        "file": "raw_20261113_170343/options_202612.json",
+        "sha256": "8a852b30df1dd955f5d1ff5806b0719d84efc999979dc95edab461e804517ed8"
+      },
+      {
+        "file": "futures_review_20261116/bootstrap_review_snapshot.log",
+        "sha256": "1975c89597f3d2211765c2b9f5652329297a0a2830ecca3fdea0ea8575de7adf"
+      },
+      {
+        "file": "futures_review_20261116/execution_state_snapshot.json",
+        "sha256": "880e3e13ea668675d5c6dea9adb75b83f6c7e8d4d8cfcf06b6c36c3c96c55e00"
+      },
+      {
+        "file": "futures_review_20261116/legacy_ledger_preserved.csv",
+        "sha256": "a2641a8fe1a329924df26e98610c3d22741d202d9eb0bb4c4e112497f7beed17"
+      },
+      {
+        "file": "raw_20261116_170343/A016C000_daily.json",
+        "sha256": "f9ef01d686bb6ae608969f7fe6718dfb7b4e12d3928632ed446c605f9c362070"
+      },
+      {
+        "file": "raw_20261116_170343/A016C000_quote.json",
+        "sha256": "de59677361f4183fe21ec0ae3b2d4e473eb0df791d2b1761287bfbeaa847081e"
+      },
+      {
+        "file": "raw_20261116_170343/A0173000_daily.json",
+        "sha256": "dcba830d7fc8fa643fdbbef3955900a19b0b78aba2fb713fce2c1e830603cee9"
+      },
+      {
+        "file": "raw_20261116_170343/A0173000_quote.json",
+        "sha256": "a2dfacad24155beefc1939060bc97607280184c445df6f3b966b3e9ead200e03"
+      },
+      {
+        "file": "raw_20261116_170343/B016C785_daily.json",
+        "sha256": "9f3c87b770bf9acf7b4255946038246790cdc02c34eb81de4d32bfd27987701b"
+      },
+      {
+        "file": "raw_20261116_170343/B016C785_quote.json",
+        "sha256": "9e65f564fdf159b77e3e8fc91f8033683d70a55e35c3142df10b7987f7216560"
+      },
+      {
+        "file": "raw_20261116_170343/B016C790_daily.json",
+        "sha256": "890e4cd8766e7acf01bf0a3622bf595200057b794731ca228863ffc8466e7e94"
+      },
+      {
+        "file": "raw_20261116_170343/B016C790_quote.json",
+        "sha256": "2405f169d4b01590b04e3f46288f5ddfe2798e5a89602b16dc3a8ab6ad4388b1"
+      },
+      {
+        "file": "raw_20261116_170343/B016C795_daily.json",
+        "sha256": "a80722e8f29acc6c00f60cef661001e66b68bcdb6142b8c0db72599130005e96"
+      },
+      {
+        "file": "raw_20261116_170343/B016C795_quote.json",
+        "sha256": "ff6e9cfc906de609d41c65bb487a365da6f0dcf8b2b7a5852fbee1c4a9a0a87a"
+      },
+      {
+        "file": "raw_20261116_170343/C016C785_daily.json",
+        "sha256": "b697e4eebf194b580e5dd67c072da5712472daec0f7840b231391724f64de8fb"
+      },
+      {
+        "file": "raw_20261116_170343/C016C785_quote.json",
+        "sha256": "fa04e115e75beb8c9c7c67347df8f89c7b0342559527947871a7b94e2a52bab7"
+      },
+      {
+        "file": "raw_20261116_170343/C016C790_daily.json",
+        "sha256": "5c2c2e119b4937b3319a24f3242f4cb876cb4c0e660f824c6728042a56ba5f21"
+      },
+      {
+        "file": "raw_20261116_170343/C016C790_quote.json",
+        "sha256": "644a129b6218936b36dbf6e22d376db8084a3443cb87f195517ff38b84e3075d"
+      },
+      {
+        "file": "raw_20261116_170343/C016C795_daily.json",
+        "sha256": "0424169a8a8ce977f0869a3e116d40ec41b84f0af511f1ccfbfd137227b51dc6"
+      },
+      {
+        "file": "raw_20261116_170343/C016C795_quote.json",
+        "sha256": "c418f427c89f6fffab352c98501b10172e380bb9993b87b937ee3e1b37253af7"
+      },
+      {
+        "file": "raw_20261116_170343/call_amount_intraday.json",
+        "sha256": "856d7ee3732f8fc65763a73765eea9dbf5c5b8733e49acd1a77450c014f73774"
+      },
+      {
+        "file": "raw_20261116_170343/call_detail.json",
+        "sha256": "f89399ebad0157bbd900060844d6db3a35ec88396bc02c047aff08800e1e23b9"
+      },
+      {
+        "file": "raw_20261116_170343/call_qty_intraday.json",
+        "sha256": "e6f1c006801b1da54a95876a021bcefe58ebd233caaf2611ef47ce7e8955ae68"
+      },
+      {
+        "file": "raw_20261116_170343/call_t1617_1.json",
+        "sha256": "eb7f713ae01be8ccd7d7925264a940e732d5cc14645e00777fb5b9106e539760"
+      },
+      {
+        "file": "raw_20261116_170343/call_t1617_2.json",
+        "sha256": "7049ce7e3efeefea58833867f9f587ad652c6a20f7b0e5518a00fe6fc2d8a5b3"
+      },
+      {
+        "file": "raw_20261116_170343/call_t1617_3.json",
+        "sha256": "07368c0bf11e443a693c51ff45ac9067912fa2a588ce970d9025b1516937490a"
+      },
+      {
+        "file": "raw_20261116_170343/cash_detail.json",
+        "sha256": "6a014c0bcd8238feb7ae9fb72b4d8f0bae876d139c4406fe045f2bb10ceb105b"
+      },
+      {
+        "file": "raw_20261116_170343/cash_intraday.json",
+        "sha256": "db2bd029f12298c558324142bb422158aeb8b2c9a9db95fc716c1f3b88c3c9d2"
+      },
+      {
+        "file": "raw_20261116_170343/cash_t1617_1.json",
+        "sha256": "243fc7d684e010bf4e1b8c5bc7f74f13d9e4490668462da5c44283f7a76da0fb"
+      },
+      {
+        "file": "raw_20261116_170343/cash_t1617_2.json",
+        "sha256": "d99011d6946ddfde1495ff0041459011ab6aa9b2702e0019d10dea63377d1682"
+      },
+      {
+        "file": "raw_20261116_170343/cash_t1617_3.json",
+        "sha256": "6c0d4fe0b661d79ef8d7b5bdfd675b0a1c2b02f7ece718192bdf5d4973d41c3c"
+      },
+      {
+        "file": "raw_20261116_170343/future_catalog.json",
+        "sha256": "a3493ab4cede1f58e2e4b1ece47042940374edf80e6f9656bb8280fffa7e03cc"
+      },
+      {
+        "file": "raw_20261116_170343/futures_detail.json",
+        "sha256": "acb536faffaade96658213c23efdfea1167cae2d8699d8f6f29e7896c7984446"
+      },
+      {
+        "file": "raw_20261116_170343/futures_intraday.json",
+        "sha256": "0cf0318d67f9fc6de416586121aa6c606004f514dd494afaa9d2221524307c31"
+      },
+      {
+        "file": "raw_20261116_170343/futures_t1617_1.json",
+        "sha256": "fa26e54d12bf36921a66f1db48bf5beaea484e70b98df0e9140d154cef515fa5"
+      },
+      {
+        "file": "raw_20261116_170343/futures_t1617_2.json",
+        "sha256": "94d22cf1694ca2d96d3edccd8227f7aac08612a0770d158377a2a96b1dbbd675"
+      },
+      {
+        "file": "raw_20261116_170343/futures_t1617_3.json",
+        "sha256": "ed5031fe0ee01567fe52205b17373ae064fd394a944551620a4a52a1c2334d78"
+      },
+      {
+        "file": "raw_20261116_170343/kospi200_daily.json",
+        "sha256": "17fc68f8c87c5a3c44d041c1c4cc7e166acec3457b5966b4a567927ea17e7582"
+      },
+      {
+        "file": "raw_20261116_170343/kospi200_quote.json",
+        "sha256": "23f47b12426ad607eaa84a9250bf92bbe153ad3d7b272ed1f142c7adcc110dd5"
+      },
+      {
+        "file": "raw_20261116_170343/kospi_daily.json",
+        "sha256": "b841c3858ccdf8bb0e261c6bb1fadf99a8ee479129ee9e3775747213756387ae"
+      },
+      {
+        "file": "raw_20261116_170343/kospi_kiwoom_daily.json",
+        "sha256": "2bca83a37c08eac900cc2541a04a76ec9baa769f4e2d495b57251f556ddf9f7d"
+      },
+      {
+        "file": "raw_20261116_170343/kospi_quote.json",
+        "sha256": "9bacc3c4f8597f38de8d40d3f3eb69a3aa93c93fbb46f557132c8f212acd0db0"
+      },
+      {
+        "file": "raw_20261116_170343/manifest.json",
+        "sha256": "cd93e127643dba32dd7bbe9d89b86e41fc8d27dbf3a32c6abbb01386a68d33f6"
+      },
+      {
+        "file": "raw_20261116_170343/official_derivatives_spec.html",
+        "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef"
+      },
+      {
+        "file": "raw_20261116_170343/options_202612.json",
+        "sha256": "9f5f73006d895ad8b50d7038a72ee1a6728be7b3bd481c4410e3d9af5e2a0a2e"
+      },
+      {
+        "file": "raw_20261116_170343/options_202701.json",
+        "sha256": "bd979c327e33066762ec0cfa75a851141e0909b9e16309cbc52c4fd7ae28e848"
+      },
+      {
+        "file": "raw_20261116_170343/program_daily.json",
+        "sha256": "2e30d066a9209191a9c404058913832d15ff2671fe700f8a52378b789ba25d95"
+      },
+      {
+        "file": "raw_20261116_170343/program_intraday.json",
+        "sha256": "e751c0e65292d61fdea014e7b2d6e39f41829e57e9168300af52b7bdc44c68cd"
+      },
+      {
+        "file": "raw_20261116_170343/program_leaders.json",
+        "sha256": "f858006700703d11b2cfc570d0acd7f8927cd3eedc8a498965970ac4bcc6b8c6"
+      },
+      {
+        "file": "raw_20261116_170343/put_amount_intraday.json",
+        "sha256": "f202f39e02efaa6a7ba4da1621cc267d110de7acc8082453481b876904c799aa"
+      },
+      {
+        "file": "raw_20261116_170343/put_detail.json",
+        "sha256": "78adf99ea268534310f294add1b529e48071e312c78e405682d9586c00ca7a0e"
+      },
+      {
+        "file": "raw_20261116_170343/put_qty_intraday.json",
+        "sha256": "6751d4fcc50fc8e8839bc3437c671a9add17194d6a1f997b43a3d98a6a857c29"
+      },
+      {
+        "file": "raw_20261116_170343/put_t1617_1.json",
+        "sha256": "7aa99ec4668ed7b1bb9cabd3566cd25aaa16cbdd0d24f5f974613f51d80d5db5"
+      },
+      {
+        "file": "raw_20261116_170343/put_t1617_2.json",
+        "sha256": "aff2601a4e96e492896025870e816f2c9ddf3cedef2c157c756c40629b4b3fc7"
+      },
+      {
+        "file": "raw_20261116_170343/put_t1617_3.json",
+        "sha256": "cb7c45561bae924ac50ac4082accb1295a09143808b3f7202d9a552a5cdba2f2"
+      },
+      {
+        "file": "raw_20261116_170343/stock_futures_t1617_1.json",
+        "sha256": "d04f5cede08132d19f00c3a269e9442f0bf9835b0c77827ba6be3cfdbf3c0e8f"
+      },
+      {
+        "file": "raw_20261116_170343/stock_futures_t1617_2.json",
+        "sha256": "08e312dd17e59a7f8c47fd8cb96b19e2f412c39e66b754ffe21978598035368e"
+      },
+      {
+        "file": "raw_20261116_170343/stock_futures_t1617_3.json",
+        "sha256": "cd9f31e93aa2f21e86f907b8a5d1904d14f2c416d129b74c4dcf4979e002594b"
+      },
+      {
+        "file": "raw_20261113_170343/manifest.json",
+        "sha256": "0fa0ea5fb8ca047190df946dffc63bc427ebd934dbc21a83d7bc585c13fc157e"
+      },
+      {
+        "file": "raw_20261113_170343/options_202612.json",
+        "sha256": "8a852b30df1dd955f5d1ff5806b0719d84efc999979dc95edab461e804517ed8"
+      },
+      {
+        "file": "closing_20261116_170946/call_amount.json",
+        "sha256": "5dd29d8231b373318e5089b380502171e75100e27e5813c2a77de25000fa5f38"
+      },
+      {
+        "file": "closing_20261116_170946/call_qty.json",
+        "sha256": "9890d998232b90804f498e355436fcb01347c8eb7290713bb0192fa76559b62d"
+      },
+      {
+        "file": "closing_20261116_170946/cash.json",
+        "sha256": "9b786953a43a21ffeb4f24c738bc852b26ccb7f5a2d8a05d65bfd86f055af17d"
+      },
+      {
+        "file": "closing_20261116_170946/futures.json",
+        "sha256": "bc394a230a35de138424b332c9818c0fdea4e6a77c3c81e8fa5ee632c3d8a182"
+      },
+      {
+        "file": "closing_20261116_170946/manifest.json",
+        "sha256": "3e0c3857e2fb440ee558fee333709699118f522b338eba91e348cfe017568e61"
+      },
+      {
+        "file": "closing_20261116_170946/put_amount.json",
+        "sha256": "d799e8ecd528767f2b686539b89626cecc443e8f8eb976e6561fdbae720bbe4d"
+      },
+      {
+        "file": "closing_20261116_170946/put_qty.json",
+        "sha256": "30488ce3c8384bf4e6accb34c81602a2d333df88946b6837f83a5f35741e26e5"
+      },
+      {
+        "file": "earlier_20261116_171351/cash_3.json",
+        "sha256": "e0fa5a0d4e236cd634029b77a4c47017f46e749a7a8398d2d9a378ab915ebcd9"
+      },
+      {
+        "file": "earlier_20261116_171351/cash_4.json",
+        "sha256": "b337a00a463e5d49df5bc9fd5157b9b84790924bd57e315bb6d9e984ef64bfeb"
+      },
+      {
+        "file": "earlier_20261116_171351/cash_5.json",
+        "sha256": "00f1d6f676a42ac47b97ac4368b119805c8e4b3ba6a97350b72b70ebaf0f9070"
+      },
+      {
+        "file": "earlier_20261116_171351/futures_3.json",
+        "sha256": "c695e42618fd551ef0c259507401cba9849b5a45ef0bbaf17f6cb0e8f89a0f55"
+      },
+      {
+        "file": "earlier_20261116_171351/futures_4.json",
+        "sha256": "8c7d3db77697782b319045ceb6434f1b82d9e3782d8c5ffe719cc56eb20a06e9"
+      },
+      {
+        "file": "earlier_20261116_171351/futures_5.json",
+        "sha256": "bda72f9898c44badccafdffde00283cfcf5c9022294d256f4c968ddaee670535"
+      },
+      {
+        "file": "earlier_20261116_171351/manifest.json",
+        "sha256": "9531bf72bbb53814c79d4116bcb0c1867605397af7fa3dd2c57f903712fb3f4d"
+      },
+      {
+        "file": "raw_20261116_170343/call_amount_intraday.json",
+        "sha256": "856d7ee3732f8fc65763a73765eea9dbf5c5b8733e49acd1a77450c014f73774"
+      },
+      {
+        "file": "raw_20261116_170343/call_qty_intraday.json",
+        "sha256": "e6f1c006801b1da54a95876a021bcefe58ebd233caaf2611ef47ce7e8955ae68"
+      },
+      {
+        "file": "raw_20261116_170343/cash_intraday.json",
+        "sha256": "db2bd029f12298c558324142bb422158aeb8b2c9a9db95fc716c1f3b88c3c9d2"
+      },
+      {
+        "file": "raw_20261116_170343/futures_intraday.json",
+        "sha256": "0cf0318d67f9fc6de416586121aa6c606004f514dd494afaa9d2221524307c31"
+      },
+      {
+        "file": "raw_20261116_170343/kospi200_quote.json",
+        "sha256": "23f47b12426ad607eaa84a9250bf92bbe153ad3d7b272ed1f142c7adcc110dd5"
+      },
+      {
+        "file": "raw_20261116_170343/put_amount_intraday.json",
+        "sha256": "f202f39e02efaa6a7ba4da1621cc267d110de7acc8082453481b876904c799aa"
+      },
+      {
+        "file": "raw_20261116_170343/put_qty_intraday.json",
+        "sha256": "6751d4fcc50fc8e8839bc3437c671a9add17194d6a1f997b43a3d98a6a857c29"
+      },
+      {
+        "file": "evidence.json",
+        "sha256": "55ed9663e3ae656365040144df1a139724cf85ba3915af7b9631f0980d88445d"
+      },
+      {
+        "file": "extra_review.json",
+        "sha256": "c7d0126288a5caccc690fe94689037c32d7f4821543d1ab70143f7af68078470"
+      },
+      {
+        "file": "editorial.json",
+        "sha256": "818de1895a0a1849912517a9c9232aaa53aabf2bf709834eb376a042dcbec0c2"
+      },
+      {
+        "file": "weekly_flow_context.json",
+        "sha256": "6691e33bdf8466a0259a4fd58a6fa3cca4dd2eaecea11fe00345348063ffae18"
+      }
+    ],
+    "flow_rows": [
+      {
+        "date": "2026-09-11",
+        "foreign": -2543,
+        "institution": 3959,
+        "financial": 6090,
+        "trust": -1609
+      },
+      {
+        "date": "2026-09-14",
+        "foreign": -2891,
+        "institution": 2655,
+        "financial": 5894,
+        "trust": -3201
+      },
+      {
+        "date": "2026-09-15",
+        "foreign": -6218,
+        "institution": 6052,
+        "financial": 4915,
+        "trust": 1283
+      },
+      {
+        "date": "2026-09-16",
+        "foreign": 1997,
+        "institution": -530,
+        "financial": -2689,
+        "trust": 2508
+      },
+      {
+        "date": "2026-09-17",
+        "foreign": 802,
+        "institution": -1791,
+        "financial": -1061,
+        "trust": -525
+      },
+      {
+        "date": "2026-09-18",
+        "foreign": 5642,
+        "institution": -4914,
+        "financial": -8216,
+        "trust": 3087
+      },
+      {
+        "date": "2026-09-21",
+        "foreign": 4251,
+        "institution": -3963,
+        "financial": -4098,
+        "trust": 210
+      },
+      {
+        "date": "2026-09-22",
+        "foreign": 1823,
+        "institution": -3273,
+        "financial": -2927,
+        "trust": -292
+      },
+      {
+        "date": "2026-09-23",
+        "foreign": 1356,
+        "institution": -1402,
+        "financial": -2493,
+        "trust": 1167
+      },
+      {
+        "date": "2026-09-28",
+        "foreign": -1831,
+        "institution": 2395,
+        "financial": 5117,
+        "trust": -2937
+      },
+      {
+        "date": "2026-09-29",
+        "foreign": 1077,
+        "institution": -457,
+        "financial": -1426,
+        "trust": 912
+      },
+      {
+        "date": "2026-09-30",
+        "foreign": -4800,
+        "institution": 3989,
+        "financial": 4785,
+        "trust": -775
+      },
+      {
+        "date": "2026-10-01",
+        "foreign": -428,
+        "institution": -54,
+        "financial": -1424,
+        "trust": 1249
+      },
+      {
+        "date": "2026-10-02",
+        "foreign": 3071,
+        "institution": -2852,
+        "financial": -3270,
+        "trust": 582
+      },
+      {
+        "date": "2026-10-06",
+        "foreign": -928,
+        "institution": -911,
+        "financial": 400,
+        "trust": -1426
+      },
+      {
+        "date": "2026-10-07",
+        "foreign": -1053,
+        "institution": 650,
+        "financial": 1144,
+        "trust": -1019
+      },
+      {
+        "date": "2026-10-08",
+        "foreign": -4650,
+        "institution": 5204,
+        "financial": 6625,
+        "trust": -1487
+      },
+      {
+        "date": "2026-10-12",
+        "foreign": 3009,
+        "institution": -2837,
+        "financial": -1196,
+        "trust": -1405
+      },
+      {
+        "date": "2026-10-13",
+        "foreign": 1670,
+        "institution": -2237,
+        "financial": 1129,
+        "trust": -2866
+      },
+      {
+        "date": "2026-10-14",
+        "foreign": 3557,
+        "institution": -1983,
+        "financial": -2565,
+        "trust": 1098
+      },
+      {
+        "date": "2026-10-15",
+        "foreign": 5544,
+        "institution": -6024,
+        "financial": -3645,
+        "trust": -1740
+      },
+      {
+        "date": "2026-10-16",
+        "foreign": -4200,
+        "institution": 5077,
+        "financial": 1490,
+        "trust": 3383
+      },
+      {
+        "date": "2026-10-19",
+        "foreign": -345,
+        "institution": 715,
+        "financial": -828,
+        "trust": 1512
+      },
+      {
+        "date": "2026-10-20",
+        "foreign": -1544,
+        "institution": 898,
+        "financial": 3898,
+        "trust": -2897
+      },
+      {
+        "date": "2026-10-21",
+        "foreign": -3632,
+        "institution": 1573,
+        "financial": -2321,
+        "trust": 3647
+      },
+      {
+        "date": "2026-10-22",
+        "foreign": 1552,
+        "institution": -776,
+        "financial": 3514,
+        "trust": -4063
+      },
+      {
+        "date": "2026-10-23",
+        "foreign": 2177,
+        "institution": 353,
+        "financial": -774,
+        "trust": 1268
+      },
+      {
+        "date": "2026-10-26",
+        "foreign": 3451,
+        "institution": -4456,
+        "financial": -2748,
+        "trust": -1560
+      },
+      {
+        "date": "2026-10-27",
+        "foreign": 670,
+        "institution": -163,
+        "financial": -2948,
+        "trust": 3101
+      },
+      {
+        "date": "2026-10-28",
+        "foreign": -1476,
+        "institution": -592,
+        "financial": -4729,
+        "trust": 4266
+      },
+      {
+        "date": "2026-10-29",
+        "foreign": 86,
+        "institution": -805,
+        "financial": 1635,
+        "trust": -2479
+      },
+      {
+        "date": "2026-10-30",
+        "foreign": 6002,
+        "institution": -5806,
+        "financial": -3757,
+        "trust": -2353
+      },
+      {
+        "date": "2026-11-02",
+        "foreign": 1535,
+        "institution": -857,
+        "financial": -3864,
+        "trust": 2656
+      },
+      {
+        "date": "2026-11-03",
+        "foreign": -1552,
+        "institution": 884,
+        "financial": 4080,
+        "trust": -3312
+      },
+      {
+        "date": "2026-11-04",
+        "foreign": -1658,
+        "institution": 1624,
+        "financial": 179,
+        "trust": 1522
+      },
+      {
+        "date": "2026-11-05",
+        "foreign": 6830,
+        "institution": -7135,
+        "financial": -2289,
+        "trust": -4221
+      },
+      {
+        "date": "2026-11-06",
+        "foreign": 7171,
+        "institution": -4789,
+        "financial": -1002,
+        "trust": -3640
+      },
+      {
+        "date": "2026-11-09",
+        "foreign": 4190,
+        "institution": -3695,
+        "financial": -5520,
+        "trust": 1599
+      },
+      {
+        "date": "2026-11-10",
+        "foreign": -145,
+        "institution": 816,
+        "financial": -3632,
+        "trust": 4610
+      },
+      {
+        "date": "2026-11-11",
+        "foreign": -3805,
+        "institution": 2992,
+        "financial": 1474,
+        "trust": 1731
+      },
+      {
+        "date": "2026-11-12",
+        "foreign": 468,
+        "institution": -647,
+        "financial": 1214,
+        "trust": -1343
+      },
+      {
+        "date": "2026-11-13",
+        "foreign": 2729,
+        "institution": -2483,
+        "financial": -411,
+        "trust": -2206
+      },
+      {
+        "date": "2026-11-16",
+        "foreign": 1991,
+        "institution": -2121,
+        "financial": 523,
+        "trust": -3196
+      }
+    ],
+    "oi_revision": {
+      "current": 158340,
+      "previous_requeried": 154085,
+      "previous_original_snapshot": 154294,
+      "change_same_current_series": 4255,
+      "change_against_original_snapshot": 4046,
+      "ls_current": 157656,
+      "ls_previous": 154085,
+      "ls_change": 3571,
+      "revision_cause": "UNRESOLVED_NO_SPLICE"
+    },
+    "futures": {
+      "daily_raw_rows": 708,
+      "active_start": "2026-08-03",
+      "active_rows": 71,
+      "zero_volume_active": 0,
+      "last_daily": {
+        "timestamp": "2026-11-16 00:00:00",
+        "open": 826.5,
+        "high": 830.8,
+        "low": 785.0,
+        "close": 789.35,
+        "volume": 129483.0,
+        "sma5": 817.5699999999999,
+        "sma10": 825.89,
+        "sma20": 858.2325000000001,
+        "sma60": 990.8258333333334,
+        "sma120": null,
+        "tenkan9": 838.725,
+        "kijun26": 901.9000000000001,
+        "span_a_forward26": 870.3125,
+        "span_b_forward26": 951.5,
+        "cloud_a_today": 1085.4875000000002,
+        "cloud_b_today": null,
+        "atr14": 45.79820235336532,
+        "di_plus14": 16.721747043957844,
+        "di_minus14": 32.170333280104536,
+        "adx14": 29.450029444697677,
+        "rsi14": 35.626520022935935,
+        "macd": -46.75573466331059,
+        "macd_signal": -46.3223974404375,
+        "bb_upper": 953.1072820814373,
+        "bb_lower": 763.3577179185628
+      },
+      "last_intraday": {
+        "timestamp": "2026-11-16 15:45:00",
+        "open": 789.35,
+        "high": 789.35,
+        "low": 789.35,
+        "close": 789.35,
+        "volume": 4237.0,
+        "open_interest": 158340.0,
+        "sma5": 788.25,
+        "sma10": 788.0350000000001,
+        "sma20": 791.8075,
+        "sma60": 807.3758333333334,
+        "sma120": 824.4566666666667,
+        "tenkan9": 788.75,
+        "kijun26": 796.0,
+        "span_a_forward26": 792.375,
+        "span_b_forward26": 807.9,
+        "cloud_a_today": 810.3499999999999,
+        "cloud_b_today": 825.225,
+        "atr14": 3.6434939069437027,
+        "di_plus14": 16.442920079597766,
+        "di_minus14": 21.086583781081057,
+        "adx14": 29.7620384762962,
+        "rsi14": 38.76930197570902,
+        "macd": -4.603460140661809,
+        "macd_signal": -5.230441512991912,
+        "bb_upper": 800.5453072191358,
+        "bb_lower": 783.0696927808642
+      },
+      "week_completed": {
+        "timestamp": "2026-11-13 00:00:00",
+        "open": 784.0,
+        "high": 859.65,
+        "low": 771.55,
+        "close": 822.35,
+        "volume": 612321.0
+      },
+      "previous_week": {
+        "timestamp": "2026-11-06 00:00:00",
+        "open": 880.8,
+        "high": 930.0,
+        "low": 760.1,
+        "close": 782.95,
+        "volume": 762084.0
+      },
+      "week_partial": {
+        "timestamp": "2026-11-20 00:00:00",
+        "open": 826.5,
+        "high": 830.8,
+        "low": 785.0,
+        "close": 789.35,
+        "volume": 129483.0
+      },
+      "month_completed": {
+        "timestamp": "2026-10-31 00:00:00",
+        "open": 1088.35,
+        "high": 1125.55,
+        "low": 824.65,
+        "close": 899.45,
+        "volume": 2685657.0
+      },
+      "month_partial": {
+        "timestamp": "2026-11-30 00:00:00",
+        "open": 880.8,
+        "high": 930.0,
+        "low": 760.1,
+        "close": 789.35,
+        "volume": 1503888.0
+      },
+      "recent_daily": [
+        {
+          "timestamp": "2026-09-30 00:00:00",
+          "open": 1105.55,
+          "high": 1110.65,
+          "low": 1083.75,
+          "close": 1091.5,
+          "volume": 98274
+        },
+        {
+          "timestamp": "2026-10-01 00:00:00",
+          "open": 1088.35,
+          "high": 1109.75,
+          "low": 1073.1,
+          "close": 1107.75,
+          "volume": 104151
+        },
+        {
+          "timestamp": "2026-10-02 00:00:00",
+          "open": 1106.75,
+          "high": 1117.55,
+          "low": 1100.6,
+          "close": 1113.2,
+          "volume": 76161
+        },
+        {
+          "timestamp": "2026-10-06 00:00:00",
+          "open": 1121.5,
+          "high": 1125.55,
+          "low": 1094.9,
+          "close": 1103.0,
+          "volume": 82705
+        },
+        {
+          "timestamp": "2026-10-07 00:00:00",
+          "open": 1090.2,
+          "high": 1110.65,
+          "low": 1078.75,
+          "close": 1078.75,
+          "volume": 96350
+        },
+        {
+          "timestamp": "2026-10-08 00:00:00",
+          "open": 1086.0,
+          "high": 1086.55,
+          "low": 1047.85,
+          "close": 1048.25,
+          "volume": 116423
+        },
+        {
+          "timestamp": "2026-10-12 00:00:00",
+          "open": 1039.1,
+          "high": 1043.7,
+          "low": 1006.55,
+          "close": 1008.25,
+          "volume": 116511
+        },
+        {
+          "timestamp": "2026-10-13 00:00:00",
+          "open": 978.9,
+          "high": 981.7,
+          "low": 929.95,
+          "close": 944.8,
+          "volume": 180508
+        },
+        {
+          "timestamp": "2026-10-14 00:00:00",
+          "open": 950.8,
+          "high": 972.55,
+          "low": 930.75,
+          "close": 944.2,
+          "volume": 126572
+        },
+        {
+          "timestamp": "2026-10-15 00:00:00",
+          "open": 885.05,
+          "high": 900.25,
+          "low": 848.0,
+          "close": 861.3,
+          "volume": 208979
+        },
+        {
+          "timestamp": "2026-10-16 00:00:00",
+          "open": 887.0,
+          "high": 904.9,
+          "low": 869.95,
+          "close": 881.05,
+          "volume": 155322
+        },
+        {
+          "timestamp": "2026-10-19 00:00:00",
+          "open": 840.0,
+          "high": 894.45,
+          "low": 840.0,
+          "close": 893.25,
+          "volume": 141866
+        },
+        {
+          "timestamp": "2026-10-20 00:00:00",
+          "open": 890.75,
+          "high": 891.65,
+          "low": 850.6,
+          "close": 861.05,
+          "volume": 148998
+        },
+        {
+          "timestamp": "2026-10-21 00:00:00",
+          "open": 881.0,
+          "high": 908.4,
+          "low": 875.2,
+          "close": 893.05,
+          "volume": 139272
+        },
+        {
+          "timestamp": "2026-10-22 00:00:00",
+          "open": 878.5,
+          "high": 895.2,
+          "low": 852.05,
+          "close": 857.0,
+          "volume": 134239
+        },
+        {
+          "timestamp": "2026-10-23 00:00:00",
+          "open": 830.05,
+          "high": 866.35,
+          "low": 824.65,
+          "close": 863.3,
+          "volume": 154782
+        },
+        {
+          "timestamp": "2026-10-26 00:00:00",
+          "open": 856.3,
+          "high": 868.3,
+          "low": 849.55,
+          "close": 850.0,
+          "volume": 115913
+        },
+        {
+          "timestamp": "2026-10-27 00:00:00",
+          "open": 874.45,
+          "high": 899.5,
+          "low": 874.45,
+          "close": 882.45,
+          "volume": 116738
+        },
+        {
+          "timestamp": "2026-10-28 00:00:00",
+          "open": 904.0,
+          "high": 950.15,
+          "low": 898.95,
+          "close": 945.8,
+          "volume": 143307
+        },
+        {
+          "timestamp": "2026-10-29 00:00:00",
+          "open": 939.0,
+          "high": 966.4,
+          "low": 915.35,
+          "close": 935.0,
+          "volume": 175807
+        },
+        {
+          "timestamp": "2026-10-30 00:00:00",
+          "open": 897.7,
+          "high": 910.0,
+          "low": 877.25,
+          "close": 899.45,
+          "volume": 151053
+        },
+        {
+          "timestamp": "2026-11-02 00:00:00",
+          "open": 880.8,
+          "high": 930.0,
+          "low": 879.85,
+          "close": 918.65,
+          "volume": 130724
+        },
+        {
+          "timestamp": "2026-11-03 00:00:00",
+          "open": 897.0,
+          "high": 899.2,
+          "low": 879.35,
+          "close": 885.15,
+          "volume": 110672
+        },
+        {
+          "timestamp": "2026-11-04 00:00:00",
+          "open": 908.95,
+          "high": 917.35,
+          "low": 846.85,
+          "close": 889.85,
+          "volume": 184817
+        },
+        {
+          "timestamp": "2026-11-05 00:00:00",
+          "open": 875.85,
+          "high": 878.35,
+          "low": 830.6,
+          "close": 837.25,
+          "volume": 155710
+        },
+        {
+          "timestamp": "2026-11-06 00:00:00",
+          "open": 770.3,
+          "high": 811.3,
+          "low": 760.1,
+          "close": 782.95,
+          "volume": 180161
+        },
+        {
+          "timestamp": "2026-11-09 00:00:00",
+          "open": 784.0,
+          "high": 803.35,
+          "low": 771.55,
+          "close": 775.85,
+          "volume": 143766
+        },
+        {
+          "timestamp": "2026-11-10 00:00:00",
+          "open": 820.7,
+          "high": 824.95,
+          "low": 802.95,
+          "close": 812.1,
+          "volume": 122066
+        },
+        {
+          "timestamp": "2026-11-11 00:00:00",
+          "open": 803.2,
+          "high": 838.2,
+          "low": 803.2,
+          "close": 836.55,
+          "volume": 110145
+        },
+        {
+          "timestamp": "2026-11-12 00:00:00",
+          "open": 839.55,
+          "high": 852.75,
+          "low": 825.05,
+          "close": 827.5,
+          "volume": 122002
+        },
+        {
+          "timestamp": "2026-11-13 00:00:00",
+          "open": 846.15,
+          "high": 859.65,
+          "low": 818.1,
+          "close": 822.35,
+          "volume": 114342
+        },
+        {
+          "timestamp": "2026-11-16 00:00:00",
+          "open": 826.5,
+          "high": 830.8,
+          "low": 785.0,
+          "close": 789.35,
+          "volume": 129483
+        }
+      ],
+      "oi": {
+        "current": 158340,
+        "previous_requeried": 154085,
+        "previous_original_snapshot": 154294,
+        "change_same_current_series": 4255,
+        "change_against_original_snapshot": 4046,
+        "ls_current": 157656,
+        "ls_previous": 154085,
+        "ls_change": 3571,
+        "revision_cause": "UNRESOLVED_NO_SPLICE"
+      },
+      "changes": {
+        "1": {
+          "from_previous_close_date": "2026-11-13",
+          "to": "2026-11-16",
+          "price_change": -33.0,
+          "oi_change": 4255
+        },
+        "3": {
+          "from_previous_close_date": "2026-11-11",
+          "to": "2026-11-16",
+          "price_change": -47.19999999999993,
+          "oi_change": 16
+        },
+        "5": {
+          "from_previous_close_date": "2026-11-09",
+          "to": "2026-11-16",
+          "price_change": 13.5,
+          "oi_change": -4880
+        },
+        "20": {
+          "from_previous_close_date": "2026-10-19",
+          "to": "2026-11-16",
+          "price_change": -103.89999999999998,
+          "oi_change": 8254
+        }
+      },
+      "intraday_points": [
+        {
+          "timestamp": "2026-11-16 08:45:00",
+          "open": 826.5,
+          "high": 830.8,
+          "low": 824.9,
+          "close": 825.35,
+          "volume": 2066.0,
+          "open_interest": 154110.0
+        },
+        {
+          "timestamp": "2026-11-16 08:55:00",
+          "open": 825.45,
+          "high": 828.8,
+          "low": 822.2,
+          "close": 825.8,
+          "volume": 4438.0,
+          "open_interest": 154052.0
+        },
+        {
+          "timestamp": "2026-11-16 09:05:00",
+          "open": 825.9,
+          "high": 827.35,
+          "low": 819.0,
+          "close": 820.8,
+          "volume": 4884.0,
+          "open_interest": 154258.0
+        },
+        {
+          "timestamp": "2026-11-16 09:15:00",
+          "open": 820.85,
+          "high": 823.8,
+          "low": 819.0,
+          "close": 823.0,
+          "volume": 3649.0,
+          "open_interest": 154386.0
+        },
+        {
+          "timestamp": "2026-11-16 09:25:00",
+          "open": 822.85,
+          "high": 823.6,
+          "low": 817.2,
+          "close": 818.3,
+          "volume": 3997.0,
+          "open_interest": 154394.0
+        },
+        {
+          "timestamp": "2026-11-16 09:35:00",
+          "open": 818.1,
+          "high": 821.85,
+          "low": 816.7,
+          "close": 817.05,
+          "volume": 2859.0,
+          "open_interest": 154594.0
+        },
+        {
+          "timestamp": "2026-11-16 09:45:00",
+          "open": 817.0,
+          "high": 824.3,
+          "low": 815.85,
+          "close": 820.55,
+          "volume": 3396.0,
+          "open_interest": 154530.0
+        },
+        {
+          "timestamp": "2026-11-16 09:55:00",
+          "open": 820.7,
+          "high": 822.1,
+          "low": 810.5,
+          "close": 810.65,
+          "volume": 5490.0,
+          "open_interest": 154718.0
+        },
+        {
+          "timestamp": "2026-11-16 10:05:00",
+          "open": 810.7,
+          "high": 811.75,
+          "low": 804.1,
+          "close": 805.3,
+          "volume": 4781.0,
+          "open_interest": 154802.0
+        },
+        {
+          "timestamp": "2026-11-16 10:15:00",
+          "open": 804.85,
+          "high": 807.15,
+          "low": 798.85,
+          "close": 798.85,
+          "volume": 4643.0,
+          "open_interest": 154850.0
+        },
+        {
+          "timestamp": "2026-11-16 10:25:00",
+          "open": 798.8,
+          "high": 801.1,
+          "low": 795.8,
+          "close": 797.8,
+          "volume": 4981.0,
+          "open_interest": 155071.0
+        },
+        {
+          "timestamp": "2026-11-16 10:35:00",
+          "open": 797.65,
+          "high": 800.5,
+          "low": 794.25,
+          "close": 796.85,
+          "volume": 3443.0,
+          "open_interest": 155320.0
+        },
+        {
+          "timestamp": "2026-11-16 10:45:00",
+          "open": 796.95,
+          "high": 799.05,
+          "low": 795.15,
+          "close": 795.55,
+          "volume": 3166.0,
+          "open_interest": 155335.0
+        },
+        {
+          "timestamp": "2026-11-16 10:55:00",
+          "open": 795.5,
+          "high": 802.2,
+          "low": 794.7,
+          "close": 801.2,
+          "volume": 3737.0,
+          "open_interest": 155668.0
+        },
+        {
+          "timestamp": "2026-11-16 11:05:00",
+          "open": 801.05,
+          "high": 804.45,
+          "low": 799.9,
+          "close": 802.2,
+          "volume": 3500.0,
+          "open_interest": 155626.0
+        },
+        {
+          "timestamp": "2026-11-16 11:15:00",
+          "open": 802.15,
+          "high": 806.85,
+          "low": 801.25,
+          "close": 806.5,
+          "volume": 2580.0,
+          "open_interest": 155821.0
+        },
+        {
+          "timestamp": "2026-11-16 11:25:00",
+          "open": 806.55,
+          "high": 807.0,
+          "low": 801.4,
+          "close": 802.4,
+          "volume": 2279.0,
+          "open_interest": 155865.0
+        },
+        {
+          "timestamp": "2026-11-16 11:35:00",
+          "open": 802.5,
+          "high": 804.8,
+          "low": 800.1,
+          "close": 800.9,
+          "volume": 2107.0,
+          "open_interest": 156074.0
+        },
+        {
+          "timestamp": "2026-11-16 11:45:00",
+          "open": 800.75,
+          "high": 800.85,
+          "low": 795.5,
+          "close": 797.85,
+          "volume": 2402.0,
+          "open_interest": 156104.0
+        },
+        {
+          "timestamp": "2026-11-16 11:55:00",
+          "open": 797.75,
+          "high": 800.35,
+          "low": 797.75,
+          "close": 798.7,
+          "volume": 1947.0,
+          "open_interest": 156079.0
+        },
+        {
+          "timestamp": "2026-11-16 12:05:00",
+          "open": 798.65,
+          "high": 799.85,
+          "low": 797.1,
+          "close": 798.95,
+          "volume": 1754.0,
+          "open_interest": 155964.0
+        },
+        {
+          "timestamp": "2026-11-16 12:15:00",
+          "open": 798.9,
+          "high": 802.4,
+          "low": 797.35,
+          "close": 801.35,
+          "volume": 1653.0,
+          "open_interest": 155961.0
+        },
+        {
+          "timestamp": "2026-11-16 12:25:00",
+          "open": 801.3,
+          "high": 801.85,
+          "low": 798.95,
+          "close": 799.45,
+          "volume": 1373.0,
+          "open_interest": 156020.0
+        },
+        {
+          "timestamp": "2026-11-16 12:35:00",
+          "open": 799.55,
+          "high": 800.45,
+          "low": 796.8,
+          "close": 798.05,
+          "volume": 1470.0,
+          "open_interest": 156053.0
+        },
+        {
+          "timestamp": "2026-11-16 12:45:00",
+          "open": 798.25,
+          "high": 798.3,
+          "low": 795.75,
+          "close": 796.85,
+          "volume": 1406.0,
+          "open_interest": 156084.0
+        },
+        {
+          "timestamp": "2026-11-16 12:55:00",
+          "open": 796.8,
+          "high": 798.45,
+          "low": 795.4,
+          "close": 795.55,
+          "volume": 1702.0,
+          "open_interest": 156079.0
+        },
+        {
+          "timestamp": "2026-11-16 13:05:00",
+          "open": 795.5,
+          "high": 797.9,
+          "low": 792.55,
+          "close": 796.8,
+          "volume": 3207.0,
+          "open_interest": 156019.0
+        },
+        {
+          "timestamp": "2026-11-16 13:15:00",
+          "open": 796.75,
+          "high": 799.25,
+          "low": 793.85,
+          "close": 799.0,
+          "volume": 2652.0,
+          "open_interest": 156171.0
+        },
+        {
+          "timestamp": "2026-11-16 13:25:00",
+          "open": 799.1,
+          "high": 799.85,
+          "low": 794.3,
+          "close": 794.5,
+          "volume": 2508.0,
+          "open_interest": 156289.0
+        },
+        {
+          "timestamp": "2026-11-16 13:35:00",
+          "open": 794.4,
+          "high": 795.95,
+          "low": 793.25,
+          "close": 793.85,
+          "volume": 1706.0,
+          "open_interest": 156417.0
+        },
+        {
+          "timestamp": "2026-11-16 13:45:00",
+          "open": 793.85,
+          "high": 793.85,
+          "low": 790.45,
+          "close": 791.05,
+          "volume": 2409.0,
+          "open_interest": 156443.0
+        },
+        {
+          "timestamp": "2026-11-16 13:55:00",
+          "open": 790.9,
+          "high": 792.75,
+          "low": 789.95,
+          "close": 790.7,
+          "volume": 2314.0,
+          "open_interest": 156552.0
+        },
+        {
+          "timestamp": "2026-11-16 14:05:00",
+          "open": 790.6,
+          "high": 790.65,
+          "low": 788.25,
+          "close": 788.45,
+          "volume": 2018.0,
+          "open_interest": 156927.0
+        },
+        {
+          "timestamp": "2026-11-16 14:15:00",
+          "open": 788.5,
+          "high": 792.5,
+          "low": 788.2,
+          "close": 789.65,
+          "volume": 2967.0,
+          "open_interest": 157044.0
+        },
+        {
+          "timestamp": "2026-11-16 14:25:00",
+          "open": 789.45,
+          "high": 791.2,
+          "low": 787.5,
+          "close": 787.75,
+          "volume": 2953.0,
+          "open_interest": 157093.0
+        },
+        {
+          "timestamp": "2026-11-16 14:35:00",
+          "open": 787.7,
+          "high": 788.5,
+          "low": 785.85,
+          "close": 786.5,
+          "volume": 2111.0,
+          "open_interest": 157288.0
+        },
+        {
+          "timestamp": "2026-11-16 14:45:00",
+          "open": 786.55,
+          "high": 787.45,
+          "low": 785.8,
+          "close": 786.75,
+          "volume": 1963.0,
+          "open_interest": 157517.0
+        },
+        {
+          "timestamp": "2026-11-16 14:55:00",
+          "open": 786.7,
+          "high": 790.3,
+          "low": 785.0,
+          "close": 789.3,
+          "volume": 3710.0,
+          "open_interest": 157949.0
+        },
+        {
+          "timestamp": "2026-11-16 15:05:00",
+          "open": 789.15,
+          "high": 789.9,
+          "low": 786.75,
+          "close": 787.2,
+          "volume": 2790.0,
+          "open_interest": 158164.0
+        },
+        {
+          "timestamp": "2026-11-16 15:15:00",
+          "open": 787.3,
+          "high": 788.4,
+          "low": 786.35,
+          "close": 786.8,
+          "volume": 3407.0,
+          "open_interest": 158279.0
+        },
+        {
+          "timestamp": "2026-11-16 15:25:00",
+          "open": 786.8,
+          "high": 790.5,
+          "low": 786.65,
+          "close": 788.6,
+          "volume": 6319.0,
+          "open_interest": 157920.0
+        },
+        {
+          "timestamp": "2026-11-16 15:45:00",
+          "open": 789.35,
+          "high": 789.35,
+          "low": 789.35,
+          "close": 789.35,
+          "volume": 4237.0,
+          "open_interest": 158340.0
+        }
+      ],
+      "oi_windows": [
+        {
+          "start": "2026-11-16 08:45:00",
+          "end": "2026-11-16 12:05:00",
+          "start_price": 825.35,
+          "end_price": 798.95,
+          "price_change": -26.399999999999977,
+          "start_oi": 154110.0,
+          "end_oi": 155964.0,
+          "oi_change": 1854.0
+        },
+        {
+          "start": "2026-11-16 12:05:00",
+          "end": "2026-11-16 15:25:00",
+          "start_price": 798.95,
+          "end_price": 788.6,
+          "price_change": -10.350000000000023,
+          "start_oi": 155964.0,
+          "end_oi": 157920.0,
+          "oi_change": 1956.0
+        },
+        {
+          "start": "2026-11-16 14:05:00",
+          "end": "2026-11-16 15:25:00",
+          "start_price": 788.45,
+          "end_price": 788.6,
+          "price_change": 0.14999999999997726,
+          "start_oi": 156927.0,
+          "end_oi": 157920.0,
+          "oi_change": 993.0
+        },
+        {
+          "start": "2026-11-16 15:25:00",
+          "end": "2026-11-16 15:45:00",
+          "start_price": 788.6,
+          "end_price": 789.35,
+          "price_change": 0.75,
+          "start_oi": 157920.0,
+          "end_oi": 158340.0,
+          "oi_change": 420.0
+        }
+      ],
+      "today_high_time": "2026-11-16 08:45:00",
+      "today_low_time": "2026-11-16 14:55:00",
+      "oi_peak_time": "2026-11-16 15:45:00",
+      "oi_peak": 158340,
+      "minute_volume": 126974,
+      "daily_volume": 129483,
+      "ls_daily_volume": 126974,
+      "vwap_profile_eligible": false
+    },
+    "limitations": [
+      "키움·LS 종가 및 26일 OHLC 208개 셀은 일치. OI는 오늘 684계약, 전일 보존/재조회 209계약 차이가 있어 원천별 계산을 병기하고 원인은 미해결로 남김.",
+      "오늘 LS 최종 CVD 미확보·장중 68개 공백 구간. 보존 11/13 CVD를 오늘 값으로 재사용하지 않음. 키움 분봉 거래량 126,974와 일봉 129,483의 2,509계약 차이로 정확한 VWAP·전체 체결 매물대 제외.",
+      "현물 LS 금액 필드의 원화 단위는 독립 명세 확인 부족. 부호·순위 동행만 해석하고 원화당 가격 영향·프로그램과 종목 금액 차감은 계산하지 않음. 원천별 1단위 차이도 보존.",
+      "0791 미확보·0790/0794는 추정 손익·순매매 화면. 실제 투자자 잔고·평단·신규/청산·딜러 감마·최대고통값 산출하지 않음.",
+      "옵션은 12월 동일 785/790/795 콜풋 6계약 상세 대조. 무거래·호가 부재·넓은 스프레드 계약은 강한 신호에서 제외. 월요일 위클리·고정 델타 기간구조·체결 매수/매도 개설분류 미확보.",
+      "수급은 전체 만기 집계, 가격·OI는 개별 월물. 장 마감 후 투자자 누적 갱신시각을 체결시각으로 해석하지 않음.",
+      "완료 주 해석 배율은 설계상 보조값이며 외표본 예측 검증이 아님. 같은 가격의 여러 지표를 독립 표처럼 중복 가산하지 않고 다음 날 수치 확률 산정 불가.",
+      "11/12 국내·해외 지수 보조층과 11/10 선택 시장환경 연구층은 기준일 불일치로 제외. 주문·비중·운영 수집기·기존 레이아웃 변경 없음."
+    ],
+    "intraday_oi": {
+      "windows": [
+        {
+          "start": "2026-11-16 08:45:00",
+          "end": "2026-11-16 12:05:00",
+          "start_price": 825.35,
+          "end_price": 798.95,
+          "price_change": -26.399999999999977,
+          "start_oi": 154110.0,
+          "end_oi": 155964.0,
+          "oi_change": 1854.0
+        },
+        {
+          "start": "2026-11-16 12:05:00",
+          "end": "2026-11-16 15:25:00",
+          "start_price": 798.95,
+          "end_price": 788.6,
+          "price_change": -10.350000000000023,
+          "start_oi": 155964.0,
+          "end_oi": 157920.0,
+          "oi_change": 1956.0
+        },
+        {
+          "start": "2026-11-16 14:05:00",
+          "end": "2026-11-16 15:25:00",
+          "start_price": 788.45,
+          "end_price": 788.6,
+          "price_change": 0.14999999999997726,
+          "start_oi": 156927.0,
+          "end_oi": 157920.0,
+          "oi_change": 993.0
+        },
+        {
+          "start": "2026-11-16 15:25:00",
+          "end": "2026-11-16 15:45:00",
+          "start_price": 788.6,
+          "end_price": 789.35,
+          "price_change": 0.75,
+          "start_oi": 157920.0,
+          "end_oi": 158340.0,
+          "oi_change": 420.0
+        }
+      ],
+      "note": "원천 10분봉 표시시각·15:45 단일가 별도",
+      "interpretation": "08:45→12:05 가격은 825.35→798.95(-26.40), 키움 OI는 +1,854계약이었고, 12:05→15:25는 798.95→788.60(-10.35), OI +1,956이었습니다. 하락 중 미결제가 늘어난 경로는 신규 위험이 쌓이는 매도 우세 국면과 부합하며 단순 롱 청산만으로 하루를 설명하기 어렵습니다. 그러나 새 계약에는 매수·매도 상대가 함께 있으므로 특정 주체 신규 숏의 증명은 아닙니다. 14:05→15:25는 가격 +0.15·OI +993으로 하락 지속이 아니라 저점 부근 양방향 구축에 가까웠고, 15:25→15:45 단일가는 +0.75·OI +420으로 다소 회복했습니다. LS 투자자 업데이트에서 외국인은 10:00 +633, 14:45 -595, 15:45 -584였지만 16:06 +1,620, 최종 +1,991로 바뀌었고 투신은 +73에서 -3,196으로 정리됐습니다. 이는 공급자의 누적 갱신시각이며 실제 체결시각이 아닙니다. 장 마감 후 수급 정정을 16시 신규 매매나 가격 반등 원인으로 붙이지 않습니다."
+    },
+    "original_summary_sha256": "041759f4541e44a1867a6de808762df9a2b7603a357511453bfe9447784e02d2",
+    "public_dom_verified": false,
+    "price_crosscheck_cells": 208,
+    "weekly_calibration_cutoff": "20261113",
+    "expiry_reference": {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "rule": "monthly final trade second Thursday; quarterly future March June September December",
+      "november_options_expiry": "2026-11-12",
+      "december_futures_options_expiry": "2026-12-10",
+      "as_of_status": "SECOND_REGULAR_SESSION_AFTER_NOVEMBER_MONTHLY_EXPIRY; MONDAY_WEEKLY_EXPIRY_RULE_NOT_MIXED_WITH_DECEMBER_MONTHLY"
+    },
+    "cash_provider_differences": [
+      {
+        "market": "cash",
+        "date": "20261116",
+        "actor": "individual",
+        "t1617": 13437,
+        "t1664": 13438
+      },
+      {
+        "market": "cash",
+        "date": "20261113",
+        "actor": "foreign",
+        "t1617": -5420,
+        "t1664": -5419
+      },
+      {
+        "market": "cash",
+        "date": "20261111",
+        "actor": "individual",
+        "t1617": -7144,
+        "t1664": -7145
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "foreign",
+        "t1617": 4440,
+        "t1664": 4439
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "institution",
+        "t1617": 4641,
+        "t1664": 4642
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "foreign",
+        "t1617": -5262,
+        "t1664": -5263
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "individual",
+        "t1617": -6608,
+        "t1664": -6609
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "institution",
+        "t1617": 17091,
+        "t1664": 17092
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "individual",
+        "t1617": 5210,
+        "t1664": 5211
+      },
+      {
+        "market": "cash",
+        "date": "20261105",
+        "actor": "foreign",
+        "t1617": -33740,
+        "t1664": -33741
+      },
+      {
+        "market": "cash",
+        "date": "20261104",
+        "actor": "institution",
+        "t1617": 11333,
+        "t1664": 11334
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "institution",
+        "t1617": 12244,
+        "t1664": 12245
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "individual",
+        "t1617": -13150,
+        "t1664": -13151
+      },
+      {
+        "market": "cash",
+        "date": "20261030",
+        "actor": "institution",
+        "t1617": 7539,
+        "t1664": 7540
+      },
+      {
+        "market": "cash",
+        "date": "20261028",
+        "actor": "individual",
+        "t1617": -17050,
+        "t1664": -17051
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "institution",
+        "t1617": 3037,
+        "t1664": 3038
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "individual",
+        "t1617": -9406,
+        "t1664": -9407
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "foreign",
+        "t1617": -6508,
+        "t1664": -6507
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "institution",
+        "t1617": 5811,
+        "t1664": 5812
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "foreign",
+        "t1617": -9790,
+        "t1664": -9789
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "institution",
+        "t1617": 8659,
+        "t1664": 8660
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "foreign",
+        "t1617": 372,
+        "t1664": 371
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "institution",
+        "t1617": -4465,
+        "t1664": -4466
+      },
+      {
+        "market": "cash",
+        "date": "20261021",
+        "actor": "individual",
+        "t1617": -11158,
+        "t1664": -11159
+      },
+      {
+        "market": "cash",
+        "date": "20261020",
+        "actor": "institution",
+        "t1617": -9564,
+        "t1664": -9565
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "foreign",
+        "t1617": 3205,
+        "t1664": 3204
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "institution",
+        "t1617": -6402,
+        "t1664": -6403
+      },
+      {
+        "market": "cash",
+        "date": "20261015",
+        "actor": "institution",
+        "t1617": 17120,
+        "t1664": 17121
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "institution",
+        "t1617": 8118,
+        "t1664": 8119
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "individual",
+        "t1617": -3747,
+        "t1664": -3748
+      },
+      {
+        "market": "cash",
+        "date": "20261008",
+        "actor": "institution",
+        "t1617": -16749,
+        "t1664": -16750
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "foreign",
+        "t1617": -26187,
+        "t1664": -26188
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "institution",
+        "t1617": -7100,
+        "t1664": -7101
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "institution",
+        "t1617": -36,
+        "t1664": -37
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "individual",
+        "t1617": 7440,
+        "t1664": 7441
+      },
+      {
+        "market": "cash",
+        "date": "20261001",
+        "actor": "institution",
+        "t1617": 3251,
+        "t1664": 3252
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "foreign",
+        "t1617": -20645,
+        "t1664": -20646
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "institution",
+        "t1617": -7992,
+        "t1664": -7993
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "individual",
+        "t1617": 12108,
+        "t1664": 12109
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "institution",
+        "t1617": 1036,
+        "t1664": 1037
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "individual",
+        "t1617": 12446,
+        "t1664": 12447
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "institution",
+        "t1617": -10168,
+        "t1664": -10169
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "individual",
+        "t1617": 26466,
+        "t1664": 26467
+      },
+      {
+        "market": "cash",
+        "date": "20260922",
+        "actor": "institution",
+        "t1617": -1294,
+        "t1664": -1295
+      },
+      {
+        "market": "cash",
+        "date": "20260921",
+        "actor": "institution",
+        "t1617": 15189,
+        "t1664": 15190
+      },
+      {
+        "market": "cash",
+        "date": "20260918",
+        "actor": "institution",
+        "t1617": 15321,
+        "t1664": 15322
+      },
+      {
+        "market": "cash",
+        "date": "20260917",
+        "actor": "individual",
+        "t1617": 6760,
+        "t1664": 6761
+      },
+      {
+        "market": "cash",
+        "date": "20260915",
+        "actor": "individual",
+        "t1617": 8595,
+        "t1664": 8596
+      },
+      {
+        "market": "cash",
+        "date": "20260914",
+        "actor": "institution",
+        "t1617": -11868,
+        "t1664": -11869
+      },
+      {
+        "market": "cash",
+        "date": "20260911",
+        "actor": "institution",
+        "t1617": -12183,
+        "t1664": -12184
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "foreign",
+        "t1617": -26216,
+        "t1664": -26217
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "institution",
+        "t1617": 5743,
+        "t1664": 5744
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "individual",
+        "t1617": 3801,
+        "t1664": 3802
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "foreign",
+        "t1617": -4349,
+        "t1664": -4348
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "individual",
+        "t1617": -22878,
+        "t1664": -22879
+      },
+      {
+        "market": "cash",
+        "date": "20260908",
+        "actor": "institution",
+        "t1617": 6426,
+        "t1664": 6427
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "foreign",
+        "t1617": 25531,
+        "t1664": 25532
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "institution",
+        "t1617": 26490,
+        "t1664": 26491
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "individual",
+        "t1617": -68373,
+        "t1664": -68374
+      },
+      {
+        "market": "cash",
+        "date": "20260903",
+        "actor": "individual",
+        "t1617": -9551,
+        "t1664": -9552
+      },
+      {
+        "market": "cash",
+        "date": "20260902",
+        "actor": "individual",
+        "t1617": 23028,
+        "t1664": 23029
+      },
+      {
+        "market": "cash",
+        "date": "20260901",
+        "actor": "foreign",
+        "t1617": -4969,
+        "t1664": -4968
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "institution",
+        "t1617": -11875,
+        "t1664": -11876
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "individual",
+        "t1617": 4193,
+        "t1664": 4194
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "foreign",
+        "t1617": 1332,
+        "t1664": 1333
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "individual",
+        "t1617": -19115,
+        "t1664": -19116
+      },
+      {
+        "market": "cash",
+        "date": "20260826",
+        "actor": "individual",
+        "t1617": -22460,
+        "t1664": -22461
+      },
+      {
+        "market": "cash",
+        "date": "20260825",
+        "actor": "institution",
+        "t1617": 11710,
+        "t1664": 11711
+      },
+      {
+        "market": "cash",
+        "date": "20260821",
+        "actor": "institution",
+        "t1617": 2480,
+        "t1664": 2481
+      },
+      {
+        "market": "cash",
+        "date": "20260819",
+        "actor": "institution",
+        "t1617": -13389,
+        "t1664": -13390
+      },
+      {
+        "market": "cash",
+        "date": "20260819",
+        "actor": "individual",
+        "t1617": 46356,
+        "t1664": 46357
+      }
+    ],
+    "program_windows_native_units": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "tot3": -642949,
+        "cha3": -90012,
+        "bcha3": -552936
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "tot3": -456283,
+        "cha3": -51984,
+        "bcha3": -404298
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "tot3": 323357,
+        "cha3": -284075,
+        "bcha3": 607434
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "tot3": -4370461,
+        "cha3": 620688,
+        "bcha3": -4991147
+      }
+    },
+    "closing_flow_snapshots": {
+      "cash": {
+        "records": 966,
+        "start": "09020000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "09050000",
+            "sv_08": 1095,
+            "sv_17": -882,
+            "sv_18": -249,
+            "sv_01": 84,
+            "sv_03": -5,
+            "sv_04": -1,
+            "sv_02": -1,
+            "sv_05": 1,
+            "sv_06": -331,
+            "sv_07": 37,
+            "sv_11": 0,
+            "sv_00": 3
+          },
+          {
+            "time": "10000000",
+            "sv_08": 2862,
+            "sv_17": -3961,
+            "sv_18": 315,
+            "sv_01": 395,
+            "sv_03": -58,
+            "sv_04": 3,
+            "sv_02": -9,
+            "sv_05": -1,
+            "sv_06": 174,
+            "sv_07": 784,
+            "sv_11": 0,
+            "sv_00": -188
+          },
+          {
+            "time": "11000000",
+            "sv_08": 6310,
+            "sv_17": -9032,
+            "sv_18": 1151,
+            "sv_01": 1681,
+            "sv_03": -287,
+            "sv_04": 6,
+            "sv_02": -33,
+            "sv_05": 7,
+            "sv_06": 174,
+            "sv_07": 1571,
+            "sv_11": 0,
+            "sv_00": -396
+          },
+          {
+            "time": "12000000",
+            "sv_08": 8167,
+            "sv_17": -10957,
+            "sv_18": 406,
+            "sv_01": 1997,
+            "sv_03": -343,
+            "sv_04": 10,
+            "sv_02": -35,
+            "sv_05": 11,
+            "sv_06": -179,
+            "sv_07": 2384,
+            "sv_11": 0,
+            "sv_00": -1054
+          },
+          {
+            "time": "13000000",
+            "sv_08": 9965,
+            "sv_17": -12930,
+            "sv_18": -208,
+            "sv_01": 2567,
+            "sv_03": -356,
+            "sv_04": 15,
+            "sv_02": -33,
+            "sv_05": 18,
+            "sv_06": -1308,
+            "sv_07": 3173,
+            "sv_11": 0,
+            "sv_00": -1112
+          },
+          {
+            "time": "14000000",
+            "sv_08": 12020,
+            "sv_17": -14455,
+            "sv_18": -1609,
+            "sv_01": 3238,
+            "sv_03": -443,
+            "sv_04": -21,
+            "sv_02": 14,
+            "sv_05": 12,
+            "sv_06": -2909,
+            "sv_07": 4043,
+            "sv_11": 0,
+            "sv_00": -1500
+          },
+          {
+            "time": "14300000",
+            "sv_08": 12720,
+            "sv_17": -14720,
+            "sv_18": -2462,
+            "sv_01": 3442,
+            "sv_03": -503,
+            "sv_04": -30,
+            "sv_02": 24,
+            "sv_05": 12,
+            "sv_06": -3751,
+            "sv_07": 4461,
+            "sv_11": 0,
+            "sv_00": -1656
+          },
+          {
+            "time": "14450000",
+            "sv_08": 13311,
+            "sv_17": -14966,
+            "sv_18": -3048,
+            "sv_01": 3365,
+            "sv_03": -553,
+            "sv_04": -30,
+            "sv_02": 32,
+            "sv_05": 9,
+            "sv_06": -4191,
+            "sv_07": 4703,
+            "sv_11": 0,
+            "sv_00": -1681
+          },
+          {
+            "time": "15000000",
+            "sv_08": 13678,
+            "sv_17": -15363,
+            "sv_18": -3189,
+            "sv_01": 3884,
+            "sv_03": -848,
+            "sv_04": -30,
+            "sv_02": 30,
+            "sv_05": 0,
+            "sv_06": -4484,
+            "sv_07": 4875,
+            "sv_11": 0,
+            "sv_00": -1742
+          },
+          {
+            "time": "15200000",
+            "sv_08": 13785,
+            "sv_17": -16159,
+            "sv_18": -2535,
+            "sv_01": 5246,
+            "sv_03": -673,
+            "sv_04": -29,
+            "sv_02": 22,
+            "sv_05": 2,
+            "sv_06": -5049,
+            "sv_07": 4909,
+            "sv_11": 0,
+            "sv_00": -2053
+          },
+          {
+            "time": "15250000",
+            "sv_08": 13795,
+            "sv_17": -16190,
+            "sv_18": -2514,
+            "sv_01": 5257,
+            "sv_03": -677,
+            "sv_04": -29,
+            "sv_02": 22,
+            "sv_05": 2,
+            "sv_06": -5035,
+            "sv_07": 4910,
+            "sv_11": 0,
+            "sv_00": -2053
+          },
+          {
+            "time": "15300000",
+            "sv_08": 13795,
+            "sv_17": -16190,
+            "sv_18": -2514,
+            "sv_01": 5257,
+            "sv_03": -677,
+            "sv_04": -29,
+            "sv_02": 22,
+            "sv_05": 2,
+            "sv_06": -5035,
+            "sv_07": 4910,
+            "sv_11": 0,
+            "sv_00": -2053
+          },
+          {
+            "time": "15450000",
+            "sv_08": 13472,
+            "sv_17": -13769,
+            "sv_18": -4587,
+            "sv_01": 5304,
+            "sv_03": -2142,
+            "sv_04": -29,
+            "sv_02": 13,
+            "sv_05": 3,
+            "sv_06": -5647,
+            "sv_07": 4883,
+            "sv_11": 0,
+            "sv_00": -2088
+          },
+          {
+            "time": "16060000",
+            "sv_08": 13509,
+            "sv_17": -13771,
+            "sv_18": -4622,
+            "sv_01": 5269,
+            "sv_03": -2142,
+            "sv_04": -29,
+            "sv_02": 13,
+            "sv_05": 3,
+            "sv_06": -5647,
+            "sv_07": 4884,
+            "sv_11": 0,
+            "sv_00": -2088
+          },
+          {
+            "time": "17043000",
+            "sv_08": 13438,
+            "sv_17": -13659,
+            "sv_18": -4653,
+            "sv_01": 5239,
+            "sv_03": -2142,
+            "sv_04": -29,
+            "sv_02": 13,
+            "sv_05": 3,
+            "sv_06": -5647,
+            "sv_07": 4874,
+            "sv_11": 0,
+            "sv_00": -2088
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      },
+      "futures": {
+        "records": 998,
+        "start": "08460000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "09050000",
+            "sv_08": -106,
+            "sv_17": 108,
+            "sv_18": -1,
+            "sv_01": -61,
+            "sv_03": 43,
+            "sv_04": 6,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 11,
+            "sv_07": -1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "10000000",
+            "sv_08": -276,
+            "sv_17": 633,
+            "sv_18": -348,
+            "sv_01": -345,
+            "sv_03": 9,
+            "sv_04": -13,
+            "sv_02": 0,
+            "sv_05": -1,
+            "sv_06": 2,
+            "sv_07": -9,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "11000000",
+            "sv_08": -338,
+            "sv_17": -97,
+            "sv_18": 528,
+            "sv_01": 448,
+            "sv_03": -160,
+            "sv_04": -1,
+            "sv_02": 50,
+            "sv_05": -1,
+            "sv_06": 192,
+            "sv_07": -93,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "12000000",
+            "sv_08": -235,
+            "sv_17": -41,
+            "sv_18": 370,
+            "sv_01": 76,
+            "sv_03": 64,
+            "sv_04": -1,
+            "sv_02": 150,
+            "sv_05": -1,
+            "sv_06": 82,
+            "sv_07": -94,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "13000000",
+            "sv_08": -140,
+            "sv_17": 70,
+            "sv_18": 156,
+            "sv_01": -220,
+            "sv_03": 237,
+            "sv_04": 2,
+            "sv_02": 148,
+            "sv_05": -1,
+            "sv_06": -10,
+            "sv_07": -86,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14000000",
+            "sv_08": -237,
+            "sv_17": -36,
+            "sv_18": 366,
+            "sv_01": -364,
+            "sv_03": 554,
+            "sv_04": 8,
+            "sv_02": 147,
+            "sv_05": -1,
+            "sv_06": 22,
+            "sv_07": -93,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14300000",
+            "sv_08": -165,
+            "sv_17": -288,
+            "sv_18": 514,
+            "sv_01": -479,
+            "sv_03": 714,
+            "sv_04": 8,
+            "sv_02": 145,
+            "sv_05": -1,
+            "sv_06": 127,
+            "sv_07": -61,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14450000",
+            "sv_08": -145,
+            "sv_17": -595,
+            "sv_18": 702,
+            "sv_01": -407,
+            "sv_03": 753,
+            "sv_04": -4,
+            "sv_02": 147,
+            "sv_05": -1,
+            "sv_06": 214,
+            "sv_07": 38,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15000000",
+            "sv_08": -115,
+            "sv_17": -569,
+            "sv_18": 637,
+            "sv_01": -399,
+            "sv_03": 712,
+            "sv_04": -4,
+            "sv_02": 166,
+            "sv_05": -1,
+            "sv_06": 163,
+            "sv_07": 47,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15200000",
+            "sv_08": -7,
+            "sv_17": -145,
+            "sv_18": 206,
+            "sv_01": -753,
+            "sv_03": 634,
+            "sv_04": -10,
+            "sv_02": 190,
+            "sv_05": -1,
+            "sv_06": 146,
+            "sv_07": -54,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15250000",
+            "sv_08": 50,
+            "sv_17": -124,
+            "sv_18": 126,
+            "sv_01": -715,
+            "sv_03": 510,
+            "sv_04": -10,
+            "sv_02": 196,
+            "sv_05": -1,
+            "sv_06": 146,
+            "sv_07": -52,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": -2,
+            "sv_17": 8,
+            "sv_18": 66,
+            "sv_01": -613,
+            "sv_03": 313,
+            "sv_04": -10,
+            "sv_02": 201,
+            "sv_05": -1,
+            "sv_06": 176,
+            "sv_07": -72,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": 154,
+            "sv_17": -584,
+            "sv_18": 487,
+            "sv_01": -112,
+            "sv_03": 73,
+            "sv_04": 18,
+            "sv_02": 192,
+            "sv_05": -1,
+            "sv_06": 317,
+            "sv_07": -57,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": 376,
+            "sv_17": 1620,
+            "sv_18": -1976,
+            "sv_01": 739,
+            "sv_03": -3267,
+            "sv_04": 8,
+            "sv_02": 208,
+            "sv_05": 0,
+            "sv_06": 336,
+            "sv_07": -20,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17043000",
+            "sv_08": 161,
+            "sv_17": 1991,
+            "sv_18": -2121,
+            "sv_01": 523,
+            "sv_03": -3196,
+            "sv_04": 8,
+            "sv_02": 208,
+            "sv_05": 0,
+            "sv_06": 336,
+            "sv_07": -31,
+            "sv_11": 0,
+            "sv_00": 0
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      },
+      "call_qty": {
+        "records": 400,
+        "start": "13450000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "14000000",
+            "sv_08": 1847,
+            "sv_17": -4076,
+            "sv_18": 2654,
+            "sv_01": 2781,
+            "sv_03": -127,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -425,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14300000",
+            "sv_08": 1799,
+            "sv_17": -4008,
+            "sv_18": 2735,
+            "sv_01": 2878,
+            "sv_03": -143,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -526,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14450000",
+            "sv_08": 1494,
+            "sv_17": -3757,
+            "sv_18": 2778,
+            "sv_01": 2928,
+            "sv_03": -150,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -515,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15000000",
+            "sv_08": 1646,
+            "sv_17": -3911,
+            "sv_18": 2760,
+            "sv_01": 2918,
+            "sv_03": -158,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -495,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15200000",
+            "sv_08": 972,
+            "sv_17": -3933,
+            "sv_18": 2747,
+            "sv_01": 2917,
+            "sv_03": -170,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 214,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15250000",
+            "sv_08": 963,
+            "sv_17": -3942,
+            "sv_18": 2754,
+            "sv_01": 2924,
+            "sv_03": -170,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 225,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": 1038,
+            "sv_17": -3912,
+            "sv_18": 2752,
+            "sv_01": 2923,
+            "sv_03": -171,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 122,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": 1152,
+            "sv_17": -3775,
+            "sv_18": 2467,
+            "sv_01": 2638,
+            "sv_03": -171,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 156,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": 1112,
+            "sv_17": -3753,
+            "sv_18": 2468,
+            "sv_01": 2639,
+            "sv_03": -171,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 173,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17043000",
+            "sv_08": 1181,
+            "sv_17": -3809,
+            "sv_18": 2468,
+            "sv_01": 2919,
+            "sv_03": -451,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 160,
+            "sv_11": 0,
+            "sv_00": 0
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      },
+      "call_amount": {
+        "records": 400,
+        "start": "13450000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "14000000",
+            "sv_08": 19,
+            "sv_17": -34,
+            "sv_18": 19,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -5,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14300000",
+            "sv_08": 17,
+            "sv_17": -31,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -5,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14450000",
+            "sv_08": 18,
+            "sv_17": -32,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -5,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15000000",
+            "sv_08": 17,
+            "sv_17": -31,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -4,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15200000",
+            "sv_08": 15,
+            "sv_17": -31,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -2,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15250000",
+            "sv_08": 15,
+            "sv_17": -31,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -2,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": 15,
+            "sv_17": -31,
+            "sv_18": 18,
+            "sv_01": 20,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -2,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": 14,
+            "sv_17": -25,
+            "sv_18": 12,
+            "sv_01": 14,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -2,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": 14,
+            "sv_17": -24,
+            "sv_18": 12,
+            "sv_01": 14,
+            "sv_03": -2,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -2,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17043000",
+            "sv_08": 15,
+            "sv_17": -26,
+            "sv_18": 12,
+            "sv_01": 20,
+            "sv_03": -8,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -1,
+            "sv_11": 0,
+            "sv_00": 0
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      },
+      "put_qty": {
+        "records": 400,
+        "start": "13450000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "14000000",
+            "sv_08": -1275,
+            "sv_17": 1572,
+            "sv_18": 211,
+            "sv_01": 196,
+            "sv_03": 15,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -508,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14300000",
+            "sv_08": -1249,
+            "sv_17": 1603,
+            "sv_18": 144,
+            "sv_01": 129,
+            "sv_03": 15,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -498,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14450000",
+            "sv_08": -1686,
+            "sv_17": 1942,
+            "sv_18": 158,
+            "sv_01": 138,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -414,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15000000",
+            "sv_08": -2000,
+            "sv_17": 2191,
+            "sv_18": 170,
+            "sv_01": 150,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -361,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15200000",
+            "sv_08": -2145,
+            "sv_17": 2222,
+            "sv_18": 209,
+            "sv_01": 189,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -286,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15250000",
+            "sv_08": -2170,
+            "sv_17": 2253,
+            "sv_18": 207,
+            "sv_01": 187,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -290,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": -2150,
+            "sv_17": 2221,
+            "sv_18": 207,
+            "sv_01": 187,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -278,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": -2171,
+            "sv_17": 2226,
+            "sv_18": 216,
+            "sv_01": 196,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -271,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": -2200,
+            "sv_17": 2254,
+            "sv_18": 214,
+            "sv_01": 194,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -268,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17043000",
+            "sv_08": -2269,
+            "sv_17": 2381,
+            "sv_18": 127,
+            "sv_01": 107,
+            "sv_03": 20,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": -239,
+            "sv_11": 0,
+            "sv_00": 0
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      },
+      "put_amount": {
+        "records": 400,
+        "start": "13450000",
+        "end": "17043000",
+        "snapshots": [
+          {
+            "time": "14000000",
+            "sv_08": 5,
+            "sv_17": -3,
+            "sv_18": -2,
+            "sv_01": -2,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14300000",
+            "sv_08": 6,
+            "sv_17": -4,
+            "sv_18": -3,
+            "sv_01": -3,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 0,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "14450000",
+            "sv_08": 6,
+            "sv_17": -4,
+            "sv_18": -3,
+            "sv_01": -3,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15000000",
+            "sv_08": 8,
+            "sv_17": -6,
+            "sv_18": -3,
+            "sv_01": -3,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15200000",
+            "sv_08": 10,
+            "sv_17": -8,
+            "sv_18": -3,
+            "sv_01": -4,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15250000",
+            "sv_08": 10,
+            "sv_17": -7,
+            "sv_18": -4,
+            "sv_01": -4,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15300000",
+            "sv_08": 10,
+            "sv_17": -8,
+            "sv_18": -4,
+            "sv_01": -4,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "15450000",
+            "sv_08": 11,
+            "sv_17": -9,
+            "sv_18": -3,
+            "sv_01": -4,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "16060000",
+            "sv_08": 11,
+            "sv_17": -9,
+            "sv_18": -4,
+            "sv_01": -4,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          },
+          {
+            "time": "17043000",
+            "sv_08": 8,
+            "sv_17": 30,
+            "sv_18": -39,
+            "sv_01": -40,
+            "sv_03": 0,
+            "sv_04": 0,
+            "sv_02": 0,
+            "sv_05": 0,
+            "sv_06": 0,
+            "sv_07": 1,
+            "sv_11": 0,
+            "sv_00": 0
+          }
+        ],
+        "date": "20261116",
+        "time_scope": "provider cumulative update timestamp; not individual transaction time"
+      }
+    },
+    "basis_crosscheck": {
+      "future_close": 789.35,
+      "kospi200_close": 791.56,
+      "market_basis": -2.21,
+      "provider_theory_basis": 1.48,
+      "market_minus_theory": -3.69,
+      "scope": "15:45 future and 15:30 cash are nonsynchronous closing references, not executable arbitrage"
+    }
+  },
+  "flows": {
+    "cash": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "dates": [
+          "20261116"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -13659,
+        "institution": -4653,
+        "financial": 5239,
+        "individual": 13437,
+        "trust": -2142,
+        "pension": -5647
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "dates": [
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -14958,
+        "institution": -11238,
+        "financial": -5351,
+        "individual": 10797,
+        "trust": -2056,
+        "pension": -3565
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "dates": [
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -3789,
+        "institution": -11631,
+        "financial": -10039,
+        "individual": -10294,
+        "trust": 1992,
+        "pension": -5659
+      },
+      "15": {
+        "start": "20261027",
+        "end": "20261116",
+        "dates": [
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -109329,
+        "institution": 60211,
+        "financial": 51882,
+        "individual": -7735,
+        "trust": -660,
+        "pension": 8067
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "dates": [
+          "20261020",
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -123978,
+        "institution": 59835,
+        "financial": 51914,
+        "individual": -6032,
+        "trust": -2500,
+        "pension": 8909
+      }
+    },
+    "futures": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "dates": [
+          "20261116"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": 1991,
+        "institution": -2121,
+        "financial": 523,
+        "individual": 161,
+        "trust": -3196,
+        "pension": 336
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "dates": [
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 5188,
+        "institution": -5251,
+        "financial": 1326,
+        "individual": 205,
+        "trust": -6745,
+        "pension": 14
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "dates": [
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 1238,
+        "institution": -1443,
+        "financial": -832,
+        "individual": 229,
+        "trust": -404,
+        "pension": 238
+      },
+      "15": {
+        "start": "20261027",
+        "end": "20261116",
+        "dates": [
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 23036,
+        "institution": -22777,
+        "financial": -19047,
+        "individual": -249,
+        "trust": -3265,
+        "pension": 1192
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "dates": [
+          "20261020",
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 25040,
+        "institution": -25185,
+        "financial": -17478,
+        "individual": 134,
+        "trust": -6870,
+        "pension": 947
+      }
+    },
+    "stock_futures": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "dates": [
+          "20261116"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -160987,
+        "institution": 56998,
+        "financial": 59807,
+        "individual": 93663,
+        "trust": null,
+        "pension": null
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "dates": [
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -336320,
+        "institution": 174260,
+        "financial": 629573,
+        "individual": 146588,
+        "trust": null,
+        "pension": null
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "dates": [
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -367430,
+        "institution": 285918,
+        "financial": 585798,
+        "individual": 108189,
+        "trust": null,
+        "pension": null
+      },
+      "15": {
+        "start": "20261027",
+        "end": "20261116",
+        "dates": [
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -296061,
+        "institution": 496831,
+        "financial": 870669,
+        "individual": -185351,
+        "trust": null,
+        "pension": null
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "dates": [
+          "20261020",
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -159466,
+        "institution": 390830,
+        "financial": 821077,
+        "individual": -230214,
+        "trust": null,
+        "pension": null
+      }
+    },
+    "call": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "dates": [
+          "20261116"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -3809,
+        "institution": 2468,
+        "financial": 2919,
+        "individual": 1181,
+        "trust": -451,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "dates": [
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -983,
+        "institution": -19510,
+        "financial": -16959,
+        "individual": 18714,
+        "trust": -2415,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "dates": [
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -1679,
+        "institution": -21865,
+        "financial": -18791,
+        "individual": 22241,
+        "trust": -2939,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261027",
+        "end": "20261116",
+        "dates": [
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -26,
+        "institution": -23618,
+        "financial": -10519,
+        "individual": 21605,
+        "trust": -12967,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "dates": [
+          "20261020",
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -9526,
+        "institution": -20506,
+        "financial": -6961,
+        "individual": 27694,
+        "trust": -13417,
+        "pension": 0
+      }
+    },
+    "put": {
+      "1": {
+        "start": "20261116",
+        "end": "20261116",
+        "dates": [
+          "20261116"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": 2381,
+        "institution": 127,
+        "financial": 107,
+        "individual": -2269,
+        "trust": 20,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261112",
+        "end": "20261116",
+        "dates": [
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 8443,
+        "institution": -12204,
+        "financial": -12203,
+        "individual": 3777,
+        "trust": -2,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261110",
+        "end": "20261116",
+        "dates": [
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 9082,
+        "institution": -15299,
+        "financial": -15303,
+        "individual": 6256,
+        "trust": 3,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261027",
+        "end": "20261116",
+        "dates": [
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 17124,
+        "institution": -20514,
+        "financial": -20557,
+        "individual": 4554,
+        "trust": 77,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261020",
+        "end": "20261116",
+        "dates": [
+          "20261020",
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 18450,
+        "institution": -21862,
+        "financial": -21862,
+        "individual": 4818,
+        "trust": 34,
+        "pension": 0
+      }
+    }
+  },
+  "expiry_window": {
+    "start": "20260911",
+    "end": "20261116",
+    "observations": 43,
+    "calendar_complete": true,
+    "foreign": 28952,
+    "institution": -27717,
+    "financial": -15727,
+    "individual": -752,
+    "trust": -9161,
+    "pension": 1206,
+    "scope": "All-expiry LS flow during active December observation window, NOT actual December holdings",
+    "legacy_differences": [
+      {
+        "date": "20260921",
+        "field": "foreign_net",
+        "legacy": 4127,
+        "ls": 4251
+      },
+      {
+        "date": "20260921",
+        "field": "institution_net",
+        "legacy": -3748,
+        "ls": -3963
+      },
+      {
+        "date": "20260923",
+        "field": "foreign_net",
+        "legacy": 62,
+        "ls": 1356
+      },
+      {
+        "date": "20260923",
+        "field": "institution_net",
+        "legacy": -1209,
+        "ls": -1402
+      }
+    ]
+  },
+  "december_options": [
+    {
+      "expiry": "202612",
+      "side": "call",
+      "strike": 785.0,
+      "code": "B016C785",
+      "price": 61.9,
+      "oi": 2,
+      "oi_change_display": 0,
+      "volume": 0,
+      "iv": 70.42,
+      "delta": 0.5572,
+      "bid": 1.91,
+      "ask": 0.0,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [
+        "NO_TRADE_TODAY",
+        "INVALID_OR_ABSENT_TWO_SIDED_QUOTE",
+        "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+      ],
+      "previous_snapshot_iv": 52.49,
+      "iv_change_pp": 17.93,
+      "previous_snapshot_price": 70.2,
+      "previous_snapshot_oi": 2,
+      "previous_snapshot_volume": 0,
+      "daily_price": 61.9,
+      "daily_oi": 2,
+      "previous_daily_price": 70.2,
+      "previous_daily_oi": 2,
+      "previous_daily_volume": 0,
+      "recomputed_daily_oi_change": 0,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 2,
+      "quote_price": 61.9,
+      "quote_iv": 70.42,
+      "previous_price": 70.2,
+      "previous_oi": 2
+    },
+    {
+      "expiry": "202612",
+      "side": "call",
+      "strike": 790.0,
+      "code": "B016C790",
+      "price": 41.0,
+      "oi": 34,
+      "oi_change_display": 7,
+      "volume": 14,
+      "iv": 47.9,
+      "delta": 0.5377,
+      "bid": 41.0,
+      "ask": 41.6,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [],
+      "previous_snapshot_iv": 48.16,
+      "iv_change_pp": -0.259999999999998,
+      "previous_snapshot_price": 63.55,
+      "previous_snapshot_oi": 27,
+      "previous_snapshot_volume": 4,
+      "daily_price": 41.0,
+      "daily_oi": 34,
+      "previous_daily_price": 63.55,
+      "previous_daily_oi": 27,
+      "previous_daily_volume": 4,
+      "recomputed_daily_oi_change": 7,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 34,
+      "quote_price": 41.0,
+      "quote_iv": 47.9,
+      "previous_price": 63.55,
+      "previous_oi": 27
+    },
+    {
+      "expiry": "202612",
+      "side": "call",
+      "strike": 795.0,
+      "code": "B016C795",
+      "price": 39.05,
+      "oi": 89,
+      "oi_change_display": 67,
+      "volume": 75,
+      "iv": 48.42,
+      "delta": 0.5174,
+      "bid": 36.85,
+      "ask": 40.25,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [
+        "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+      ],
+      "previous_snapshot_iv": 52.29,
+      "iv_change_pp": -3.8699999999999974,
+      "previous_snapshot_price": 64.1,
+      "previous_snapshot_oi": 22,
+      "previous_snapshot_volume": 0,
+      "daily_price": 39.05,
+      "daily_oi": 89,
+      "previous_daily_price": 64.1,
+      "previous_daily_oi": 22,
+      "previous_daily_volume": 0,
+      "recomputed_daily_oi_change": 67,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 89,
+      "quote_price": 39.05,
+      "quote_iv": 48.42,
+      "previous_price": 64.1,
+      "previous_oi": 22
+    },
+    {
+      "expiry": "202612",
+      "side": "put",
+      "strike": 785.0,
+      "code": "C016C785",
+      "price": 41.8,
+      "oi": 70,
+      "oi_change_display": 6,
+      "volume": 7,
+      "iv": 55.65,
+      "delta": -0.443,
+      "bid": 1.72,
+      "ask": 40.4,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [
+        "RELATIVE_SPREAD_OVER_10_PERCENT"
+      ],
+      "previous_snapshot_iv": 48.81,
+      "iv_change_pp": 6.839999999999996,
+      "previous_snapshot_price": 25.7,
+      "previous_snapshot_oi": 64,
+      "previous_snapshot_volume": 12,
+      "daily_price": 41.8,
+      "daily_oi": 70,
+      "previous_daily_price": 25.7,
+      "previous_daily_oi": 64,
+      "previous_daily_volume": 12,
+      "recomputed_daily_oi_change": 6,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 70,
+      "quote_price": 41.8,
+      "quote_iv": 55.65,
+      "previous_price": 25.7,
+      "previous_oi": 64
+    },
+    {
+      "expiry": "202612",
+      "side": "put",
+      "strike": 790.0,
+      "code": "C016C790",
+      "price": 43.7,
+      "oi": 116,
+      "oi_change_display": 61,
+      "volume": 88,
+      "iv": 54.87,
+      "delta": -0.4612,
+      "bid": 41.85,
+      "ask": 0.0,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [
+        "INVALID_OR_ABSENT_TWO_SIDED_QUOTE"
+      ],
+      "previous_snapshot_iv": 49.26,
+      "iv_change_pp": 5.609999999999999,
+      "previous_snapshot_price": 28.0,
+      "previous_snapshot_oi": 55,
+      "previous_snapshot_volume": 15,
+      "daily_price": 43.7,
+      "daily_oi": 116,
+      "previous_daily_price": 28.0,
+      "previous_daily_oi": 55,
+      "previous_daily_volume": 15,
+      "recomputed_daily_oi_change": 61,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 116,
+      "quote_price": 43.7,
+      "quote_iv": 54.87,
+      "previous_price": 28.0,
+      "previous_oi": 55
+    },
+    {
+      "expiry": "202612",
+      "side": "put",
+      "strike": 795.0,
+      "code": "C016C795",
+      "price": 45.7,
+      "oi": 140,
+      "oi_change_display": 93,
+      "volume": 119,
+      "iv": 54.1,
+      "delta": -0.4798,
+      "bid": 2.08,
+      "ask": 45.3,
+      "received_at": "2026-11-16T17:04:24.534809+09:00",
+      "flags": [
+        "RELATIVE_SPREAD_OVER_10_PERCENT"
+      ],
+      "previous_snapshot_iv": 50.58,
+      "iv_change_pp": 3.520000000000003,
+      "previous_snapshot_price": 31.15,
+      "previous_snapshot_oi": 47,
+      "previous_snapshot_volume": 14,
+      "daily_price": 45.7,
+      "daily_oi": 140,
+      "previous_daily_price": 31.15,
+      "previous_daily_oi": 47,
+      "previous_daily_volume": 14,
+      "recomputed_daily_oi_change": 93,
+      "expiry_date": "20261210",
+      "greeks_time": "16:30",
+      "greeks_confirm": "당일확정",
+      "quote_oi": 140,
+      "quote_price": 45.7,
+      "quote_iv": 54.1,
+      "previous_price": 31.15,
+      "previous_oi": 47
+    }
+  ],
+  "next_future_conflict": {
+    "quote": {
+      "hname": "코스피200 F 202703",
+      "price": "779.90",
+      "sign": "5",
+      "change": "35.75",
+      "jnilclose": "815.65",
+      "diff": "-4.38",
+      "volume": 58,
+      "value": 11537,
+      "mgjv": 6305,
+      "mgjvdiff": 12,
+      "open": "818.75",
+      "high": "819.00",
+      "low": "778.30",
+      "uplmtprice": "880.90",
+      "dnlmtprice": "750.40",
+      "high52w": "0",
+      "low52w": "0",
+      "basis": "0",
+      "recprice": "815.65",
+      "theoryprice": "796.13",
+      "glyl": "-2.039",
+      "cbhprice": "0.00",
+      "cblprice": "0.00",
+      "lastmonth": "20270311",
+      "jandatecnt": 116,
+      "pricejisu": "5100.50",
+      "jisusign": "5",
+      "jisuchange": "190.03",
+      "jisudiff": "-3.59",
+      "kospijisu": "791.56",
+      "kospisign": "5",
+      "kospichange": "33.22",
+      "kospidiff": "-4.03",
+      "listhprice": "1493.20",
+      "listlprice": "753.25",
+      "delt": "0",
+      "gama": "0",
+      "ceta": "0",
+      "vega": "0",
+      "rhox": "0",
+      "gmprice": "0",
+      "gmsign": "",
+      "gmchange": "0",
+      "gmdiff": "0",
+      "theorypriceg": "0",
+      "histimpv": "0",
+      "impv": "0",
+      "sbasis": "-11.66",
+      "ibasis": "4.57",
+      "gmfutcode": "",
+      "actprice": "0",
+      "greeks_time": "",
+      "greeks_confirm": "",
+      "danhochk": "0",
+      "yeprice": "0.00",
+      "jnilysign": "3",
+      "jnilychange": "0.00",
+      "jnilydrate": "0.00",
+      "alloc_gubun": "",
+      "bjandatecnt": 82,
+      "focode": "A0173000",
+      "dy_gubun": "0",
+      "dy_uplmtprice": "0.00",
+      "dy_dnlmtprice": "0.00",
+      "updnstep_gubun": "0",
+      "upstep": "01",
+      "dnstep": "01",
+      "uplmtprice_3rd": "978.75",
+      "dnlmtprice_3rd": "652.55",
+      "expct_ccls_q": 0
+    },
+    "daily": [
+      {
+        "date": "20261116",
+        "open": "818.75",
+        "high": "819.00",
+        "low": "778.30",
+        "close": "779.90",
+        "sign": "5",
+        "change": "35.75",
+        "diff": "-4.38",
+        "volume": 58,
+        "diff_vol": "26.09",
+        "openyak": 6305,
+        "openyakupdn": 12,
+        "value": "11537"
+      },
+      {
+        "date": "20261113",
+        "open": "843.15",
+        "high": "850.50",
+        "low": "810.55",
+        "close": "815.65",
+        "sign": "5",
+        "change": "3.50",
+        "diff": "-0.43",
+        "volume": 46,
+        "diff_vol": "-9.80",
+        "openyak": 6293,
+        "openyakupdn": 603,
+        "value": "9608"
+      },
+      {
+        "date": "20261112",
+        "open": "829.40",
+        "high": "837.05",
+        "low": "820.00",
+        "close": "819.15",
+        "sign": "5",
+        "change": "7.45",
+        "diff": "-0.90",
+        "volume": 51,
+        "diff_vol": "50.00",
+        "openyak": 5690,
+        "openyakupdn": 18,
+        "value": "10506"
+      },
+      {
+        "date": "20261111",
+        "open": "802.00",
+        "high": "829.30",
+        "low": "801.60",
+        "close": "826.60",
+        "sign": "2",
+        "change": "22.15",
+        "diff": "2.75",
+        "volume": 34,
+        "diff_vol": "-5.56",
+        "openyak": 5672,
+        "openyakupdn": 13,
+        "value": "6929"
+      },
+      {
+        "date": "20261110",
+        "open": "815.00",
+        "high": "815.10",
+        "low": "799.20",
+        "close": "804.45",
+        "sign": "2",
+        "change": "36.75",
+        "diff": "4.79",
+        "volume": 36,
+        "diff_vol": "71.43",
+        "openyak": 5659,
+        "openyakupdn": 7,
+        "value": "7265"
+      }
+    ],
+    "status": "CURRENT_QUOTE_DAILY_RECONCILED_SEPARATE_CONTRACT"
+  },
+  "breadth": {
+    "kospi": {
+      "advancing": 263,
+      "declining": 615,
+      "flat": 34,
+      "limit_up_separate_field_not_added": 0,
+      "limit_down_separate_field_not_added": 0,
+      "advance_share_of_movers_pct": 29.954441913439634,
+      "close": 5100.5
+    },
+    "kospi200": {
+      "advancing": 85,
+      "declining": 110,
+      "flat": 6,
+      "limit_up_separate_field_not_added": 0,
+      "limit_down_separate_field_not_added": 0,
+      "advance_share_of_movers_pct": 43.58974358974359,
+      "close": 791.56
+    }
+  },
+  "charts": [
+    {
+      "file": "futures_wave_monthly_20261116.png",
+      "title": "월봉: 큰 조정·11월 진행 중",
+      "interpretation": "11월 진행 종가 789.35는 10월 완료 종가 899.45 아래입니다.",
+      "kind": "price",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "0fb689f8251ec0c22ac1f6631621465ecba043954fa7a59dd115caee5ea313d1",
+      "brief": {
+        "title": "월봉: 큰 조정·11월 진행 중",
+        "result": "11월 진행 종가 789.35는 10월 완료 종가 899.45 아래입니다.",
+        "check": "큰 바닥 대안은 760.10 일봉 이탈·재저항에서 철회합니다.",
+        "note": "8/3부터 4개 월 표본. 8월 부분월·11월 진행월; 장기 월봉 차수 미확정."
+      }
+    },
+    {
+      "file": "futures_wave_weekly_20261116.png",
+      "title": "주봉: 완료 주 반등 후 이번 주 재하락",
+      "interpretation": "11/9~13 완료 주 +5.03%, 이번 주 첫날 -4.01%로 반등을 되돌렸습니다.",
+      "kind": "price",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "8531c8cd817a11492145b449fd8b8a9a66db5aae5771b3e56aac71c853fdcaf0",
+      "brief": {
+        "title": "주봉: 완료 주 반등 후 이번 주 재하락",
+        "result": "11/9~13 완료 주 +5.03%, 이번 주 첫날 -4.01%로 반등을 되돌렸습니다.",
+        "check": "완료 주 저가 771.55와 큰 저가 760.10을 구분합니다.",
+        "note": "동일 계약 일봉 재표본화. 11/16~20 봉은 11/16 하루만 반영한 진행 봉입니다."
+      }
+    },
+    {
+      "file": "futures_wave_daily_20261116.png",
+      "title": "일봉: 기존 회복 구조 실패·약세",
+      "interpretation": "직전 보고서의 818.10 지지와 하위 802.95~803.20 회복 구조가 모두 무너졌습니다. 기존 단기 회복 가설은 실패했으며, 오늘 저점 785.00을 새로 잡아 기존 가설이 유지됐다고 표현하지 않습니다. 선호 가설은 11/6 저가 760.10에서 11/13 고가 859.65까지의 반등이 큰 하락 안의 교정 반등이고, 오늘부터 재차 하락 구간에 들어왔다는 것입니다. 대안은 760.10을 지키는 더 큰 바닥 형성 과정에서 깊은 되돌림이 진행 중이라는 것입니다. 하위파 세분이 부족해 3파·5파 또는 A/B/C 차수는 확정하지 않습니다. 785.00 유지·792.75 회복은 단기 방어 확인일 뿐이며, 807.00과 824.65의 순차 회복이 대안의 설득력을 높입니다. 830.80을 일봉 종가로 넘기고 재지지하면 오늘 하락 지속 가설은 약화되고 838.20·859.65가 다음 확인값입니다. 760.10 아래 일봉 종가와 반등 재저항이면 큰 바닥 대안도 철회합니다.",
+      "kind": "price",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "cc4ec1d12e395c4db4c5c0ecd9d91b82bec676d1feb7b0d245879b8a7b46e538",
+      "brief": {
+        "title": "일봉: 기존 회복 구조 실패·약세",
+        "result": "789.35(-4.01%). 818.10 및 802.95~803.20 지지를 모두 이탈했습니다.",
+        "check": "802.95~807.00 회복 후 818.10~824.65 일봉 회복이 필요합니다.",
+        "note": "SMA5 817.57 / 10 825.89 / 20 858.23. RSI14 35.63, ADX14 29.45, -DI 32.17 > +DI 16.72."
+      }
+    },
+    {
+      "file": "futures_intraday_oi_20261116.png",
+      "title": "10분봉: 하락·OI 증가 후 저점 방어",
+      "interpretation": "08:45→12:05 가격은 825.35→798.95(-26.40), 키움 OI는 +1,854계약이었고, 12:05→15:25는 798.95→788.60(-10.35), OI +1,956이었습니다. 하락 중 미결제가 늘어난 경로는 신규 위험이 쌓이는 매도 우세 국면과 부합하며 단순 롱 청산만으로 하루를 설명하기 어렵습니다. 그러나 새 계약에는 매수·매도 상대가 함께 있으므로 특정 주체 신규 숏의 증명은 아닙니다. 14:05→15:25는 가격 +0.15·OI +993으로 하락 지속이 아니라 저점 부근 양방향 구축에 가까웠고, 15:25→15:45 단일가는 +0.75·OI +420으로 다소 회복했습니다. LS 투자자 업데이트에서 외국인은 10:00 +633, 14:45 -595, 15:45 -584였지만 16:06 +1,620, 최종 +1,991로 바뀌었고 투신은 +73에서 -3,196으로 정리됐습니다. 이는 공급자의 누적 갱신시각이며 실제 체결시각이 아닙니다. 장 마감 후 수급 정정을 16시 신규 매매나 가격 반등 원인으로 붙이지 않습니다.",
+      "kind": "price",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "0513f9986149c322a8f44ec50c117ad548a0adbc3a62ad2e6205db2b9b727ee1",
+      "brief": {
+        "title": "10분봉: 하락·OI 증가 후 저점 방어",
+        "result": "오전 -26.40·OI +1,854, 오후 -10.35·OI +1,956. 마지막 단일가는 +0.75·OI +420.",
+        "check": "785.00 유지와 790.50~792.75 회복·재지지를 구분합니다.",
+        "note": "15:45 단일가 별도. 한 번의 저점과 막판 소폭 회복을 추세 전환으로 확정하지 않습니다."
+      }
+    },
+    {
+      "file": "futures_flow_windows_20261116.png",
+      "title": "지수선물: 외국인 매수와 투신 매도 충돌 · 2026-11-16",
+      "interpretation": "오늘 지수선물 순매매는 외국인 +1,991계약, 금융투자 +523, 투신 -3,196, 연기금등 +336입니다. 기관계 -2,121은 세부 주체와 중복 합산하지 않습니다. 외국인·금융투자·연기금이 순매수 반대편을 맡았지만 가격은 저가 가까이 마감했으므로 매수 확산보다 방어·흡수 성격으로 읽는 쪽이 현재 가격 반응에 맞습니다. 신규 롱인지 환매수인지, 투신 매도가 신규 숏인지 기존 롱 청산인지는 주체별 개설·청산 자료가 없어 확정하지 않습니다. 최근 3일(11/12·13·16) 외국인 +5,188 대 투신 -6,745, 5일(11/10~16) +1,238 대 -404, 20일(10/20~11/16) +25,040 대 -6,870계약입니다. 누적 외국인 매수가 당일 상승으로 이어지지 않는다는 점이 중요합니다. 3일 가격은 -47.20포인트지만 5일은 +13.50, 20일은 -103.90으로 기간별 해석도 다릅니다.",
+      "kind": "flow",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "ab5e13e514222a72607efe011285cf319643dddf1cd3f4b84a3fcd2c80c3f770"
+    },
+    {
+      "file": "futures_weekly_weights_20261116.png",
+      "title": "완료 주 해석 배율 | 11/13까지 교정 · 11/16 관측 별도",
+      "interpretation": "완료 주 11/9~13과 그 시점까지의 20거래일로 계산한 제한적 해석 배율은 현물 외국인 1.183·투신 1.197, 선물 외국인 0.931·투신 1.154입니다. 이번 주 월요일을 완료 주 가중치에 끼워 넣지 않았습니다. 최근 관측에서는 외국인 선물 매수 자체보다 현물 외국인·투신 방향과 가격 반응을 더 주의 깊게 읽을 근거가 있지만, 시장 영향의 인과 비중을 측정한 값은 아닙니다. 10/12~11/16 26거래일에서 외국인·투신 현물 동반 매수·상승 후 다음 날 상승은 3/7(42.9%), 동반 매도·하락 후 하락은 5/11(45.5%)이며 같은 기간 단순 하락 후 하락 기준선은 8/15(53.3%)입니다. 선물은 각각 1/3, 0/2로 소표본입니다. 오늘 현물 사건의 다음 날 결과는 대기이며 분모에서 제외했습니다. 다음 날 예측 배율은 모두 1.0이고 이 적중률을 내일 확률로 사용하지 않습니다.",
+      "kind": "flow",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "4661a8fc80ad2fd99e78c9de887e21a68041d35482d9245b108f866ab47464da"
+    },
+    {
+      "file": "options_contract_review_20261116.png",
+      "title": "12월 옵션: 같은 계약 대조 | 11월 만기 이후",
+      "interpretation": "외국인 옵션 수급은 전체 만기 기준 콜 -3,809계약·-26억원, 풋 +2,381계약·+30억원입니다. 지수선물 순매수와 달리 옵션 흐름은 하방 방어 또는 하방 지향 해석과 부합합니다. 12월 동일 계약을 11/13→16 비교하면 790콜 가격 63.55→41.00, OI 27→34(+7), IV 48.16→47.90%인 반면 790풋은 28.00→43.70, OI 55→116(+61), IV 49.26→54.87%입니다. 795풋도 31.15→45.70, OI 47→140(+93), IV 50.58→54.10%입니다. 풋의 가격·OI·IV 동반 상승은 하방 수요 확인에 유용하나 총 OI로 외국인 신규 풋 매수를 입증하지 않습니다. 790풋 양방향 호가가 없고 795풋 스프레드가 넓으며 785콜은 당일 무거래여서 체결 강도·정확한 스큐·차익을 확정하지 않습니다. 16:30 그릭스는 사후 평가값입니다. 790콜 델타 +0.5377, 790풋 -0.4612를 표시하되 당일 투자자별 델타 조정 순수급이나 딜러 감마로 환산하지 않습니다.",
+      "kind": "options",
+      "source_note": "동일 날짜·계약 원천 해시 확인; 계산/해석 별도",
+      "sha256": "8e9c61598508360ca57b36cab135afb429285a919b69a4d392e68883de4b00e7"
+    },
+    {
+      "file": "hts_0790_daily_20261116.png",
+      "title": "0790 당일 합성손익 원본",
+      "interpretation": "0790 당일/누적, 0794 당일/누적 원본의 날짜·모드·금액 단위는 확인했습니다. 0790 가로축 781.56~801.56은 현물 축이며 선물 지지·저항으로 옮기지 않습니다. 누적 시작일·0791 실제 잔고·투자자별 개설/청산 원장이 없어 실제 잔존 수량·평단·손익분기점은 판단 불가입니다. 당일과 누적 손익 곡선이 충돌해도 임의로 하나를 정답으로 채택하지 않습니다.",
+      "kind": "source",
+      "source_note": "11/16 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "ac7f8c8d405637b5b1303aa4ea0b71a528f8ab152aedf2141e32a2409224e596"
+    },
+    {
+      "file": "hts_0790_cumulative_20261116.png",
+      "title": "0790 누적 합성손익 원본",
+      "interpretation": "0790 당일/누적, 0794 당일/누적 원본의 날짜·모드·금액 단위는 확인했습니다. 0790 가로축 781.56~801.56은 현물 축이며 선물 지지·저항으로 옮기지 않습니다. 누적 시작일·0791 실제 잔고·투자자별 개설/청산 원장이 없어 실제 잔존 수량·평단·손익분기점은 판단 불가입니다. 당일과 누적 손익 곡선이 충돌해도 임의로 하나를 정답으로 채택하지 않습니다.",
+      "kind": "source",
+      "source_note": "11/16 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "7e02605edf479a0ab9e94e17045bfb527c85ebed42c3337303741320b0982aa7"
+    },
+    {
+      "file": "hts_0794_daily_20261116.png",
+      "title": "0794 당일 금액 순매매 원본",
+      "interpretation": "0790 당일/누적, 0794 당일/누적 원본의 날짜·모드·금액 단위는 확인했습니다. 0790 가로축 781.56~801.56은 현물 축이며 선물 지지·저항으로 옮기지 않습니다. 누적 시작일·0791 실제 잔고·투자자별 개설/청산 원장이 없어 실제 잔존 수량·평단·손익분기점은 판단 불가입니다. 당일과 누적 손익 곡선이 충돌해도 임의로 하나를 정답으로 채택하지 않습니다.",
+      "kind": "source",
+      "source_note": "11/16 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "52eaad3539c9500140741a180a300427826de57141f0f1118ee720dac8331adb"
+    },
+    {
+      "file": "hts_0794_cumulative_20261116.png",
+      "title": "0794 누적 금액 순매매 원본",
+      "interpretation": "0790 당일/누적, 0794 당일/누적 원본의 날짜·모드·금액 단위는 확인했습니다. 0790 가로축 781.56~801.56은 현물 축이며 선물 지지·저항으로 옮기지 않습니다. 누적 시작일·0791 실제 잔고·투자자별 개설/청산 원장이 없어 실제 잔존 수량·평단·손익분기점은 판단 불가입니다. 당일과 누적 손익 곡선이 충돌해도 임의로 하나를 정답으로 채택하지 않습니다.",
+      "kind": "source",
+      "source_note": "11/16 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "99c474f0c828cc7a71d68057e359af40170154f132806d07a88a0c9d824fad36"
+    },
+    {
+      "file": "hts_volatility_20261116.png",
+      "title": "0471 대표 변동성 원본",
+      "interpretation": "대표 변동성 화면은 동일 행사가 IV·고정 델타 스큐와 별개입니다. 분석 수치는 개별 계약 API를 사용합니다.",
+      "kind": "source",
+      "source_note": "11/16 EOD 원본·날짜/모드/단위 시각 확인·해시 보존",
+      "sha256": "126f2cfc73cb73504017fd9b08ba1f9b4bbe9cd8115bd88ef42bfa38ea971b9d"
+    }
+  ],
+  "attempted_paths": [
+    "Kiwoom opt50030/50029/50062 price/OI",
+    "Kiwoom REST ka20006/ka20001 KOSPI and corrected KOSPI200 code201",
+    "LS t1617/t1664 daily; t1602 two pages per product/unit",
+    "LS t2301 Dec/Jan chains; t2214/t2111 same contracts",
+    "LS t1633/t1632/t1636 program/leaders",
+    "12 HTS originals; prior manifests and CVD archive"
+  ],
+  "web_references": [
+    {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "rule": "monthly final trade second Thursday; quarterly future March June September December",
+      "november_options_expiry": "2026-11-12",
+      "december_futures_options_expiry": "2026-12-10",
+      "as_of_status": "SECOND_REGULAR_SESSION_AFTER_NOVEMBER_MONTHLY_EXPIRY; MONDAY_WEEKLY_EXPIRY_RULE_NOT_MIXED_WITH_DECEMBER_MONTHLY"
+    }
+  ]
+}
