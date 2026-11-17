@@ -1,0 +1,3266 @@
+{
+  "as_of": "2026-11-17",
+  "generated_at": "2026-11-17T19:48:31.746886+09:00",
+  "contract": "F202612",
+  "code": "A016C000",
+  "sources": [
+    {
+      "file": "20261117/krx_calendar_20261117_193516704.json",
+      "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+    },
+    {
+      "file": "20261117/0471_KOSPI200_일별_60일_20261117.png",
+      "sha256": "b59d617f96cd49c238b0d0c4a29f1296059b3dbbc22137cb95b21f6ffeab07f5"
+    },
+    {
+      "file": "20261117/0786_close_snapshot_20261117.png",
+      "sha256": "90955ad6a043ba5ffb5f5bf866e9fc11a3de4c16ac1a1cdce13aa6b7344897f0"
+    },
+    {
+      "file": "20261117/0787_선물_금액_20261117.png",
+      "sha256": "8f3c0831e216268700fcdd95b6ea40c6c42a8ebb24f5e583b35d8cdfb4bcad03"
+    },
+    {
+      "file": "20261117/0787_선물_수량_20261117.png",
+      "sha256": "7914a84ad650399b5ee615ff75753a8e09ddfcee9d7c9f513c9e3db7a94b91f9"
+    },
+    {
+      "file": "20261117/0787_콜옵션_금액_20261117.png",
+      "sha256": "42a6446b2c9fdc67e61ccdb649ca094fb4f6f6c316d4915a04edcdcd055734fa"
+    },
+    {
+      "file": "20261117/0787_콜옵션_수량_20261117.png",
+      "sha256": "33cefe352a60eb30b553b4ec8204720a3376577ef160de33b5c3e2d94a8db434"
+    },
+    {
+      "file": "20261117/0787_풋옵션_금액_20261117.png",
+      "sha256": "acd285879771874fdff8ac1a4b80d1a9b03576e350ae5e59badf0ca1ae034298"
+    },
+    {
+      "file": "20261117/0787_풋옵션_수량_20261117.png",
+      "sha256": "3384c657fba98c4927019285636af7337ea887194ebbc37caf188a84dee3332e"
+    },
+    {
+      "file": "20261117/0790_누적_20261117.png",
+      "sha256": "6d1e7387920476404d0b4980a6549947b6b9f4483869b1e950f13c4e3a9322fd"
+    },
+    {
+      "file": "20261117/0790_일자_20261117.png",
+      "sha256": "ac16f1e0829fada3890976e83632536cfe257aacc3ddec669735f41735df0cfe"
+    },
+    {
+      "file": "20261117/0794_누적_20261117.png",
+      "sha256": "a582108fefe862bbae8c36b1d27e889b27129e31ac5b89e5200d8807116c3494"
+    },
+    {
+      "file": "20261117/0794_일자_20261117.png",
+      "sha256": "cfd487bf318ce18b0277165136cb7bee207a6e6270ec048acf41e97dae07daac"
+    },
+    {
+      "file": "20261117/eod_0787_parsed_20261117.csv",
+      "sha256": "7e02264ce2c35c1c00c66aa926dc0b73429a2e62a3b3138b9788ae049d5d5692"
+    },
+    {
+      "file": "20261117/eod_manifest_20261117.json",
+      "sha256": "99efafa7a540af62d111e429203a8230a0b4cc342414f54a55fab064f53d179f"
+    },
+    {
+      "file": "20261117/eod_ocr_bridge_20261117.json",
+      "sha256": "8ada06dbe214f2a43fcf6ab165aecfb748a76d7ad7829a7cac0adf43fe0c9582"
+    },
+    {
+      "file": "20261116/api_run_latest.json",
+      "sha256": "8046c3b133055348d152c94eee5e8bef6257b7e82db3d19109f3b2bbbd18e6d0"
+    },
+    {
+      "file": "160602_206373/oi.json",
+      "sha256": "6d2edc1e7f5eb97a18a363081246d0d4bf5e585969a722a4dd0bd6727f3ae02c"
+    },
+    {
+      "file": "20261117/api_run_latest.json",
+      "sha256": "45381684d42de50e936545edc780e1330435037ff447ac5906bef2397657f3b4"
+    },
+    {
+      "file": "185410_730621/daily.json",
+      "sha256": "495e8dfbc3208026b21644281227687bdf1274d1eb117483809427b4b6d8c40d"
+    },
+    {
+      "file": "185410_730621/minute.json",
+      "sha256": "85d3b3c9fb8843e972f0f7e2f4a6da5a38c6770bdabfce589b450bef548a23c4"
+    },
+    {
+      "file": "185410_730621/oi.json",
+      "sha256": "648f16b7b3dc2807832e89c733c9c9759ba1694efa1842e7b4015c21d9d1c3b4"
+    },
+    {
+      "file": "185410_730621/volatility.json",
+      "sha256": "916d08e1d65e9b3fc85c13a9845069d11b4d6b81b62a57e04172c177e3e80adc"
+    },
+    {
+      "file": "futures_review_20261117/bootstrap_snapshot.log",
+      "sha256": "c2b2cb8b6b240c63909bd683e7c6b7fc794366edda4351f59fed265237fe66f4"
+    },
+    {
+      "file": "futures_review_20261117/execution_state_snapshot.json",
+      "sha256": "c65d2eace9a28c884e7ccb6ecea4c833d617f79e9eb4e7fad86fa108954bd834"
+    },
+    {
+      "file": "historical_raw/A016C000_daily.json",
+      "sha256": "da50f6c2fdaf29a8c62f52771e5ea3254f327e9a0fa0e4c18ca7d11e6a36dbf8"
+    },
+    {
+      "file": "historical_raw/A0173000_daily.json",
+      "sha256": "9d777dab29c29e5a1db337cc53272f7bd418874b86fa0e87073aa50cb1701401"
+    },
+    {
+      "file": "historical_raw/B016C765_daily.json",
+      "sha256": "6b166277aa40566ecdf88b0e02242d5e9a5fa5cfcd26c978cb973755cc18291b"
+    },
+    {
+      "file": "historical_raw/B016C770_daily.json",
+      "sha256": "462613426e73ffe71edb374c66a2a9981f8814e06c3e9edf2caabb2ccbf3cbfc"
+    },
+    {
+      "file": "historical_raw/B016C775_daily.json",
+      "sha256": "6f3489b63d2cbb41272f312b9aa6a70e43936452dc0629a6cd91264f30b3c6cc"
+    },
+    {
+      "file": "historical_raw/B016C785_daily.json",
+      "sha256": "defbfa0eb059845f04389ab18369188cd85a5d28afc80ad41064dcc53d6fc67e"
+    },
+    {
+      "file": "historical_raw/B016C790_daily.json",
+      "sha256": "5b107f2bba7a97600b3c6a3dcd18369c0fda651375791b71522c4b3028805f60"
+    },
+    {
+      "file": "historical_raw/B016C795_daily.json",
+      "sha256": "6ceacc889562e7506de4fb7256b600ea712bd7cd73983526fa7354df107296e4"
+    },
+    {
+      "file": "historical_raw/C016C765_daily.json",
+      "sha256": "27f271fd374b29f18b3426114c6c52ae5456d0053eab868429f9b5350adc02c8"
+    },
+    {
+      "file": "historical_raw/C016C770_daily.json",
+      "sha256": "1b8c1ee25a42d3dfe3b32a32ce61dd09095bbc5dab38a275570ba5cacca2f646"
+    },
+    {
+      "file": "historical_raw/C016C775_daily.json",
+      "sha256": "7fed778f099efb80964ef1310c40ca64e1ed1eac2349ce0d9d746ce7b8caa6ca"
+    },
+    {
+      "file": "historical_raw/C016C785_daily.json",
+      "sha256": "4ae59bbb97011004a80c29f7c74a1e4decadb7c77518b5109e76c5a007fda343"
+    },
+    {
+      "file": "historical_raw/C016C790_daily.json",
+      "sha256": "c42bc4a242a169307c1178deb8b64a027ddc1518b6e41805112bb51008de4392"
+    },
+    {
+      "file": "historical_raw/C016C795_daily.json",
+      "sha256": "62445b8606dcad8cdbf210477df49b9398aef86eb0a84766bc60aaab05fa9a42"
+    },
+    {
+      "file": "historical_raw/call_detail.json",
+      "sha256": "d918af0f4f4ccc991ce33c0585ee7e0acdbae1af46e58b8bac78640caa1193cf"
+    },
+    {
+      "file": "historical_raw/call_t1617_1.json",
+      "sha256": "dec0ed7a8e6a1a900599c452479c5f8690ac05ecd767aebc2b4fc18332dedfa9"
+    },
+    {
+      "file": "historical_raw/call_t1617_2.json",
+      "sha256": "840049a60606e369f1912594c5c62baebffad6034f321d935576ed9f5e45dede"
+    },
+    {
+      "file": "historical_raw/call_t1617_3.json",
+      "sha256": "c30e3741984d324d3382db7a783dc2d0d3afc383399a728fcb27e9858d683afe"
+    },
+    {
+      "file": "historical_raw/cash_detail.json",
+      "sha256": "659352241754e505f36cc2195f2d2ff369ab55c5d84819211b310bbd63ec560d"
+    },
+    {
+      "file": "historical_raw/cash_t1617_1.json",
+      "sha256": "e8e23fb1805d249c44f454cd85b5dbbf26d02a7b95a14ac1f303d4f51d9e945c"
+    },
+    {
+      "file": "historical_raw/cash_t1617_2.json",
+      "sha256": "f75bb31047c25a671e6fb36d8e2012a177ac63bb26deda4575ea92d7806221de"
+    },
+    {
+      "file": "historical_raw/cash_t1617_3.json",
+      "sha256": "9580f895cec52cb58c583ff9e20d01020427291b8e4c22b0b848cf840dd756cb"
+    },
+    {
+      "file": "historical_raw/futures_detail.json",
+      "sha256": "c39a0eddff1199b1578d3e886960c11d1f40da17c6a58c065858c53624a12269"
+    },
+    {
+      "file": "historical_raw/futures_t1617_1.json",
+      "sha256": "67611fa4938f24386059289e46aaf03c11e64dd1e29cad66ebc8b29bc670f32f"
+    },
+    {
+      "file": "historical_raw/futures_t1617_2.json",
+      "sha256": "87a31822fdb6304267b08cefa9a14924f5d3e9e63975303c817834ba9afa7f5a"
+    },
+    {
+      "file": "historical_raw/futures_t1617_3.json",
+      "sha256": "3378008a346d5c28faa9269f4c2a981e2491ef0dcc1c884f2936df7f88168fbb"
+    },
+    {
+      "file": "historical_raw/kospi200_daily.json",
+      "sha256": "44d87045f36aab806b6d11b3a31744cc0b606ab58492b5623f953ea39cd9659e"
+    },
+    {
+      "file": "historical_raw/kospi200_kiwoom_daily.json",
+      "sha256": "8a01730ad7326a577414d8baf02e05d8b50afbba56132ed56e4b1f551f687cd3"
+    },
+    {
+      "file": "historical_raw/kospi_daily.json",
+      "sha256": "493dc197f2a7c0f97aa4345f7300259d16a50797af4888c218afa79e044ac925"
+    },
+    {
+      "file": "historical_raw/kospi_kiwoom_daily.json",
+      "sha256": "c927d1ca6189dd564265d928de63998144545bdd481a1eca8d6bf53b0835aef8"
+    },
+    {
+      "file": "historical_raw/manifest.json",
+      "sha256": "107499fe84b2f770fa28e2eb9f99701eb3c61afee32cb28ab907ce73e540acc7"
+    },
+    {
+      "file": "historical_raw/option_code_registry.json",
+      "sha256": "9ad47de822153cc62e80454550a8bbe481ab8075de3a9b545d47d076a72d94f9"
+    },
+    {
+      "file": "historical_raw/program_daily.json",
+      "sha256": "d57b59217a5d2c3c7b587d8068b2a651a007e1b7d428ff4e367c2f772b0e238d"
+    },
+    {
+      "file": "historical_raw/put_detail.json",
+      "sha256": "c2b0966a7e563ee31e50bf6dbd9af46591ef6061210028674ee2ac14c072e268"
+    },
+    {
+      "file": "historical_raw/put_t1617_1.json",
+      "sha256": "7fb959cb2472c59391a8fe0ee742907ddfa7811dbe6373ea51bd9e0d0df77830"
+    },
+    {
+      "file": "historical_raw/put_t1617_2.json",
+      "sha256": "e298b3439ccf67d228d14f5c683c5142472216cdcc4c58deea2b4e3e6c164c45"
+    },
+    {
+      "file": "historical_raw/put_t1617_3.json",
+      "sha256": "a83770ab92a1881c327d3f0b5ff4928fa3d635c440e382d541a5a405cf66e748"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_1.json",
+      "sha256": "df94905174113c668159487f0a3d399e25bc989ae0667efc51028539b8f83d02"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_2.json",
+      "sha256": "17c3e101850fa72ea0856f2c1f5956e7103fbc60acb50adce2aac6daea6828be"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_3.json",
+      "sha256": "5e934307bead5d0d5c49a7e4f5f1d615860dd38c20e50265f3c41b9ab2005928"
+    },
+    {
+      "file": "evidence.json",
+      "sha256": "433fc601bf3f7437641852abad8516a554316400f35f8c27d5b140be3fcc6359"
+    },
+    {
+      "file": "editorial.json",
+      "sha256": "5e4d372658eb78c627b5c38dc657bd034612a5742306f3f41a1ff1ee0c2a36b2"
+    },
+    {
+      "file": "weekly_flow_context.json",
+      "sha256": "79ece03a931ab65f7f812f32965fad41fa8ba7cd2e9e171651e65ea7961acce7"
+    }
+  ],
+  "checks": {
+    "trade_date": "20261117",
+    "status": "CORE_VERIFIED_WITH_DISCLOSED_LIMITS",
+    "ready_for_editorial_review": true,
+    "capture_count": 12,
+    "all_54_display_nets_visually_checked": true,
+    "source_hashes": [
+      {
+        "file": "20261117/krx_calendar_20261117_193516704.json",
+        "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+      },
+      {
+        "file": "20261117/0471_KOSPI200_일별_60일_20261117.png",
+        "sha256": "b59d617f96cd49c238b0d0c4a29f1296059b3dbbc22137cb95b21f6ffeab07f5"
+      },
+      {
+        "file": "20261117/0786_close_snapshot_20261117.png",
+        "sha256": "90955ad6a043ba5ffb5f5bf866e9fc11a3de4c16ac1a1cdce13aa6b7344897f0"
+      },
+      {
+        "file": "20261117/0787_선물_금액_20261117.png",
+        "sha256": "8f3c0831e216268700fcdd95b6ea40c6c42a8ebb24f5e583b35d8cdfb4bcad03"
+      },
+      {
+        "file": "20261117/0787_선물_수량_20261117.png",
+        "sha256": "7914a84ad650399b5ee615ff75753a8e09ddfcee9d7c9f513c9e3db7a94b91f9"
+      },
+      {
+        "file": "20261117/0787_콜옵션_금액_20261117.png",
+        "sha256": "42a6446b2c9fdc67e61ccdb649ca094fb4f6f6c316d4915a04edcdcd055734fa"
+      },
+      {
+        "file": "20261117/0787_콜옵션_수량_20261117.png",
+        "sha256": "33cefe352a60eb30b553b4ec8204720a3376577ef160de33b5c3e2d94a8db434"
+      },
+      {
+        "file": "20261117/0787_풋옵션_금액_20261117.png",
+        "sha256": "acd285879771874fdff8ac1a4b80d1a9b03576e350ae5e59badf0ca1ae034298"
+      },
+      {
+        "file": "20261117/0787_풋옵션_수량_20261117.png",
+        "sha256": "3384c657fba98c4927019285636af7337ea887194ebbc37caf188a84dee3332e"
+      },
+      {
+        "file": "20261117/0790_누적_20261117.png",
+        "sha256": "6d1e7387920476404d0b4980a6549947b6b9f4483869b1e950f13c4e3a9322fd"
+      },
+      {
+        "file": "20261117/0790_일자_20261117.png",
+        "sha256": "ac16f1e0829fada3890976e83632536cfe257aacc3ddec669735f41735df0cfe"
+      },
+      {
+        "file": "20261117/0794_누적_20261117.png",
+        "sha256": "a582108fefe862bbae8c36b1d27e889b27129e31ac5b89e5200d8807116c3494"
+      },
+      {
+        "file": "20261117/0794_일자_20261117.png",
+        "sha256": "cfd487bf318ce18b0277165136cb7bee207a6e6270ec048acf41e97dae07daac"
+      },
+      {
+        "file": "20261117/eod_0787_parsed_20261117.csv",
+        "sha256": "7e02264ce2c35c1c00c66aa926dc0b73429a2e62a3b3138b9788ae049d5d5692"
+      },
+      {
+        "file": "20261117/eod_manifest_20261117.json",
+        "sha256": "99efafa7a540af62d111e429203a8230a0b4cc342414f54a55fab064f53d179f"
+      },
+      {
+        "file": "20261117/eod_ocr_bridge_20261117.json",
+        "sha256": "8ada06dbe214f2a43fcf6ab165aecfb748a76d7ad7829a7cac0adf43fe0c9582"
+      },
+      {
+        "file": "20261116/api_run_latest.json",
+        "sha256": "8046c3b133055348d152c94eee5e8bef6257b7e82db3d19109f3b2bbbd18e6d0"
+      },
+      {
+        "file": "160602_206373/oi.json",
+        "sha256": "6d2edc1e7f5eb97a18a363081246d0d4bf5e585969a722a4dd0bd6727f3ae02c"
+      },
+      {
+        "file": "20261117/api_run_latest.json",
+        "sha256": "45381684d42de50e936545edc780e1330435037ff447ac5906bef2397657f3b4"
+      },
+      {
+        "file": "185410_730621/daily.json",
+        "sha256": "495e8dfbc3208026b21644281227687bdf1274d1eb117483809427b4b6d8c40d"
+      },
+      {
+        "file": "185410_730621/minute.json",
+        "sha256": "85d3b3c9fb8843e972f0f7e2f4a6da5a38c6770bdabfce589b450bef548a23c4"
+      },
+      {
+        "file": "185410_730621/oi.json",
+        "sha256": "648f16b7b3dc2807832e89c733c9c9759ba1694efa1842e7b4015c21d9d1c3b4"
+      },
+      {
+        "file": "185410_730621/volatility.json",
+        "sha256": "916d08e1d65e9b3fc85c13a9845069d11b4d6b81b62a57e04172c177e3e80adc"
+      },
+      {
+        "file": "futures_review_20261117/bootstrap_snapshot.log",
+        "sha256": "c2b2cb8b6b240c63909bd683e7c6b7fc794366edda4351f59fed265237fe66f4"
+      },
+      {
+        "file": "futures_review_20261117/execution_state_snapshot.json",
+        "sha256": "c65d2eace9a28c884e7ccb6ecea4c833d617f79e9eb4e7fad86fa108954bd834"
+      },
+      {
+        "file": "historical_raw/A016C000_daily.json",
+        "sha256": "da50f6c2fdaf29a8c62f52771e5ea3254f327e9a0fa0e4c18ca7d11e6a36dbf8"
+      },
+      {
+        "file": "historical_raw/A0173000_daily.json",
+        "sha256": "9d777dab29c29e5a1db337cc53272f7bd418874b86fa0e87073aa50cb1701401"
+      },
+      {
+        "file": "historical_raw/B016C765_daily.json",
+        "sha256": "6b166277aa40566ecdf88b0e02242d5e9a5fa5cfcd26c978cb973755cc18291b"
+      },
+      {
+        "file": "historical_raw/B016C770_daily.json",
+        "sha256": "462613426e73ffe71edb374c66a2a9981f8814e06c3e9edf2caabb2ccbf3cbfc"
+      },
+      {
+        "file": "historical_raw/B016C775_daily.json",
+        "sha256": "6f3489b63d2cbb41272f312b9aa6a70e43936452dc0629a6cd91264f30b3c6cc"
+      },
+      {
+        "file": "historical_raw/B016C785_daily.json",
+        "sha256": "defbfa0eb059845f04389ab18369188cd85a5d28afc80ad41064dcc53d6fc67e"
+      },
+      {
+        "file": "historical_raw/B016C790_daily.json",
+        "sha256": "5b107f2bba7a97600b3c6a3dcd18369c0fda651375791b71522c4b3028805f60"
+      },
+      {
+        "file": "historical_raw/B016C795_daily.json",
+        "sha256": "6ceacc889562e7506de4fb7256b600ea712bd7cd73983526fa7354df107296e4"
+      },
+      {
+        "file": "historical_raw/C016C765_daily.json",
+        "sha256": "27f271fd374b29f18b3426114c6c52ae5456d0053eab868429f9b5350adc02c8"
+      },
+      {
+        "file": "historical_raw/C016C770_daily.json",
+        "sha256": "1b8c1ee25a42d3dfe3b32a32ce61dd09095bbc5dab38a275570ba5cacca2f646"
+      },
+      {
+        "file": "historical_raw/C016C775_daily.json",
+        "sha256": "7fed778f099efb80964ef1310c40ca64e1ed1eac2349ce0d9d746ce7b8caa6ca"
+      },
+      {
+        "file": "historical_raw/C016C785_daily.json",
+        "sha256": "4ae59bbb97011004a80c29f7c74a1e4decadb7c77518b5109e76c5a007fda343"
+      },
+      {
+        "file": "historical_raw/C016C790_daily.json",
+        "sha256": "c42bc4a242a169307c1178deb8b64a027ddc1518b6e41805112bb51008de4392"
+      },
+      {
+        "file": "historical_raw/C016C795_daily.json",
+        "sha256": "62445b8606dcad8cdbf210477df49b9398aef86eb0a84766bc60aaab05fa9a42"
+      },
+      {
+        "file": "historical_raw/call_detail.json",
+        "sha256": "d918af0f4f4ccc991ce33c0585ee7e0acdbae1af46e58b8bac78640caa1193cf"
+      },
+      {
+        "file": "historical_raw/call_t1617_1.json",
+        "sha256": "dec0ed7a8e6a1a900599c452479c5f8690ac05ecd767aebc2b4fc18332dedfa9"
+      },
+      {
+        "file": "historical_raw/call_t1617_2.json",
+        "sha256": "840049a60606e369f1912594c5c62baebffad6034f321d935576ed9f5e45dede"
+      },
+      {
+        "file": "historical_raw/call_t1617_3.json",
+        "sha256": "c30e3741984d324d3382db7a783dc2d0d3afc383399a728fcb27e9858d683afe"
+      },
+      {
+        "file": "historical_raw/cash_detail.json",
+        "sha256": "659352241754e505f36cc2195f2d2ff369ab55c5d84819211b310bbd63ec560d"
+      },
+      {
+        "file": "historical_raw/cash_t1617_1.json",
+        "sha256": "e8e23fb1805d249c44f454cd85b5dbbf26d02a7b95a14ac1f303d4f51d9e945c"
+      },
+      {
+        "file": "historical_raw/cash_t1617_2.json",
+        "sha256": "f75bb31047c25a671e6fb36d8e2012a177ac63bb26deda4575ea92d7806221de"
+      },
+      {
+        "file": "historical_raw/cash_t1617_3.json",
+        "sha256": "9580f895cec52cb58c583ff9e20d01020427291b8e4c22b0b848cf840dd756cb"
+      },
+      {
+        "file": "historical_raw/futures_detail.json",
+        "sha256": "c39a0eddff1199b1578d3e886960c11d1f40da17c6a58c065858c53624a12269"
+      },
+      {
+        "file": "historical_raw/futures_t1617_1.json",
+        "sha256": "67611fa4938f24386059289e46aaf03c11e64dd1e29cad66ebc8b29bc670f32f"
+      },
+      {
+        "file": "historical_raw/futures_t1617_2.json",
+        "sha256": "87a31822fdb6304267b08cefa9a14924f5d3e9e63975303c817834ba9afa7f5a"
+      },
+      {
+        "file": "historical_raw/futures_t1617_3.json",
+        "sha256": "3378008a346d5c28faa9269f4c2a981e2491ef0dcc1c884f2936df7f88168fbb"
+      },
+      {
+        "file": "historical_raw/kospi200_daily.json",
+        "sha256": "44d87045f36aab806b6d11b3a31744cc0b606ab58492b5623f953ea39cd9659e"
+      },
+      {
+        "file": "historical_raw/kospi200_kiwoom_daily.json",
+        "sha256": "8a01730ad7326a577414d8baf02e05d8b50afbba56132ed56e4b1f551f687cd3"
+      },
+      {
+        "file": "historical_raw/kospi_daily.json",
+        "sha256": "493dc197f2a7c0f97aa4345f7300259d16a50797af4888c218afa79e044ac925"
+      },
+      {
+        "file": "historical_raw/kospi_kiwoom_daily.json",
+        "sha256": "c927d1ca6189dd564265d928de63998144545bdd481a1eca8d6bf53b0835aef8"
+      },
+      {
+        "file": "historical_raw/manifest.json",
+        "sha256": "107499fe84b2f770fa28e2eb9f99701eb3c61afee32cb28ab907ce73e540acc7"
+      },
+      {
+        "file": "historical_raw/option_code_registry.json",
+        "sha256": "9ad47de822153cc62e80454550a8bbe481ab8075de3a9b545d47d076a72d94f9"
+      },
+      {
+        "file": "historical_raw/program_daily.json",
+        "sha256": "d57b59217a5d2c3c7b587d8068b2a651a007e1b7d428ff4e367c2f772b0e238d"
+      },
+      {
+        "file": "historical_raw/put_detail.json",
+        "sha256": "c2b0966a7e563ee31e50bf6dbd9af46591ef6061210028674ee2ac14c072e268"
+      },
+      {
+        "file": "historical_raw/put_t1617_1.json",
+        "sha256": "7fb959cb2472c59391a8fe0ee742907ddfa7811dbe6373ea51bd9e0d0df77830"
+      },
+      {
+        "file": "historical_raw/put_t1617_2.json",
+        "sha256": "e298b3439ccf67d228d14f5c683c5142472216cdcc4c58deea2b4e3e6c164c45"
+      },
+      {
+        "file": "historical_raw/put_t1617_3.json",
+        "sha256": "a83770ab92a1881c327d3f0b5ff4928fa3d635c440e382d541a5a405cf66e748"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_1.json",
+        "sha256": "df94905174113c668159487f0a3d399e25bc989ae0667efc51028539b8f83d02"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_2.json",
+        "sha256": "17c3e101850fa72ea0856f2c1f5956e7103fbc60acb50adce2aac6daea6828be"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_3.json",
+        "sha256": "5e934307bead5d0d5c49a7e4f5f1d615860dd38c20e50265f3c41b9ab2005928"
+      },
+      {
+        "file": "evidence.json",
+        "sha256": "433fc601bf3f7437641852abad8516a554316400f35f8c27d5b140be3fcc6359"
+      },
+      {
+        "file": "editorial.json",
+        "sha256": "5e4d372658eb78c627b5c38dc657bd034612a5742306f3f41a1ff1ee0c2a36b2"
+      },
+      {
+        "file": "weekly_flow_context.json",
+        "sha256": "79ece03a931ab65f7f812f32965fad41fa8ba7cd2e9e171651e65ea7961acce7"
+      }
+    ],
+    "flow_rows": [
+      {
+        "date": "2026-09-11",
+        "foreign": -2543,
+        "institution": 3959,
+        "financial": 6090,
+        "trust": -1609
+      },
+      {
+        "date": "2026-09-14",
+        "foreign": -2891,
+        "institution": 2655,
+        "financial": 5894,
+        "trust": -3201
+      },
+      {
+        "date": "2026-09-15",
+        "foreign": -6218,
+        "institution": 6052,
+        "financial": 4915,
+        "trust": 1283
+      },
+      {
+        "date": "2026-09-16",
+        "foreign": 1997,
+        "institution": -530,
+        "financial": -2689,
+        "trust": 2508
+      },
+      {
+        "date": "2026-09-17",
+        "foreign": 802,
+        "institution": -1791,
+        "financial": -1061,
+        "trust": -525
+      },
+      {
+        "date": "2026-09-18",
+        "foreign": 5642,
+        "institution": -4914,
+        "financial": -8216,
+        "trust": 3087
+      },
+      {
+        "date": "2026-09-21",
+        "foreign": 4251,
+        "institution": -3963,
+        "financial": -4098,
+        "trust": 210
+      },
+      {
+        "date": "2026-09-22",
+        "foreign": 1823,
+        "institution": -3273,
+        "financial": -2927,
+        "trust": -292
+      },
+      {
+        "date": "2026-09-23",
+        "foreign": 1356,
+        "institution": -1402,
+        "financial": -2493,
+        "trust": 1167
+      },
+      {
+        "date": "2026-09-28",
+        "foreign": -1831,
+        "institution": 2395,
+        "financial": 5117,
+        "trust": -2937
+      },
+      {
+        "date": "2026-09-29",
+        "foreign": 1077,
+        "institution": -457,
+        "financial": -1426,
+        "trust": 912
+      },
+      {
+        "date": "2026-09-30",
+        "foreign": -4800,
+        "institution": 3989,
+        "financial": 4785,
+        "trust": -775
+      },
+      {
+        "date": "2026-10-01",
+        "foreign": -428,
+        "institution": -54,
+        "financial": -1424,
+        "trust": 1249
+      },
+      {
+        "date": "2026-10-02",
+        "foreign": 3071,
+        "institution": -2852,
+        "financial": -3270,
+        "trust": 582
+      },
+      {
+        "date": "2026-10-06",
+        "foreign": -928,
+        "institution": -911,
+        "financial": 400,
+        "trust": -1426
+      },
+      {
+        "date": "2026-10-07",
+        "foreign": -1053,
+        "institution": 650,
+        "financial": 1144,
+        "trust": -1019
+      },
+      {
+        "date": "2026-10-08",
+        "foreign": -4650,
+        "institution": 5204,
+        "financial": 6625,
+        "trust": -1487
+      },
+      {
+        "date": "2026-10-12",
+        "foreign": 3009,
+        "institution": -2837,
+        "financial": -1196,
+        "trust": -1405
+      },
+      {
+        "date": "2026-10-13",
+        "foreign": 1670,
+        "institution": -2237,
+        "financial": 1129,
+        "trust": -2866
+      },
+      {
+        "date": "2026-10-14",
+        "foreign": 3557,
+        "institution": -1983,
+        "financial": -2565,
+        "trust": 1098
+      },
+      {
+        "date": "2026-10-15",
+        "foreign": 5544,
+        "institution": -6024,
+        "financial": -3645,
+        "trust": -1740
+      },
+      {
+        "date": "2026-10-16",
+        "foreign": -4200,
+        "institution": 5077,
+        "financial": 1490,
+        "trust": 3383
+      },
+      {
+        "date": "2026-10-19",
+        "foreign": -345,
+        "institution": 715,
+        "financial": -828,
+        "trust": 1512
+      },
+      {
+        "date": "2026-10-20",
+        "foreign": -1544,
+        "institution": 898,
+        "financial": 3898,
+        "trust": -2897
+      },
+      {
+        "date": "2026-10-21",
+        "foreign": -3632,
+        "institution": 1573,
+        "financial": -2321,
+        "trust": 3647
+      },
+      {
+        "date": "2026-10-22",
+        "foreign": 1552,
+        "institution": -776,
+        "financial": 3514,
+        "trust": -4063
+      },
+      {
+        "date": "2026-10-23",
+        "foreign": 2177,
+        "institution": 353,
+        "financial": -774,
+        "trust": 1268
+      },
+      {
+        "date": "2026-10-26",
+        "foreign": 3451,
+        "institution": -4456,
+        "financial": -2748,
+        "trust": -1560
+      },
+      {
+        "date": "2026-10-27",
+        "foreign": 670,
+        "institution": -163,
+        "financial": -2948,
+        "trust": 3101
+      },
+      {
+        "date": "2026-10-28",
+        "foreign": -1476,
+        "institution": -592,
+        "financial": -4729,
+        "trust": 4266
+      },
+      {
+        "date": "2026-10-29",
+        "foreign": 86,
+        "institution": -805,
+        "financial": 1635,
+        "trust": -2479
+      },
+      {
+        "date": "2026-10-30",
+        "foreign": 6002,
+        "institution": -5806,
+        "financial": -3757,
+        "trust": -2353
+      },
+      {
+        "date": "2026-11-02",
+        "foreign": 1535,
+        "institution": -857,
+        "financial": -3864,
+        "trust": 2656
+      },
+      {
+        "date": "2026-11-03",
+        "foreign": -1552,
+        "institution": 884,
+        "financial": 4080,
+        "trust": -3312
+      },
+      {
+        "date": "2026-11-04",
+        "foreign": -1658,
+        "institution": 1624,
+        "financial": 179,
+        "trust": 1522
+      },
+      {
+        "date": "2026-11-05",
+        "foreign": 6830,
+        "institution": -7135,
+        "financial": -2289,
+        "trust": -4221
+      },
+      {
+        "date": "2026-11-06",
+        "foreign": 7171,
+        "institution": -4789,
+        "financial": -1002,
+        "trust": -3640
+      },
+      {
+        "date": "2026-11-09",
+        "foreign": 4190,
+        "institution": -3695,
+        "financial": -5520,
+        "trust": 1599
+      },
+      {
+        "date": "2026-11-10",
+        "foreign": -145,
+        "institution": 816,
+        "financial": -3632,
+        "trust": 4610
+      },
+      {
+        "date": "2026-11-11",
+        "foreign": -3805,
+        "institution": 2992,
+        "financial": 1474,
+        "trust": 1731
+      },
+      {
+        "date": "2026-11-12",
+        "foreign": 468,
+        "institution": -647,
+        "financial": 1214,
+        "trust": -1343
+      },
+      {
+        "date": "2026-11-13",
+        "foreign": 2729,
+        "institution": -2483,
+        "financial": -411,
+        "trust": -2206
+      },
+      {
+        "date": "2026-11-16",
+        "foreign": 1991,
+        "institution": -2121,
+        "financial": 523,
+        "trust": -3196
+      },
+      {
+        "date": "2026-11-17",
+        "foreign": 2989,
+        "institution": -3832,
+        "financial": -1906,
+        "trust": -1214
+      }
+    ],
+    "oi_revision": {
+      "current": 164810,
+      "previous_requeried": 157656,
+      "change_same_current_series": 7154,
+      "previous_original_snapshot": 158340,
+      "change_against_original_snapshot": 6470,
+      "ls_current": 164810,
+      "ls_previous": 157656,
+      "ls_change": 7154,
+      "revision_cause": "UNRESOLVED; original snapshot preserved; current same-source history reported separately"
+    },
+    "futures": {
+      "daily_raw_rows": 709,
+      "active_rows": 72,
+      "active_start": "2026-08-03",
+      "last_daily": {
+        "timestamp": "2026-11-17 00:00:00",
+        "open": 774.9,
+        "high": 789.0,
+        "low": 767.2,
+        "close": 767.2,
+        "volume": 136825.0,
+        "sma5": 808.5899999999999,
+        "sma10": 814.095,
+        "sma20": 853.54,
+        "sma60": 986.6041666666666,
+        "sma120": null,
+        "tenkan9": 819.225,
+        "kijun26": 870.9000000000001,
+        "span_a_forward26": 845.0625,
+        "span_b_forward26": 951.5,
+        "cloud_a_today": 1070.3874999999998,
+        "cloud_b_today": null,
+        "atr14": 44.109045042410656,
+        "di_plus14": 16.121956397411083,
+        "di_minus14": 33.89888564523793,
+        "adx14": 29.884959082225297,
+        "rsi14": 33.40468790550166,
+        "macd": -48.78106152918883,
+        "macd_signal": -46.814130258187774,
+        "bb_upper": 956.345357837032,
+        "bb_lower": 750.7346421629679
+      },
+      "recent_daily": [
+        {
+          "timestamp": "2026-10-01 00:00:00",
+          "open": 1088.35,
+          "high": 1109.75,
+          "low": 1073.1,
+          "close": 1107.75,
+          "volume": 104151
+        },
+        {
+          "timestamp": "2026-10-02 00:00:00",
+          "open": 1106.75,
+          "high": 1117.55,
+          "low": 1100.6,
+          "close": 1113.2,
+          "volume": 76161
+        },
+        {
+          "timestamp": "2026-10-06 00:00:00",
+          "open": 1121.5,
+          "high": 1125.55,
+          "low": 1094.9,
+          "close": 1103.0,
+          "volume": 82705
+        },
+        {
+          "timestamp": "2026-10-07 00:00:00",
+          "open": 1090.2,
+          "high": 1110.65,
+          "low": 1078.75,
+          "close": 1078.75,
+          "volume": 96350
+        },
+        {
+          "timestamp": "2026-10-08 00:00:00",
+          "open": 1086.0,
+          "high": 1086.55,
+          "low": 1047.85,
+          "close": 1048.25,
+          "volume": 116423
+        },
+        {
+          "timestamp": "2026-10-12 00:00:00",
+          "open": 1039.1,
+          "high": 1043.7,
+          "low": 1006.55,
+          "close": 1008.25,
+          "volume": 116511
+        },
+        {
+          "timestamp": "2026-10-13 00:00:00",
+          "open": 978.9,
+          "high": 981.7,
+          "low": 929.95,
+          "close": 944.8,
+          "volume": 180508
+        },
+        {
+          "timestamp": "2026-10-14 00:00:00",
+          "open": 950.8,
+          "high": 972.55,
+          "low": 930.75,
+          "close": 944.2,
+          "volume": 126572
+        },
+        {
+          "timestamp": "2026-10-15 00:00:00",
+          "open": 885.05,
+          "high": 900.25,
+          "low": 848.0,
+          "close": 861.3,
+          "volume": 208979
+        },
+        {
+          "timestamp": "2026-10-16 00:00:00",
+          "open": 887.0,
+          "high": 904.9,
+          "low": 869.95,
+          "close": 881.05,
+          "volume": 155322
+        },
+        {
+          "timestamp": "2026-10-19 00:00:00",
+          "open": 840.0,
+          "high": 894.45,
+          "low": 840.0,
+          "close": 893.25,
+          "volume": 141866
+        },
+        {
+          "timestamp": "2026-10-20 00:00:00",
+          "open": 890.75,
+          "high": 891.65,
+          "low": 850.6,
+          "close": 861.05,
+          "volume": 148998
+        },
+        {
+          "timestamp": "2026-10-21 00:00:00",
+          "open": 881.0,
+          "high": 908.4,
+          "low": 875.2,
+          "close": 893.05,
+          "volume": 139272
+        },
+        {
+          "timestamp": "2026-10-22 00:00:00",
+          "open": 878.5,
+          "high": 895.2,
+          "low": 852.05,
+          "close": 857.0,
+          "volume": 134239
+        },
+        {
+          "timestamp": "2026-10-23 00:00:00",
+          "open": 830.05,
+          "high": 866.35,
+          "low": 824.65,
+          "close": 863.3,
+          "volume": 154782
+        },
+        {
+          "timestamp": "2026-10-26 00:00:00",
+          "open": 856.3,
+          "high": 868.3,
+          "low": 849.55,
+          "close": 850.0,
+          "volume": 115913
+        },
+        {
+          "timestamp": "2026-10-27 00:00:00",
+          "open": 874.45,
+          "high": 899.5,
+          "low": 874.45,
+          "close": 882.45,
+          "volume": 116738
+        },
+        {
+          "timestamp": "2026-10-28 00:00:00",
+          "open": 904.0,
+          "high": 950.15,
+          "low": 898.95,
+          "close": 945.8,
+          "volume": 143307
+        },
+        {
+          "timestamp": "2026-10-29 00:00:00",
+          "open": 939.0,
+          "high": 966.4,
+          "low": 915.35,
+          "close": 935.0,
+          "volume": 175807
+        },
+        {
+          "timestamp": "2026-10-30 00:00:00",
+          "open": 897.7,
+          "high": 910.0,
+          "low": 877.25,
+          "close": 899.45,
+          "volume": 151053
+        },
+        {
+          "timestamp": "2026-11-02 00:00:00",
+          "open": 880.8,
+          "high": 930.0,
+          "low": 879.85,
+          "close": 918.65,
+          "volume": 130724
+        },
+        {
+          "timestamp": "2026-11-03 00:00:00",
+          "open": 897.0,
+          "high": 899.2,
+          "low": 879.35,
+          "close": 885.15,
+          "volume": 110672
+        },
+        {
+          "timestamp": "2026-11-04 00:00:00",
+          "open": 908.95,
+          "high": 917.35,
+          "low": 846.85,
+          "close": 889.85,
+          "volume": 184817
+        },
+        {
+          "timestamp": "2026-11-05 00:00:00",
+          "open": 875.85,
+          "high": 878.35,
+          "low": 830.6,
+          "close": 837.25,
+          "volume": 155710
+        },
+        {
+          "timestamp": "2026-11-06 00:00:00",
+          "open": 770.3,
+          "high": 811.3,
+          "low": 760.1,
+          "close": 782.95,
+          "volume": 180161
+        },
+        {
+          "timestamp": "2026-11-09 00:00:00",
+          "open": 784.0,
+          "high": 803.35,
+          "low": 771.55,
+          "close": 775.85,
+          "volume": 143766
+        },
+        {
+          "timestamp": "2026-11-10 00:00:00",
+          "open": 820.7,
+          "high": 824.95,
+          "low": 802.95,
+          "close": 812.1,
+          "volume": 122066
+        },
+        {
+          "timestamp": "2026-11-11 00:00:00",
+          "open": 803.2,
+          "high": 838.2,
+          "low": 803.2,
+          "close": 836.55,
+          "volume": 110145
+        },
+        {
+          "timestamp": "2026-11-12 00:00:00",
+          "open": 839.55,
+          "high": 852.75,
+          "low": 825.05,
+          "close": 827.5,
+          "volume": 122002
+        },
+        {
+          "timestamp": "2026-11-13 00:00:00",
+          "open": 846.15,
+          "high": 859.65,
+          "low": 818.1,
+          "close": 822.35,
+          "volume": 114342
+        },
+        {
+          "timestamp": "2026-11-16 00:00:00",
+          "open": 826.5,
+          "high": 830.8,
+          "low": 785.0,
+          "close": 789.35,
+          "volume": 129483
+        },
+        {
+          "timestamp": "2026-11-17 00:00:00",
+          "open": 774.9,
+          "high": 789.0,
+          "low": 767.2,
+          "close": 767.2,
+          "volume": 136825
+        }
+      ],
+      "week_completed": {
+        "timestamp": "2026-11-13 00:00:00",
+        "open": 784.0,
+        "high": 859.65,
+        "low": 771.55,
+        "close": 822.35,
+        "volume": 612321.0
+      },
+      "week_partial": {
+        "timestamp": "2026-11-20 00:00:00",
+        "open": 826.5,
+        "high": 830.8,
+        "low": 767.2,
+        "close": 767.2,
+        "volume": 266308.0
+      },
+      "month_completed": {
+        "timestamp": "2026-10-31 00:00:00",
+        "open": 1088.35,
+        "high": 1125.55,
+        "low": 824.65,
+        "close": 899.45,
+        "volume": 2685657.0
+      },
+      "month_partial": {
+        "timestamp": "2026-11-30 00:00:00",
+        "open": 880.8,
+        "high": 930.0,
+        "low": 760.1,
+        "close": 767.2,
+        "volume": 1640713.0
+      },
+      "oi": {
+        "current": 164810,
+        "previous_requeried": 157656,
+        "change_same_current_series": 7154,
+        "previous_original_snapshot": 158340,
+        "change_against_original_snapshot": 6470,
+        "ls_current": 164810,
+        "ls_previous": 157656,
+        "ls_change": 7154,
+        "revision_cause": "UNRESOLVED; original snapshot preserved; current same-source history reported separately"
+      },
+      "oi_windows": [
+        {
+          "start": "2026-11-17 08:45:00",
+          "end": "2026-11-17 10:05:00",
+          "start_price": 777.25,
+          "end_price": 784.6,
+          "price_change": 7.350000000000023,
+          "start_oi": 159081.0,
+          "end_oi": 160693.0,
+          "oi_change": 1612.0
+        },
+        {
+          "start": "2026-11-17 10:05:00",
+          "end": "2026-11-17 12:05:00",
+          "start_price": 784.6,
+          "end_price": 786.1,
+          "price_change": 1.5,
+          "start_oi": 160693.0,
+          "end_oi": 162154.0,
+          "oi_change": 1461.0
+        },
+        {
+          "start": "2026-11-17 12:05:00",
+          "end": "2026-11-17 15:25:00",
+          "start_price": 786.1,
+          "end_price": 767.75,
+          "price_change": -18.350000000000023,
+          "start_oi": 162154.0,
+          "end_oi": 165388.0,
+          "oi_change": 3234.0
+        },
+        {
+          "start": "2026-11-17 15:25:00",
+          "end": "2026-11-17 15:45:00",
+          "start_price": 767.75,
+          "end_price": 767.2,
+          "price_change": -0.5499999999999545,
+          "start_oi": 165388.0,
+          "end_oi": 164810.0,
+          "oi_change": -578.0
+        }
+      ],
+      "intraday_points": [
+        {
+          "timestamp": "2026-11-17 08:45:00",
+          "open": 774.9,
+          "high": 778.4,
+          "low": 771.6,
+          "close": 777.25,
+          "volume": 1721,
+          "open_interest": 159081
+        },
+        {
+          "timestamp": "2026-11-17 08:55:00",
+          "open": 777.15,
+          "high": 779.1,
+          "low": 772.6,
+          "close": 775.3,
+          "volume": 5005,
+          "open_interest": 159465
+        },
+        {
+          "timestamp": "2026-11-17 09:05:00",
+          "open": 775.3,
+          "high": 782.3,
+          "low": 771.3,
+          "close": 779.35,
+          "volume": 7324,
+          "open_interest": 159959
+        },
+        {
+          "timestamp": "2026-11-17 09:15:00",
+          "open": 779.5,
+          "high": 781.95,
+          "low": 775.9,
+          "close": 780.75,
+          "volume": 5504,
+          "open_interest": 160093
+        },
+        {
+          "timestamp": "2026-11-17 09:25:00",
+          "open": 780.75,
+          "high": 782.25,
+          "low": 773.1,
+          "close": 775.25,
+          "volume": 4046,
+          "open_interest": 160263
+        },
+        {
+          "timestamp": "2026-11-17 09:35:00",
+          "open": 775.2,
+          "high": 779.1,
+          "low": 773.8,
+          "close": 775.9,
+          "volume": 3456,
+          "open_interest": 160466
+        },
+        {
+          "timestamp": "2026-11-17 09:45:00",
+          "open": 776.0,
+          "high": 780.3,
+          "low": 774.5,
+          "close": 776.6,
+          "volume": 5018,
+          "open_interest": 160737
+        },
+        {
+          "timestamp": "2026-11-17 09:55:00",
+          "open": 776.65,
+          "high": 781.7,
+          "low": 773.75,
+          "close": 778.35,
+          "volume": 11026,
+          "open_interest": 160431
+        },
+        {
+          "timestamp": "2026-11-17 10:05:00",
+          "open": 778.35,
+          "high": 786.45,
+          "low": 777.8,
+          "close": 784.6,
+          "volume": 5311,
+          "open_interest": 160693
+        },
+        {
+          "timestamp": "2026-11-17 10:15:00",
+          "open": 784.8,
+          "high": 788.45,
+          "low": 779.55,
+          "close": 781.55,
+          "volume": 4393,
+          "open_interest": 160731
+        },
+        {
+          "timestamp": "2026-11-17 10:25:00",
+          "open": 781.5,
+          "high": 782.1,
+          "low": 776.6,
+          "close": 779.25,
+          "volume": 3492,
+          "open_interest": 160877
+        },
+        {
+          "timestamp": "2026-11-17 10:35:00",
+          "open": 779.3,
+          "high": 784.9,
+          "low": 778.0,
+          "close": 783.75,
+          "volume": 2752,
+          "open_interest": 161011
+        },
+        {
+          "timestamp": "2026-11-17 10:45:00",
+          "open": 783.5,
+          "high": 784.0,
+          "low": 777.1,
+          "close": 779.65,
+          "volume": 3005,
+          "open_interest": 161089
+        },
+        {
+          "timestamp": "2026-11-17 10:55:00",
+          "open": 779.3,
+          "high": 782.65,
+          "low": 777.25,
+          "close": 782.25,
+          "volume": 2567,
+          "open_interest": 161263
+        },
+        {
+          "timestamp": "2026-11-17 11:05:00",
+          "open": 782.15,
+          "high": 782.85,
+          "low": 778.1,
+          "close": 779.0,
+          "volume": 3947,
+          "open_interest": 161272
+        },
+        {
+          "timestamp": "2026-11-17 11:15:00",
+          "open": 778.9,
+          "high": 780.95,
+          "low": 776.1,
+          "close": 778.45,
+          "volume": 2468,
+          "open_interest": 161822
+        },
+        {
+          "timestamp": "2026-11-17 11:25:00",
+          "open": 778.35,
+          "high": 778.8,
+          "low": 776.15,
+          "close": 776.3,
+          "volume": 1255,
+          "open_interest": 161925
+        },
+        {
+          "timestamp": "2026-11-17 11:35:00",
+          "open": 776.15,
+          "high": 784.75,
+          "low": 775.1,
+          "close": 783.05,
+          "volume": 6424,
+          "open_interest": 162155
+        },
+        {
+          "timestamp": "2026-11-17 11:45:00",
+          "open": 783.05,
+          "high": 785.25,
+          "low": 781.6,
+          "close": 782.15,
+          "volume": 2770,
+          "open_interest": 162041
+        },
+        {
+          "timestamp": "2026-11-17 11:55:00",
+          "open": 782.2,
+          "high": 783.7,
+          "low": 780.25,
+          "close": 780.9,
+          "volume": 2047,
+          "open_interest": 162018
+        },
+        {
+          "timestamp": "2026-11-17 12:05:00",
+          "open": 780.9,
+          "high": 789.0,
+          "low": 780.85,
+          "close": 786.1,
+          "volume": 2814,
+          "open_interest": 162154
+        },
+        {
+          "timestamp": "2026-11-17 12:15:00",
+          "open": 786.2,
+          "high": 787.4,
+          "low": 783.85,
+          "close": 785.15,
+          "volume": 1593,
+          "open_interest": 162111
+        },
+        {
+          "timestamp": "2026-11-17 12:25:00",
+          "open": 785.4,
+          "high": 786.05,
+          "low": 783.65,
+          "close": 786.0,
+          "volume": 1643,
+          "open_interest": 162128
+        },
+        {
+          "timestamp": "2026-11-17 12:35:00",
+          "open": 785.85,
+          "high": 787.7,
+          "low": 780.15,
+          "close": 780.45,
+          "volume": 2334,
+          "open_interest": 162168
+        },
+        {
+          "timestamp": "2026-11-17 12:45:00",
+          "open": 780.45,
+          "high": 781.65,
+          "low": 777.7,
+          "close": 778.7,
+          "volume": 1938,
+          "open_interest": 162288
+        },
+        {
+          "timestamp": "2026-11-17 12:55:00",
+          "open": 778.6,
+          "high": 779.0,
+          "low": 773.55,
+          "close": 773.95,
+          "volume": 2124,
+          "open_interest": 162472
+        },
+        {
+          "timestamp": "2026-11-17 13:05:00",
+          "open": 773.9,
+          "high": 775.25,
+          "low": 772.95,
+          "close": 773.55,
+          "volume": 1704,
+          "open_interest": 162700
+        },
+        {
+          "timestamp": "2026-11-17 13:15:00",
+          "open": 773.45,
+          "high": 775.45,
+          "low": 772.15,
+          "close": 774.85,
+          "volume": 1852,
+          "open_interest": 162874
+        },
+        {
+          "timestamp": "2026-11-17 13:25:00",
+          "open": 774.85,
+          "high": 777.5,
+          "low": 774.15,
+          "close": 776.5,
+          "volume": 2505,
+          "open_interest": 163050
+        },
+        {
+          "timestamp": "2026-11-17 13:35:00",
+          "open": 776.6,
+          "high": 777.25,
+          "low": 775.05,
+          "close": 776.25,
+          "volume": 1454,
+          "open_interest": 163030
+        },
+        {
+          "timestamp": "2026-11-17 13:45:00",
+          "open": 776.3,
+          "high": 778.1,
+          "low": 775.7,
+          "close": 777.05,
+          "volume": 1698,
+          "open_interest": 163161
+        },
+        {
+          "timestamp": "2026-11-17 13:55:00",
+          "open": 777.05,
+          "high": 778.35,
+          "low": 773.5,
+          "close": 774.1,
+          "volume": 2295,
+          "open_interest": 163251
+        },
+        {
+          "timestamp": "2026-11-17 14:05:00",
+          "open": 774.3,
+          "high": 775.2,
+          "low": 770.0,
+          "close": 771.05,
+          "volume": 2721,
+          "open_interest": 163528
+        },
+        {
+          "timestamp": "2026-11-17 14:15:00",
+          "open": 770.95,
+          "high": 776.25,
+          "low": 770.3,
+          "close": 775.65,
+          "volume": 3047,
+          "open_interest": 163776
+        },
+        {
+          "timestamp": "2026-11-17 14:25:00",
+          "open": 775.7,
+          "high": 776.55,
+          "low": 773.75,
+          "close": 774.75,
+          "volume": 1853,
+          "open_interest": 164004
+        },
+        {
+          "timestamp": "2026-11-17 14:35:00",
+          "open": 774.7,
+          "high": 774.7,
+          "low": 770.45,
+          "close": 771.4,
+          "volume": 1758,
+          "open_interest": 164275
+        },
+        {
+          "timestamp": "2026-11-17 14:45:00",
+          "open": 771.25,
+          "high": 772.35,
+          "low": 769.85,
+          "close": 770.05,
+          "volume": 1824,
+          "open_interest": 164588
+        },
+        {
+          "timestamp": "2026-11-17 14:55:00",
+          "open": 770.05,
+          "high": 770.2,
+          "low": 767.8,
+          "close": 769.3,
+          "volume": 2414,
+          "open_interest": 164980
+        },
+        {
+          "timestamp": "2026-11-17 15:05:00",
+          "open": 769.4,
+          "high": 770.0,
+          "low": 767.8,
+          "close": 769.2,
+          "volume": 2331,
+          "open_interest": 165318
+        },
+        {
+          "timestamp": "2026-11-17 15:15:00",
+          "open": 769.25,
+          "high": 771.15,
+          "low": 768.6,
+          "close": 769.4,
+          "volume": 3585,
+          "open_interest": 165111
+        },
+        {
+          "timestamp": "2026-11-17 15:25:00",
+          "open": 769.35,
+          "high": 769.85,
+          "low": 767.2,
+          "close": 767.75,
+          "volume": 4725,
+          "open_interest": 165388
+        },
+        {
+          "timestamp": "2026-11-17 15:45:00",
+          "open": 767.2,
+          "high": 767.2,
+          "low": 767.2,
+          "close": 767.2,
+          "volume": 3134,
+          "open_interest": 164810
+        }
+      ],
+      "missing_oi_rows_excluded": [],
+      "minute_volume": 134877,
+      "daily_volume": 136825,
+      "ls_volume": 134877,
+      "vwap_eligible": false
+    },
+    "limitations": [
+      "늦은 수동 EOD는 18:54~19:02 종료코드 0. 감마는 원래 허용시간 밖, LS CVD는 야간 날짜 모호성 안전장치로 제외했고 우회하지 않았다.",
+      "키움 전일 OI 원본 158,340과 현재 재조회 157,656 차이 684의 원인은 미확인. 현재 동일 시계열 +7,154와 어제 저장본 대비 +6,470을 분리한다.",
+      "키움 일봉 거래량 136,825와 분봉/LS 134,877 불일치 1,948. 정확한 VWAP·체결 매물대 제외. OI 미정렬 20개 과거 분봉은 제외했고 오늘 42개 봉은 모두 정렬됐다.",
+      "0791 상세 잔고 미확보. 0790/0794·순매매·고정 0.5 델타 프록시로 실제 잔고·평단·신규 주체를 만들지 않는다.",
+      "개별 옵션은 날짜별 가격·OI·거래량까지만 보완. 과거 체인에서 계약 식별자만 가져왔고 IV·델타·호가를 재사용하지 않았다. 전일 무거래 계약 비교는 별도 경고다.",
+      "현물 LS 총계/상세는 일부 날짜 1 원단위 차이가 있어 양쪽을 보존했다. 원화 환산 미확인으로 원단위·부호·순위만 사용한다. 프로그램 금액도 LS 원단위다.",
+      "차월 3월물 보고 OI 증가 978이 거래량 79보다 커 범위 미확인. 롤오버 확정 근거에서 제외한다.",
+      "시장 폭·주도주 제외 수급·당일 해외 다중 시간대·동시 이론 베이시스 미검증. 과거 부록을 오늘 자료로 쓰지 않는다. 현재 정규장 분석은 이후 야간 전망 적중의 증거가 아니다.",
+      "완료 주 해석 배율은 제한된 동행 요약, 미래 확률/자동 점수/주문 규칙이 아니다. 큰 파동 차수는 미확정이며 760.10 아래 새 지지 숫자는 근거가 없어 제시하지 않는다."
+    ],
+    "intraday_oi": {
+      "windows": [
+        {
+          "start": "2026-11-17 08:45:00",
+          "end": "2026-11-17 10:05:00",
+          "start_price": 777.25,
+          "end_price": 784.6,
+          "price_change": 7.350000000000023,
+          "start_oi": 159081.0,
+          "end_oi": 160693.0,
+          "oi_change": 1612.0
+        },
+        {
+          "start": "2026-11-17 10:05:00",
+          "end": "2026-11-17 12:05:00",
+          "start_price": 784.6,
+          "end_price": 786.1,
+          "price_change": 1.5,
+          "start_oi": 160693.0,
+          "end_oi": 162154.0,
+          "oi_change": 1461.0
+        },
+        {
+          "start": "2026-11-17 12:05:00",
+          "end": "2026-11-17 15:25:00",
+          "start_price": 786.1,
+          "end_price": 767.75,
+          "price_change": -18.350000000000023,
+          "start_oi": 162154.0,
+          "end_oi": 165388.0,
+          "oi_change": 3234.0
+        },
+        {
+          "start": "2026-11-17 15:25:00",
+          "end": "2026-11-17 15:45:00",
+          "start_price": 767.75,
+          "end_price": 767.2,
+          "price_change": -0.5499999999999545,
+          "start_oi": 165388.0,
+          "end_oi": 164810.0,
+          "oi_change": -578.0
+        }
+      ],
+      "note": "원천 표시시각·마지막 단일가 별도",
+      "interpretation": "오전 08:45→12:05 표시봉에서는 가격 777.25→786.10, OI 159,081→162,154로 가격과 OI가 함께 올랐다. 그러나 고가 789.00 이후 12:05→15:25에는 가격 786.10→767.75(-18.35), OI 162,154→165,388(+3,234)로 바뀌었다. 이 오후 조합은 미청산 계약이 쌓이는 동안 매도 쪽 가격 압력이 우세했던 정황이다. 시장 전체 신규 숏과 신규 롱은 함께 생기므로 외국인 신규 숏이라고 특정할 수 없다. 마지막 15:25→15:45 단일가 구간에는 가격 -0.55, OI -578로, 앞선 구간과 달리 순청산이 동반됐다. 최종 외국인 +2,989만으로 이 시간대 각각의 주체별 신규·청산을 배정하지 않는다. 0786 막판 외국인 순매수 확대도 집계 갱신 시점과 실제 체결 시점이 같다고 단정하지 않는다."
+    },
+    "original_summary_sha256": "d6601368c6d66b7d73768d9835799b922f6d9ff5e1309eac61b1378488d377cd",
+    "public_dom_verified": false,
+    "price_crosscheck_cells": 216,
+    "weekly_calibration_cutoff": "20261113",
+    "expiry_reference": {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "retrieved_at": "2026-11-17T19:48:31.746886+09:00",
+      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef",
+      "rule": "monthly second Thursday; futures quarterly",
+      "november_monthly": "2026-11-12",
+      "december_futures_options": "2026-12-10",
+      "calendar": "KRX 2026 official holiday list checked; weekly contracts separate"
+    },
+    "cash_provider_differences": [
+      {
+        "market": "cash",
+        "date": "20261117",
+        "actor": "institution",
+        "t1617": 5131,
+        "t1664": 5132
+      },
+      {
+        "market": "cash",
+        "date": "20261116",
+        "actor": "individual",
+        "t1617": 12989,
+        "t1664": 12990
+      },
+      {
+        "market": "cash",
+        "date": "20261113",
+        "actor": "foreign",
+        "t1617": -5420,
+        "t1664": -5419
+      },
+      {
+        "market": "cash",
+        "date": "20261111",
+        "actor": "individual",
+        "t1617": -7144,
+        "t1664": -7145
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "foreign",
+        "t1617": 4440,
+        "t1664": 4439
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "institution",
+        "t1617": 4641,
+        "t1664": 4642
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "foreign",
+        "t1617": -5262,
+        "t1664": -5263
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "individual",
+        "t1617": -6608,
+        "t1664": -6609
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "institution",
+        "t1617": 17091,
+        "t1664": 17092
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "individual",
+        "t1617": 5210,
+        "t1664": 5211
+      },
+      {
+        "market": "cash",
+        "date": "20261105",
+        "actor": "foreign",
+        "t1617": -33740,
+        "t1664": -33741
+      },
+      {
+        "market": "cash",
+        "date": "20261104",
+        "actor": "institution",
+        "t1617": 11333,
+        "t1664": 11334
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "institution",
+        "t1617": 12244,
+        "t1664": 12245
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "individual",
+        "t1617": -13150,
+        "t1664": -13151
+      },
+      {
+        "market": "cash",
+        "date": "20261030",
+        "actor": "institution",
+        "t1617": 7539,
+        "t1664": 7540
+      },
+      {
+        "market": "cash",
+        "date": "20261028",
+        "actor": "individual",
+        "t1617": -17050,
+        "t1664": -17051
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "institution",
+        "t1617": 3037,
+        "t1664": 3038
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "individual",
+        "t1617": -9406,
+        "t1664": -9407
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "foreign",
+        "t1617": -6508,
+        "t1664": -6507
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "institution",
+        "t1617": 5811,
+        "t1664": 5812
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "foreign",
+        "t1617": -9790,
+        "t1664": -9789
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "institution",
+        "t1617": 8659,
+        "t1664": 8660
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "foreign",
+        "t1617": 372,
+        "t1664": 371
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "institution",
+        "t1617": -4465,
+        "t1664": -4466
+      },
+      {
+        "market": "cash",
+        "date": "20261021",
+        "actor": "individual",
+        "t1617": -11158,
+        "t1664": -11159
+      },
+      {
+        "market": "cash",
+        "date": "20261020",
+        "actor": "institution",
+        "t1617": -9564,
+        "t1664": -9565
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "foreign",
+        "t1617": 3205,
+        "t1664": 3204
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "institution",
+        "t1617": -6402,
+        "t1664": -6403
+      },
+      {
+        "market": "cash",
+        "date": "20261015",
+        "actor": "institution",
+        "t1617": 17120,
+        "t1664": 17121
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "institution",
+        "t1617": 8118,
+        "t1664": 8119
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "individual",
+        "t1617": -3747,
+        "t1664": -3748
+      },
+      {
+        "market": "cash",
+        "date": "20261008",
+        "actor": "institution",
+        "t1617": -16749,
+        "t1664": -16750
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "foreign",
+        "t1617": -26187,
+        "t1664": -26188
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "institution",
+        "t1617": -7100,
+        "t1664": -7101
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "institution",
+        "t1617": -36,
+        "t1664": -37
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "individual",
+        "t1617": 7440,
+        "t1664": 7441
+      },
+      {
+        "market": "cash",
+        "date": "20261001",
+        "actor": "institution",
+        "t1617": 3251,
+        "t1664": 3252
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "foreign",
+        "t1617": -20645,
+        "t1664": -20646
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "institution",
+        "t1617": -7992,
+        "t1664": -7993
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "individual",
+        "t1617": 12108,
+        "t1664": 12109
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "institution",
+        "t1617": 1036,
+        "t1664": 1037
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "individual",
+        "t1617": 12446,
+        "t1664": 12447
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "institution",
+        "t1617": -10168,
+        "t1664": -10169
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "individual",
+        "t1617": 26466,
+        "t1664": 26467
+      },
+      {
+        "market": "cash",
+        "date": "20260922",
+        "actor": "institution",
+        "t1617": -1294,
+        "t1664": -1295
+      },
+      {
+        "market": "cash",
+        "date": "20260921",
+        "actor": "institution",
+        "t1617": 15189,
+        "t1664": 15190
+      },
+      {
+        "market": "cash",
+        "date": "20260918",
+        "actor": "institution",
+        "t1617": 15321,
+        "t1664": 15322
+      },
+      {
+        "market": "cash",
+        "date": "20260917",
+        "actor": "individual",
+        "t1617": 6760,
+        "t1664": 6761
+      },
+      {
+        "market": "cash",
+        "date": "20260915",
+        "actor": "individual",
+        "t1617": 8595,
+        "t1664": 8596
+      },
+      {
+        "market": "cash",
+        "date": "20260914",
+        "actor": "institution",
+        "t1617": -11868,
+        "t1664": -11869
+      },
+      {
+        "market": "cash",
+        "date": "20260911",
+        "actor": "institution",
+        "t1617": -12183,
+        "t1664": -12184
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "foreign",
+        "t1617": -26216,
+        "t1664": -26217
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "institution",
+        "t1617": 5743,
+        "t1664": 5744
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "individual",
+        "t1617": 3801,
+        "t1664": 3802
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "foreign",
+        "t1617": -4349,
+        "t1664": -4348
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "individual",
+        "t1617": -22878,
+        "t1664": -22879
+      },
+      {
+        "market": "cash",
+        "date": "20260908",
+        "actor": "institution",
+        "t1617": 6426,
+        "t1664": 6427
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "foreign",
+        "t1617": 25531,
+        "t1664": 25532
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "institution",
+        "t1617": 26490,
+        "t1664": 26491
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "individual",
+        "t1617": -68373,
+        "t1664": -68374
+      },
+      {
+        "market": "cash",
+        "date": "20260903",
+        "actor": "individual",
+        "t1617": -9551,
+        "t1664": -9552
+      },
+      {
+        "market": "cash",
+        "date": "20260902",
+        "actor": "individual",
+        "t1617": 23028,
+        "t1664": 23029
+      },
+      {
+        "market": "cash",
+        "date": "20260901",
+        "actor": "foreign",
+        "t1617": -4969,
+        "t1664": -4968
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "institution",
+        "t1617": -11875,
+        "t1664": -11876
+      },
+      {
+        "market": "cash",
+        "date": "20260828",
+        "actor": "individual",
+        "t1617": 4193,
+        "t1664": 4194
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "foreign",
+        "t1617": 1332,
+        "t1664": 1333
+      },
+      {
+        "market": "cash",
+        "date": "20260827",
+        "actor": "individual",
+        "t1617": -19115,
+        "t1664": -19116
+      },
+      {
+        "market": "cash",
+        "date": "20260826",
+        "actor": "individual",
+        "t1617": -22460,
+        "t1664": -22461
+      },
+      {
+        "market": "cash",
+        "date": "20260825",
+        "actor": "institution",
+        "t1617": 11710,
+        "t1664": 11711
+      },
+      {
+        "market": "cash",
+        "date": "20260821",
+        "actor": "institution",
+        "t1617": 2480,
+        "t1664": 2481
+      }
+    ],
+    "program_windows_native_units": {
+      "1": {
+        "dates": [
+          "20261117"
+        ],
+        "tot3": -707931.0,
+        "cha3": 40290.0,
+        "bcha3": -748221.0
+      },
+      "3": {
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "tot3": -1494880.0,
+        "cha3": -84918.0,
+        "bcha3": -1409962.0
+      },
+      "5": {
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "tot3": -858719.0,
+        "cha3": -136230.0,
+        "bcha3": -722489.0
+      },
+      "20": {
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "tot3": -4856026.0,
+        "cha3": 612234.0,
+        "bcha3": -5468259.0
+      }
+    },
+    "closing_flow_snapshots": {},
+    "basis_crosscheck": {
+      "market_basis": -3.54,
+      "theory_basis": null,
+      "scope": "Non-synchronous closing comparison"
+    }
+  },
+  "flows": {
+    "cash": {
+      "1": {
+        "start": "20261117",
+        "end": "20261117",
+        "dates": [
+          "20261117"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -14216,
+        "institution": 5131,
+        "financial": 7672,
+        "individual": 4344,
+        "trust": -1690,
+        "pension": -84
+      },
+      "3": {
+        "start": "20261113",
+        "end": "20261117",
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -32936,
+        "institution": 437,
+        "financial": 11703,
+        "individual": 17478,
+        "trust": -4470,
+        "pension": -3622
+      },
+      "5": {
+        "start": "20261111",
+        "end": "20261117",
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -22086,
+        "institution": -11123,
+        "financial": -3082,
+        "individual": 7549,
+        "trust": -2992,
+        "pension": -4639
+      },
+      "15": {
+        "start": "20261028",
+        "end": "20261117",
+        "dates": [
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -128798,
+        "institution": 62323,
+        "financial": 57967,
+        "individual": 5567,
+        "trust": -4153,
+        "pension": 9248
+      },
+      "20": {
+        "start": "20261021",
+        "end": "20261117",
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -132614,
+        "institution": 74548,
+        "financial": 62401,
+        "individual": -10611,
+        "trust": -1679,
+        "pension": 9378
+      }
+    },
+    "futures": {
+      "1": {
+        "start": "20261117",
+        "end": "20261117",
+        "dates": [
+          "20261117"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": 2989,
+        "institution": -3832,
+        "financial": -1906,
+        "individual": 969,
+        "trust": -1214,
+        "pension": -98
+      },
+      "3": {
+        "start": "20261113",
+        "end": "20261117",
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 7709,
+        "institution": -8436,
+        "financial": -1794,
+        "individual": 1132,
+        "trust": -6616,
+        "pension": 368
+      },
+      "5": {
+        "start": "20261111",
+        "end": "20261117",
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 4372,
+        "institution": -6091,
+        "financial": 894,
+        "individual": 1808,
+        "trust": -6228,
+        "pension": -87
+      },
+      "15": {
+        "start": "20261028",
+        "end": "20261117",
+        "dates": [
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 25355,
+        "institution": -26446,
+        "financial": -18005,
+        "individual": 1346,
+        "trust": -7580,
+        "pension": 1102
+      },
+      "20": {
+        "start": "20261021",
+        "end": "20261117",
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 29573,
+        "institution": -29915,
+        "financial": -23282,
+        "individual": 487,
+        "trust": -5187,
+        "pension": 1127
+      }
+    },
+    "stock_futures": {
+      "1": {
+        "start": "20261117",
+        "end": "20261117",
+        "dates": [
+          "20261117"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -19667,
+        "institution": -61386,
+        "financial": 27787,
+        "individual": 81857,
+        "trust": null,
+        "pension": null
+      },
+      "3": {
+        "start": "20261113",
+        "end": "20261117",
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -395102,
+        "institution": 176250,
+        "financial": 477886,
+        "individual": 203266,
+        "trust": null,
+        "pension": null
+      },
+      "5": {
+        "start": "20261111",
+        "end": "20261117",
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -363465,
+        "institution": 168856,
+        "financial": 633113,
+        "individual": 216508,
+        "trust": null,
+        "pension": null
+      },
+      "15": {
+        "start": "20261028",
+        "end": "20261117",
+        "dates": [
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -310486,
+        "institution": 342835,
+        "financial": 905880,
+        "individual": -17594,
+        "trust": null,
+        "pension": null
+      },
+      "20": {
+        "start": "20261021",
+        "end": "20261117",
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -100531,
+        "institution": 258023,
+        "financial": 752490,
+        "individual": -149317,
+        "trust": null,
+        "pension": null
+      }
+    },
+    "call": {
+      "1": {
+        "start": "20261117",
+        "end": "20261117",
+        "dates": [
+          "20261117"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -2599,
+        "institution": 3431,
+        "financial": 3431,
+        "individual": -869,
+        "trust": 0,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261113",
+        "end": "20261117",
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -10034,
+        "institution": 7908,
+        "financial": 8827,
+        "individual": 1934,
+        "trust": -920,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261111",
+        "end": "20261117",
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -5468,
+        "institution": -17273,
+        "financial": -14674,
+        "individual": 20705,
+        "trust": -2413,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261028",
+        "end": "20261117",
+        "dates": [
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -9566,
+        "institution": -19860,
+        "financial": -7059,
+        "individual": 27417,
+        "trust": -12669,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261021",
+        "end": "20261117",
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -13571,
+        "institution": -17175,
+        "financial": -3799,
+        "individual": 28808,
+        "trust": -13247,
+        "pension": 0
+      }
+    },
+    "put": {
+      "1": {
+        "start": "20261117",
+        "end": "20261117",
+        "dates": [
+          "20261117"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": 4914,
+        "institution": -1046,
+        "financial": -1150,
+        "individual": -3665,
+        "trust": 4,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261113",
+        "end": "20261117",
+        "dates": [
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 7931,
+        "institution": -527,
+        "financial": -620,
+        "individual": -6451,
+        "trust": -7,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261111",
+        "end": "20261117",
+        "dates": [
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 10885,
+        "institution": -16409,
+        "financial": -16507,
+        "individual": 5241,
+        "trust": -3,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261028",
+        "end": "20261117",
+        "dates": [
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 20509,
+        "institution": -20958,
+        "financial": -21106,
+        "individual": 1593,
+        "trust": 82,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261021",
+        "end": "20261117",
+        "dates": [
+          "20261021",
+          "20261022",
+          "20261023",
+          "20261026",
+          "20261027",
+          "20261028",
+          "20261029",
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 23674,
+        "institution": -22702,
+        "financial": -22809,
+        "individual": 690,
+        "trust": 41,
+        "pension": 0
+      }
+    }
+  },
+  "expiry_window": {
+    "start": "20260911",
+    "end": "20261117",
+    "observations": 44,
+    "calendar_complete": true,
+    "foreign": 31941,
+    "institution": -31549,
+    "financial": -17633,
+    "individual": 217,
+    "trust": -10375,
+    "pension": 1108,
+    "scope": "ALL_EXPIRY_FLOWS_NOT_ACTUAL_DECEMBER_POSITIONS"
+  },
+  "selected_options": [
+    {
+      "code": "B016C765",
+      "strike": 765.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 46.25,
+      "previous_price": 76.8,
+      "oi": 5,
+      "previous_oi": 0,
+      "oi_change": 5,
+      "volume": 5,
+      "previous_volume": 0,
+      "iv": null,
+      "delta": null,
+      "flags": [
+        "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+      ],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "B016C770",
+      "strike": 770.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 40.85,
+      "previous_price": 52.0,
+      "oi": 55,
+      "previous_oi": 20,
+      "oi_change": 35,
+      "volume": 54,
+      "previous_volume": 1,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "B016C775",
+      "strike": 775.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 38.3,
+      "previous_price": 96.1,
+      "oi": 67,
+      "previous_oi": 10,
+      "oi_change": 57,
+      "volume": 69,
+      "previous_volume": 0,
+      "iv": null,
+      "delta": null,
+      "flags": [
+        "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+      ],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "B016C785",
+      "strike": 785.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 34.55,
+      "previous_price": 61.9,
+      "oi": 23,
+      "previous_oi": 2,
+      "oi_change": 21,
+      "volume": 28,
+      "previous_volume": 0,
+      "iv": null,
+      "delta": null,
+      "flags": [
+        "PREVIOUS_CLOSE_NO_TRADE_REFERENCE"
+      ],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "B016C790",
+      "strike": 790.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 31.5,
+      "previous_price": 41.0,
+      "oi": 77,
+      "previous_oi": 34,
+      "oi_change": 43,
+      "volume": 71,
+      "previous_volume": 14,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "B016C795",
+      "strike": 795.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 29.4,
+      "previous_price": 39.05,
+      "oi": 91,
+      "previous_oi": 89,
+      "oi_change": 2,
+      "volume": 8,
+      "previous_volume": 75,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C765",
+      "strike": 765.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 38.75,
+      "previous_price": 33.25,
+      "oi": 55,
+      "previous_oi": 51,
+      "oi_change": 4,
+      "volume": 10,
+      "previous_volume": 16,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C770",
+      "strike": 770.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 42.2,
+      "previous_price": 33.2,
+      "oi": 585,
+      "previous_oi": 581,
+      "oi_change": 4,
+      "volume": 82,
+      "previous_volume": 43,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C775",
+      "strike": 775.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 43.7,
+      "previous_price": 35.95,
+      "oi": 1355,
+      "previous_oi": 1354,
+      "oi_change": 1,
+      "volume": 1,
+      "previous_volume": 18,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C785",
+      "strike": 785.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 50.0,
+      "previous_price": 41.8,
+      "oi": 102,
+      "previous_oi": 70,
+      "oi_change": 32,
+      "volume": 58,
+      "previous_volume": 7,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C790",
+      "strike": 790.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 51.3,
+      "previous_price": 43.7,
+      "oi": 169,
+      "previous_oi": 116,
+      "oi_change": 53,
+      "volume": 121,
+      "previous_volume": 88,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    },
+    {
+      "code": "C016C795",
+      "strike": 795.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 55.5,
+      "previous_price": 45.7,
+      "oi": 200,
+      "previous_oi": 140,
+      "oi_change": 60,
+      "volume": 100,
+      "previous_volume": 119,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": []
+    }
+  ],
+  "next_future": {
+    "daily": {
+      "date": "20261117",
+      "open": "767.00",
+      "high": "779.00",
+      "low": "760.00",
+      "close": "760.00",
+      "sign": "5",
+      "change": "19.90",
+      "diff": "-2.55",
+      "volume": 79,
+      "diff_vol": "36.21",
+      "openyak": 7283,
+      "openyakupdn": 978,
+      "value": "15190"
+    },
+    "previous": {
+      "date": "20261116",
+      "open": "818.75",
+      "high": "819.00",
+      "low": "778.30",
+      "close": "779.90",
+      "sign": "5",
+      "change": "35.75",
+      "diff": "-4.38",
+      "volume": 58,
+      "diff_vol": "26.09",
+      "openyak": 6305,
+      "openyakupdn": 12,
+      "value": "11537"
+    },
+    "oi_change_excluded": true
+  },
+  "charts": [
+    {
+      "file": "futures_wave_monthly_20261117.png",
+      "title": "월봉 · 큰 조정 지속",
+      "interpretation": "10월 저가 824.65 아래에서 11월 진행 봉 하방",
+      "kind": "price",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "f1d55d795136737a33be36e212c9e0f6f88542d59998ee56ee279555710c04fc",
+      "brief": {
+        "title": "월봉 · 큰 조정 지속",
+        "result": "10월 저가 824.65 아래에서 11월 진행 봉 하방",
+        "check": "760.10 일봉 이탈·재저항이면 현재 바닥 대안 철회; 824.65 일봉 회복은 상위 회복의 첫 단계",
+        "note": "8~11월 4개 재표본 봉; 11월은 17일까지이며 완료 월봉 아님"
+      }
+    },
+    {
+      "file": "futures_wave_weekly_20261117.png",
+      "title": "주봉 · 반등 구조 훼손",
+      "interpretation": "완료 주 11/13 반등 후 이번 진행 주 저가가 전주 771.55 이탈",
+      "kind": "price",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "779cc0444f79ace63daba9a57d215b139570eddd55a79d7c785ff60738e95dcb",
+      "brief": {
+        "title": "주봉 · 반등 구조 훼손",
+        "result": "완료 주 11/13 반등 후 이번 진행 주 저가가 전주 771.55 이탈",
+        "check": "771.55 위 복귀만으로 상승 추세 확정 아님; 789.00·802.95 회복, 주말 종가 별도 확인",
+        "note": "11/16~17 이틀만 반영; 11/20 주봉 확정값으로 사용하지 않음"
+      }
+    },
+    {
+      "file": "futures_wave_daily_20261117.png",
+      "title": "일봉 · 하방 우세",
+      "interpretation": "어제 보고서의 785.00 방어와 그 아래 771.55 경계는 오늘 실패했다. 새 저점 767.20을 강한 지지로 바꾸어 그 실패를 덮지 않는다. 선호 시나리오는 11/6 760.10에서 11/13 859.65까지의 반등 이후 하락 재개·전저점 재시험이며, 세부 하위파가 완결되지 않아 확정 3파나 5파라고 부르지 않는다. 대안은 760.10 위에서 큰 바닥을 다시 만드는 조정이다. 대안이 살아 있으려면 우선 771.30~771.60 회복·재지지, 이어 776.55와 789.00 회복이 필요하다. 789.00 위 10분봉 안착은 당일 하락 구조 약화이고, 802.95 및 818.10~824.65 일봉 회복은 더 큰 구조 회복의 별도 단계다. 큰 상승 3파 가설은 현 가격 자료만으로 확인하지 못했다.",
+      "kind": "price",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "d6040fa822e44c3a4c4d6d78a9586df70de31af039150a247d9c4a0e122af77e",
+      "brief": {
+        "title": "일봉 · 하방 우세",
+        "result": "767.20 저가 마감; 5·10·20일선 아래, -DI 우세",
+        "check": "767.20 재이탈 시 760.10 재시험 위험; 785.00~789.00 회복 전 하방 우선",
+        "note": "72일 초기화 RSI14 33.40, ADX14 29.88, +DI 16.12/-DI 33.90; 과매도·ADX 자체는 반전 보장 아님"
+      }
+    },
+    {
+      "file": "futures_intraday_oi_20261117.png",
+      "title": "10분봉 · 오후 매도압력 우세",
+      "interpretation": "오전 08:45→12:05 표시봉에서는 가격 777.25→786.10, OI 159,081→162,154로 가격과 OI가 함께 올랐다. 그러나 고가 789.00 이후 12:05→15:25에는 가격 786.10→767.75(-18.35), OI 162,154→165,388(+3,234)로 바뀌었다. 이 오후 조합은 미청산 계약이 쌓이는 동안 매도 쪽 가격 압력이 우세했던 정황이다. 시장 전체 신규 숏과 신규 롱은 함께 생기므로 외국인 신규 숏이라고 특정할 수 없다. 마지막 15:25→15:45 단일가 구간에는 가격 -0.55, OI -578로, 앞선 구간과 달리 순청산이 동반됐다. 최종 외국인 +2,989만으로 이 시간대 각각의 주체별 신규·청산을 배정하지 않는다. 0786 막판 외국인 순매수 확대도 집계 갱신 시점과 실제 체결 시점이 같다고 단정하지 않는다.",
+      "kind": "price",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "f6b102e921fdb1cb979548d9abb08ea043103f7aad1ea017febdcf3d39805f22",
+      "brief": {
+        "title": "10분봉 · 오후 매도압력 우세",
+        "result": "오전 가격·OI 동반 상승 후 오후 가격 하락·OI 증가로 전환",
+        "check": "771.30~771.60 10분봉 회복·재지지→774.90~776.55→785.00~789.00; 767.20 이탈·재저항이면 약세 유지",
+        "note": "42개 당일 봉·마지막 15:45 단일가 별도; 정확한 VWAP 제외"
+      }
+    },
+    {
+      "file": "futures_flow_windows_20261117.png",
+      "title": "지수선물: 외국인 매수와 기관 매도 충돌 · 2026-11-17",
+      "interpretation": "오늘 전체 만기 지수선물 순매매는 외국인 +2,989, 개인 +969, 기관계 -3,832계약이다. 기관 내부는 금융투자 -1,906·투신 -1,214·보험 -610·연기금 -98·은행 +13으로 매도가 넓어졌다. 어제 금융투자 +523·연기금 +336이 오늘 매도로 바뀐 점이 중요하다. 외국인은 최근 3일 +7,709, 5일 +4,372, 20일 +29,573계약을 샀지만 투신은 각각 -6,616, -6,228, -5,187계약을 팔았다. 외국인 매수가 매도를 받아낸 상대편 중 하나라는 것은 확인되지만, 가격은 저가로 밀려 매수의 가격 방어 효과는 확인되지 않았다. 누적 매수를 상승 확정으로 읽지 않는다.",
+      "kind": "flow",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "711233892f6c5d1bc85e0074ab21f7a991f9abca80850ef4b2b171d583910439"
+    },
+    {
+      "file": "futures_weekly_weights_20261117.png",
+      "title": "완료 주 해석 배율 | 11/13까지 고정 · 11/16~17 진행 주 제외",
+      "interpretation": "완료 주 11/9~11/13과 그때까지 20일의 동행으로 해석 배율을 고정했다. 현물은 외국인 1.183·투신 1.197, 선물은 외국인 0.931·투신 1.154배다. 오늘은 현물 외국인·투신 매도와 선물 투신 매도에 설명상의 무게를 더 두되, 인과적 시장 영향 비중이나 다음 날 확률은 아니다. 진행 주 11/16~17은 배율 계산에서 제외했다. 10/12~11/17 관측에서 외국인·투신 현물 동반매수+상승 뒤 다음 날 상승은 3/7, 동반매도+하락 뒤 다음 날 하락은 6/12였다(오늘 사건은 다음 날 미도래로 대기). 같은 기간 단순 하락일 다음 날 하락 9/16보다 우월하지 않다. 선물은 각각 1/3, 0/2로 표본이 작다. 예측 배율은 모두 1.0을 유지하고 내일 하락 확률 수치를 만들지 않는다.",
+      "kind": "flow",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "939d618d11971830b16a9ac6aaf19ca39aa1fe50a8a0e1a46381df2c61bf3960"
+    },
+    {
+      "file": "options_contract_review_20261117.png",
+      "title": "12월 옵션 날짜별 일봉 | 11/16 → 11/17",
+      "interpretation": "외국인 콜은 수량 -2,599계약인데 금액 +100억원, 풋은 수량 +4,914·금액 +506억원이다. 콜 수량과 금액 부호가 엇갈리므로 단순 콜 매도 또는 콜 매수 한마디로 전체를 설명하지 않는다. 비싼 콜 매수·싼 콜 매도나 스프레드 등 여러 구성이 가능하며 동일 계좌 거래인지 확인되지 않았다. 풋 수량·금액 증가와 풋 대표 IV 상승은 하방 위험 수요가 남았다는 해석을 지지한다. 그러나 외국인 신규 풋 매수로 확정하지 않는다. 날짜가 붙은 LS 일봉으로 12월물 765·770·775·785·790·795의 콜·풋 12계약을 보완했다. 790콜은 가격 41.00→31.50, OI 34→77(+43); 790풋은 43.70→51.30, OI 116→169(+53)이다. 기초자산 하락의 가격 효과와 변동성 수요를 분리해야 하므로 이 값만으로 누가 새 숏·롱을 열었는지는 알 수 없다. 전일 무거래 계약은 과거 마지막 체결가일 수 있어 일간 수익률 근거에서 제외한다. 현재 행사가별 종가 IV·델타·호가 이력은 확보하지 못했고 야간 현재 체인으로 대체하지 않았다. 키움 대표 IV는 65.12→68.84, 콜 53.41→53.48, 풋 78.00→85.15로 풋 쪽 확대가 두드러진다. 대표 IV 차이를 고정 델타 스큐나 개별 계약 IV 변화라고 부르지 않는다.",
+      "kind": "options",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "63fb392057819835e934d679d2bbb6da9995c21610ab165d2c9913292b3b61ef"
+    },
+    {
+      "file": "hts_0790_daily_20261117.png",
+      "title": "0790 당일 합성손익 원본",
+      "interpretation": "0790 당일·누적과 0794 당일·누적 원본을 날짜·선택 모드·서로 다른 해시로 대조했다. 0790의 760.74~780.74는 현물 지수 표시축이며 선물 지지선이나 실제 보유 원가가 아니다. 0794는 금액·천원 순매매 화면이고 행사가별 표시를 계약 수량으로 바꾸지 않는다. 0791 상세 잔고가 없어서 주체별 실제 잔존 포지션·평단은 판단 불가다. 원본 당일/누적 추정손익 곡선과 최근 순매매는 분리했다.",
+      "kind": "source",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "ac16f1e0829fada3890976e83632536cfe257aacc3ddec669735f41735df0cfe"
+    },
+    {
+      "file": "hts_0790_cumulative_20261117.png",
+      "title": "0790 누적 합성손익 원본",
+      "interpretation": "0790 당일·누적과 0794 당일·누적 원본을 날짜·선택 모드·서로 다른 해시로 대조했다. 0790의 760.74~780.74는 현물 지수 표시축이며 선물 지지선이나 실제 보유 원가가 아니다. 0794는 금액·천원 순매매 화면이고 행사가별 표시를 계약 수량으로 바꾸지 않는다. 0791 상세 잔고가 없어서 주체별 실제 잔존 포지션·평단은 판단 불가다. 원본 당일/누적 추정손익 곡선과 최근 순매매는 분리했다.",
+      "kind": "source",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "6d1e7387920476404d0b4980a6549947b6b9f4483869b1e950f13c4e3a9322fd"
+    },
+    {
+      "file": "hts_0794_daily_20261117.png",
+      "title": "0794 당일 금액 순매매 원본",
+      "interpretation": "0790 당일·누적과 0794 당일·누적 원본을 날짜·선택 모드·서로 다른 해시로 대조했다. 0790의 760.74~780.74는 현물 지수 표시축이며 선물 지지선이나 실제 보유 원가가 아니다. 0794는 금액·천원 순매매 화면이고 행사가별 표시를 계약 수량으로 바꾸지 않는다. 0791 상세 잔고가 없어서 주체별 실제 잔존 포지션·평단은 판단 불가다. 원본 당일/누적 추정손익 곡선과 최근 순매매는 분리했다.",
+      "kind": "source",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "cfd487bf318ce18b0277165136cb7bee207a6e6270ec048acf41e97dae07daac"
+    },
+    {
+      "file": "hts_0794_cumulative_20261117.png",
+      "title": "0794 누적 금액 순매매 원본",
+      "interpretation": "0790 당일·누적과 0794 당일·누적 원본을 날짜·선택 모드·서로 다른 해시로 대조했다. 0790의 760.74~780.74는 현물 지수 표시축이며 선물 지지선이나 실제 보유 원가가 아니다. 0794는 금액·천원 순매매 화면이고 행사가별 표시를 계약 수량으로 바꾸지 않는다. 0791 상세 잔고가 없어서 주체별 실제 잔존 포지션·평단은 판단 불가다. 원본 당일/누적 추정손익 곡선과 최근 순매매는 분리했다.",
+      "kind": "source",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "a582108fefe862bbae8c36b1d27e889b27129e31ac5b89e5200d8807116c3494"
+    },
+    {
+      "file": "hts_volatility_20261117.png",
+      "title": "0471 대표 변동성 원본",
+      "interpretation": "대표 IV와 행사가별 IV를 구분. 콜·풋 대표 IV는 API 날짜별 자료와 대조.",
+      "kind": "source",
+      "source_note": "11/17 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "b59d617f96cd49c238b0d0c4a29f1296059b3dbbc22137cb95b21f6ffeab07f5"
+    }
+  ],
+  "attempted_paths": [
+    "dated Kiwoom opt50030/29/62/24",
+    "LS t1617/t1664 history; t8429 and Kiwoom ka20006",
+    "LS t2214 dated histories 12 option contracts and next future",
+    "LS t1633 date-bounded program history",
+    "12 original HTS captures; prior manifest/chain identifiers only"
+  ],
+  "excluded_paths": [
+    "original gamma and CVD session gates respected",
+    "No live/night quotes or chain substituted for historical IV"
+  ],
+  "web_references": [
+    {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "retrieved_at": "2026-11-17T19:48:31.746886+09:00",
+      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef",
+      "rule": "monthly second Thursday; futures quarterly",
+      "november_monthly": "2026-11-12",
+      "december_futures_options": "2026-12-10",
+      "calendar": "KRX 2026 official holiday list checked; weekly contracts separate"
+    }
+  ]
+}
