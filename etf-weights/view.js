@@ -18,11 +18,20 @@
     return !!v&&v.method==='SIGNED_VALUE_EXCLUDING_FUTURES_DENOMINATOR'&&futures.length>0&&Math.abs(base-100)<=.1&&Number.isFinite(denominator)&&denominator>0&&Number.isFinite(v.denominator_value_krw)&&Math.abs(v.denominator_value_krw-denominator)<.01&&Number.isFinite(v.max_residual_pp)&&v.max_residual_pp<=.00001&&p.holdings.every(r=>Math.abs(r.weight-r.value_krw/denominator*100)<=.00001);
   }
   let report, filtered=[], portfolioRows=[], activeView='increase';
+  const unavailable=f=>f?.status==='COMPARISON_UNAVAILABLE';
   const link = u => /^https:\/\/www\.funetf\.co\.kr\/product\/etf\/view\/KR[A-Z0-9]+$/.test(u) ? u : 'https://www.funetf.co.kr/';
   function renderRows(){
     const fund=root.querySelector('#ewFund').value, kind=root.querySelector('#ewKind').value;
     const threshold=Number(root.querySelector('#ewThreshold').value), qty=root.querySelector('#ewQuantity').value;
     const query=root.querySelector('#ewSearch').value.trim().toLowerCase();
+    const selected=report.funds.find(f=>f.code===fund);
+    root.querySelector('#ewDownload').disabled=unavailable(selected);
+    if(unavailable(selected)){
+      filtered=[];
+      root.querySelector('#ewResultCount').textContent='전주 비교 불가 · 현재 포트폴리오에서 확보된 구성내역을 확인하세요.';
+      root.querySelector('#ewRows').innerHTML='<tr><td colspan="8" class="ew-empty">시작일 자료가 없어 변동 없음·신규 편입으로 판정하지 않았어요.</td></tr>';
+      return;
+    }
     const allowed=activeView==='decrease'?['EXIT','DOWN']:['NEW','UP'];
     filtered=report.events.filter(e => allowed.includes(e.event) && (!fund||e.etf_code===fund) && (!kind||e.event===kind) && (['NEW','EXIT'].includes(e.event)||Math.abs(e.delta_pp)>=threshold) && (!qty||(qty==='changed'?e.quantity_delta!==0:e.quantity_delta===0)) && (!query||`${e.stock_name} ${e.stock_code} ${e.etf_name}`.toLowerCase().includes(query)));
     root.querySelector('#ewResultCount').textContent=`${filtered.length.toLocaleString()}건 · ETF–종목 쌍 기준 · 신규/편출에는 최소변화 필터를 적용하지 않아요.`;
@@ -50,7 +59,7 @@
     const kind=root.querySelector('#ewAssetType').value;
     portfolioRows=p.holdings.filter(r=>(!kind||r.asset_type===kind)&&(!query||`${r.name} ${r.code}`.toLowerCase().includes(query)));
     root.querySelector('#ewPortfolioName').textContent=fund.name;
-    root.querySelector('#ewPortfolioMeta').textContent=`최근 수집 구성내역: ${p.date} 날짜 지정 조회 · ${p.date_status==='OFFICIAL_CROSS_CHECKED'?'TIME 운용사 원문 대조 완료':'API 응답에 기준일 미표기'} · 순자산 NAV 참고일 ${fund.nav_reference_date} · 실시간 보유내역이 아니에요.`;
+    root.querySelector('#ewPortfolioMeta').textContent=`최근 수집 구성내역: ${p.date} 날짜 지정 조회 · ${p.date_status==='OFFICIAL_CROSS_CHECKED'?'TIME 운용사 원문 대조 완료':'API 응답에 기준일 미표기'} · 순자산 NAV 참고일 ${fund.nav_reference_date} · 실시간 보유내역이 아니에요.${unavailable(fund)?' · 전주 비교 불가: 현재 구성내역만 제공해요.':''}`;
     root.querySelector('#ewPortfolioStats').innerHTML=[[p.total_count,'전체 구성항목'],[`${n(p.total_weight)}%`,'제공 비중 합계'],[`${n(fund.aum_eok,0)}억`,'선정 시 순자산']].map(([v,t])=>`<div class="ew-card"><span>${t}</span><strong>${esc(v)}</strong></div>`).join('');
     const w=p.weight_validation;
     root.querySelector('#ewWeightNote').textContent=w?.method==='SIGNED_VALUE_EXCLUDING_FUTURES_DENOMINATOR'?`선물 제외 비중 ${n(w.excluding_futures_weight)}% + 선물 표시 비중 ${n(w.futures_weight)}% = 전체 ${n(p.total_weight)}%. 선물 노출이 별도 합산된 원본값이에요. 각 행의 비중과 평가금액을 대조했으며, 100%로 재조정하지 않았어요.`:'';
@@ -65,7 +74,10 @@
     const a=document.createElement('a');a.href=url;a.download=activeView==='portfolio'?`ETF포트폴리오_${fund.code}_${fund.portfolio.date}.csv`:`ETF비중_${activeView==='decrease'?'감소':'증가'}_${report.start_date}_${report.end_date}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function draw(d){
-    if(d.schema_version!==1||d.status!=='COMPARED'||!Array.isArray(d.funds)||d.funds.length!==20||!Array.isArray(d.events)||d.errors.length) throw Error('20개 ETF의 비교 검증이 완료되지 않았어요.');
+    const ex=d.publication_exception;
+    const approved=d.status==='APPROVED_PARTIAL_COMPARISON'&&d.start_date==='2026-11-06'&&d.end_date==='2026-11-13'&&d.raw_source_status==='PARTIAL_FAILURE'&&ex?.approved_by_user===true&&ex.approval_date==='2026-11-19'&&ex.comparison_funds===19&&ex.current_portfolios===20&&ex.missing_start_is_zero===false&&ex.unavailable_fund_codes?.length===1&&ex.unavailable_fund_codes[0]==='0262B0';
+    if(d.schema_version!==1||!Array.isArray(d.funds)||d.funds.length!==20||!Array.isArray(d.events)||!Array.isArray(d.errors)||(!approved&&(d.status!=='COMPARED'||d.errors.length))) throw Error('ETF 비교 검증 또는 승인된 예외 범위가 일치하지 않아요.');
+    if(approved&&(d.funds.filter(f=>f.status==='COMPARED').length!==19||d.errors.length!==1||d.funds.filter(unavailable).length!==1||!d.funds.some(f=>f.code==='0262B0'&&unavailable(f)&&f.old_rows===null)||d.events.some(e=>e.etf_code==='0262B0')||ex.compared_fund_codes?.length!==19||new Set(ex.compared_fund_codes).size!==19||d.funds.some(f=>f.status==='COMPARED'&&!ex.compared_fund_codes.includes(f.code))))throw Error('부분 비교의 분모·제외 종목 검증 실패');
     const ids=new Set(d.funds.map(f=>f.code));
     if(ids.size!==20||d.events.some(e=>!ids.has(e.etf_code)||!labels[e.event]||![e.old_weight,e.new_weight,e.delta_pp,e.old_quantity_per_cu,e.new_quantity_per_cu,e.quantity_delta].every(Number.isFinite))) throw Error('구성자료 형식 오류');
     for(const fund of d.funds){
@@ -83,11 +95,12 @@
     const overlap=[...grouped.values()].filter(s=>s.items.length>=2).sort((a,b)=>b.items.length-a.items.length||a.code.localeCompare(b.code));
     root.innerHTML=`<h2>ETF비중</h2><p class="ew-muted">국내 주식 액티브 ETF 순자산 상위 20개 · ${esc(d.start_date)} → ${esc(d.end_date)}${d.partial_week?' · 이번주 진행 중':''}</p>
       <div class="ew-subnav" role="group" aria-label="ETF비중 하위 메뉴"><button type="button" data-ew-tab="increase" aria-pressed="true" aria-controls="ewChanges">증가</button><button type="button" data-ew-tab="decrease" aria-pressed="false" aria-controls="ewChanges">감소</button><button type="button" data-ew-tab="portfolio" aria-pressed="false" aria-controls="ewPortfolio">현재 포트폴리오</button></div>
+      ${approved?'<p class="ew-note">19/20개 비교 · 20개 현재 포트폴리오. 신규상장 0262B0는 11/6 시작자료가 없어 전주 비교 불가예요. 원천 부분실패와 사용자 승인 예외를 유지하며, 누락을 0이나 신규편입으로 처리하지 않았어요.</p>':''}
       ${age>10?'<p class="ew-note">업데이트 확인 필요: 10일 이상 지난 자료예요.</p>':''}
       <section id="ewChanges" aria-labelledby="ewChangeTitle"><h3 id="ewChangeTitle"></h3><div class="ew-cards ew-change-cards" id="ewSummary"></div>
-      <p class="ew-muted">전체 20개 요약 · 건수는 ETF–종목 쌍 기준 · 비중 변화에는 주가 등락도 포함돼요.</p>
+      <p class="ew-muted">${approved?'비교 가능한 19개 요약 · 1개 전주 비교 불가':'전체 20개 요약'} · 건수는 ETF–종목 쌍 기준 · 비중 변화에는 주가 등락도 포함돼요.</p>
       <div class="ew-box"><div class="ew-controls">
-      <label>ETF<select id="ewFund"><option value="">전체 20개</option>${d.funds.map(f=>`<option value="${esc(f.code)}">${f.rank}. ${esc(f.name)}</option>`).join('')}</select></label>
+      <label>ETF<select id="ewFund"><option value="">전체 20개</option>${d.funds.map(f=>`<option value="${esc(f.code)}">${f.rank}. ${esc(f.name)}${unavailable(f)?' · 전주 비교 불가':''}</option>`).join('')}</select></label>
       <label>변화 유형<select id="ewKind"></select></label>
       <label>최소 비중변화<select id="ewThreshold"><option value="0.1">0.10%p</option><option value="0.5">0.50%p</option><option value="1">1.00%p</option><option value="0">미세변화 포함</option></select></label>
       <label>공개수량<select id="ewQuantity"><option value="">전체</option><option value="changed">수량도 변함</option><option value="same">수량 동일</option></select></label>
@@ -96,9 +109,9 @@
       <div class="ew-scroll" tabindex="0" role="region" aria-label="ETF 구성종목 변화 표"><table><thead><tr><th>종목</th><th>ETF</th><th>구분</th><th>이전 비중</th><th>현재 비중</th><th>변화</th><th>공개수량 / 1CU</th><th>수량 증감</th></tr></thead><tbody id="ewRows"></tbody></table></div>
       <div class="ew-actions"><button id="ewDownload" type="button">현재 결과 CSV 저장</button></div><p class="ew-muted">수량은 1CU 공개값이에요. CU 크기 변경·기업행사를 확인하지 않아 실제 매매량으로 사용할 수 없어요.</p></div>
       </section>
-      <section id="ewPortfolio" hidden aria-label="현재 포트폴리오"><div class="ew-box"><h3>현재 포트폴리오</h3><p class="ew-muted">ETF 하나를 선택해 전체 구성내역을 확인하세요. 최근 수집자료 기준으로 표시해요.</p><div class="ew-controls"><label>ETF 선택<select id="ewPortfolioFund">${d.funds.map(f=>`<option value="${esc(f.code)}">${f.rank}. ${esc(f.name)}</option>`).join('')}</select></label><label>자산 구분<select id="ewAssetType"><option value="">전체 구성항목</option>${Object.entries(assetLabels).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></label><label class="ew-search">종목명 · 코드 검색<input id="ewPortfolioSearch" type="search" placeholder="예: 삼성전자, 005930"></label></div><h3 id="ewPortfolioName"></h3><p id="ewPortfolioMeta" class="ew-muted"></p><div id="ewPortfolioStats" class="ew-cards ew-portfolio-cards"></div><p id="ewWeightNote" class="ew-muted"></p><p id="ewPortfolioCount" class="ew-muted" aria-live="polite"></p><p class="ew-muted">작은 화면에서는 표를 좌우로 밀어 보세요.</p><div class="ew-scroll" tabindex="0" role="region" aria-label="ETF 전체 포트폴리오 표"><table><thead><tr><th>순서</th><th>구성항목</th><th>구분</th><th>비중</th><th>공개수량 / 1CU</th><th>평가금액 / 1CU (원)</th></tr></thead><tbody id="ewPortfolioRows"></tbody></table></div><div class="ew-actions"><button type="button" id="ewPortfolioDownload">이 포트폴리오 CSV 저장</button></div><p class="ew-muted">비중·평가금액은 제공처 원값이에요. 수량 단위는 자산별로 다르며 펀드 전체 보유수량이 아니에요. 순자산은 ETF 선정 시점의 표시값이에요.</p></div></section>
+      <section id="ewPortfolio" hidden aria-label="현재 포트폴리오"><div class="ew-box"><h3>현재 포트폴리오</h3><p class="ew-muted">ETF 하나를 선택해 전체 구성내역을 확인하세요. 최근 수집자료 기준으로 표시해요.</p><div class="ew-controls"><label>ETF 선택<select id="ewPortfolioFund">${d.funds.map(f=>`<option value="${esc(f.code)}">${f.rank}. ${esc(f.name)}${unavailable(f)?' · 전주 비교 불가':''}</option>`).join('')}</select></label><label>자산 구분<select id="ewAssetType"><option value="">전체 구성항목</option>${Object.entries(assetLabels).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></label><label class="ew-search">종목명 · 코드 검색<input id="ewPortfolioSearch" type="search" placeholder="예: 삼성전자, 005930"></label></div><h3 id="ewPortfolioName"></h3><p id="ewPortfolioMeta" class="ew-muted"></p><div id="ewPortfolioStats" class="ew-cards ew-portfolio-cards"></div><p id="ewWeightNote" class="ew-muted"></p><p id="ewPortfolioCount" class="ew-muted" aria-live="polite"></p><p class="ew-muted">작은 화면에서는 표를 좌우로 밀어 보세요.</p><div class="ew-scroll" tabindex="0" role="region" aria-label="ETF 전체 포트폴리오 표"><table><thead><tr><th>순서</th><th>구성항목</th><th>구분</th><th>비중</th><th>공개수량 / 1CU</th><th>평가금액 / 1CU (원)</th></tr></thead><tbody id="ewPortfolioRows"></tbody></table></div><div class="ew-actions"><button type="button" id="ewPortfolioDownload">이 포트폴리오 CSV 저장</button></div><p class="ew-muted">비중·평가금액은 제공처 원값이에요. 수량 단위는 자산별로 다르며 펀드 전체 보유수량이 아니에요. 순자산은 ETF 선정 시점의 표시값이에요.</p></div></section>
       <details class="ew-box" id="ewOverlap"><summary>여러 ETF에서 함께 편입·확대한 종목 (${overlap.length}개)</summary><p class="ew-muted">신규 또는 0.10%p 이상 확대 ETF 수예요. 가격 상승만으로도 여러 ETF의 비중이 함께 늘 수 있어요.</p><div class="ew-scroll"><table><thead><tr><th>종목</th><th>편입·확대 ETF</th><th>ETF 수</th></tr></thead><tbody>${overlap.map(s=>`<tr><td>${esc(s.name)}<span class="ew-code">${s.code}</span></td><td>${s.items.map(e=>`${esc(e.etf_name)} (${signed(e.delta_pp)}%p)`).join('<br>')}</td><td>${s.items.length}</td></tr>`).join('')}</tbody></table></div></details>
-      <details class="ew-box"><summary>추적 대상 20개 · 순자산 및 검증 상태</summary><p class="ew-muted">선정 조회일 ${d.ranking_observed_date} · 순자산 단위 억원 · NAV 참고일은 순자산 자체의 별도 기준일과 구분해요.</p><div class="ew-scroll"><table><thead><tr><th>순위 · ETF</th><th>순자산 / NAV 참고일</th><th>신규 / 편출</th><th>원문 추가 대조</th></tr></thead><tbody>${d.funds.map(f=>`<tr><td>${f.rank}. <a href="${link(f.source_url)}" target="_blank" rel="noopener">${esc(f.name)}</a><span class="ew-code">${f.code}</span></td><td>${n(f.aum_eok,0)}억원<br>${esc(f.nav_reference_date)}</td><td>${f.counts.NEW||0} / ${f.counts.EXIT||0}</td><td>${f.official_checked?'TIME 운용사 양일 일치':'날짜 지정 API · 원문 미대조'}</td></tr>`).join('')}</tbody></table></div></details>
+      <details class="ew-box"><summary>추적 대상 20개 · 순자산 및 검증 상태</summary><p class="ew-muted">선정 조회일 ${d.ranking_observed_date} · 순자산 단위 억원 · NAV 참고일은 순자산 자체의 별도 기준일과 구분해요.</p><div class="ew-scroll"><table><thead><tr><th>순위 · ETF</th><th>순자산 / NAV 참고일</th><th>신규 / 편출</th><th>원문 추가 대조</th></tr></thead><tbody>${d.funds.map(f=>`<tr><td>${f.rank}. <a href="${link(f.source_url)}" target="_blank" rel="noopener">${esc(f.name)}</a><span class="ew-code">${f.code}</span></td><td>${n(f.aum_eok,0)}억원<br>${esc(f.nav_reference_date)}</td><td>${unavailable(f)?'전주 비교 불가':`${f.counts.NEW||0} / ${f.counts.EXIT||0}`}</td><td>${f.official_checked?'TIME 운용사 양일 일치':'날짜 지정 API · 원문 미대조'}</td></tr>`).join('')}</tbody></table></div></details>
       <details class="ew-box"><summary>출처와 비교 기준</summary><p>${esc(d.source)}</p><ul>${d.limitations.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><p class="ew-muted">수집 ${esc(d.generated_at)} · 자동 주문이나 매수 추천이 아니에요.</p></details>`;
     for(const id of ['ewFund','ewKind','ewThreshold','ewQuantity'])root.querySelector('#'+id).addEventListener('change',renderRows);
     root.querySelector('#ewSearch').addEventListener('input',renderRows);

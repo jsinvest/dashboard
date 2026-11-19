@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>J's Trading Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="etf-weights/view.css?v=20261029-tabs">
+<link rel="stylesheet" href="etf-weights/view.css?v=20261119-width">
 <style>
   :root{--bg:#0a0c10;--bg2:#111318;--bg3:#181c24;--border:#1e2330;--accent:#00e5ff;--up:#2ed573;--down:#ff4757;--text:#e2e8f0;--text-dim:#64748b;--text-muted:#334155;}
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -452,7 +452,7 @@
 </style>
 <link rel="stylesheet" href="supply-zone/cash-review.css?v=20260908b">
 <script src="scripts/cash-index-review.js?v=20260908b"></script>
-<script src="scripts/futures-index-context.js?v=20260908b"></script>
+<script src="scripts/futures-index-context.js?v=20261119-optional-index"></script>
 <link rel="stylesheet" href="news/dashboard.css">
 </head>
 <body>
@@ -4142,9 +4142,11 @@ async function loadSupplyZone(){
     const supplyAssetVersion = encodeURIComponent(d.generated_at || d.as_of || Date.now());
     const primarySupplyImage = d.position_profile_image || d.candlestick_image;
     if(primarySupplyImage) document.getElementById('supplyCandleImg').src = 'supply-zone/'+primarySupplyImage+'?v='+supplyAssetVersion;
-    document.getElementById('supplyForeignImg').src = 'supply-zone/'+d.foreign_image+'?v='+supplyAssetVersion;
-    document.getElementById('supplyInstitutionImg').src = 'supply-zone/'+d.institution_image+'?v='+supplyAssetVersion;
-    document.getElementById('supplySummaryImg').src = 'supply-zone/'+d.summary_image+'?v='+supplyAssetVersion;
+    for(const [id,file] of [['supplyForeignImg',d.foreign_image],['supplyInstitutionImg',d.institution_image],['supplySummaryImg',d.summary_image]]){
+      const image=document.getElementById(id);
+      if(image&&typeof file==='string'&&file) image.src='supply-zone/'+file+'?v='+supplyAssetVersion;
+      else if(image) image.removeAttribute('src');
+    }
 
     const cards = document.getElementById('supplySummaryCards');
     if(cards){
@@ -4196,7 +4198,7 @@ loadSupplyZone();
 <script src="scripts/dashboard-freshness.js"></script>
 <script src="market-analysis/us-context/view.js"></script>
 <script src="live-monitors/dashboard.js?v=20261113-investor"></script>
-<script src="etf-weights/view.js?v=20261107-futures"></script>
+<script src="etf-weights/view.js?v=20261119-approved-partial"></script>
 <link rel="stylesheet" href="report-periods/style.css"><script src="report-periods/app.js" defer></script>
 </body>
 </html>

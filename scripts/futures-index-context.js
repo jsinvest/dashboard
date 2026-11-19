@@ -14,7 +14,7 @@ async function renderFuturesIndexContext(data) {
   const mixedTiming = data.data_status === 'CLOSE_PRICE_WITH_PRE_CLOSE_FLOW';
   const referenceLabel = provisional ? '마감 전 잠정 기준가' : '정규장 종가';
   const asset = file => {
-    if (!/^[a-zA-Z0-9_.-]+$/.test(file)) throw new Error('선물 자료 파일명 오류');
+    if (typeof file !== 'string' || !file || !/^[a-zA-Z0-9_.-]+$/.test(file)) throw new Error('선물 자료 파일명 오류');
     return 'supply-zone/'+file+'?v='+encodeURIComponent(data.generated_at);
   };
   const panel = document.querySelector('[data-tab-panel="supply"]');
@@ -60,6 +60,10 @@ async function renderFuturesIndexContext(data) {
   } catch(error) { console.warn('Optional futures ZIP unavailable', error); }
   // A missing optional index appendix must not replace valid futures analysis.
   const body = document.getElementById('supplyIndexContextBody');
+  if (!data.index_context_file) {
+    body.innerHTML = '<p class="cash-note">이번 게시본에는 검증된 지수 보조 자료가 연결되지 않았어요. 선물 본자료와 별도로 제외합니다.</p>';
+    return;
+  }
   try {
     const response = await fetch(asset(data.index_context_file), {cache:'no-store'});
     if (!response.ok) throw new Error('HTTP '+response.status);
