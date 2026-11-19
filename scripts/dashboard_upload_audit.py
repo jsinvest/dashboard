@@ -109,9 +109,24 @@ def publication_evidence(read, key, legacy_path):
         raise ValueError("시장 본문과 ZIP 기준일 불일치")
     with zipfile.ZipFile(io.BytesIO(body)) as archive:
         if members[key] not in archive.namelist():
-            return legacy_path, None, read(legacy_path), {}
+            # The current publisher links a dated validation inside its full
+            # market ZIP and an identical standalone download. Follow both
+            # explicit references rather than an unused legacy latest file.
+            linked = manifest.get("index_multitimeframe", {}).get("validation_file")
+            dated = "09_지수다중시간대/validation_" + day(manifest["as_of"]).strftime("%Y%m%d") + ".json"
+            if key == "index-mtf" and linked:
+                if linked not in {"kospi_kosdaq_nikkei_mtf_validation.json", "kospi_nikkei_mtf_validation.json"}:
+                    raise ValueError("시장 지수 검증 참조 경로 오류")
+                if dated not in archive.namelist():
+                    raise ValueError("시장 ZIP의 연결된 당일 지수 검증자료 누락")
+                if canonical(archive.read(dated)) != canonical(read("market-analysis/" + linked)):
+                    raise ValueError("시장 ZIP과 연결된 지수 검증파일 불일치")
+                members[key] = dated
+            else:
+                return legacy_path, None, read(legacy_path), {}
     d = evidence_json(body, members[key])
-    if day(d["trade_date"]) != day(manifest["as_of"]) or d.get("status") != "OK":
+    valid_status = d.get("status") == "OK" or (key == "index-mtf" and d.get("status") == "WARN" and d.get("can_use_for_decision") is True)
+    if day(d["trade_date"]) != day(manifest["as_of"]) or not valid_status:
         raise ValueError("시장 ZIP 검증자료 기준일/상태 불일치")
     metadata = {"evidence_manifest": manifest_path, "manifest_sha256": sha(manifest_body),
                 "declared_bundle_sha256": declared_hash, "legacy_path": legacy_path}
@@ -198,6 +213,8 @@ def json_issues(key, d, now):
             issues.append("FINAL_PENDING" if now.hour < 21 else "FINAL_NOT_PUBLISHED")
         if d.get("publication_kind") == "DATA_REFRESH":
             issues.append("NEW_ANALYSIS_NOT_PERFORMED")
+        if d.get("data_validation", {}).get("recommendation_selection_complete") is False:
+            issues.append("RECOMMENDATION_SELECTION_INCOMPLETE")
     if d.get("can_use_for_context") is False or d.get("can_use_for_decision") is False:
         issues.append("VALIDATION_EXCLUDED")
     if key == "research" and d.get("publication_validation", {}).get("source_hashes_match") is False:
