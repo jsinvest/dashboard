@@ -370,6 +370,37 @@ def check_assets(root, commit, path, d, base, stamp):
         return list(pool.map(check, assets.items()))
 
 
+def completion_state(items):
+    """A successful inspection is not evidence that overdue work was repaired.
+
+    Optional research and excluded auxiliary inputs remain visible without
+    blocking independent, validated production publications.
+    """
+    blocking, exclusions = [], []
+    for item in items:
+        required, optional = [], []
+        for issue in item.get("issues", []):
+            target = optional if (item["id"] in {"research", "us-index"}
+                                  or issue.startswith("LEADER_AUXILIARY:")
+                                  or issue == "FINAL_PENDING") else required
+            target.append(issue)
+        for issues, destination in ((required, blocking), (optional, exclusions)):
+            if issues:
+                destination.append({"id": item["id"], "expected_date": item.get("expected_date"),
+                                    "public_date": item.get("public_date") or item.get("remote_date"),
+                                    "issues": issues})
+    return {"status": "ACTION_REQUIRED" if blocking else "PUBLICATION_CHECKS_PASSED",
+            "audit_complete": True, "required_publication_checks_pass": not blocking,
+            "all_required_updates_complete": False if blocking else None,
+            "publication_recovery_verified": False,
+            "blocking_items": blocking, "excluded_or_pending_items": exclusions,
+            "completion_note": "Inspection only. Recovery requires actual stage results, publication and separate public DOM verification."}
+
+
+def completion_exit_code(result):
+    return 2 if result["blocking_items"] else 0
+
+
 def audit(root, workspace, source, ref, base, now, calendar_path):
     commit = git(root, "rev-parse", ref).decode().strip()
     holidays, calendar = calendar_evidence(calendar_path, now)
@@ -448,8 +479,11 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
         except (OSError, ValueError) as e:
             record["error"] = type(e).__name__
         sources.append(record)
+    resolution = completion_state(items)
     return {"checked_at": now.isoformat(), "pinned_commit": commit, "calendar": calendar, "items": items,
-            "state_evidence": state_note, "source_snapshots": sources, "summary": {"items": len(items), "items_with_findings": sum(bool(x["issues"]) for x in items)},
+            "state_evidence": state_note, "source_snapshots": sources, "resolution": resolution,
+            "summary": {"items": len(items), "items_with_findings": sum(bool(x["issues"]) for x in items),
+                        "required_items_unresolved": len(resolution["blocking_items"]), "exit_code": completion_exit_code(resolution)},
             "public_dom_verified": False, "public_dom_note": "Separate rendered DOM QA is required. Check the actual authentication gate; never bypass one.",
             "scope": "Schedule/date/JSON/schema/Pages and reviewed ZIP verification. Not full source/OCR or independent market-data validation. Fixed reference maps excluded; live API/links need separate response checks."}
 
@@ -478,4 +512,6 @@ if __name__ == "__main__":
         output = args.output or args.workspace_root / "reports/dashboard-health" / (now.strftime("%Y%m%d_%H%M%S") + ".json")
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(json.dumps({"output": str(output), **payload["summary"], "findings": [{"id": x["id"], "date": x.get("remote_date"), "issues": x["issues"]} for x in payload["items"] if x["issues"]]}, ensure_ascii=False))
+        print(json.dumps({"output": str(output), **payload["summary"], "status": payload["resolution"]["status"],
+                          "findings": [{"id": x["id"], "date": x.get("remote_date"), "issues": x["issues"]} for x in payload["items"] if x["issues"]]}, ensure_ascii=False))
+        raise SystemExit(completion_exit_code(payload["resolution"]))

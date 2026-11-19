@@ -11,6 +11,33 @@ import dashboard_upload_audit as a
 
 
 class PublicationDecisions(unittest.TestCase):
+    def test_identical_published_bytes_do_not_clear_overdue_cash(self):
+        row = {"id": "cash", "expected_date": "2026-11-18", "public_date": "2026-11-12",
+               "pages_matches_commit": True, "issues": ["EXPECTED_DATE_NOT_PUBLISHED"]}
+        for expected in ("2026-11-18", "2026-11-19"):
+            result = a.completion_state([dict(row, expected_date=expected)])
+            self.assertEqual(result["status"], "ACTION_REQUIRED")
+            self.assertFalse(result["all_required_updates_complete"])
+            self.assertEqual(a.completion_exit_code(result), 2)
+
+    def test_optional_exclusions_do_not_block_independent_production(self):
+        result = a.completion_state([
+            {"id": "research", "issues": ["SOURCE_HASH_MISMATCH"]},
+            {"id": "us-index", "issues": ["VALIDATION_EXCLUDED"]},
+            {"id": "leaders", "issues": ["LEADER_AUXILIARY:자료 불일치"]},
+            {"id": "market-ai", "issues": ["FINAL_PENDING"]},
+            {"id": "cash", "issues": []}])
+        self.assertEqual(a.completion_exit_code(result), 0)
+        self.assertTrue(result["required_publication_checks_pass"])
+        self.assertFalse(result["publication_recovery_verified"])
+        self.assertIsNone(result["all_required_updates_complete"])
+        self.assertEqual(len(result["excluded_or_pending_items"]), 4)
+
+    def test_current_dates_do_not_clear_schema_or_publication_errors(self):
+        for issue in ("PAGES_DIFFERS_FROM_PINNED_COMMIT", "SCHEMA:market_views.evidence", "FINAL_NOT_PUBLISHED"):
+            result = a.completion_state([{"id": "market-ai", "issues": [issue]}])
+            self.assertEqual(a.completion_exit_code(result), 2)
+
     def review_publication(self, manifest_date="20261111", tamper=False):
         name = "futures_public_review_20261111.zip"
         futures = {"as_of": "20261111", "futures_contract": "F202612",
