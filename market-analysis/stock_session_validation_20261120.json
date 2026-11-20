@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-11-20T22:11:49.663725+09:00",
+  "trade_date": "20261120",
+  "previous_date": "20261119",
+  "previous_regular_close": "163000",
+  "policy_version": "2026-11-20-session-boundary-v1",
+  "status": "PRICE_BOUNDARIES_PARTIALLY_RESOLVED_SELECTION_PENDING",
+  "previous_boundary": {
+    "cases": 68,
+    "status_counts": {
+      "CONSISTENT": 8,
+      "SESSION_DIFFERENCE_CONFIRMED": 58,
+      "UNRESOLVED": 2
+    },
+    "eligible_for_remaining_selection_checks": 66,
+    "unresolved": 2
+  },
+  "unresolved_stocks": [
+    {
+      "trade_date": "20261120",
+      "code": "089860",
+      "issues": [
+        {
+          "code": "AFTERMARKET_CLOSE_BAR_MISSING",
+          "detail": "The 19:55 final five-minute interval is not evidenced; inactivity or truncation is unresolved"
+        }
+      ]
+    },
+    {
+      "trade_date": "20261120",
+      "code": "012750",
+      "issues": [
+        {
+          "code": "AFTERMARKET_CLOSE_BAR_MISSING",
+          "detail": "The 19:55 final five-minute interval is not evidenced; inactivity or truncation is unresolved"
+        }
+      ]
+    }
+  ],
+  "current_observation": {
+    "daily_queried_after_22_kst": 68,
+    "ohlc_matches": 68,
+    "volume_matches": 42,
+    "volume_scope_unreconciled": 26,
+    "final_interval_not_evidenced": 3,
+    "interval_unresolved_codes": [
+      "181710",
+      "021240",
+      "089860"
+    ],
+    "volume_unreconciled_codes": [
+      "036710",
+      "028050",
+      "003490",
+      "181710",
+      "030530",
+      "328130",
+      "035760",
+      "034230",
+      "253450",
+      "041510",
+      "090430",
+      "232140",
+      "204620",
+      "089590",
+      "187660",
+      "020120",
+      "272450",
+      "222800",
+      "005930",
+      "000660",
+      "005380",
+      "034020",
+      "012450",
+      "087010",
+      "009150",
+      "353200"
+    ],
+    "full_ohlcv_and_final_interval_match": 40,
+    "scope": "22시대 당일 일봉 재조회에서 68개 모두 시가·고가·저가·종가가 같은 KRX 5분봉 집계와 일치했습니다. 거래량은 42개 일치·26개 집계 범위 미확인이고 3개는 19:55 봉이 없어 완료 여부를 따로 확인해야 합니다(항목 중복). 일봉·분봉 거래량 차이를 가격 오류로 단정하거나 전체 게시 차단 조건으로 사용하지 않습니다. 브로커 내 대조이며 거래소 독립 검증은 아닙니다."
+  },
+  "recommendation_selection_complete": false,
+  "recommendation_approved_by_this_check": false,
+  "independent_exchange_verified": false,
+  "current_day_completion_inferred_from_clock": false,
+  "market_publication_blocked_by_unresolved_stocks": false,
+  "original_sources_preserved": true,
+  "validation_hashes": {
+    "previous_boundary_validation": "fb50b1cd2d7c9d7fa79b64cadd523b46c693d8b5e62cc1a60ed57d0f3c32a7f1",
+    "current_day_validation": "5f41f1ca8384aac219d89d0167fa73962d3a2b270d030142a673ad0b6e6ccbb4",
+    "session_policy_script": "6cb2d3d466fc1362d1969fe80508e02f05a83298b77a21217050c21e6ca04a2c"
+  },
+  "interpretation": [
+    "11/20 후보 원천 68개를 거래소·세션 기준으로 재검사했습니다. 전일 기준가격/일봉 차이는 58개가 정규장·애프터마켓 차이로 설명됐고 8개는 일치했습니다. 2개는 전일 최종 마감봉 근거가 부족해 개별 제외합니다. 기존 60/64 가격 충돌에 따른 일괄 보류 설명은 정정합니다.",
+    "전일 가격 경계 확인은 종목선정 승인이 아닙니다. 통과한 66개의 저녁 차트·누적수급·뉴스/일정·추격위험 후속 검토는 아직 완료되지 않았습니다. 추천·후보 게시 0개는 선정 미완료 상태이며 적격 종목이 없다는 최종 결론이 아닙니다.",
+    "22시대 당일 일봉 재조회에서 68개 모두 시가·고가·저가·종가가 같은 KRX 5분봉 집계와 일치했습니다. 거래량은 42개 일치·26개 집계 범위 미확인이고 3개는 19:55 봉이 없어 완료 여부를 따로 확인해야 합니다(항목 중복). 일봉·분봉 거래량 차이를 가격 오류로 단정하거나 전체 게시 차단 조건으로 사용하지 않습니다. 브로커 내 대조이며 거래소 독립 검증은 아닙니다."
+  ]
+}
