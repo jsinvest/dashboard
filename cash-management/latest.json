@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "status": "OK",
-  "as_of": "2026-11-19",
-  "trade_date": "20261119",
+  "as_of": "2026-11-20",
+  "trade_date": "20261120",
   "source_generated_at": {
-    "monthly": "2026-11-19T21:11:46+09:00",
-    "staged_weekly": "2026-11-19T21:11:54.827453+09:00"
+    "monthly": "2026-11-20T21:03:22+09:00",
+    "staged_weekly": "2026-11-20T21:03:26.131603+09:00"
   },
   "combined_guidance": {
     "target_cash_pct": 0.0,
@@ -13,7 +13,7 @@
     "action": "HOLD",
     "action_label": "현금 0% · HOLD",
     "state": "월간·주간 현금 0% · 위험자산 한도 100%",
-    "reason": "현금비중 기준 2026-11-19: 월간 PRIMARY 0%·단계형 0% → 최종 참고 현금 0% / 위험자산 한도 100%. 확정 WISE 26업종과 날짜 일치 KOSPI 일봉을 검증했습니다. 월간 MA10 단계형·MA3 재진입 정책을 적용한 참고 한도이며 실제 포지션·신규매수·자동주문을 뜻하지 않습니다. 월간 신호일 2026-10-30의 지표와 현재 확정 종가를 구분합니다.",
+    "reason": "현금비중 기준 2026-11-20: 월간 PRIMARY 0%·단계형 0% → 최종 참고 현금 0% / 위험자산 한도 100%. 확정 WISE 26업종과 날짜 일치 KOSPI 일봉을 검증했습니다. 월간 MA10 단계형·MA3 재진입 정책을 적용한 참고 한도이며 실제 포지션·신규매수·자동주문을 뜻하지 않습니다. 월간 신호일 2026-10-30의 지표와 현재 확정 종가를 구분합니다.",
     "automatic_order": false,
     "execution_authority": "ADVISORY_ONLY"
   },
@@ -73,7 +73,7 @@
       "watch": false,
       "status": "DISARMED_RAW_TRUE",
       "raw_entry_condition": true,
-      "rv20_annualized_pct": 51.926379291728196,
+      "rv20_annualized_pct": 54.671212977673925,
       "new_trigger": false,
       "automatic_allocation_change": false
     },
@@ -938,6 +938,21 @@
       "applied_risky_pct": 100.0,
       "action": "HOLD",
       "action_label": "현금 0% · HOLD"
+    },
+    {
+      "as_of": "2026-11-20",
+      "daily_model_cash_pct": 0.0,
+      "daily_model_mode": "CONTRARIAN_KOSPI",
+      "monthly_primary_cash_pct": 0.0,
+      "monthly_raw_model_cash_pct": 0.0,
+      "monthly_sizing_rule": "RAW_ZERO_ALREADY_RISK_ON",
+      "monthly_ma3_reentry_pending": false,
+      "monthly_ma3_reentry_event": false,
+      "staged_cash_pct": 0.0,
+      "applied_cash_pct": 0.0,
+      "applied_risky_pct": 100.0,
+      "action": "HOLD",
+      "action_label": "현금 0% · HOLD"
     }
   ],
   "rule_steps": [
@@ -994,30 +1009,30 @@
   "validation": {
     "monthly_status": "OK",
     "staged_weekly_status": "OK",
-    "workbook_last_date": "2026-11-19",
-    "workbook_rows": 2668,
+    "workbook_last_date": "2026-11-20",
+    "workbook_rows": 2669,
     "workbook_columns": 28,
     "duplicate_date_rows": 0,
     "missing_numeric_cells": 0,
     "latest_row_complete": true,
     "automatic_order_disabled": true,
-    "workbook_sha256": "2661474b271f24c664135d36bd61c3858ae1bbd3631ea643465b9d49269f291e",
+    "workbook_sha256": "711213249c3b9dbfe35a370fd1469535938d501d25513fd60f734ed4755bf6e9",
     "monthly_policy_version": "cash-weight-reference-v1.2.0-ma10-ma3-reentry",
     "monthly_ma10_policy_sha256": "dc7d2b5fa1d995c80d6a7873a31dd45e3853202959347d62b96210b80ad9f448",
     "monthly_runner_sha256": "4a39064a6cec7ee66086f232166bf69bb93a01ded19076c04b84f52cea3526b2",
     "strategy_sha256": "f0e00f80b911007daa7114cbe8bf8f05465e45d78df4f4fadea4f00d82fb1015",
     "staged_runner_sha256": "f07967e5804c6c40fc3cb6a71f35ffa9e8963aa37d53d5d0a24c174fbedf4369",
     "staged_policy_sha256": "7bc2f0314f871d0ae6bb1f61de3ec5fbe0a3101e91cf8ff57f6c0f284dc1607d",
-    "monthly_result_sha256": "a953f99e4952b15d9c3489ec408d0ff7991183265dd859491bf229833d2512f5",
-    "staged_result_sha256": "ba0ee721b919a817b10564c94e6a7d5af9439d78fa7cf0ccccc8adc4e1f57057",
-    "monthly_validation_sha256": "d3d9148e831ca299bd2137f4900419ad370f7a81500a268fea42feaa4e4c0144",
-    "staged_validation_sha256": "747ef79feedcece9f86ddc494cdc63102faa9ff50cebd38465262302bbb88a45",
-    "wise_result_sha256": "1ae5edc4e0774d2250e524ff54fd810b4d77d21d2fbaa78c9a914f80f8f463f9",
+    "monthly_result_sha256": "9e17ce67b11110d01e480c43dba50ef0f183f48fa32fbcf05aff68e155c4e7ce",
+    "staged_result_sha256": "4e2ef8301d85b08d7760c543b4d7afbe19d9a5efb83b915572d28ccaca5731b5",
+    "monthly_validation_sha256": "2b8762c06e68782beec7698b9f74345d0b77afe31a59415eaf05d4f322e42880",
+    "staged_validation_sha256": "cdf8c3c0d96e545dbad100b52de59d2961888e1fda3a96356fe0591e9a1ad683",
+    "wise_result_sha256": "1dbe069282a54e2350058f6687e681b0869b20a3054ae312de34ea1c1ed422ff",
     "publication_scope": "VALIDATED_CASH_ONLY_RECOVERY",
     "full_evening_analysis_completed": false,
     "ma3_reentry_gate_validated": true,
     "backfilled_dates": [
-      "20261119"
+      "20261120"
     ],
     "dated_kospi_crosscheck": "ka20006_and_ka20009_MATCH"
   },
