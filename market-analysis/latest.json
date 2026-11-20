@@ -1,27 +1,27 @@
 {
-  "as_of": "20261119",
-  "generated_at": "2026-11-19T22:05:26+09:00",
+  "as_of": "20261120",
+  "generated_at": "2026-11-20T21:09:21+09:00",
   "summaries": [
     {
       "market": "KOSPI",
-      "etf_adr_20d": 83.5,
+      "etf_adr_20d": 82.1,
       "stocks_adr_20d": 63.1,
-      "advance_decline_1d": 82.4,
-      "impulse": "BLUE",
+      "advance_decline_1d": 13.0,
+      "impulse": "RED",
       "judgement": "방어 국면",
-      "fear_greed": 32.9,
-      "fear_stage": "FEAR",
+      "fear_greed": 0.0,
+      "fear_stage": "EXTREME_FEAR",
       "kosdaq_entry_allowed": null
     },
     {
       "market": "KOSDAQ",
-      "etf_adr_20d": 78.1,
-      "stocks_adr_20d": 64.2,
-      "advance_decline_1d": 81.8,
-      "impulse": "BLUE",
+      "etf_adr_20d": 79.8,
+      "stocks_adr_20d": 63.3,
+      "advance_decline_1d": 13.7,
+      "impulse": "RED",
       "judgement": "방어 국면",
-      "fear_greed": 27.7,
-      "fear_stage": "FEAR",
+      "fear_greed": 0.0,
+      "fear_stage": "EXTREME_FEAR",
       "kosdaq_entry_allowed": false
     }
   ],
@@ -71,21 +71,21 @@
     "validation": {
       "status": "OK",
       "can_use_for_decision": true,
-      "file": "validation_20261119.json"
+      "file": "validation_20261120.json"
     },
     "assessment": {
-      "conclusion": "KOSPI 중립-하락 · KOSDAQ 중립-하락 · 니케이 확인 동조 하락 확인",
+      "conclusion": "KOSPI 하락 · KOSDAQ 하락 · 니케이 확인 동조 하락 확인",
       "higher_timeframe_context": {
         "monthly": "상승",
         "weekly": "하락"
       },
       "daily_state": "하락",
-      "intraday_state": "상승",
+      "intraday_state": "하락",
       "markets": {
         "KOSPI": {
           "confirmed_mtf": {
-            "score": -29.8,
-            "state": "중립-하락",
+            "score": -60.2,
+            "state": "하락",
             "valid_weight_pct": 100.0,
             "timeframe_conflict": false,
             "confidence_cap": 100,
@@ -94,12 +94,12 @@
           "monthly": "상승",
           "weekly": "하락",
           "daily": "하락",
-          "intraday_15m": "상승"
+          "intraday_15m": "하락"
         },
         "KOSDAQ": {
           "confirmed_mtf": {
-            "score": -33.5,
-            "state": "중립-하락",
+            "score": -68.8,
+            "state": "하락",
             "valid_weight_pct": 100.0,
             "timeframe_conflict": false,
             "confidence_cap": 100,
@@ -108,7 +108,7 @@
           "monthly": "하락",
           "weekly": "하락",
           "daily": "하락",
-          "intraday_15m": "상승"
+          "intraday_15m": "하락"
         }
       },
       "nikkei_confirmation": "동조 하락 확인",
@@ -125,7 +125,7 @@
         629.17
       ],
       "kosdaq_objective_resistances": [
-        791.24,
+        773.28,
         921.73
       ],
       "invalidation_conditions": [
@@ -142,69 +142,69 @@
     "cross_market": {
       "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
       "common_daily_observations": 1700,
-      "latest_common_daily_date": "2026-11-19",
+      "latest_common_daily_date": "2026-11-20",
       "same_day": {
         "20d": {
           "observations": 20,
-          "correlation": 0.7874,
+          "correlation": 0.7986,
           "same_direction_pct": 75.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.7439,
+          "correlation": 0.7533,
           "same_direction_pct": 68.33
         },
         "120d": {
           "observations": 120,
-          "correlation": 0.7971,
+          "correlation": 0.7941,
           "same_direction_pct": 76.67
         }
       },
       "nikkei_tminus1_to_kospi": {
         "20d": {
           "observations": 20,
-          "correlation": 0.2756,
+          "correlation": 0.257,
           "same_direction_pct": 55.0
         },
         "60d": {
           "observations": 60,
-          "correlation": 0.1459,
-          "same_direction_pct": 58.33
+          "correlation": 0.1186,
+          "same_direction_pct": 56.67
         },
         "120d": {
           "observations": 120,
-          "correlation": -0.0179,
-          "same_direction_pct": 54.17
+          "correlation": -0.0275,
+          "same_direction_pct": 53.33
         }
       },
       "relative_strength": {
         "5d": {
-          "kospi_return_pct": -3.834,
-          "nikkei_return_pct": -2.261,
-          "kospi_minus_nikkei_pct_points": -1.573
+          "kospi_return_pct": -7.949,
+          "nikkei_return_pct": -7.696,
+          "kospi_minus_nikkei_pct_points": -0.253
         },
         "20d": {
-          "kospi_return_pct": -10.422,
-          "nikkei_return_pct": -8.011,
-          "kospi_minus_nikkei_pct_points": -2.411
+          "kospi_return_pct": -11.996,
+          "nikkei_return_pct": -10.287,
+          "kospi_minus_nikkei_pct_points": -1.709
         },
         "60d": {
-          "kospi_return_pct": -24.591,
-          "nikkei_return_pct": -12.977,
-          "kospi_minus_nikkei_pct_points": -11.614
+          "kospi_return_pct": -30.209,
+          "nikkei_return_pct": -17.867,
+          "kospi_minus_nikkei_pct_points": -12.342
         }
       },
       "beta_adjusted_residual": {
         "observations": 60,
-        "beta_60d": 1.2766,
-        "latest_residual_zscore": 0.312
+        "beta_60d": 1.237,
+        "latest_residual_zscore": 0.602
       },
       "intraday_alignment": {
-        "common_15m_bars": 20,
-        "return_correlation": 0.7261,
-        "kospi_session_return_pct": 0.94,
-        "nikkei_session_return_pct": 0.71,
-        "kospi_minus_nikkei_pct_points": 0.23
+        "common_15m_bars": 24,
+        "return_correlation": 0.5995,
+        "kospi_session_return_pct": -1.188,
+        "nikkei_session_return_pct": -3.612,
+        "kospi_minus_nikkei_pct_points": 2.424
       },
       "state": "동조 하락 확인",
       "role": "confirmation_only",
@@ -216,69 +216,69 @@
       "KOSPI_NIKKEI225": {
         "comparison_definition": "동일 완료 거래일 수익률은 동조 확인, Nikkei(t-1)→KOSPI(t)는 별도 선행성 점검",
         "common_daily_observations": 1700,
-        "latest_common_daily_date": "2026-11-19",
+        "latest_common_daily_date": "2026-11-20",
         "same_day": {
           "20d": {
             "observations": 20,
-            "correlation": 0.7874,
+            "correlation": 0.7986,
             "same_direction_pct": 75.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.7439,
+            "correlation": 0.7533,
             "same_direction_pct": 68.33
           },
           "120d": {
             "observations": 120,
-            "correlation": 0.7971,
+            "correlation": 0.7941,
             "same_direction_pct": 76.67
           }
         },
         "nikkei_tminus1_to_kospi": {
           "20d": {
             "observations": 20,
-            "correlation": 0.2756,
+            "correlation": 0.257,
             "same_direction_pct": 55.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.1459,
-            "same_direction_pct": 58.33
+            "correlation": 0.1186,
+            "same_direction_pct": 56.67
           },
           "120d": {
             "observations": 120,
-            "correlation": -0.0179,
-            "same_direction_pct": 54.17
+            "correlation": -0.0275,
+            "same_direction_pct": 53.33
           }
         },
         "relative_strength": {
           "5d": {
-            "kospi_return_pct": -3.834,
-            "nikkei_return_pct": -2.261,
-            "kospi_minus_nikkei_pct_points": -1.573
+            "kospi_return_pct": -7.949,
+            "nikkei_return_pct": -7.696,
+            "kospi_minus_nikkei_pct_points": -0.253
           },
           "20d": {
-            "kospi_return_pct": -10.422,
-            "nikkei_return_pct": -8.011,
-            "kospi_minus_nikkei_pct_points": -2.411
+            "kospi_return_pct": -11.996,
+            "nikkei_return_pct": -10.287,
+            "kospi_minus_nikkei_pct_points": -1.709
           },
           "60d": {
-            "kospi_return_pct": -24.591,
-            "nikkei_return_pct": -12.977,
-            "kospi_minus_nikkei_pct_points": -11.614
+            "kospi_return_pct": -30.209,
+            "nikkei_return_pct": -17.867,
+            "kospi_minus_nikkei_pct_points": -12.342
           }
         },
         "beta_adjusted_residual": {
           "observations": 60,
-          "beta_60d": 1.2766,
-          "latest_residual_zscore": 0.312
+          "beta_60d": 1.237,
+          "latest_residual_zscore": 0.602
         },
         "intraday_alignment": {
-          "common_15m_bars": 20,
-          "return_correlation": 0.7261,
-          "kospi_session_return_pct": 0.94,
-          "nikkei_session_return_pct": 0.71,
-          "kospi_minus_nikkei_pct_points": 0.23
+          "common_15m_bars": 24,
+          "return_correlation": 0.5995,
+          "kospi_session_return_pct": -1.188,
+          "nikkei_session_return_pct": -3.612,
+          "kospi_minus_nikkei_pct_points": 2.424
         },
         "state": "동조 하락 확인",
         "role": "confirmation_only",
@@ -292,63 +292,63 @@
           "NIKKEI225"
         ],
         "common_daily_observations": 1700,
-        "latest_common_daily_date": "2026-11-19",
+        "latest_common_daily_date": "2026-11-20",
         "same_day": {
           "20d": {
             "observations": 20,
-            "correlation": 0.7682,
+            "correlation": 0.7857,
             "same_direction_pct": 85.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.7692,
+            "correlation": 0.7834,
             "same_direction_pct": 83.33
           },
           "120d": {
             "observations": 120,
-            "correlation": 0.6862,
+            "correlation": 0.6894,
             "same_direction_pct": 80.83
           }
         },
         "nikkei225_tminus1_to_kosdaq": {
           "20d": {
             "observations": 20,
-            "correlation": 0.3051,
+            "correlation": 0.2805,
             "same_direction_pct": 55.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.0826,
-            "same_direction_pct": 50.0
+            "correlation": 0.061,
+            "same_direction_pct": 48.33
           },
           "120d": {
             "observations": 120,
-            "correlation": -0.0338,
-            "same_direction_pct": 50.0
+            "correlation": -0.0438,
+            "same_direction_pct": 49.17
           }
         },
         "relative_strength": {
           "5d": {
-            "kosdaq_return_pct": -1.683,
-            "nikkei225_return_pct": -2.261,
-            "first_minus_second_pct_points": 0.578
+            "kosdaq_return_pct": -7.715,
+            "nikkei225_return_pct": -7.696,
+            "first_minus_second_pct_points": -0.019
           },
           "20d": {
-            "kosdaq_return_pct": -13.617,
-            "nikkei225_return_pct": -8.011,
-            "first_minus_second_pct_points": -5.606
+            "kosdaq_return_pct": -15.498,
+            "nikkei225_return_pct": -10.287,
+            "first_minus_second_pct_points": -5.211
           },
           "60d": {
-            "kosdaq_return_pct": -20.498,
-            "nikkei225_return_pct": -12.977,
-            "first_minus_second_pct_points": -7.521
+            "kosdaq_return_pct": -25.325,
+            "nikkei225_return_pct": -17.867,
+            "first_minus_second_pct_points": -7.458
           }
         },
         "intraday_alignment": {
-          "common_15m_bars": 20,
-          "return_correlation": 0.7514,
-          "kosdaq_session_return_pct": 2.469,
-          "nikkei225_session_return_pct": 0.71
+          "common_15m_bars": 24,
+          "return_correlation": 0.514,
+          "kosdaq_session_return_pct": -2.315,
+          "nikkei225_session_return_pct": -3.612
         },
         "state": "동조 하락",
         "role": "cross_market_confirmation_only",
@@ -360,63 +360,63 @@
           "KOSDAQ"
         ],
         "common_daily_observations": 1800,
-        "latest_common_daily_date": "2026-11-19",
+        "latest_common_daily_date": "2026-11-20",
         "same_day": {
           "20d": {
             "observations": 20,
-            "correlation": 0.9135,
-            "same_direction_pct": 90.0
+            "correlation": 0.9289,
+            "same_direction_pct": 95.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.8138,
-            "same_direction_pct": 71.67
+            "correlation": 0.8422,
+            "same_direction_pct": 73.33
           },
           "120d": {
             "observations": 120,
-            "correlation": 0.7307,
-            "same_direction_pct": 72.5
+            "correlation": 0.7423,
+            "same_direction_pct": 73.33
           }
         },
         "kosdaq_tminus1_to_kospi": {
           "20d": {
             "observations": 20,
-            "correlation": 0.1466,
+            "correlation": 0.0614,
             "same_direction_pct": 45.0
           },
           "60d": {
             "observations": 60,
-            "correlation": 0.1705,
-            "same_direction_pct": 50.0
+            "correlation": 0.105,
+            "same_direction_pct": 48.33
           },
           "120d": {
             "observations": 120,
-            "correlation": -0.1057,
-            "same_direction_pct": 49.17
+            "correlation": -0.1175,
+            "same_direction_pct": 48.33
           }
         },
         "relative_strength": {
           "5d": {
-            "kospi_return_pct": -3.834,
-            "kosdaq_return_pct": -1.683,
-            "first_minus_second_pct_points": -2.151
+            "kospi_return_pct": -7.949,
+            "kosdaq_return_pct": -7.715,
+            "first_minus_second_pct_points": -0.234
           },
           "20d": {
-            "kospi_return_pct": -7.154,
-            "kosdaq_return_pct": -10.377,
-            "first_minus_second_pct_points": 3.223
+            "kospi_return_pct": -12.258,
+            "kosdaq_return_pct": -14.103,
+            "first_minus_second_pct_points": 1.845
           },
           "60d": {
-            "kospi_return_pct": -25.677,
-            "kosdaq_return_pct": -14.606,
-            "first_minus_second_pct_points": -11.071
+            "kospi_return_pct": -27.281,
+            "kosdaq_return_pct": -20.613,
+            "first_minus_second_pct_points": -6.668
           }
         },
         "intraday_alignment": {
           "common_15m_bars": 27,
-          "return_correlation": 0.9383,
-          "kospi_session_return_pct": 0.94,
-          "kosdaq_session_return_pct": 2.469
+          "return_correlation": 0.8739,
+          "kospi_session_return_pct": -1.188,
+          "kosdaq_session_return_pct": -2.315
         },
         "state": "동조 하락",
         "role": "domestic_relative_strength",
@@ -428,11 +428,11 @@
   },
   "data_bundle": {
     "file": "market_data_bundle_latest.zip",
-    "as_of": "20261119",
-    "generated_at": "2026-11-19T22:05:25+09:00",
+    "as_of": "20261120",
+    "generated_at": "2026-11-20T21:09:21+09:00",
     "file_count": 62,
-    "bytes": 5278281,
-    "sha256": "8c08fa344cd3a234a3b9a8f48d3bd298e91f2f9fbf208398b2d6f592187a7de3"
+    "bytes": 5265641,
+    "sha256": "68bb6c31d14aa7b63480ef69267d65076056deeb2648705d662730e41a8c6c06"
   },
   "downloads": [
     {
