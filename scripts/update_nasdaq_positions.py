@@ -1,8 +1,11 @@
 """Build the public weekly Nasdaq-100 positioning panel from CFTC TFF futures-only data."""
 
 import argparse
+import csv
 import hashlib
+import io
 import json
+import math
 import os
 import re
 import tempfile
@@ -12,6 +15,7 @@ from pathlib import Path
 from string import Template
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
+from urllib.error import URLError
 
 
 ROOT = Path(__file__).resolve().parents[1] / "nasdaq-positioning"
@@ -22,6 +26,10 @@ CURRENT = "https://www.cftc.gov/dea/futures/financial_lf.htm"
 DATE = "report_date_as_yyyy_mm_dd"
 CONTRACT = "cftc_contract_market_code"
 FIELDS = ("lev_money_positions_long", "lev_money_positions_short", "open_interest_all")
+NDX_FIELDS = ("open", "high", "low", "close")
+NDX_MIRROR = ("https://raw.githubusercontent.com/zid036116-ship-it/-/refs/heads/main/"
+              "market_data/Nasdaq100%20%E7%BA%B3%E6%8C%87100___NDX.csv")
+NDX_OFFICIAL = "https://indexes.nasdaq.com/Index/History/NDX"
 
 
 def read_source(path, url):
@@ -71,16 +79,96 @@ def check_current(raw, row):
         raise ValueError("Current report and historical dataset disagree")
 
 
-def render(rows, estimates, digest):
+def daily_csv(raw):
+    rows = csv.DictReader(io.StringIO(raw.decode("utf-8-sig")))
+    for row in rows:
+        if row["date"] and row["ticker"] == "^NDX":
+            yield row["date"], [row[k] for k in NDX_FIELDS]
+
+
+def ndx_prices(source, start, end):
+    if source:
+        return list(daily_csv(source.read_bytes()))
+    epoch = date(1970, 1, 1)
+    params = urlencode({"period1": (start - epoch).days * 86400,
+                        "period2": ((end - epoch).days + 1) * 86400, "interval": "1d"})
+    for host in ("query1", "query2"):
+        url = f"https://{host}.finance.yahoo.com/v8/finance/chart/%5ENDX?{params}"
+        try:
+            chart = json.loads(read_source(None, url))["chart"]["result"][0]
+            if chart["meta"]["symbol"] != "^NDX" or chart["meta"]["dataGranularity"] != "1d":
+                raise ValueError("Unexpected instrument or frequency for NDX")
+            quotes = chart["indicators"]["quote"][0]
+            return [(datetime.fromtimestamp(ts, timezone.utc).date().isoformat(),
+                     [quotes[k][i] for k in NDX_FIELDS]) for i, ts in enumerate(chart["timestamp"])]
+        except (URLError, TimeoutError, json.JSONDecodeError):
+            continue
+    return list(daily_csv(read_source(None, NDX_MIRROR)))
+
+
+def index_weeks(positions, today, prices_file=None, reference_file=None, latest_file=None):
+    mondays = [d - timedelta(days=d.weekday()) for d in
+               (date.fromisoformat(row["date"]) for row in positions)]
+    completed = [day for day in mondays if day + timedelta(days=4) < today]
+    if not completed:
+        return {}
+    start, end = completed[0], completed[-1] + timedelta(days=4)
+    url = "https://fred.stlouisfed.org/graph/fredgraph.csv?" + urlencode(
+        {"id": "NASDAQ100", "cosd": start.isoformat(), "coed": end.isoformat()})
+    ref = {}
+    for row in csv.DictReader(io.StringIO(read_source(reference_file, url).decode("utf-8-sig"))):
+        day = date.fromisoformat(row["observation_date"])
+        if start <= day <= end:
+            if day in ref:
+                raise ValueError(f"Duplicate NDX reference date {day}")
+            ref[day] = None if row["NASDAQ100"] in ("", ".") else float(row["NASDAQ100"])
+    if max(ref, default=None) != end:
+        # FRED can lag Friday's close. Accept Nasdaq's dated final Friday value only.
+        if max(ref, default=None) != end - timedelta(days=1):
+            raise ValueError("NDX reference archive does not reach the final week")
+        page = unescape(re.sub(r"<[^>]+>", " ", read_source(latest_file, NDX_OFFICIAL).decode("utf-8")))
+        mark = re.search(r"DATA\s+AS\s+OF\s+(\d+/\d+/\d{4})\s+([\d,]+\.\d+)", page, re.I)
+        if not mark or datetime.strptime(mark[1], "%m/%d/%Y").date() != end:
+            raise ValueError(f"Nasdaq's final close for {end} is unavailable")
+        ref[end] = float(mark[2].replace(",", ""))
+    sessions = {}
+    for stamp, values in ndx_prices(prices_file, start, end):
+        day = date.fromisoformat(stamp)
+        if not start <= day <= end:
+            continue
+        if day in sessions or day.weekday() > 4:
+            raise ValueError(f"Invalid NDX session date {day}")
+        op, hi, lo, cl = map(float, values)
+        if not all(math.isfinite(v) and v > 0 for v in (op, hi, lo, cl)) or not (
+                lo <= min(op, cl) <= max(op, cl) <= hi):
+            raise ValueError(f"Invalid NDX OHLC on {day}")
+        sessions[day] = (op, hi, lo, cl)
+    if set(sessions) != {day for day, close in ref.items() if close is not None}:
+        raise ValueError("NDX trading dates disagree with the reference series")
+    bars = {}
+    for monday in completed:
+        days = [monday + timedelta(days=i) for i in range(5) if monday + timedelta(days=i) in sessions]
+        if not days or abs(sessions[days[-1]][3] - ref[days[-1]]) > 0.02:
+            raise ValueError(f"Missing or inconsistent NDX weekly close for {monday}")
+        bars[monday] = (days[-1], sessions[days[0]][0], max(sessions[d][1] for d in days),
+                        min(sessions[d][2] for d in days), sessions[days[-1]][3])
+    return bars
+
+
+def render(rows, estimates, digest, bars):
     latest = rows[-1]
     table = []
     prev = None
     for row in rows:
         net = row["long"] - row["short"]
         delta = "—" if prev is None else f"{net - prev:+,}"
+        day = date.fromisoformat(row["date"])
+        bar = bars.get(day - timedelta(days=day.weekday()))
+        price_cells = (f"<td>{bar[0]}</td>" + "".join(f"<td>{v:,.2f}</td>" for v in bar[1:])
+                       if bar else '<td colspan="5">주봉 마감 대기</td>')
         table.append(f'<tr><td>{row["date"]}</td><td>{row["long"]:,}</td>'
                      f'<td>{row["short"]:,}</td><td>{net:+,}</td><td>{delta}</td>'
-                     f'<td>{row["oi"]:,}</td><td>{100 * net / row["oi"]:+.2f}%</td></tr>')
+                     f'<td>{row["oi"]:,}</td><td>{100 * net / row["oi"]:+.2f}%</td>{price_cells}</tr>')
         prev = net
     estimates_html = []
     observed = set()
@@ -122,6 +210,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-json", type=Path, help="Offline CFTC rows in the API field format")
     parser.add_argument("--current-report", type=Path, help="Offline official current TFF report")
+    parser.add_argument("--ndx-daily", type=Path, help="Offline ^NDX daily OHLC CSV")
+    parser.add_argument("--ndx-reference", type=Path, help="Offline FRED NASDAQ100 close CSV")
+    parser.add_argument("--ndx-latest", type=Path, help="Offline Nasdaq index page for a lagging FRED Friday")
     parser.add_argument("--output-dir", type=Path, default=ROOT)
     args = parser.parse_args()
     params = {"$select": ",".join((DATE, CONTRACT, *FIELDS)), CONTRACT: CODE,
@@ -138,7 +229,9 @@ def main():
                 "group": "Leveraged Funds", "as_of": rows[-1]["date"], "weeks": len(rows),
                 "sha256": digest, "source": DATASET, "history": rows}
     estimates = json.loads((ROOT / "cta_estimates.json").read_bytes())
-    panel = render(rows, estimates, digest)
+    bars = index_weeks(rows, datetime.now(timezone.utc).date(), args.ndx_daily,
+                       args.ndx_reference, args.ndx_latest)
+    panel = render(rows, estimates, digest, bars)
     output.mkdir(parents=True, exist_ok=True)
     publish_if_changed(history, (json.dumps(snapshot, separators=(",", ":")) + "\n").encode())
     publish_if_changed(output / "index.html", panel.encode())

@@ -19,6 +19,11 @@ def read(url):
 
 def main():
     data = json.loads((ROOT / "nasdaq-positioning/history.json").read_bytes())
+    expected_panel = (ROOT / "nasdaq-positioning/index.html").read_text(encoding="utf-8")
+    table = re.search(r"<tbody>(.*?)</tbody>", expected_panel, re.S)[1]
+    last_price = re.search(r"<td>(\d{4}-\d{2}-\d{2})</td>(?:<td>[\d,.]+</td>){3}<td>([\d,.]+)</td></tr>", table)
+    if not last_price:
+        raise SystemExit("No completed NDX bar in the generated panel")
     digest, latest = data["sha256"], data["as_of"]
     final = data["history"][-1]
     net = final["long"] - final["short"]
@@ -31,7 +36,7 @@ def main():
             panel = read(panel_url)
             if ('data-tab-panel="global"' in root and 'src="nasdaq-positioning/"' in root and
                     f'content="{digest}"' in panel and f"<time>{latest}</time>" in panel and
-                    label in panel and panel.count("<tr><td>") == data["weeks"]):
+                    label in panel and table in panel and 'id="ndx-plot"' in panel):
                 break
         except OSError as exc:
             print(type(exc).__name__, flush=True)
@@ -45,11 +50,19 @@ def main():
                              "--virtual-time-budget=5000", "--dump-dom", panel_url],
                             capture_output=True, timeout=45, check=True)
     dom = result.stdout.decode("utf-8")
-    if (not re.search(r'<canvas\b[^>]*data-rendered="true"', dom) or
+    canvases = re.findall(r'<canvas\b[^>]*>', dom)
+    paired = [tag for tag in canvases if 'data-rendered="true"' in tag and
+              f'data-week="{latest}"' in tag and f'data-weeks="{data["weeks"]}"' in tag]
+    if (len(paired) != 2 or not all(any(f'id="{key}"' in tag for tag in paired) for key in ("plot", "ndx-plot")) or
             f"<time>{latest}</time>" not in dom or label not in dom or
-            dom.count("<tr><td>") != data["weeks"]):
+            table not in dom or dom.count("<tr><td>") != data["weeks"]):
         raise SystemExit("Rendered chart or history does not match")
-    print(f'PUBLIC_DOM_OK {latest} | {label} | {data["weeks"]} weeks | sha256={digest}')
+    current_row = table.split("</tr>", 1)[0]
+    detail = re.search(r'<output id="ndx-point">([^<]+)</output>', dom)
+    expected_values = ("주봉 마감 대기",) if "주봉 마감 대기" in current_row else last_price.groups()
+    if not detail or not all(value in detail[1] for value in expected_values):
+        raise SystemExit("Rendered NDX readout does not match its corresponding CFTC week")
+    print(f'PUBLIC_DOM_OK {latest} | {label} | {data["weeks"]} weeks | NDX {last_price[1]} {last_price[2]} | sha256={digest}')
 
 
 if __name__ == "__main__":

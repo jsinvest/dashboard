@@ -12,6 +12,7 @@ h1{font-size:clamp(19px,3vw,26px);margin:0}.sub,.notes,output{color:#b7c5d1}.sub
 header,.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}a{color:#85caff}
 .toolbar{border-top:1px solid #36434f;padding-top:12px}.controls{display:flex;gap:7px;flex-wrap:wrap}select{background:#1b2632;color:inherit;border:1px solid #526171;border-radius:5px;padding:5px}
 canvas{width:100%;height:168px;display:block;touch-action:pan-y}.chart-info{margin:1px 0 10px;font-variant-numeric:tabular-nums;min-height:1.6em}
+.price-head{border-top:1px solid #36434f;padding:10px 0 2px;display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:3px 12px}.price-head span{font-size:12px;color:#b7c5d1}.up{color:#75d8b6}.down{color:#efa489}#ndx-plot{height:190px}canvas:focus-visible{outline:2px solid #85caff;outline-offset:2px}
 details{border-top:1px solid #36434f;padding:8px 0}summary{cursor:pointer;font-weight:600}.notes{margin:4px 0 9px;font-size:13px}
 .scroll{overflow:auto;max-height:270px}table{border-collapse:collapse;width:100%;white-space:nowrap;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:4px 9px;border-bottom:1px solid #2a3641}th:first-child,td:first-child{text-align:left}th{position:sticky;top:0;background:#1a232c}
 ul{margin:6px 0;padding-left:20px}footer{margin-top:8px;font-size:12px;color:#afbfcb}footer a{margin-right:14px}
@@ -32,12 +33,17 @@ ul{margin:6px 0;padding-left:20px}footer{margin-top:8px;font-size:12px;color:#af
 <select id="period" aria-label="조회 기간"><option value="0">2020년부터</option><option value="156">최근 3년</option><option value="52">최근 1년</option><option value="13">최근 13주</option></select></div></div>
 <canvas id="plot" tabindex="0" role="img" aria-label="주간 포지션 차트. 좌우 방향키로 날짜 이동. 상세 수치는 아래 주간 내역 표에 있습니다."></canvas>
 <p class="chart-info"><output id="point">$latest · $side $net계약</output></p></section>
+<section aria-labelledby="ndx-title">
+<div class="price-head"><strong id="ndx-title">나스닥100 현물 주봉 (NDX)</strong><span>시가 대비 <b class="up">상승</b> · <b class="down">하락</b></span></div>
+<canvas id="ndx-plot" tabindex="0" role="img" aria-label="나스닥100 주봉 차트. 위 포지션 차트와 같은 주를 표시합니다. 좌우 방향키로 이동할 수 있습니다."></canvas>
+<p class="chart-info"><output id="ndx-point"></output></p>
+<p class="notes">두 차트에 같은 미국 거래 주간을 표시합니다. 포지션은 CFTC 집계일 기준, 주봉은 그 주 마지막 거래일 종가 기준입니다.</p></section>
 <details><summary>주간 내역 · $first ~ $latest · $count주</summary>
-<div class="scroll"><table><thead><tr><th>집계일</th><th>롱</th><th>숏</th><th>순포지션</th><th>전주 변화</th><th>미결제약정</th><th>순포지션/OI</th></tr></thead>
+<div class="scroll"><table><thead><tr><th>집계일</th><th>롱</th><th>숏</th><th>순포지션</th><th>전주 변화</th><th>미결제약정</th><th>순포지션/OI</th><th>주봉 마감일</th><th>NDX 시가</th><th>고가</th><th>저가</th><th>종가</th></tr></thead>
 <tbody>$table</tbody></table></div></details>
 <details><summary>CTA 전용 공개 추정치</summary><ul>$estimates</ul>
 <p class="notes">날짜는 차트가 공개 인용된 날입니다. 공개 근거가 확인된 관측치만 표시합니다. 위 CFTC 주간 통계에는 CTA 외에 다른 헤지펀드도 포함됩니다.</p></details>
 <footer><a href="https://publicreporting.cftc.gov/Commitments-of-Traders/TFF-Futures-Only/gpe5-46if" target="_blank" rel="noopener">CFTC 원자료</a>
-<a href="https://fred.stlouisfed.org/series/NASDAQ100" target="_blank" rel="noopener">나스닥100 현물 종가 차트</a><a href="history.json" download>주간 자료 내려받기</a>
+<a href="https://finance.yahoo.com/quote/%5ENDX/history/" target="_blank" rel="noopener">NDX 일봉</a><a href="https://fred.stlouisfed.org/series/NASDAQ100" target="_blank" rel="noopener">NDX 종가 대조</a><a href="history.json" download>주간 포지션 내려받기</a>
 <p>순포지션 = 롱 − 숏. 각 주 마지막 공시 관측일의 보유잔고이며, 보고서 공개는 집계보다 늦습니다.</p></footer>
-</main><script src="chart.js" defer></script></html>
+</main><script src="chart.js?v=ndx-week-1" defer></script></html>
