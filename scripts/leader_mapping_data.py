@@ -61,7 +61,7 @@ def available_dates():
 
 def scan_map():
     if not os.path.exists(SCAN):
-        return {}, {"rows": 0, "sameDate": 0, "pass": []}
+        return {}, {"available": False, "rows": None, "sameDate": None, "pass": []}
     scan = pd.read_csv(SCAN, encoding="utf-8-sig")
     by_code = {}
     pass_rows = []
@@ -85,7 +85,7 @@ def scan_map():
             by_code[code] = item
         if item["pass"]:
             pass_rows.append([code, item["name"], item["market"], item["signalType"], item["grade"]])
-    return by_code, {"rows": len(scan), "sameDate": same_date, "pass": pass_rows}
+    return by_code, {"available": True, "rows": len(scan), "sameDate": same_date, "pass": pass_rows}
 
 
 def sector_stats(stock):

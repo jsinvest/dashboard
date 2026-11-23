@@ -57,7 +57,8 @@ for market,items in configs.items():
  for i,(key,name,relation) in enumerate(items):
   stat=ns['find_sector'](stats,market,name)
   rows=ns['stock_rows'](stock,market,name,5,scan)
-  for row in rows:row['v2']=row['v2'].replace('9/8',short)+f' · {scan_clock} 스캐너'
+  for row in rows:
+   row['v2']=(row['v2'].replace('9/8',short)+f' · {scan_clock} 스캐너') if ss['available'] else 'V2 당일 자료 없음 · 교차신호 판단 불가'
   daily[key]={'name':name,'score':f"시장별 비교순위 {stat['rank']}위 · {stat['sample']}종목 · {short} {clock} 장중",'stocks':rows}
   links[key]=[x[0] for x in items[1:]] if not i else [center]
   x,y,r=(300,180,78) if not i else [(115,65,52),(485,65,52),(115,300,52),(485,300,52)][i-1]
@@ -76,7 +77,12 @@ for market,items in configs.items():
  mobile.append(f'<div data-eco-market="{market}"><b>{market} · {items[0][1]}</b>{"".join(buttons)}</div>')
  passes=list(dict.fromkeys(x[1] for x in ss['pass'] if x[2]==market))
  summary[market]=[items[0][1],note,f'V2 품질통과 {len(passes)}종목','·'.join(passes),f'{len(dates)}거래일 누적',f'업종 생성 {clock} / V2 {scan_clock} · 시점 차이 있음']
+ if not ss['available']:
+  summary[market][2:4]=['V2 당일 자료 없음','교차신호 판단 불가 · 주도주 원본만 사용']
+  summary[market][5]=f'업종 생성 {clock} / V2 당일 자료 없음'
 summary['all']=[' · '.join(configs[m][0][1] for m in configs),'시장별 상대강도 순위 · 원본 사업분류 유지',f"V2 품질통과 {len(set(x[0] for x in ss['pass']))}종목",'코스피·코스닥 별도 교차 확인',f'{len(dates)}거래일 누적',f'{dates[0]}~{DATE} · 날짜별 1회 반영']
+if not ss['available']:
+ summary['all'][2:4]=['V2 당일 자료 없음','교차신호 판단 불가 · 주도주 원본만 사용']
 import os
 html=args.input.read_text(encoding='utf-8')
 def sub(pattern,repl):
@@ -85,6 +91,8 @@ def sub(pattern,repl):
  assert n==1,pattern
 sub(r'<span class="daily-leader-date">.*?</span>',f'<span class="daily-leader-date">시장 기준일 {iso} · {clock} 생성본 · 종가 확정 미검증 · V2 {scan_clock} · 누적 {len(dates)}거래일</span>')
 audit_text=f'원본 내용·해시 검증 통과 · {len(sector)}개 섹터 / {len(stock)}행 / 제외 {len(excluded)}행 · 누락·중복 0 · 운영 표본 {len(stock)+len(excluded)}종목 · V2 {ss["rows"]}행 중 당일 {ss["sameDate"]}행 · 장중 자료: 종가 확정·생성기 종료코드 미검증 · 원본 업종분류 유지 · 수급 0은 미조회/중립 구분 불가 · 신고가 합의·충돌 및 저녁 2단계·14단계 연구자료 제외 · 보완분류 후보 미혼합 · 스팩 사업섹터 제외'
+if not ss['available']:
+ audit_text=audit_text.replace('V2 None행 중 당일 None행','V2 당일 자료 없음 · 교차신호 판단 불가')
 sub(r'<div class="daily-v2-audit"><b>검증 상태</b>.*?</div>',f'<div class="daily-v2-audit"><b>검증 상태</b> · {audit_text}</div>')
 sub(r'<div class="daily-leader-summary">.*?<div class="daily-relation-strip">.*?</div>',f'''<div class="daily-leader-summary"><div class="daily-leader-stat"><small>시장별 상대강도 후보</small><strong id="dailyLeaderConfirmed">{summary['all'][0]}</strong><span id="dailyLeaderConfirmedNote"></span></div><div class="daily-leader-stat"><small>당일 V2</small><strong id="dailyLeaderEmerging"></strong><span id="dailyLeaderEmergingNote"></span></div><div class="daily-leader-stat"><small>누적</small><strong id="dailyLeaderWatch"></strong><span id="dailyLeaderWatchNote"></span></div></div><div class="daily-ecosystem"><div class="daily-ecosystem-title"><b>시장별 주도 후보 · 업종을 눌러 우선 종목 보기</b><span>점선: 시장 내 업종 강도 비교 · 산업 연관이나 자금 이동을 뜻하지 않음</span></div><div class="daily-ecosystem-board">{''.join(cards)}</div><div class="daily-ecosystem-mobile">{''.join(mobile)}</div><div class="daily-sector-detail" id="dailySectorDetail"></div></div><div class="daily-relation-strip"><span>판정 기준</span><b>시장별 RS·상승비율·거래대금·거래 확산으로 비교</b><b>작은 표본의 급등과 다종목 동반 강세 구분</b></div>''')
 sub(r'const DAILY_LEADER_SUMMARY = \{.*?\n\};',f'const DAILY_LEADER_SUMMARY = {json.dumps(summary,ensure_ascii=False,indent=2)};')
@@ -104,6 +112,8 @@ assert all(digest(p)==h for p,h in integrated['input_hashes'].items()), 'Sources
 assert all(digest(Path(data.BASE)/f'sector_stock_leaders_{date}.xlsx')==h for date,h in history_hashes.items())
 audit={'status':'INTRADAY_CONTENT_VALIDATED','trade_date':DATE,'source_time_kst':source_time.isoformat(),'source_sha256':digest(path),'rows':len(stock),'excluded':len(excluded),'history_start':dates[0],'history_end':DATE,'history_days':len(dates),'history_hashes':history_hashes,'calendar_sha256':calendar['raw_sha256'],'integration_data_status':validation['data_status'],'integration_sha256':validation['latest_sha256'],'new_high_used':False,'evening_stages_required':False,'producer_validation':integrated['leader_validation']['producer_validation'],'scan_rows':ss['rows'],'scan_same_day':ss['sameDate'],'scan_sha256':digest(scans[-1]) if scans else None,'centers':{m:{'sector':stats[m][0]['sector'],'name':stats[m][0]['leader']} for m in configs}}
 args.output.write_text(html,encoding='utf-8')
+audit['scan_available']=ss['available']
+audit['scan_status']='AVAILABLE' if ss['available'] else 'UNAVAILABLE'
 out=args.output.parent/'leader-mapping';out.mkdir(exist_ok=True)
 (out/'validation_latest.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(audit,ensure_ascii=False))
