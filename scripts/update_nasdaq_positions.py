@@ -32,11 +32,11 @@ NDX_MIRROR = ("https://raw.githubusercontent.com/zid036116-ship-it/-/refs/heads/
 NDX_OFFICIAL = "https://indexes.nasdaq.com/Index/History/NDX"
 
 
-def read_source(path, url):
+def read_source(path, url, timeout=45):
     if path:
         return path.read_bytes()
     req = Request(url, headers={"User-Agent": "JsInvest-Nasdaq100-Weekly/1.0"})
-    with urlopen(req, timeout=45) as response:
+    with urlopen(req, timeout=timeout) as response:
         return response.read()
 
 
@@ -95,7 +95,10 @@ def ndx_prices(source, start, end):
     for host in ("query1", "query2"):
         url = f"https://{host}.finance.yahoo.com/v8/finance/chart/%5ENDX?{params}"
         try:
-            chart = json.loads(read_source(None, url))["chart"]["result"][0]
+            response = json.loads(read_source(None, url, timeout=12))["chart"]
+            if not response.get("result"):
+                continue
+            chart = response["result"][0]
             if chart["meta"]["symbol"] != "^NDX" or chart["meta"]["dataGranularity"] != "1d":
                 raise ValueError("Unexpected instrument or frequency for NDX")
             quotes = chart["indicators"]["quote"][0]
@@ -106,6 +109,54 @@ def ndx_prices(source, start, end):
     return list(daily_csv(read_source(None, NDX_MIRROR)))
 
 
+def reference_csv(raw, start, end):
+    ref = {}
+    for row in csv.DictReader(io.StringIO(raw.decode("utf-8-sig"))):
+        day = date.fromisoformat(row["observation_date"])
+        if start <= day <= end:
+            if day in ref:
+                raise ValueError(f"Duplicate NDX reference date {day}")
+            ref[day] = None if row["NASDAQ100"] in ("", ".") else float(row["NASDAQ100"])
+    if not ref:
+        raise ValueError("Empty NDX reference archive")
+    return ref
+
+
+def reference_closes(start, end, source):
+    if source:
+        return reference_csv(source.read_bytes(), start, end)
+    url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQ100"
+    try:
+        return reference_csv(read_source(None, url, timeout=12), start, end)
+    except (OSError, KeyError):
+        pass
+    try:
+        url = "https://fred.stlouisfed.org/data/NASDAQ100.txt"
+        body = unescape(re.sub(r"<[^>]+>", " ", read_source(None, url, timeout=12).decode("utf-8")))
+        pairs = re.findall(r"(\d{4}-\d{2}-\d{2})[\s|]+(\d+\.\d+|\.)(?![\d.])", body)
+        if pairs and ("NASDAQ100" in body or "NASDAQ-100" in body):
+            text = "observation_date,NASDAQ100\n" + "\n".join(",".join(pair) for pair in pairs)
+            return reference_csv(text.encode(), start, end)
+    except OSError:
+        pass
+    # The dated offline reference preserves original FRED sessions and the Nasdaq final close.
+    ref = reference_csv((ROOT / "ndx-reference.csv").read_bytes(), start, end)
+    last = max(ref)
+    if last < end:
+        query = urlencode({"assetclass": "index", "fromdate": (last + timedelta(days=1)).isoformat(),
+                           "todate": end.isoformat(), "limit": 10000})
+        url = "https://api.nasdaq.com/api/quote/NDX/historical?" + query
+        data = json.loads(read_source(None, url))["data"]
+        if data.get("symbol", "NDX").upper() != "NDX":
+            raise ValueError("Unexpected Nasdaq historical symbol")
+        for row in data["tradesTable"]["rows"]:
+            day = datetime.strptime(row["date"], "%m/%d/%Y").date()
+            if not last < day <= end or day in ref:
+                raise ValueError(f"Invalid Nasdaq historical date {day}")
+            ref[day] = float(row["close"].replace(",", "").replace("$", ""))
+    return ref
+
+
 def index_weeks(positions, today, prices_file=None, reference_file=None, latest_file=None):
     mondays = [d - timedelta(days=d.weekday()) for d in
                (date.fromisoformat(row["date"]) for row in positions)]
@@ -113,15 +164,11 @@ def index_weeks(positions, today, prices_file=None, reference_file=None, latest_
     if not completed:
         return {}
     start, end = completed[0], completed[-1] + timedelta(days=4)
-    url = "https://fred.stlouisfed.org/graph/fredgraph.csv?" + urlencode(
-        {"id": "NASDAQ100", "cosd": start.isoformat(), "coed": end.isoformat()})
-    ref = {}
-    for row in csv.DictReader(io.StringIO(read_source(reference_file, url).decode("utf-8-sig"))):
-        day = date.fromisoformat(row["observation_date"])
-        if start <= day <= end:
-            if day in ref:
-                raise ValueError(f"Duplicate NDX reference date {day}")
-            ref[day] = None if row["NASDAQ100"] in ("", ".") else float(row["NASDAQ100"])
+    ref = reference_closes(start, end, reference_file)
+    if not reference_file and max(ref) == end - timedelta(days=1):
+        archive = reference_csv((ROOT / "ndx-reference.csv").read_bytes(), start, end)
+        if end in archive:
+            ref[end] = archive[end]
     if max(ref, default=None) != end:
         # FRED can lag Friday's close. Accept Nasdaq's dated final Friday value only.
         if max(ref, default=None) != end - timedelta(days=1):
