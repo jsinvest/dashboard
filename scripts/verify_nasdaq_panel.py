@@ -1,4 +1,4 @@
-"""Read the published US tab and its rendered NQ panel, matching the checked-in snapshot."""
+"""Verify the published CTA market menus, weekly charts, and related CFTC panel."""
 
 import json
 import re
@@ -15,6 +15,39 @@ SITE = "https://jsinvest.github.io/dashboard/"
 def read(url):
     with urlopen(Request(url, headers={"Cache-Control": "no-cache"}), timeout=20) as response:
         return response.read().decode("utf-8")
+
+
+def verify_cta_navigation(chrome, query):
+    expected = (ROOT / "cta-trend/index.html").read_text(encoding="utf-8")
+    payload = json.loads(expected.split('id="data">', 1)[1].split("</script>", 1)[0])
+
+    def dom(url):
+        run = subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
+                              "--disable-dev-shm-usage", "--timeout=15000", "--virtual-time-budget=3500",
+                              "--dump-dom", url], capture_output=True, check=True, timeout=60)
+        return run.stdout.decode("utf-8")
+
+    def tag(html, selector):
+        return next((m for m in re.findall(r"<(?:button|iframe|div)\b[^>]*>", html) if selector in m), "")
+
+    for market, name in (("kospi", "코스피"), ("nasdaq", "나스닥100")):
+        route = SITE + query + "#cta-trend/" + market
+        dashboard = dom(route)
+        main = tag(dashboard, 'data-tab="cta-trend"')
+        selected = tag(dashboard, f'data-cta-market="{market}"')
+        frame = tag(dashboard, 'id="cta-trend-panel"')
+        if ("active" not in main or 'aria-pressed="true"' not in selected or
+                f'src="cta-trend/index.html?embedded=1#{market}"' not in frame or
+                'id="nasdaq-weekly-positions"' in dashboard):
+            raise SystemExit(f"CTA dashboard route failed: {market}")
+        rendered = dom(SITE + "cta-trend/index.html" + query + "#" + market)
+        first, last = payload[market]["weeks"][0], payload[market]["weeks"][-1]
+        if (f'<h2 id="market-title">{name}</h2>' not in rendered or
+                f'{first[0]} ~ {last[0]} 마감' not in rendered or
+                f'id="score">{last[5]:+.1f}<' not in rendered or
+                '<line id="cursor"' not in rendered):
+            raise SystemExit(f"CTA weekly chart failed: {market}")
+        print(f"PUBLIC_CTA_OK {market} | {first[0]} to {last[0]} | {len(payload[market]['weeks'])} weeks | {last[5]:+.1f}", flush=True)
 
 
 def main():
@@ -36,7 +69,9 @@ def main():
         try:
             root = read(SITE + query)
             panel = read(panel_url)
-            if ('data-tab-panel="global"' in root and 'src="nasdaq-positioning/"' in root and
+            if ('data-tab-panel="cta-trend"' in root and 'href="nasdaq-positioning/"' in root and
+                    'src="cta-trend/index.html?embedded=1#kospi"' in root and
+                    'id="nasdaq-weekly-positions"' not in root and
                     f'content="{digest}"' in panel and f"<time>{latest}</time>" in panel and
                     label in panel and table in panel and 'id="ndx-plot"' in panel):
                 break
@@ -48,6 +83,7 @@ def main():
     chrome = shutil.which("google-chrome") or shutil.which("chromium")
     if not chrome:
         raise SystemExit("A headless DOM renderer is required")
+    verify_cta_navigation(chrome, query)
     result = subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
                              "--virtual-time-budget=5000", "--dump-dom", panel_url],
                             capture_output=True, timeout=45, check=True)

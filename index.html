@@ -481,6 +481,7 @@
   <button class="tab-btn active" data-tab="all">전체</button>
   <button class="tab-btn" data-tab="korea">국내</button>
   <button class="tab-btn" data-tab="global">해외</button>
+  <button class="tab-btn" data-tab="cta-trend">CTA 추세추종</button>
   <button class="tab-btn" data-tab="indicator">환율 및 지표</button>
   <button class="tab-btn" data-tab="etf">대표ETF</button>
   <button class="tab-btn" data-tab="etf-weights">ETF비중</button>
@@ -588,10 +589,19 @@
     </div>
   </div>
 
+  <div class="tab-panel" data-tab-panel="cta-trend">
+    <div class="section-title">CTA 추세추종</div>
+    <nav class="market-subtabs" aria-label="CTA 추세추종 하위 메뉴">
+      <button type="button" class="market-subtab-btn active" data-cta-market="kospi" aria-pressed="true" aria-controls="cta-trend-panel">코스피</button>
+      <button type="button" class="market-subtab-btn" data-cta-market="nasdaq" aria-pressed="false" aria-controls="cta-trend-panel">나스닥</button>
+    </nav>
+    <iframe id="cta-trend-panel" src="cta-trend/index.html?embedded=1#kospi" title="코스피 CTA 추세추종과 현물 주봉" loading="lazy" style="width:100%;height:1060px;border:0;border-radius:10px;display:block"></iframe>
+    <p id="cta-nasdaq-related" hidden><a href="nasdaq-positioning/">나스닥100 레버리지 펀드 선물 포지션 보기</a></p>
+  </div>
+
   <!-- 미국시장 -->
   <div class="tab-panel" data-tab-panel="global">
     <div class="section-title">미국시장 · US MARKETS</div>
-    <iframe id="nasdaq-weekly-positions" src="nasdaq-positioning/" title="나스닥100 선물 포지션과 주간 이력" loading="lazy" style="width:100%;height:520px;border:1px solid var(--border);border-radius:10px;margin:0 0 16px;display:block"></iframe>
     <div class="grid-3">
       <div class="chart-card">
         <div class="card-header"><span class="card-title">나스닥 100</span><span class="card-tag tag-us">FOREXCOM · NAS100</span></div>
@@ -1217,7 +1227,39 @@ function showDailyCheck(tab){
   });
 }
 document.querySelectorAll('[data-daily-tab]').forEach(b=>b.addEventListener('click',()=>showDailyCheck(b.dataset.dailyTab)));
+let ctaMarket = 'kospi';
+function showCtaMarket(market){
+  ctaMarket = market === 'nasdaq' ? 'nasdaq' : 'kospi';
+  const frame = document.getElementById('cta-trend-panel');
+  const src = 'cta-trend/index.html?embedded=1#' + ctaMarket;
+  if(frame.getAttribute('src') !== src) frame.setAttribute('src', src);
+  frame.title = (ctaMarket === 'kospi' ? '코스피' : '나스닥100') + ' CTA 추세추종과 현물 주봉';
+  document.querySelectorAll('[data-cta-market]').forEach(button=>{
+    const active = button.dataset.ctaMarket === ctaMarket;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  document.getElementById('cta-nasdaq-related').hidden = ctaMarket !== 'nasdaq';
+}
+function openCtaRoute(){
+  const match = /^#cta-trend\/(kospi|nasdaq)$/.exec(location.hash);
+  if(match){
+    showCtaMarket(match[1]);
+    showDashboardTab('cta-trend');
+  }
+}
+document.querySelectorAll('[data-cta-market]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    showCtaMarket(button.dataset.ctaMarket);
+    showDashboardTab('cta-trend');
+  });
+});
+window.addEventListener('hashchange',openCtaRoute);
+document.addEventListener('DOMContentLoaded',openCtaRoute);
+
 function showDashboardTab(tab){
+  if(tab === 'cta-trend') history.replaceState(null, '', '#cta-trend/' + ctaMarket);
+  else if(location.hash.startsWith('#cta-trend/')) history.replaceState(null, '', location.pathname + location.search);
   if(tab==='news'){showDailyCheck('news');tab='daily-report';}
   document.querySelectorAll('[data-tab-panel]').forEach(panel=>{
     panel.classList.toggle('hidden', (tab !== 'all' && panel.dataset.tabPanel !== tab) || (tab === 'all' && !!panel.dataset.liveMonitor));
