@@ -8,6 +8,7 @@ import json
 import math
 import os
 import re
+import statistics
 import tempfile
 from datetime import date, datetime, timedelta, timezone
 from html import escape, unescape
@@ -30,6 +31,8 @@ NDX_FIELDS = ("open", "high", "low", "close")
 NDX_MIRROR = ("https://raw.githubusercontent.com/zid036116-ship-it/-/refs/heads/main/"
               "market_data/Nasdaq100%20%E7%BA%B3%E6%8C%87100___NDX.csv")
 NDX_OFFICIAL = "https://indexes.nasdaq.com/Index/History/NDX"
+TREND_DAYS = (21, 63, 126)
+VOL_DAYS = 63
 
 
 def read_source(path, url, timeout=45):
@@ -157,13 +160,42 @@ def reference_closes(start, end, source):
     return ref
 
 
+def trend_scores(closes, ends):
+    """Score only the requested sessions, using information available at each close."""
+    dates = sorted(day for day, value in closes.items() if value is not None)
+    values = [closes[day] for day in dates]
+    if any(not math.isfinite(value) or value <= 0 for value in values):
+        raise ValueError("Invalid Nasdaq-100 close for the CTA model")
+    log_prices = [math.log(value) for value in values]
+    changes = [b - a for a, b in zip(log_prices, log_prices[1:])]
+    scores = {}
+    for i, day in enumerate(dates):
+        if day not in ends:
+            continue
+        if i < max(TREND_DAYS):
+            raise ValueError(f"Insufficient Nasdaq-100 model warm-up on {day}")
+        vol = statistics.stdev(changes[i-VOL_DAYS:i])
+        signals = []
+        for horizon in TREND_DAYS:
+            change = log_prices[i] - log_prices[i-horizon]
+            if vol < 1e-12:
+                signals.append((change > 0) - (change < 0))
+            else:
+                signals.append(math.tanh(change / (vol * math.sqrt(horizon))))
+        scores[day] = round(100 * statistics.mean(signals), 1)
+    if scores.keys() != ends:
+        raise ValueError("Missing Nasdaq-100 weekly model score")
+    return scores
+
+
 def index_weeks(positions, today, prices_file=None, reference_file=None, latest_file=None):
-    mondays = [d - timedelta(days=d.weekday()) for d in
-               (date.fromisoformat(row["date"]) for row in positions)]
-    completed = [day for day in mondays if day + timedelta(days=4) < today]
-    if not completed:
+    first_day = date.fromisoformat(positions[0]["date"])
+    start = first_day - timedelta(days=first_day.weekday())
+    # The US week must have finished. A delayed CFTC release need not shorten the NDX chart.
+    end = today - timedelta(days=(today.weekday() - 5) % 7 + 1)
+    if end < start:
         return {}
-    start, end = completed[0], completed[-1] + timedelta(days=4)
+    completed = [start + timedelta(weeks=i) for i in range((end-start).days // 7 + 1)]
     ref = reference_closes(start, end, reference_file)
     if not reference_file and max(ref) == end - timedelta(days=1):
         archive = reference_csv((ROOT / "ndx-reference.csv").read_bytes(), start, end)
@@ -199,24 +231,34 @@ def index_weeks(positions, today, prices_file=None, reference_file=None, latest_
             raise ValueError(f"Missing or inconsistent NDX weekly close for {monday}")
         bars[monday] = (days[-1], sessions[days[0]][0], max(sessions[d][1] for d in days),
                         min(sessions[d][2] for d in days), sessions[days[-1]][3])
-    return bars
+    warmup = reference_csv((ROOT / "ndx-reference.csv").read_bytes(),
+                           date(2019, 6, 3), start - timedelta(days=1))
+    scores = trend_scores(warmup | ref, {bar[0] for bar in bars.values()})
+    return {week: (*bar, scores[bar[0]]) for week, bar in bars.items()}
 
 
 def render(rows, estimates, digest, bars):
     latest = rows[-1]
     table = []
     prev = None
+    by_week = {}
     for row in rows:
-        net = row["long"] - row["short"]
-        delta = "—" if prev is None else f"{net - prev:+,}"
         day = date.fromisoformat(row["date"])
-        bar = bars.get(day - timedelta(days=day.weekday()))
-        price_cells = (f"<td>{bar[0]}</td>" + "".join(f"<td>{v:,.2f}</td>" for v in bar[1:])
-                       if bar else '<td colspan="5">주봉 마감 대기</td>')
-        table.append(f'<tr><td>{row["date"]}</td><td>{row["long"]:,}</td>'
-                     f'<td>{row["short"]:,}</td><td>{net:+,}</td><td>{delta}</td>'
-                     f'<td>{row["oi"]:,}</td><td>{100 * net / row["oi"]:+.2f}%</td>{price_cells}</tr>')
-        prev = net
+        by_week[day - timedelta(days=day.weekday())] = row
+    for monday in sorted(by_week.keys() | bars.keys()):
+        row, bar = by_week.get(monday), bars.get(monday)
+        if row:
+            net = row["long"] - row["short"]
+            delta = "—" if prev is None else f"{net - prev:+,}"
+            position_cells = (f'<td>{row["date"]}</td><td>{row["long"]:,}</td>'
+                              f'<td>{row["short"]:,}</td><td>{net:+,}</td><td>{delta}</td>'
+                              f'<td>{row["oi"]:,}</td><td>{100 * net / row["oi"]:+.2f}%</td>')
+            prev = net
+        else:
+            position_cells = "<td>미발표</td>" + "<td>—</td>" * 6
+        price_cells = (f"<td>{bar[0]}</td>" + "".join(f"<td>{v:,.2f}</td>" for v in bar[1:5])
+                       + f"<td>{bar[5]:+.1f}</td>" if bar else '<td colspan="6">주봉 마감 대기</td>')
+        table.append(f"<tr>{position_cells}{price_cells}</tr>")
     estimates_html = []
     observed = set()
     for obs in sorted(estimates, key=lambda item: item["published"], reverse=True):
@@ -233,7 +275,13 @@ def render(rows, estimates, digest, bars):
                               f'<a href="{escape(source, quote=True)}" target="_blank" rel="noopener">출처</a></li>')
     net = latest["long"] - latest["short"]
     previous = rows[-2]["long"] - rows[-2]["short"] if len(rows) > 1 else None
+    scored_bars = [bars[d] for d in sorted(bars)]
+    model = scored_bars[-1] if scored_bars else None
+    rank = 1 + sum(b[5] < model[5] for b in scored_bars) if model else "—"
     return Template((ROOT / "panel.template.html").read_text(encoding="utf-8")).substitute(
+        model_date=model[0] if model else "마감 대기", score=f"{model[5]:+.1f}" if model else "—",
+        model_count=len(scored_bars), rank=rank,
+        model_delta=f"{model[5]-scored_bars[-2][5]:+.1f}" if len(scored_bars) > 1 else "—",
         latest=latest["date"], first=rows[0]["date"], count=len(rows), digest=digest,
         side="순숏" if net < 0 else ("순롱" if net else "중립"),
         net=f"{abs(net):,}", delta="—" if previous is None else f"{net - previous:+,}",

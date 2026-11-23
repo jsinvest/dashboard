@@ -21,9 +21,11 @@ def main():
     data = json.loads((ROOT / "nasdaq-positioning/history.json").read_bytes())
     expected_panel = (ROOT / "nasdaq-positioning/index.html").read_text(encoding="utf-8")
     table = re.search(r"<tbody>(.*?)</tbody>", expected_panel, re.S)[1]
-    last_price = re.search(r"<td>(\d{4}-\d{2}-\d{2})</td>(?:<td>[\d,.]+</td>){3}<td>([\d,.]+)</td></tr>", table)
-    if not last_price:
-        raise SystemExit("No completed NDX bar in the generated panel")
+    model_rows = re.findall(r"<td>(\d{4}-\d{2}-\d{2})</td>(?:<td>[\d,.]+</td>){3}"
+                            r"<td>([\d,.]+)</td><td>([+-]\d+\.\d)</td></tr>", table)
+    if not model_rows or any(abs(float(score)) > 100 for _, _, score in model_rows):
+        raise SystemExit("Missing or invalid CTA score for completed NDX bars")
+    model_date, model_close, score = model_rows[0]
     digest, latest = data["sha256"], data["as_of"]
     final = data["history"][-1]
     net = final["long"] - final["short"]
@@ -52,17 +54,20 @@ def main():
     dom = result.stdout.decode("utf-8")
     canvases = re.findall(r'<canvas\b[^>]*>', dom)
     paired = [tag for tag in canvases if 'data-rendered="true"' in tag and
-              f'data-week="{latest}"' in tag and f'data-weeks="{data["weeks"]}"' in tag]
+              f'data-week="{model_date}"' in tag and f'data-weeks="{len(model_rows)}"' in tag]
     if (len(paired) != 2 or not all(any(f'id="{key}"' in tag for tag in paired) for key in ("plot", "ndx-plot")) or
             f"<time>{latest}</time>" not in dom or label not in dom or
-            table not in dom or dom.count("<tr><td>") != data["weeks"]):
+            not any('id="plot"' in tag and 'data-series="cta"' in tag for tag in paired) or
+            table not in dom or dom.count("<tr><td>") != table.count("<tr><td>")):
         raise SystemExit("Rendered chart or history does not match")
-    current_row = table.split("</tr>", 1)[0]
     detail = re.search(r'<output id="ndx-point">([^<]+)</output>', dom)
-    expected_values = ("주봉 마감 대기",) if "주봉 마감 대기" in current_row else last_price.groups()
-    if not detail or not all(value in detail[1] for value in expected_values):
-        raise SystemExit("Rendered NDX readout does not match its corresponding CFTC week")
-    print(f'PUBLIC_DOM_OK {latest} | {label} | {data["weeks"]} weeks | NDX {last_price[1]} {last_price[2]} | sha256={digest}')
+    model_point = re.search(r'<output id="point">([^<]+)</output>', dom)
+    display_score = "0.0" if float(score) == 0 else score
+    if (not detail or not all(v in detail[1] for v in (model_date, model_close)) or
+            not model_point or not all(v in model_point[1] for v in (model_date, "CTA", display_score))):
+        raise SystemExit("Rendered red line and NDX readouts must match the same completed week")
+    print(f'PUBLIC_DOM_OK {latest} | {label} | {data["weeks"]} CFTC weeks | '
+          f'CTA {model_date} {score} / {len(model_rows)} weeks | NDX {model_close} | sha256={digest}')
 
 
 if __name__ == "__main__":

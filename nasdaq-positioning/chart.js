@@ -7,15 +7,17 @@
   const priceFmt = new Intl.NumberFormat("ko-KR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
   const signed = value => (value > 0 ? "+" : "") + fmt.format(value);
   const rows = Array.from(document.querySelectorAll("tbody tr"), tr => {
-    const [date, long, short, net, , oi, , end, open, high, low, close] =
+    const [stamp, long, short, net, , oi, , end, open, high, low, close, score] =
       Array.from(tr.cells, cell => cell.textContent.replaceAll(",", ""));
     const bar = close === undefined ? null : {end, open: +open, high: +high, low: +low, close: +close};
-    return {date, long: +long, short: +short, net: +net, share: 100 * Number(net) / Number(oi), bar};
+    return {date: stamp === "미발표" ? null : stamp, long: +long, short: +short, net: +net,
+      share: 100 * Number(net) / Number(oi), bar, cta: score === undefined ? null : Number(score)};
   }).reverse();
   let shown = rows;
   let cursor = rows.length - 1;
   const left = 62, right = 10;
   const clamp = i => Math.max(0, Math.min(shown.length - 1, i));
+  const chartDate = row => field.value === "cta" ? row.bar.end : row.date;
 
   function frame(canvas, low, high, ticks, label, timeLabels) {
     const ctx = canvas.getContext("2d");
@@ -50,7 +52,7 @@
       line(x(i), 10, x(i), bottom, "#23313c");
       if (timeLabels) {
         ctx.textAlign = j === 0 ? "left" : j === count - 1 ? "right" : "center";
-        const stamp = shown[i].date;
+        const stamp = chartDate(shown[i]);
         ctx.fillText(shown.length <= 52 ? stamp.slice(2) : stamp.slice(0, 7), x(i), height - 5);
       }
     }
@@ -63,25 +65,30 @@
     line(x(cursor), 9, x(cursor), bottom, "#d5e2ed");
     ctx.setLineDash([]);
     canvas.dataset.rendered = "true";
-    canvas.dataset.week = shown[cursor].date;
+    canvas.dataset.week = chartDate(shown[cursor]);
     canvas.dataset.weeks = String(shown.length);
   }
 
   function draw() {
+    if (!shown.length) return;
+    const model = field.value === "cta";
     const gross = field.value === "gross";
     const keys = gross ? ["long", "short"] : [field.value];
     const values = shown.flatMap(row => keys.map(key => row[key]));
-    const lo = Math.min(0, ...values), hi = Math.max(0, ...values);
+    const lo = model ? -100 : Math.min(0, ...values), hi = model ? 100 : Math.max(0, ...values);
     const upper = frame(positions, lo, hi, [lo, 0, hi],
-      v => field.value === "share" ? v.toFixed(1) + "%" : fmt.format(v), false);
+      v => model ? ({"100":"+100 롱", "0":"0 중립", "-100":"−100 숏"})[v] :
+        field.value === "share" ? v.toFixed(1) + "%" : fmt.format(v), false);
     if (!upper) return;
     keys.forEach((key, j) => {
       const {ctx, x, y} = upper;
-      ctx.strokeStyle = j ? "#ffab82" : "#76d6d1"; ctx.lineWidth = 1.8; ctx.beginPath();
+      ctx.strokeStyle = model ? "#ff737a" : j ? "#ffab82" : "#76d6d1";
+      ctx.lineWidth = model ? 2.3 : 1.8; ctx.beginPath();
       shown.forEach((row, i) => { if (i === 0) ctx.moveTo(x(i), y(row[key])); else ctx.lineTo(x(i), y(row[key])); });
       ctx.stroke();
     });
     mark(positions, upper);
+    positions.dataset.series = field.value;
     const bars = shown.map(row => row.bar).filter(Boolean);
     if (bars.length) {
       const low = Math.min(...bars.map(b => b.low)), high = Math.max(...bars.map(b => b.high));
@@ -101,7 +108,9 @@
       }
     }
     const row = shown[cursor];
-    document.querySelector("#point").value = row.date + " 집계 · " + (gross ?
+    document.querySelector("#point").value = model ?
+      row.bar.end + " 마감 · CTA 추세 " + (row.cta > 0 ? "+" : "") + row.cta.toFixed(1) + "점" :
+      row.date + " 집계 · " + (gross ?
       "롱 " + fmt.format(row.long) + " / 숏 " + fmt.format(row.short) + "계약" :
       field.value === "share" ? "순포지션/OI " + signed(Number(row.share.toFixed(2))) + "%" :
       "순포지션 " + signed(row.net) + "계약");
@@ -111,16 +120,22 @@
       "　저 " + priceFmt.format(b.low) + "　종 " + priceFmt.format(b.close) : "주봉 마감 대기";
   }
 
-  function reset() {
-    shown = Number(period.value) ? rows.slice(-Number(period.value)) : rows;
-    cursor = shown.length - 1;
+  function reset(keep) {
+    const eligible = rows.filter(row => field.value === "cta" ? row.bar && row.cta !== null : row.date);
+    shown = Number(period.value) ? eligible.slice(-Number(period.value)) : eligible;
+    const index = shown.indexOf(keep);
+    cursor = index < 0 ? shown.length - 1 : index;
     draw();
   }
-  period.addEventListener("change", reset);
+  period.addEventListener("change", () => reset());
   field.addEventListener("change", () => {
+    const model = field.value === "cta";
+    document.querySelector("#model-summary").hidden = !model;
+    document.querySelector("#cftc-summary").hidden = model;
+    document.querySelector("#cta-key").hidden = !model;
     document.querySelector("#chart-title").textContent =
-      {net:"레버리지 펀드 순포지션", share:"전체 미결제약정 대비 순포지션", gross:"롱 (청록) · 숏 (주황)"}[field.value];
-    draw();
+      {cta:"CTA 추세추종 점수 · 자체 모델", net:"레버리지 펀드 순포지션", share:"전체 미결제약정 대비 순포지션", gross:"롱 (청록) · 숏 (주황)"}[field.value];
+    reset(shown[cursor]);
   });
   for (const canvas of [positions, prices]) {
     function select(event) {

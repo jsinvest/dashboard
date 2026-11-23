@@ -3,12 +3,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="position-series-sha256" content="$digest">
-<title>나스닥100 선물 포지션 | J's Trading Dashboard</title>
+<title>나스닥100 CTA 추세 모델 | J's Trading Dashboard</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,"Malgun Gothic",sans-serif;color:#e7edf1;background:#10151b}
 *{box-sizing:border-box}body{margin:0;padding:18px clamp(12px,3vw,32px);font-size:14px;line-height:1.5}main{max-width:1200px;margin:auto}
 h1{font-size:clamp(19px,3vw,26px);margin:0}.sub,.notes,output{color:#b7c5d1}.sub{margin:3px 0 14px}
 .metrics{display:flex;gap:12px 36px;flex-wrap:wrap;margin:0 0 14px}.metrics div{min-width:90px}dt{color:#acbdca;font-size:12px}dd{font-size:20px;font-weight:700;margin:2px 0}
+[hidden]{display:none!important}.model-score{color:#ff8589}.chart-key{display:inline-block;width:19px;border-top:3px solid #ff737a;vertical-align:middle;margin-right:7px}
 header,.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}a{color:#85caff}
 .toolbar{border-top:1px solid #36434f;padding-top:12px}.controls{display:flex;gap:7px;flex-wrap:wrap}select{background:#1b2632;color:inherit;border:1px solid #526171;border-radius:5px;padding:5px}
 canvas{width:100%;height:168px;display:block;touch-action:pan-y}.chart-info{margin:1px 0 10px;font-variant-numeric:tabular-nums;min-height:1.6em}
@@ -19,31 +20,39 @@ ul{margin:6px 0;padding-left:20px}footer{margin-top:8px;font-size:12px;color:#af
 @media(max-width:520px){body{padding:12px}.metrics{gap:7px 16px}dd{font-size:17px}.toolbar{gap:4px}canvas{height:145px}}
 </style>
 <main>
-<header><h1>나스닥100 선물 포지션</h1><a target="_blank" rel="noopener" href="./">전체 화면</a></header>
-<p class="sub">CME E-mini NQ · CFTC 레버리지 펀드 · 미국 기준 <time>$latest</time></p>
+<header><h1>나스닥100 CTA 추세 모델</h1><a target="_blank" rel="noopener" href="./">전체 화면</a></header>
+<div id="model-summary">
+<p class="sub">나스닥100 가격으로 추정한 추세추종 방향과 강도 · 미국 주봉 마감 <time>$model_date</time></p>
+<dl class="metrics"><div><dt>모델 점수 (−100 ~ +100)</dt><dd class="model-score">$score</dd></div>
+<div><dt>전주 대비</dt><dd>$model_delta점</dd></div><div><dt>2020년 이후 낮은 순위</dt><dd>$rank / $model_count주</dd></div></dl></div>
+<div id="cftc-summary" hidden><p class="sub">CME E-mini NQ · CFTC 레버리지 펀드 · 미국 기준 <time>$latest</time></p>
 <dl class="metrics">
   <div><dt>순포지션</dt><dd>$side $net계약</dd></div>
   <div><dt>전주 대비</dt><dd>$delta계약</dd></div>
   <div><dt>미결제약정 대비 순포지션</dt><dd>$share</dd></div>
-</dl>
+</dl></div>
 <section aria-label="포지션 차트">
-<div class="toolbar"><strong id="chart-title">레버리지 펀드 순포지션</strong>
+<div class="toolbar"><strong><span class="chart-key" id="cta-key" aria-hidden="true"></span><span id="chart-title">CTA 추세추종 점수 · 자체 모델</span></strong>
 <div class="controls">
-<select id="field" aria-label="차트 지표"><option value="net">순포지션 (계약)</option><option value="share">미결제약정 대비 (%)</option><option value="gross">롱·숏 보유 (계약)</option></select>
+<select id="field" aria-label="차트 지표"><option value="cta" selected>CTA 추세 모델 (빨간 선)</option><option value="net">CFTC 순포지션 (계약)</option><option value="share">CFTC 미결제약정 대비 (%)</option><option value="gross">CFTC 롱·숏 보유 (계약)</option></select>
 <select id="period" aria-label="조회 기간"><option value="0">2020년부터</option><option value="156">최근 3년</option><option value="52">최근 1년</option><option value="13">최근 13주</option></select></div></div>
 <canvas id="plot" tabindex="0" role="img" aria-label="주간 포지션 차트. 좌우 방향키로 날짜 이동. 상세 수치는 아래 주간 내역 표에 있습니다."></canvas>
-<p class="chart-info"><output id="point">$latest · $side $net계약</output></p></section>
+<p class="chart-info"><output id="point">$model_date 마감 · CTA 추세 $score점</output></p></section>
 <section aria-labelledby="ndx-title">
 <div class="price-head"><strong id="ndx-title">나스닥100 현물 주봉 (NDX)</strong><span>시가 대비 <b class="up">상승</b> · <b class="down">하락</b></span></div>
 <canvas id="ndx-plot" tabindex="0" role="img" aria-label="나스닥100 주봉 차트. 위 포지션 차트와 같은 주를 표시합니다. 좌우 방향키로 이동할 수 있습니다."></canvas>
 <p class="chart-info"><output id="ndx-point"></output></p>
-<p class="notes">두 차트에 같은 미국 거래 주간을 표시합니다. 포지션은 CFTC 집계일 기준, 주봉은 그 주 마지막 거래일 종가 기준입니다.</p></section>
-<details><summary>주간 내역 · $first ~ $latest · $count주</summary>
-<div class="scroll"><table><thead><tr><th>집계일</th><th>롱</th><th>숏</th><th>순포지션</th><th>전주 변화</th><th>미결제약정</th><th>순포지션/OI</th><th>주봉 마감일</th><th>NDX 시가</th><th>고가</th><th>저가</th><th>종가</th></tr></thead>
+<p class="notes">두 차트의 같은 위치가 같은 미국 거래 주입니다. 빨간 선과 주봉은 그 주 마지막 거래일 종가를 사용합니다.</p></section>
+<details><summary>빨간 선 계산 방법</summary>
+<p>21·63·126거래일 로그수익률을 각 기간의 예상 변동폭(최근 63일 일간 로그수익률 표본표준편차 × 기간의 제곱근)으로 나눕니다. 각 값에 tanh를 적용해 −1~+1 범위로 바꾼 후, 세 값을 동일 가중 평균하고 100을 곱합니다.</p>
+<p>0은 세 추세의 합이 중립인 지점입니다. −100에 가까울수록 숏 방향, +100에 가까울수록 롱 방향의 추세가 강합니다. 모델 점수와 순위는 실제 보유 계약 수·반등 확률과 단위가 다릅니다. 2019년 종가는 초기 계산에만 사용합니다.</p>
+<p>MacroCharts 그림을 참고해 설계한 자체 지표입니다. 원본의 상세 산식과 수치 시계열은 확인되지 않았습니다. <a href="https://t.me/The_MariTimes/64931" target="_blank" rel="noopener">텔레그램 참고 자료</a></p></details>
+<details><summary>주간 내역 · CTA 모델 $model_count주 · CFTC $count주</summary>
+<div class="scroll"><table><thead><tr><th>CFTC 집계일</th><th>롱</th><th>숏</th><th>순포지션</th><th>전주 변화</th><th>미결제약정</th><th>순포지션/OI</th><th>주봉 마감일</th><th>NDX 시가</th><th>고가</th><th>저가</th><th>종가</th><th>CTA 점수</th></tr></thead>
 <tbody>$table</tbody></table></div></details>
 <details><summary>CTA 전용 공개 추정치</summary><ul>$estimates</ul>
 <p class="notes">날짜는 차트가 공개 인용된 날입니다. 공개 근거가 확인된 관측치만 표시합니다. 위 CFTC 주간 통계에는 CTA 외에 다른 헤지펀드도 포함됩니다.</p></details>
 <footer><a href="https://publicreporting.cftc.gov/Commitments-of-Traders/TFF-Futures-Only/gpe5-46if" target="_blank" rel="noopener">CFTC 원자료</a>
 <a href="https://finance.yahoo.com/quote/%5ENDX/history/" target="_blank" rel="noopener">NDX 일봉</a><a href="https://fred.stlouisfed.org/series/NASDAQ100" target="_blank" rel="noopener">NDX 종가 대조</a><a href="history.json" download>주간 포지션 내려받기</a>
 <p>순포지션 = 롱 − 숏. 각 주 마지막 공시 관측일의 보유잔고이며, 보고서 공개는 집계보다 늦습니다.</p></footer>
-</main><script src="chart.js?v=ndx-week-1" defer></script></html>
+</main><script src="chart.js?v=cta-model-1" defer></script></html>
