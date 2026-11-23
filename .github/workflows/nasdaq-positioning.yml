@@ -16,12 +16,6 @@ permissions:
 
 jobs:
   collect:
-    # Exercise the live source on collector changes as well as scheduled runs.
-    if: >-
-      github.event_name != 'push' ||
-      contains(github.event.head_commit.added, 'scripts/update_nasdaq_positions.py') ||
-      contains(github.event.head_commit.modified, 'scripts/update_nasdaq_positions.py') ||
-      contains(github.event.head_commit.modified, '.github/workflows/nasdaq-positioning.yml')
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -39,7 +33,7 @@ jobs:
           path: |
             nasdaq-positioning/history.json
             nasdaq-positioning/index.html
-      - name: Compare with the published archive on collector changes
+      - name: Verify published data against the official archive
         if: github.event_name == 'push'
         run: git diff --exit-code --stat -- nasdaq-positioning/history.json nasdaq-positioning/index.html
   verify-pages:
