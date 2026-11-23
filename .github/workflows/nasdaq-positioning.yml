@@ -1,0 +1,45 @@
+name: Nasdaq positioning
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'nasdaq-positioning/**'
+      - 'scripts/update_nasdaq_positions.py'
+      - 'scripts/verify_nasdaq_panel.py'
+      - '.github/workflows/nasdaq-positioning.yml'
+  schedule:
+    - cron: '7 23 * * 6' # Sunday 08:07 Asia/Seoul, before the publication check
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/update_nasdaq_positions.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nasdaq-positioning-verified
+          retention-days: 14
+          path: |
+            nasdaq-positioning/history.json
+            nasdaq-positioning/index.html
+  verify-pages:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 scripts/verify_nasdaq_panel.py
