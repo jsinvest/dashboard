@@ -1,0 +1,68 @@
+name: Verify published futures band
+on:
+  push:
+    branches: ['qa/futures-band-67fb032']
+permissions: {}
+jobs:
+  public-dom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify public menu, rendered charts, data and workbook
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, re, shutil, subprocess, tempfile, time
+          from urllib.request import Request, urlopen
+          from html.parser import HTMLParser
+          from contextlib import contextmanager
+          
+          site = 'https://jsinvest.github.io/dashboard/'
+          panel_url = site + 'cta-trend/foreign-futures/'
+          query = '?verify=67fb032-' + str(time.time_ns())
+          def get(url):
+              request = Request(url + query, headers={'Cache-Control': 'no-cache'})
+              with urlopen(request, timeout=20) as response:
+                  return response.read()
+          
+          class Markup(HTMLParser):
+              def __init__(self, source):
+                  super().__init__()
+                  self.tags = []
+                  self.feed(source)
+              def handle_starttag(self, tag, attrs):
+                  self.tags.append((tag, dict(attrs)))
+              def match(self, tag, **attrs):
+                  return next(d for name, d in self.tags if name == tag and all(d.get(k) == v for k, v in attrs.items()))
+          
+          def render(url):
+              with tempfile.TemporaryDirectory() as userdir:
+                  run = subprocess.run([shutil.which('google-chrome'), '--headless', '--disable-gpu',
+                      '--disable-dev-shm-usage','--no-sandbox','--user-data-dir=' + userdir,
+                      '--timeout=20000','--virtual-time-budget=5000','--dump-dom',url],
+                      check=True, capture_output=True, timeout=45)
+                  return run.stdout.decode()
+          
+          source = get(panel_url + 'data.json')
+          data = json.loads(source)
+          assert data['periods'][-1]['netMillion'] == 6728179 and len(data['weekly']) == 11
+          book = get(panel_url + 'kospi200-foreign-futures-20261124.xlsx')
+          assert hashlib.sha256(book).hexdigest() == 'f573201a9acb96960e6f2d70af987c37868063c7c1dc7cf7e4c60796748abf8f'
+          root = render(site + query + '#cta-trend/foreign-futures')
+          nav = Markup(root)
+          assert nav.match('button', **{'data-cta-market':'foreign-futures'})['aria-pressed'] == 'true'
+          assert 'active' in nav.match('button', **{'data-tab':'cta-trend'})['class'].split()
+          assert nav.match('iframe', id='cta-trend-panel')['src'] == 'cta-trend/foreign-futures/'
+          assert '>선물누적 밴드</button>' in root
+          panel = render(panel_url + query)
+          page = Markup(panel)
+          assert 'hidden' not in page.match('div', id='content')
+          for expected in ['+8조 3,278억 원','+6조 7,281.79억 원','+33,176계약','2026.11.24 14:02',
+                           '2026.11.23 기준','37개 (92.5%)','2026년 12월물 · 주별 누적']:
+              assert expected in panel, expected
+          for name in ['history','weekly']:
+              graph = re.search(r'<svg[^>]* id="' + name + r'"[^>]*>(.*?)</svg>', panel, re.S)
+              assert graph and '<polyline' in graph[1] and '<circle' in graph[1], name
+          assert '<p id="status" role="status"></p>' in panel
+          print('Public DOM and Excel verified: CTA 추세추종 → 선물누적 밴드. 41 periods, 11 weeks. 11/23 +6조 7,281.79억 원, +33,176계약. 11/24 14:02 +8조 3,278억 원.')
+          PY
