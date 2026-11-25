@@ -1,113 +1,142 @@
 'use strict';
-const byId = id => document.getElementById(id);
-const signed = (value, digits = 0) => (value > 0 ? '+' : value < 0 ? '−' : '') +
-  Math.abs(value).toLocaleString('ko-KR', {minimumFractionDigits: digits, maximumFractionDigits: digits});
-function money(netMillion) {
-  const total = Math.abs(netMillion), trillion = Math.floor(total / 1000000);
-  return (netMillion > 0 ? '+' : netMillion < 0 ? '−' : '') + (trillion ? trillion + '조 ' : '') +
-    ((total % 1000000) / 100).toLocaleString('ko-KR', {maximumFractionDigits:2}) + '억 원';
+const signed=(n,d=0)=>(n>0?'+':n<0?'−':'')+Math.abs(n).toLocaleString('ko-KR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const price=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money=n=>{const a=Math.abs(n),tr=Math.floor(a/1000000);return (n>0?'+':n<0?'−':'')+(tr?tr+'조 ':'')+((a%1000000)/100).toLocaleString('ko-KR',{maximumFractionDigits:2})+'억 원';};
+const monthName=m=>m.slice(0,4)+'년 '+Number(m.slice(5))+'월물';
+const labels={foreign:'외국인',institution:'기관',v:'선물 금액',q:'선물 계약 수',c:'현물 금액'};
+const val=(n,u)=>Number.isFinite(n)?(u==='q'?signed(n)+'계약':money(n)):'자료 없음';
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function weekKey(d){const t=new Date(d+'T12:00:00Z');t.setUTCDate(t.getUTCDate()-(t.getUTCDay()+6)%7);return t.toISOString().slice(0,10);}
+function groupWeeks(rows){const w=new Map();for(const p of rows)w.set(weekKey(p.date),p);return Array.from(w.values());}
+function series(base,comp,owner){
+ const foreign=owner==='foreign', periodMap=new Map(base.periods.map(p=>[p.month,p])), sorted=base.periods.slice().sort((a,b)=>a.month.localeCompare(b.month));
+ const official=sorted.at(-1), active=foreign?official.month:comp.month;
+ const match=active===comp.month, lookup=(date)=>comp.index[date]??null;
+ const published=base.weekly.filter(w=>w.month===active).concat(official.month===active?[official]:[]).sort((a,b)=>a.through.localeCompare(b.through));
+ const anchors=new Map(published.map(w=>[w.through,w]));
+ let v=0,q=0,c=0;
+ const days=(match?comp.daily:[]).map(r=>{
+   v+=foreign?r.fv:r.iv; q+=foreign?r.fq:r.iq;c+=foreign?r.fc:r.ic;
+   const a=foreign&&anchors.get(r.d);
+   if(a){v=a.netMillion;q=a.contracts;}
+   return {date:r.d,v,q,c,idx:lookup(r.d),moneyStatus:a?'KRX 확정':'복수 마감자료 잠정',month:active};
+ });
+ const confirmedRows=published.map(w=>({date:w.through,v:w.netMillion,q:w.contracts,idx:lookup(w.through),moneyStatus:'KRX 확정',month:active}));
+ const weeksMap=new Map((foreign?confirmedRows:[]).map(p=>[p.date,p]));
+ for(const p of days)weeksMap.set(p.date,p);
+ const weeks=groupWeeks(Array.from(weeksMap.values()).sort((a,b)=>a.date.localeCompare(b.date)));
+ const now=weeks.at(-1);
+ const history=foreign? sorted.filter(p=>p.through===p.expiry).slice(-40).map(p=>({month:p.month,date:p.through,v:p.netMillion,q:p.contracts,idx:lookup(p.through),done:true,moneyStatus:'KRX 확정'})):
+ comp.institution.map(p=>({month:p.month,date:p.through,v:p.v,q:p.q,qr:p.qr,c:p.c,idx:lookup(p.through),done:true,moneyStatus:'만기 종료'}));
+ const activePeriod=periodMap.get(active);
+ const months=history.slice();
+ if(now&&months.at(-1)?.month!==active)months.push({...now,done:false});
+ const shot=foreign&&base.intraday?.month===active&&now&&base.intraday.observedAt.slice(0,10)>now.date?base.intraday:null;
+ return {days,weeks,months,history,now,shot,active,start:activePeriod?.start??days[0]?.date,official:foreign?official:null};
 }
-const monthName = m => m.slice(0,4) + '년 ' + Number(m.slice(5)) + '월물';
-const prettyDate = date => date.replaceAll('-', '.');
-const svgNS = 'http://www.w3.org/2000/svg';
-function add(svg, name, attributes, text) {
-  const el = document.createElementNS(svgNS, name);
-  for (const [key,value] of Object.entries(attributes)) el.setAttribute(key, value);
-  if (text !== undefined) el.textContent = text;
-  svg.append(el);
-  return el;
+function scaleBounds(values,div,zero){
+ let min=Math.min(...values),max=Math.max(...values);if(zero){min=Math.min(0,min);max=Math.max(0,max);}
+ if(!(max>min)){let p=Math.max(Math.abs(max)*0.04,1);min-=p;max+=p;}
+ const raw=(max-min)/div,b=10**Math.floor(Math.log10(raw)),step=([1,2,2.5,5,10].find(x=>x*b>=raw)||10)*b;
+ let lo=Math.floor(min/step)*step,hi=Math.ceil(max/step)*step;if(lo===hi)hi+=step;return {lo,hi,step};
 }
-function chart(svg, output, points, settings) {
-  svg.replaceChildren();
-  const w = Math.max(270, Math.round(svg.getBoundingClientRect().width || 750)), h = w < 480 ? 173 : 202;
-  svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-  const left = settings.isMoney ? 39 : 58, right = w - 15, top = 18, bottom = h - 27;
-  const vals = points.map(p => p.value);
-  const max = Math.max(1, ...vals.map(Math.abs), settings.guides ? 5 : 0);
-  const rough = max / 3, base = 10 ** Math.floor(Math.log10(rough));
-  const step = ([1, 2, 2.5, 5, 10].find(n => n * base >= rough) || 10) * base;
-  const hi = Math.max(step, Math.ceil(Math.max(0,...vals,settings.guides ? 5 : 0) / step) * step);
-  const lo = Math.min(0, Math.floor(Math.min(0,...vals,settings.guides ? -5 : 0) / step) * step);
-  const x = i => left + (points.length === 1 ? 0.5 : i / (points.length-1)) * (right-left);
-  const y = v => top + (hi-v)/(hi-lo) * (bottom-top);
-  if (settings.guides) add(svg,'rect',{x:left,y:y(5),width:right-left,height:y(-5)-y(5),fill:'#ecf5f1'});
-  for(let val=lo;val<=hi+step/1000;val+=step) {
-    add(svg,'line',{x1:left,x2:right,y1:y(val),y2:y(val),stroke:val===0?'#758994':'#dce5e9','stroke-width':val===0?1.4:0.8});
-    add(svg,'text',{x:left-5,y:y(val)+4,'text-anchor':'end','font-size':10},signed(val,Number.isInteger(val)?0:1));
-  }
-  if(settings.guides) for(const val of [-5,5]) add(svg,'line',{x1:left,x2:right,y1:y(val),y2:y(val),stroke:'#86aa99','stroke-dasharray':'4 4'});
-  const xy = (p,i) => x(i) + ',' + y(p.value);
-  const confirmed = points.filter(p=>!p.live);
-  if(confirmed.length>1) add(svg,'polyline',{points:confirmed.map(xy).join(' '),fill:'none',stroke:'#136778','stroke-width':2.4,'stroke-linejoin':'round'});
-  const end = points.length-1, tail=points[end];
-  if(tail.live && end) add(svg,'line',{x1:x(end-1),y1:y(points[end-1].value),x2:x(end),y2:y(tail.value),stroke:'#b76616','stroke-width':2.7,'stroke-dasharray':'4 3'});
-  points.forEach((p,i)=>add(svg,'circle',{cx:x(i),cy:y(p.value),r:i===end?4:2.3,fill:p.live?'#ba6417':'#136778'}));
-  const ticks = Math.min(points.length, Math.max(2,Math.min(7,Math.floor((right-left)/80))));
-  const indices = ticks === 1 ? [0] : Array.from({length:ticks},(_,i)=>Math.round(i*end/(ticks-1)));
-  for(const i of indices) add(svg,'text',{x:x(i),y:h-8,'text-anchor':i===0?'start':i===end?'end':'middle','font-size':10},points[i].axis);
-  let focus=end;
-  const cursor=add(svg,'line',{x1:x(end),x2:x(end),y1:top,y2:bottom,stroke:'#748892','stroke-dasharray':'2 3',opacity:0});
-  function select(i, active) {
-    focus=i; cursor.setAttribute('x1',x(i));cursor.setAttribute('x2',x(i));cursor.setAttribute('opacity',active?0.8:0);
-    const item=points[i];output.textContent=item.label+'  ·  '+(settings.isMoney ? money(item.netMillion) : signed(item.contracts)+'계약');
-  }
-  svg.onpointermove=e=>{const pos=e.clientX-svg.getBoundingClientRect().left;select(Math.max(0,Math.min(end,Math.round((pos-left)/(right-left)*end))),true);};
-  svg.onpointerleave=()=>select(end,false);
-  svg.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?0:e.key==='End'?end:Math.max(0,Math.min(end,focus+(e.key==='ArrowRight'?1:-1))),true);}};
-  select(end,false);
+function svgTag(name,attrs,body=''){return '<'+name+' '+Object.entries(attrs).map(([k,v])=>k+'="'+esc(v)+'"').join(' ')+'>'+body+'</'+name+'>';}
+function chart(data,unit,showIndex,width,id,history,projection){
+ const W=Math.max(280,Math.round(width)),H=W<540?218:246,L=unit==='q'?(W<540?50:65):40,R=W-(showIndex?54:15),T=28,B=H-28;
+ const band=unit==='q'?50000:unit==='v'?5:null, factor=unit==='q'?1:1000000;
+ const isRef=p=>unit==='q'&&p.q==null&&Number.isInteger(p.qr);
+ const raw=p=>isRef(p)?p.qr:p[unit], available=data.filter(p=>Number.isFinite(raw(p)));
+ if(!available.length)return {html:'<p>이 기간의 비교 자료가 없습니다.</p>',list:[],left:0,right:1,W};
+ const yn=data.filter(p=>Number.isFinite(raw(p))).map(p=>raw(p)/factor);
+ const scale=scaleBounds(yn.concat(band==null?[]:[band,-band]),5,true);
+ const indexVals=showIndex?data.map(p=>p.idx).filter(Number.isFinite):[];
+ const indexScale=indexVals.length?scaleBounds(indexVals,4,false):null;
+ const x=i=>data.length===1?(L+R)/2:L+(R-L)*i/(data.length-1), y=(v,s=scale)=>B-(v-s.lo)*(B-T)/(s.hi-s.lo);
+ const line=(x1,y1,x2,y2,attrs)=>svgTag('line',{x1,y1,x2,y2,...attrs});
+ const tx=(x,y,text,attrs={})=>svgTag('text',{x,y,'font-size':W<540?10:11,...attrs},esc(text));
+ let g='';
+ if(band!=null)g+=svgTag('rect',{x:L,y:y(band),width:R-L,height:y(-band)-y(band),fill:'#e5f1ec'});
+ for(let z=scale.lo;z<=scale.hi+scale.step/100;z+=scale.step){
+   g+=line(L,y(z),R,y(z),{stroke:z===0?'#9aadb1':'#dce6e6','stroke-width':z===0?1.25:0.8});
+   g+=tx(L-5,y(z)+4,signed(z,Number.isInteger(z)?0:1),{'text-anchor':'end',fill:'#37606b'});
+ }
+ if(band!=null)for(const b of [-band,band])g+=line(L,y(b),R,y(b),{stroke:'#67a38c','stroke-width':1.2,'stroke-dasharray':'5 4'});
+ g+=tx(L,14,unit==='q'?'계약':'조 원',{fill:'#246574'});
+ if(indexScale){g+=tx(R,14,'지수 (pt)',{fill:'#96520b','text-anchor':'end'});for(let z=indexScale.lo;z<=indexScale.hi+indexScale.step/100;z+=indexScale.step)g+=tx(R+5,y(z,indexScale)+4,z.toLocaleString('ko-KR'),{fill:'#96520b'});}
+ function segments(get,sty){let s='';let started=false;data.forEach((p,i)=>{const v=get(p);if(!Number.isFinite(v)){started=false;return;}s+=(started?' L':' M')+x(i).toFixed(2)+' '+v.toFixed(2);started=true;});return svgTag('path',{d:s,fill:'none','stroke-linejoin':'round','stroke-linecap':'round',...sty});}
+ if(indexScale)g+=segments(p=>Number.isFinite(p.idx)?y(p.idx,indexScale):null,{stroke:'#b46b23','stroke-width':2,'stroke-dasharray':'6 4'});
+ g+=segments(p=>!p.live&&!isRef(p)&&Number.isFinite(p[unit])?y(p[unit]/factor):null,{stroke:'#126b7a','stroke-width':2.5});
+ data.forEach((p,i)=>{const n=raw(p);if(!Number.isFinite(n))return;
+  if(p.live&&i>0&&Number.isFinite(raw(data[i-1])))g+=line(x(i-1),y(raw(data[i-1])/factor),x(i),y(n/factor),{stroke:'#126b7a','stroke-dasharray':'3 3'});
+  g+=svgTag('circle',{cx:x(i),cy:y(n/factor),r:i===data.length-1?4:isRef(p)?3:2.1,fill:isRef(p)?'#fff':'#126b7a',stroke:isRef(p)?'#80939b':'#126b7a','stroke-width':isRef(p)?1.5:0.6});});
+ if(indexScale&&Number.isFinite(data.at(-1).idx))g+=svgTag('circle',{cx:x(data.length-1),cy:y(data.at(-1).idx,indexScale),r:3,fill:'#b46b23'});
+ const n=Math.min(data.length,Math.max(2,Math.min(8,Math.floor((R-L)/70))));
+ Array.from({length:n},(_,i)=>n===1?0:Math.round(i*(data.length-1)/(n-1))).forEach(i=>{const p=data[i];g+=tx(x(i),H-7,history?p.month.slice(2).replace('-','.'):p.date.slice(5).replace('-','.'),{'text-anchor':i===0?'start':i===data.length-1?'end':'middle',fill:'#506875'});});
+ g+=line(R,T,R,B,{id:id+'-cursor',stroke:'#607682','stroke-dasharray':'2 3',opacity:0});
+ return {html:svgTag('svg',{id,viewBox:'0 0 '+W+' '+H,'aria-label':(history?'최근 10년 월물별':projection==='week'?'주별':'일별')+' '+labels[unit]+' 누적'+(indexScale?' 및 코스피200 현물지수 종가':''),tabindex:0,role:'img',class:'plot'},g),list:data,left:L,right:R,W};
 }
-async function main() {
-  const response=await fetch('data.json',{cache:'no-cache'});
-  if(!response.ok) throw Error('data');
-  const data=await response.json();
-  const periods=data.periods.slice().sort((a,b)=>a.month.localeCompare(b.month));
-  const current=periods.at(-1);
-  if(!current || periods.some(p=>!(Number.isFinite(p.netMillion)&&Number.isInteger(p.contracts)&&p.start<=p.through&&p.through<=p.expiry))) throw Error('기간 자료');
-  const finished=periods.filter(p=>p.through===p.expiry).slice(-40);
-  const rows=current.through===current.expiry?finished:[...finished,current];
-  const intra=data.intraday;
-  const live=intra && intra.month===current.month && intra.observedAt.slice(0,10)>current.through && Number.isSafeInteger(intra.netEok) ? intra : null;
-  byId('period').textContent=monthName(current.month)+' · '+prettyDate(current.start)+'부터';
-  byId('main-label').textContent=live?'최근 장중 누적 순매수':'최근 확정 누적 순매수';
-  byId('latest').textContent=money(live?live.netEok*100:current.netMillion);
-  byId('latest').classList.toggle('provisional',!!live);
-  byId('latest-date').textContent=live?prettyDate(live.observedAt.slice(0,10))+' '+live.observedAt.slice(11,16)+'경 KST · '+live.source:prettyDate(current.through)+' · KRX';
-  byId('official').textContent=money(current.netMillion);byId('qty').textContent=signed(current.contracts)+'계약';
-  byId('official-date').textContent=byId('qty-date').textContent=prettyDate(current.through)+' 기준';
-  byId('week-title').textContent=monthName(current.month)+' · 주별 누적';
-  const body=byId('rows');
-  for(const p of rows.slice().reverse()){
-    const tr=body.insertRow();
-    for(const val of [monthName(p.month),p.through,signed(p.netMillion/1000000,3),signed(p.contracts)])tr.insertCell().textContent=val;
-  }
-  const weeks=data.weekly.filter(w=>w.month===current.month && w.through<=current.through).sort((a,b)=>a.through.localeCompare(b.through));
-  const previousWeek=weeks.filter(w=>w.through<(live?live.observedAt.slice(0,10):current.through)).at(-1);
-  if(!live){
-    byId('secondary-label').textContent='직전 주 마감 대비';
-    byId('official').textContent=previousWeek?money(current.netMillion-previousWeek.netMillion):'—';
-    byId('official-date').textContent=previousWeek?prettyDate(previousWeek.through)+'와 비교':'이번 월물의 첫 관측';
-  }
-  let unit='money';
-  function draw(){
-    const isMoney=unit==='money';
-    const decorate=(p,label,axis,isLive=false)=>({...p,label,axis,live:isLive,value:isMoney?p.netMillion/1000000:p.contracts});
-    const monthly=rows.map(p=>decorate(p,monthName(p.month)+' · '+p.through+(p.through===p.expiry?' 만기':' 확정'),p.month.slice(2).replace('-','.')));
-    const weekly=weeks.map(p=>decorate(p,p.through+' 주 마감',p.through.slice(5).replace('-','.')));
-    if(!weekly.length||weeks.at(-1).through!==current.through)weekly.push(decorate(current,current.through+' 확정',current.through.slice(5).replace('-','.')));
-    if(live&&isMoney){
-      const tag=live.observedAt.slice(0,10),point=decorate({netMillion:live.netEok*100},tag+' '+live.observedAt.slice(11,16)+' 장중',tag.slice(5).replace('-','.'),true);
-      monthly.push({...point,axis:current.month.slice(2).replace('-','.')+'*'}); weekly.push(point);
-    }
-    const inRange=finished.filter(p=>Math.abs(p.netMillion)<=5000000).length;
-    const cvals=finished.map(p=>p.contracts);
-    byId('range').textContent=isMoney?'음영은 −5조~+5조 원 · 만기 종료 '+finished.length+'개 중 '+inRange+'개 ('+(100*inRange/finished.length).toFixed(1)+'%)':'만기 종료 '+finished.length+'개 범위 '+signed(Math.min(...cvals))+' ~ '+signed(Math.max(...cvals))+'계약';
-    const comparison=weeks.filter(w=>w.through<(isMoney&&live?live.observedAt.slice(0,10):current.through)).at(-1);
-    byId('weekly-change').textContent=comparison?'직전 주 마감('+prettyDate(comparison.through)+') 대비 '+(isMoney?money((live?live.netEok*100:current.netMillion)-comparison.netMillion):signed(current.contracts-comparison.contracts)+'계약'):'';
-    chart(byId('history'),byId('history-read'),monthly,{isMoney,guides:isMoney});
-    chart(byId('weekly'),byId('weekly-read'),weekly,{isMoney,guides:false});
-  }
-  for(const b of document.querySelectorAll('[data-unit]'))b.onclick=()=>{unit=b.dataset.unit;document.querySelectorAll('[data-unit]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw();};
-  byId('content').hidden=false;byId('status').textContent=''; draw();
-  let lastWidth=0;new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(width>0&&Math.abs(width-lastWidth)>1){lastWidth=width;draw();}}).observe(byId('content'));
+function chartDetails(p,unit,showIndex){
+ if(!p)return '';
+ const ref=unit==='q'&&p.q==null&&Number.isInteger(p.qr);
+ let text=(p.month?monthName(p.month)+' · ':'')+p.date+'  |  '+labels[unit]+' '+val(ref?p.qr:p[unit],unit);
+ if(ref)text+=' (참고)';else if(unit==='v'&&p.moneyStatus)text+=' ('+p.moneyStatus+')';
+ if(showIndex)text+='  |  코스피200 종가 '+(Number.isFinite(p.idx)?price(p.idx)+' pt':'미확인');
+ return text;
 }
-main().catch(()=>{byId('content').hidden=true;byId('status').textContent='선물 수급 자료를 불러오지 못했습니다. 페이지를 새로고침해 주세요.';});
+function drawPage(base,comp,s,width){
+ const a=series(base,comp,s.owner),p=a.now;if(!p)throw Error('누적 자료 없음');
+ const u=s.unit, useDays=s.freq==='day', lastDate=p.date;
+ const freq=useDays?'일별':'주별',n=s.owner==='foreign'?'외국인':'기관';
+ const live=a.shot&&u==='v'?{month:a.active,date:a.shot.observedAt.slice(0,10),v:a.shot.netEok*100,live:true,moneyStatus:'장중 '+a.shot.observedAt.slice(11,16),idx:null}:null;
+ const monthly=a.months.slice();if(live)monthly.push(live);
+ const detail=(useDays?a.days:a.weeks).slice();if(live)detail.push(live);
+ const chart1=chart(monthly,u,s.overlay,width,'history',true,s.freq);
+ const chart2=chart(detail,u,s.overlay,width,'current',false,s.freq);
+ const band=u==='q'?50000:u==='v'?5000000:null;
+ const valid=a.history.filter(x=>Number.isFinite(x[u])),inBand=valid.filter(x=>Math.abs(x[u])<=band).length;
+ const bandNote=band===null?'코스피 시장 전체 기관 현물 순매수 · 단위 조 원':('음영 '+(u==='q'?'±5만 계약':'±5조 원')+' · 만기 종료 '+valid.length+'개 중 '+inBand+'개가 밴드 안에서 마감');
+ const refNote=u==='q'&&s.owner==='institution'?' · 빈 원은 추가 검증이 필요한 20개 월물로, 밴드 통계에서 제외':'';
+ const pressed=(g,k,caption)=>'<button type="button" data-group="'+g+'" data-value="'+k+'" aria-pressed="'+String(s[g]===k)+'">'+caption+'</button>';
+ const controller=(owner,opts)=>'<div class="controls" role="group" aria-label="'+esc(owner)+'">'+opts+'</div>';
+ const labelsLine='<span class="legend flow">누적 순매수 · 왼쪽</span>'+(s.overlay?'<span class="legend index">코스피200 종가 · 오른쪽</span>':'');
+ const overlay='<label class="overlay"><input type="checkbox" data-overlay '+(s.overlay?'checked':'')+'> 코스피200 종가 겹쳐보기</label>';
+ const ucontrols=pressed('unit','v','선물 금액')+pressed('unit','q','계약 수')+(s.owner==='institution'?pressed('unit','c','현물 금액'):'');
+ const spot=Number.isFinite(p.c)?money(p.c):'자료 없음';
+ const metric=(t,c,d)=>'<div><small>'+t+'</small><strong>'+c+'</strong><span>'+d+'</span></div>';
+ const most=a.shot?a.shot.netEok*100:p.v;
+ const hdr='<header><div class="bar"><h1>코스피200 '+n+' 누적 수급</h1>'+controller('투자자',pressed('owner','foreign','외국인')+pressed('owner','institution','기관'))+'</div><p class="subtitle">'+monthName(a.active)+' · '+a.start+' ~ '+lastDate+' 마감</p><div class="metrics">'+metric('선물 누적 순매수',money(most),a.shot?a.shot.observedAt.slice(0,16).replace('T',' ')+' 장중':p.moneyStatus)+metric('선물 누적 계약 수',val(p.q,'q'),lastDate+' 마감')+metric('코스피 현물 누적 순매수',spot,lastDate+' 기준')+'</div></header>';
+ const mkSection=(title,controls,note,ch,id)=>'<section><div class="bar"><h2>'+title+'</h2>'+controls+'</div><p class="note">'+note+'</p><div class="legends">'+labelsLine+'</div>'+ch.html+'<output id="'+id+'-out">'+esc(chartDetails(ch.list.at(-1),u,s.overlay))+'</output></section>';
+ const hist=mkSection('월물별 누적 순매수 · 최근 10년',controller('표시 지표',ucontrols),bandNote+refNote,chart1,'history');
+ const previousWeek=a.weeks.filter(w=>weekKey(w.date)<weekKey(p.date)).at(-1);
+ const weekChange=previousWeek&&Number.isFinite(p[u])&&Number.isFinite(previousWeek[u])?' · 직전 주 마감('+previousWeek.date+') 대비 '+val(p[u]-previousWeek[u],u):'';
+ const detailSection=mkSection(monthName(a.active)+' · '+freq+' 누적',controller('시간 단위',pressed('freq','week','주별')+pressed('freq','day','일별')),(useDays?'매 거래일 마감 기준 · 직전 만기 다음 거래일부터 누적':'각 주의 마지막 거래일 기준 · 진행 중인 주는 최근 마감일까지 누적')+weekChange,chart2,'current');
+ const link='<a href="kospi200-foreign-futures-20261124.xlsx" download>외국인 10년 원자료 엑셀</a>';
+ const notes='<section><details><summary>월물별 수치와 집계 기준</summary><p>선물은 직전 분기 만기 다음 거래일부터 코스피200 일반선물 전 결제월의 순매수를 누적합니다. 현물 수급은 코스피 전체이며, 오른쪽 축은 코스피200 현물지수 종가(pt)입니다. 지수는 같은 거래일 자료가 있을 때만 표시합니다.</p><p>'+ (s.owner==='institution'?'진행 월물 선물 금액은 KRX·키움 등 마감 자료 합산 잠정치입니다. 과거 계약 수 15개 월물은 KRX 기준표와 집계 차이, 5개는 투자자 합계 불일치로 참고 표시했습니다.':'금액·계약 수는 KRX 확정 자료를 우선합니다. KRX 확정일 사이의 일별 금액과 이후 마감 금액은 복수 자료 합산 잠정치입니다. 2017년 3월 27일 거래승수는 50만 원에서 25만 원으로 변경됐습니다.')+'</p>'+
+ '<p>최근 지수는 키움 ka20006과 LS t8429 마감 종가를 대조했습니다. 과거 지수는 키움 코스피200 일봉을 사용했습니다.</p><div class="scroll"><table><thead><tr><th>월물</th><th>기준일</th><th>선물 (조 원)</th><th>선물 (계약)</th><th>코스피200 (pt)</th></tr></thead><tbody>'+a.months.slice().reverse().map(z=>'<tr><td>'+monthName(z.month)+'</td><td>'+z.date+'</td><td>'+signed(z.v/1e6,3)+'</td><td>'+(!Number.isFinite(z.q)?signed(z.qr)+' (참고)':signed(z.q))+'</td><td>'+(Number.isFinite(z.idx)?price(z.idx):'—')+'</td></tr>').join('')+'</tbody></table></div><p>'+link+' · <a href="https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201050302">KRX 투자자별 거래실적</a></p></details></section>';
+ const officialLine=s.owner==='foreign'&&a.official?'<small>최근 KRX 확정 · '+a.official.through+' · '+money(a.official.netMillion)+' · '+val(a.official.contracts,'q')+'</small>':'';
+ return {html:hdr+'<div class="settings">'+overlay+officialLine+'</div>'+hist+detailSection+notes,charts:[chart1,chart2]};
+}
+function mount(base,comp){
+ const app=document.getElementById('app'),s={owner:'foreign',unit:'v',freq:'week',overlay:true};
+ let plots;
+ function draw(){
+  const width=Math.max(280,app.clientWidth-(app.clientWidth<600?28:48));
+  const page=drawPage(base,comp,s,width);app.innerHTML=page.html;plots=page.charts;
+  for(const [i,id] of ['history','current'].entries()){
+   const d=plots[i],el=document.getElementById(id);if(!el)continue;
+   const cursor=document.getElementById(id+'-cursor'),out=document.getElementById(id+'-out');let focus=d.list.length-1;
+   function pick(j,active){focus=Math.max(0,Math.min(d.list.length-1,j));const x=d.list.length===1?(d.left+d.right)/2:d.left+(d.right-d.left)*focus/(d.list.length-1);cursor.setAttribute('x1',x);cursor.setAttribute('x2',x);cursor.setAttribute('opacity',active?'1':'0');out.textContent=chartDetails(d.list[focus],s.unit,s.overlay);}
+   el.onpointermove=el.onpointerdown=e=>{const box=el.getBoundingClientRect(),pos=(e.clientX-box.left)*d.W/box.width;pick(Math.round((pos-d.left)/(d.right-d.left)*(d.list.length-1)),true);};
+   el.onpointerleave=()=>pick(d.list.length-1,false);
+   el.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();pick(e.key==='Home'?0:e.key==='End'?d.list.length-1:focus+(e.key==='ArrowRight'?1:-1),true);}};
+  }
+ }
+ app.onclick=e=>{const b=e.target.closest('button[data-group]');if(!b)return;const g=b.dataset.group;if(!['owner','unit','freq'].includes(g))return;s[g]=b.dataset.value;if(s.owner==='foreign'&&s.unit==='c')s.unit='v';draw();app.querySelector('button[data-group="'+g+'"][data-value="'+s[g]+'"]')?.focus({preventScroll:true});};
+ app.onchange=e=>{if(e.target.matches('[data-overlay]')){s.overlay=e.target.checked;draw();app.querySelector('[data-overlay]').focus({preventScroll:true});}};
+ draw();let w=app.clientWidth;new ResizeObserver(()=>{if(Math.abs(w-app.clientWidth)>1){w=app.clientWidth;draw();}}).observe(app);
+}
+if(typeof document!=='undefined'){
+ const fetchJSON=async url=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error(url);return r.json();};
+ Promise.all(['data.json','comparison.json'].map(fetchJSON)).then(([b,c])=>mount(b,c)).catch(()=>{document.getElementById('load-status').textContent='최근 데이터를 불러오지 못했습니다. 아래에는 게시 시점의 마감 자료를 표시합니다.';});
+}
+
