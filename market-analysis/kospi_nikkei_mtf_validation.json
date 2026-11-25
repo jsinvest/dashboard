@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "trade_date": "20261124",
-  "generated_at_kst": "2026-11-24T20:32:48+09:00",
+  "trade_date": "20261125",
+  "generated_at_kst": "2026-11-25T20:34:04+09:00",
   "status": "OK",
   "can_use_for_decision": true,
   "source_policy": {
@@ -26,8 +26,8 @@
         "intraday_15m": 933
       },
       "latest_complete_bars": {
-        "daily": "2026-11-24",
-        "intraday_15m": "2026-11-24T15:30:00+09:00"
+        "daily": "2026-11-25",
+        "intraday_15m": "2026-11-25T15:30:00+09:00"
       },
       "target_session_bar_counts": {
         "5m": 78,
@@ -39,24 +39,24 @@
         "source_rows": 78,
         "resampled_rows": 27,
         "open": {
-          "source": 4880.16,
-          "resampled": 4880.16
+          "source": 4809.0,
+          "resampled": 4809.0
         },
         "high": {
-          "source": 5065.74,
-          "resampled": 5065.74
+          "source": 4823.36,
+          "resampled": 4823.36
         },
         "low": {
-          "source": 4880.16,
-          "resampled": 4880.16
+          "source": 4672.55,
+          "resampled": 4672.55
         },
         "close": {
-          "source": 5006.03,
-          "resampled": 5006.03
+          "source": 4697.51,
+          "resampled": 4697.51
         },
         "volume": {
-          "source": 194134.0,
-          "resampled": 194134.0
+          "source": 205391.0,
+          "resampled": 205391.0
         },
         "status": "MATCH"
       },
@@ -70,15 +70,15 @@
           "api_id": "ka20006",
           "exchange_name": "KRX",
           "exchange_timezone": "Asia/Seoul",
-          "requested_base_date": "2026-11-24",
+          "requested_base_date": "2026-11-25",
           "pages": 3,
           "source_rows": 1800,
           "usable_rows": 1800,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
-          "latest_timestamp": "2026-11-24T00:00:00",
-          "raw_file": "kospi_ka20006_daily_20261124.json",
-          "raw_sha256": "a8c7087ce894f43f43229c9c8f85e9738994a9c74c9541d21f1dc7a34756407a"
+          "latest_timestamp": "2026-11-25T00:00:00",
+          "raw_file": "kospi_ka20006_daily_20261125.json",
+          "raw_sha256": "932ffce264a3ab0dee9122e7dab346688e44f5245951f30b40deb6012cc30b08"
         },
         {
           "instrument": "KOSPI",
@@ -89,39 +89,39 @@
           "api_id": "ka20005",
           "exchange_name": "KRX",
           "exchange_timezone": "Asia/Seoul",
-          "requested_base_date": "2026-11-24",
+          "requested_base_date": "2026-11-25",
           "pages": 3,
           "source_rows": 2700,
           "usable_rows": 2700,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
-          "latest_timestamp": "2026-11-24T15:30:00+09:00",
-          "raw_file": "kospi_ka20005_5m_20261124.json",
-          "raw_sha256": "3f53dd1b72b2e7f1928ec4b8d1d1147c093b3177151db9ee12a854d1aa654429"
+          "latest_timestamp": "2026-11-25T15:30:00+09:00",
+          "raw_file": "kospi_ka20005_5m_20261125.json",
+          "raw_sha256": "33b30c754696877c8cf3cc1fb172a85cdeb88c945945ce18b70773bddb356df2"
         }
       ],
       "official_close_crosscheck": {
         "status": "MATCH",
-        "message": "키움 ka20001 5,006.03 / ka20006 5,006.03 / 차이 0.0000% (허용 0.10% 이내)",
+        "message": "키움 ka20001 4,697.51 / ka20006 4,697.51 / 차이 0.0000% (허용 0.10% 이내)",
         "file": "source-file://8bdc32ae3dc9cd75/wise_final_latest.json",
-        "file_sha256": "df05422d90163b49199d3b76649fa9ec91199f671d14ba1a4a7954298bdb1445",
-        "trade_date": "2026-11-24",
+        "file_sha256": "0d3509a0231d59b7d85abbe4e8c7e6e56562d4eccf632eee7c7862b0955bfd94",
+        "trade_date": "2026-11-25",
         "official_source": "Kiwoom REST ka20001 (update_wise final 검증본)",
         "chart_source": "Kiwoom REST ka20006",
-        "official_close": 5006.03,
-        "chart_close": 5006.03,
+        "official_close": 4697.51,
+        "chart_close": 4697.51,
         "absolute_difference_pct": 0.0,
         "tolerance_pct": 0.1
       },
       "daily_intraday_close_crosscheck": {
         "status": "MATCH",
-        "message": "KOSPI ka20006 5,006.03 / ka20005 5,006.03 / 차이 0.0000%",
-        "trade_date": "2026-11-24",
+        "message": "KOSPI ka20006 4,697.51 / ka20005 4,697.51 / 차이 0.0000%",
+        "trade_date": "2026-11-25",
         "daily_source": "Kiwoom REST ka20006",
         "intraday_source": "Kiwoom REST ka20005",
-        "daily_close": 5006.03,
-        "intraday_close": 5006.03,
-        "intraday_latest_timestamp": "2026-11-24T15:30:00+09:00",
+        "daily_close": 4697.51,
+        "intraday_close": 4697.51,
+        "intraday_latest_timestamp": "2026-11-25T15:30:00+09:00",
         "absolute_difference_pct": 0.0,
         "tolerance_pct": 0.1
       },
@@ -141,8 +141,8 @@
         "intraday_15m": 932
       },
       "latest_complete_bars": {
-        "daily": "2026-11-24",
-        "intraday_15m": "2026-11-24T15:30:00+09:00"
+        "daily": "2026-11-25",
+        "intraday_15m": "2026-11-25T15:30:00+09:00"
       },
       "target_session_bar_counts": {
         "5m": 78,
@@ -154,24 +154,24 @@
         "source_rows": 78,
         "resampled_rows": 27,
         "open": {
-          "source": 654.31,
-          "resampled": 654.31
+          "source": 654.21,
+          "resampled": 654.21
         },
         "high": {
-          "source": 670.95,
-          "resampled": 670.95
+          "source": 658.67,
+          "resampled": 658.67
         },
         "low": {
-          "source": 652.21,
-          "resampled": 652.21
+          "source": 641.08,
+          "resampled": 641.08
         },
         "close": {
-          "source": 665.88,
-          "resampled": 665.88
+          "source": 650.64,
+          "resampled": 650.64
         },
         "volume": {
-          "source": 441902.0,
-          "resampled": 441902.0
+          "source": 441495.0,
+          "resampled": 441495.0
         },
         "status": "MATCH"
       },
@@ -185,15 +185,15 @@
           "api_id": "ka20006",
           "exchange_name": "KRX",
           "exchange_timezone": "Asia/Seoul",
-          "requested_base_date": "2026-11-24",
+          "requested_base_date": "2026-11-25",
           "pages": 3,
           "source_rows": 1800,
           "usable_rows": 1800,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
-          "latest_timestamp": "2026-11-24T00:00:00",
-          "raw_file": "kosdaq_ka20006_daily_20261124.json",
-          "raw_sha256": "c4f56ccd07e712d354bc174a86fcbacf23a07079f62ac2b7b6bc2fbf542d10f7"
+          "latest_timestamp": "2026-11-25T00:00:00",
+          "raw_file": "kosdaq_ka20006_daily_20261125.json",
+          "raw_sha256": "c6470904f4b6f93efdf02cf069922af9987b70038886cf1eeb8ded3c492b5f56"
         },
         {
           "instrument": "KOSDAQ",
@@ -204,42 +204,42 @@
           "api_id": "ka20005",
           "exchange_name": "KRX",
           "exchange_timezone": "Asia/Seoul",
-          "requested_base_date": "2026-11-24",
+          "requested_base_date": "2026-11-25",
           "pages": 3,
           "source_rows": 2700,
           "usable_rows": 2700,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
-          "latest_timestamp": "2026-11-24T15:30:00+09:00",
-          "raw_file": "kosdaq_ka20005_5m_20261124.json",
-          "raw_sha256": "c40eebf7aae79a1bfddfdccb5c908ce1ef650d7397bcafbbdef9ae7a265b14a1"
+          "latest_timestamp": "2026-11-25T15:30:00+09:00",
+          "raw_file": "kosdaq_ka20005_5m_20261125.json",
+          "raw_sha256": "9b9f946348825ea26347a59f86a43ab24e816dd6f0006280c3cb3b4394ae8a6e"
         }
       ],
       "official_close_crosscheck": null,
       "daily_intraday_close_crosscheck": {
         "status": "MATCH",
-        "message": "KOSDAQ ka20006 665.88 / ka20005 665.88 / 차이 0.0000%",
-        "trade_date": "2026-11-24",
+        "message": "KOSDAQ ka20006 650.64 / ka20005 650.64 / 차이 0.0000%",
+        "trade_date": "2026-11-25",
         "daily_source": "Kiwoom REST ka20006",
         "intraday_source": "Kiwoom REST ka20005",
-        "daily_close": 665.88,
-        "intraday_close": 665.88,
-        "intraday_latest_timestamp": "2026-11-24T15:30:00+09:00",
+        "daily_close": 650.64,
+        "intraday_close": 650.64,
+        "intraday_latest_timestamp": "2026-11-25T15:30:00+09:00",
         "absolute_difference_pct": 0.0,
         "tolerance_pct": 0.1
       },
       "daily_report_crosscheck": {
-        "trade_date": "2026-11-24",
+        "trade_date": "2026-11-25",
         "report_source": "Kiwoom REST ka20009",
         "chart_source": "Kiwoom REST ka20006",
         "return_code": 0,
         "return_msg": "정상적으로 처리되었습니다",
-        "raw_file": "kosdaq_ka20009_daily_report_20261124.json",
-        "raw_sha256": "570c6663772fe7b163324a0e05368520abec9663ea4da760f03546daeab7b0df",
+        "raw_file": "kosdaq_ka20009_daily_report_20261125.json",
+        "raw_sha256": "e9fd4e6e4a93a8bedb53f84db7a413f7bb3dd582e4e6e935e4a7ec33b7606fa6",
         "status": "MATCH",
-        "message": "KOSDAQ ka20006 665.88 / ka20009 665.88 / 차이 0.0000%",
-        "chart_close": 665.88,
-        "report_close": 665.88,
+        "message": "KOSDAQ ka20006 650.64 / ka20009 650.64 / 차이 0.0000%",
+        "chart_close": 650.64,
+        "report_close": 650.64,
         "absolute_difference_pct": 0.0,
         "tolerance_pct": 0.1,
         "row_count": 20
@@ -252,15 +252,15 @@
       "can_use_for_decision": true,
       "issues": [],
       "history_counts": {
-        "daily": 2934,
+        "daily": 2935,
         "weekly": 627,
         "monthly": 145,
-        "intraday_5m": 1341,
-        "intraday_15m": 461
+        "intraday_5m": 1408,
+        "intraday_15m": 484
       },
       "latest_complete_bars": {
-        "daily": "2026-11-24",
-        "intraday_15m": "2026-11-24T15:30:00+09:00"
+        "daily": "2026-11-25",
+        "intraday_15m": "2026-11-25T15:30:00+09:00"
       },
       "target_session_bar_counts": {
         "5m": 68,
@@ -277,10 +277,10 @@
           "exchange_name": "OSA",
           "exchange_timezone": "Asia/Tokyo",
           "currency": "JPY",
-          "requested_start": "2014-11-15T00:00:00+09:00",
-          "requested_end_exclusive": "2026-11-25T00:00:00+09:00",
-          "source_rows": 2955,
-          "usable_rows": 2934,
+          "requested_start": "2014-11-16T00:00:00+09:00",
+          "requested_end_exclusive": "2026-11-26T00:00:00+09:00",
+          "source_rows": 2956,
+          "usable_rows": 2935,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
           "missing_close_dates": [
@@ -306,9 +306,9 @@
             "2018-12-24",
             "2018-12-31"
           ],
-          "latest_timestamp": "2026-11-24T09:00:00+09:00",
-          "raw_file": "nikkei225_yahoo_1d_20261124.json",
-          "raw_sha256": "118bb20392b33dfe7ea2dea3dad9ed1a2f769f13a822860412e69273273f8715"
+          "latest_timestamp": "2026-11-25T09:00:00+09:00",
+          "raw_file": "nikkei225_yahoo_1d_20261125.json",
+          "raw_sha256": "dba58f6caec6f70ac82a018ef131ba5efe53e1c5bc18d0af768d5ad4c4b0d0e4"
         },
         {
           "instrument": "NIKKEI225",
@@ -319,10 +319,10 @@
           "exchange_name": "OSA",
           "exchange_timezone": "Asia/Tokyo",
           "currency": "JPY",
-          "requested_start": "2026-10-24T00:00:00+09:00",
-          "requested_end_exclusive": "2026-11-25T00:00:00+09:00",
-          "source_rows": 1561,
-          "usable_rows": 1361,
+          "requested_start": "2026-10-25T00:00:00+09:00",
+          "requested_end_exclusive": "2026-11-26T00:00:00+09:00",
+          "source_rows": 1639,
+          "usable_rows": 1429,
           "duplicate_rows_removed": 0,
           "invalid_ohlc_rows_removed": 0,
           "missing_close_dates": [
@@ -525,11 +525,21 @@
             "2026-11-24",
             "2026-11-24",
             "2026-11-24",
-            "2026-11-24"
+            "2026-11-24",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25",
+            "2026-11-25"
           ],
-          "latest_timestamp": "2026-11-24T15:30:00+09:00",
-          "raw_file": "nikkei225_yahoo_5m_20261124.json",
-          "raw_sha256": "a3cd7c0fc898d24cd4ac1f9dce6150eaf003283117abf85e719625670cf1a5f4"
+          "latest_timestamp": "2026-11-25T15:30:00+09:00",
+          "raw_file": "nikkei225_yahoo_5m_20261125.json",
+          "raw_sha256": "b059e8490147ca3ca4481b347382f7c26dc6d5618acbcde1873c29a50d8ccecb"
         }
       ],
       "official_close_crosscheck": null,
@@ -538,10 +548,10 @@
       "nikkei_official_daily_crosscheck": {
         "source": "https://indexes.nikkei.co.jp/nkave/historical/nikkei_stock_average_daily_en.csv",
         "source_tier": "official_eod",
-        "raw_file": "nikkei225_official_daily_20261124.csv",
-        "raw_sha256": "ae9fd67ed1baf450fdcafc760f3443cefeae2f3bee74349b02a0a8853624ee9c",
-        "latest_official_date": "2026-11-24",
-        "target_date": "2026-11-24",
+        "raw_file": "nikkei225_official_daily_20261125.csv",
+        "raw_sha256": "9549c4a4e7fb9860599be2697bc3383a7af6b9ca8a2fda3e4ceb3e9d62bf0cf4",
+        "latest_official_date": "2026-11-25",
+        "target_date": "2026-11-25",
         "status": "MATCH",
         "message": "Nikkei 공식/Yahoo OHLC 최대 차이 0.000003% (허용 0.02%)",
         "maximum_difference_pct": 0.0,
@@ -553,16 +563,16 @@
           "close": 0.0
         },
         "official_ohlc": {
-          "open": 57009.99,
-          "high": 59262.57,
-          "low": 57009.99,
-          "close": 58644.63
+          "open": 58383.49,
+          "high": 58472.56,
+          "low": 56502.97,
+          "close": 57011.62
         },
         "secondary_ohlc": {
-          "open": 57009.9883,
-          "high": 59262.5703,
-          "low": 57009.9883,
-          "close": 58644.6289
+          "open": 58383.4883,
+          "high": 58472.5586,
+          "low": 56502.9688,
+          "close": 57011.6211
         }
       },
       "volume_note": "지수 거래량은 공급자 정의 차이 때문에 상대비교 점수에 사용하지 않음"
