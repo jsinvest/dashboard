@@ -8,9 +8,9 @@ const val=(n,u)=>Number.isFinite(n)?(u==='q'?signed(n)+'계약':money(n)):'자�
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function weekKey(d){const t=new Date(d+'T12:00:00Z');t.setUTCDate(t.getUTCDate()-(t.getUTCDay()+6)%7);return t.toISOString().slice(0,10);}
 function groupWeeks(rows){const w=new Map();for(const p of rows)w.set(weekKey(p.date),p);return Array.from(w.values());}
-function series(base,comp,owner){
+function series(base,comp,owner,unit){
  const foreign=owner==='foreign', periodMap=new Map(base.periods.map(p=>[p.month,p])), sorted=base.periods.slice().sort((a,b)=>a.month.localeCompare(b.month));
- const official=sorted.at(-1), active=foreign?official.month:comp.month;
+ const official=sorted.at(-1), active=foreign&&unit!=='c'?official.month:comp.month;
  const match=active===comp.month, lookup=(date)=>comp.index[date]??null;
  const published=base.weekly.filter(w=>w.month===active).concat(official.month===active?[official]:[]).sort((a,b)=>a.through.localeCompare(b.through));
  const anchors=new Map(published.map(w=>[w.through,w]));
@@ -22,11 +22,14 @@ function series(base,comp,owner){
    return {date:r.d,v,q,c,idx:lookup(r.d),moneyStatus:a?'KRX 확정':'복수 마감자료 잠정',month:active};
  });
  const confirmedRows=published.map(w=>({date:w.through,v:w.netMillion,q:w.contracts,idx:lookup(w.through),moneyStatus:'KRX 확정',month:active}));
- const weeksMap=new Map((foreign?confirmedRows:[]).map(p=>[p.date,p]));
+ const weeksMap=new Map((foreign&&unit!=='c'?confirmedRows:[]).map(p=>[p.date,p]));
  for(const p of days)weeksMap.set(p.date,p);
  const weeks=groupWeeks(Array.from(weeksMap.values()).sort((a,b)=>a.date.localeCompare(b.date)));
  const now=weeks.at(-1);
- const history=foreign? sorted.filter(p=>p.through===p.expiry).slice(-40).map(p=>({month:p.month,date:p.through,v:p.netMillion,q:p.contracts,idx:lookup(p.through),done:true,moneyStatus:'KRX 확정'})):
+ const history=foreign? sorted.filter(p=>p.through===p.expiry&&(unit!=='c'||p.month<active||comp.foreignCash?.[active]?.through===p.through)).slice(-40).map(p=>{
+   const cash=comp.foreignCash?.[p.month];
+   return {month:p.month,date:p.through,v:p.netMillion,q:p.contracts,c:cash?.through===p.through?cash.c:null,idx:lookup(p.through),done:true,moneyStatus:'KRX 확정'};
+ }):
  comp.institution.map(p=>({month:p.month,date:p.through,v:p.v,q:p.q,qr:p.qr,c:p.c,idx:lookup(p.through),done:true,moneyStatus:'만기 종료'}));
  const activePeriod=periodMap.get(active);
  const months=history.slice();
@@ -41,26 +44,36 @@ function scaleBounds(values,div,zero){
  let lo=Math.floor(min/step)*step,hi=Math.ceil(max/step)*step;if(lo===hi)hi+=step;return {lo,hi,step};
 }
 function svgTag(name,attrs,body=''){return '<'+name+' '+Object.entries(attrs).map(([k,v])=>k+'="'+esc(v)+'"').join(' ')+'>'+body+'</'+name+'>';}
-function chart(data,unit,showIndex,width,id,history,projection){
+function quantile(sorted, fraction){
+ const rank=(sorted.length-1)*fraction, low=Math.floor(rank), high=Math.ceil(rank);
+ return sorted[low]+(sorted[high]-sorted[low])*(rank-low);
+}
+function bandFor(history,unit,mode){
+ if(unit==='q')return [-50000,50000];
+ if(unit==='v'||mode==='fixed')return [-5,5];
+ const values=history.map(p=>p.c).filter(Number.isFinite).map(v=>v/1e6).sort((a,b)=>a-b);
+ return values.length<2?null:[quantile(values,.05),quantile(values,.95)];
+}
+function chart(data,unit,showIndex,width,id,history,projection,band){
  const W=Math.max(280,Math.round(width)),H=W<540?218:246,L=unit==='q'?(W<540?50:65):40,R=W-(showIndex?54:15),T=28,B=H-28;
- const band=unit==='q'?50000:unit==='v'?5:null, factor=unit==='q'?1:1000000;
+ const factor=unit==='q'?1:1000000;
  const isRef=p=>unit==='q'&&p.q==null&&Number.isInteger(p.qr);
  const raw=p=>isRef(p)?p.qr:p[unit], available=data.filter(p=>Number.isFinite(raw(p)));
  if(!available.length)return {html:'<p>이 기간의 비교 자료가 없습니다.</p>',list:[],left:0,right:1,W};
  const yn=data.filter(p=>Number.isFinite(raw(p))).map(p=>raw(p)/factor);
- const scale=scaleBounds(yn.concat(band==null?[]:[band,-band]),5,true);
+ const scale=scaleBounds(yn.concat(band??[]),5,true);
  const indexVals=showIndex?data.map(p=>p.idx).filter(Number.isFinite):[];
  const indexScale=indexVals.length?scaleBounds(indexVals,4,false):null;
  const x=i=>data.length===1?(L+R)/2:L+(R-L)*i/(data.length-1), y=(v,s=scale)=>B-(v-s.lo)*(B-T)/(s.hi-s.lo);
  const line=(x1,y1,x2,y2,attrs)=>svgTag('line',{x1,y1,x2,y2,...attrs});
  const tx=(x,y,text,attrs={})=>svgTag('text',{x,y,'font-size':W<540?10:11,...attrs},esc(text));
  let g='';
- if(band!=null)g+=svgTag('rect',{x:L,y:y(band),width:R-L,height:y(-band)-y(band),fill:'#e5f1ec'});
+ if(band)g+=svgTag('rect',{x:L,y:y(band[1]),width:R-L,height:y(band[0])-y(band[1]),fill:'#e5f1ec'});
  for(let z=scale.lo;z<=scale.hi+scale.step/100;z+=scale.step){
    g+=line(L,y(z),R,y(z),{stroke:z===0?'#9aadb1':'#dce6e6','stroke-width':z===0?1.25:0.8});
    g+=tx(L-5,y(z)+4,signed(z,Number.isInteger(z)?0:1),{'text-anchor':'end',fill:'#37606b'});
  }
- if(band!=null)for(const b of [-band,band])g+=line(L,y(b),R,y(b),{stroke:'#67a38c','stroke-width':1.2,'stroke-dasharray':'5 4'});
+ if(band)for(const b of band)g+=line(L,y(b),R,y(b),{stroke:'#67a38c','stroke-width':1.2,'stroke-dasharray':'5 4'});
  g+=tx(L,14,unit==='q'?'계약':'조 원',{fill:'#246574'});
  if(indexScale){g+=tx(R,14,'지수 (pt)',{fill:'#96520b','text-anchor':'end'});for(let z=indexScale.lo;z<=indexScale.hi+indexScale.step/100;z+=indexScale.step)g+=tx(R+5,y(z,indexScale)+4,z.toLocaleString('ko-KR'),{fill:'#96520b'});}
  function segments(get,sty){let s='';let started=false;data.forEach((p,i)=>{const v=get(p);if(!Number.isFinite(v)){started=false;return;}s+=(started?' L':' M')+x(i).toFixed(2)+' '+v.toFixed(2);started=true;});return svgTag('path',{d:s,fill:'none','stroke-linejoin':'round','stroke-linecap':'round',...sty});}
@@ -84,23 +97,26 @@ function chartDetails(p,unit,showIndex){
  return text;
 }
 function drawPage(base,comp,s,width){
- const a=series(base,comp,s.owner),p=a.now;if(!p)throw Error('누적 자료 없음');
+ const a=series(base,comp,s.owner,s.unit),p=a.now;if(!p)throw Error('누적 자료 없음');
  const u=s.unit, useDays=s.freq==='day', lastDate=p.date;
  const freq=useDays?'일별':'주별',n=s.owner==='foreign'?'외국인':'기관';
  const live=a.shot&&u==='v'?{month:a.active,date:a.shot.observedAt.slice(0,10),v:a.shot.netEok*100,live:true,moneyStatus:'장중 '+a.shot.observedAt.slice(11,16),idx:null}:null;
  const monthly=a.months.slice();if(live)monthly.push(live);
  const detail=(useDays?a.days:a.weeks).slice();if(live)detail.push(live);
- const chart1=chart(monthly,u,s.overlay,width,'history',true,s.freq);
- const chart2=chart(detail,u,s.overlay,width,'current',false,s.freq);
- const band=u==='q'?50000:u==='v'?5000000:null;
- const valid=a.history.filter(x=>Number.isFinite(x[u])),inBand=valid.filter(x=>Math.abs(x[u])<=band).length;
- const bandNote=band===null?'코스피 시장 전체 기관 현물 순매수 · 단위 조 원':('음영 '+(u==='q'?'±5만 계약':'±5조 원')+' · 만기 종료 '+valid.length+'개 중 '+inBand+'개가 밴드 안에서 마감');
+ const band=bandFor(a.history,u,s.band);
+ const chart1=chart(monthly,u,s.overlay,width,'history',true,s.freq,band);
+ const chart2=chart(detail,u,s.overlay,width,'current',false,s.freq,band);
+ const valid=a.history.map(p=>p[u]).filter(Number.isFinite).map(v=>u==='q'?v:v/1e6);
+ const inBand=band?valid.filter(v=>v>=band[0]&&v<=band[1]).length:0;
+ const bounds=u==='q'?'±5만 계약':u==='v'||s.band==='fixed'?'±5조 원':band?signed(band[0],2)+' ~ '+signed(band[1],2)+'조 원 (5~95백분위)':'자료 부족';
+ const bandNote=(u==='c'?'코스피 '+n+' 현물 · ':'')+'음영 '+bounds+(band?' · 만기 종료 '+valid.length+'개 중 '+inBand+'개가 밴드 안에서 마감':'');
  const refNote=u==='q'&&s.owner==='institution'?' · 빈 원은 추가 검증이 필요한 20개 월물로, 밴드 통계에서 제외':'';
  const pressed=(g,k,caption)=>'<button type="button" data-group="'+g+'" data-value="'+k+'" aria-pressed="'+String(s[g]===k)+'">'+caption+'</button>';
  const controller=(owner,opts)=>'<div class="controls" role="group" aria-label="'+esc(owner)+'">'+opts+'</div>';
  const labelsLine='<span class="legend flow">누적 순매수 · 왼쪽</span>'+(s.overlay?'<span class="legend index">코스피200 종가 · 오른쪽</span>':'');
  const overlay='<label class="overlay"><input type="checkbox" data-overlay '+(s.overlay?'checked':'')+'> 코스피200 종가 겹쳐보기</label>';
- const ucontrols=pressed('unit','v','선물 금액')+pressed('unit','q','계약 수')+(s.owner==='institution'?pressed('unit','c','현물 금액'):'');
+ const ucontrols=pressed('unit','v','선물 금액')+pressed('unit','q','계약 수')+pressed('unit','c','현물 금액');
+ const cashBandControls=u==='c'?controller('현물 밴드 기준',pressed('band','percentile','과거 90% 구간')+pressed('band','fixed','±5조 원')):'';
  const spot=Number.isFinite(p.c)?money(p.c):'자료 없음';
  const metric=(t,c,d)=>'<div><small>'+t+'</small><strong>'+c+'</strong><span>'+d+'</span></div>';
  const most=a.shot?a.shot.netEok*100:p.v;
@@ -110,14 +126,14 @@ function drawPage(base,comp,s,width){
  const previousWeek=a.weeks.filter(w=>weekKey(w.date)<weekKey(p.date)).at(-1);
  const weekChange=previousWeek&&Number.isFinite(p[u])&&Number.isFinite(previousWeek[u])?' · 직전 주 마감('+previousWeek.date+') 대비 '+val(p[u]-previousWeek[u],u):'';
  const detailSection=mkSection(monthName(a.active)+' · '+freq+' 누적',controller('시간 단위',pressed('freq','week','주별')+pressed('freq','day','일별')),(useDays?'매 거래일 마감 기준 · 직전 만기 다음 거래일부터 누적':'각 주의 마지막 거래일 기준 · 진행 중인 주는 최근 마감일까지 누적')+weekChange,chart2,'current');
- const link='<a href="kospi200-foreign-futures-20261124.xlsx" download>외국인 10년 원자료 엑셀</a>';
+ const link='<a href="kospi200-foreign-futures-20261124.xlsx" download>외국인 선물 10년 원자료 엑셀</a>';
  const notes='<section><details><summary>월물별 수치와 집계 기준</summary><p>선물은 직전 분기 만기 다음 거래일부터 코스피200 일반선물 전 결제월의 순매수를 누적합니다. 현물 수급은 코스피 전체이며, 오른쪽 축은 코스피200 현물지수 종가(pt)입니다. 지수는 같은 거래일 자료가 있을 때만 표시합니다.</p><p>'+ (s.owner==='institution'?'진행 월물 선물 금액은 KRX·키움 등 마감 자료 합산 잠정치입니다. 과거 계약 수 15개 월물은 KRX 기준표와 집계 차이, 5개는 투자자 합계 불일치로 참고 표시했습니다.':'금액·계약 수는 KRX 확정 자료를 우선합니다. KRX 확정일 사이의 일별 금액과 이후 마감 금액은 복수 자료 합산 잠정치입니다. 2017년 3월 27일 거래승수는 50만 원에서 25만 원으로 변경됐습니다.')+'</p>'+
- '<p>최근 지수는 키움 ka20006과 LS t8429 마감 종가를 대조했습니다. 과거 지수는 키움 코스피200 일봉을 사용했습니다.</p><div class="scroll"><table><thead><tr><th>월물</th><th>기준일</th><th>선물 (조 원)</th><th>선물 (계약)</th><th>코스피200 (pt)</th></tr></thead><tbody>'+a.months.slice().reverse().map(z=>'<tr><td>'+monthName(z.month)+'</td><td>'+z.date+'</td><td>'+signed(z.v/1e6,3)+'</td><td>'+(!Number.isFinite(z.q)?signed(z.qr)+' (참고)':signed(z.q))+'</td><td>'+(Number.isFinite(z.idx)?price(z.idx):'—')+'</td></tr>').join('')+'</tbody></table></div><p>'+link+' · <a href="https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201050302">KRX 투자자별 거래실적</a></p></details></section>';
+ '<p>현물 밴드는 주체별로 최근 완료 월물 종료값의 5·95백분위를 선형 보간합니다. ±5조 원으로도 비교할 수 있습니다. 밴드 포함 횟수는 만기 종료값 기준입니다. 과거 외국인 현물은 네이버 코스피 외국인·기타외국인의 일별 합계, 이번 조사(2026년 12월물)는 지표담 코스피 종합 외인계(등록+미등록)입니다. 두 원천의 집계 범위·시각에 따라 값이 달라질 수 있습니다.</p><p>최근 지수는 키움 ka20006과 LS t8429 마감 종가를 대조했습니다. 과거 지수는 키움 코스피200 일봉을 사용했습니다.</p><div class="scroll"><table><thead><tr><th>월물</th><th>기준일</th><th>선물 (조 원)</th><th>선물 (계약)</th><th>현물 (조 원)</th><th>코스피200 (pt)</th></tr></thead><tbody>'+a.months.slice().reverse().map(z=>'<tr><td>'+monthName(z.month)+'</td><td>'+z.date+'</td><td>'+signed(z.v/1e6,3)+'</td><td>'+(!Number.isFinite(z.q)?signed(z.qr)+' (참고)':signed(z.q))+'</td><td>'+(Number.isFinite(z.c)?signed(z.c/1e6,3):'—')+'</td><td>'+(Number.isFinite(z.idx)?price(z.idx):'—')+'</td></tr>').join('')+'</tbody></table></div><p>'+link+' · <a href="https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201050302">KRX 투자자별 거래실적</a></p></details></section>';
  const officialLine=s.owner==='foreign'&&a.official?'<small>최근 KRX 확정 · '+a.official.through+' · '+money(a.official.netMillion)+' · '+val(a.official.contracts,'q')+'</small>':'';
- return {html:hdr+'<div class="settings">'+overlay+officialLine+'</div>'+hist+detailSection+notes,charts:[chart1,chart2]};
+ return {html:hdr+'<div class="settings">'+overlay+cashBandControls+officialLine+'</div>'+hist+detailSection+notes,charts:[chart1,chart2]};
 }
 function mount(base,comp){
- const app=document.getElementById('app'),s={owner:'foreign',unit:'v',freq:'week',overlay:true};
+ const app=document.getElementById('app'),s={owner:'foreign',unit:'v',freq:'week',band:'percentile',overlay:true};
  let plots;
  function draw(){
   const width=Math.max(280,app.clientWidth-(app.clientWidth<600?28:48));
@@ -131,7 +147,7 @@ function mount(base,comp){
    el.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();pick(e.key==='Home'?0:e.key==='End'?d.list.length-1:focus+(e.key==='ArrowRight'?1:-1),true);}};
   }
  }
- app.onclick=e=>{const b=e.target.closest('button[data-group]');if(!b)return;const g=b.dataset.group;if(!['owner','unit','freq'].includes(g))return;s[g]=b.dataset.value;if(s.owner==='foreign'&&s.unit==='c')s.unit='v';draw();app.querySelector('button[data-group="'+g+'"][data-value="'+s[g]+'"]')?.focus({preventScroll:true});};
+ app.onclick=e=>{const b=e.target.closest('button[data-group]');if(!b)return;const g=b.dataset.group;if(!['owner','unit','freq','band'].includes(g))return;s[g]=b.dataset.value;draw();app.querySelector('button[data-group="'+g+'"][data-value="'+s[g]+'"]')?.focus({preventScroll:true});};
  app.onchange=e=>{if(e.target.matches('[data-overlay]')){s.overlay=e.target.checked;draw();app.querySelector('[data-overlay]').focus({preventScroll:true});}};
  draw();let w=app.clientWidth;new ResizeObserver(()=>{if(Math.abs(w-app.clientWidth)>1){w=app.clientWidth;draw();}}).observe(app);
 }
@@ -139,4 +155,3 @@ if(typeof document!=='undefined'){
  const fetchJSON=async url=>{const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error(url);return r.json();};
  Promise.all(['data.json','comparison.json'].map(fetchJSON)).then(([b,c])=>mount(b,c)).catch(()=>{document.getElementById('load-status').textContent='최근 데이터를 불러오지 못했습니다. 아래에는 게시 시점의 마감 자료를 표시합니다.';});
 }
-
