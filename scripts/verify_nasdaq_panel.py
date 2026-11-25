@@ -1,5 +1,8 @@
 """Verify the published CTA market menus, weekly charts, and related CFTC panel."""
 
+import argparse
+import os
+import tempfile
 import json
 import re
 import shutil
@@ -17,15 +20,22 @@ def read(url):
         return response.read().decode("utf-8")
 
 
+def render_dom(chrome, url, budget=5000, timeout=45):
+    # Isolate headless QA from interactive profiles; keep normal browser security.
+    with tempfile.TemporaryDirectory(prefix="nasdaq-cta-qa-") as profile:
+        run = subprocess.run([chrome, "--headless", "--disable-gpu", "--no-first-run",
+                              "--user-data-dir=" + profile,
+                              "--virtual-time-budget=" + str(budget), "--dump-dom", url],
+                             capture_output=True, check=True, timeout=timeout)
+    return run.stdout.decode("utf-8").replace("\r\n", "\n")
+
+
 def verify_cta_navigation(chrome, query):
     expected = (ROOT / "cta-trend/index.html").read_text(encoding="utf-8")
     payload = json.loads(expected.split('id="data">', 1)[1].split("</script>", 1)[0])
 
     def dom(url):
-        run = subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
-                              "--disable-dev-shm-usage", "--timeout=15000", "--virtual-time-budget=3500",
-                              "--dump-dom", url], capture_output=True, check=True, timeout=60)
-        return run.stdout.decode("utf-8")
+        return render_dom(chrome, url, 3500, 60)
 
     def tag(html, selector):
         return next((m for m in re.findall(r"<(?:button|iframe|div)\b[^>]*>", html) if selector in m), "")
@@ -50,7 +60,11 @@ def verify_cta_navigation(chrome, query):
         print(f"PUBLIC_CTA_OK {market} | {first[0]} to {last[0]} | {len(payload[market]['weeks'])} weeks | {last[5]:+.1f}", flush=True)
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--browser", type=Path)
+    parser.add_argument("--attempts", type=int, default=25, choices=range(1, 26))
+    args = parser.parse_args(argv)
     data = json.loads((ROOT / "nasdaq-positioning/history.json").read_bytes())
     expected_panel = (ROOT / "nasdaq-positioning/index.html").read_text(encoding="utf-8")
     table = re.search(r"<tbody>(.*?)</tbody>", expected_panel, re.S)[1]
@@ -63,7 +77,7 @@ def main():
     final = data["history"][-1]
     net = final["long"] - final["short"]
     label = ("순숏" if net < 0 else "순롱" if net > 0 else "중립") + f" {abs(net):,}계약"
-    for attempt in range(25):
+    for attempt in range(args.attempts):
         query = f"?v={digest[:12]}-{time.time_ns()}"
         panel_url = SITE + "nasdaq-positioning/" + query
         try:
@@ -77,17 +91,19 @@ def main():
                 break
         except OSError as exc:
             print(type(exc).__name__, flush=True)
-        if attempt == 24:
+        if attempt == args.attempts - 1:
             raise SystemExit("Published panel does not match this snapshot")
         time.sleep(12)
-    chrome = shutil.which("google-chrome") or shutil.which("chromium")
+    chrome = str(args.browser) if args.browser else shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("msedge")
+    if not chrome and os.name == "nt":
+        candidate = Path(os.environ.get("ProgramFiles(x86)", "C:/Program Files (x86)")) / "Microsoft/Edge/Application/msedge.exe"
+        chrome = str(candidate) if candidate.is_file() else None
     if not chrome:
         raise SystemExit("A headless DOM renderer is required")
+    if not Path(chrome).is_file():
+        raise SystemExit("The selected DOM renderer does not exist")
     verify_cta_navigation(chrome, query)
-    result = subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu",
-                             "--virtual-time-budget=5000", "--dump-dom", panel_url],
-                            capture_output=True, timeout=45, check=True)
-    dom = result.stdout.decode("utf-8")
+    dom = render_dom(chrome, panel_url)
     canvases = re.findall(r'<canvas\b[^>]*>', dom)
     paired = [tag for tag in canvases if 'data-rendered="true"' in tag and
               f'data-week="{model_date}"' in tag and f'data-weeks="{len(model_rows)}"' in tag]

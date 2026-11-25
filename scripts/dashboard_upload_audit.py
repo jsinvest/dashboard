@@ -13,6 +13,7 @@ import hashlib
 import io
 import json
 from pathlib import Path, PurePosixPath
+import re
 import subprocess
 import urllib.parse
 import urllib.request
@@ -274,8 +275,31 @@ def verify_review_bundle(body, futures_body, bundle_name, read_public):
         names = z.namelist()
         if len(names) != len(set(names)) or z.testzip():
             raise ValueError("검토 ZIP 중복/CRC 오류")
-        if set(names) != expected | {manifest_name}:
+        privacy_name = "PUBLIC_PRIVACY_MANIFEST.json"
+        privacy_files = []
+        metadata = {privacy_name} if privacy_name in names else set()
+        if set(names) != expected | {manifest_name} | metadata:
             raise ValueError("검토 ZIP 공개 파일 목록 불일치")
+        if metadata:
+            privacy = json.loads(z.read(privacy_name))
+            allowed = {"schema_version", "scope", "source_validation_scope", "redacted_files"}
+            if (not isinstance(privacy, dict) or set(privacy) - allowed or
+                    not isinstance(privacy.get("scope"), str) or not privacy["scope"] or
+                    privacy.get("schema_version", 1) != 1 or
+                    not isinstance(privacy.get("redacted_files"), list) or not privacy["redacted_files"]):
+                raise ValueError("검토 ZIP 개인정보 설명 형식 오류")
+            for record in privacy["redacted_files"]:
+                if not isinstance(record, dict):
+                    raise ValueError("검토 ZIP 개인정보 설명 항목 오류")
+                source_keys = set(record) & {"original_sha256", "source_copy_sha256"}
+                name = record.get("file")
+                if (len(source_keys) != 1 or set(record) != {"file", "public_sha256"} | source_keys or
+                        not isinstance(name, str) or name not in expected or name in privacy_files or
+                        any(not isinstance(record.get(key), str) or not re.fullmatch(r"[a-fA-F0-9]{64}", record[key])
+                            for key in {"public_sha256"} | source_keys) or
+                        record["public_sha256"].lower() != sha(z.read(name))):
+                    raise ValueError("검토 ZIP 개인정보 설명 파일/해시 불일치")
+                privacy_files.append(name)
         if not same_content("latest.json", z.read("latest.json"), futures_body):
             raise ValueError("검토 ZIP과 공개 본문 불일치")
         manifest = json.loads(z.read(manifest_name))
@@ -290,6 +314,7 @@ def verify_review_bundle(body, futures_body, bundle_name, read_public):
             if sha(content) != record["sha256"] or not same_content(name, content, read_public(name)):
                 raise ValueError("검토 ZIP 공개 파일 해시 불일치: " + name)
     return {"eol_normalized_members": sorted(eol_members),
+            "privacy_metadata_verified": sorted(privacy_files),
             "archive_hash_policy": "Manifest hashes checked on original ZIP bytes; public UTF-8 text permits CRLF/LF conversion only."}
 
 
@@ -387,6 +412,45 @@ def check_assets(root, commit, path, d, base, stamp):
         return list(pool.map(check, assets.items()))
 
 
+def latest_nonempty_candidate_date(history):
+    """Newest Git revision per analysis day, then latest nonempty cohort."""
+    seen, cohorts = set(), []
+    for item in history:
+        as_of = day(item['as_of'])
+        if as_of in seen:
+            continue
+        seen.add(as_of)
+        if item.get('candidate_stocks'):
+            cohorts.append(as_of)
+    return max(cohorts) if cohorts else None
+
+
+def completed_candidate_history_date(payload, published_analysis, last_candidate_date=None):
+    """A closed historical cohort is due on its last actual publication.
+
+    This does not approve today's selection. The independent market-ai check
+    retains its missing-date and recommendation-selection-incomplete findings.
+    """
+    if published_analysis.get('candidate_stocks') != [] or published_analysis.get('final_picks') != []:
+        return None
+    try:
+        published = day(published_analysis['as_of'])
+        through = day(payload['through_recommendation_date'])
+        records, summary = payload['records'], payload['summary']
+        cohort = day(last_candidate_date) if last_candidate_date is not None else published
+        if cohort != through or published < through or not records or not isinstance(records, list):
+            return None
+        if summary.get('pending') != 0 or summary.get('unavailable') != 0 or summary.get('evaluated') != len(records):
+            return None
+        if len({row['id'] for row in records}) != len(records):
+            return None
+        if any(row['outcome'] not in {'WIN', 'DRAW', 'LOSS'} or day(row['recommendation_date']) > through for row in records):
+            return None
+        return through
+    except (KeyError, ValueError, TypeError):
+        return None
+
+
 def completion_state(items):
     """A successful inspection is not evidence that overdue work was repaired.
 
@@ -432,6 +496,18 @@ def audit(root, workspace, source, ref, base, now, calendar_path):
             d = evidence_json(body, member)
             actual = observed_day(key, d)
             row.update(remote_date=actual.isoformat(), git_sha256=sha(body), validation_status=d.get("status") or d.get("research_status"))
+            if key == 'candidate-hit':
+                published_analysis = json.loads(read_object(root, commit, 'market-analysis/analysis_latest.json'))
+                analysis_path = 'market-analysis/analysis_latest.json'
+                revisions = git(root, 'log', '--format=%H', commit, '--', analysis_path).decode().splitlines()
+                last_cohort = latest_nonempty_candidate_date(json.loads(read_object(root, revision, analysis_path)) for revision in revisions)
+                historical_due = completed_candidate_history_date(d, published_analysis, last_cohort)
+                if historical_due is not None:
+                    expected = historical_due
+                    row.update(expected_date=expected.isoformat(), cadence='published-candidate-history',
+                               history_scope='Fully evaluated actual published history; no new public candidates.',
+                               current_selection_status_checked_separately=True,
+                               upstream_recommendation_selection_complete=published_analysis.get('data_validation', {}).get('recommendation_selection_complete'))
             if expected and actual < expected:
                 row["issues"].append("EXPECTED_DATE_NOT_PUBLISHED")
             if actual > now.date():
