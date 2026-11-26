@@ -21,11 +21,13 @@ def read(url):
 
 
 def render_dom(chrome, url, budget=5000, timeout=45):
-    # Isolate headless QA from interactive profiles; keep normal browser security.
+    # Isolate QA from interactive profiles; keep normal browser security.
+    # Bound slow resource loading; required rendered-DOM checks below stay strict.
     with tempfile.TemporaryDirectory(prefix="nasdaq-cta-qa-") as profile:
         run = subprocess.run([chrome, "--headless", "--disable-gpu", "--no-first-run",
                               "--user-data-dir=" + profile,
-                              "--virtual-time-budget=" + str(budget), "--dump-dom", url],
+                              "--virtual-time-budget=" + str(budget),
+                              "--timeout=15000", "--dump-dom", url],
                              capture_output=True, check=True, timeout=timeout)
     return run.stdout.decode("utf-8").replace("\r\n", "\n")
 
