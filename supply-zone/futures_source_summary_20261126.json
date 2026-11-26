@@ -1,0 +1,4719 @@
+{
+  "as_of": "2026-11-26",
+  "generated_at": "2026-11-26T17:07:32.515574+09:00",
+  "contract": "F202612",
+  "code": "A016C000",
+  "sources": [
+    {
+      "file": "20261126/krx_calendar_20261126_165847538.json",
+      "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+    },
+    {
+      "file": "20261126/0471_KOSPI200_일별_60일_20261126.png",
+      "sha256": "abf613486bd01fddeb67fe2fb1a3b0b02f1ca20e9e6ec06c0f70b5aaefd6414d"
+    },
+    {
+      "file": "20261126/0786_close_snapshot_20261126.png",
+      "sha256": "bc33300a164ba0191f4ec6023fc4efd3de0090e796a352b3cce403cbf95fd695"
+    },
+    {
+      "file": "20261126/0787_선물_금액_20261126.png",
+      "sha256": "73432a0c6793e8835b7bb204efc35e424d41890aa2a891d794be2a28325b7e40"
+    },
+    {
+      "file": "20261126/0787_선물_수량_20261126.png",
+      "sha256": "2d9b06ed51325ee5456430505d78941f467eb29a3a5355bb069dc3a6b9b53959"
+    },
+    {
+      "file": "20261126/0787_콜옵션_금액_20261126.png",
+      "sha256": "332db5561d006452ce2dafb1a21c9781be3483bef667631a2f331c86c804656f"
+    },
+    {
+      "file": "20261126/0787_콜옵션_수량_20261126.png",
+      "sha256": "61268b18e784b6bca934ea4d776ad4255b4f616dcfd3094194a970860b998a3a"
+    },
+    {
+      "file": "20261126/0787_풋옵션_금액_20261126.png",
+      "sha256": "aa02f8731b0a82b5bd868ab89352ac07eb6e47171251e443eb5fe04591cfe242"
+    },
+    {
+      "file": "20261126/0787_풋옵션_수량_20261126.png",
+      "sha256": "77866124a8315d38bae5b170f2551bcb7a81155c9f6ffc4826c91fec64907adf"
+    },
+    {
+      "file": "20261126/0790_누적_20261126.png",
+      "sha256": "2b250b8c4802354b3810948cf76e52243ad7aeb18060e4b15723001a73b82834"
+    },
+    {
+      "file": "20261126/0790_일자_20261126.png",
+      "sha256": "9240cee15df40ef231e8969ee5f93124e47d2a62b3e3e86c99bc8639cc633177"
+    },
+    {
+      "file": "20261126/0794_누적_20261126.png",
+      "sha256": "89de9743d823c65eec77b6abdfac1f1b00b26ff2ff9a2e98a954bfd7d7e97d60"
+    },
+    {
+      "file": "20261126/0794_일자_20261126.png",
+      "sha256": "664db3f69ab2b3cfa714bc2c9bcfe0a81bb28648190b73bd672b02f2dc77978b"
+    },
+    {
+      "file": "20261126/eod_0787_parsed_20261126.csv",
+      "sha256": "db65e05234ce5a5a04703fb2fdcfe4fbfa5701a65decb847e00e39727497b96a"
+    },
+    {
+      "file": "20261126/eod_manifest_20261126.json",
+      "sha256": "58316cf090fb586c039aec0b2898f81c7a4f587c77f42ab1cc522ea0e3725197"
+    },
+    {
+      "file": "20261126/eod_ocr_bridge_20261126.json",
+      "sha256": "f17c985c073838873173c9a3ba6617074e6e744e55c0d842b3336dd2b09cf8cd"
+    },
+    {
+      "file": "20261125/api_run_latest.json",
+      "sha256": "78eb53ef7233aec2aa8134793b004d49771756183578ee9f8f9bdc9348129fa9"
+    },
+    {
+      "file": "160610_891581/oi.json",
+      "sha256": "6d23376ff348806dd32cc9ada32ab4bc1ca6b0854a9dcc4bead1367459051c1b"
+    },
+    {
+      "file": "20261126/api_run_latest.json",
+      "sha256": "c111c538ba71e944ae5a88097d6f0409db60d5f50c4ca7c1da56e2346da424dc"
+    },
+    {
+      "file": "160139_903961/daily.json",
+      "sha256": "19c566dd33dfab348a21f0fc18a0f32c07e5b1c2656339807363debf65b75972"
+    },
+    {
+      "file": "160139_903961/minute.json",
+      "sha256": "9febb32edf29fdd278346dc024a39034e2aae8c4ff9f21b0219d1e6ea07c6469"
+    },
+    {
+      "file": "160139_903961/oi.json",
+      "sha256": "05ae10846169d5da7da71436976796d50b1f621b665dd207ab7d48d4ae70005b"
+    },
+    {
+      "file": "160139_903961/volatility.json",
+      "sha256": "2c324222e6b3b97bae7822124d555d96e4cd2e34d821b79970f18bd6deae4a8b"
+    },
+    {
+      "file": "futures_review_20261126/bootstrap_snapshot.log",
+      "sha256": "f17df5eae0e83edfc2c80c67c56047cac4dc0e9250bc1b0c93bde86ca075f4c3"
+    },
+    {
+      "file": "futures_review_20261126/execution_state_snapshot.json",
+      "sha256": "258a02ae6c0857ba87908d2cd270781ff5c21d7fade5e2e0f970c4d5fde283eb"
+    },
+    {
+      "file": "historical_raw/A016C000_daily.json",
+      "sha256": "e3f387d36f352cf6e23475d6740892566fee0ed8ff3655882bc97b9d465fd5f1"
+    },
+    {
+      "file": "historical_raw/A0173000_daily.json",
+      "sha256": "faa2e2d628bff2ce46df55de5df256a5c2e433a3c86b23b23aa406b5b209492a"
+    },
+    {
+      "file": "historical_raw/B016C705_daily.json",
+      "sha256": "236c9506debc3e2838131b4c55d3a79f333fadc8697a6ad6390201aa08a83e87"
+    },
+    {
+      "file": "historical_raw/B016C710_daily.json",
+      "sha256": "b16bf0921c30d46925a4b56f62770edf62e93d36379afa6597210c4f68cc01e2"
+    },
+    {
+      "file": "historical_raw/B016C715_daily.json",
+      "sha256": "3403a2eb6ae6724e4cc6b2f824143c7507a24dff43d1ff879ec6174f12fc176b"
+    },
+    {
+      "file": "historical_raw/B016C720_daily.json",
+      "sha256": "fda925c5efda070d955832fd9c30ec217d06d282fcd37804126f2f04916b332f"
+    },
+    {
+      "file": "historical_raw/B016C725_daily.json",
+      "sha256": "cf8ea7a7363f01606536d03cc9028cd5054220c5558802246bef8a4adb7c3e11"
+    },
+    {
+      "file": "historical_raw/B016C730_daily.json",
+      "sha256": "cbc36c0ee0ea1b8a7e13d91fc8da0608cde84334740641c7af17ff8a5bdf3b01"
+    },
+    {
+      "file": "historical_raw/B016C735_daily.json",
+      "sha256": "2c1425043f3067dcb22cb40a3f1104764b78e799fd324af87749424f7c22191e"
+    },
+    {
+      "file": "historical_raw/B016C740_daily.json",
+      "sha256": "0ff800894d3060f72b43eaf06ae2916e34c0685de2e7575bbd6ec14e79e8bb46"
+    },
+    {
+      "file": "historical_raw/B016C745_daily.json",
+      "sha256": "63ffc91767778a2a4be61698562fa0cd60a19093fc1c276055fd3707b232d539"
+    },
+    {
+      "file": "historical_raw/C016C705_daily.json",
+      "sha256": "8ec37b017c0417b2812dcb376e73d180cffd16f6ac02d054c47d8c2af825aac7"
+    },
+    {
+      "file": "historical_raw/C016C710_daily.json",
+      "sha256": "bb7202c063f9005f882f2efe3acad5c8a4dbddc27926dd4b5eebca6e3922417d"
+    },
+    {
+      "file": "historical_raw/C016C715_daily.json",
+      "sha256": "0d58379898c3867735cdba0e6d23bf378b0f19c8888598dbe40f4a8421fc6676"
+    },
+    {
+      "file": "historical_raw/C016C720_daily.json",
+      "sha256": "49c87b1b1afa1ba9a22bd87df6abe99b862a7595045d04cfc8a719b4e12919d0"
+    },
+    {
+      "file": "historical_raw/C016C725_daily.json",
+      "sha256": "2a95097c0b6a8c28730fd6bd567e3920a7ed328f39c388c05841b983c4f7875c"
+    },
+    {
+      "file": "historical_raw/C016C730_daily.json",
+      "sha256": "89a7286dbdb577c30958e7ef19ca79ed80f71532c6f0ad6b9e02afc5efd3539e"
+    },
+    {
+      "file": "historical_raw/C016C735_daily.json",
+      "sha256": "ce90edeaf25013a8f8c70257eff5f2a358d02d65ee7ce72cc97ae8bacab320e3"
+    },
+    {
+      "file": "historical_raw/C016C740_daily.json",
+      "sha256": "dae344c5f7799d9d33299adf4d8fd0dd7acedd9e7c7f19f735348dcfb9c11e43"
+    },
+    {
+      "file": "historical_raw/C016C745_daily.json",
+      "sha256": "c04713dbe980cb25775be4586ed8945b31167cfcd2323eb3580313824a5f1bcf"
+    },
+    {
+      "file": "historical_raw/call_detail.json",
+      "sha256": "63be61acf0073d6f3c4cb0d904f6cf6541a3dcffdc9a71e0c401931bd095c49f"
+    },
+    {
+      "file": "historical_raw/call_t1617_1.json",
+      "sha256": "b6a949db66725d8020e9f4b585531b24cb4ee365e44cf8e7464f0571f6c501f4"
+    },
+    {
+      "file": "historical_raw/call_t1617_2.json",
+      "sha256": "6e1effb02b7bd2b37c6d311af52a6911b51ca16d1b9949cf4a331b3152824bfe"
+    },
+    {
+      "file": "historical_raw/call_t1617_3.json",
+      "sha256": "bb134454085e727749225f2fde6b34eabd9cc40267061ff8716ac7beac5c5e07"
+    },
+    {
+      "file": "historical_raw/cash_detail.json",
+      "sha256": "8f332d1443455933ea00e49538e390f95704fa483a314a5cf4d2ade67c2b0b25"
+    },
+    {
+      "file": "historical_raw/cash_t1617_1.json",
+      "sha256": "7d7f4e6202ca6af4fa3d9ea7cd99c14d37bd5d71bc19539367837deb21fc6bf5"
+    },
+    {
+      "file": "historical_raw/cash_t1617_2.json",
+      "sha256": "50fb052d15975b806086b4d4db0aa3924a0e7be250616f59fd72d07f05641280"
+    },
+    {
+      "file": "historical_raw/cash_t1617_3.json",
+      "sha256": "3ea8c8f4e77a4d2fc8c94d8d4bb3bbcd6ba27227b3e59913b2df59bb4286ff89"
+    },
+    {
+      "file": "historical_raw/futures_detail.json",
+      "sha256": "4e4c9fa4551b63bec81a05180c30b8303336cf9a63cc054ff74f3fc1790f358d"
+    },
+    {
+      "file": "historical_raw/futures_t1617_1.json",
+      "sha256": "82d7689a2e3fd17d243109698372104f7e3c8754672ec3c2996d2fdcb704dba7"
+    },
+    {
+      "file": "historical_raw/futures_t1617_2.json",
+      "sha256": "2de06feffbf7e6d259460d6a7a0f4100aa9dbd7be65b73086418b102ae516570"
+    },
+    {
+      "file": "historical_raw/futures_t1617_3.json",
+      "sha256": "6d4edaa3d2cb824d7c6e09d91880bd4c78413f6724ec36c20e4f503b3011b22c"
+    },
+    {
+      "file": "historical_raw/kospi200_daily.json",
+      "sha256": "11b66743c4a8e5f37b30c609daa2d40fdba29d375bc0293d57573be1134ff5ac"
+    },
+    {
+      "file": "historical_raw/kospi200_kiwoom_daily.json",
+      "sha256": "55a84ccaa1e96eeb2bcf5397435fdd8487255a1300eaa0febcff2226dbe368ba"
+    },
+    {
+      "file": "historical_raw/kospi_daily.json",
+      "sha256": "d7a3f3151c823ef8da91fa5ecacd92628e643ebc6654438d3cf3cb6b64c5fe2c"
+    },
+    {
+      "file": "historical_raw/kospi_kiwoom_daily.json",
+      "sha256": "e86668c7c0052ff768076186459238eb1fb61868bc0fa79209b09ac865aa72cf"
+    },
+    {
+      "file": "historical_raw/manifest.json",
+      "sha256": "2589eceaca5e38be6d2c5c9cdbc9ff6f403e8aeda99c138508874eb1b929b91d"
+    },
+    {
+      "file": "historical_raw/option_code_registry.json",
+      "sha256": "f56494adfc718cbb6bdb151b517472750cb041d480df2ef2ace008b282216eca"
+    },
+    {
+      "file": "historical_raw/program_daily.json",
+      "sha256": "6e49282b4200d754b2902bb8ddef1e96e52de3fad44918431a73661bce89166b"
+    },
+    {
+      "file": "historical_raw/put_detail.json",
+      "sha256": "4b01d82495a1eef1c2b174ec1dc82af854cfce6ce9389261efab5a74aa091335"
+    },
+    {
+      "file": "historical_raw/put_t1617_1.json",
+      "sha256": "27c34933f7d33d065c0be2a1b8c5e5333efdd56d5594e8d9077c9311f3cfa3b5"
+    },
+    {
+      "file": "historical_raw/put_t1617_2.json",
+      "sha256": "f0e7077c8644d420cde588e6d61c2b38c142580d6695144f1056ff7e3f06ca10"
+    },
+    {
+      "file": "historical_raw/put_t1617_3.json",
+      "sha256": "d51fa18df059a692ce5659b50a4a3b2d9cd68011db79c91733aa950251333320"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_1.json",
+      "sha256": "ccb858b389f75deaaafad3b120c8e4fd3a5a774f3dc2585089181507800341ef"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_2.json",
+      "sha256": "3eef47765eb55aeab3aabaa4df21eec5c168d65fa0707a2ec553e6b21486d813"
+    },
+    {
+      "file": "historical_raw/stock_futures_t1617_3.json",
+      "sha256": "10e280eb1963d5156e53f1b551c13f6b32cedd586dfaca0df589bc800ed64531"
+    },
+    {
+      "file": "futures_review_20261126/visual_review.json",
+      "sha256": "3667ad86df54aca366467d655b3e9ed4897794299799ec57a1e27b5f2a7df803"
+    },
+    {
+      "file": "160157_067078/analysis.json",
+      "sha256": "f831ef6fb3d6139f2b50e54bbca8a6335fa22ee73b36c1e4986f34aa0caca4e4"
+    },
+    {
+      "file": "20261126_160157_383365/collection.json",
+      "sha256": "2a614cb82c441462ec826ec467b748c9bf99b2e1e4b281b1b5442b98a75ebc93"
+    },
+    {
+      "file": "20261126_160157_383365/option_master.json",
+      "sha256": "a56eddca2599174ce4c670b7bb090176a88d3a9ff5ce5e01c0b53651fdeafa7b"
+    },
+    {
+      "file": "20261126_160157_383365/futures_before.json",
+      "sha256": "5628f09b9053afe626469a33e649c95b0835ed708de8f7cb85bc0c57f70fb5dd"
+    },
+    {
+      "file": "20261126_160157_383365/chain_202612.json",
+      "sha256": "1c4de5b6868e9877148a047246d52e03b3ade39776a18bcf17014d6676988dce"
+    },
+    {
+      "file": "20261126_160157_383365/futures_after.json",
+      "sha256": "94f3c3ba908740c5e2e5ed8911ebf5fbe7b5fa3cb9c8f0f90d015f0166e020c5"
+    },
+    {
+      "file": "160633_297179/analysis.json",
+      "sha256": "8f2f6e9e05d3f005570f209e1479876cb99fb02188a55004bda988d4aba23ed2"
+    },
+    {
+      "file": "20261125_160633_571353/collection.json",
+      "sha256": "f2371d5da8071bfc1097e8ec74be8f20a1de055ec3b68e2afb71fbb0ec54823d"
+    },
+    {
+      "file": "20261125_160633_571353/option_master.json",
+      "sha256": "125f47f4628b89997bb22c73e85161f963b8887627654fe2ec64e56184f38ac9"
+    },
+    {
+      "file": "20261125_160633_571353/futures_before.json",
+      "sha256": "b362c45e3f84e79d3e5ec14f2b601c5aaf846bc17c5721c5f92570dc1fbc4aaf"
+    },
+    {
+      "file": "20261125_160633_571353/chain_202612.json",
+      "sha256": "63e5afc3f7aaa4919b6e2753c18efb3dacebe14eee74a3cb61654346d2f8651b"
+    },
+    {
+      "file": "20261125_160633_571353/futures_after.json",
+      "sha256": "4b99942bed0070761a783a474657bbbfd5680930780dd51fe0c5c34521d28d9c"
+    },
+    {
+      "file": "20261126/ls_cvd_status_20261126.json",
+      "sha256": "6a545baecbcbfd6db481a37720cd58bca8f4a54958a92e85074a93b8125fc2bd"
+    },
+    {
+      "file": "20261126_160203_291887/analysis.json",
+      "sha256": "0b419721dcdc5ff9f4afbd66b397d2e9e0f47a6739b086bfce2381f3278cefa4"
+    },
+    {
+      "file": "20261126/pipeline_bootstrap_20261126.log",
+      "sha256": "7fc614c87159d5c6a6769ec17a404ba9ef95e02ddd860db75470b1379d874b3f"
+    },
+    {
+      "file": "20261126/pipeline_gamma_research_20261126.log",
+      "sha256": "ef03b95461aa2903e0cc79058580d3cdc22d11c94c10e026cd8714097b14f4af"
+    },
+    {
+      "file": "20261126/pipeline_ls_cvd_20261126.log",
+      "sha256": "b2464d60e34c0c2f43d66f387aa27d63c504d995edc4c8c02fe9ec5d2352628b"
+    },
+    {
+      "file": "20261126/pipeline_stage1_api_20261126.log",
+      "sha256": "f520c1ddfbb425fe798a73cc87d89f803c702824cfbe43cd4f48c059e2dc40a4"
+    },
+    {
+      "file": "20261126/pipeline_stage1_collection_20261126.log",
+      "sha256": "5e7e830858d67ddb8aa63edee1dc636ee277e322e4be7b46db571641984390b3"
+    },
+    {
+      "file": "20261126/pipeline_stage2_ocr_20261126.log",
+      "sha256": "7c2314445263fdc39de850ac48121e730822df10d5dbb198db23fcc7f366491e"
+    },
+    {
+      "file": "20261126/pipeline_stage3_ledger_20261126.log",
+      "sha256": "a10fa72cf56b9c9eee038f42712809f2cedd0f3c7f3ffeb3ddea86be7fd6badb"
+    },
+    {
+      "file": "20261126/pipeline_stage4_tracker_20261126.log",
+      "sha256": "2cb0c527522b069d652f3500ac35a99e7991429823afb44e948d6476ce59365f"
+    },
+    {
+      "file": "20261126/pipeline_stage5_visuals_20261126.log",
+      "sha256": "4101314e248c7a9ca3429a642d36d46e66766cfd9887f2ab9b2d5a9f3c91c88d"
+    },
+    {
+      "file": "20261126/pipeline_stage7_ai_source_20261126.log",
+      "sha256": "e348e18b25f93c1fb80785efe7110e517bd31b6dfb42bedf727850d4d5cd2a38"
+    },
+    {
+      "file": "20261126_160203_291887/collection.json",
+      "sha256": "189155eff8d56f9f36e73dbe7b9f935cad5e12d00fef52d370eb194a08258121"
+    },
+    {
+      "file": "futures_review_20261126/visual_review.json",
+      "sha256": "3667ad86df54aca366467d655b3e9ed4897794299799ec57a1e27b5f2a7df803"
+    },
+    {
+      "file": "evidence.json",
+      "sha256": "6a527cadb05d2702a7668be38e6cbeb59cfa4e08a4c2a9eccdc64db285771036"
+    },
+    {
+      "file": "editorial.json",
+      "sha256": "e8fc2ca46dc667379fe93387b33c8d14181c41d644ffbd5d69ee135116564e11"
+    },
+    {
+      "file": "weekly_flow_context.json",
+      "sha256": "34a39fbb05c00faddf098be847ff597448f55d1103ed1ed64d2dfbe029d87622"
+    }
+  ],
+  "checks": {
+    "trade_date": "20261126",
+    "status": "CORE_VERIFIED_WITH_DISCLOSED_LIMITS",
+    "ready_for_editorial_review": true,
+    "capture_count": 12,
+    "all_54_display_nets_visually_checked": true,
+    "source_hashes": [
+      {
+        "file": "20261126/krx_calendar_20261126_165847538.json",
+        "sha256": "89ccce131de8d0c4baa6a30d62b7d2e8e3bdc872c71a21d7d81d4b667330d384"
+      },
+      {
+        "file": "20261126/0471_KOSPI200_일별_60일_20261126.png",
+        "sha256": "abf613486bd01fddeb67fe2fb1a3b0b02f1ca20e9e6ec06c0f70b5aaefd6414d"
+      },
+      {
+        "file": "20261126/0786_close_snapshot_20261126.png",
+        "sha256": "bc33300a164ba0191f4ec6023fc4efd3de0090e796a352b3cce403cbf95fd695"
+      },
+      {
+        "file": "20261126/0787_선물_금액_20261126.png",
+        "sha256": "73432a0c6793e8835b7bb204efc35e424d41890aa2a891d794be2a28325b7e40"
+      },
+      {
+        "file": "20261126/0787_선물_수량_20261126.png",
+        "sha256": "2d9b06ed51325ee5456430505d78941f467eb29a3a5355bb069dc3a6b9b53959"
+      },
+      {
+        "file": "20261126/0787_콜옵션_금액_20261126.png",
+        "sha256": "332db5561d006452ce2dafb1a21c9781be3483bef667631a2f331c86c804656f"
+      },
+      {
+        "file": "20261126/0787_콜옵션_수량_20261126.png",
+        "sha256": "61268b18e784b6bca934ea4d776ad4255b4f616dcfd3094194a970860b998a3a"
+      },
+      {
+        "file": "20261126/0787_풋옵션_금액_20261126.png",
+        "sha256": "aa02f8731b0a82b5bd868ab89352ac07eb6e47171251e443eb5fe04591cfe242"
+      },
+      {
+        "file": "20261126/0787_풋옵션_수량_20261126.png",
+        "sha256": "77866124a8315d38bae5b170f2551bcb7a81155c9f6ffc4826c91fec64907adf"
+      },
+      {
+        "file": "20261126/0790_누적_20261126.png",
+        "sha256": "2b250b8c4802354b3810948cf76e52243ad7aeb18060e4b15723001a73b82834"
+      },
+      {
+        "file": "20261126/0790_일자_20261126.png",
+        "sha256": "9240cee15df40ef231e8969ee5f93124e47d2a62b3e3e86c99bc8639cc633177"
+      },
+      {
+        "file": "20261126/0794_누적_20261126.png",
+        "sha256": "89de9743d823c65eec77b6abdfac1f1b00b26ff2ff9a2e98a954bfd7d7e97d60"
+      },
+      {
+        "file": "20261126/0794_일자_20261126.png",
+        "sha256": "664db3f69ab2b3cfa714bc2c9bcfe0a81bb28648190b73bd672b02f2dc77978b"
+      },
+      {
+        "file": "20261126/eod_0787_parsed_20261126.csv",
+        "sha256": "db65e05234ce5a5a04703fb2fdcfe4fbfa5701a65decb847e00e39727497b96a"
+      },
+      {
+        "file": "20261126/eod_manifest_20261126.json",
+        "sha256": "58316cf090fb586c039aec0b2898f81c7a4f587c77f42ab1cc522ea0e3725197"
+      },
+      {
+        "file": "20261126/eod_ocr_bridge_20261126.json",
+        "sha256": "f17c985c073838873173c9a3ba6617074e6e744e55c0d842b3336dd2b09cf8cd"
+      },
+      {
+        "file": "20261125/api_run_latest.json",
+        "sha256": "78eb53ef7233aec2aa8134793b004d49771756183578ee9f8f9bdc9348129fa9"
+      },
+      {
+        "file": "160610_891581/oi.json",
+        "sha256": "6d23376ff348806dd32cc9ada32ab4bc1ca6b0854a9dcc4bead1367459051c1b"
+      },
+      {
+        "file": "20261126/api_run_latest.json",
+        "sha256": "c111c538ba71e944ae5a88097d6f0409db60d5f50c4ca7c1da56e2346da424dc"
+      },
+      {
+        "file": "160139_903961/daily.json",
+        "sha256": "19c566dd33dfab348a21f0fc18a0f32c07e5b1c2656339807363debf65b75972"
+      },
+      {
+        "file": "160139_903961/minute.json",
+        "sha256": "9febb32edf29fdd278346dc024a39034e2aae8c4ff9f21b0219d1e6ea07c6469"
+      },
+      {
+        "file": "160139_903961/oi.json",
+        "sha256": "05ae10846169d5da7da71436976796d50b1f621b665dd207ab7d48d4ae70005b"
+      },
+      {
+        "file": "160139_903961/volatility.json",
+        "sha256": "2c324222e6b3b97bae7822124d555d96e4cd2e34d821b79970f18bd6deae4a8b"
+      },
+      {
+        "file": "futures_review_20261126/bootstrap_snapshot.log",
+        "sha256": "f17df5eae0e83edfc2c80c67c56047cac4dc0e9250bc1b0c93bde86ca075f4c3"
+      },
+      {
+        "file": "futures_review_20261126/execution_state_snapshot.json",
+        "sha256": "258a02ae6c0857ba87908d2cd270781ff5c21d7fade5e2e0f970c4d5fde283eb"
+      },
+      {
+        "file": "historical_raw/A016C000_daily.json",
+        "sha256": "e3f387d36f352cf6e23475d6740892566fee0ed8ff3655882bc97b9d465fd5f1"
+      },
+      {
+        "file": "historical_raw/A0173000_daily.json",
+        "sha256": "faa2e2d628bff2ce46df55de5df256a5c2e433a3c86b23b23aa406b5b209492a"
+      },
+      {
+        "file": "historical_raw/B016C705_daily.json",
+        "sha256": "236c9506debc3e2838131b4c55d3a79f333fadc8697a6ad6390201aa08a83e87"
+      },
+      {
+        "file": "historical_raw/B016C710_daily.json",
+        "sha256": "b16bf0921c30d46925a4b56f62770edf62e93d36379afa6597210c4f68cc01e2"
+      },
+      {
+        "file": "historical_raw/B016C715_daily.json",
+        "sha256": "3403a2eb6ae6724e4cc6b2f824143c7507a24dff43d1ff879ec6174f12fc176b"
+      },
+      {
+        "file": "historical_raw/B016C720_daily.json",
+        "sha256": "fda925c5efda070d955832fd9c30ec217d06d282fcd37804126f2f04916b332f"
+      },
+      {
+        "file": "historical_raw/B016C725_daily.json",
+        "sha256": "cf8ea7a7363f01606536d03cc9028cd5054220c5558802246bef8a4adb7c3e11"
+      },
+      {
+        "file": "historical_raw/B016C730_daily.json",
+        "sha256": "cbc36c0ee0ea1b8a7e13d91fc8da0608cde84334740641c7af17ff8a5bdf3b01"
+      },
+      {
+        "file": "historical_raw/B016C735_daily.json",
+        "sha256": "2c1425043f3067dcb22cb40a3f1104764b78e799fd324af87749424f7c22191e"
+      },
+      {
+        "file": "historical_raw/B016C740_daily.json",
+        "sha256": "0ff800894d3060f72b43eaf06ae2916e34c0685de2e7575bbd6ec14e79e8bb46"
+      },
+      {
+        "file": "historical_raw/B016C745_daily.json",
+        "sha256": "63ffc91767778a2a4be61698562fa0cd60a19093fc1c276055fd3707b232d539"
+      },
+      {
+        "file": "historical_raw/C016C705_daily.json",
+        "sha256": "8ec37b017c0417b2812dcb376e73d180cffd16f6ac02d054c47d8c2af825aac7"
+      },
+      {
+        "file": "historical_raw/C016C710_daily.json",
+        "sha256": "bb7202c063f9005f882f2efe3acad5c8a4dbddc27926dd4b5eebca6e3922417d"
+      },
+      {
+        "file": "historical_raw/C016C715_daily.json",
+        "sha256": "0d58379898c3867735cdba0e6d23bf378b0f19c8888598dbe40f4a8421fc6676"
+      },
+      {
+        "file": "historical_raw/C016C720_daily.json",
+        "sha256": "49c87b1b1afa1ba9a22bd87df6abe99b862a7595045d04cfc8a719b4e12919d0"
+      },
+      {
+        "file": "historical_raw/C016C725_daily.json",
+        "sha256": "2a95097c0b6a8c28730fd6bd567e3920a7ed328f39c388c05841b983c4f7875c"
+      },
+      {
+        "file": "historical_raw/C016C730_daily.json",
+        "sha256": "89a7286dbdb577c30958e7ef19ca79ed80f71532c6f0ad6b9e02afc5efd3539e"
+      },
+      {
+        "file": "historical_raw/C016C735_daily.json",
+        "sha256": "ce90edeaf25013a8f8c70257eff5f2a358d02d65ee7ce72cc97ae8bacab320e3"
+      },
+      {
+        "file": "historical_raw/C016C740_daily.json",
+        "sha256": "dae344c5f7799d9d33299adf4d8fd0dd7acedd9e7c7f19f735348dcfb9c11e43"
+      },
+      {
+        "file": "historical_raw/C016C745_daily.json",
+        "sha256": "c04713dbe980cb25775be4586ed8945b31167cfcd2323eb3580313824a5f1bcf"
+      },
+      {
+        "file": "historical_raw/call_detail.json",
+        "sha256": "63be61acf0073d6f3c4cb0d904f6cf6541a3dcffdc9a71e0c401931bd095c49f"
+      },
+      {
+        "file": "historical_raw/call_t1617_1.json",
+        "sha256": "b6a949db66725d8020e9f4b585531b24cb4ee365e44cf8e7464f0571f6c501f4"
+      },
+      {
+        "file": "historical_raw/call_t1617_2.json",
+        "sha256": "6e1effb02b7bd2b37c6d311af52a6911b51ca16d1b9949cf4a331b3152824bfe"
+      },
+      {
+        "file": "historical_raw/call_t1617_3.json",
+        "sha256": "bb134454085e727749225f2fde6b34eabd9cc40267061ff8716ac7beac5c5e07"
+      },
+      {
+        "file": "historical_raw/cash_detail.json",
+        "sha256": "8f332d1443455933ea00e49538e390f95704fa483a314a5cf4d2ade67c2b0b25"
+      },
+      {
+        "file": "historical_raw/cash_t1617_1.json",
+        "sha256": "7d7f4e6202ca6af4fa3d9ea7cd99c14d37bd5d71bc19539367837deb21fc6bf5"
+      },
+      {
+        "file": "historical_raw/cash_t1617_2.json",
+        "sha256": "50fb052d15975b806086b4d4db0aa3924a0e7be250616f59fd72d07f05641280"
+      },
+      {
+        "file": "historical_raw/cash_t1617_3.json",
+        "sha256": "3ea8c8f4e77a4d2fc8c94d8d4bb3bbcd6ba27227b3e59913b2df59bb4286ff89"
+      },
+      {
+        "file": "historical_raw/futures_detail.json",
+        "sha256": "4e4c9fa4551b63bec81a05180c30b8303336cf9a63cc054ff74f3fc1790f358d"
+      },
+      {
+        "file": "historical_raw/futures_t1617_1.json",
+        "sha256": "82d7689a2e3fd17d243109698372104f7e3c8754672ec3c2996d2fdcb704dba7"
+      },
+      {
+        "file": "historical_raw/futures_t1617_2.json",
+        "sha256": "2de06feffbf7e6d259460d6a7a0f4100aa9dbd7be65b73086418b102ae516570"
+      },
+      {
+        "file": "historical_raw/futures_t1617_3.json",
+        "sha256": "6d4edaa3d2cb824d7c6e09d91880bd4c78413f6724ec36c20e4f503b3011b22c"
+      },
+      {
+        "file": "historical_raw/kospi200_daily.json",
+        "sha256": "11b66743c4a8e5f37b30c609daa2d40fdba29d375bc0293d57573be1134ff5ac"
+      },
+      {
+        "file": "historical_raw/kospi200_kiwoom_daily.json",
+        "sha256": "55a84ccaa1e96eeb2bcf5397435fdd8487255a1300eaa0febcff2226dbe368ba"
+      },
+      {
+        "file": "historical_raw/kospi_daily.json",
+        "sha256": "d7a3f3151c823ef8da91fa5ecacd92628e643ebc6654438d3cf3cb6b64c5fe2c"
+      },
+      {
+        "file": "historical_raw/kospi_kiwoom_daily.json",
+        "sha256": "e86668c7c0052ff768076186459238eb1fb61868bc0fa79209b09ac865aa72cf"
+      },
+      {
+        "file": "historical_raw/manifest.json",
+        "sha256": "2589eceaca5e38be6d2c5c9cdbc9ff6f403e8aeda99c138508874eb1b929b91d"
+      },
+      {
+        "file": "historical_raw/option_code_registry.json",
+        "sha256": "f56494adfc718cbb6bdb151b517472750cb041d480df2ef2ace008b282216eca"
+      },
+      {
+        "file": "historical_raw/program_daily.json",
+        "sha256": "6e49282b4200d754b2902bb8ddef1e96e52de3fad44918431a73661bce89166b"
+      },
+      {
+        "file": "historical_raw/put_detail.json",
+        "sha256": "4b01d82495a1eef1c2b174ec1dc82af854cfce6ce9389261efab5a74aa091335"
+      },
+      {
+        "file": "historical_raw/put_t1617_1.json",
+        "sha256": "27c34933f7d33d065c0be2a1b8c5e5333efdd56d5594e8d9077c9311f3cfa3b5"
+      },
+      {
+        "file": "historical_raw/put_t1617_2.json",
+        "sha256": "f0e7077c8644d420cde588e6d61c2b38c142580d6695144f1056ff7e3f06ca10"
+      },
+      {
+        "file": "historical_raw/put_t1617_3.json",
+        "sha256": "d51fa18df059a692ce5659b50a4a3b2d9cd68011db79c91733aa950251333320"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_1.json",
+        "sha256": "ccb858b389f75deaaafad3b120c8e4fd3a5a774f3dc2585089181507800341ef"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_2.json",
+        "sha256": "3eef47765eb55aeab3aabaa4df21eec5c168d65fa0707a2ec553e6b21486d813"
+      },
+      {
+        "file": "historical_raw/stock_futures_t1617_3.json",
+        "sha256": "10e280eb1963d5156e53f1b551c13f6b32cedd586dfaca0df589bc800ed64531"
+      },
+      {
+        "file": "futures_review_20261126/visual_review.json",
+        "sha256": "3667ad86df54aca366467d655b3e9ed4897794299799ec57a1e27b5f2a7df803"
+      },
+      {
+        "file": "160157_067078/analysis.json",
+        "sha256": "f831ef6fb3d6139f2b50e54bbca8a6335fa22ee73b36c1e4986f34aa0caca4e4"
+      },
+      {
+        "file": "20261126_160157_383365/collection.json",
+        "sha256": "2a614cb82c441462ec826ec467b748c9bf99b2e1e4b281b1b5442b98a75ebc93"
+      },
+      {
+        "file": "20261126_160157_383365/option_master.json",
+        "sha256": "a56eddca2599174ce4c670b7bb090176a88d3a9ff5ce5e01c0b53651fdeafa7b"
+      },
+      {
+        "file": "20261126_160157_383365/futures_before.json",
+        "sha256": "5628f09b9053afe626469a33e649c95b0835ed708de8f7cb85bc0c57f70fb5dd"
+      },
+      {
+        "file": "20261126_160157_383365/chain_202612.json",
+        "sha256": "1c4de5b6868e9877148a047246d52e03b3ade39776a18bcf17014d6676988dce"
+      },
+      {
+        "file": "20261126_160157_383365/futures_after.json",
+        "sha256": "94f3c3ba908740c5e2e5ed8911ebf5fbe7b5fa3cb9c8f0f90d015f0166e020c5"
+      },
+      {
+        "file": "160633_297179/analysis.json",
+        "sha256": "8f2f6e9e05d3f005570f209e1479876cb99fb02188a55004bda988d4aba23ed2"
+      },
+      {
+        "file": "20261125_160633_571353/collection.json",
+        "sha256": "f2371d5da8071bfc1097e8ec74be8f20a1de055ec3b68e2afb71fbb0ec54823d"
+      },
+      {
+        "file": "20261125_160633_571353/option_master.json",
+        "sha256": "125f47f4628b89997bb22c73e85161f963b8887627654fe2ec64e56184f38ac9"
+      },
+      {
+        "file": "20261125_160633_571353/futures_before.json",
+        "sha256": "b362c45e3f84e79d3e5ec14f2b601c5aaf846bc17c5721c5f92570dc1fbc4aaf"
+      },
+      {
+        "file": "20261125_160633_571353/chain_202612.json",
+        "sha256": "63e5afc3f7aaa4919b6e2753c18efb3dacebe14eee74a3cb61654346d2f8651b"
+      },
+      {
+        "file": "20261125_160633_571353/futures_after.json",
+        "sha256": "4b99942bed0070761a783a474657bbbfd5680930780dd51fe0c5c34521d28d9c"
+      },
+      {
+        "file": "20261126/ls_cvd_status_20261126.json",
+        "sha256": "6a545baecbcbfd6db481a37720cd58bca8f4a54958a92e85074a93b8125fc2bd"
+      },
+      {
+        "file": "20261126_160203_291887/analysis.json",
+        "sha256": "0b419721dcdc5ff9f4afbd66b397d2e9e0f47a6739b086bfce2381f3278cefa4"
+      },
+      {
+        "file": "20261126/pipeline_bootstrap_20261126.log",
+        "sha256": "7fc614c87159d5c6a6769ec17a404ba9ef95e02ddd860db75470b1379d874b3f"
+      },
+      {
+        "file": "20261126/pipeline_gamma_research_20261126.log",
+        "sha256": "ef03b95461aa2903e0cc79058580d3cdc22d11c94c10e026cd8714097b14f4af"
+      },
+      {
+        "file": "20261126/pipeline_ls_cvd_20261126.log",
+        "sha256": "b2464d60e34c0c2f43d66f387aa27d63c504d995edc4c8c02fe9ec5d2352628b"
+      },
+      {
+        "file": "20261126/pipeline_stage1_api_20261126.log",
+        "sha256": "f520c1ddfbb425fe798a73cc87d89f803c702824cfbe43cd4f48c059e2dc40a4"
+      },
+      {
+        "file": "20261126/pipeline_stage1_collection_20261126.log",
+        "sha256": "5e7e830858d67ddb8aa63edee1dc636ee277e322e4be7b46db571641984390b3"
+      },
+      {
+        "file": "20261126/pipeline_stage2_ocr_20261126.log",
+        "sha256": "7c2314445263fdc39de850ac48121e730822df10d5dbb198db23fcc7f366491e"
+      },
+      {
+        "file": "20261126/pipeline_stage3_ledger_20261126.log",
+        "sha256": "a10fa72cf56b9c9eee038f42712809f2cedd0f3c7f3ffeb3ddea86be7fd6badb"
+      },
+      {
+        "file": "20261126/pipeline_stage4_tracker_20261126.log",
+        "sha256": "2cb0c527522b069d652f3500ac35a99e7991429823afb44e948d6476ce59365f"
+      },
+      {
+        "file": "20261126/pipeline_stage5_visuals_20261126.log",
+        "sha256": "4101314e248c7a9ca3429a642d36d46e66766cfd9887f2ab9b2d5a9f3c91c88d"
+      },
+      {
+        "file": "20261126/pipeline_stage7_ai_source_20261126.log",
+        "sha256": "e348e18b25f93c1fb80785efe7110e517bd31b6dfb42bedf727850d4d5cd2a38"
+      },
+      {
+        "file": "20261126_160203_291887/collection.json",
+        "sha256": "189155eff8d56f9f36e73dbe7b9f935cad5e12d00fef52d370eb194a08258121"
+      },
+      {
+        "file": "futures_review_20261126/visual_review.json",
+        "sha256": "3667ad86df54aca366467d655b3e9ed4897794299799ec57a1e27b5f2a7df803"
+      },
+      {
+        "file": "evidence.json",
+        "sha256": "6a527cadb05d2702a7668be38e6cbeb59cfa4e08a4c2a9eccdc64db285771036"
+      },
+      {
+        "file": "editorial.json",
+        "sha256": "e8fc2ca46dc667379fe93387b33c8d14181c41d644ffbd5d69ee135116564e11"
+      },
+      {
+        "file": "weekly_flow_context.json",
+        "sha256": "34a39fbb05c00faddf098be847ff597448f55d1103ed1ed64d2dfbe029d87622"
+      }
+    ],
+    "flow_rows": [
+      {
+        "date": "2026-09-11",
+        "foreign": -2543,
+        "institution": 3959,
+        "financial": 6090,
+        "trust": -1609
+      },
+      {
+        "date": "2026-09-14",
+        "foreign": -2891,
+        "institution": 2655,
+        "financial": 5894,
+        "trust": -3201
+      },
+      {
+        "date": "2026-09-15",
+        "foreign": -6218,
+        "institution": 6052,
+        "financial": 4915,
+        "trust": 1283
+      },
+      {
+        "date": "2026-09-16",
+        "foreign": 1997,
+        "institution": -530,
+        "financial": -2689,
+        "trust": 2508
+      },
+      {
+        "date": "2026-09-17",
+        "foreign": 802,
+        "institution": -1791,
+        "financial": -1061,
+        "trust": -525
+      },
+      {
+        "date": "2026-09-18",
+        "foreign": 5642,
+        "institution": -4914,
+        "financial": -8216,
+        "trust": 3087
+      },
+      {
+        "date": "2026-09-21",
+        "foreign": 4251,
+        "institution": -3963,
+        "financial": -4098,
+        "trust": 210
+      },
+      {
+        "date": "2026-09-22",
+        "foreign": 1823,
+        "institution": -3273,
+        "financial": -2927,
+        "trust": -292
+      },
+      {
+        "date": "2026-09-23",
+        "foreign": 1356,
+        "institution": -1402,
+        "financial": -2493,
+        "trust": 1167
+      },
+      {
+        "date": "2026-09-28",
+        "foreign": -1831,
+        "institution": 2395,
+        "financial": 5117,
+        "trust": -2937
+      },
+      {
+        "date": "2026-09-29",
+        "foreign": 1077,
+        "institution": -457,
+        "financial": -1426,
+        "trust": 912
+      },
+      {
+        "date": "2026-09-30",
+        "foreign": -4800,
+        "institution": 3989,
+        "financial": 4785,
+        "trust": -775
+      },
+      {
+        "date": "2026-10-01",
+        "foreign": -428,
+        "institution": -54,
+        "financial": -1424,
+        "trust": 1249
+      },
+      {
+        "date": "2026-10-02",
+        "foreign": 3071,
+        "institution": -2852,
+        "financial": -3270,
+        "trust": 582
+      },
+      {
+        "date": "2026-10-06",
+        "foreign": -928,
+        "institution": -911,
+        "financial": 400,
+        "trust": -1426
+      },
+      {
+        "date": "2026-10-07",
+        "foreign": -1053,
+        "institution": 650,
+        "financial": 1144,
+        "trust": -1019
+      },
+      {
+        "date": "2026-10-08",
+        "foreign": -4650,
+        "institution": 5204,
+        "financial": 6625,
+        "trust": -1487
+      },
+      {
+        "date": "2026-10-12",
+        "foreign": 3009,
+        "institution": -2837,
+        "financial": -1196,
+        "trust": -1405
+      },
+      {
+        "date": "2026-10-13",
+        "foreign": 1670,
+        "institution": -2237,
+        "financial": 1129,
+        "trust": -2866
+      },
+      {
+        "date": "2026-10-14",
+        "foreign": 3557,
+        "institution": -1983,
+        "financial": -2565,
+        "trust": 1098
+      },
+      {
+        "date": "2026-10-15",
+        "foreign": 5544,
+        "institution": -6024,
+        "financial": -3645,
+        "trust": -1740
+      },
+      {
+        "date": "2026-10-16",
+        "foreign": -4200,
+        "institution": 5077,
+        "financial": 1490,
+        "trust": 3383
+      },
+      {
+        "date": "2026-10-19",
+        "foreign": -345,
+        "institution": 715,
+        "financial": -828,
+        "trust": 1512
+      },
+      {
+        "date": "2026-10-20",
+        "foreign": -1544,
+        "institution": 898,
+        "financial": 3898,
+        "trust": -2897
+      },
+      {
+        "date": "2026-10-21",
+        "foreign": -3632,
+        "institution": 1573,
+        "financial": -2321,
+        "trust": 3647
+      },
+      {
+        "date": "2026-10-22",
+        "foreign": 1552,
+        "institution": -776,
+        "financial": 3514,
+        "trust": -4063
+      },
+      {
+        "date": "2026-10-23",
+        "foreign": 2177,
+        "institution": 353,
+        "financial": -774,
+        "trust": 1268
+      },
+      {
+        "date": "2026-10-26",
+        "foreign": 3451,
+        "institution": -4456,
+        "financial": -2748,
+        "trust": -1560
+      },
+      {
+        "date": "2026-10-27",
+        "foreign": 670,
+        "institution": -163,
+        "financial": -2948,
+        "trust": 3101
+      },
+      {
+        "date": "2026-10-28",
+        "foreign": -1476,
+        "institution": -592,
+        "financial": -4729,
+        "trust": 4266
+      },
+      {
+        "date": "2026-10-29",
+        "foreign": 86,
+        "institution": -805,
+        "financial": 1635,
+        "trust": -2479
+      },
+      {
+        "date": "2026-10-30",
+        "foreign": 6002,
+        "institution": -5806,
+        "financial": -3757,
+        "trust": -2353
+      },
+      {
+        "date": "2026-11-02",
+        "foreign": 1535,
+        "institution": -857,
+        "financial": -3864,
+        "trust": 2656
+      },
+      {
+        "date": "2026-11-03",
+        "foreign": -1552,
+        "institution": 884,
+        "financial": 4080,
+        "trust": -3312
+      },
+      {
+        "date": "2026-11-04",
+        "foreign": -1658,
+        "institution": 1624,
+        "financial": 179,
+        "trust": 1522
+      },
+      {
+        "date": "2026-11-05",
+        "foreign": 6830,
+        "institution": -7135,
+        "financial": -2289,
+        "trust": -4221
+      },
+      {
+        "date": "2026-11-06",
+        "foreign": 7171,
+        "institution": -4789,
+        "financial": -1002,
+        "trust": -3640
+      },
+      {
+        "date": "2026-11-09",
+        "foreign": 4190,
+        "institution": -3695,
+        "financial": -5520,
+        "trust": 1599
+      },
+      {
+        "date": "2026-11-10",
+        "foreign": -145,
+        "institution": 816,
+        "financial": -3632,
+        "trust": 4610
+      },
+      {
+        "date": "2026-11-11",
+        "foreign": -3805,
+        "institution": 2992,
+        "financial": 1474,
+        "trust": 1731
+      },
+      {
+        "date": "2026-11-12",
+        "foreign": 468,
+        "institution": -647,
+        "financial": 1214,
+        "trust": -1343
+      },
+      {
+        "date": "2026-11-13",
+        "foreign": 2729,
+        "institution": -2483,
+        "financial": -411,
+        "trust": -2206
+      },
+      {
+        "date": "2026-11-16",
+        "foreign": 1991,
+        "institution": -2121,
+        "financial": 523,
+        "trust": -3196
+      },
+      {
+        "date": "2026-11-17",
+        "foreign": 2989,
+        "institution": -3832,
+        "financial": -1906,
+        "trust": -1214
+      },
+      {
+        "date": "2026-11-18",
+        "foreign": -232,
+        "institution": 1389,
+        "financial": -1799,
+        "trust": 3042
+      },
+      {
+        "date": "2026-11-19",
+        "foreign": -1430,
+        "institution": 1279,
+        "financial": 168,
+        "trust": 810
+      },
+      {
+        "date": "2026-11-20",
+        "foreign": -314,
+        "institution": -276,
+        "financial": 3997,
+        "trust": -4284
+      },
+      {
+        "date": "2026-11-23",
+        "foreign": 3211,
+        "institution": -2117,
+        "financial": -1341,
+        "trust": -1091
+      },
+      {
+        "date": "2026-11-24",
+        "foreign": 3450,
+        "institution": -3332,
+        "financial": -8833,
+        "trust": 6157
+      },
+      {
+        "date": "2026-11-25",
+        "foreign": 4245,
+        "institution": -4413,
+        "financial": 2430,
+        "trust": -6864
+      },
+      {
+        "date": "2026-11-26",
+        "foreign": 1878,
+        "institution": -1734,
+        "financial": -4480,
+        "trust": 2362
+      }
+    ],
+    "oi_revision": {
+      "current": 180686,
+      "previous_requeried": 176768,
+      "change_same_current_series": 3918,
+      "previous_original_snapshot": 176419,
+      "change_against_original_snapshot": 4267,
+      "ls_current": 178903,
+      "ls_previous": 176768,
+      "ls_change": 2135,
+      "revision_cause": "PRIOR_SNAPSHOT_REVISION_AND_CURRENT_CROSS_PROVIDER_DIFFERENCE_UNRESOLVED; originals retained; do not blend",
+      "current_provider_difference": 1783,
+      "ls_closing_quote": 178903,
+      "ls_closing_quote_change": 2135,
+      "ls_closing_quote_received_at": "2026-11-26T16:02:00.132420+09:00",
+      "previous_same_source_consistent": true
+    },
+    "futures": {
+      "daily_raw_rows": 716,
+      "active_rows": 79,
+      "active_start": "2026-08-03",
+      "last_daily": {
+        "timestamp": "2026-11-26 00:00:00",
+        "open": 733.35,
+        "high": 743.3,
+        "low": 723.45,
+        "close": 726.75,
+        "volume": 123660.0,
+        "sma5": 741.8,
+        "sma10": 767.0350000000001,
+        "sma20": 806.7825,
+        "sma60": 949.0541666666667,
+        "sma120": null,
+        "tenkan9": 769.525,
+        "kijun26": 837.325,
+        "span_a_forward26": 803.425,
+        "span_b_forward26": 925.575,
+        "cloud_a_today": 977.3625,
+        "cloud_b_today": 994.925,
+        "atr14": 43.53717202112427,
+        "di_plus14": 18.002412986375433,
+        "di_minus14": 35.64986692129739,
+        "adx14": 31.205168817543626,
+        "rsi14": 35.833743006459514,
+        "macd": -50.77553861541753,
+        "macd_signal": -48.93483256422415,
+        "bb_upper": 919.813983556575,
+        "bb_lower": 693.7510164434251
+      },
+      "recent_daily": [
+        {
+          "timestamp": "2026-10-14 00:00:00",
+          "open": 950.8,
+          "high": 972.55,
+          "low": 930.75,
+          "close": 944.2,
+          "volume": 126572
+        },
+        {
+          "timestamp": "2026-10-15 00:00:00",
+          "open": 885.05,
+          "high": 900.25,
+          "low": 848.0,
+          "close": 861.3,
+          "volume": 208979
+        },
+        {
+          "timestamp": "2026-10-16 00:00:00",
+          "open": 887.0,
+          "high": 904.9,
+          "low": 869.95,
+          "close": 881.05,
+          "volume": 155322
+        },
+        {
+          "timestamp": "2026-10-19 00:00:00",
+          "open": 840.0,
+          "high": 894.45,
+          "low": 840.0,
+          "close": 893.25,
+          "volume": 141866
+        },
+        {
+          "timestamp": "2026-10-20 00:00:00",
+          "open": 890.75,
+          "high": 891.65,
+          "low": 850.6,
+          "close": 861.05,
+          "volume": 148998
+        },
+        {
+          "timestamp": "2026-10-21 00:00:00",
+          "open": 881.0,
+          "high": 908.4,
+          "low": 875.2,
+          "close": 893.05,
+          "volume": 139272
+        },
+        {
+          "timestamp": "2026-10-22 00:00:00",
+          "open": 878.5,
+          "high": 895.2,
+          "low": 852.05,
+          "close": 857.0,
+          "volume": 134239
+        },
+        {
+          "timestamp": "2026-10-23 00:00:00",
+          "open": 830.05,
+          "high": 866.35,
+          "low": 824.65,
+          "close": 863.3,
+          "volume": 154782
+        },
+        {
+          "timestamp": "2026-10-26 00:00:00",
+          "open": 856.3,
+          "high": 868.3,
+          "low": 849.55,
+          "close": 850.0,
+          "volume": 115913
+        },
+        {
+          "timestamp": "2026-10-27 00:00:00",
+          "open": 874.45,
+          "high": 899.5,
+          "low": 874.45,
+          "close": 882.45,
+          "volume": 116738
+        },
+        {
+          "timestamp": "2026-10-28 00:00:00",
+          "open": 904.0,
+          "high": 950.15,
+          "low": 898.95,
+          "close": 945.8,
+          "volume": 143307
+        },
+        {
+          "timestamp": "2026-10-29 00:00:00",
+          "open": 939.0,
+          "high": 966.4,
+          "low": 915.35,
+          "close": 935.0,
+          "volume": 175807
+        },
+        {
+          "timestamp": "2026-10-30 00:00:00",
+          "open": 897.7,
+          "high": 910.0,
+          "low": 877.25,
+          "close": 899.45,
+          "volume": 151053
+        },
+        {
+          "timestamp": "2026-11-02 00:00:00",
+          "open": 880.8,
+          "high": 930.0,
+          "low": 879.85,
+          "close": 918.65,
+          "volume": 130724
+        },
+        {
+          "timestamp": "2026-11-03 00:00:00",
+          "open": 897.0,
+          "high": 899.2,
+          "low": 879.35,
+          "close": 885.15,
+          "volume": 110672
+        },
+        {
+          "timestamp": "2026-11-04 00:00:00",
+          "open": 908.95,
+          "high": 917.35,
+          "low": 846.85,
+          "close": 889.85,
+          "volume": 184817
+        },
+        {
+          "timestamp": "2026-11-05 00:00:00",
+          "open": 875.85,
+          "high": 878.35,
+          "low": 830.6,
+          "close": 837.25,
+          "volume": 155710
+        },
+        {
+          "timestamp": "2026-11-06 00:00:00",
+          "open": 770.3,
+          "high": 811.3,
+          "low": 760.1,
+          "close": 782.95,
+          "volume": 180161
+        },
+        {
+          "timestamp": "2026-11-09 00:00:00",
+          "open": 784.0,
+          "high": 803.35,
+          "low": 771.55,
+          "close": 775.85,
+          "volume": 143766
+        },
+        {
+          "timestamp": "2026-11-10 00:00:00",
+          "open": 820.7,
+          "high": 824.95,
+          "low": 802.95,
+          "close": 812.1,
+          "volume": 122066
+        },
+        {
+          "timestamp": "2026-11-11 00:00:00",
+          "open": 803.2,
+          "high": 838.2,
+          "low": 803.2,
+          "close": 836.55,
+          "volume": 110145
+        },
+        {
+          "timestamp": "2026-11-12 00:00:00",
+          "open": 839.55,
+          "high": 852.75,
+          "low": 825.05,
+          "close": 827.5,
+          "volume": 122002
+        },
+        {
+          "timestamp": "2026-11-13 00:00:00",
+          "open": 846.15,
+          "high": 859.65,
+          "low": 818.1,
+          "close": 822.35,
+          "volume": 114342
+        },
+        {
+          "timestamp": "2026-11-16 00:00:00",
+          "open": 826.5,
+          "high": 830.8,
+          "low": 785.0,
+          "close": 789.35,
+          "volume": 129483
+        },
+        {
+          "timestamp": "2026-11-17 00:00:00",
+          "open": 774.9,
+          "high": 789.0,
+          "low": 767.2,
+          "close": 767.2,
+          "volume": 136825
+        },
+        {
+          "timestamp": "2026-11-18 00:00:00",
+          "open": 793.95,
+          "high": 798.05,
+          "low": 765.75,
+          "close": 786.45,
+          "volume": 128156
+        },
+        {
+          "timestamp": "2026-11-19 00:00:00",
+          "open": 790.4,
+          "high": 798.0,
+          "low": 769.0,
+          "close": 796.0,
+          "volume": 119706
+        },
+        {
+          "timestamp": "2026-11-20 00:00:00",
+          "open": 762.5,
+          "high": 770.0,
+          "low": 746.8,
+          "close": 752.75,
+          "volume": 130648
+        },
+        {
+          "timestamp": "2026-11-23 00:00:00",
+          "open": 719.9,
+          "high": 737.25,
+          "low": 708.25,
+          "close": 726.65,
+          "volume": 161560
+        },
+        {
+          "timestamp": "2026-11-24 00:00:00",
+          "open": 781.85,
+          "high": 789.05,
+          "low": 767.3,
+          "close": 778.1,
+          "volume": 147829
+        },
+        {
+          "timestamp": "2026-11-25 00:00:00",
+          "open": 748.0,
+          "high": 748.05,
+          "low": 718.5,
+          "close": 724.75,
+          "volume": 128663
+        },
+        {
+          "timestamp": "2026-11-26 00:00:00",
+          "open": 733.35,
+          "high": 743.3,
+          "low": 723.45,
+          "close": 726.75,
+          "volume": 123660
+        }
+      ],
+      "week_completed": {
+        "timestamp": "2026-11-20 00:00:00",
+        "open": 826.5,
+        "high": 830.8,
+        "low": 746.8,
+        "close": 752.75,
+        "volume": 644818.0
+      },
+      "week_partial": {
+        "timestamp": "2026-11-27 00:00:00",
+        "open": 719.9,
+        "high": 789.05,
+        "low": 708.25,
+        "close": 726.75,
+        "volume": 561712.0
+      },
+      "month_completed": {
+        "timestamp": "2026-10-31 00:00:00",
+        "open": 1088.35,
+        "high": 1125.55,
+        "low": 824.65,
+        "close": 899.45,
+        "volume": 2685657.0
+      },
+      "month_partial": {
+        "timestamp": "2026-11-30 00:00:00",
+        "open": 880.8,
+        "high": 930.0,
+        "low": 708.25,
+        "close": 726.75,
+        "volume": 2580935.0
+      },
+      "oi": {
+        "current": 180686,
+        "previous_requeried": 176768,
+        "change_same_current_series": 3918,
+        "previous_original_snapshot": 176419,
+        "change_against_original_snapshot": 4267,
+        "ls_current": 178903,
+        "ls_previous": 176768,
+        "ls_change": 2135,
+        "revision_cause": "PRIOR_SNAPSHOT_REVISION_AND_CURRENT_CROSS_PROVIDER_DIFFERENCE_UNRESOLVED; originals retained; do not blend",
+        "current_provider_difference": 1783,
+        "ls_closing_quote": 178903,
+        "ls_closing_quote_change": 2135,
+        "ls_closing_quote_received_at": "2026-11-26T16:02:00.132420+09:00",
+        "previous_same_source_consistent": true
+      },
+      "oi_windows": [
+        {
+          "start": "2026-11-26 08:45:00",
+          "end": "2026-11-26 09:55:00",
+          "start_price": 731.15,
+          "end_price": 740.05,
+          "price_change": 8.899999999999977,
+          "start_oi": 177869.0,
+          "end_oi": 178927.0,
+          "oi_change": 1058.0
+        },
+        {
+          "start": "2026-11-26 09:55:00",
+          "end": "2026-11-26 11:55:00",
+          "start_price": 740.05,
+          "end_price": 728.8,
+          "price_change": -11.25,
+          "start_oi": 178927.0,
+          "end_oi": 178786.0,
+          "oi_change": -141.0
+        },
+        {
+          "start": "2026-11-26 11:55:00",
+          "end": "2026-11-26 14:35:00",
+          "start_price": 728.8,
+          "end_price": 733.85,
+          "price_change": 5.050000000000068,
+          "start_oi": 178786.0,
+          "end_oi": 179749.0,
+          "oi_change": 963.0
+        },
+        {
+          "start": "2026-11-26 14:35:00",
+          "end": "2026-11-26 15:25:00",
+          "start_price": 733.85,
+          "end_price": 726.3,
+          "price_change": -7.550000000000068,
+          "start_oi": 179749.0,
+          "end_oi": 180221.0,
+          "oi_change": 472.0
+        },
+        {
+          "start": "2026-11-26 15:25:00",
+          "end": "2026-11-26 15:45:00",
+          "start_price": 726.3,
+          "end_price": 726.75,
+          "price_change": 0.4500000000000455,
+          "start_oi": 180221.0,
+          "end_oi": 180686.0,
+          "oi_change": 465.0
+        }
+      ],
+      "intraday_points": [
+        {
+          "timestamp": "2026-11-26 08:45:00",
+          "open": 733.35,
+          "high": 734.75,
+          "low": 729.35,
+          "close": 731.15,
+          "volume": 2942,
+          "open_interest": 177869
+        },
+        {
+          "timestamp": "2026-11-26 08:55:00",
+          "open": 731.3,
+          "high": 731.6,
+          "low": 726.25,
+          "close": 726.7,
+          "volume": 6068,
+          "open_interest": 178566
+        },
+        {
+          "timestamp": "2026-11-26 09:05:00",
+          "open": 726.7,
+          "high": 732.0,
+          "low": 724.15,
+          "close": 730.55,
+          "volume": 6246,
+          "open_interest": 178616
+        },
+        {
+          "timestamp": "2026-11-26 09:15:00",
+          "open": 730.4,
+          "high": 739.0,
+          "low": 729.45,
+          "close": 737.75,
+          "volume": 6655,
+          "open_interest": 179099
+        },
+        {
+          "timestamp": "2026-11-26 09:25:00",
+          "open": 737.75,
+          "high": 743.3,
+          "low": 737.4,
+          "close": 738.05,
+          "volume": 5956,
+          "open_interest": 179021
+        },
+        {
+          "timestamp": "2026-11-26 09:35:00",
+          "open": 738.05,
+          "high": 738.6,
+          "low": 735.05,
+          "close": 737.7,
+          "volume": 3814,
+          "open_interest": 179023
+        },
+        {
+          "timestamp": "2026-11-26 09:45:00",
+          "open": 737.75,
+          "high": 740.65,
+          "low": 736.15,
+          "close": 737.85,
+          "volume": 4901,
+          "open_interest": 178926
+        },
+        {
+          "timestamp": "2026-11-26 09:55:00",
+          "open": 737.9,
+          "high": 740.75,
+          "low": 736.7,
+          "close": 740.05,
+          "volume": 4023,
+          "open_interest": 178927
+        },
+        {
+          "timestamp": "2026-11-26 10:05:00",
+          "open": 740.0,
+          "high": 740.0,
+          "low": 735.9,
+          "close": 739.45,
+          "volume": 3481,
+          "open_interest": 178858
+        },
+        {
+          "timestamp": "2026-11-26 10:15:00",
+          "open": 739.35,
+          "high": 741.5,
+          "low": 736.25,
+          "close": 741.05,
+          "volume": 4241,
+          "open_interest": 178782
+        },
+        {
+          "timestamp": "2026-11-26 10:25:00",
+          "open": 741.0,
+          "high": 741.55,
+          "low": 733.95,
+          "close": 734.05,
+          "volume": 4697,
+          "open_interest": 178847
+        },
+        {
+          "timestamp": "2026-11-26 10:35:00",
+          "open": 733.95,
+          "high": 734.8,
+          "low": 730.85,
+          "close": 733.4,
+          "volume": 3892,
+          "open_interest": 178706
+        },
+        {
+          "timestamp": "2026-11-26 10:45:00",
+          "open": 733.3,
+          "high": 734.85,
+          "low": 731.1,
+          "close": 732.9,
+          "volume": 2321,
+          "open_interest": 178720
+        },
+        {
+          "timestamp": "2026-11-26 10:55:00",
+          "open": 732.8,
+          "high": 733.8,
+          "low": 728.4,
+          "close": 729.25,
+          "volume": 3659,
+          "open_interest": 178775
+        },
+        {
+          "timestamp": "2026-11-26 11:05:00",
+          "open": 729.35,
+          "high": 734.1,
+          "low": 729.05,
+          "close": 733.55,
+          "volume": 2800,
+          "open_interest": 178606
+        },
+        {
+          "timestamp": "2026-11-26 11:15:00",
+          "open": 733.45,
+          "high": 735.55,
+          "low": 731.35,
+          "close": 733.15,
+          "volume": 2394,
+          "open_interest": 178558
+        },
+        {
+          "timestamp": "2026-11-26 11:25:00",
+          "open": 733.05,
+          "high": 734.05,
+          "low": 730.65,
+          "close": 733.5,
+          "volume": 1758,
+          "open_interest": 178506
+        },
+        {
+          "timestamp": "2026-11-26 11:35:00",
+          "open": 733.55,
+          "high": 734.15,
+          "low": 731.5,
+          "close": 732.0,
+          "volume": 1283,
+          "open_interest": 178518
+        },
+        {
+          "timestamp": "2026-11-26 11:45:00",
+          "open": 731.9,
+          "high": 731.95,
+          "low": 726.7,
+          "close": 726.85,
+          "volume": 2247,
+          "open_interest": 178692
+        },
+        {
+          "timestamp": "2026-11-26 11:55:00",
+          "open": 726.9,
+          "high": 728.95,
+          "low": 726.05,
+          "close": 728.8,
+          "volume": 2015,
+          "open_interest": 178786
+        },
+        {
+          "timestamp": "2026-11-26 12:05:00",
+          "open": 728.75,
+          "high": 730.95,
+          "low": 728.3,
+          "close": 729.65,
+          "volume": 1617,
+          "open_interest": 178696
+        },
+        {
+          "timestamp": "2026-11-26 12:15:00",
+          "open": 729.45,
+          "high": 731.6,
+          "low": 727.8,
+          "close": 731.6,
+          "volume": 2122,
+          "open_interest": 178709
+        },
+        {
+          "timestamp": "2026-11-26 12:25:00",
+          "open": 731.5,
+          "high": 732.4,
+          "low": 730.2,
+          "close": 730.35,
+          "volume": 1535,
+          "open_interest": 178708
+        },
+        {
+          "timestamp": "2026-11-26 12:35:00",
+          "open": 730.3,
+          "high": 733.45,
+          "low": 729.9,
+          "close": 733.4,
+          "volume": 1394,
+          "open_interest": 178650
+        },
+        {
+          "timestamp": "2026-11-26 12:45:00",
+          "open": 733.45,
+          "high": 735.2,
+          "low": 732.1,
+          "close": 732.4,
+          "volume": 1966,
+          "open_interest": 178564
+        },
+        {
+          "timestamp": "2026-11-26 12:55:00",
+          "open": 732.5,
+          "high": 734.05,
+          "low": 730.55,
+          "close": 733.55,
+          "volume": 2552,
+          "open_interest": 178963
+        },
+        {
+          "timestamp": "2026-11-26 13:05:00",
+          "open": 733.5,
+          "high": 735.75,
+          "low": 732.9,
+          "close": 735.7,
+          "volume": 1413,
+          "open_interest": 179097
+        },
+        {
+          "timestamp": "2026-11-26 13:15:00",
+          "open": 735.65,
+          "high": 735.7,
+          "low": 734.0,
+          "close": 735.0,
+          "volume": 1315,
+          "open_interest": 179161
+        },
+        {
+          "timestamp": "2026-11-26 13:25:00",
+          "open": 735.05,
+          "high": 737.1,
+          "low": 733.85,
+          "close": 736.45,
+          "volume": 1625,
+          "open_interest": 179280
+        },
+        {
+          "timestamp": "2026-11-26 13:35:00",
+          "open": 736.55,
+          "high": 737.65,
+          "low": 735.85,
+          "close": 735.95,
+          "volume": 1247,
+          "open_interest": 179111
+        },
+        {
+          "timestamp": "2026-11-26 13:45:00",
+          "open": 736.0,
+          "high": 737.1,
+          "low": 735.2,
+          "close": 735.3,
+          "volume": 1134,
+          "open_interest": 179121
+        },
+        {
+          "timestamp": "2026-11-26 13:55:00",
+          "open": 735.25,
+          "high": 736.0,
+          "low": 733.35,
+          "close": 734.2,
+          "volume": 1751,
+          "open_interest": 179066
+        },
+        {
+          "timestamp": "2026-11-26 14:05:00",
+          "open": 734.3,
+          "high": 735.5,
+          "low": 732.05,
+          "close": 732.25,
+          "volume": 1655,
+          "open_interest": 179088
+        },
+        {
+          "timestamp": "2026-11-26 14:15:00",
+          "open": 732.3,
+          "high": 734.95,
+          "low": 732.25,
+          "close": 733.1,
+          "volume": 1899,
+          "open_interest": 179301
+        },
+        {
+          "timestamp": "2026-11-26 14:25:00",
+          "open": 733.05,
+          "high": 735.4,
+          "low": 732.4,
+          "close": 735.35,
+          "volume": 2107,
+          "open_interest": 179556
+        },
+        {
+          "timestamp": "2026-11-26 14:35:00",
+          "open": 735.3,
+          "high": 735.45,
+          "low": 733.4,
+          "close": 733.85,
+          "volume": 1639,
+          "open_interest": 179749
+        },
+        {
+          "timestamp": "2026-11-26 14:45:00",
+          "open": 733.9,
+          "high": 733.9,
+          "low": 731.25,
+          "close": 731.7,
+          "volume": 2244,
+          "open_interest": 179769
+        },
+        {
+          "timestamp": "2026-11-26 14:55:00",
+          "open": 731.7,
+          "high": 732.0,
+          "low": 728.35,
+          "close": 728.45,
+          "volume": 3343,
+          "open_interest": 180142
+        },
+        {
+          "timestamp": "2026-11-26 15:05:00",
+          "open": 728.6,
+          "high": 730.15,
+          "low": 726.9,
+          "close": 726.95,
+          "volume": 2882,
+          "open_interest": 180360
+        },
+        {
+          "timestamp": "2026-11-26 15:15:00",
+          "open": 727.0,
+          "high": 727.15,
+          "low": 723.45,
+          "close": 724.3,
+          "volume": 4086,
+          "open_interest": 180337
+        },
+        {
+          "timestamp": "2026-11-26 15:25:00",
+          "open": 724.35,
+          "high": 726.7,
+          "low": 724.35,
+          "close": 726.3,
+          "volume": 4474,
+          "open_interest": 180221
+        },
+        {
+          "timestamp": "2026-11-26 15:45:00",
+          "open": 726.75,
+          "high": 726.75,
+          "low": 726.75,
+          "close": 726.75,
+          "volume": 3040,
+          "open_interest": 180686
+        }
+      ],
+      "missing_oi_rows_excluded": [],
+      "non_regular_or_out_of_window_rows_excluded": [
+        "2026-10-28 12:25:00",
+        "2026-10-28 12:35:00",
+        "2026-10-28 12:45:00",
+        "2026-10-28 12:55:00",
+        "2026-10-28 13:05:00",
+        "2026-10-28 13:15:00",
+        "2026-10-28 13:25:00",
+        "2026-10-28 13:35:00",
+        "2026-10-28 13:45:00",
+        "2026-10-28 13:55:00",
+        "2026-10-28 14:05:00",
+        "2026-10-28 14:15:00",
+        "2026-10-28 14:25:00",
+        "2026-10-28 14:35:00",
+        "2026-10-28 14:45:00",
+        "2026-10-28 14:55:00",
+        "2026-10-28 15:05:00",
+        "2026-10-28 15:15:00",
+        "2026-10-28 15:25:00",
+        "2026-10-28 15:45:00"
+      ],
+      "minute_volume": 122433,
+      "daily_volume": 123660,
+      "ls_volume": 122433,
+      "vwap_eligible": false,
+      "volume_scope_review": {
+        "kiwoom_daily": 123660,
+        "minute_and_ls_daily": 122433,
+        "difference": 1227,
+        "cause": "UNRESOLVED_AGGREGATION_SCOPE",
+        "exact_vwap_eligible": false,
+        "last_bar": "15:45 closing auction; 15:25-to15:45 20-minute gap not silently filled"
+      }
+    },
+    "limitations": [
+      "LS 당일 CVD 최종+142는날짜·마감 앵커를검증했으나61개 거래량 간격·잔여3,207계약으로완전 장중 경로/OHLC 제외. 과거CVD 부족으로3·5·20일 합계없음. 보조 가격창11/25 종료와 오늘 종점 분리.",
+      "키움/LS 오늘 OI1,783계약 차이, 전일 보존원본/현재조회+349 정정 원인 미해결. 제공사·조회판 분리; 특정 주체 신규 롱·숏 규모 산정불가.",
+      "키움 일봉거래량123,660 대 분봉합/LS122,433 차이1,227계약의 집계범위 미해결. 정확한VWAP·가격별 체결매물대 제외.",
+      "0790·0794는브로커 추정/금액 순매매,0791 상세잔고 부재·0794 만기미표시. 실제 잔존포지션·평단·실현손익 판단불가.",
+      "12월옵션18계약·부분체인 OI커버리지31.70%, 체결시각 미검증. 콜735·710/풋710 OI증감>거래량, 콜710 당일무거래 제외. 딜러감마·감마플립·최대고통 제외.",
+      "F202703 OI+564 대 거래량118 충돌; 차월방향·롤오버규모 해석제외. 근차월 합산금지.",
+      "현물 t1617/t1664 차이75개·전일 현물 재조회 정정4필드 미해결. 동일조회판 누적·원본보존. KOSPI200 200종목을 전체시장으로 확대하지 않음.",
+      "수급은전체 만기 거래활동이며9/11이후51일 합계를 F202612 실제보유로 해석하지 않음. 기관·금투 중복가산 금지.",
+      "월봉4개·활성일봉79개, 주·월 진행봉 분리. 완료주6개·지속률 소표본, 하위파 차수미확정·미래확률 산정불가·자동방향점수 미적용.",
+      "오늘 동기화된 국내·해외 다중시간대/14단계 보조연구 제외. 과거latest를현재값으로 재사용하지않음. 위클리 전체체인·동시각 막판주체수급 부재로 만기원인 확정불가."
+    ],
+    "intraday_oi": {
+      "windows": [
+        {
+          "start": "2026-11-26 08:45:00",
+          "end": "2026-11-26 09:55:00",
+          "start_price": 731.15,
+          "end_price": 740.05,
+          "price_change": 8.899999999999977,
+          "start_oi": 177869.0,
+          "end_oi": 178927.0,
+          "oi_change": 1058.0
+        },
+        {
+          "start": "2026-11-26 09:55:00",
+          "end": "2026-11-26 11:55:00",
+          "start_price": 740.05,
+          "end_price": 728.8,
+          "price_change": -11.25,
+          "start_oi": 178927.0,
+          "end_oi": 178786.0,
+          "oi_change": -141.0
+        },
+        {
+          "start": "2026-11-26 11:55:00",
+          "end": "2026-11-26 14:35:00",
+          "start_price": 728.8,
+          "end_price": 733.85,
+          "price_change": 5.050000000000068,
+          "start_oi": 178786.0,
+          "end_oi": 179749.0,
+          "oi_change": 963.0
+        },
+        {
+          "start": "2026-11-26 14:35:00",
+          "end": "2026-11-26 15:25:00",
+          "start_price": 733.85,
+          "end_price": 726.3,
+          "price_change": -7.550000000000068,
+          "start_oi": 179749.0,
+          "end_oi": 180221.0,
+          "oi_change": 472.0
+        },
+        {
+          "start": "2026-11-26 15:25:00",
+          "end": "2026-11-26 15:45:00",
+          "start_price": 726.3,
+          "end_price": 726.75,
+          "price_change": 0.4500000000000455,
+          "start_oi": 180221.0,
+          "end_oi": 180686.0,
+          "oi_change": 465.0
+        }
+      ],
+      "note": "원천 표시시각·마지막 단일가 별도",
+      "interpretation": "원천 표시시각 기준08:45→09:55 가격731.15→740.05(+8.90), OI177,869→178,927(+1,058)로 오전에는 상승·참여 확대가 함께 나타났습니다. 09:55→11:55는 가격-11.25·OI-141,11:55→14:35는 가격+5.05·OI+963으로 다시 달랐습니다. 막판14:35→15:25에는733.85→726.30(-7.55), OI179,749→180,221(+472)로 회복 실패와 OI 증가가 겹쳤습니다. 마지막15:45 단일가까지 가격+0.45·OI+465입니다. 하루 종가는 전일보다 올랐지만 장중은 오전 상승→되밀림→오후 반등→막판 하락의 순서입니다. 일별 상승·OI 증가만으로 하루 전체를 신규 롱으로 분류하지 않습니다. 투자자별 동시각 관측은 없어 막판 매도 주체·신규 숏 규모·동일 주체 청산은 판단 불가입니다. LS CVD는 당일 FC9 날짜 앵커와 마감 검증으로 최종값+142계약(분류 매수59,684−매도59,542)이 확인됐습니다. 잔여3,207계약은 배분하지 않으며61개 거래량 간격 때문에 장중 CVD 경로·고저·OHLC는 제외합니다. 작은 양의 종점은 막판 가격 약화를 뒤집는 근거가 아닙니다."
+    },
+    "original_summary_sha256": "b05fc0ba93a46b85d8bae87aabf7c1b4919d783bbc794fd715321f4dce26f441",
+    "public_dom_verified": false,
+    "price_crosscheck_cells": 272,
+    "weekly_calibration_cutoff": "20261120",
+    "expiry_reference": {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "retrieved_at": "2026-11-26T17:07:34.441721+09:00",
+      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef",
+      "rule": "monthly second Thursday; quarterly futures; Thursday weekly except second Thursday",
+      "current_weekly_expiry": "2026-11-26",
+      "remaining_regular_sessions_after_today_to_dec_expiry": 10,
+      "krx_product_page_status": "403; official broker specification used",
+      "krx_product_url": "https://www.krx.co.kr/contents/OPN/01/01040202/OPN01040202.jsp",
+      "november_monthly": "2026-11-12",
+      "december_futures_options": "2026-12-10",
+      "calendar": "KRX 2026 official holiday list checked; weekly contracts separate",
+      "regular_session": {
+        "date": "20261126",
+        "regular_open": "08:45",
+        "regular_close": "15:45",
+        "stock_regular_close": "15:30",
+        "expiring_weekly_option_close": "15:20",
+        "night_open": "18:00"
+      }
+    },
+    "cash_provider_differences": [
+      {
+        "market": "cash",
+        "date": "20261126",
+        "actor": "institution",
+        "t1617": 7532,
+        "t1664": 7533
+      },
+      {
+        "market": "cash",
+        "date": "20261126",
+        "actor": "individual",
+        "t1617": -10484,
+        "t1664": -10485
+      },
+      {
+        "market": "cash",
+        "date": "20261125",
+        "actor": "foreign",
+        "t1617": -18192,
+        "t1664": -18193
+      },
+      {
+        "market": "cash",
+        "date": "20261124",
+        "actor": "institution",
+        "t1617": 8817,
+        "t1664": 8818
+      },
+      {
+        "market": "cash",
+        "date": "20261124",
+        "actor": "individual",
+        "t1617": -21329,
+        "t1664": -21330
+      },
+      {
+        "market": "cash",
+        "date": "20261123",
+        "actor": "institution",
+        "t1617": 1762,
+        "t1664": 1763
+      },
+      {
+        "market": "cash",
+        "date": "20261119",
+        "actor": "foreign",
+        "t1617": -4085,
+        "t1664": -4086
+      },
+      {
+        "market": "cash",
+        "date": "20261119",
+        "actor": "institution",
+        "t1617": 119,
+        "t1664": 120
+      },
+      {
+        "market": "cash",
+        "date": "20261118",
+        "actor": "institution",
+        "t1617": 4164,
+        "t1664": 4165
+      },
+      {
+        "market": "cash",
+        "date": "20261118",
+        "actor": "individual",
+        "t1617": -6168,
+        "t1664": -6169
+      },
+      {
+        "market": "cash",
+        "date": "20261117",
+        "actor": "foreign",
+        "t1617": -14189,
+        "t1664": -14190
+      },
+      {
+        "market": "cash",
+        "date": "20261117",
+        "actor": "institution",
+        "t1617": 5133,
+        "t1664": 5134
+      },
+      {
+        "market": "cash",
+        "date": "20261117",
+        "actor": "individual",
+        "t1617": 4309,
+        "t1664": 4310
+      },
+      {
+        "market": "cash",
+        "date": "20261116",
+        "actor": "individual",
+        "t1617": 12989,
+        "t1664": 12990
+      },
+      {
+        "market": "cash",
+        "date": "20261113",
+        "actor": "foreign",
+        "t1617": -5420,
+        "t1664": -5419
+      },
+      {
+        "market": "cash",
+        "date": "20261111",
+        "actor": "individual",
+        "t1617": -7144,
+        "t1664": -7145
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "foreign",
+        "t1617": 4440,
+        "t1664": 4439
+      },
+      {
+        "market": "cash",
+        "date": "20261110",
+        "actor": "institution",
+        "t1617": 4641,
+        "t1664": 4642
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "foreign",
+        "t1617": -5262,
+        "t1664": -5263
+      },
+      {
+        "market": "cash",
+        "date": "20261109",
+        "actor": "individual",
+        "t1617": -6608,
+        "t1664": -6609
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "institution",
+        "t1617": 17091,
+        "t1664": 17092
+      },
+      {
+        "market": "cash",
+        "date": "20261106",
+        "actor": "individual",
+        "t1617": 5210,
+        "t1664": 5211
+      },
+      {
+        "market": "cash",
+        "date": "20261105",
+        "actor": "foreign",
+        "t1617": -33740,
+        "t1664": -33741
+      },
+      {
+        "market": "cash",
+        "date": "20261104",
+        "actor": "institution",
+        "t1617": 11333,
+        "t1664": 11334
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "institution",
+        "t1617": 12244,
+        "t1664": 12245
+      },
+      {
+        "market": "cash",
+        "date": "20261102",
+        "actor": "individual",
+        "t1617": -13150,
+        "t1664": -13151
+      },
+      {
+        "market": "cash",
+        "date": "20261030",
+        "actor": "institution",
+        "t1617": 7539,
+        "t1664": 7540
+      },
+      {
+        "market": "cash",
+        "date": "20261028",
+        "actor": "individual",
+        "t1617": -17050,
+        "t1664": -17051
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "institution",
+        "t1617": 3037,
+        "t1664": 3038
+      },
+      {
+        "market": "cash",
+        "date": "20261027",
+        "actor": "individual",
+        "t1617": -9406,
+        "t1664": -9407
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "foreign",
+        "t1617": -6508,
+        "t1664": -6507
+      },
+      {
+        "market": "cash",
+        "date": "20261026",
+        "actor": "institution",
+        "t1617": 5811,
+        "t1664": 5812
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "foreign",
+        "t1617": -9790,
+        "t1664": -9789
+      },
+      {
+        "market": "cash",
+        "date": "20261023",
+        "actor": "institution",
+        "t1617": 8659,
+        "t1664": 8660
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "foreign",
+        "t1617": 372,
+        "t1664": 371
+      },
+      {
+        "market": "cash",
+        "date": "20261022",
+        "actor": "institution",
+        "t1617": -4465,
+        "t1664": -4466
+      },
+      {
+        "market": "cash",
+        "date": "20261021",
+        "actor": "individual",
+        "t1617": -11158,
+        "t1664": -11159
+      },
+      {
+        "market": "cash",
+        "date": "20261020",
+        "actor": "institution",
+        "t1617": -9564,
+        "t1664": -9565
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "foreign",
+        "t1617": 3205,
+        "t1664": 3204
+      },
+      {
+        "market": "cash",
+        "date": "20261016",
+        "actor": "institution",
+        "t1617": -6402,
+        "t1664": -6403
+      },
+      {
+        "market": "cash",
+        "date": "20261015",
+        "actor": "institution",
+        "t1617": 17120,
+        "t1664": 17121
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "institution",
+        "t1617": 8118,
+        "t1664": 8119
+      },
+      {
+        "market": "cash",
+        "date": "20261014",
+        "actor": "individual",
+        "t1617": -3747,
+        "t1664": -3748
+      },
+      {
+        "market": "cash",
+        "date": "20261008",
+        "actor": "institution",
+        "t1617": -16749,
+        "t1664": -16750
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "foreign",
+        "t1617": -26187,
+        "t1664": -26188
+      },
+      {
+        "market": "cash",
+        "date": "20261007",
+        "actor": "institution",
+        "t1617": -7100,
+        "t1664": -7101
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "institution",
+        "t1617": -36,
+        "t1664": -37
+      },
+      {
+        "market": "cash",
+        "date": "20261006",
+        "actor": "individual",
+        "t1617": 7440,
+        "t1664": 7441
+      },
+      {
+        "market": "cash",
+        "date": "20261001",
+        "actor": "institution",
+        "t1617": 3251,
+        "t1664": 3252
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "foreign",
+        "t1617": -20645,
+        "t1664": -20646
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "institution",
+        "t1617": -7992,
+        "t1664": -7993
+      },
+      {
+        "market": "cash",
+        "date": "20260930",
+        "actor": "individual",
+        "t1617": 12108,
+        "t1664": 12109
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "institution",
+        "t1617": 1036,
+        "t1664": 1037
+      },
+      {
+        "market": "cash",
+        "date": "20260929",
+        "actor": "individual",
+        "t1617": 12446,
+        "t1664": 12447
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "institution",
+        "t1617": -10168,
+        "t1664": -10169
+      },
+      {
+        "market": "cash",
+        "date": "20260928",
+        "actor": "individual",
+        "t1617": 26466,
+        "t1664": 26467
+      },
+      {
+        "market": "cash",
+        "date": "20260922",
+        "actor": "institution",
+        "t1617": -1294,
+        "t1664": -1295
+      },
+      {
+        "market": "cash",
+        "date": "20260921",
+        "actor": "institution",
+        "t1617": 15189,
+        "t1664": 15190
+      },
+      {
+        "market": "cash",
+        "date": "20260918",
+        "actor": "institution",
+        "t1617": 15321,
+        "t1664": 15322
+      },
+      {
+        "market": "cash",
+        "date": "20260917",
+        "actor": "individual",
+        "t1617": 6760,
+        "t1664": 6761
+      },
+      {
+        "market": "cash",
+        "date": "20260915",
+        "actor": "individual",
+        "t1617": 8595,
+        "t1664": 8596
+      },
+      {
+        "market": "cash",
+        "date": "20260914",
+        "actor": "institution",
+        "t1617": -11868,
+        "t1664": -11869
+      },
+      {
+        "market": "cash",
+        "date": "20260911",
+        "actor": "institution",
+        "t1617": -12183,
+        "t1664": -12184
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "foreign",
+        "t1617": -26216,
+        "t1664": -26217
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "institution",
+        "t1617": 5743,
+        "t1664": 5744
+      },
+      {
+        "market": "cash",
+        "date": "20260910",
+        "actor": "individual",
+        "t1617": 3801,
+        "t1664": 3802
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "foreign",
+        "t1617": -4349,
+        "t1664": -4348
+      },
+      {
+        "market": "cash",
+        "date": "20260909",
+        "actor": "individual",
+        "t1617": -22878,
+        "t1664": -22879
+      },
+      {
+        "market": "cash",
+        "date": "20260908",
+        "actor": "institution",
+        "t1617": 6426,
+        "t1664": 6427
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "foreign",
+        "t1617": 25531,
+        "t1664": 25532
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "institution",
+        "t1617": 26490,
+        "t1664": 26491
+      },
+      {
+        "market": "cash",
+        "date": "20260907",
+        "actor": "individual",
+        "t1617": -68373,
+        "t1664": -68374
+      },
+      {
+        "market": "cash",
+        "date": "20260903",
+        "actor": "individual",
+        "t1617": -9551,
+        "t1664": -9552
+      },
+      {
+        "market": "cash",
+        "date": "20260902",
+        "actor": "individual",
+        "t1617": 23028,
+        "t1664": 23029
+      },
+      {
+        "market": "cash",
+        "date": "20260901",
+        "actor": "foreign",
+        "t1617": -4969,
+        "t1664": -4968
+      }
+    ],
+    "previous_snapshot_revisions": {
+      "items": [
+        {
+          "date": "20261125",
+          "field": "cash_foreign",
+          "previous_snapshot": -18821,
+          "current_query": -18192
+        },
+        {
+          "date": "20261125",
+          "field": "cash_institution",
+          "previous_snapshot": -31,
+          "current_query": 4539
+        },
+        {
+          "date": "20261125",
+          "field": "cash_financial",
+          "previous_snapshot": 3644,
+          "current_query": 8214
+        },
+        {
+          "date": "20261125",
+          "field": "cash_individual",
+          "previous_snapshot": 14079,
+          "current_query": 13521
+        }
+      ],
+      "cause": "UNRESOLVED if any; preserve complete current same-provider series separately",
+      "previous_sha256": "4293c3e86d75404b88ff4028e35b43dac361ef514788399d0166e97dbcdb218b"
+    },
+    "gamma_snapshot_review": {
+      "status": "PARTIAL_CHAIN_RESEARCH_ONLY",
+      "oi_coverage_pct": 31.695195898185474,
+      "option_trade_timestamps_verified": false,
+      "can_use_for_trading": false,
+      "same_contract_dated_history_matches": [
+        "B016C745",
+        "B016C740",
+        "B016C735",
+        "B016C730",
+        "B016C725",
+        "B016C720",
+        "B016C715",
+        "B016C710",
+        "B016C705",
+        "C016C745",
+        "C016C740",
+        "C016C735",
+        "C016C730",
+        "C016C725",
+        "C016C720",
+        "C016C715",
+        "C016C710",
+        "C016C705"
+      ],
+      "dealer_gamma": null,
+      "zero_gamma": null,
+      "note": "Partial chain and unverified quote timestamps; no signed dealer positions. Excluded from directional gamma inference."
+    },
+    "program_windows_native_units": {
+      "1": {
+        "dates": [
+          "20261126"
+        ],
+        "tot3": 166987.0,
+        "cha3": -15175.0,
+        "bcha3": 182161.0
+      },
+      "3": {
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "tot3": -388702.0,
+        "cha3": 185691.0,
+        "bcha3": -574395.0
+      },
+      "5": {
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "tot3": -1321879.0,
+        "cha3": 201895.0,
+        "bcha3": -1523775.0
+      },
+      "20": {
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "tot3": -6690701.0,
+        "cha3": 803003.0,
+        "bcha3": -7493705.0
+      }
+    },
+    "closing_flow_snapshots": {
+      "status": "UNAVAILABLE_CURRENT_DAY",
+      "trade_date": "20261126",
+      "scope": "No independently dated intraday investor snapshots for this day. Earlier user screenshots are not reused."
+    },
+    "basis_crosscheck": {
+      "market_basis": -0.33,
+      "theory_basis": 0.97,
+      "ls_snapshot": {
+        "received_at": "2026-11-26T16:02:00.132420+09:00",
+        "future_close": 726.75,
+        "cash_index": 727.08,
+        "market_basis": -0.33,
+        "theory_basis": 0.97,
+        "theory_price": 728.05,
+        "market_minus_theory": -1.3,
+        "scope": "Original LS EOD snapshot; cash 15:30 vs futures 15:45 not synchronous; provider model not independently reproduced."
+      },
+      "scope": "Non-synchronous closing comparison"
+    },
+    "selective_cash_review": {
+      "trade_date": "20261126",
+      "checked_at": "2026-11-26T17:01:28.998311+09:00",
+      "status": "SAME_EOD_200_STOCK_ROWS_VERIFIED",
+      "source_database": "source-file://3e9f262007146b6e/k200_position_tracker.db",
+      "snapshot_path": "source-file://781bd05d2a2221c4/k200_tracker_snapshot.sqlite",
+      "snapshot_sha256": "01ec6288ff20cd8961db3145514feec1929f924d58468f2d9a643965bd2dd24c",
+      "rows_csv": "source-file://451bc7e065e3fedb/k200_current_day_selective_flows.csv",
+      "rows_sha256": "60e9f3cee2acf69d172aa5bac26473b05bb992d9e16a071208a185c43c8a791b",
+      "rows": 2600,
+      "source_api": "Existing EOD Kiwoom REST ka10060 buy/sell amount and quantity collector",
+      "amount_unit": "Native stored amount fields, KRW conversion not independently verified; no cross-universe amount aggregation",
+      "scope": "Current stored KOSPI200 universe; Samsung Electronics and SK Hynix separately vs remaining 198. Not all KOSPI/KOSDAQ. No precise index contribution without constituent weights.",
+      "collection_status_counts": {
+        "OK": 200
+      },
+      "summary": [
+        {
+          "investor": "개인",
+          "stocks": 200,
+          "net_amount_native": -977584.0,
+          "positive_stocks": 102,
+          "negative_stocks": 98,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -603211.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": -221643.0
+            }
+          ],
+          "other_198_net_amount_native": -152730.0,
+          "other_198_positive_stocks": 102,
+          "other_198_negative_stocks": 96
+        },
+        {
+          "investor": "국가",
+          "stocks": 200,
+          "net_amount_native": 0.0,
+          "positive_stocks": 0,
+          "negative_stocks": 0,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 0.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 0.0
+            }
+          ],
+          "other_198_net_amount_native": 0.0,
+          "other_198_positive_stocks": 0,
+          "other_198_negative_stocks": 0
+        },
+        {
+          "investor": "금융투자",
+          "stocks": 200,
+          "net_amount_native": 621908.0,
+          "positive_stocks": 162,
+          "negative_stocks": 37,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 62392.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 218166.0
+            }
+          ],
+          "other_198_net_amount_native": 341350.0,
+          "other_198_positive_stocks": 160,
+          "other_198_negative_stocks": 37
+        },
+        {
+          "investor": "기관계",
+          "stocks": 200,
+          "net_amount_native": 745147.0,
+          "positive_stocks": 140,
+          "negative_stocks": 59,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -71896.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 322005.0
+            }
+          ],
+          "other_198_net_amount_native": 495038.0,
+          "other_198_positive_stocks": 139,
+          "other_198_negative_stocks": 58
+        },
+        {
+          "investor": "기타금융",
+          "stocks": 200,
+          "net_amount_native": -3731.0,
+          "positive_stocks": 46,
+          "negative_stocks": 39,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -8438.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": -10896.0
+            }
+          ],
+          "other_198_net_amount_native": 15603.0,
+          "other_198_positive_stocks": 46,
+          "other_198_negative_stocks": 37
+        },
+        {
+          "investor": "기타법인",
+          "stocks": 200,
+          "net_amount_native": 403328.0,
+          "positive_stocks": 98,
+          "negative_stocks": 71,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 363012.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": -2943.0
+            }
+          ],
+          "other_198_net_amount_native": 43259.0,
+          "other_198_positive_stocks": 97,
+          "other_198_negative_stocks": 70
+        },
+        {
+          "investor": "내외국인",
+          "stocks": 200,
+          "net_amount_native": -3885.0,
+          "positive_stocks": 56,
+          "negative_stocks": 79,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -1997.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": -319.0
+            }
+          ],
+          "other_198_net_amount_native": -1569.0,
+          "other_198_positive_stocks": 56,
+          "other_198_negative_stocks": 77
+        },
+        {
+          "investor": "보험",
+          "stocks": 200,
+          "net_amount_native": 30635.0,
+          "positive_stocks": 133,
+          "negative_stocks": 56,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 2231.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 3380.0
+            }
+          ],
+          "other_198_net_amount_native": 25024.0,
+          "other_198_positive_stocks": 131,
+          "other_198_negative_stocks": 56
+        },
+        {
+          "investor": "사모펀드",
+          "stocks": 200,
+          "net_amount_native": 16261.0,
+          "positive_stocks": 107,
+          "negative_stocks": 81,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -7527.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 727.0
+            }
+          ],
+          "other_198_net_amount_native": 23061.0,
+          "other_198_positive_stocks": 106,
+          "other_198_negative_stocks": 80
+        },
+        {
+          "investor": "연기금등",
+          "stocks": 200,
+          "net_amount_native": -30924.0,
+          "positive_stocks": 78,
+          "negative_stocks": 119,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -52650.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 6732.0
+            }
+          ],
+          "other_198_net_amount_native": 14994.0,
+          "other_198_positive_stocks": 77,
+          "other_198_negative_stocks": 118
+        },
+        {
+          "investor": "외국인",
+          "stocks": 200,
+          "net_amount_native": -167011.0,
+          "positive_stocks": 56,
+          "negative_stocks": 143,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 314092.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": -97099.0
+            }
+          ],
+          "other_198_net_amount_native": -384004.0,
+          "other_198_positive_stocks": 55,
+          "other_198_negative_stocks": 142
+        },
+        {
+          "investor": "은행",
+          "stocks": 200,
+          "net_amount_native": 7569.0,
+          "positive_stocks": 12,
+          "negative_stocks": 7,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": 3576.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 1959.0
+            }
+          ],
+          "other_198_net_amount_native": 2034.0,
+          "other_198_positive_stocks": 10,
+          "other_198_negative_stocks": 7
+        },
+        {
+          "investor": "투신",
+          "stocks": 200,
+          "net_amount_native": 103426.0,
+          "positive_stocks": 123,
+          "negative_stocks": 76,
+          "leaders": [
+            {
+              "code": "000660",
+              "name": "SK하이닉스",
+              "close": 1057000.0,
+              "net_amount_native": -71479.0
+            },
+            {
+              "code": "005930",
+              "name": "삼성전자",
+              "close": 171600.0,
+              "net_amount_native": 101936.0
+            }
+          ],
+          "other_198_net_amount_native": 72969.0,
+          "other_198_positive_stocks": 122,
+          "other_198_negative_stocks": 75
+        }
+      ]
+    },
+    "quality_review": {
+      "core_hashes": "PASS",
+      "price_ohlc_crosscheck_cells": 272,
+      "visual_nets": 54,
+      "all_expiry_flow_not_positions": true,
+      "cash_t1617_t1664_differences": 75,
+      "prior_cash_snapshot_revisions": 4,
+      "weekly_complete_through": "20261120",
+      "weekly_partial_through": "20261126",
+      "monthly_partial_through": "20261126",
+      "oi_revision": "Current requery and original prior snapshot retained separately; 1783-contract current cross-provider difference unresolved.",
+      "secondary_quote_scope": "LS daily OI agrees with saved LS after-close quote; not independent confirmation of finality.",
+      "public_dom_verified": false,
+      "preview_only": false
+    },
+    "option_quality_exclusions": [
+      {
+        "code": "B016C735",
+        "reason": "OI_CHANGE_EXCEEDS_DATED_VOLUME",
+        "oi_change": 263,
+        "volume": 120
+      },
+      {
+        "code": "B016C710",
+        "reason": "OI_CHANGE_EXCEEDS_DATED_VOLUME",
+        "oi_change": 1,
+        "volume": 0
+      },
+      {
+        "code": "B016C710",
+        "reason": "NO_TRADE_PRICE_REFERENCE",
+        "previous_volume": 6,
+        "current_volume": 0
+      },
+      {
+        "code": "C016C710",
+        "reason": "OI_CHANGE_EXCEEDS_DATED_VOLUME",
+        "oi_change": 101,
+        "volume": 65
+      }
+    ],
+    "volume_scope_review": {
+      "kiwoom_daily": 123660,
+      "minute_and_ls_daily": 122433,
+      "difference": 1227,
+      "cause": "UNRESOLVED_AGGREGATION_SCOPE",
+      "exact_vwap_eligible": false,
+      "last_bar": "15:45 closing auction; 15:25-to15:45 20-minute gap not silently filled"
+    },
+    "previous_basis_snapshot": {
+      "trade_date": "20261125",
+      "snapshot": {
+        "received_at": "2026-11-25T16:06:36.270472+09:00",
+        "future_close": 724.75,
+        "cash_index": 723.81,
+        "market_basis": 0.94,
+        "theory_basis": 1.0,
+        "theory_price": 724.81,
+        "market_minus_theory": -0.06,
+        "scope": "Original LS EOD snapshot; cash 15:30 vs futures 15:45 not synchronous; provider model not independently reproduced."
+      },
+      "evidence_sha256": "1d21196d9d197c8bd05d7b556e0ef0b7e580c1cb8843a756594ab1a7bb988a1a",
+      "use": "Prior dated comparison only; cash/futures closing times differ."
+    }
+  },
+  "flows": {
+    "cash": {
+      "1": {
+        "start": "20261126",
+        "end": "20261126",
+        "dates": [
+          "20261126"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -1127,
+        "institution": 7532,
+        "financial": 6252,
+        "individual": -10484,
+        "trust": 938,
+        "pension": -220
+      },
+      "3": {
+        "start": "20261124",
+        "end": "20261126",
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -11273,
+        "institution": 20888,
+        "financial": 17121,
+        "individual": -18292,
+        "trust": -380,
+        "pension": 3255
+      },
+      "5": {
+        "start": "20261120",
+        "end": "20261126",
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -24794,
+        "institution": 13320,
+        "financial": 17343,
+        "individual": -6610,
+        "trust": -4002,
+        "pension": 2523
+      },
+      "15": {
+        "start": "20261106",
+        "end": "20261126",
+        "dates": [
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -81296,
+        "institution": 35478,
+        "financial": 45305,
+        "individual": -21169,
+        "trust": -2716,
+        "pension": -1981
+      },
+      "20": {
+        "start": "20261030",
+        "end": "20261126",
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -174645,
+        "institution": 70914,
+        "financial": 70010,
+        "individual": 19112,
+        "trust": -5737,
+        "pension": 12126
+      }
+    },
+    "futures": {
+      "1": {
+        "start": "20261126",
+        "end": "20261126",
+        "dates": [
+          "20261126"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": 1878,
+        "institution": -1734,
+        "financial": -4480,
+        "individual": -118,
+        "trust": 2362,
+        "pension": 247
+      },
+      "3": {
+        "start": "20261124",
+        "end": "20261126",
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 9573,
+        "institution": -9479,
+        "financial": -10883,
+        "individual": -279,
+        "trust": 1655,
+        "pension": -78
+      },
+      "5": {
+        "start": "20261120",
+        "end": "20261126",
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 12470,
+        "institution": -11872,
+        "financial": -8227,
+        "individual": -719,
+        "trust": -3720,
+        "pension": -81
+      },
+      "15": {
+        "start": "20261106",
+        "end": "20261126",
+        "dates": [
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 26396,
+        "institution": -22963,
+        "financial": -19118,
+        "individual": -2978,
+        "trust": -3527,
+        "pension": 637
+      },
+      "20": {
+        "start": "20261030",
+        "end": "20261126",
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 37553,
+        "institution": -34253,
+        "financial": -24769,
+        "individual": -2649,
+        "trust": -9235,
+        "pension": 1436
+      }
+    },
+    "stock_futures": {
+      "1": {
+        "start": "20261126",
+        "end": "20261126",
+        "dates": [
+          "20261126"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -182753,
+        "institution": 132284,
+        "financial": 104083,
+        "individual": 43023,
+        "trust": null,
+        "pension": null
+      },
+      "3": {
+        "start": "20261124",
+        "end": "20261126",
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -170222,
+        "institution": 281884,
+        "financial": 410784,
+        "individual": -122121,
+        "trust": null,
+        "pension": null
+      },
+      "5": {
+        "start": "20261120",
+        "end": "20261126",
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -56204,
+        "institution": 169912,
+        "financial": 305425,
+        "individual": -124969,
+        "trust": null,
+        "pension": null
+      },
+      "15": {
+        "start": "20261106",
+        "end": "20261126",
+        "dates": [
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -425456,
+        "institution": 441955,
+        "financial": 1013856,
+        "individual": -6273,
+        "trust": null,
+        "pension": null
+      },
+      "20": {
+        "start": "20261030",
+        "end": "20261126",
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -535448,
+        "institution": 687438,
+        "financial": 1341428,
+        "individual": -155799,
+        "trust": null,
+        "pension": null
+      }
+    },
+    "call": {
+      "1": {
+        "start": "20261126",
+        "end": "20261126",
+        "dates": [
+          "20261126"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -1002,
+        "institution": 1540,
+        "financial": 1550,
+        "individual": -15,
+        "trust": -10,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261124",
+        "end": "20261126",
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": -1422,
+        "institution": 2106,
+        "financial": 3100,
+        "individual": -476,
+        "trust": -994,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261120",
+        "end": "20261126",
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": -7720,
+        "institution": 5363,
+        "financial": 6366,
+        "individual": 2531,
+        "trust": -1003,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261106",
+        "end": "20261126",
+        "dates": [
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": -8962,
+        "institution": -17979,
+        "financial": -4798,
+        "individual": 25856,
+        "trust": -13048,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261030",
+        "end": "20261126",
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": -17077,
+        "institution": -11365,
+        "financial": 2726,
+        "individual": 27081,
+        "trust": -13960,
+        "pension": 0
+      }
+    },
+    "put": {
+      "1": {
+        "start": "20261126",
+        "end": "20261126",
+        "dates": [
+          "20261126"
+        ],
+        "observations": 1,
+        "complete": true,
+        "foreign": -246,
+        "institution": 778,
+        "financial": 807,
+        "individual": -767,
+        "trust": -29,
+        "pension": 0
+      },
+      "3": {
+        "start": "20261124",
+        "end": "20261126",
+        "dates": [
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 3,
+        "complete": true,
+        "foreign": 1390,
+        "institution": 1144,
+        "financial": 1207,
+        "individual": -2530,
+        "trust": -23,
+        "pension": 0
+      },
+      "5": {
+        "start": "20261120",
+        "end": "20261126",
+        "dates": [
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 5,
+        "complete": true,
+        "foreign": 7188,
+        "institution": 1719,
+        "financial": 1786,
+        "individual": -8947,
+        "trust": -7,
+        "pension": 0
+      },
+      "15": {
+        "start": "20261106",
+        "end": "20261126",
+        "dates": [
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 15,
+        "complete": true,
+        "foreign": 22465,
+        "institution": -15529,
+        "financial": -15466,
+        "individual": -6483,
+        "trust": -19,
+        "pension": 0
+      },
+      "20": {
+        "start": "20261030",
+        "end": "20261126",
+        "dates": [
+          "20261030",
+          "20261102",
+          "20261103",
+          "20261104",
+          "20261105",
+          "20261106",
+          "20261109",
+          "20261110",
+          "20261111",
+          "20261112",
+          "20261113",
+          "20261116",
+          "20261117",
+          "20261118",
+          "20261119",
+          "20261120",
+          "20261123",
+          "20261124",
+          "20261125",
+          "20261126"
+        ],
+        "observations": 20,
+        "complete": true,
+        "foreign": 28579,
+        "institution": -19461,
+        "financial": -19472,
+        "individual": -8061,
+        "trust": 55,
+        "pension": 0
+      }
+    }
+  },
+  "expiry_window": {
+    "start": "20260911",
+    "end": "20261126",
+    "observations": 51,
+    "calendar_complete": true,
+    "foreign": 42749,
+    "institution": -40753,
+    "financial": -27491,
+    "individual": -1567,
+    "trust": -10243,
+    "pension": 1356,
+    "scope": "ALL_EXPIRY_FLOWS_NOT_ACTUAL_DECEMBER_POSITIONS"
+  },
+  "selected_options": [
+    {
+      "code": "B016C705",
+      "strike": 705.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 49.8,
+      "previous_price": 45.35,
+      "oi": 17,
+      "previous_oi": 15,
+      "oi_change": 2,
+      "volume": 2,
+      "previous_volume": 11,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 64.27,
+        "provider_delta": 0.6587,
+        "bid": 1.93,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 58.0,
+        "current_provider_iv_pct": 64.27,
+        "reported_iv_difference_pp": 6.27,
+        "previous_delta": 0.604,
+        "current_delta": 0.6587,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C710",
+      "strike": 710.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 47.0,
+      "previous_price": 47.0,
+      "oi": 133,
+      "previous_oi": 132,
+      "oi_change": 1,
+      "volume": 0,
+      "previous_volume": 6,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 64.28,
+        "provider_delta": 0.5907,
+        "bid": 1.91,
+        "ask": 46.0,
+        "relative_spread": 1.840534335211856,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 65.5,
+        "current_provider_iv_pct": 64.28,
+        "reported_iv_difference_pp": -1.22,
+        "previous_delta": 0.6156,
+        "current_delta": 0.5907,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": false
+    },
+    {
+      "code": "B016C715",
+      "strike": 715.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 50.25,
+      "previous_price": 40.8,
+      "oi": 610,
+      "previous_oi": 608,
+      "oi_change": 2,
+      "volume": 2,
+      "previous_volume": 2,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 74.59,
+        "provider_delta": 0.6553,
+        "bid": 1.89,
+        "ask": 110.4,
+        "relative_spread": 1.9326743254074272,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 59.47,
+        "current_provider_iv_pct": 74.59,
+        "reported_iv_difference_pp": 15.12,
+        "previous_delta": 0.5696,
+        "current_delta": 0.6553,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C720",
+      "strike": 720.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 37.2,
+      "previous_price": 38.75,
+      "oi": 345,
+      "previous_oi": 313,
+      "oi_change": 32,
+      "volume": 114,
+      "previous_volume": 111,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 56.51,
+        "provider_delta": 0.5605,
+        "bid": 34.7,
+        "ask": 40.55,
+        "relative_spread": 0.15548172757475068,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 60.28,
+        "current_provider_iv_pct": 56.51,
+        "reported_iv_difference_pp": -3.77,
+        "previous_delta": 0.5484,
+        "current_delta": 0.5605,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C725",
+      "strike": 725.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 34.35,
+      "previous_price": 36.25,
+      "oi": 94,
+      "previous_oi": 87,
+      "oi_change": 7,
+      "volume": 38,
+      "previous_volume": 85,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 55.95,
+        "provider_delta": 0.5374,
+        "bid": 32.15,
+        "ask": 36.7,
+        "relative_spread": 0.132171387073348,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 60.15,
+        "current_provider_iv_pct": 55.95,
+        "reported_iv_difference_pp": -4.2,
+        "previous_delta": 0.53,
+        "current_delta": 0.5374,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C730",
+      "strike": 730.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 32.0,
+      "previous_price": 33.75,
+      "oi": 684,
+      "previous_oi": 566,
+      "oi_change": 118,
+      "volume": 254,
+      "previous_volume": 319,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 56.03,
+        "provider_delta": 0.5131,
+        "bid": 29.6,
+        "ask": 35.3,
+        "relative_spread": 0.17565485362095518,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 59.84,
+        "current_provider_iv_pct": 56.03,
+        "reported_iv_difference_pp": -3.81,
+        "previous_delta": 0.5019,
+        "current_delta": 0.5131,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C735",
+      "strike": 735.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 28.5,
+      "previous_price": 29.6,
+      "oi": 1002,
+      "previous_oi": 739,
+      "oi_change": 263,
+      "volume": 120,
+      "previous_volume": 18,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 53.94,
+        "provider_delta": 0.4868,
+        "bid": 27.5,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 56.62,
+        "current_provider_iv_pct": 53.94,
+        "reported_iv_difference_pp": -2.68,
+        "previous_delta": 0.4699,
+        "current_delta": 0.4868,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": false
+    },
+    {
+      "code": "B016C740",
+      "strike": 740.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 27.1,
+      "previous_price": 28.7,
+      "oi": 225,
+      "previous_oi": 206,
+      "oi_change": 19,
+      "volume": 241,
+      "previous_volume": 194,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 55.23,
+        "provider_delta": 0.4641,
+        "bid": 25.2,
+        "ask": 29.1,
+        "relative_spread": 0.14364640883977908,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 58.6,
+        "current_provider_iv_pct": 55.23,
+        "reported_iv_difference_pp": -3.37,
+        "previous_delta": 0.4569,
+        "current_delta": 0.4641,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "B016C745",
+      "strike": 745.0,
+      "side": "call",
+      "expiry": "202612",
+      "price": 25.0,
+      "previous_price": 26.8,
+      "oi": 56,
+      "previous_oi": 36,
+      "oi_change": 20,
+      "volume": 71,
+      "previous_volume": 30,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 55.13,
+        "provider_delta": 0.4394,
+        "bid": 22.8,
+        "ask": 27.15,
+        "relative_spread": 0.17417417417417408,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 58.75,
+        "current_provider_iv_pct": 55.13,
+        "reported_iv_difference_pp": -3.62,
+        "previous_delta": 0.4398,
+        "current_delta": 0.4394,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C705",
+      "strike": 705.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 25.2,
+      "previous_price": 29.05,
+      "oi": 121,
+      "previous_oi": 107,
+      "oi_change": 14,
+      "volume": 72,
+      "previous_volume": 61,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 61.44,
+        "provider_delta": -0.374,
+        "bid": 22.6,
+        "ask": 28.85,
+        "relative_spread": 0.24295432458697763,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 64.0,
+        "current_provider_iv_pct": 61.44,
+        "reported_iv_difference_pp": -2.56,
+        "previous_delta": -0.3904,
+        "current_delta": -0.374,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C710",
+      "strike": 710.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 27.3,
+      "previous_price": 31.05,
+      "oi": 378,
+      "previous_oi": 277,
+      "oi_change": 101,
+      "volume": 65,
+      "previous_volume": 101,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 61.33,
+        "provider_delta": -0.3958,
+        "bid": 2.06,
+        "ask": 43.25,
+        "relative_spread": 1.8181416905760317,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 63.54,
+        "current_provider_iv_pct": 61.33,
+        "reported_iv_difference_pp": -2.21,
+        "previous_delta": -0.4103,
+        "current_delta": -0.3958,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": false
+    },
+    {
+      "code": "C016C715",
+      "strike": 715.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 27.8,
+      "previous_price": 33.05,
+      "oi": 648,
+      "previous_oi": 653,
+      "oi_change": -5,
+      "volume": 26,
+      "previous_volume": 22,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 58.24,
+        "provider_delta": -0.4024,
+        "bid": 2.07,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 62.91,
+        "current_provider_iv_pct": 58.24,
+        "reported_iv_difference_pp": -4.67,
+        "previous_delta": -0.4306,
+        "current_delta": -0.4024,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C720",
+      "strike": 720.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 31.8,
+      "previous_price": 35.5,
+      "oi": 445,
+      "previous_oi": 395,
+      "oi_change": 50,
+      "volume": 127,
+      "previous_volume": 248,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 61.05,
+        "provider_delta": -0.4395,
+        "bid": 20.75,
+        "ask": 70.0,
+        "relative_spread": 1.0853994490358128,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 62.87,
+        "current_provider_iv_pct": 61.05,
+        "reported_iv_difference_pp": -1.82,
+        "previous_delta": -0.4535,
+        "current_delta": -0.4395,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C725",
+      "strike": 725.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 34.2,
+      "previous_price": 38.0,
+      "oi": 783,
+      "previous_oi": 744,
+      "oi_change": 39,
+      "volume": 197,
+      "previous_volume": 279,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 60.88,
+        "provider_delta": -0.4618,
+        "bid": 30.3,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 62.74,
+        "current_provider_iv_pct": 60.88,
+        "reported_iv_difference_pp": -1.86,
+        "previous_delta": -0.4747,
+        "current_delta": -0.4618,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C730",
+      "strike": 730.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 36.05,
+      "previous_price": 40.45,
+      "oi": 1845,
+      "previous_oi": 1786,
+      "oi_change": 59,
+      "volume": 244,
+      "previous_volume": 270,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 59.6,
+        "provider_delta": -0.485,
+        "bid": 27.05,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 62.36,
+        "current_provider_iv_pct": 59.6,
+        "reported_iv_difference_pp": -2.76,
+        "previous_delta": -0.4936,
+        "current_delta": -0.485,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C735",
+      "strike": 735.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 38.9,
+      "previous_price": 43.0,
+      "oi": 1372,
+      "previous_oi": 1368,
+      "oi_change": 4,
+      "volume": 31,
+      "previous_volume": 162,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 59.82,
+        "provider_delta": -0.5073,
+        "bid": 2.16,
+        "ask": 53.9,
+        "relative_spread": 1.8458794149125934,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 61.96,
+        "current_provider_iv_pct": 59.82,
+        "reported_iv_difference_pp": -2.14,
+        "previous_delta": -0.5147,
+        "current_delta": -0.5073,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C740",
+      "strike": 740.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 41.0,
+      "previous_price": 45.7,
+      "oi": 392,
+      "previous_oi": 389,
+      "oi_change": 3,
+      "volume": 68,
+      "previous_volume": 237,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 58.58,
+        "provider_delta": -0.5324,
+        "bid": 37.0,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 61.65,
+        "current_provider_iv_pct": 58.58,
+        "reported_iv_difference_pp": -3.07,
+        "previous_delta": -0.5356,
+        "current_delta": -0.5324,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    },
+    {
+      "code": "C016C745",
+      "strike": 745.0,
+      "side": "put",
+      "expiry": "202612",
+      "price": 44.25,
+      "previous_price": 48.7,
+      "oi": 339,
+      "previous_oi": 323,
+      "oi_change": 16,
+      "volume": 63,
+      "previous_volume": 52,
+      "iv": null,
+      "delta": null,
+      "flags": [],
+      "session": "Date-labelled regular daily history, not current/night quote",
+      "excluded_future_dates": [],
+      "closing_snapshot": {
+        "received_at": "2026-11-26T16:02:01.760684+09:00",
+        "provider_iv_pct": 59.11,
+        "provider_delta": -0.5528,
+        "bid": 41.3,
+        "ask": 0.0,
+        "relative_spread": null,
+        "quote_trade_timestamp_verified": false,
+        "eligible_for_close_iv_change": false,
+        "note": "Original EOD receipt matches dated price/OI/volume. Quote-level trade timestamp and matching prior IV unavailable; research only."
+      },
+      "paired_iv_snapshot": {
+        "previous_received_at": "2026-11-25T16:06:37.826340+09:00",
+        "current_received_at": "2026-11-26T16:02:01.760684+09:00",
+        "same_expiry_strike_side": true,
+        "previous_price_oi_volume_match_current_history": true,
+        "previous_provider_iv_pct": 61.67,
+        "current_provider_iv_pct": 59.11,
+        "reported_iv_difference_pp": -2.56,
+        "previous_delta": -0.5561,
+        "current_delta": -0.5528,
+        "eligible_as_synchronous_close_iv_change": false,
+        "scope": "Two saved after-close provider snapshots, not quote-time-verified closing IV or fitted skew. No investor opening/closing attribution."
+      },
+      "oi_direction_eligible": true
+    }
+  ],
+  "next_future": {
+    "daily": {
+      "date": "20261126",
+      "open": "721.50",
+      "high": "733.85",
+      "low": "715.90",
+      "close": "718.05",
+      "sign": "2",
+      "change": "3.30",
+      "diff": "0.46",
+      "volume": 118,
+      "diff_vol": "40.48",
+      "openyak": 9610,
+      "openyakupdn": 564,
+      "value": "21370"
+    },
+    "previous": {
+      "date": "20261125",
+      "open": "736.00",
+      "high": "736.85",
+      "low": "711.00",
+      "close": "714.75",
+      "sign": "5",
+      "change": "56.05",
+      "diff": "-7.27",
+      "volume": 84,
+      "diff_vol": "-41.67",
+      "openyak": 9046,
+      "openyakupdn": 647,
+      "value": "15148"
+    },
+    "oi_change_excluded": true
+  },
+  "charts": [
+    {
+      "file": "futures_wave_monthly_20261126.png",
+      "title": "월봉: 진행11월 저점권, 상위 회복 미확인",
+      "interpretation": "완료10월 O1088.35/H1125.55/L824.65/C899.45 뒤 진행11월 O880.80/H930.00/L708.25/C726.75입니다.",
+      "kind": "price",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "e1fbffac755983b027da2e3697742cc483ffa8a1c9b5acf0eb12ebda3eb011a0",
+      "brief": {
+        "title": "월봉: 진행11월 저점권, 상위 회복 미확인",
+        "result": "완료10월 O1088.35/H1125.55/L824.65/C899.45 뒤 진행11월 O880.80/H930.00/L708.25/C726.75입니다.",
+        "check": "708.25 실제 침범은11/23 시작점 반등 가설 철회.824.65 회복·완료 월봉 전까지 상위 약화 해소 미확인.",
+        "note": "동일 계약4개월뿐이며11월 진행 봉. 장기 파동 차수·장기 이평 미확정."
+      }
+    },
+    {
+      "file": "futures_wave_weekly_20261126.png",
+      "title": "주봉: 진행 주 반등에도 직전 완료 주 저가 아래",
+      "interpretation": "완료11/16~20 주 O826.50/H830.80/L746.80/C752.75. 진행11/23~26 O719.90/H789.05/L708.25/C726.75입니다.",
+      "kind": "price",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "98958cf0ad21b22138b690c3777b6b03617aca8e81e334cad8fe1bd36375c460",
+      "brief": {
+        "title": "주봉: 진행 주 반등에도 직전 완료 주 저가 아래",
+        "result": "완료11/16~20 주 O826.50/H830.80/L746.80/C752.75. 진행11/23~26 O719.90/H789.05/L708.25/C726.75입니다.",
+        "check": "746.80~748.05 회복·재지지 뒤767.30·789.05 확인.708.25는 진행 주 저점 후보.",
+        "note": "진행 주4거래일. 완료 주 보정은11/20까지6주로 분리."
+      }
+    },
+    {
+      "file": "futures_wave_daily_20261126.png",
+      "title": "일봉: 전일 범위 안 소폭 상승, 시가 대비 하락",
+      "interpretation": "직전 11/25 판을 먼저 대조합니다. 767.30 방어 회복 가설은 전일 이미 폐기됐고 오늘도 되살리지 않습니다. 721.50 이탈→718.50·708.25 재시험 경로는 오늘 저가 723.45가 위에 있어 아직 미발동입니다. 반대로 731.05 회복 대안은 시가 733.35 이후 첫 08:45 표시봉 종가731.15였으나 08:55 종가726.70으로 첫 안착에 실패했습니다. 09:15 종가737.75, 다음09:25 저가737.40으로 다시 위에서 지지한 뒤 오전 고가743.30까지 올라 737.25~739.65 구간에는 도달했습니다. 다만746.80~748.05는 미도달이며,14:55 종가728.45와15:05 종가726.95로731.05 유지에 실패했습니다. 도달과 이후 실패를 함께 보존합니다. 상위 실제 앵커는11/13 859.65→11/23 708.25→11/24 789.05→11/25 718.50→오늘743.30·723.45입니다. 선호는 상위 하락 중 반등이 다시 눌리는 경로, 대안은708.25 이후 반등의 깊은 조정이 아직 이어지는 경로입니다. 723.45 침범은 오늘 저점 유지 가설의 철회,718.50 침범은 전일 시작점 반등 가설의 철회,708.25 침범은11/23 시작점 가설의 철회로 구분합니다. 743.30 돌파는 오늘 반등 실패의 약화,748.05 위 일봉 마감·재지지는 전일 급락 이후 회복 확인,789.05 실제 돌파는11/24 반등 종료 앵커 가설의 철회 조건입니다. 내부1~5파·3-3-5 분할이 부족해 차수 미확정이며 충격파 하드룰 통과·파동 완성·확률·피보 목표를 선언하지 않습니다.",
+      "kind": "price",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "9e0617cf7682c84812139ff0a3421f91caa4380b466b79f2aaba90b71981ef79",
+      "brief": {
+        "title": "일봉: 전일 범위 안 소폭 상승, 시가 대비 하락",
+        "result": "O733.35/H743.30/L723.45/C726.75로 전일 고저 안의 봉입니다.5일선741.80·10일선767.04·20일선806.78 아래, RSI14 35.83·ADX14 31.21·-DI35.65>+DI18.00입니다.",
+        "check": "748.05 위 일봉 종가·재지지가 전일 급락 이후 회복 조건.789.05 실제 돌파는 반등 종료 앵커 가설 철회.",
+        "note": "79개 활성 일봉. ATR14 43.54,120일선 부족. 전환선769.53·기준선837.33; 가격 지표를 독립 투표로 세지 않음."
+      }
+    },
+    {
+      "file": "futures_intraday_oi_20261126.png",
+      "title": "10분봉: 오전 회복 뒤 막판 재이탈·OI 증가",
+      "interpretation": "원천 표시시각 기준08:45→09:55 가격731.15→740.05(+8.90), OI177,869→178,927(+1,058)로 오전에는 상승·참여 확대가 함께 나타났습니다. 09:55→11:55는 가격-11.25·OI-141,11:55→14:35는 가격+5.05·OI+963으로 다시 달랐습니다. 막판14:35→15:25에는733.85→726.30(-7.55), OI179,749→180,221(+472)로 회복 실패와 OI 증가가 겹쳤습니다. 마지막15:45 단일가까지 가격+0.45·OI+465입니다. 하루 종가는 전일보다 올랐지만 장중은 오전 상승→되밀림→오후 반등→막판 하락의 순서입니다. 일별 상승·OI 증가만으로 하루 전체를 신규 롱으로 분류하지 않습니다. 투자자별 동시각 관측은 없어 막판 매도 주체·신규 숏 규모·동일 주체 청산은 판단 불가입니다. LS CVD는 당일 FC9 날짜 앵커와 마감 검증으로 최종값+142계약(분류 매수59,684−매도59,542)이 확인됐습니다. 잔여3,207계약은 배분하지 않으며61개 거래량 간격 때문에 장중 CVD 경로·고저·OHLC는 제외합니다. 작은 양의 종점은 막판 가격 약화를 뒤집는 근거가 아닙니다.",
+      "kind": "price",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "ec3b1b54c554c2a9a8d65dd06d644cda0f6ef0c43c3e1470f016c1a056c48b49",
+      "brief": {
+        "title": "10분봉: 오전 회복 뒤 막판 재이탈·OI 증가",
+        "result": "09:25 표시봉 고가743.30 이후15:15 저가723.45.14:35→15:25 가격-7.55·OI+472로 회복 유지 실패.",
+        "check": "723.45~724.15 유지와731.05~731.70 회복·재지지, 실패하면721.50~722.00→718.50 확인.",
+        "note": "42개 표시봉·마지막15:45 단일가.3분 하위파·동시각 투자자 수급·완전 CVD 경로 미확보."
+      }
+    },
+    {
+      "file": "futures_flow_windows_20261126.png",
+      "title": "11/26 선물 주체별 수급 ·당일/3·5·20일",
+      "interpretation": "전체 만기 선물 당일 순매매는 외국인+1,878·기관-1,734·금융투자-4,480·투신+2,362·연기금+247·개인-118계약입니다. 금융투자 제외 기관은+2,746계약(기관−금투)이며 기관과 하위를 중복 합산하지 않습니다. 전일 투신-6,864에서 매수로 돌아와 외국인·투신 동행은 회복됐지만 금융투자는 전일+2,430에서 매도로 전환했습니다. 외국인 최근3·5·20일은+9,573/+12,470/+37,553계약, 투신은+1,655/-3,720/-9,235, 금융투자는-10,883/-8,227/-24,769입니다. 당일 개선과 누적 매도, 주체별 충돌을 함께 봅니다. 순매매는 실제 보유량이나 특정 계좌의 신규·청산 구분이 아닙니다.",
+      "kind": "flow",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "2f91fc8230749be979d1e0a1aea170cf518465fb7fc7e1baf755a0c22cd6102b"
+    },
+    {
+      "file": "futures_weekly_weights_20261126.png",
+      "title": "완료 주 해석 배율 | 11/20까지 · 다음 주 해석 참고",
+      "interpretation": "10/12~11/20의6개 완료 주로만 해석 배율을 산출했고11/23~26 진행 주는 보정에서 제외했습니다. 현물 외국인1.157·금투0.954·투신1.182·연기금0.988·개인0.811, 선물 외국인0.924·금투0.891·투신1.157·연기금1.013·개인0.930입니다. 다음 날 예측 배율은 모두1.000이며 해석 배율은 인과 영향력·시장 비중·미래 확률이 아닙니다. 현물 외국인·투신 동반 매수·당일 상승 뒤 다음 날 상승은3/8(37.5%; 일반 상승일 기준4/13=30.8%), 동반 매도·당일 하락 뒤 다음 날 하락은7/16(43.8%; 일반 하락일10/20=50.0%)입니다. 전일11/25 현물 매도·하락 신호는 오늘 소폭 상승으로 지속 실패에 추가됐습니다. 선물 동반 매수·당일 상승 뒤 다음 날 상승은1/4(25.0%)이고 오늘 신호의 다음 날은 미확인으로 분모에서 제외했습니다. 소표본·사후 선택·시계열 의존성 때문에 미래 적중확률로 쓰지 않으며 옵션 주체 가중치는 자료 부족입니다.",
+      "kind": "flow",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "5461113e7e381a5f383a4000eeb077684ed4d01525f5c6ed00da8abe79d426d4"
+    },
+    {
+      "file": "options_contract_review_20261126.png",
+      "title": "12월 옵션 날짜별 일봉 | 11/25 → 11/26",
+      "interpretation": "12월물 콜·풋705~745의18계약을 날짜 지정 LS 일봉과 EOD 체인의 코드·행사가·가격·거래량·OI로 대조했습니다. 부분 체인 OI 커버리지는31.70%이고 실제 체결시각은 미검증입니다. 콜725는36.25→34.35·OI+7·거래량38, 풋725는38.00→34.20·OI+39·거래량197입니다. 양쪽 프리미엄 하락만으로 방향을 확정하지 않습니다. 콜735는OI+263 대 거래량120, 콜710은OI+1 대 거래량0, 풋710은OI+101 대 거래량65로 OI 증감 해석에서 제외합니다. 콜710은 당일 무거래여서 체결가격·IV 변화 비교도 제외합니다. 제공 IV는 두 마감 후 보존 스냅샷의 잠정 비교이며 동시 확정 IV·검증된 스큐가 아닙니다. 외국인 전체 만기 콜-1,002계약/-6억원, 풋-246계약/+28억원은 계약수와 금액 방향도 다릅니다. 만기별 개시/청산·딜러 보유가 없어 실제 감마·감마플립·최대고통·잔존 수량·평단은 판단 불가입니다.",
+      "kind": "options",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "a089c7c55ba680ff6d11bb7905ccefba5bf6deb168ae7947c9510895326f7f1f"
+    },
+    {
+      "file": "hts_0790_daily_20261126.png",
+      "title": "0790 당일 합성손익 원본",
+      "interpretation": "0790 일자·누적은11/26·지수축717~737·백만원으로 확인했습니다. 일자 외국인·투신 합성손익 곡선은 우상향, 금융투자는 우하향이지만 브로커 추정이며 실제 잔존 계약·평단으로 역산하지 않습니다. 누적의 큰 손익 절대수준도 실제 보유잔고의 검증이 아닙니다. 0794 일자·누적은 금액 순매매·천원·행사가705~747.50이며 만기가 표시되지 않아12월물 잔고로 지정하지 않습니다. 0791 상세 포지션이 없어 잔존 수량·보유원가·실제 손익은 판단 불가입니다.",
+      "kind": "source",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "9240cee15df40ef231e8969ee5f93124e47d2a62b3e3e86c99bc8639cc633177"
+    },
+    {
+      "file": "hts_0790_cumulative_20261126.png",
+      "title": "0790 누적 합성손익 원본",
+      "interpretation": "0790 일자·누적은11/26·지수축717~737·백만원으로 확인했습니다. 일자 외국인·투신 합성손익 곡선은 우상향, 금융투자는 우하향이지만 브로커 추정이며 실제 잔존 계약·평단으로 역산하지 않습니다. 누적의 큰 손익 절대수준도 실제 보유잔고의 검증이 아닙니다. 0794 일자·누적은 금액 순매매·천원·행사가705~747.50이며 만기가 표시되지 않아12월물 잔고로 지정하지 않습니다. 0791 상세 포지션이 없어 잔존 수량·보유원가·실제 손익은 판단 불가입니다.",
+      "kind": "source",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "2b250b8c4802354b3810948cf76e52243ad7aeb18060e4b15723001a73b82834"
+    },
+    {
+      "file": "hts_0794_daily_20261126.png",
+      "title": "0794 당일 금액 순매매 원본",
+      "interpretation": "0790 일자·누적은11/26·지수축717~737·백만원으로 확인했습니다. 일자 외국인·투신 합성손익 곡선은 우상향, 금융투자는 우하향이지만 브로커 추정이며 실제 잔존 계약·평단으로 역산하지 않습니다. 누적의 큰 손익 절대수준도 실제 보유잔고의 검증이 아닙니다. 0794 일자·누적은 금액 순매매·천원·행사가705~747.50이며 만기가 표시되지 않아12월물 잔고로 지정하지 않습니다. 0791 상세 포지션이 없어 잔존 수량·보유원가·실제 손익은 판단 불가입니다.",
+      "kind": "source",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "664db3f69ab2b3cfa714bc2c9bcfe0a81bb28648190b73bd672b02f2dc77978b"
+    },
+    {
+      "file": "hts_0794_cumulative_20261126.png",
+      "title": "0794 누적 금액 순매매 원본",
+      "interpretation": "0790 일자·누적은11/26·지수축717~737·백만원으로 확인했습니다. 일자 외국인·투신 합성손익 곡선은 우상향, 금융투자는 우하향이지만 브로커 추정이며 실제 잔존 계약·평단으로 역산하지 않습니다. 누적의 큰 손익 절대수준도 실제 보유잔고의 검증이 아닙니다. 0794 일자·누적은 금액 순매매·천원·행사가705~747.50이며 만기가 표시되지 않아12월물 잔고로 지정하지 않습니다. 0791 상세 포지션이 없어 잔존 수량·보유원가·실제 손익은 판단 불가입니다.",
+      "kind": "source",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "89de9743d823c65eec77b6abdfac1f1b00b26ff2ff9a2e98a954bfd7d7e97d60"
+    },
+    {
+      "file": "hts_volatility_20261126.png",
+      "title": "0471 대표 변동성 원본",
+      "interpretation": "대표 IV와 행사가별 IV를 구분. 콜·풋 대표 IV는 API 날짜별 자료와 대조.",
+      "kind": "source",
+      "source_note": "11/26 기준·원천 해시/상품 대조; 실제 보유원가 아님",
+      "sha256": "abf613486bd01fddeb67fe2fb1a3b0b02f1ca20e9e6ec06c0f70b5aaefd6414d"
+    }
+  ],
+  "attempted_paths": [
+    "dated Kiwoom opt50030/29/62/24",
+    "LS t1617/t1664 history; t8429 and Kiwoom ka20006",
+    "LS t2214 dated option and next-future history; saved Nov25/26 t2301 after-close observations",
+    "LS t1633 date-bounded program history",
+    "12 original HTS captures; prior catalog used for identifiers only"
+  ],
+  "excluded_paths": [
+    "Partial gamma chain no signed dealer inference; current CVD eligibility disclosed",
+    "After-close provider IV differences are provisional, not synchronous closing IV; no night quote substitution"
+  ],
+  "web_references": [
+    {
+      "url": "https://file.koreainvestment.com/Storage/customer/guide/regards/service_06_1.html",
+      "retrieved_at": "2026-11-26T17:07:34.441721+09:00",
+      "sha256": "a7a65d42dd5b494e68441334c353cb3959b7dbf99c26e3651862b3cfec1124ef",
+      "rule": "monthly second Thursday; quarterly futures; Thursday weekly except second Thursday",
+      "current_weekly_expiry": "2026-11-26",
+      "remaining_regular_sessions_after_today_to_dec_expiry": 10,
+      "krx_product_page_status": "403; official broker specification used",
+      "krx_product_url": "https://www.krx.co.kr/contents/OPN/01/01040202/OPN01040202.jsp",
+      "november_monthly": "2026-11-12",
+      "december_futures_options": "2026-12-10",
+      "calendar": "KRX 2026 official holiday list checked; weekly contracts separate",
+      "regular_session": {
+        "date": "20261126",
+        "regular_open": "08:45",
+        "regular_close": "15:45",
+        "stock_regular_close": "15:30",
+        "expiring_weekly_option_close": "15:20",
+        "night_open": "18:00"
+      }
+    }
+  ]
+}
