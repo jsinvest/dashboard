@@ -226,13 +226,18 @@ def load_legacy_rows(path: Path) -> tuple[dict[tuple[str, str], dict[str, Any]],
     if not path.exists():
         return rows_by_key, session_by_as_of
     payload = read_json(path)
+    # Older publications used ``details/as_of`` while the current schema uses
+    # ``records/recommendation_date``.  Accept both so an offline refresh can
+    # preserve already verified outcomes without calling the broker API again.
     details = payload.get("details")
+    if not isinstance(details, list):
+        details = payload.get("records")
     if not isinstance(details, list):
         return rows_by_key, session_by_as_of
     for row in details:
         if not isinstance(row, dict):
             continue
-        as_of = normalize_ymd(row.get("as_of"))
+        as_of = normalize_ymd(row.get("as_of") or row.get("recommendation_date"))
         code = normalize_code(row.get("code"))
         entry_date = normalize_ymd(row.get("entry_date"))
         open_price = finite_price(row.get("open"))
