@@ -96,7 +96,15 @@ def main(argv=None):
         if attempt == args.attempts - 1:
             raise SystemExit("Published panel does not match this snapshot")
         time.sleep(12)
-    chrome = str(args.browser) if args.browser else shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("msedge")
+    chrome = str(args.browser) if args.browser else shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("chrome")
+    if not chrome and os.name == "nt":
+        # Prefer the installed Chrome CLI before the Edge fallback on Windows.
+        candidates = [Path(os.environ.get("ProgramFiles", "C:/Program Files")) / "Google/Chrome/Application/chrome.exe",
+                      Path(os.environ.get("ProgramFiles(x86)", "C:/Program Files (x86)")) / "Google/Chrome/Application/chrome.exe",
+                      Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "Google/Chrome/Application/chrome.exe"]
+        chrome = next((str(candidate) for candidate in candidates if candidate.is_file()), None)
+    if not chrome:
+        chrome = shutil.which("msedge")
     if not chrome and os.name == "nt":
         candidate = Path(os.environ.get("ProgramFiles(x86)", "C:/Program Files (x86)")) / "Microsoft/Edge/Application/msedge.exe"
         chrome = str(candidate) if candidate.is_file() else None
